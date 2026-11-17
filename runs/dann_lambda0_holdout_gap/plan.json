@@ -1,0 +1,178 @@
+{
+ "what": "the 704/78 memorisation diagnostic on DANN x nb3 against its lambda=0 control, folds 1-4, 16 checkpoints per fold per arm (PROJECTv7 7.54)",
+ "status": "retrospective, unregistered: decided 2026-10-24 after all results were known; in no pre-registration",
+ "brief": "brief_dann_memorisation_diagnostic.md (author's Downloads; not in the repo)",
+ "author_decisions_2026_10_24": [
+  "Option A: the main analysis uses deterministic aug='none' views for both arms on all folds",
+  "the known-null replays 7.29's exact random sequence; folds 2-4 must match at four decimals; fold 1 is excluded from the value check; weight equality is checked on all four folds",
+  "the model is built from each checkpoint's own config via TrainConfig/Trainer, as 7.29's drivers do (not the runner's build_arm)",
+  "the trained-on probe is checked against BNM's recorded probe (DANN's and lambda=0's run configs record only the holdout); the holdout against both arms' run configs",
+  "local RTX 4050, fp32 (amp=False); device, GPU name and torch version recorded"
+ ],
+ "inputs": {
+  "tars": {
+   "runs/dann_main/fold1/ckpt_dann_r5_nb3_fold1_part01of03.tar": "149cccef29c2ff44a018791709beda7aea6c668e53874d453befa8ccac362068",
+   "runs/dann_main/fold1/ckpt_dann_r5_nb3_fold1_part02of03.tar": "9f201f59f4320156a9f9d2f5915cbbedfd19b0cc0dc40a6ea7b692fc0bfa678a",
+   "runs/dann_main/fold1/ckpt_dann_r5_nb3_fold1_part03of03.tar": "e58d648c77ac0b67e0b2423c3762bffd9cfc347c76ba0791daa97ab6dab349df",
+   "runs/dann_main/fold2/ckpt_fold2_00.tar": "9593193cd7c700ac29a8886411c064c6fdc60bca426911e66d22b3a47c27dfbd",
+   "runs/dann_main/fold2/ckpt_fold2_01.tar": "6540988739151c0b87b548f554e29a42736ee04acbd92167cbc10d168ab175d2",
+   "runs/dann_main/fold2/ckpt_fold2_02.tar": "306eb5c2044f89bb4a077b641bdd119c3eec847b7bee054aa8d57dc116406157",
+   "runs/dann_main/fold2/ckpt_fold2_03.tar": "6f07562e038c8d992a9ebcf1c6df723c6f4136f43a53d775f597e47e57362a06",
+   "runs/dann_main/fold2/ckpt_fold2_04.tar": "750ab6d245207b5646ba9b32a238cdec4e3616f88b8e14f34501def3b68d6986",
+   "runs/dann_main/fold2/ckpt_fold2_05.tar": "2be180ebb95cd5d5372b7662e9ee35e6d8412ffd915b838b81e5c4b6d8266722",
+   "runs/dann_main/fold3/ckpt_fold3_00.tar": "f20b45d58a2b658ef0d05eaa80212988cfe978e76481e7d8c48ac5107ec492e8",
+   "runs/dann_main/fold3/ckpt_fold3_01.tar": "e3f4dda890967cbce702d4eb26fa668969b5074e7b6fd7d1a6aa26dc7ee8147e",
+   "runs/dann_main/fold3/ckpt_fold3_02.tar": "734186c9bcbc6be4d3398fe9963f80333de1149339802647bae451c7bcc8beb5",
+   "runs/dann_main/fold3/ckpt_fold3_03.tar": "aa67f968b618c57a37fc2dde744ee63c9576fe3e2c1b20024f7d3b6a34d99ebb",
+   "runs/dann_main/fold3/ckpt_fold3_04.tar": "8595ee02b0473087ec4327b6836225a2e866fa0fb885b6ca39ae0b26ece67089",
+   "runs/dann_main/fold3/ckpt_fold3_05.tar": "97e4cf4942ef51a60f8000a7181086712e02553f839d273321f17470456dfed0",
+   "runs/dann_main/fold4/ckpt_fold4_00.tar": "c93b6b0e879b6bf5dee58f24493aff0751d5ece7307be1705a75bc683e609fb0",
+   "runs/dann_main/fold4/ckpt_fold4_01.tar": "8bd9ac5dfd644ad7a58db5aa7fe5cb1415c7c7879dd2501709103aaab3a5611d",
+   "runs/dann_main/fold4/ckpt_fold4_02.tar": "0ae22106352c48c28d6d15c1ed3bbcd6013a0317f204ceb9c1f02c6766bd6a74",
+   "runs/dann_main/fold4/ckpt_fold4_03.tar": "080b7019554d65b73559cb0acfc558f5ee48361f1c8e7613ddd0b12abe219c5e",
+   "runs/dann_main/fold4/ckpt_fold4_04.tar": "1b3af17b2920881d156712391d698b0cd65c20659876497b819908049e30c9bb",
+   "runs/dann_main/fold4/ckpt_fold4_05.tar": "2c1c6763ef10f96fb42265d6f559cebe82071dbd596165a461e1e4aa619429c4",
+   "runs/baseline_unfrozen/fold1/ckpt_lambda0_r6_fold1_part01of03.tar": "fbca1da032f7762171b65ec6c453316643ebe9cce613695adb4904d66457c69c",
+   "runs/baseline_unfrozen/fold1/ckpt_lambda0_r6_fold1_part02of03.tar": "73b40623405938434997937440f107b36b05ec12b50dbd07ba2121bc3b32b372",
+   "runs/baseline_unfrozen/fold1/ckpt_lambda0_r6_fold1_part03of03.tar": "ec2cc8e9cb2a1b7b7bedb1f04040c8758727699705b0f0fb8a76347f2fafa10c",
+   "runs/baseline_unfrozen/fold2/ckpt_lambda0_r6_fold2_part01of03.tar": "7fc4b1cd508eaced12f71b4002db3559f02f5b37a9d0af0f99ec6f3696749c16",
+   "runs/baseline_unfrozen/fold2/ckpt_lambda0_r6_fold2_part02of03.tar": "f2f082f5a3619094fb6611dac218e2615ef38ee12a66714f4cc3e27a4cf4b22a",
+   "runs/baseline_unfrozen/fold2/ckpt_lambda0_r6_fold2_part03of03.tar": "a721769c2ff43298c984aee579f6be5f95f454f1ac97bcadc82b270bc15e89f3",
+   "runs/baseline_unfrozen/fold3/ckpt_lambda0_r6_fold3_part01of03.tar": "129ccc475e2843abc339d44cab2f823346d881165156d717976a4c55c0757ff9",
+   "runs/baseline_unfrozen/fold3/ckpt_lambda0_r6_fold3_part02of03.tar": "440e2ea804b6bebcf72f382e2a73de8e67512d29e5fa69baa3f62023311af02e",
+   "runs/baseline_unfrozen/fold3/ckpt_lambda0_r6_fold3_part03of03.tar": "19eb17e0fdfd42c9605b202b1daffe77232ea47b39d66dd419e07383286aa074",
+   "runs/baseline_unfrozen/fold4/ckpt_lambda0_r6_fold4_part01of03.tar": "c590ee22d5c4866e0da2475e6b2cd286abb6901c08ceea7d3fa08abb24a21d9b",
+   "runs/baseline_unfrozen/fold4/ckpt_lambda0_r6_fold4_part02of03.tar": "b1b0ced1caafea65399bdad41f7390e7daf34f430c388b3ff7d84df80b9e2ebe",
+   "runs/baseline_unfrozen/fold4/ckpt_lambda0_r6_fold4_part03of03.tar": "9cd6481419814d28559da854f4c834ccfd3c85981555b3cd14764c816e7f15eb"
+  },
+  "run_configs": {
+   "runs/dann_main/fold1/extracted/fold1/run_config.json": "e4e841b3280c6fe799d76ac0266a965740c8ce7e529bffd6f7b852c4f4bd77cc",
+   "runs/dann_main/fold2/extracted/fold2/run_config.json": "464080d203f70fd029272e7f71796626c0cae6ce6072d3f4b3a3a7f61a3d6d13",
+   "runs/dann_main/fold3/extracted/fold3/run_config.json": "16c559a722a59a3cc9d348f32df90e7e98dcabc80f5cf66de6718e0a8139c886",
+   "runs/dann_main/fold4/extracted/fold4/run_config.json": "dbafea6b4e4254fb8f617f3134db99e35ec5d9b17b4d941f763cc1db1a5d2636",
+   "runs/baseline_unfrozen/fold1/extracted/lambda0_r6_fold1/run_config.json": "458cc7a9968b636203175650161c53bc193ce3a1fa6233e36e7a04a99e322522",
+   "runs/baseline_unfrozen/fold2/extracted/lambda0_r6_fold2/run_config.json": "2968691c5a5a58c332629f5bd5e96bfd30b1c118e28b04cf994b59d93522b0db",
+   "runs/baseline_unfrozen/fold3/extracted/lambda0_r6_fold3/run_config.json": "92c0eaee4849cb862596f74098fcc44e26e5cf864985e0fa52dcde492698148a",
+   "runs/baseline_unfrozen/fold4/extracted/lambda0_r6_fold4/run_config.json": "936aeb66e9d6f847f5e9e07269d05d8313e0cd0692755052e473cb68d2f1df02"
+  },
+  "holdout_and_probe_records": {
+   "runs/bnm_r6_folds/bnm_r6_fold1/run_config.json": "06f4116e1e20c0d03d998f82be568ac402c3ce4ca1d30141e4709220c074f3e8",
+   "runs/bnm_r6_folds/bnm_r6_fold2/run_config.json": "57be2a7c40316dfaa0ccf6a4f665a8f18bac72bf99d7ffd0d2bc787f4b525eed",
+   "runs/bnm_r6_folds/bnm_r6_fold3/run_config.json": "67368ba4d4639ef12a7f61508a57a8bcf73eed187d3d1889a39a7aa60f82c3b7",
+   "runs/bnm_r6_folds/bnm_r6_fold4/run_config.json": "5fdc6c0e0e4f714a0d466809b46ecc07e2dc79e4571ba826b5df2367021c3054"
+  },
+  "resume_checkpoints": {
+   "runs/baseline_unfrozen/fold1/extracted/lambda0_r6_fold1/resume/latest.pt": "3abee749b33290231acfc75ef330f3109deb20227d42f046567510cf9e038f9f",
+   "runs/baseline_unfrozen/fold2/extracted/lambda0_r6_fold2/resume/latest.pt": "9e65cf6efeab88aeee8e646e8e7161ec9b8d88910893a66d5ccde6ca14f4a375",
+   "runs/baseline_unfrozen/fold3/extracted/lambda0_r6_fold3/resume/latest.pt": "c00c388a763b142bbcd8ad39832ab3d4f6aad02182e1c2608056433cea312d1c",
+   "runs/baseline_unfrozen/fold4/extracted/lambda0_r6_fold4/resume/latest.pt": "08f1aa7d44604ea80ccdf91d310d3cdd2db53c841ea3f2cfda4fc79d93914db1"
+  },
+  "code": {
+   "scripts/analyze_dann_lambda0_gap.py": "c4fc514623da6a9acf7b159a608624ee33b56cd8ffa026251c76ed66834734dd",
+   "scripts/write_dann_lambda0_gap_plan.py": "c0044e97f6d25b295af75585bceec50c3c91a530355536ffe1e9459d09e4a115",
+   "scripts/bnm_round6.py": "f1c71a7f6a70e80eadf89d137369c741dcceb313d6370eede70242b749241f05",
+   "scripts/dann_round5.py": "6884d4690aa1d58aaff876b1624de259028965a47e7a38a9437a8e477eff8c1e",
+   "scripts/analyze_lambda0_r6.py": "f16e965470f69e53952ab59fb7fbd9df15934b7ffa06613f77a0a68dd910bdf8",
+   "scripts/train_skeleton.py": "06834cac81d1fdcd9a560d508a080a51902ca11b33e4cc648da9a4e76dbc3691",
+   "scripts/lens_dataset.py": "87c3701b4eb8e76333b06938d3d3fda8a53e7f46afe59bbb7fee6074b566318d",
+   "scripts/integrity.py": "862afd417141a5181322ada22ee58e121e01f25a5c423336c03539d47178764c",
+   "scripts/analyze_holdout_gap_lambda0.py": "f5e91fcf051705bee1c8d0aa9c88ff5c3a42e3ea4f67807ba696fa918b7bfb58",
+   "scripts/analyze_holdout_gap_fold0.py": "93c048f7ecafe2b36666c9e9768bdfbea60145b4f498d8778d5f9ef28f8196be"
+  },
+  "data": {
+   "data/splits/splits.json": "7eb7749a545a619878a2a75ce9ae905db36a5ee3655ff999842644908291ac05"
+  },
+  "reference": {
+   "runs/round7/holdout_gap_lambda0.json": "521da17fc5814ee21c7a556a4c6c82e21be9f040df5d33960747ee3d42cd4336"
+  },
+  "note": "holdout indices: dann_d_holdout_indices in each DANN and lambda=0 run_config.json; trained-on probe: trainedon_probe.probe in each BNM run_config.json. Tars are re-hashed by the driver before extraction."
+ },
+ "views": {
+  "main": "aug='none': one deterministic view per image (stretch + resize), materialised once per fold and reused for every checkpoint of both arms",
+  "why": "it adds no augmentation noise, it is exactly reproducible, and both arms see identical images, so the DANN - lambda=0 contrast is unaffected",
+  "known_null": "aug='weak': 7.29's one fixed weak-augmented view per image, recreated by replaying 7.29's driver's exact call sequence"
+ },
+ "statistic": {
+  "definition": "unchanged from 7.20: for each checkpoint, normalised nuclear norm ||A||*, mean prediction entropy and predicted-positive fraction on the size-matched 78-image trained-on probe and on the 78-image holdout, through bnm_round6.probe_stats; gap = trained-on - holdout (bnm_round6.holdout_gap)",
+  "primary_statistic": "the normalised nuclear-norm gap",
+  "descriptive": "entropy gap and predicted-positive-fraction gap",
+  "slices": "holdout = dann_round5.build_target_holdout(frac=0.10, seed=42+fold); probe = bnm_round6.build_trainedon_probe(seed=42+fold); both asserted equal to the recorded indices on every fold before anything is computed",
+  "model": "TrainConfig/Trainer from the checkpoint's own cfg, init_head_from=None, amp=False, grad_checkpointing=False; Trainer.load(load_training_state=False); head in eval mode; inference only",
+  "per_checkpoint_checks": "schedule.global_step == step; schedule.fold and schedule.arm match the run; cfg fold, n_blocks, lr, weight_decay, batch_size, head_type, lr_decay equal the run_config; cfg.seed == 42 + fold"
+ },
+ "checkpoints": {
+  "steps": [
+   250,
+   500,
+   750,
+   1000,
+   1250,
+   1500,
+   1750,
+   2000,
+   2250,
+   2500,
+   2750,
+   3000,
+   3250,
+   3500,
+   3750,
+   4000
+  ],
+  "n_per_fold": 16,
+  "arms": [
+   "DANN x nb3",
+   "lambda=0"
+  ]
+ },
+ "readings": {
+  "primary": {
+   "what": "the gap at step 4000 (the pre-registered read-off of both arms)",
+   "contrast": "DANN - lambda=0, paired t on the four per-fold differences, df = 3, 95% (analyze_lambda0_r6.paired_t)"
+  },
+  "secondary": {
+   "what": "the within-fold mean of the gap over the 16 checkpoints",
+   "contrast": "same contrast and interval"
+  },
+  "descriptive_only": {
+   "what": "the any-checkpoint maximum, per arm and per fold",
+   "interval": null,
+   "contrast": null,
+   "reason": "a maximum over noisy reads has a positive null (7.28): the maximum of 16 noisy reads is positive whether or not any gap exists"
+  },
+  "own_arm": "each arm's own fold-mean gap at step 4000 and as the within-fold mean, with its paired-t interval against zero, labelled descriptive",
+  "numbering_note": "7.27 numbers the readings (1) read-off, (2) any-checkpoint maximum, (3) within-fold mean; here primary = 7.27 (1), secondary = 7.27 (3), descriptive = 7.27 (2)",
+  "excludes_zero": "paired_t's own excludes_zero: (lo * hi) > 0",
+  "number_format": "[Δ] [CI] is filled as '+0.0000 [−0.0000, +0.0000]', four decimals, Unicode minus"
+ },
+ "interpretation_VERBATIM": {
+  "excludes_zero_positive": "Having a target objective is accompanied by a measurable gap between trained-on and held-out target images: DANN − λ=0 = [Δ] [CI] at the read-off step.",
+  "excludes_zero_negative": "DANN's trained-on vs held-out gap is smaller than its control's: [Δ] [CI].",
+  "includes_zero": "Whether part of the adaptation gain comes from fitting these particular target images remains undetermined: DANN − λ=0 = [Δ] [CI] at the read-off step.",
+  "includes_zero_secondary_rule": "The secondary reading is then reported only together with the statement that it is the secondary.",
+  "in_every_case": "In every case: no multiplicity correction, and the intervals are probably too narrow because the folds' target pools overlap (paper §5.3)."
+ },
+ "known_null": {
+  "what": "lambda=0 at step 4000 must reproduce 7.29 (from resume/latest.pt): +0.2128 / -0.1362 / +0.0624 / -0.0569 on folds 1-4",
+  "procedure": "replay 7.29's driver's call sequence exactly: folds 1..4 in order; per fold the aug='weak' dataset, the slices, both materialisations, then Trainer(cfg from resume/latest.pt) (which seeds torch with 42 + fold, so it fixes the views of fold + 1), weights loaded from the tar's step_4000.pt; and per fold check step_4000.pt against resume/latest.pt by tensor equality (head, standardizer, trainable encoder blocks)",
+  "tolerance": "equal at four decimals (the printed token, and the stored json value rounded) on folds 2, 3 and 4",
+  "fold1_exclusion": "7.29 drew its fold-1 views before anything seeded torch, and torch's default seed on this install is time-based (two fresh processes draw different numbers), so those views cannot be recreated. Fold 1's replay value is computed and reported, not checked. Its weight equality IS checked.",
+  "rules": {
+   "weights identical, gap equal at 4 dp on folds 2-4": "pass",
+   "weights identical, a checked gap differs at 4 dp": "STOP and report (the pipeline differs from 7.29's)",
+   "weights not identical on any fold": "report the difference and the gaps; STOP for the author"
+  }
+ },
+ "disclosures": {
+  "lambda0_views_differ": "The main tables' λ=0 step-4000 gaps differ from 7.29's because the views differ (no augmentation here vs one weak-augmented view in 7.29). Both sets are reported side by side. These values are not directly comparable with BNM's logged gaps (7.28), which used weak-augmented views.",
+  "paired_t_import": "analyze_lambda0_r6 imports the metrics module at import time; nothing in it is called, and no test logits, test labels or scorer output are read"
+ },
+ "outputs": [
+  "runs/dann_lambda0_holdout_gap/plan.json",
+  "runs/dann_lambda0_holdout_gap/known_null.json (not enrolled)",
+  "runs/dann_lambda0_holdout_gap/results.json",
+  "runs/dann_lambda0_holdout_gap/REPORT.md"
+ ],
+ "driver_edit_rule": "if the driver is edited after this plan is written, the plan is not rewritten; the edit goes into results.json as driver_edits_after_plan with the reason",
+ "sha256_of_body_without_this_field": "9dee7d6a02c17be0aece2a9439f2989ab28d40122588080e90c1bf18538f5ffa"
+}

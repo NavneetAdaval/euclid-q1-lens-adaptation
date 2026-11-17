@@ -1,0 +1,1500 @@
+{
+  "round": 5,
+  "method": "dann",
+  "arm": "dann_nb3_lambda0",
+  "run_dir": "dann_r5_nb3_lambda0_fold0",
+  "logit_arm": "dann_nb3_lambda0_fold0",
+  "n_blocks": 3,
+  "fold": 0,
+  "n_test_positives": 98,
+  "data_path": "image_space",
+  "domain_adaptation": "dann",
+  "lp_ft": true,
+  "init_head_from": "/kaggle/input/datasets/navneet78/lens-paper-coral-r4/runs/bakeoff_baseline_A/checkpoints/step_8000.pt",
+  "init_head_from_tail": "lens-paper-coral-r4/runs/bakeoff_baseline_A/checkpoints/step_8000.pt",
+  "init_head_l2": 28.475603,
+  "init_head_provenance": "Baseline A step_8000 (runs/bakeoff_baseline_A) -- the SOURCE-ONLY linear probe, i.e. the 'LP' of LP->FT. DECLARED, not inherited: round-1 DANN ran fold 0 only and its head sits behind a 640->64->640 bottleneck adapter, so there is no DANN phase-1 head to load. Method-neutral and identical on every fold, so it cannot favour DANN. NEEDS SIGN-OFF -- it is the one place round 5 is not a copy of round 4's construction.",
+  "max_steps": 8000,
+  "arm_declared_steps": 8000,
+  "on_declared_steps": true,
+  "development_maximum": 8000,
+  "is_preregistered_budget": false,
+  "budget_status": "NOT PRE-REGISTERED. 7.14 requires each method's budget be fixed from its OWN fold-0 development curve and HASHED before any confirmatory fold exists. This run IS that development curve (fold 0, 8000 steps, power-matched to FreeMatch's decay detector per runs/devmax_truncation.json). The confirmatory budget is read off afterwards, locally, from the persisted logits.",
+  "selection_rule": "NONE in this path. The budget is the selector; there is no argmax, no smoothing and no label-free rule anywhere here.",
+  "log_every": 125,
+  "ckpt_every": 250,
+  "batch_size": 256,
+  "true_batch": true,
+  "gradient_accumulation": false,
+  "gradient_accumulation_note": "REMOVED, not merely unused (7.1a). It is invalid for every DA loss and DANN is no exception: micro-batching to 32 would hand D a rank-32 view of a batch whose entire purpose is to hold 256 samples of each domain.",
+  "grad_checkpointing": true,
+  "grad_checkpointing_note": "MANDATORY at n_blocks=3 (7.1a): true batch 256 image-space OOMs a 14.56 GiB T4 without it. Verified bit-exact, and re-verified WITH the GRL present in test_da_dann.py -- the GRL sits above the checkpointed region.",
+  "steps_per_epoch": 187,
+  "epochs_planned": 43,
+  "lr": 0.0001,
+  "lr_decay": 0.75,
+  "weight_decay": 0.05,
+  "backbone_lr": null,
+  "backbone_lr_effective": 0.0001,
+  "lr_protocol": "zoobot_v2.0.1 defaults per PROJECT.md 7.1a: head_lr == top-block lr, lr_decay 0.75, weight_decay 0.05, no LR schedule. Same values round-4 CORAL used. Tuning budget for DANN: ZERO (7.14a).",
+  "pos_fraction": 0.5,
+  "seed": 42,
+  "head_type": "linear",
+  "dann_lambda_schedule": "2/(1+exp(-10p))-1, p = min(step/horizon, 1)",
+  "dann_lambda_horizon": 2000,
+  "dann_lambda_horizon_note": "DECLARED ABSOLUTE CONSTANT. NOT total_steps. It must be IDENTICAL in this development run and in every confirmatory run, or the two see different objectives at the same step and this curve stops predicting them -- silently, since both would still train and both would still look plausible.",
+  "dann_lambda_zero": true,
+  "dann_lambda_zero_note": "the CONTROL arm. lambda is pinned to 0.0 at every step but the GRL and D still run, so the control exercises the identical code path, consumes identical RNG, and carries identical parameter counts and optimizer groups. With lambda = 0 the GRL returns exactly-zero gradient, so the encoder and head see the domain term not at all -- test_da_dann.py asserts that this is bit-identical to removing the term entirely.",
+  "dann_lambda_at_step0": 0.0,
+  "dann_lambda_at_max_steps": 0.0,
+  "dann_domain_label_source": 1,
+  "dann_domain_label_target": 0,
+  "dann_d_topology": "640 -> 1024 -> 1024 -> 1",
+  "dann_d_hidden": 1024,
+  "dann_d_norm": "LayerNorm",
+  "dann_d_norm_note": "DELIBERATE substitution for tllib's BatchNorm1d. D is fed ONE tensor holding both domains, so any batch-coupled normalisation lets D read the domain label out of the batch statistics instead of the features. Also keeps the assembled model BatchNorm-free end to end (7.1a measured the encoder at 0 BatchNorm), which is asserted at startup, not assumed.",
+  "dann_d_output": "logits (no sigmoid); loss = BCEWithLogitsLoss",
+  "dann_d_dropout": 0.2,
+  "dann_d_dropout_layers": 2,
+  "dann_d_dropout_note": "Dropout 0.2 after each hidden activation. Belfiore et al. (2024, A&A) apply dropout between hidden layers; we apply it after each, given a target pool roughly 20x smaller. Topology 1024/1024 from Ganin/tllib, unmodified. Stated as a DEVIATION rather than as inheritance: the rate is theirs, the placement is ours. --dann-d-dropout-layers 1 restores the literal between-hidden-layers reading. Neither value was tuned.",
+  "dann_d_train_eval_semantics": "D is the FIRST module in this pipeline for which .train()/.eval() means anything -- 7.1a measured the encoder at 0 BatchNorm and 0 active dropout, so train/eval was a no-op everywhere until now. D trains in train mode; d_acc_train is measured there, as trained. d_acc_holdout is measured with D in EVAL (dropout off) and the mode restored, because a memorisation monitor carrying a random mask is not comparable to one without. The pair is therefore NOT a like-for-like difference -- read each column's trend.",
+  "dann_single_forward_pass": true,
+  "dann_single_forward_pass_note": "source and target features are CONCATENATED into one tensor and D is called ONCE per step. Two calls would hand D the domain label under any batch-dependent normalisation; the single-pass form removes the question permanently rather than relying on the LayerNorm choice holding forever.",
+  "dann_d_lr": 0.0001,
+  "dann_d_weight_decay": 0.05,
+  "dann_optimizer_groups": "ONE AdamW; D is one extra param group at the head LR",
+  "dann_optimizer_note": "No second optimiser and no separate D learning rate. Gradient reversal is what removes the need for a D/encoder balance -- that is the whole reason DANN was chosen over ADDA -- and a tuned D LR would also be a method-specific search that 7.14a's zero-tuning-budget position does not permit.",
+  "dann_attachment": "head.forward_with_features[1] (post-adapter, post-LayerNorm)",
+  "dann_attachment_note": "THE SAME 640-d tensor round-1 CORAL and round-4 CORAL used, deliberately not moved. On nb3 the adversarial gradient flows through the adapter into stages.1/2/3. Note one real difference from CORAL: CORAL is shift-invariant so its LayerNorm BIAS gradient is analytically zero; D is an arbitrary function of the features, so DANN genuinely reaches the bias too.",
+  "dann_d_holdout_frac": 0.1,
+  "dann_d_holdout_n": 78,
+  "dann_d_holdout_indices": [
+    24,
+    30,
+    31,
+    34,
+    35,
+    47,
+    68,
+    72,
+    87,
+    108,
+    138,
+    152,
+    154,
+    156,
+    167,
+    169,
+    172,
+    186,
+    189,
+    191,
+    207,
+    214,
+    232,
+    243,
+    251,
+    263,
+    268,
+    273,
+    278,
+    289,
+    294,
+    307,
+    311,
+    312,
+    322,
+    333,
+    343,
+    348,
+    355,
+    393,
+    426,
+    443,
+    448,
+    466,
+    471,
+    480,
+    497,
+    504,
+    533,
+    547,
+    550,
+    569,
+    572,
+    588,
+    590,
+    606,
+    613,
+    617,
+    628,
+    629,
+    643,
+    645,
+    662,
+    670,
+    686,
+    689,
+    690,
+    693,
+    694,
+    695,
+    700,
+    704,
+    723,
+    725,
+    772,
+    773,
+    776,
+    777
+  ],
+  "dann_d_holdout_note": "a fixed ~10% slice of the fold's target pool, DETERMINISTIC given seed+fold and recorded above by dataset position. Excluded from D's loss by removal from the target SAMPLER'S POOL (not by a loss mask, which would keep the images in the batch and shrink D's effective target batch below the 256 that 7.4 pins). Scored under no_grad every step as d_acc_holdout; the gap against d_acc_target on the training batch is the memorisation signal.",
+  "spectrum_every": 1,
+  "morph_every": 25,
+  "holdout_every": 1,
+  "monitors": [
+    "d_acc_train",
+    "d_acc_holdout",
+    "d_pred_source_frac",
+    "morph_head_auroc (condition 3)",
+    "morph_head_auroc_pool",
+    "morph_proxy_auroc (no detector)",
+    "morph_proxy_auroc_encoder",
+    "feat_std_per_dim (= src/tgt_perdim_std)",
+    "participation_ratio",
+    "dims_at_90",
+    "dims_at_99",
+    "lambda_current",
+    "loss_domain_raw",
+    "ratio_lambda_domain_over_sup"
+  ],
+  "morph_proxy_instrument": "ONE pool, ML-FP (=1) vs P1-reserve (=0), TWO instruments. HEAD: the trained head's own lens logit, no fit -- the ~0.61-scale instrument that MOVED in the v5 failure, and the one condition 3 reads. PROBE: ridge linear probe on the adapter, AUROC on a held-out half -- the ~0.90-scale instrument that 'stayed ~0.90' through those same failures, logged with NO detector.",
+  "morph_proxy_n_fit_per_class": 64,
+  "morph_proxy_n_eval_per_class": 64,
+  "morph_proxy_ridge_alpha": 1.0,
+  "morph_proxy_pool": {
+    "instrument": "morphology proxy: ML-FP (=1) vs P1-reserve (=0), both real Euclid",
+    "provenance": "RECOVERED from PROJECT_STATE.md's `morphology_probe` role and scripts/linear_probe.py, both of which were dropped at the splits_v6 rewrite. The DATA survives; the code did not. The historical readings this instrument produced were morphAUROC 0.914 (raw frozen Zoobot) and 0.898 (SimSiam).",
+    "label_free": "neither class is a lens label -- ML-FP are graded X = NOT a lens, P1-reserve are ungraded random galaxies. No simulated image, no real-lens label and no test-split image is touched.",
+    "n_mlfp_available": 4455,
+    "n_reserve_available": 23160,
+    "n_fit_per_class": 64,
+    "n_eval_per_class": 64,
+    "n_total": 256,
+    "seed": 42,
+    "seed_effective": 90252,
+    "aug": "none",
+    "ridge_alpha": 1.0,
+    "mlfp_locations": [
+      [
+        "ml_fp_tile102019586.npz",
+        16
+      ],
+      [
+        "ml_fp_tile102020055.npz",
+        5
+      ],
+      [
+        "ml_fp_tile102020057.npz",
+        19
+      ],
+      [
+        "ml_fp_tile102020062.npz",
+        15
+      ],
+      [
+        "ml_fp_tile102020063.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102020064.npz",
+        12
+      ],
+      [
+        "ml_fp_tile102020529.npz",
+        15
+      ],
+      [
+        "ml_fp_tile102020531.npz",
+        10
+      ],
+      [
+        "ml_fp_tile102020532.npz",
+        3
+      ],
+      [
+        "ml_fp_tile102020534.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102020535.npz",
+        0
+      ],
+      [
+        "ml_fp_tile102020536.npz",
+        10
+      ],
+      [
+        "ml_fp_tile102020538.npz",
+        9
+      ],
+      [
+        "ml_fp_tile102020539.npz",
+        16
+      ],
+      [
+        "ml_fp_tile102021007.npz",
+        3
+      ],
+      [
+        "ml_fp_tile102021008.npz",
+        2
+      ],
+      [
+        "ml_fp_tile102021009.npz",
+        4
+      ],
+      [
+        "ml_fp_tile102021010.npz",
+        0
+      ],
+      [
+        "ml_fp_tile102021011.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102021011.npz",
+        12
+      ],
+      [
+        "ml_fp_tile102021011.npz",
+        14
+      ],
+      [
+        "ml_fp_tile102021013.npz",
+        14
+      ],
+      [
+        "ml_fp_tile102021017.npz",
+        14
+      ],
+      [
+        "ml_fp_tile102021494.npz",
+        10
+      ],
+      [
+        "ml_fp_tile102021494.npz",
+        16
+      ],
+      [
+        "ml_fp_tile102021500.npz",
+        13
+      ],
+      [
+        "ml_fp_tile102021503.npz",
+        0
+      ],
+      [
+        "ml_fp_tile102021503.npz",
+        6
+      ],
+      [
+        "ml_fp_tile102021503.npz",
+        13
+      ],
+      [
+        "ml_fp_tile102021980.npz",
+        6
+      ],
+      [
+        "ml_fp_tile102021982.npz",
+        13
+      ],
+      [
+        "ml_fp_tile102021982.npz",
+        19
+      ],
+      [
+        "ml_fp_tile102021984.npz",
+        5
+      ],
+      [
+        "ml_fp_tile102021986.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102022474.npz",
+        1
+      ],
+      [
+        "ml_fp_tile102022474.npz",
+        5
+      ],
+      [
+        "ml_fp_tile102022476.npz",
+        14
+      ],
+      [
+        "ml_fp_tile102022478.npz",
+        0
+      ],
+      [
+        "ml_fp_tile102022480.npz",
+        10
+      ],
+      [
+        "ml_fp_tile102022481.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102022482.npz",
+        6
+      ],
+      [
+        "ml_fp_tile102022484.npz",
+        17
+      ],
+      [
+        "ml_fp_tile102022977.npz",
+        5
+      ],
+      [
+        "ml_fp_tile102022978.npz",
+        9
+      ],
+      [
+        "ml_fp_tile102022978.npz",
+        10
+      ],
+      [
+        "ml_fp_tile102022979.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102022979.npz",
+        8
+      ],
+      [
+        "ml_fp_tile102022980.npz",
+        3
+      ],
+      [
+        "ml_fp_tile102023477.npz",
+        11
+      ],
+      [
+        "ml_fp_tile102023479.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102042282.npz",
+        6
+      ],
+      [
+        "ml_fp_tile102042914.npz",
+        5
+      ],
+      [
+        "ml_fp_tile102042915.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102042916.npz",
+        3
+      ],
+      [
+        "ml_fp_tile102042916.npz",
+        14
+      ],
+      [
+        "ml_fp_tile102043548.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102043550.npz",
+        4
+      ],
+      [
+        "ml_fp_tile102044182.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102044184.npz",
+        4
+      ],
+      [
+        "ml_fp_tile102044187.npz",
+        16
+      ],
+      [
+        "ml_fp_tile102044188.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102044822.npz",
+        2
+      ],
+      [
+        "ml_fp_tile102044823.npz",
+        2
+      ],
+      [
+        "ml_fp_tile102044826.npz",
+        1
+      ],
+      [
+        "ml_fp_tile102044826.npz",
+        3
+      ],
+      [
+        "ml_fp_tile102045463.npz",
+        0
+      ],
+      [
+        "ml_fp_tile102045463.npz",
+        11
+      ],
+      [
+        "ml_fp_tile102045468.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102046110.npz",
+        0
+      ],
+      [
+        "ml_fp_tile102046110.npz",
+        8
+      ],
+      [
+        "ml_fp_tile102046113.npz",
+        2
+      ],
+      [
+        "ml_fp_tile102157634.npz",
+        10
+      ],
+      [
+        "ml_fp_tile102157954.npz",
+        16
+      ],
+      [
+        "ml_fp_tile102157954.npz",
+        17
+      ],
+      [
+        "ml_fp_tile102157955.npz",
+        17
+      ],
+      [
+        "ml_fp_tile102157958.npz",
+        15
+      ],
+      [
+        "ml_fp_tile102158271.npz",
+        3
+      ],
+      [
+        "ml_fp_tile102158271.npz",
+        11
+      ],
+      [
+        "ml_fp_tile102158271.npz",
+        13
+      ],
+      [
+        "ml_fp_tile102158272.npz",
+        18
+      ],
+      [
+        "ml_fp_tile102158273.npz",
+        11
+      ],
+      [
+        "ml_fp_tile102158273.npz",
+        18
+      ],
+      [
+        "ml_fp_tile102158275.npz",
+        3
+      ],
+      [
+        "ml_fp_tile102158276.npz",
+        16
+      ],
+      [
+        "ml_fp_tile102158277.npz",
+        15
+      ],
+      [
+        "ml_fp_tile102158581.npz",
+        12
+      ],
+      [
+        "ml_fp_tile102158582.npz",
+        16
+      ],
+      [
+        "ml_fp_tile102158583.npz",
+        2
+      ],
+      [
+        "ml_fp_tile102158585.npz",
+        3
+      ],
+      [
+        "ml_fp_tile102158585.npz",
+        14
+      ],
+      [
+        "ml_fp_tile102158586.npz",
+        12
+      ],
+      [
+        "ml_fp_tile102158588.npz",
+        1
+      ],
+      [
+        "ml_fp_tile102158588.npz",
+        11
+      ],
+      [
+        "ml_fp_tile102158589.npz",
+        18
+      ],
+      [
+        "ml_fp_tile102158885.npz",
+        8
+      ],
+      [
+        "ml_fp_tile102158886.npz",
+        5
+      ],
+      [
+        "ml_fp_tile102158888.npz",
+        16
+      ],
+      [
+        "ml_fp_tile102158889.npz",
+        4
+      ],
+      [
+        "ml_fp_tile102158890.npz",
+        5
+      ],
+      [
+        "ml_fp_tile102158893.npz",
+        8
+      ],
+      [
+        "ml_fp_tile102158893.npz",
+        12
+      ],
+      [
+        "ml_fp_tile102158894.npz",
+        8
+      ],
+      [
+        "ml_fp_tile102158895.npz",
+        13
+      ],
+      [
+        "ml_fp_tile102159186.npz",
+        4
+      ],
+      [
+        "ml_fp_tile102159186.npz",
+        19
+      ],
+      [
+        "ml_fp_tile102159188.npz",
+        2
+      ],
+      [
+        "ml_fp_tile102159192.npz",
+        9
+      ],
+      [
+        "ml_fp_tile102159195.npz",
+        0
+      ],
+      [
+        "ml_fp_tile102159485.npz",
+        4
+      ],
+      [
+        "ml_fp_tile102159485.npz",
+        21
+      ],
+      [
+        "ml_fp_tile102159486.npz",
+        4
+      ],
+      [
+        "ml_fp_tile102159487.npz",
+        9
+      ],
+      [
+        "ml_fp_tile102159488.npz",
+        6
+      ],
+      [
+        "ml_fp_tile102159492.npz",
+        7
+      ],
+      [
+        "ml_fp_tile102159771.npz",
+        14
+      ],
+      [
+        "ml_fp_tile102159773.npz",
+        8
+      ],
+      [
+        "ml_fp_tile102159774.npz",
+        3
+      ],
+      [
+        "ml_fp_tile102159780.npz",
+        24
+      ],
+      [
+        "ml_fp_tile102160055.npz",
+        15
+      ],
+      [
+        "ml_fp_tile102160056.npz",
+        13
+      ],
+      [
+        "ml_fp_tile102160057.npz",
+        20
+      ],
+      [
+        "ml_fp_tile102160335.npz",
+        20
+      ],
+      [
+        "ml_fp_tile102160338.npz",
+        18
+      ],
+      [
+        "ml_fp_tile102160339.npz",
+        23
+      ],
+      [
+        "ml_fp_tile102160608.npz",
+        12
+      ],
+      [
+        "ml_fp_tile102160609.npz",
+        6
+      ],
+      [
+        "ml_fp_tile102160609.npz",
+        10
+      ],
+      [
+        "ml_fp_tile102160610.npz",
+        16
+      ]
+    ],
+    "reserve_locations": [
+      [
+        "shard_tile102019586.npz",
+        344
+      ],
+      [
+        "shard_tile102020059.npz",
+        948
+      ],
+      [
+        "shard_tile102020060.npz",
+        423
+      ],
+      [
+        "shard_tile102020061.npz",
+        102
+      ],
+      [
+        "shard_tile102020063.npz",
+        55
+      ],
+      [
+        "shard_tile102020063.npz",
+        771
+      ],
+      [
+        "shard_tile102020065.npz",
+        537
+      ],
+      [
+        "shard_tile102020530.npz",
+        496
+      ],
+      [
+        "shard_tile102020531.npz",
+        510
+      ],
+      [
+        "shard_tile102020534.npz",
+        157
+      ],
+      [
+        "shard_tile102020535.npz",
+        136
+      ],
+      [
+        "shard_tile102020535.npz",
+        521
+      ],
+      [
+        "shard_tile102020535.npz",
+        719
+      ],
+      [
+        "shard_tile102020537.npz",
+        753
+      ],
+      [
+        "shard_tile102020539.npz",
+        375
+      ],
+      [
+        "shard_tile102021012.npz",
+        850
+      ],
+      [
+        "shard_tile102021012.npz",
+        884
+      ],
+      [
+        "shard_tile102021014.npz",
+        395
+      ],
+      [
+        "shard_tile102021016.npz",
+        732
+      ],
+      [
+        "shard_tile102021017.npz",
+        751
+      ],
+      [
+        "shard_tile102021018.npz",
+        204
+      ],
+      [
+        "shard_tile102021491.npz",
+        274
+      ],
+      [
+        "shard_tile102021495.npz",
+        44
+      ],
+      [
+        "shard_tile102021496.npz",
+        116
+      ],
+      [
+        "shard_tile102021496.npz",
+        634
+      ],
+      [
+        "shard_tile102021497.npz",
+        209
+      ],
+      [
+        "shard_tile102021497.npz",
+        1391
+      ],
+      [
+        "shard_tile102021497.npz",
+        1452
+      ],
+      [
+        "shard_tile102021499.npz",
+        281
+      ],
+      [
+        "shard_tile102021499.npz",
+        1035
+      ],
+      [
+        "shard_tile102021980.npz",
+        673
+      ],
+      [
+        "shard_tile102021980.npz",
+        890
+      ],
+      [
+        "shard_tile102021982.npz",
+        621
+      ],
+      [
+        "shard_tile102021985.npz",
+        832
+      ],
+      [
+        "shard_tile102021989.npz",
+        265
+      ],
+      [
+        "shard_tile102021990.npz",
+        288
+      ],
+      [
+        "shard_tile102021991.npz",
+        112
+      ],
+      [
+        "shard_tile102021991.npz",
+        369
+      ],
+      [
+        "shard_tile102022476.npz",
+        702
+      ],
+      [
+        "shard_tile102022476.npz",
+        1101
+      ],
+      [
+        "shard_tile102022479.npz",
+        74
+      ],
+      [
+        "shard_tile102022479.npz",
+        359
+      ],
+      [
+        "shard_tile102022484.npz",
+        857
+      ],
+      [
+        "shard_tile102022978.npz",
+        36
+      ],
+      [
+        "shard_tile102023476.npz",
+        461
+      ],
+      [
+        "shard_tile102023479.npz",
+        250
+      ],
+      [
+        "shard_tile102023481.npz",
+        288
+      ],
+      [
+        "shard_tile102023482.npz",
+        208
+      ],
+      [
+        "shard_tile102023482.npz",
+        977
+      ],
+      [
+        "shard_tile102023985.npz",
+        273
+      ],
+      [
+        "shard_tile102041656.npz",
+        431
+      ],
+      [
+        "shard_tile102042284.npz",
+        89
+      ],
+      [
+        "shard_tile102042285.npz",
+        429
+      ],
+      [
+        "shard_tile102042287.npz",
+        86
+      ],
+      [
+        "shard_tile102042287.npz",
+        642
+      ],
+      [
+        "shard_tile102042288.npz",
+        434
+      ],
+      [
+        "shard_tile102042913.npz",
+        18
+      ],
+      [
+        "shard_tile102042914.npz",
+        292
+      ],
+      [
+        "shard_tile102042916.npz",
+        326
+      ],
+      [
+        "shard_tile102043547.npz",
+        120
+      ],
+      [
+        "shard_tile102043547.npz",
+        122
+      ],
+      [
+        "shard_tile102043547.npz",
+        474
+      ],
+      [
+        "shard_tile102043548.npz",
+        288
+      ],
+      [
+        "shard_tile102043548.npz",
+        728
+      ],
+      [
+        "shard_tile102043552.npz",
+        501
+      ],
+      [
+        "shard_tile102044182.npz",
+        184
+      ],
+      [
+        "shard_tile102044184.npz",
+        322
+      ],
+      [
+        "shard_tile102044184.npz",
+        465
+      ],
+      [
+        "shard_tile102044185.npz",
+        371
+      ],
+      [
+        "shard_tile102044186.npz",
+        494
+      ],
+      [
+        "shard_tile102044187.npz",
+        474
+      ],
+      [
+        "shard_tile102044187.npz",
+        581
+      ],
+      [
+        "shard_tile102044187.npz",
+        995
+      ],
+      [
+        "shard_tile102044188.npz",
+        8
+      ],
+      [
+        "shard_tile102044188.npz",
+        196
+      ],
+      [
+        "shard_tile102044821.npz",
+        86
+      ],
+      [
+        "shard_tile102044821.npz",
+        801
+      ],
+      [
+        "shard_tile102044827.npz",
+        570
+      ],
+      [
+        "shard_tile102045465.npz",
+        465
+      ],
+      [
+        "shard_tile102045466.npz",
+        757
+      ],
+      [
+        "shard_tile102045467.npz",
+        381
+      ],
+      [
+        "shard_tile102045468.npz",
+        92
+      ],
+      [
+        "shard_tile102046111.npz",
+        820
+      ],
+      [
+        "shard_tile102046112.npz",
+        378
+      ],
+      [
+        "shard_tile102046113.npz",
+        269
+      ],
+      [
+        "shard_tile102046113.npz",
+        374
+      ],
+      [
+        "shard_tile102157630.npz",
+        317
+      ],
+      [
+        "shard_tile102157633.npz",
+        211
+      ],
+      [
+        "shard_tile102157953.npz",
+        855
+      ],
+      [
+        "shard_tile102157958.npz",
+        470
+      ],
+      [
+        "shard_tile102158270.npz",
+        424
+      ],
+      [
+        "shard_tile102158271.npz",
+        911
+      ],
+      [
+        "shard_tile102158273.npz",
+        384
+      ],
+      [
+        "shard_tile102158278.npz",
+        262
+      ],
+      [
+        "shard_tile102158582.npz",
+        490
+      ],
+      [
+        "shard_tile102158583.npz",
+        582
+      ],
+      [
+        "shard_tile102158587.npz",
+        477
+      ],
+      [
+        "shard_tile102158588.npz",
+        528
+      ],
+      [
+        "shard_tile102158885.npz",
+        265
+      ],
+      [
+        "shard_tile102158889.npz",
+        424
+      ],
+      [
+        "shard_tile102158889.npz",
+        687
+      ],
+      [
+        "shard_tile102158891.npz",
+        277
+      ],
+      [
+        "shard_tile102158891.npz",
+        424
+      ],
+      [
+        "shard_tile102158892.npz",
+        808
+      ],
+      [
+        "shard_tile102158896.npz",
+        354
+      ],
+      [
+        "shard_tile102158896.npz",
+        904
+      ],
+      [
+        "shard_tile102159482.npz",
+        133
+      ],
+      [
+        "shard_tile102159483.npz",
+        472
+      ],
+      [
+        "shard_tile102159484.npz",
+        40
+      ],
+      [
+        "shard_tile102159484.npz",
+        1000
+      ],
+      [
+        "shard_tile102159486.npz",
+        436
+      ],
+      [
+        "shard_tile102159491.npz",
+        25
+      ],
+      [
+        "shard_tile102159491.npz",
+        787
+      ],
+      [
+        "shard_tile102159492.npz",
+        692
+      ],
+      [
+        "shard_tile102159771.npz",
+        456
+      ],
+      [
+        "shard_tile102159772.npz",
+        387
+      ],
+      [
+        "shard_tile102159774.npz",
+        554
+      ],
+      [
+        "shard_tile102159774.npz",
+        730
+      ],
+      [
+        "shard_tile102159779.npz",
+        192
+      ],
+      [
+        "shard_tile102160057.npz",
+        864
+      ],
+      [
+        "shard_tile102160059.npz",
+        72
+      ],
+      [
+        "shard_tile102160059.npz",
+        626
+      ],
+      [
+        "shard_tile102160062.npz",
+        0
+      ],
+      [
+        "shard_tile102160335.npz",
+        444
+      ],
+      [
+        "shard_tile102160335.npz",
+        519
+      ],
+      [
+        "shard_tile102160337.npz",
+        216
+      ],
+      [
+        "shard_tile102160338.npz",
+        794
+      ],
+      [
+        "shard_tile102160611.npz",
+        306
+      ]
+    ],
+    "disjointness": "P1-reserve is the part of partition 1 that source_train's neg_random did not consume, so it is disjoint from every training and evaluation role. The ML-FP side is NOT disjoint -- all 4,455 are source_train negatives -- which is faithful to the original instrument and is stated, not hidden."
+  },
+  "morph_proxy_pool_membership": {
+    "mlfp_in_source_train_negatives": 4455,
+    "mlfp_total_on_disk": 4455,
+    "mlfp_fraction_seen_in_training": 1.0,
+    "mlfp_in_target_pools": 0,
+    "mlfp_in_val": 0,
+    "mlfp_in_test_negatives": 0,
+    "p1_reserve_seen_anywhere": 0,
+    "note": "THE PROBE IS HALF-SEEN, ASYMMETRICALLY, and that is recorded rather than corrected. ALL 4,455 ML-FP objects are source_train negatives (label 0, source domain); they appear in no target pool, no val pool and no test negatives. The P1-reserve side is seen by nothing. So the probe's POSITIVE class is 100% training data and its NEGATIVE class is 0%. Consequences, stated: (a) the ABSOLUTE level is not a clean generalisation number -- part of it can be memorisation of images the supervised BCE has already shaped; (b) the monitor's JOB is to detect DESTRUCTION of linear access, and a drop is a drop whether the images were seen or not, so the comparison against the lambda=0 control at the same step is unaffected -- both arms see exactly the same images. (c) This is NOT lens-label leakage: ML-FP and P1-reserve are both class 0 in the lens task, so the probe's label is not the model's label. The historical instrument had the same property."
+  },
+  "morph_proxy_note": "RECOVERED, not invented. PROJECT_STATE.md records a `morphology_probe` role (ML-FP=1 vs P1-reserve=0, both real) and a scripts/linear_probe.py that selected checkpoints on it; BOTH were dropped at the splits_v6 rewrite. The data survived: 4,455 ML-FP hard negatives, and 23,160 of partition 1 that source_train's neg_random did not consume -- which IS the 'P1-reserve' the old instrument named. Label-free by construction: ML-FP are graded X = NOT a lens, P1-reserve are ungraded random galaxies, and no simulated image, no real-lens label and no test-split image is touched. Step-0 reading on raw frozen encoder features: 0.9214, against the historical 0.914 -- evidence the recovery is faithful, not a reproduction (the original sample, seed and probe hyperparameters are gone with linear_probe.py).",
+  "abort_mode": "log_only",
+  "abort_mode_source": "default for arm=dann_nb3_lambda0 fold=0",
+  "abort_mode_rule": "log_only on the DEVELOPMENT fold-0 arm and on the lambda=0 CONTROL; armed on CONFIRMATORY folds 1-4. Reason (brief v3 4.2): if DANN destroys classifier access, that IS the paper result and the full 8000-step curve is the evidence -- aborting at step 1200 throws away exactly what you would be aborting because you found. On a confirmatory fold the trace has no scientific value and a dead run is wasted T4 time. The control must always complete: it is the reference trajectory for every monitor.",
+  "control_curve": null,
+  "allow_control_gaps": false,
+  "abort4_sustain": 500,
+  "abort_conditions": {
+    "1_d_overpowering": "held-out-target domain accuracy > 0.95 for 1000 consecutive steps WITH the domain loss not falling -> the SDAT AdamW failure; action is to switch to ADDA (design doc 6.1)",
+    "2_degenerate_collapse": "d_pred_source_frac outside [0.2, 0.8] for 500 consecutive steps (design doc 6.2)",
+    "3_morph_vs_control": "SECONDARY / graded early warning. morph_head_auroc_pool below the lambda=0 control's value AT THE SAME ABSOLUTE STEP by more than M, sustained 500 steps. M is currently UNSET -- 3a is INACTIVE. Reworded from the design doc: 'adversarial pressure has degraded linear access to morphology relative to unfreezing alone', NOT 'the documented failure has recurred' -- see morph_proxy_abort_note.",
+    "3b_morph_sign_flip": "**PRIMARY DETECTOR.** morph_head_auroc_pool < 0.5. The historical failure WAS a sign flip -- the head instrument fell ~0.61 to ~0.37 (plain DANN) / ~0.33 (IW-CDAN), decisively below chance -- so on the head column this reproduces the actual event with NO invented threshold and no calibration. No sustain.",
+    "4_rank_collapse": "participation ratio below 20 of 640 (either domain) for 500 steps. The sustain is a DECLARED ADDITION; the design doc gives none."
+  },
+  "abort_cond3_column": "morph_head_auroc_pool",
+  "abort_cond3_interpretation_column": "morph_head_auroc",
+  "abort_cond3_median_window_k": 1,
+  "abort_cond3_median_window_note": "k=1 is no smoothing. k>1 makes 3a threshold the trailing median of the last k PAIRED DIFFERENCES (the difference is what 3a reads, so the difference is what is smoothed -- smoothing each side separately would need an assumption about the control's own smoothness that nothing supports). **k MUST BE DECLARED BEFORE M**: a window chosen after a candidate M is on the table has been selected to make that M work. With k>1 the window must be FULL before 3a evaluates, so the earliest possible fire moves later by (k-1)*morph_every steps -- 175 at k=8, morph_every=25, against a 500-step sustain.",
+  "abort_cond3_declaration_criterion": {
+    "rule": "Let J = median absolute step-to-step change in morph_head_auroc_pool over arm 1, steps 2000-8000. If a candidate M >= 3*J can be declared while M <= 0.04: declare M, hash it, proceed with 3a active. Else: declare 3a UNCALIBRABLE at this pool size, record J and the reason, and let 3b carry condition 3 alone.",
+    "feasible_iff": "3*J <= 0.04",
+    "ceiling_rationale": "0.04 is roughly 60% of the whole-pool headroom over chance (0.0657); an M above it would only fire in territory 3b already covers",
+    "factor_status": "the 3x factor is a DECLARED judgement call",
+    "uncalibrable_is_legitimate": "declaring 3a UNCALIBRABLE is a legitimate outcome, NOT a failure. It is reported as a property of the historical instrument, which was never designed as a graded monitor.",
+    "computed_by": "run_dann_r5.py --morph-stats <arm1>/steps.csv, or automatically at the end of every run",
+    "pre_registered": "this criterion was fixed BEFORE arm 1 ran. PROJECT.md 7.17 / runs/dann_r5_prereg.json."
+  },
+  "abort_cond3_column_note": "BOTH DETECTORS read morph_head_auroc_pool -- the trained head's own lens logit on ALL 256 pool images. The head is NOT FITTED, so it needs no held-out half; and neither detector is the head-vs-probe contrast (3a is head-to-control across arms, 3b is head-to-0.5), so the eval half's same-images argument does not bind on them. Whole-pool step 0 is 0.565735, headroom 0.0657, against eval-half 0.578125 / 0.0781: 3b becomes marginally MORE sensitive, which is a better-estimated number rather than a looser threshold. morph_head_auroc (eval half) stays logged FOR INTERPRETATION -- paired with morph_proxy_auroc on the same 128 images, head down + probe held = classifier ACCESS destroyed, both down = the REPRESENTATION went. That is a by-eye diagnostic, not a streak counter.",
+  "abort_cond3_margin": null,
+  "abort_cond3_margin_status": "UNSET. Condition 3a is INACTIVE and refuses to evaluate; an --abort-mode armed run REFUSES TO START. The margin is declared off arm 1's lambda=0 control trajectory ON THE HEAD COLUMN and hashed before arm 2. It is NOT defaulted to brief v3's 0.10: that was declared against the frozen probe (step 0 = 0.9202, headroom 0.4202) and is scale-wrong for the head column (step 0 ~= 0.5781, headroom ~0.078), where a 0.10 drop lands below chance.",
+  "morph_proxy_abort_note": "THREE thresholds are withdrawn, and the REASON matters. (1) The design doc's 0.55 was NOT invented -- PROJECT_STATE v2.md 6/8-F4 records the trained HEAD's morphology AUROC falling ~0.61 -> ~0.37 under plain DANN and ~0.33 under IW-CDAN, and 0.55 sat just under that ~0.61 baseline. It is withdrawn because it is meaningless on the FROZEN-PROBE column, which reads ~0.92. (2) Brief v2's 0.6910 rescaling of it is withdrawn because rescaling a threshold across a change of instrument assumes the two measure the same thing. (3) Brief v3's 0.10 control margin is withdrawn because it was declared against the frozen probe's 0.4202 headroom and is scale-wrong for the head column's ~0.078. What replaces them: condition 3 now READS THE HEAD COLUMN, 3b (AUROC < 0.5) is the primary detector and needs no threshold at all, and 3a's margin is declared off arm 1's own control trajectory and hashed before arm 2.",
+  "feature_scale_monitor": "mean PER-DIMENSION std is the headline indicator, NOT mean ||f||. 7.15: round-4 CORAL's total feature variance fell 56x while mean ||f|| moved 2.5%, because ||z|| is dominated by the mean vector while covariance depends only on the deviation. Mean ||f|| is still logged, as an indicator KNOWN to be blind to the thing it was originally chosen to catch.",
+  "rank_monitor": "participation_ratio / dims_at_90 / dims_at_99, per domain. Logged separately from the scale monitors because 7.15 established that round 4's collapse was SCALE, not RANK (dims@90 29->26, dims@99 164->168, no direction zeroed) and that distinction is unrecoverable if the two are merged.",
+  "health_anchors": {
+    "d_acc_train_at_chance": 0.5,
+    "d_acc_train_note": "0.5 is the adversarial equilibrium AND what a collapsed D that predicts one domain scores when the batch is balanced. d_pred_source_frac separates them: ~0.5 at equilibrium, ~0 or ~1 on collapse. Never read d_acc_train alone.",
+    "memorisation_note": "d_acc_target (train batch) minus d_acc_holdout. A persistent positive gap is D separating images it trains on from statistically identical images it does not -- i.e. the domain 'signal' it is teaching the encoder to remove is partly memorised identity, not domain shift.",
+    "round1_dann_reference": "runs/curve_dann_fold0 -- CACHED-FEATURE, bottleneck-adapter, BatchNorm D, lambda from run length. NOT comparable step-for-step; kept as a sanity range only.",
+    "feat_std_reference_round4_coral": "nb3 CORAL gamma=16: per-dimension std fell ~7.7x while mean ||f|| moved 2.5%. If DANN shrinks the representation the same way, per-dim std is where it shows and ||f|| is where it does not.",
+    "morph_proxy_note": "ML-FP vs P1-reserve linear-probe AUROC (morph_proxy.py), the RECOVERED instrument that caught the original DANN failure. Step-0 reading and a PROPOSED abort level are in runs/dann_r5_morph_step0.json -- do NOT inherit the design doc's absolute 0.55, which belongs to a different instrument with a 0.61 baseline.",
+    "morph_proxy_train_eval_note": "d_acc_train is measured in TRAIN mode (dropout on, as trained) and d_acc_holdout in EVAL mode (dropout off, so the memorisation monitor is not carrying a random mask). The pair is therefore not a like-for-like difference; read each column's TREND."
+  },
+  "encoder_eval": "live_encode",
+  "encoder_eval_note": "the frozen cache is INVALID at n_blocks>0 (7.1a). Scoring a real nb3 checkpoint from the stale cache once gave TPR 0.194 against a logged 0.020 -- a different model, not a rounding difference.",
+  "augmentation": "weak (+-3px translate, PROJECT.md 7.3)",
+  "fp16": true,
+  "precision": "fp16",
+  "eval_precision": "fp32",
+  "device": "cuda",
+  "num_workers": 2,
+  "single_gpu": "no DataParallel / DistributedDataParallel / device sharding anywhere in this path -- halving the per-device batch would halve what D sees per step",
+  "expect_step0_tpr": 0.19387755102040816,
+  "expect_step0_auroc": 0.9426918613954919,
+  "expect_head_l2": 28.475603103637695,
+  "step0_tpr_tolerance": 0.01020408163265306,
+  "step0_auroc_tolerance": 0.001,
+  "step0_gate_skippable": false,
+  "hard_gate": "NON-SKIPPABLE. Step-0 TPR@1e-3 AND AUROC must reproduce the phase-1 head's own per-fold value or the run ABORTS. There is no bypass flag, by design: the phase-1 head is fold-INDEPENDENT (Baseline A is source-only and the source does not vary by fold), so the head-norm check proves the right FILE and this gate is the only thing that proves the right FOLD. Tolerances are chosen by the EVAL PATH, not by a flag (7.7): TPR at 0 on the deterministic cached path and at ONE POSITIVE on the live-encode path, AUROC at 1e-3 always. Tolerance 0 on TPR across a re-encode is what cost a session on FreeMatch fold 2 -- one positive, on a correct run.",
+  "da_hook_slot": "Trainer.coral (see dann_round5.install_dann). train_skeleton.py is UNMODIFIED; DannLoss is installed into the one attribute train_step reaches its DA term through, at coral_weight=1.0. coral_weight=1.0 is not a fudge: canonical DANN adds the domain term unweighted and lambda lives in the GRL.",
+  "round1_dann_fold0_reference": {
+    "tpr_at_1e-3_last_checkpoint": 0.19387755102040816,
+    "read_off": "step_15000 of 75 checkpoints (the R1 last-checkpoint rule)",
+    "oracle_best": 0.21428571428571427,
+    "oracle_step": 6800,
+    "curve_range": [
+      0.09183673469387756,
+      0.21428571428571427
+    ],
+    "curve_mean": 0.1812244897959184,
+    "source": "runs/curve_dann_fold0/results.json",
+    "note": "MEASURED, not the '~0.19' that had been quoted from memory -- it happens to be right. NOT COMPARABLE step-for-step to this round: that run was CACHED-FEATURE with a 640->64->640 bottleneck adapter, SGD (lr 1e-3, momentum 0.9, wd 1e-4) rather than AdamW, a BatchNorm discriminator, and a lambda computed from total_steps. Worth one observation: 0.193878 is EXACTLY Baseline A's own fold-0 step-8000 value to 16 digits, which is 7.4's 'marginal alignment sits at baseline' in its sharpest form."
+  },
+  "reporting_note": "fold 0 is DEVELOPMENT (7.11 / 7.14) and no number from it enters a headline. Report TPR@FPR=1e-3 as a RATE, never as counts (PROJECT.md 9).",
+  "no_batchnorm_check": {
+    "n_modules_scanned": 218,
+    "n_batchnorm": 0,
+    "context": "head + encoder + discriminator"
+  },
+  "out_dir": "/kaggle/working/runs/dann_r5_nb3_lambda0_fold0",
+  "purpose": "PROJECT.md 7.14 fold-0 DEVELOPMENT run for DANN: fix DANN's own budget from its own fold-0 curve, before any confirmatory fold exists. Fold 0 is development; no number here enters a headline.",
+  "continuation": "NONE. This is a FRESH trajectory from step 0. 7.11 documented three silent restarts (threshold buffers, schedule position, AdamW moments) when continuing from a weights-only checkpoint; this run does not continue from anything, and its own resume payload carries D as well.",
+  "metric_hygiene": "the ONLY test-set metric computed is the step-0 known-null gate; every training segment runs inside test_label_lockout(); checkpoints are SCORED (logits persisted) but never MEASURED",
+  "paths": {
+    "splits": "/kaggle/input/datasets/navneet78/lens-paper-coral-r4/data/data/splits/splits.json",
+    "data_root": "/kaggle/input/datasets/navneet78/lens-paper-coral-r4/data/data",
+    "cache_dir": "/kaggle/input/datasets/navneet78/lens-paper-coral-r4/data/data/feature_cache",
+    "init_head_from": "/kaggle/input/datasets/navneet78/lens-paper-coral-r4/runs/bakeoff_baseline_A/checkpoints/step_8000.pt"
+  },
+  "started_utc": "2026-08-28T15:18:59Z",
+  "torch_version": "2.10.0+cu128",
+  "script_sha256_16": {
+    "run_dann_r5.py": "9b6e38669cb2e66c",
+    "dann_round5.py": "e186e4ae99ae7d54",
+    "da_losses.py": "6b05cd66dd7ad345",
+    "morph_proxy.py": "ca28a6cfdc2d954a",
+    "calibrate_morph_r5.py": "7c29d3211277a8a3",
+    "train_skeleton.py": "06834cac81d1fdcd",
+    "lens_dataset.py": "87c3701b4eb8e763",
+    "samplers.py": "32753fe586e077de",
+    "live_encode.py": "fbc24be3b7236774",
+    "evaluate.py": "ff2cb7aacb34b35c",
+    "zoobot_encoder.py": "daaea6e57023f8e2",
+    "heads.py": "9f32284d2b26e814",
+    "metrics.py": "5374372546d29267",
+    "coral_round4.py": "f0a0e38b781c5cce"
+  },
+  "steps_completed": 8000,
+  "fp16_skipped_cumulative": 4.0,
+  "resume_events": [],
+  "step0_gate": {
+    "tpr": 0.19387755102040816,
+    "auroc": 0.9427007516518483,
+    "expected_tpr": 0.19387755102040816,
+    "expected_auroc": 0.9426918613954919,
+    "tpr_abs_diff": 0.0,
+    "auroc_abs_diff": 8.890256356419712e-06,
+    "verdict": "PASS",
+    "failed_halves": [],
+    "n_test_positives": 98,
+    "tpr_tolerance": 0.01020408163265306,
+    "auroc_tolerance": 0.001,
+    "skippable": false,
+    "true_init_logits": "true_init.npz"
+  },
+  "peak_gpu_gb_early": 3.3023085594177246,
+  "gpu_name": "Tesla T4",
+  "gpu_total_gb": 14.56219482421875,
+  "gpu_visible_devices": 2,
+  "aborted": false,
+  "abort_reason": null,
+  "abort_watch": {
+    "abort_mode": "log_only",
+    "cond3_column": "morph_head_auroc_pool",
+    "cond3_interpretation_column": "morph_head_auroc",
+    "cond3_column_note": "BOTH DETECTORS read morph_head_auroc_pool -- the trained head's own lens logit on ALL 256 pool images. The head is not fitted, so it needs no held-out half, and neither detector is the head-vs-probe contrast (3a is head-to-control across arms; 3b is head-to-0.5). morph_head_auroc (eval half) stays logged for the head-vs-probe INTERPRETATION -- head down + probe held = ACCESS destroyed, both down = the REPRESENTATION went -- which is a by-eye diagnostic, not a streak counter. morph_proxy_auroc has no detector attached at all.",
+    "cond3_median_window_k": 1,
+    "cond3_median_window_note": "k=1 is no smoothing. k>1 thresholds the trailing median of the last k PAIRED DIFFERENCES (not each side separately). k MUST BE DECLARED BEFORE M: a window chosen after a candidate M is on the table has been selected to make that M work.",
+    "cond3_margin": null,
+    "cond3_margin_status": "UNSET -- condition 3a is INACTIVE and refuses to evaluate",
+    "cond3_primary_detector": "abort3b_morph_sign_flip (AUROC < 0.5)",
+    "control": null,
+    "missing_control_steps": [],
+    "n_missing_control_steps": 0,
+    "conditions": [
+      {
+        "name": "abort1_d_overpowering",
+        "sustain_steps": 1000,
+        "description": "held-out-target domain accuracy > 0.95 for 1000 consecutive steps WITH the domain loss not falling",
+        "action_note": "design doc 6.1: this is the SDAT AdamW failure, and it is the one condition that reverses the DANN-over-ADDA decision. Action if it fires: switch to ADDA, whose separate discriminator optimiser sidesteps it.",
+        "fired": false,
+        "fired_at_step": null,
+        "max_streak_steps": 0,
+        "n_evaluations": 8000,
+        "streak_open_at_end": 0,
+        "detail_at_fire_or_last": {}
+      },
+      {
+        "name": "abort2_degenerate_collapse",
+        "sustain_steps": 500,
+        "description": "d_pred_source_frac outside (0.2, 0.8) for 500 consecutive steps",
+        "action_note": "design doc 6.2: D has collapsed to predicting one domain. d_acc_train near 0.5 is then NOT evidence of alignment, which is why the marginal is logged separately from accuracy.",
+        "fired": false,
+        "fired_at_step": null,
+        "max_streak_steps": 0,
+        "n_evaluations": 8000,
+        "streak_open_at_end": 0,
+        "detail_at_fire_or_last": {}
+      },
+      {
+        "name": "abort3_morph_vs_control",
+        "sustain_steps": 500,
+        "description": "morph_head_auroc_pool below the lambda=0 control's value AT THE SAME ABSOLUTE STEP by more than UNSET -- 3a INACTIVE, for 500 consecutive steps",
+        "action_note": "SECONDARY / graded early warning. Adversarial pressure has degraded linear access to morphology RELATIVE TO UNFREEZING ALONE. Step-matched against the control so unfreezing-only drift is subtracted rather than mistaken for adversarial damage. This is a REPORTABLE RESULT, not a bug.",
+        "fired": false,
+        "fired_at_step": null,
+        "max_streak_steps": 0,
+        "n_evaluations": 0,
+        "streak_open_at_end": 0,
+        "detail_at_fire_or_last": {}
+      },
+      {
+        "name": "abort3b_morph_sign_flip",
+        "sustain_steps": 0,
+        "description": "morph_head_auroc_pool (whole pool) < 0.5 -- the head's own decision function has INVERTED on the morphology task",
+        "action_note": "**PRIMARY DETECTOR.** The historical failure WAS a sign flip: the head instrument fell 0.61 -> 0.37 (plain DANN) / 0.33 (IW-CDAN), decisively below chance. On the head column 'AUROC < 0.5' reproduces that event with NO invented threshold and no calibration, which is a stronger position than any margin declared in advance.",
+        "fired": true,
+        "fired_at_step": 1,
+        "max_streak_steps": 374,
+        "n_evaluations": 8000,
+        "streak_open_at_end": 224,
+        "detail_at_fire_or_last": {
+          "morph_head_auroc_pool": 0.42108154296875
+        }
+      },
+      {
+        "name": "abort4_rank_collapse",
+        "sustain_steps": 500,
+        "description": "participation ratio below 20.0 of 640 (either domain) for 500 consecutive steps",
+        "action_note": "design doc 6.4. DANN's characteristic failure is collapsing to a low-dimensional domain-invariant subspace; the SimSiam finding (PR ~3-5 of 640) shows this project can produce it. DISTINCT from round 4's SCALE collapse -- 7.15. NOTE: the 500-step sustain is a DECLARED ADDITION; the design doc gives condition 4 no sustain, and a single-batch PR is noisy enough that an instantaneous trigger would be twitchy. --abort4-sustain 0 restores the literal reading.",
+        "fired": true,
+        "fired_at_step": 501,
+        "max_streak_steps": 7999,
+        "n_evaluations": 8000,
+        "streak_open_at_end": 7999,
+        "detail_at_fire_or_last": {
+          "min_participation_ratio": 2.1778983425755185
+        }
+      }
+    ],
+    "fired": [
+      "abort3b_morph_sign_flip",
+      "abort4_rank_collapse"
+    ],
+    "withdrawn": "0.55 (the design doc) is WITHDRAWN -- but NOT because it was invented. It sat just under the HEAD instrument's real ~0.61 baseline (PROJECT_STATE v2.md 6/8-F4). It is withdrawn because it is meaningless on the frozen-probe column, which reads ~0.92. Brief v2's 0.6910 rescaling of it is withdrawn too, because rescaling a threshold across a change of instrument assumes the two measure the same thing. Brief v3's 0.10 is withdrawn as well: it was declared against the frozen probe's 0.4202 headroom and is scale-wrong for the head column's ~0.078."
+  },
+  "wall_minutes": 267.7581084807714,
+  "peak_gpu_gb_allocated": 3.3023085594177246,
+  "peak_gpu_gb_reserved": 4.48828125,
+  "n_checkpoints_expected": 32,
+  "n_checkpoints_saved": 32,
+  "morph_trajectory_summary": {
+    "column": "morph_head_auroc_pool",
+    "n_readings_total": 8000,
+    "reading_stride": 1,
+    "k": 1,
+    "J_window_steps": [
+      2000,
+      8000
+    ],
+    "J_n_consecutive_pairs": 6000,
+    "J_median_abs_step_to_step": 0.0,
+    "J_raw": 0.0,
+    "J_raw_n_pairs": 6000,
+    "J_at_k": 0.0,
+    "j_used_for_criterion": "J_raw (k=1, so J_at_k == J_raw)",
+    "J_k_note": "J is computed on the series 3a WILL ACTUALLY THRESHOLD. At k>1 that is the trailing median of the last k readings, whose step-to-step noise is roughly J_raw/sqrt(k); comparing M against the RAW J would over-constrain by ~2.8x at k=8 and could send a viable 3a to UNCALIBRABLE for no reason. The first k-1 readings are DROPPED, matching the detector's refusal to evaluate on a partial window. A CLARIFICATION of the criterion, not a change to it -- and legitimate only because k is declared BEFORE M.",
+    "J_note": "median |change| between CONSECUTIVE READINGS (25 steps apart at --morph-every 25). A LOWER BOUND on the noise in the paired difference 3a thresholds, not that noise itself.",
+    "J_early_window_steps": [
+      0,
+      2000
+    ],
+    "J_early": 0.0,
+    "J_early_raw": 0.0,
+    "J_early_n_pairs": 1999,
+    "J_early_over_J": NaN,
+    "J_early_ratio_warn_at": 2.0,
+    "J_early_WARNING": false,
+    "J_early_note": "the criterion window (2000-8000) measures SETTLED jitter. A collapse, if it happens, happens EARLY -- which is exactly where 3a operates. J_early is a SANITY CHECK to look at before writing M down; M_DECLARABLE is still computed from the 2000-8000 window and is NOT affected by it.",
+    "iqr_window_last_steps": 4000,
+    "iqr_n_readings": 4000,
+    "iqr_q25": 0.47180938720703125,
+    "iqr_q75": 0.5365676879882812,
+    "iqr": 0.06475830078125,
+    "iqr_raw": 0.06475830078125,
+    "iqr_at_k": 0.06475830078125,
+    "J_reduction_factor_at_k": NaN,
+    "iqr_reduction_factor_at_k": 1.0,
+    "k_caution": "MEASURED, and it matters if k>1 is declared. Smoothing reduces J MUCH more than the ~sqrt(k) the criterion's rationale assumed: consecutive trailing medians share k-1 of their k inputs, so the SMOOTHED series' step-to-step change collapses (measured ~11x at k=8, ~5x at k=4, against sqrt(k) = 2.8 and 2.0) while its LEVEL noise -- the thing that could actually hold a 500-step false streak -- falls only about sqrt(k). Compare J_reduction_factor_at_k against iqr_reduction_factor_at_k: if J has fallen far more than the IQR, the criterion has been satisfied by autocorrelation rather than by real noise reduction. NOT ACTED ON HERE -- the criterion is pre-registered and this file does not change it. Flagged so the k decision is made with the number visible.",
+    "trajectory_first": 0.435638427734375,
+    "trajectory_last": 0.42108154296875,
+    "trajectory_min": 0.363128662109375,
+    "trajectory_max": 0.632354736328125,
+    "criterion": "declare M iff a candidate with M >= 3.0*J can be chosen while M <= 0.04; i.e. iff 3.0*J <= 0.04, with J measured on the k=1 series 3a will threshold",
+    "m_factor": 3.0,
+    "m_ceiling": 0.04,
+    "m_ceiling_note": "0.04 is roughly 60% of the whole-pool headroom over chance (0.0657). An M above it would only fire in territory 3b already covers.",
+    "m_min_admissible": 0.0,
+    "M_DECLARABLE": true,
+    "verdict": "AT k=1: DECLARE M in [0.0000, 0.04] and hash it before arm 2.",
+    "k_ordering_constraint": "if J is borderline, --abort3-median-window k > 1 may be used, and k MUST BE DECLARED BEFORE M. A window chosen after a candidate M is on the table has been selected to make that M work."
+  },
+  "finished_utc": "2026-08-28T19:49:48Z"
+}

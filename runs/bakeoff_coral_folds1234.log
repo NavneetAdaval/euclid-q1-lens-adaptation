@@ -1,0 +1,385 @@
+==============================================================================
+MATCHED 5-FOLD BAKE-OFF -- run 2/4: DEEP CORAL @ 8000 steps (per-fold models)
+==============================================================================
+  cache   : C:\Users\krris\ML\lens_paper\data\feature_cache
+  out     : C:\Users\krris\ML\lens_paper\runs\bakeoff_coral
+  ref     : C:\Users\krris\ML\lens_paper\runs\bakeoff_baseline_A\checkpoints\step_8000.pt
+  budget_steps        : 8000
+  epochs_trained      : 43
+  steps_per_epoch     : 188
+  curve_every         : 250
+  batch_size          : 256
+  lr                  : 0.001
+  weight_decay        : 0.0001
+  pos_fraction        : 0.5
+  seed                : 42
+  head_type           : linear
+  selection_rule      : R1_last_checkpoint_step8000
+  curve_folds         : [0, 1, 2, 3, 4]
+  target_fpr          : 0.001
+  method              : deep_coral
+  domain_adaptation   : coral
+  coral_peak_gamma    : 1.0
+  coral_weight_schedule: warmup_cosine
+  coral_warmup_frac   : 0.1
+  coral_min_frac      : 0.1
+  coral_shrinkage     : 0.1
+  coral_include_mean  : True
+  coral_target_ema    : True
+  coral_ema_momentum  : 0.9
+  stop_on_blowup      : False
+  agreement_ref       : C:\Users\krris\ML\lens_paper\runs\bakeoff_baseline_A\checkpoints\step_8000.pt
+  folds_this_invocation: [1, 2, 3, 4]
+==============================================================================
+[ref] scoring Baseline A step_8000.pt on target pools [1, 2, 3, 4] for the agreement column ...
+
+[train fold 1] -> C:\Users\krris\ML\lens_paper\runs\bakeoff_coral\fold1   (warmup_cosine, peak gamma=1.0, stop_on_blowup=False)
+  [fold 1] head=linear  188 steps/epoch  batch=256 (pos_frac~0.50)  src=24000+24000  tgt=391+391  peak_gamma=1.0  schedule=warmup_cosine  blowup(x5,win=188,stop=False)
+    [ep  1] gamma=0.2313 bce=0.0887 coral=0.0255 cov=0.01856 baseline=0.0202 blowup=no
+    [step    250] curve  bce=0.1333 coral=0.0296 | tpr@1e-3 f0=0.1122  f1=0.0714  f2=0.0918  f3=0.0816  f4=0.1237  agr f1=0.9107
+    [ep  2] gamma=0.4639 bce=0.1380 coral=0.0454 cov=0.01878 baseline=0.0202 blowup=no
+    [step    500] curve  bce=0.1045 coral=0.0587 | tpr@1e-3 f0=0.1429  f1=0.1531  f2=0.1429  f3=0.1224  f4=0.1546  agr f1=0.9316
+    [ep  3] gamma=0.6964 bce=0.0883 coral=0.0677 cov=0.01546 baseline=0.0202 blowup=no
+    [step    750] curve  bce=0.0952 coral=0.0739 | tpr@1e-3 f0=0.1633  f1=0.1939  f2=0.1837  f3=0.1633  f4=0.1856  agr f1=0.9462
+    [ep  4] gamma=0.9290 bce=0.0832 coral=0.0539 cov=0.01135 baseline=0.0202 blowup=no
+    [ep  5] gamma=0.9993 bce=0.1156 coral=0.0579 cov=0.01047 baseline=0.0202 blowup=no
+    [step   1000] curve  bce=0.0975 coral=0.0691 | tpr@1e-3 f0=0.1735  f1=0.1735  f2=0.2041  f3=0.1633  f4=0.1856  agr f1=0.9576
+    [ep  6] gamma=0.9957 bce=0.0690 coral=0.0531 cov=0.009557 baseline=0.0202 blowup=no
+    [step   1250] curve  bce=0.0947 coral=0.0576 | tpr@1e-3 f0=0.2041  f1=0.1837  f2=0.1735  f3=0.1429  f4=0.1856  agr f1=0.9507
+    [ep  7] gamma=0.9893 bce=0.0831 coral=0.0583 cov=0.009192 baseline=0.0202 blowup=no
+    [step   1500] curve  bce=0.0798 coral=0.0524 | tpr@1e-3 f0=0.2041  f1=0.1837  f2=0.2143  f3=0.1735  f4=0.1959  agr f1=0.9658
+    [ep  8] gamma=0.9799 bce=0.1705 coral=0.0523 cov=0.007056 baseline=0.0202 blowup=no
+    [ep  9] gamma=0.9677 bce=0.0797 coral=0.0440 cov=0.007851 baseline=0.0202 blowup=no
+    [step   1750] curve  bce=0.1008 coral=0.0416 | tpr@1e-3 f0=0.2449  f1=0.1735  f2=0.2143  f3=0.1837  f4=0.2268  agr f1=0.9637
+    [ep 10] gamma=0.9528 bce=0.0826 coral=0.0458 cov=0.008006 baseline=0.0202 blowup=no
+    [step   2000] curve  bce=0.0545 coral=0.0422 | tpr@1e-3 f0=0.2551  f1=0.1939  f2=0.2041  f3=0.1735  f4=0.2165  agr f1=0.9694
+    [ep 11] gamma=0.9352 bce=0.0896 coral=0.0361 cov=0.006001 baseline=0.0202 blowup=no
+    [step   2250] curve  bce=0.1249 coral=0.0307 | tpr@1e-3 f0=0.2347  f1=0.1633  f2=0.2041  f3=0.1735  f4=0.1959  agr f1=0.9709
+    [ep 12] gamma=0.9150 bce=0.0555 coral=0.0382 cov=0.00588 baseline=0.0202 blowup=no
+    [ep 13] gamma=0.8925 bce=0.0579 coral=0.0352 cov=0.005541 baseline=0.0202 blowup=no
+    [step   2500] curve  bce=0.0773 coral=0.0369 | tpr@1e-3 f0=0.2551  f1=0.1735  f2=0.2245  f3=0.1735  f4=0.2165  agr f1=0.9729
+    [ep 14] gamma=0.8677 bce=0.1155 coral=0.0339 cov=0.005686 baseline=0.0202 blowup=no
+    [step   2750] curve  bce=0.0973 coral=0.0340 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.2041  f3=0.1735  f4=0.2165  agr f1=0.9714
+    [ep 15] gamma=0.8408 bce=0.0747 coral=0.0344 cov=0.006339 baseline=0.0202 blowup=no
+    [step   3000] curve  bce=0.0746 coral=0.0396 | tpr@1e-3 f0=0.2347  f1=0.1939  f2=0.2245  f3=0.1735  f4=0.2062  agr f1=0.9767
+    [ep 16] gamma=0.8120 bce=0.1250 coral=0.0290 cov=0.005957 baseline=0.0202 blowup=no
+    [ep 17] gamma=0.7815 bce=0.0698 coral=0.0326 cov=0.006468 baseline=0.0202 blowup=no
+    [step   3250] curve  bce=0.0998 coral=0.0288 | tpr@1e-3 f0=0.2551  f1=0.1837  f2=0.2143  f3=0.1837  f4=0.2268  agr f1=0.9752
+    [ep 18] gamma=0.7494 bce=0.0685 coral=0.0287 cov=0.006035 baseline=0.0202 blowup=no
+    [step   3500] curve  bce=0.0640 coral=0.0309 | tpr@1e-3 f0=0.2551  f1=0.1735  f2=0.1939  f3=0.1735  f4=0.1959  agr f1=0.9772
+    [ep 19] gamma=0.7160 bce=0.0949 coral=0.0311 cov=0.005827 baseline=0.0202 blowup=no
+    [step   3750] curve  bce=0.0863 coral=0.0221 | tpr@1e-3 f0=0.2347  f1=0.1939  f2=0.2245  f3=0.1837  f4=0.2062  agr f1=0.9787
+    [ep 20] gamma=0.6816 bce=0.0829 coral=0.0238 cov=0.006201 baseline=0.0202 blowup=no
+    [ep 21] gamma=0.6462 bce=0.1513 coral=0.0275 cov=0.006503 baseline=0.0202 blowup=no
+    [step   4000] curve  bce=0.0871 coral=0.0279 | tpr@1e-3 f0=0.2449  f1=0.1735  f2=0.2347  f3=0.1837  f4=0.2371  agr f1=0.9791
+    [ep 22] gamma=0.6103 bce=0.0922 coral=0.0245 cov=0.006086 baseline=0.0202 blowup=no
+    [step   4250] curve  bce=0.0877 coral=0.0206 | tpr@1e-3 f0=0.2347  f1=0.1735  f2=0.1939  f3=0.1837  f4=0.2062  agr f1=0.9795
+    [ep 23] gamma=0.5739 bce=0.1159 coral=0.0188 cov=0.006569 baseline=0.0202 blowup=no
+    [step   4500] curve  bce=0.0590 coral=0.0183 | tpr@1e-3 f0=0.2449  f1=0.1837  f2=0.2143  f3=0.1837  f4=0.2268  agr f1=0.9797
+    [ep 24] gamma=0.5374 bce=0.0638 coral=0.0271 cov=0.006146 baseline=0.0202 blowup=no
+    [ep 25] gamma=0.5010 bce=0.0699 coral=0.0191 cov=0.006152 baseline=0.0202 blowup=no
+    [step   4750] curve  bce=0.0745 coral=0.0158 | tpr@1e-3 f0=0.2449  f1=0.1939  f2=0.2041  f3=0.1735  f4=0.2268  agr f1=0.9814
+    [ep 26] gamma=0.4649 bce=0.0503 coral=0.0157 cov=0.005127 baseline=0.0202 blowup=no
+    [step   5000] curve  bce=0.0463 coral=0.0211 | tpr@1e-3 f0=0.2347  f1=0.1837  f2=0.2143  f3=0.2041  f4=0.2268  agr f1=0.9802
+    [ep 27] gamma=0.4293 bce=0.1218 coral=0.0151 cov=0.006577 baseline=0.0202 blowup=no
+    [step   5250] curve  bce=0.0724 coral=0.0160 | tpr@1e-3 f0=0.2449  f1=0.1531  f2=0.2041  f3=0.1633  f4=0.1856  agr f1=0.9815
+    [ep 28] gamma=0.3946 bce=0.0539 coral=0.0227 cov=0.006408 baseline=0.0202 blowup=no
+    [ep 29] gamma=0.3608 bce=0.1060 coral=0.0136 cov=0.006154 baseline=0.0202 blowup=no
+    [step   5500] curve  bce=0.0595 coral=0.0125 | tpr@1e-3 f0=0.2245  f1=0.1837  f2=0.2041  f3=0.1837  f4=0.2165  agr f1=0.9820
+    [ep 30] gamma=0.3283 bce=0.0841 coral=0.0146 cov=0.006784 baseline=0.0202 blowup=no
+    [step   5750] curve  bce=0.0456 coral=0.0122 | tpr@1e-3 f0=0.2347  f1=0.1735  f2=0.2143  f3=0.1837  f4=0.2371  agr f1=0.9811
+    [ep 31] gamma=0.2973 bce=0.0823 coral=0.0148 cov=0.007163 baseline=0.0202 blowup=no
+    [step   6000] curve  bce=0.1696 coral=0.0107 | tpr@1e-3 f0=0.2449  f1=0.1837  f2=0.2143  f3=0.1837  f4=0.2062  agr f1=0.9824
+    [ep 32] gamma=0.2680 bce=0.0646 coral=0.0108 cov=0.008291 baseline=0.0202 blowup=no
+    [ep 33] gamma=0.2404 bce=0.0840 coral=0.0088 cov=0.007889 baseline=0.0202 blowup=no
+    [step   6250] curve  bce=0.0754 coral=0.0111 | tpr@1e-3 f0=0.2245  f1=0.1837  f2=0.2041  f3=0.1735  f4=0.2165  agr f1=0.9843
+    [ep 34] gamma=0.2150 bce=0.0783 coral=0.0107 cov=0.006284 baseline=0.0202 blowup=no
+    [step   6500] curve  bce=0.0762 coral=0.0091 | tpr@1e-3 f0=0.2245  f1=0.1633  f2=0.2143  f3=0.1735  f4=0.1959  agr f1=0.9842
+    [ep 35] gamma=0.1917 bce=0.0508 coral=0.0079 cov=0.006944 baseline=0.0202 blowup=no
+    [step   6750] curve  bce=0.0698 coral=0.0065 | tpr@1e-3 f0=0.2347  f1=0.1633  f2=0.2143  f3=0.1837  f4=0.2268  agr f1=0.9847
+    [ep 36] gamma=0.1708 bce=0.0885 coral=0.0083 cov=0.01055 baseline=0.0202 blowup=no
+    [ep 37] gamma=0.1524 bce=0.0592 coral=0.0060 cov=0.007877 baseline=0.0202 blowup=no
+    [step   7000] curve  bce=0.0770 coral=0.0052 | tpr@1e-3 f0=0.2143  f1=0.1531  f2=0.2143  f3=0.1735  f4=0.2165  agr f1=0.9829
+    [ep 38] gamma=0.1366 bce=0.1148 coral=0.0056 cov=0.009193 baseline=0.0202 blowup=no
+    [step   7250] curve  bce=0.0738 coral=0.0048 | tpr@1e-3 f0=0.2245  f1=0.1735  f2=0.2143  f3=0.1735  f4=0.2268  agr f1=0.9836
+    [ep 39] gamma=0.1236 bce=0.0566 coral=0.0052 cov=0.008684 baseline=0.0202 blowup=no
+    [step   7500] curve  bce=0.0548 coral=0.0056 | tpr@1e-3 f0=0.2449  f1=0.1735  f2=0.2041  f3=0.1633  f4=0.2165  agr f1=0.9854
+    [ep 40] gamma=0.1133 bce=0.0690 coral=0.0044 cov=0.006971 baseline=0.0202 blowup=no
+    [ep 41] gamma=0.1059 bce=0.0909 coral=0.0040 cov=0.007776 baseline=0.0202 blowup=no
+    [step   7750] curve  bce=0.0909 coral=0.0038 | tpr@1e-3 f0=0.2449  f1=0.1633  f2=0.2143  f3=0.1837  f4=0.2062  agr f1=0.9860
+    [ep 42] gamma=0.1015 bce=0.0596 coral=0.0043 cov=0.007894 baseline=0.0202 blowup=no
+    [step   8000] curve  bce=0.0654 coral=0.0045 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.2143  f3=0.1837  f4=0.2165  agr f1=0.9854
+    [ep 43] gamma=0.1000 bce=0.0628 coral=0.0039 cov=0.00884 baseline=0.0202 blowup=no  saved coral_linear_fold1_ep43.pt
+
+[train fold 2] -> C:\Users\krris\ML\lens_paper\runs\bakeoff_coral\fold2   (warmup_cosine, peak gamma=1.0, stop_on_blowup=False)
+  [fold 2] head=linear  188 steps/epoch  batch=256 (pos_frac~0.50)  src=24000+24000  tgt=391+391  peak_gamma=1.0  schedule=warmup_cosine  blowup(x5,win=188,stop=False)
+    [ep  1] gamma=0.2313 bce=0.1599 coral=0.0220 cov=0.02018 baseline=0.02104 blowup=no
+    [step    250] curve  bce=0.1117 coral=0.0315 | tpr@1e-3 f0=0.1122  f1=0.0816  f2=0.0816  f3=0.1122  f4=0.1340  agr f2=0.8969
+    [ep  2] gamma=0.4639 bce=0.1026 coral=0.0462 cov=0.01849 baseline=0.02104 blowup=no
+    [step    500] curve  bce=0.0986 coral=0.0406 | tpr@1e-3 f0=0.1633  f1=0.1531  f2=0.1327  f3=0.1327  f4=0.1649  agr f2=0.9306
+    [ep  3] gamma=0.6964 bce=0.0890 coral=0.0426 cov=0.01408 baseline=0.02104 blowup=no
+    [step    750] curve  bce=0.0736 coral=0.0499 | tpr@1e-3 f0=0.1939  f1=0.1735  f2=0.1633  f3=0.1429  f4=0.1753  agr f2=0.9388
+    [ep  4] gamma=0.9290 bce=0.1205 coral=0.0585 cov=0.01324 baseline=0.02104 blowup=no
+    [ep  5] gamma=0.9993 bce=0.0722 coral=0.0574 cov=0.01208 baseline=0.02104 blowup=no
+    [step   1000] curve  bce=0.1213 coral=0.0545 | tpr@1e-3 f0=0.1837  f1=0.1735  f2=0.1735  f3=0.1633  f4=0.1649  agr f2=0.9496
+    [ep  6] gamma=0.9957 bce=0.0846 coral=0.0593 cov=0.0113 baseline=0.02104 blowup=no
+    [step   1250] curve  bce=0.0905 coral=0.0536 | tpr@1e-3 f0=0.2041  f1=0.1837  f2=0.1837  f3=0.1633  f4=0.1753  agr f2=0.9572
+    [ep  7] gamma=0.9893 bce=0.1719 coral=0.0513 cov=0.00809 baseline=0.02104 blowup=no
+    [step   1500] curve  bce=0.0886 coral=0.0416 | tpr@1e-3 f0=0.2041  f1=0.1837  f2=0.1837  f3=0.1633  f4=0.1753  agr f2=0.9656
+    [ep  8] gamma=0.9799 bce=0.0818 coral=0.0459 cov=0.009669 baseline=0.02104 blowup=no
+    [ep  9] gamma=0.9677 bce=0.0812 coral=0.0472 cov=0.008894 baseline=0.02104 blowup=no
+    [step   1750] curve  bce=0.0905 coral=0.0480 | tpr@1e-3 f0=0.1939  f1=0.1837  f2=0.1735  f3=0.1633  f4=0.1546  agr f2=0.9675
+    [ep 10] gamma=0.9528 bce=0.0946 coral=0.0362 cov=0.007041 baseline=0.02104 blowup=no
+    [step   2000] curve  bce=0.0710 coral=0.0417 | tpr@1e-3 f0=0.2143  f1=0.2041  f2=0.2041  f3=0.1633  f4=0.2062  agr f2=0.9678
+    [ep 11] gamma=0.9352 bce=0.0556 coral=0.0378 cov=0.007197 baseline=0.02104 blowup=no
+    [step   2250] curve  bce=0.0965 coral=0.0351 | tpr@1e-3 f0=0.2347  f1=0.1939  f2=0.2143  f3=0.1633  f4=0.2165  agr f2=0.9697
+    [ep 12] gamma=0.9150 bce=0.0594 coral=0.0363 cov=0.007271 baseline=0.02104 blowup=no
+    [ep 13] gamma=0.8925 bce=0.1113 coral=0.0339 cov=0.007272 baseline=0.02104 blowup=no
+    [step   2500] curve  bce=0.0919 coral=0.0377 | tpr@1e-3 f0=0.2041  f1=0.1939  f2=0.1939  f3=0.1633  f4=0.2165  agr f2=0.9744
+    [ep 14] gamma=0.8677 bce=0.0785 coral=0.0369 cov=0.008796 baseline=0.02104 blowup=no
+    [step   2750] curve  bce=0.0994 coral=0.0357 | tpr@1e-3 f0=0.2245  f1=0.1939  f2=0.2041  f3=0.1633  f4=0.1959  agr f2=0.9723
+    [ep 15] gamma=0.8408 bce=0.1262 coral=0.0303 cov=0.008406 baseline=0.02104 blowup=no
+    [step   3000] curve  bce=0.0622 coral=0.0325 | tpr@1e-3 f0=0.2449  f1=0.2041  f2=0.2143  f3=0.1735  f4=0.2165  agr f2=0.9732
+    [ep 16] gamma=0.8120 bce=0.0692 coral=0.0331 cov=0.00843 baseline=0.02104 blowup=no
+    [ep 17] gamma=0.7815 bce=0.0705 coral=0.0322 cov=0.009982 baseline=0.02104 blowup=no
+    [step   3250] curve  bce=0.0626 coral=0.0321 | tpr@1e-3 f0=0.2347  f1=0.2041  f2=0.2041  f3=0.1735  f4=0.2165  agr f2=0.9781
+    [ep 18] gamma=0.7494 bce=0.0960 coral=0.0334 cov=0.008276 baseline=0.02104 blowup=no
+    [step   3500] curve  bce=0.0864 coral=0.0276 | tpr@1e-3 f0=0.2041  f1=0.1837  f2=0.2041  f3=0.1633  f4=0.2062  agr f2=0.9772
+    [ep 19] gamma=0.7160 bce=0.0809 coral=0.0277 cov=0.009749 baseline=0.02104 blowup=no
+    [step   3750] curve  bce=0.1053 coral=0.0270 | tpr@1e-3 f0=0.2245  f1=0.1837  f2=0.1939  f3=0.1735  f4=0.2165  agr f2=0.9795
+    [ep 20] gamma=0.6816 bce=0.1541 coral=0.0319 cov=0.0108 baseline=0.02104 blowup=no
+    [ep 21] gamma=0.6462 bce=0.0950 coral=0.0282 cov=0.01124 baseline=0.02104 blowup=no
+    [step   4000] curve  bce=0.0648 coral=0.0254 | tpr@1e-3 f0=0.2347  f1=0.1837  f2=0.2041  f3=0.1735  f4=0.2371  agr f2=0.9801
+    [ep 22] gamma=0.6103 bce=0.1169 coral=0.0218 cov=0.009868 baseline=0.02104 blowup=no
+    [step   4250] curve  bce=0.1058 coral=0.0284 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.1939  f3=0.1633  f4=0.2165  agr f2=0.9796
+    [ep 23] gamma=0.5739 bce=0.0644 coral=0.0322 cov=0.01147 baseline=0.02104 blowup=no
+    [step   4500] curve  bce=0.0967 coral=0.0293 | tpr@1e-3 f0=0.2143  f1=0.1837  f2=0.2041  f3=0.1735  f4=0.2371  agr f2=0.9815
+    [ep 24] gamma=0.5374 bce=0.0682 coral=0.0255 cov=0.0146 baseline=0.02104 blowup=no
+    [ep 25] gamma=0.5010 bce=0.0504 coral=0.0192 cov=0.01139 baseline=0.02104 blowup=no
+    [step   4750] curve  bce=0.0784 coral=0.0317 | tpr@1e-3 f0=0.2245  f1=0.1939  f2=0.2041  f3=0.1735  f4=0.1959  agr f2=0.9826
+    [ep 26] gamma=0.4649 bce=0.1232 coral=0.0208 cov=0.01503 baseline=0.02104 blowup=no
+    [step   5000] curve  bce=0.0886 coral=0.0241 | tpr@1e-3 f0=0.2143  f1=0.1633  f2=0.1939  f3=0.1633  f4=0.2165  agr f2=0.9820
+    [ep 27] gamma=0.4293 bce=0.0532 coral=0.0303 cov=0.0159 baseline=0.02104 blowup=no
+    [step   5250] curve  bce=0.0902 coral=0.0279 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.2041  f3=0.1735  f4=0.2268  agr f2=0.9819
+    [ep 28] gamma=0.3946 bce=0.1000 coral=0.0236 cov=0.02135 baseline=0.02104 blowup=no
+    [ep 29] gamma=0.3608 bce=0.0868 coral=0.0223 cov=0.02211 baseline=0.02104 blowup=no
+    [step   5500] curve  bce=0.0512 coral=0.0239 | tpr@1e-3 f0=0.2245  f1=0.1735  f2=0.2143  f3=0.1633  f4=0.1959  agr f2=0.9823
+    [ep 30] gamma=0.3283 bce=0.0810 coral=0.0240 cov=0.02616 baseline=0.02104 blowup=no
+    [step   5750] curve  bce=0.1009 coral=0.0180 | tpr@1e-3 f0=0.2245  f1=0.1735  f2=0.2143  f3=0.1735  f4=0.2062  agr f2=0.9836
+    [ep 31] gamma=0.2973 bce=0.0644 coral=0.0206 cov=0.03393 baseline=0.02104 blowup=no
+    [step   6000] curve  bce=0.0493 coral=0.0207 | tpr@1e-3 f0=0.2143  f1=0.1633  f2=0.2041  f3=0.1735  f4=0.2062  agr f2=0.9841
+    [ep 32] gamma=0.2680 bce=0.0868 coral=0.0139 cov=0.02127 baseline=0.02104 blowup=no
+    [ep 33] gamma=0.2404 bce=0.0811 coral=0.0210 cov=0.02616 baseline=0.02104 blowup=no
+    [step   6250] curve  bce=0.0636 coral=0.0177 | tpr@1e-3 f0=0.2041  f1=0.1633  f2=0.2041  f3=0.1633  f4=0.2268  agr f2=0.9827
+    [ep 34] gamma=0.2150 bce=0.0520 coral=0.0151 cov=0.03068 baseline=0.02104 blowup=no
+    [step   6500] curve  bce=0.0640 coral=0.0122 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.2143  f3=0.1735  f4=0.2062  agr f2=0.9833
+    [ep 35] gamma=0.1917 bce=0.0890 coral=0.0169 cov=0.04566 baseline=0.02104 blowup=no
+    [step   6750] curve  bce=0.0798 coral=0.0148 | tpr@1e-3 f0=0.2143  f1=0.1633  f2=0.2041  f3=0.1633  f4=0.2165  agr f2=0.9838
+    [ep 36] gamma=0.1708 bce=0.0604 coral=0.0134 cov=0.04374 baseline=0.02104 blowup=no
+    [ep 37] gamma=0.1524 bce=0.1218 coral=0.0133 cov=0.04921 baseline=0.02104 blowup=no
+    [step   7000] curve  bce=0.1148 coral=0.0116 | tpr@1e-3 f0=0.2143  f1=0.1633  f2=0.2041  f3=0.1633  f4=0.2268  agr f2=0.9867
+    [ep 38] gamma=0.1366 bce=0.0577 coral=0.0140 cov=0.06355 baseline=0.02104 blowup=no
+    [step   7250] curve  bce=0.0535 coral=0.0127 | tpr@1e-3 f0=0.2143  f1=0.1531  f2=0.1633  f3=0.1531  f4=0.2062  agr f2=0.9776
+    [ep 39] gamma=0.1236 bce=0.0720 coral=0.0096 cov=0.03962 baseline=0.02104 blowup=no
+    [step   7500] curve  bce=0.0871 coral=0.0102 | tpr@1e-3 f0=0.2041  f1=0.1633  f2=0.1735  f3=0.1429  f4=0.2062  agr f2=0.9838
+    [ep 40] gamma=0.1133 bce=0.0892 coral=0.0098 cov=0.05155 baseline=0.02104 blowup=no
+    [ep 41] gamma=0.1059 bce=0.0605 coral=0.0093 cov=0.04705 baseline=0.02104 blowup=no
+    [step   7750] curve  bce=0.0564 coral=0.0104 | tpr@1e-3 f0=0.2143  f1=0.1633  f2=0.1939  f3=0.1429  f4=0.2268  agr f2=0.9822
+    [ep 42] gamma=0.1015 bce=0.0602 coral=0.0092 cov=0.05558 baseline=0.02104 blowup=no
+    [step   8000] curve  bce=0.0860 coral=0.0087 | tpr@1e-3 f0=0.2245  f1=0.1633  f2=0.2143  f3=0.1633  f4=0.2062  agr f2=0.9869
+    [ep 43] gamma=0.1000 bce=0.0558 coral=0.0097 cov=0.05931 baseline=0.02104 blowup=no  saved coral_linear_fold2_ep43.pt
+
+[train fold 3] -> C:\Users\krris\ML\lens_paper\runs\bakeoff_coral\fold3   (warmup_cosine, peak gamma=1.0, stop_on_blowup=False)
+  [fold 3] head=linear  188 steps/epoch  batch=256 (pos_frac~0.50)  src=24000+24000  tgt=391+391  peak_gamma=1.0  schedule=warmup_cosine  blowup(x5,win=188,stop=False)
+    [ep  1] gamma=0.2313 bce=0.1199 coral=0.0269 cov=0.02103 baseline=0.02251 blowup=no
+    [step    250] curve  bce=0.1309 coral=0.0406 | tpr@1e-3 f0=0.0918  f1=0.0816  f2=0.0816  f3=0.1020  f4=0.1134  agr f3=0.9065
+    [ep  2] gamma=0.4639 bce=0.1008 coral=0.0365 cov=0.01784 baseline=0.02251 blowup=no
+    [step    500] curve  bce=0.1076 coral=0.0442 | tpr@1e-3 f0=0.1633  f1=0.1122  f2=0.1327  f3=0.1224  f4=0.1649  agr f3=0.9251
+    [ep  3] gamma=0.6964 bce=0.1276 coral=0.0564 cov=0.01723 baseline=0.02251 blowup=no
+    [step    750] curve  bce=0.1175 coral=0.0704 | tpr@1e-3 f0=0.1837  f1=0.1531  f2=0.1531  f3=0.1429  f4=0.1649  agr f3=0.9313
+    [ep  4] gamma=0.9290 bce=0.0771 coral=0.0657 cov=0.01446 baseline=0.02251 blowup=no
+    [ep  5] gamma=0.9993 bce=0.0856 coral=0.0731 cov=0.0125 baseline=0.02251 blowup=no
+    [step   1000] curve  bce=0.0800 coral=0.0767 | tpr@1e-3 f0=0.2041  f1=0.1837  f2=0.1735  f3=0.1531  f4=0.1753  agr f3=0.9503
+    [ep  6] gamma=0.9957 bce=0.1735 coral=0.0612 cov=0.008783 baseline=0.02251 blowup=no
+    [step   1250] curve  bce=0.1065 coral=0.0538 | tpr@1e-3 f0=0.1939  f1=0.1939  f2=0.1735  f3=0.1429  f4=0.1856  agr f3=0.9512
+    [ep  7] gamma=0.9893 bce=0.0830 coral=0.0504 cov=0.009563 baseline=0.02251 blowup=no
+    [step   1500] curve  bce=0.0779 coral=0.0552 | tpr@1e-3 f0=0.1939  f1=0.1735  f2=0.1735  f3=0.1531  f4=0.1649  agr f3=0.9604
+    [ep  8] gamma=0.9799 bce=0.0848 coral=0.0523 cov=0.009687 baseline=0.02251 blowup=no
+    [ep  9] gamma=0.9677 bce=0.0970 coral=0.0406 cov=0.00672 baseline=0.02251 blowup=no
+    [step   1750] curve  bce=0.0434 coral=0.0418 | tpr@1e-3 f0=0.2347  f1=0.1837  f2=0.1939  f3=0.1633  f4=0.1753  agr f3=0.9625
+    [ep 10] gamma=0.9528 bce=0.0593 coral=0.0418 cov=0.006855 baseline=0.02251 blowup=no
+    [step   2000] curve  bce=0.1160 coral=0.0387 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.1735  f3=0.1531  f4=0.1649  agr f3=0.9582
+    [ep 11] gamma=0.9352 bce=0.0609 coral=0.0395 cov=0.006273 baseline=0.02251 blowup=no
+    [step   2250] curve  bce=0.0890 coral=0.0365 | tpr@1e-3 f0=0.1837  f1=0.1735  f2=0.1939  f3=0.1735  f4=0.1856  agr f3=0.9703
+    [ep 12] gamma=0.9150 bce=0.1137 coral=0.0354 cov=0.005992 baseline=0.02251 blowup=no
+    [ep 13] gamma=0.8925 bce=0.0764 coral=0.0369 cov=0.007243 baseline=0.02251 blowup=no
+    [step   2500] curve  bce=0.0738 coral=0.0288 | tpr@1e-3 f0=0.2449  f1=0.1837  f2=0.1939  f3=0.1633  f4=0.2062  agr f3=0.9654
+    [ep 14] gamma=0.8677 bce=0.1295 coral=0.0309 cov=0.00652 baseline=0.02251 blowup=no
+    [step   2750] curve  bce=0.1325 coral=0.0322 | tpr@1e-3 f0=0.2449  f1=0.1837  f2=0.2143  f3=0.1735  f4=0.1959  agr f3=0.9721
+    [ep 15] gamma=0.8408 bce=0.0703 coral=0.0331 cov=0.006675 baseline=0.02251 blowup=no
+    [step   3000] curve  bce=0.0790 coral=0.0384 | tpr@1e-3 f0=0.2143  f1=0.1633  f2=0.1837  f3=0.1633  f4=0.1753  agr f3=0.9726
+    [ep 16] gamma=0.8120 bce=0.0676 coral=0.0317 cov=0.006692 baseline=0.02251 blowup=no
+    [ep 17] gamma=0.7815 bce=0.0957 coral=0.0338 cov=0.006056 baseline=0.02251 blowup=no
+    [step   3250] curve  bce=0.0664 coral=0.0245 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.2041  f3=0.1633  f4=0.1856  agr f3=0.9742
+    [ep 18] gamma=0.7494 bce=0.0860 coral=0.0263 cov=0.006854 baseline=0.02251 blowup=no
+    [step   3500] curve  bce=0.1021 coral=0.0245 | tpr@1e-3 f0=0.2245  f1=0.1837  f2=0.1837  f3=0.1735  f4=0.1753  agr f3=0.9751
+    [ep 19] gamma=0.7160 bce=0.1542 coral=0.0305 cov=0.006857 baseline=0.02251 blowup=no
+    [step   3750] curve  bce=0.0971 coral=0.0273 | tpr@1e-3 f0=0.2245  f1=0.1837  f2=0.2245  f3=0.1735  f4=0.2165  agr f3=0.9771
+    [ep 20] gamma=0.6816 bce=0.0942 coral=0.0270 cov=0.007181 baseline=0.02251 blowup=no
+    [ep 21] gamma=0.6462 bce=0.1159 coral=0.0212 cov=0.007088 baseline=0.02251 blowup=no
+    [step   4000] curve  bce=0.0508 coral=0.0273 | tpr@1e-3 f0=0.2245  f1=0.1735  f2=0.2143  f3=0.1735  f4=0.2062  agr f3=0.9789
+    [ep 22] gamma=0.6103 bce=0.0649 coral=0.0293 cov=0.006741 baseline=0.02251 blowup=no
+    [step   4250] curve  bce=0.1031 coral=0.0226 | tpr@1e-3 f0=0.2245  f1=0.1633  f2=0.2041  f3=0.1735  f4=0.1959  agr f3=0.9767
+    [ep 23] gamma=0.5739 bce=0.0711 coral=0.0218 cov=0.007114 baseline=0.02251 blowup=no
+    [step   4500] curve  bce=0.0726 coral=0.0275 | tpr@1e-3 f0=0.2245  f1=0.1735  f2=0.1939  f3=0.1633  f4=0.1959  agr f3=0.9755
+    [ep 24] gamma=0.5374 bce=0.0515 coral=0.0180 cov=0.006112 baseline=0.02251 blowup=no
+    [ep 25] gamma=0.5010 bce=0.1266 coral=0.0173 cov=0.007533 baseline=0.02251 blowup=no
+    [step   4750] curve  bce=0.0668 coral=0.0245 | tpr@1e-3 f0=0.2245  f1=0.1735  f2=0.2041  f3=0.1531  f4=0.1959  agr f3=0.9774
+    [ep 26] gamma=0.4649 bce=0.0565 coral=0.0256 cov=0.006954 baseline=0.02251 blowup=no
+    [step   5000] curve  bce=0.0964 coral=0.0166 | tpr@1e-3 f0=0.2245  f1=0.1735  f2=0.2143  f3=0.1735  f4=0.2062  agr f3=0.9823
+    [ep 27] gamma=0.4293 bce=0.1009 coral=0.0167 cov=0.007586 baseline=0.02251 blowup=no
+    [step   5250] curve  bce=0.0807 coral=0.0175 | tpr@1e-3 f0=0.2143  f1=0.1633  f2=0.1939  f3=0.1531  f4=0.1753  agr f3=0.9809
+    [ep 28] gamma=0.3946 bce=0.0881 coral=0.0178 cov=0.008006 baseline=0.02251 blowup=no
+    [ep 29] gamma=0.3608 bce=0.0801 coral=0.0178 cov=0.009329 baseline=0.02251 blowup=no
+    [step   5500] curve  bce=0.0884 coral=0.0163 | tpr@1e-3 f0=0.2245  f1=0.1837  f2=0.2143  f3=0.1735  f4=0.2268  agr f3=0.9788
+    [ep 30] gamma=0.3283 bce=0.0664 coral=0.0142 cov=0.01125 baseline=0.02251 blowup=no
+    [step   5750] curve  bce=0.0849 coral=0.0123 | tpr@1e-3 f0=0.2245  f1=0.1633  f2=0.2143  f3=0.1633  f4=0.2062  agr f3=0.9821
+    [ep 31] gamma=0.2973 bce=0.0860 coral=0.0119 cov=0.01096 baseline=0.02251 blowup=no
+    [step   6000] curve  bce=0.0794 coral=0.0096 | tpr@1e-3 f0=0.2347  f1=0.1837  f2=0.2143  f3=0.1633  f4=0.2062  agr f3=0.9805
+    [ep 32] gamma=0.2680 bce=0.0773 coral=0.0141 cov=0.007858 baseline=0.02251 blowup=no
+    [ep 33] gamma=0.2404 bce=0.0528 coral=0.0103 cov=0.009038 baseline=0.02251 blowup=no
+    [step   6250] curve  bce=0.0690 coral=0.0123 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.2041  f3=0.1735  f4=0.1753  agr f3=0.9825
+    [ep 34] gamma=0.2150 bce=0.0899 coral=0.0115 cov=0.01396 baseline=0.02251 blowup=no
+    [step   6500] curve  bce=0.0790 coral=0.0087 | tpr@1e-3 f0=0.2245  f1=0.1837  f2=0.2143  f3=0.1633  f4=0.2268  agr f3=0.9806
+    [ep 35] gamma=0.1917 bce=0.0582 coral=0.0084 cov=0.0118 baseline=0.02251 blowup=no
+    [step   6750] curve  bce=0.0609 coral=0.0080 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.2041  f3=0.1633  f4=0.2165  agr f3=0.9806
+    [ep 36] gamma=0.1708 bce=0.1228 coral=0.0080 cov=0.01345 baseline=0.02251 blowup=no
+    [ep 37] gamma=0.1524 bce=0.0559 coral=0.0074 cov=0.01412 baseline=0.02251 blowup=no
+    [step   7000] curve  bce=0.0713 coral=0.0073 | tpr@1e-3 f0=0.2143  f1=0.1531  f2=0.2041  f3=0.1531  f4=0.1856  agr f3=0.9847
+    [ep 38] gamma=0.1366 bce=0.0697 coral=0.0062 cov=0.01014 baseline=0.02251 blowup=no
+    [step   7250] curve  bce=0.0507 coral=0.0057 | tpr@1e-3 f0=0.2143  f1=0.1633  f2=0.2041  f3=0.1633  f4=0.1959  agr f3=0.9852
+    [ep 39] gamma=0.1236 bce=0.0902 coral=0.0055 cov=0.01202 baseline=0.02251 blowup=no
+    [step   7500] curve  bce=0.0914 coral=0.0060 | tpr@1e-3 f0=0.2143  f1=0.1633  f2=0.2041  f3=0.1633  f4=0.2062  agr f3=0.9815
+    [ep 40] gamma=0.1133 bce=0.0626 coral=0.0054 cov=0.01213 baseline=0.02251 blowup=no
+    [ep 41] gamma=0.1059 bce=0.0638 coral=0.0048 cov=0.01446 baseline=0.02251 blowup=no
+    [step   7750] curve  bce=0.1069 coral=0.0045 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.2041  f3=0.1735  f4=0.1959  agr f3=0.9836
+    [ep 42] gamma=0.1015 bce=0.0525 coral=0.0045 cov=0.01324 baseline=0.02251 blowup=no
+    [step   8000] curve  bce=0.1098 coral=0.0046 | tpr@1e-3 f0=0.2143  f1=0.1429  f2=0.2143  f3=0.1531  f4=0.1959  agr f3=0.9857
+    [ep 43] gamma=0.1000 bce=0.1228 coral=0.0044 cov=0.01421 baseline=0.02251 blowup=no  saved coral_linear_fold3_ep43.pt
+
+[train fold 4] -> C:\Users\krris\ML\lens_paper\runs\bakeoff_coral\fold4   (warmup_cosine, peak gamma=1.0, stop_on_blowup=False)
+  [fold 4] head=linear  188 steps/epoch  batch=256 (pos_frac~0.50)  src=24000+24000  tgt=392+392  peak_gamma=1.0  schedule=warmup_cosine  blowup(x5,win=188,stop=False)
+    [ep  1] gamma=0.2313 bce=0.1128 coral=0.0178 cov=0.01881 baseline=0.0223 blowup=no
+    [step    250] curve  bce=0.1181 coral=0.0306 | tpr@1e-3 f0=0.1122  f1=0.1020  f2=0.1020  f3=0.1020  f4=0.1340  agr f4=0.9163
+    [ep  2] gamma=0.4639 bce=0.1418 coral=0.0393 cov=0.01998 baseline=0.0223 blowup=no
+    [step    500] curve  bce=0.1048 coral=0.0490 | tpr@1e-3 f0=0.1224  f1=0.1327  f2=0.1327  f3=0.1020  f4=0.1443  agr f4=0.9331
+    [ep  3] gamma=0.6964 bce=0.0789 coral=0.0542 cov=0.01767 baseline=0.0223 blowup=no
+    [step    750] curve  bce=0.1264 coral=0.0610 | tpr@1e-3 f0=0.1531  f1=0.1429  f2=0.1531  f3=0.1531  f4=0.1649  agr f4=0.9453
+    [ep  4] gamma=0.9290 bce=0.0873 coral=0.0722 cov=0.01554 baseline=0.0223 blowup=no
+    [ep  5] gamma=0.9993 bce=0.1841 coral=0.0622 cov=0.01043 baseline=0.0223 blowup=no
+    [step   1000] curve  bce=0.0772 coral=0.0651 | tpr@1e-3 f0=0.2245  f1=0.1837  f2=0.1633  f3=0.1531  f4=0.1753  agr f4=0.9540
+    [ep  6] gamma=0.9957 bce=0.0847 coral=0.0531 cov=0.01151 baseline=0.0223 blowup=no
+    [step   1250] curve  bce=0.0877 coral=0.0419 | tpr@1e-3 f0=0.2245  f1=0.1837  f2=0.1735  f3=0.1633  f4=0.1856  agr f4=0.9621
+    [ep  7] gamma=0.9893 bce=0.0815 coral=0.0550 cov=0.01138 baseline=0.0223 blowup=no
+    [step   1500] curve  bce=0.0870 coral=0.0467 | tpr@1e-3 f0=0.2347  f1=0.1837  f2=0.1837  f3=0.1735  f4=0.2062  agr f4=0.9597
+    [ep  8] gamma=0.9799 bce=0.0956 coral=0.0420 cov=0.008122 baseline=0.0223 blowup=no
+    [ep  9] gamma=0.9677 bce=0.0605 coral=0.0434 cov=0.008218 baseline=0.0223 blowup=no
+    [step   1750] curve  bce=0.0960 coral=0.0402 | tpr@1e-3 f0=0.2143  f1=0.1735  f2=0.1837  f3=0.1633  f4=0.1753  agr f4=0.9663
+    [ep 10] gamma=0.9528 bce=0.0619 coral=0.0391 cov=0.007466 baseline=0.0223 blowup=no
+    [step   2000] curve  bce=0.0668 coral=0.0391 | tpr@1e-3 f0=0.2347  f1=0.1735  f2=0.1837  f3=0.1735  f4=0.2062  agr f4=0.9660
+    [ep 11] gamma=0.9352 bce=0.1101 coral=0.0371 cov=0.007594 baseline=0.0223 blowup=no
+    [step   2250] curve  bce=0.1112 coral=0.0347 | tpr@1e-3 f0=0.2653  f1=0.1837  f2=0.1837  f3=0.1735  f4=0.1959  agr f4=0.9708
+    [ep 12] gamma=0.9150 bce=0.0752 coral=0.0366 cov=0.008083 baseline=0.0223 blowup=no
+    [ep 13] gamma=0.8925 bce=0.1331 coral=0.0311 cov=0.007757 baseline=0.0223 blowup=no
+    [step   2500] curve  bce=0.0841 coral=0.0330 | tpr@1e-3 f0=0.2143  f1=0.1531  f2=0.1735  f3=0.1633  f4=0.1856  agr f4=0.9723
+    [ep 14] gamma=0.8677 bce=0.0677 coral=0.0333 cov=0.007933 baseline=0.0223 blowup=no
+    [step   2750] curve  bce=0.0661 coral=0.0303 | tpr@1e-3 f0=0.2551  f1=0.1633  f2=0.1837  f3=0.1735  f4=0.1753  agr f4=0.9727
+    [ep 15] gamma=0.8408 bce=0.0673 coral=0.0322 cov=0.007682 baseline=0.0223 blowup=no
+    [step   3000] curve  bce=0.0568 coral=0.0294 | tpr@1e-3 f0=0.2551  f1=0.1633  f2=0.1837  f3=0.1735  f4=0.2165  agr f4=0.9724
+    [ep 16] gamma=0.8120 bce=0.0953 coral=0.0328 cov=0.007218 baseline=0.0223 blowup=no
+    [ep 17] gamma=0.7815 bce=0.0844 coral=0.0277 cov=0.007738 baseline=0.0223 blowup=no
+    [step   3250] curve  bce=0.1123 coral=0.0254 | tpr@1e-3 f0=0.2551  f1=0.1735  f2=0.1939  f3=0.1735  f4=0.2165  agr f4=0.9743
+    [ep 18] gamma=0.7494 bce=0.1547 coral=0.0301 cov=0.008243 baseline=0.0223 blowup=no
+    [step   3500] curve  bce=0.0636 coral=0.0287 | tpr@1e-3 f0=0.2449  f1=0.1735  f2=0.1837  f3=0.1735  f4=0.1959  agr f4=0.9772
+    [ep 19] gamma=0.7160 bce=0.0958 coral=0.0272 cov=0.008245 baseline=0.0223 blowup=no
+    [step   3750] curve  bce=0.0935 coral=0.0244 | tpr@1e-3 f0=0.2449  f1=0.1531  f2=0.1735  f3=0.1735  f4=0.2062  agr f4=0.9758
+    [ep 20] gamma=0.6816 bce=0.1184 coral=0.0226 cov=0.008633 baseline=0.0223 blowup=no
+    [ep 21] gamma=0.6462 bce=0.0672 coral=0.0294 cov=0.007941 baseline=0.0223 blowup=no
+    [step   4000] curve  bce=0.0945 coral=0.0301 | tpr@1e-3 f0=0.2551  f1=0.1837  f2=0.2041  f3=0.1735  f4=0.2062  agr f4=0.9791
+    [ep 22] gamma=0.6103 bce=0.0707 coral=0.0218 cov=0.008543 baseline=0.0223 blowup=no
+    [step   4250] curve  bce=0.0809 coral=0.0197 | tpr@1e-3 f0=0.2449  f1=0.1633  f2=0.1735  f3=0.1735  f4=0.2268  agr f4=0.9792
+    [ep 23] gamma=0.5739 bce=0.0511 coral=0.0177 cov=0.00642 baseline=0.0223 blowup=no
+    [step   4500] curve  bce=0.0519 coral=0.0225 | tpr@1e-3 f0=0.2449  f1=0.1735  f2=0.1837  f3=0.1633  f4=0.2062  agr f4=0.9770
+    [ep 24] gamma=0.5374 bce=0.1243 coral=0.0184 cov=0.009005 baseline=0.0223 blowup=no
+    [ep 25] gamma=0.5010 bce=0.0507 coral=0.0261 cov=0.008098 baseline=0.0223 blowup=no
+    [step   4750] curve  bce=0.0461 coral=0.0168 | tpr@1e-3 f0=0.2449  f1=0.1735  f2=0.1837  f3=0.1735  f4=0.2165  agr f4=0.9807
+    [ep 26] gamma=0.4649 bce=0.1018 coral=0.0169 cov=0.008227 baseline=0.0223 blowup=no
+    [step   5000] curve  bce=0.0924 coral=0.0224 | tpr@1e-3 f0=0.2449  f1=0.1531  f2=0.1939  f3=0.1735  f4=0.2062  agr f4=0.9793
+    [ep 27] gamma=0.4293 bce=0.0896 coral=0.0176 cov=0.008815 baseline=0.0223 blowup=no
+    [step   5250] curve  bce=0.1001 coral=0.0162 | tpr@1e-3 f0=0.2347  f1=0.1633  f2=0.1837  f3=0.1633  f4=0.1856  agr f4=0.9806
+    [ep 28] gamma=0.3946 bce=0.0789 coral=0.0189 cov=0.01067 baseline=0.0223 blowup=no
+    [ep 29] gamma=0.3608 bce=0.0640 coral=0.0151 cov=0.01306 baseline=0.0223 blowup=no
+    [step   5500] curve  bce=0.0750 coral=0.0158 | tpr@1e-3 f0=0.2347  f1=0.1531  f2=0.1735  f3=0.1633  f4=0.1856  agr f4=0.9795
+    [ep 30] gamma=0.3283 bce=0.0846 coral=0.0124 cov=0.01166 baseline=0.0223 blowup=no
+    [step   5750] curve  bce=0.0561 coral=0.0133 | tpr@1e-3 f0=0.2347  f1=0.1735  f2=0.1837  f3=0.1633  f4=0.1959  agr f4=0.9816
+    [ep 31] gamma=0.2973 bce=0.0762 coral=0.0135 cov=0.008457 baseline=0.0223 blowup=no
+    [step   6000] curve  bce=0.1182 coral=0.0095 | tpr@1e-3 f0=0.2347  f1=0.1633  f2=0.1939  f3=0.1633  f4=0.2165  agr f4=0.9827
+    [ep 32] gamma=0.2680 bce=0.0505 coral=0.0108 cov=0.009979 baseline=0.0223 blowup=no
+    [ep 33] gamma=0.2404 bce=0.0894 coral=0.0121 cov=0.01583 baseline=0.0223 blowup=no
+    [step   6250] curve  bce=0.0720 coral=0.0092 | tpr@1e-3 f0=0.2245  f1=0.1633  f2=0.1735  f3=0.1633  f4=0.1856  agr f4=0.9836
+    [ep 34] gamma=0.2150 bce=0.0613 coral=0.0087 cov=0.01164 baseline=0.0223 blowup=no
+    [step   6500] curve  bce=0.0855 coral=0.0074 | tpr@1e-3 f0=0.2347  f1=0.1633  f2=0.1837  f3=0.1633  f4=0.2062  agr f4=0.9848
+    [ep 35] gamma=0.1917 bce=0.1188 coral=0.0081 cov=0.01316 baseline=0.0223 blowup=no
+    [step   6750] curve  bce=0.0826 coral=0.0093 | tpr@1e-3 f0=0.2245  f1=0.1531  f2=0.1837  f3=0.1633  f4=0.2165  agr f4=0.9827
+    [ep 36] gamma=0.1708 bce=0.0594 coral=0.0075 cov=0.01388 baseline=0.0223 blowup=no
+    [ep 37] gamma=0.1524 bce=0.0708 coral=0.0058 cov=0.00996 baseline=0.0223 blowup=no
+    [step   7000] curve  bce=0.0603 coral=0.0086 | tpr@1e-3 f0=0.2347  f1=0.1633  f2=0.1939  f3=0.1633  f4=0.2062  agr f4=0.9845
+    [ep 38] gamma=0.1366 bce=0.0896 coral=0.0053 cov=0.01196 baseline=0.0223 blowup=no
+    [step   7250] curve  bce=0.0438 coral=0.0059 | tpr@1e-3 f0=0.2143  f1=0.1633  f2=0.1837  f3=0.1633  f4=0.2165  agr f4=0.9860
+    [ep 39] gamma=0.1236 bce=0.0629 coral=0.0053 cov=0.01204 baseline=0.0223 blowup=no
+    [step   7500] curve  bce=0.0813 coral=0.0051 | tpr@1e-3 f0=0.2143  f1=0.1429  f2=0.1735  f3=0.1531  f4=0.1856  agr f4=0.9856
+    [ep 40] gamma=0.1133 bce=0.0640 coral=0.0046 cov=0.01404 baseline=0.0223 blowup=no
+    [ep 41] gamma=0.1059 bce=0.0526 coral=0.0045 cov=0.01338 baseline=0.0223 blowup=no
+    [step   7750] curve  bce=0.0646 coral=0.0046 | tpr@1e-3 f0=0.2347  f1=0.1531  f2=0.1837  f3=0.1633  f4=0.2165  agr f4=0.9828
+    [ep 42] gamma=0.1015 bce=0.1187 coral=0.0042 cov=0.0131 baseline=0.0223 blowup=no
+    [step   8000] curve  bce=0.0874 coral=0.0041 | tpr@1e-3 f0=0.2347  f1=0.1735  f2=0.1939  f3=0.1633  f4=0.2062  agr f4=0.9855
+    [ep 43] gamma=0.1000 bce=0.0853 coral=0.0047 cov=0.01322 baseline=0.0223 blowup=no  saved coral_linear_fold4_ep43.pt
+
+[eval] R1 = single candidate step_8000.pt per fold (source-val selection is a no-op with one candidate)
+
+================================================================================
+DEEP CORAL  (per-fold models; metric TPR@FPR=0.001 + AUROC)
+================================================================================
+
+[SOURCE-RISK  (headline, label-free selection)]
+    fold |  epoch |  n_pos |  val_sel |  TPR@fpr |   AUROC
+    --------------------------------------------------------
+       1 |   8000 |     98 |   0.9948 |   0.1735 |  0.9074
+       2 |   8000 |     98 |   0.9944 |   0.2143 |  0.9050
+       3 |   8000 |     98 |   0.9948 |   0.1531 |  0.9050
+       4 |   8000 |     97 |   0.9949 |   0.2062 |  0.9028
+    across-fold mean  TPR = 0.1868 +- 0.0247   [95% CI 0.1356, 0.2329]
+    across-fold mean  AUROC = 0.9050 +- 0.0016   [95% CI 0.8878, 0.9223]
+
+[ORACLE  (best-test epoch per fold -- NOT a valid UDA result)]
+    fold |  epoch |  n_pos |  val_sel |  TPR@fpr |   AUROC
+    --------------------------------------------------------
+       1 |   8000 |     98 |   0.9948 |   0.1735 |  0.9074
+       2 |   8000 |     98 |   0.9944 |   0.2143 |  0.9050
+       3 |   8000 |     98 |   0.9948 |   0.1531 |  0.9050
+       4 |   8000 |     97 |   0.9949 |   0.2062 |  0.9028
+    across-fold mean  TPR = 0.1868 +- 0.0247   [95% CI 0.1356, 0.2329]
+    across-fold mean  AUROC = 0.9050 +- 0.0016   [95% CI 0.8878, 0.9223]
+
+================================================================================
+SELECTION GAP (oracle - source-risk):  TPR 0.0000   AUROC 0.0000   [same epoch picked every fold]
+================================================================================
+
+[out] results.json + raw per-fold scores -> C:\Users\krris\ML\lens_paper\runs\bakeoff_coral
+
+[out] run_config.json + results.json + fold*/curve.csv + scores/ -> C:\Users\krris\ML\lens_paper\runs\bakeoff_coral
+[next] python scripts/report_bakeoff.py C:\Users\krris\ML\lens_paper\runs\bakeoff_coral
+[next] python scripts/collapse_gate.py --run C:\Users\krris\ML\lens_paper\runs\bakeoff_coral\fold1 --ref C:\Users\krris\ML\lens_paper\runs\bakeoff_baseline_A\checkpoints\step_8000.pt --split target_fold1 --tpr-col fold1_tpr_1e-3
+[next] python scripts/collapse_gate.py --run C:\Users\krris\ML\lens_paper\runs\bakeoff_coral\fold2 --ref C:\Users\krris\ML\lens_paper\runs\bakeoff_baseline_A\checkpoints\step_8000.pt --split target_fold2 --tpr-col fold2_tpr_1e-3
+[next] python scripts/collapse_gate.py --run C:\Users\krris\ML\lens_paper\runs\bakeoff_coral\fold3 --ref C:\Users\krris\ML\lens_paper\runs\bakeoff_baseline_A\checkpoints\step_8000.pt --split target_fold3 --tpr-col fold3_tpr_1e-3
+[next] python scripts/collapse_gate.py --run C:\Users\krris\ML\lens_paper\runs\bakeoff_coral\fold4 --ref C:\Users\krris\ML\lens_paper\runs\bakeoff_baseline_A\checkpoints\step_8000.pt --split target_fold4 --tpr-col fold4_tpr_1e-3

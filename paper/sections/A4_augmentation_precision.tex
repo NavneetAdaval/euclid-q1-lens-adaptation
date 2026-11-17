@@ -1,0 +1,49 @@
+\section{The frozen comparison: results, augmentation and precision}
+\label{sec:augprec}
+
+\subsection{The frozen comparison}
+\label{sec:frozen-comparison}
+
+Table~\ref{tab:frozen} gives the frozen comparison that Section~\ref{sec:results-frozen}
+summarises. We report no frozen-against-unfrozen contrast except one.
+Eight configuration fields separate the frozen and unfrozen CORAL runs: head learning rate,
+weight decay, cached features against images, augmentation, precision, the weight schedule, the
+weight, and target-covariance averaging. A difference between them would mix the encoder
+setting with the protocol. The exception is FreeMatch, whose frozen and unfrozen runs share
+every training setting except the encoder and the further steps of training
+(Section~\ref{sec:results-frozen}).
+
+\input{tables/T1v2_frozen}
+
+\subsection{Augmentation and precision}
+\label{sec:augprec-detail}
+
+The arms of the frozen comparison were not trained under identical conditions. The
+feature-space arms ran on cached features, without augmentation, in full precision; the
+image-space arms ran with weak augmentation (Section~\ref{sec:sim-pipeline}) in mixed precision, because weak and strong views
+are the mechanism of self-training. We measured that pair of variables on the frozen
+source-only baseline on the development fold, where only the head's \augprecTrainableNs{}
+parameters train.
+
+We ran three of the four cells of the $2 \times 2$ (Table~\ref{tab:augprec2}). Cell~A, no
+augmentation at full precision, is the configuration of the feature-space arms; cell~C, weak
+augmentation at half precision, is that of the image-space arms; cell~B, weak augmentation at
+full precision, sits between them. We did not run cell~D, no augmentation at half precision.
+Cell~A reads \augprecCellA{} on this pool, one positive below the Baseline~A value of
+\augprecBaselineFoldZero{}; the two matched at $\baseFoldZeroPrereg{}$ on the original pool. We
+ran all three cells locally so that they share one venue; the same cell~C configuration on
+Kaggle reads \augprecCellCKaggle{}, \augprecVenueLenses{} positives higher
+(\augprecVenueDiff{}, interval \augprecVenueCI).
+
+The total difference $C - A$ is \augprecTotal{}, 95\% interval \augprecTotalCI. Its upper bound
+sits one positive (\augprecOnePos{} on 98) from zero. The path $A \to B \to C$ splits it into
+an augmentation leg, $B - A$, of \augprecAug{} \augprecAugCI, and a precision leg, $C - B$, of
+\augprecPrec{} \augprecPrecCI; neither leg's interval excludes zero. The legs sum to the total
+only because the path is a chain, and without cell~D the interaction is not identified. The
+augmentation leg has the larger point estimate, \augprecAugLenses{} positives against
+\augprecPrecLenses{}, but with both intervals containing zero we do not name augmentation as
+the cause. With so few trainable parameters, augmentation mostly injects noise into a fixed
+feature space; with the encoder unfrozen it would normally help, so none of these values says
+that augmentation is harmful.
+
+\input{tables/A4_augprec_v2}

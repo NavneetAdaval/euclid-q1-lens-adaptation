@@ -1,0 +1,247 @@
+% =====================================================================================
+% main.tex -- What a target-domain training signal buys a sim-to-real lens finder on Euclid Q1,
+% from a balanced to a 1:10 target (paper v6; earlier titles from rewrites v1 and v5).
+% =====================================================================================
+%
+% Full draft: prose in sections/, generated tables and figures, appendices partly written.
+%
+% Build:
+%     pdflatex main && bibtex main && pdflatex main && pdflatex main
+%
+% Everything under tables/ and figures/ is GENERATED. Never edit those files; rebuild
+% them with
+%     python paper/scripts/make_all.py
+% and see paper/README.md for what each script reads.
+%
+% Class choice: a stock single-column `article`. The OJAp style file swaps in later; the
+% tables are emitted as ordinary floats at \footnotesize so they fit this text block,
+% and paper/scripts/_common.py:write_table is the single place that changes if a
+% two-column style is adopted.
+% =====================================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{array}
+% placeins [section]: a \FloatBarrier at every \section, so no float drifts past it.
+\usepackage[section]{placeins}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+% Float placement. The generated tables are emitted as [tbp] floats
+% (paper/scripts/_common.py:write_table); these limits let a tall table share a page with
+% text instead of being deferred to the end of the document.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{4}
+
+% Ragged-right paragraph cells in the generated tables: >{\TRAG}p{<width>}. The name is
+% upper-case on purpose -- check_latex.py counts the lower-case l/c/r/p letters of a column
+% spec, so a macro spelled in capitals adds no phantom column.
+\newcommand{\TRAG}{\raggedright\arraybackslash}
+
+% Lines carrying several inline intervals or a long \texttt identifier cannot be broken
+% inside them; a little emergency stretch lets TeX set such a paragraph slightly looser
+% instead of pushing a box into the margin. Paragraphs that set well are unaffected.
+\setlength{\emergencystretch}{2.5em}
+
+% Every generated table puts its \caption above the tabular, and article's \belowcaptionskip
+% is 0pt, so a caption's last line can touch the table's top rule. One fixed gap, tables only
+% (figures keep their captions below with the class defaults); a kernel hook, no package.
+% 4pt is the largest gap that keeps the paper at 49 pages (5pt and 6pt give 50; PROJECTv7 7.62).
+\AddToHook{env/table/begin}{\setlength{\belowcaptionskip}{4pt}}
+
+\graphicspath{{figures/}}
+
+% \todo marks unfinished content. make_archive.py refuses to build paper.zip while any
+% remains (see paper/README.md).
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
+
+% Generated number macros (paper/scripts/make_m_sim_zl.py); prose quotes these, never
+% a retyped value.
+\input{tables/M_sim_zl}
+\input{tables/M_augprec}
+\input{tables/M_restart}
+\input{tables/M_orderings_v3}
+\input{tables/M_venue}
+\input{tables/M_batch}
+\input{tables/M_sim_source}
+\input{tables/M_zoobot2}
+\input{tables/M_a2}
+\input{tables/M_pool}
+\input{tables/M_prose}
+% Rewrite v1: the review-round numbers (paper/scripts/make_review_macros.py) and the
+% main-text display variants at two decimals (paper/scripts/make_m_display.py).
+\input{tables/M_review}
+\input{tables/M_display}
+\input{tables/M_rewrite2}
+\input{tables/M_rewrite4}
+\input{tables/M_rewrite5}
+\input{tables/M_k8pairs}
+% Paper v6: the 1:10 diluted-target experiment and the DANN - lambda=0 memorisation diagnostic
+% (paper/scripts/make_dilute10_macros.py).
+\input{tables/M_dilute10}
+% Final build: the cross-check total the acknowledgements quote (make_final_macros.py).
+\input{tables/M_final}
+\input{tables/M_prereg}
+\input{tables/M_codereview}
+% paper/scripts/fig_f5_resolution.py (unchanged, still run by make_all.py) asserts that
+% \wzEightMultMinTwo{} and \wzEightMultMaxTwo{} exist in tables/M_prose.tex, and
+% make_m_prose.py writes only the macros a .tex file names. The old Figure 5 and its text
+% are no longer in the paper; these two names are kept here, in a comment, only so that the
+% unchanged generator still finds them.
+
+\title{What a target-domain training signal buys a sim-to-real lens finder on Euclid Q1,
+       from a balanced to a 1:10 target}
+% AUTHOR BLOCK -- filled in the final build (brief_final_build.md, PROJECTv7 7.61); the
+% Zenodo DOI and the author's name as published were set in 7.62. \PLACEHOLDER would mark
+% anything the author has not supplied; none remains.
+\newcommand{\PLACEHOLDER}[1]{\textcolor{red}{\textbf{[#1]}}}
+
+\author{Navneet Kumar Adaval\\
+  SRM Institute of Science and Technology\\
+  Kattankulathur, Tamil Nadu, India\\
+  \texttt{krrishadaval@gmail.com}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Strong gravitational lenses are rare in Euclid Q1, about one per 2200 objects searched, and too few
+are catalogued to train a finder on. We train finders on simulated arcs painted onto real
+Euclid galaxies and measure how much a training signal from real, unlabelled images improves
+them at a search's operating point: the true-positive rate (TPR) at a false-positive
+rate of $10^{-3}$. No real-lens label is a training target, but in our main design labels shape
+the target: it is built from catalogued lenses and random galaxies, and every target batch is
+balanced 1:1 with the catalogue labels. Against a control identical to our DANN arm except that
+its adaptation weight is zero, DANN raises TPR from $\dFmLambda{}$ to $\dFmDann{}$, a
+gain of $\dCtDannLam{}$ $[\dCtDannLamLo{}, \dCtDannLamHi{}]$, in a contrast registered before the
+control ran but after the adaptation arms' results were known, on a test pool from
+which we removed catalogued lenses and simulation hosts after pre-registration; CORAL, FreeMatch and BNM reach
+$\dFmBnm{}$ to $\dFmCoral{}$, and each adaptation arm's contrast against the control, which is matched to DANN alone,
+excludes zero. In a second
+pre-registered experiment, a first test toward survey prevalence, we diluted the target to one
+lens per ten galaxies and drew its batches without the labels. DANN still raises TPR over the
+control, by $\dlGDann{}$ $[\dlGDannLo{}, \dlGDannHi{}]$, and BNM by $\dlGBnm{}$
+$[\dlGBnmLoThree{}, \dlGBnmHi{}]$, though for both the comparison with the balanced target
+cannot rule out that much of the original gain was lost; for CORAL and FreeMatch we cannot detect a gain.
+Dilution also cuts the number of lenses per batch and how often each is seen, so it does not
+isolate the class proportion, and the diluted pool is still built from the catalogue. At about
+\rwFivePosPerFold{} test lenses per fold, no single-checkpoint comparison separates CORAL, DANN
+and FreeMatch. Our simulation-only baseline is far below a published one, so all gains are
+measured from a low starting point.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_data}
+\input{sections/04_methods}
+\input{sections/05_evaluation}
+\input{sections/06_results}
+\input{sections/08_negative_results}
+\input{sections/09_limitations}
+\input{sections/10_conclusion}
+
+\section*{Acknowledgements}
+% The two sentences below are required verbatim: the first by the Euclid Q1 data licence
+% (ESA Cosmos, "Q1 Data License and Credits"), the second because ESA Datalabs was used
+% (scripts/filter_deflectors_leakfree.py, scripts/probe_size_native.py,
+% scripts/extract_neg_ids.py). See paper/CREDITS_PROVENANCE_REPORT.md.
+This work has made use of the Euclid Q1 data from the Euclid mission of the European Space
+Agency (ESA), 2025, \url{https://doi.org/10.57780/esa-2853f3b}~\citep{euclidq1data}.
+This research makes use of ESA Datalabs (datalabs.esa.int;~\cite{navarro2024datalabs}), an initiative by ESA's Data
+Science and Archives Division in the Science and Operations Department, Directorate of
+Science.
+
+GPU time was provided by Kaggle and Google Colab.
+
+We used Anthropic's Claude (claude.ai and Claude Code) throughout this work: to help design
+the experiments and their pre-registrations, to write and test the training and analysis code,
+and to draft and revise the text. Every number in the paper is generated by scripts from stored
+run artifacts and recomputed against them at every build (\nCrossChecks{} automated checks), and
+each analysis was checked against known-null controls and against exact reproductions of earlier
+results before new values were computed (Appendices~\ref{sec:hashes} and~\ref{app:repro}). These
+checks were themselves written with the same tools. We read and revised all text and code and
+take full responsibility for the content.
+
+This work used PyTorch~\citep{paszke2019pytorch}, timm~\citep{wightman2019timm},
+NumPy~\citep{harris2020numpy}, SciPy~\citep{virtanen2020scipy},
+scikit-learn~\citep{pedregosa2011sklearn}, Matplotlib~\citep{hunter2007matplotlib} and
+Astropy~\citep{astropy2022}; we also used GalSim~\citep{rowe2015galsim} and
+lenstronomy~\citep{birrer2018lenstronomy,birrer2021lenstronomy}.
+
+\section*{Data and code availability}
+The code for simulation, training, evaluation and every table and figure in this paper is
+available at \url{https://github.com/NavneetAdaval/euclid-q1-lens-adaptation} and archived at
+\url{https://doi.org/10.5281/zenodo.24285258}. For \dlLostArmsWord{} of the 1:10 arms (DANN, BNM and the CORAL and FreeMatch frozen
+stages), the exact versions of \dlLostFilesWord{} helper scripts that ran
+(\texttt{dilute10\_common.py}, \texttt{dilute10\_batch\_log.py} and the arm's wrapper) are lost;
+the release has their later versions. Their recorded digests are in the run files. For
+Baseline A, FreeMatch and CORAL's balanced frozen stage, the runs recorded no per-module digests,
+and BNM's balanced runs recorded only the files its pre-registration hashes. The
+repository includes the pre-registration and budget files with their recorded digests
+(Appendix~\ref{sec:hashes}), the pre-fold copy of the DANN pre-registration, the split
+definitions, and the stored test scores from which the reported numbers are computed:
+at each checkpoint for the unfrozen confirmatory runs of both experiments, and at the final
+checkpoint for the frozen runs, together with the summary files the frozen comparison and the
+secondary analyses read; for DANN's frozen development run only its summary file is kept. It
+also includes the definition file of the 1:10 target pool (Section~\ref{sec:splits}) and the
+list of negatives removed from the test pool (Section~\ref{sec:testpool}). Our run logs, the
+dated lab notes we kept throughout this work, are not part of the release. Every digest and
+value the build takes from them is in \texttt{public\_inputs/\allowbreak record\_extract.json},
+which also records the logs' own digest, and we will share the logs with the editor and
+referees on request. The
+Euclid images are not redistributed. The negatives come from the Euclid Q1 data release,
+available through the ESA Euclid Science Archive, and the lens positives from the public
+Q1 lens-cutout archives~\citep{discoveryenginecat}; the split definitions identify the negatives by Euclid object
+identifier and the lens positives through a list of their Euclid identifiers, and the
+repository includes the retrieval and preprocessing code. The simulated training lenses
+are painted onto these images and are likewise not redistributed; the generator that
+produced them is included with its fixed seed, but an exact regeneration is not
+guaranteed, because neither the GalSim version used (Section~\ref{sec:limitations}) nor
+the number of parallel workers the generator ran with was recorded. The Datalabs query that
+selected the deflectors was not archived; the released identifier list defines the sample.
+The lens positives are the grade A and B
+candidates of Euclid Collaboration: Walmsley et al.~\citep{discoveryengineA}. The grade-X hard negatives are identified through
+version 0.0.1 of the Discovery Engine catalogue~\citep{discoveryenginecat001}; later versions
+publish grades A--C only~\citep{discoveryenginecat}. The pretrained encoder is the Zoobot checkpoint
+named in Appendix~\ref{app:repro}, available from the Hugging Face hub.
+
+% \nocite{*} was removed at stage 3, with the prose in place and every reference cited
+% from a sentence. Rewrite v1 (2026-10-10) removed every entry the rewritten text no longer
+% cites; paper/REWRITE_v1_REPORT.md lists them, and the previous refs.bib is in
+% backup/rewrite_v1_20261010_182859/paper/.
+%
+% plainnat_doi_eprint.bst is plainnat.bst with two changes, listed at the top of that file:
+% @misc entries print their doi, and every entry with an eprint prints its arXiv identifier.
+\bibliographystyle{plainnat_doi_eprint}
+\bibliography{refs}
+
+% The appendices follow the references (A&A, MNRAS and OJAp order). placeins puts a
+% \FloatBarrier before every \section, so each appendix's tables stay inside it.
+\appendix
+\input{sections/A1_per_fold_tables}
+\input{sections/A2_prereg_hashes}
+\input{sections/A3_failed_orderings}
+\input{sections/A4_augmentation_precision}
+\input{sections/A5_checkpoint_restart}
+\input{sections/A6_split_rules}
+\input{sections/A7_prereg_pool}
+\input{sections/A8_bright_pool}
+\input{sections/A9_breakdowns}
+\input{sections/A10_reproducibility}
+\input{sections/A11_dilute10}
+
+\end{document}

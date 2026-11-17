@@ -1,0 +1,1024 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1/scripts/a3_breakdowns.py",
+ "test_pool": "D1",
+ "folds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "metric": "scripts/metrics.py metric_suite / tpr_at_fpr (TPR at FPR=1e-3, full ROC with drop_intermediate=False, np.interp); thresholds from metrics.operating_threshold on the same curve",
+ "generated_utc": "2026-10-08T16:07:29+00:00",
+ "notes": [
+  "descriptive; no contrast formed"
+ ],
+ "inputs_sha256": {
+  "data/q1_lenses_processed/lens_cutouts.npz": "4c62ce2d2f987d0719bb606e85a43a0ae57fe5bc5bccd5fe5525250340d0c877",
+  "data_old/q1_lenses/lens_manifest_positive.csv": "359b776d4b5d6c7ed0e53c530c8ddcc232e9eb518f72de98b6a10f36ff5fa182",
+  "data_old/q1_lenses/modeling_lens_mass.csv": "f2a52616a1ac65137b34abe0892d251e18e2c60e9a64c459914102f44ec49db5",
+  "data_old/q1_lenses/modeling_lens_mge.csv": "b85f7c78aebe898a3d7d77d07a72568cd2d596b525883b358b792e4ce9fa2432",
+  "data_old/q1_lenses/modeling_lens_sersic.csv": "c0b05783ecfdcb4068c3487db11c7eda18e070f8011726fc17d50a04aecd5dc2",
+  "data_old/q1_lenses/modeling_mge_magnitude.csv": "764f786e0cc003602258b724fa96c99f0a95dc084381dde36c5e37b2f98f937f",
+  "data_old/q1_lenses/q1_discovery_engine_lens_catalog.csv": "ee5e60cd507413eabf3da8ffa37a3c527212da00feb29083cf516a86d6f26877",
+  "data_old/q1_lenses/q1_discovery_engine_lens_catalog_old.csv": "f3fc6da4ce18e2bf2bee142c56fa431b12085a72d61f6f3337d9281c516d2c0e",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold1/logits/g16_2000_fold1/step_2000.npz": "a93ca63fa01ec6c103e95808f1819d9e21f9a87ac65761e979e3a766818b600b",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold1/logits/ids.npz": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold2/logits/g16_2000_fold2/step_2000.npz": "8b527ecd0107dd313da7e6250092bee51b3dbc9b320ddb9cfff41b6cf0126e96",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold2/logits/ids.npz": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold3/logits/g16_2000_fold3/step_2000.npz": "fe0e7630f584f67290f3c3952bfe8efacea8c54a8345fb62e1dc09d5f29e7fdb",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold3/logits/ids.npz": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold4/logits/g16_2000_fold4/step_2000.npz": "fda681bb033eaa38e6c44574e5a688a0ed832943ec7f416c8f4ddc989943b054",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold4/logits/ids.npz": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979",
+  "runs/bakeoff_baseline_A/scores/step_8000_fold1.npz": "bb1b7173d6de7373f484d7ff0b943bcfb94a7e0e72ce7352016207130603eda2",
+  "runs/bakeoff_baseline_A/scores/step_8000_fold2.npz": "f77916488bbccc6faa559cd6c12d217efea83700e18d168bdf6febaa0cb03edd",
+  "runs/bakeoff_baseline_A/scores/step_8000_fold3.npz": "7f9b0f535873b730e76f019849e48a1bfad5423869477f4a15a8108d09f21a2d",
+  "runs/bakeoff_baseline_A/scores/step_8000_fold4.npz": "07bbff88d209cf08a47ee3a698b75912af816ad7bb395ef810b696e2f91a0b51",
+  "runs/baseline_unfrozen/fold1/extracted/lambda0_r6_fold1/logits/dann_nb3_lambda0_fold1/step_4000.npz": "378364428795dc8f5654328f1b43a018a12c8e494bb35ed0c08f1cfac030e90f",
+  "runs/baseline_unfrozen/fold1/extracted/lambda0_r6_fold1/logits/ids.npz": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad",
+  "runs/baseline_unfrozen/fold2/extracted/lambda0_r6_fold2/logits/dann_nb3_lambda0_fold2/step_4000.npz": "6ed955d76e08118906f345eec9d119f1eb40f51be5c44c9fc601284f36c9b2f1",
+  "runs/baseline_unfrozen/fold2/extracted/lambda0_r6_fold2/logits/ids.npz": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048",
+  "runs/baseline_unfrozen/fold3/extracted/lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_4000.npz": "c50675658ce5116eaed936d0b04d70b66b0f0059bbe1462b21c8eea38c93e643",
+  "runs/baseline_unfrozen/fold3/extracted/lambda0_r6_fold3/logits/ids.npz": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d",
+  "runs/baseline_unfrozen/fold4/extracted/lambda0_r6_fold4/logits/dann_nb3_lambda0_fold4/step_4000.npz": "e86de6f7c351fc46b58468e06bedf1a8bbc7bfcec6fee3948785a9f8c4e54330",
+  "runs/baseline_unfrozen/fold4/extracted/lambda0_r6_fold4/logits/ids.npz": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979",
+  "runs/bnm_r6_folds/bnm_r6_fold1/logits/bnm_nb3_fold1/step_4000.npz": "1959d498ef28c368567a6bb305d70a7c26d9995f1a9ee90730e507e77891687a",
+  "runs/bnm_r6_folds/bnm_r6_fold1/logits/ids.npz": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad",
+  "runs/bnm_r6_folds/bnm_r6_fold2/logits/bnm_nb3_fold2/step_4000.npz": "d8e4289a37e82b1df2a76b8aeff9a04c9d63943150304facd2b8250e9c679967",
+  "runs/bnm_r6_folds/bnm_r6_fold2/logits/ids.npz": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048",
+  "runs/bnm_r6_folds/bnm_r6_fold3/logits/bnm_nb3_fold3/step_4000.npz": "f6cee70433175849fc95276d218def55b059db28a1207e162884d9a6633de24c",
+  "runs/bnm_r6_folds/bnm_r6_fold3/logits/ids.npz": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d",
+  "runs/bnm_r6_folds/bnm_r6_fold4/logits/bnm_nb3_fold4/step_4000.npz": "30edf66b41c7cc5939d5ac828c7a2658dd024cd56fbbf7493921fcc58dd6edc0",
+  "runs/bnm_r6_folds/bnm_r6_fold4/logits/ids.npz": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979",
+  "runs/dann_main/fold1/extracted/fold1/logits/dann_nb3_fold1/step_2000.npz": "68475571b5207a90911bf60a428e2cb292febff1c12be5b8a4d5a0cc54ea19a0",
+  "runs/dann_main/fold1/extracted/fold1/logits/dann_nb3_fold1/step_4000.npz": "62ab6b1ecaba5da27f8618cd891275ff1bfa35211957986872ecc9cd9977c6c6",
+  "runs/dann_main/fold1/extracted/fold1/logits/ids.npz": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad",
+  "runs/dann_main/fold2/extracted/fold2/logits/dann_nb3_fold2/step_2000.npz": "b019350aae0def3ded2d20fe83503af1a6a99c51b13c6877bd3ff46bf48e69db",
+  "runs/dann_main/fold2/extracted/fold2/logits/dann_nb3_fold2/step_4000.npz": "437571529155e516ca3d699ec0c4600381cf872b1cddc894e6ebdba760b5f8de",
+  "runs/dann_main/fold2/extracted/fold2/logits/ids.npz": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048",
+  "runs/dann_main/fold3/extracted/fold3/logits/dann_nb3_fold3/step_2000.npz": "806788a0d3a79fec51c8661ef372116d3a915f5d4a55b4fc58271c7796fc71ac",
+  "runs/dann_main/fold3/extracted/fold3/logits/dann_nb3_fold3/step_4000.npz": "2167a7b9fa9c3739eb3b06e5991b3ad4dbda35c35fd9dd181a69d027be4d4659",
+  "runs/dann_main/fold3/extracted/fold3/logits/ids.npz": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d",
+  "runs/dann_main/fold4/extracted/fold4/logits/dann_nb3_fold4/step_2000.npz": "a1c9189fcaac3f3f8768fe5ca9cb6782f5844341ed498c61c41dc9d0ba9b2550",
+  "runs/dann_main/fold4/extracted/fold4/logits/dann_nb3_fold4/step_4000.npz": "d2e49613f2e1d19b9e58b4bbd11b4d8ff6b35ab6ee36416380c6c0f0ed96b864",
+  "runs/dann_main/fold4/extracted/fold4/logits/ids.npz": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979",
+  "runs/freematch_nb3_unfrozen_fold1/logits/ids.npz": "561a8f470df2583a3358cf9d93ad4b268765bf5f55ebbcfecdc43f958afe67da",
+  "runs/freematch_nb3_unfrozen_fold1/logits/step_1500.npz": "a2e2b0ea130ca7ed568716fa077b9194f73577e05862ce5a8ada418f44bbc870",
+  "runs/freematch_nb3_unfrozen_fold2/logits/ids.npz": "0724145b3a9527ece4996e7d91a27fca9b880f3ab2368f2a54648576f4535492",
+  "runs/freematch_nb3_unfrozen_fold2/logits/step_1500.npz": "5cf8a5590d87dd7b1395c42e2b6ff445ae979c724d449e77bd9c698c110bc564",
+  "runs/freematch_nb3_unfrozen_fold3/logits/ids.npz": "76411979ce7618722edb37e9992aed6b180214df4019852cbb95fe494bdebf10",
+  "runs/freematch_nb3_unfrozen_fold3/logits/step_1500.npz": "d3502cd0bc802b6cacaca911b543d02b2415693b5d4c4a18429f906a1fc9a759",
+  "runs/freematch_nb3_unfrozen_fold4/logits/ids.npz": "2a1de09932a8694ab29f61c2b9f9040c299bcfc560ece02e7b052111afeb6270",
+  "runs/freematch_nb3_unfrozen_fold4/logits/step_1500.npz": "e274d55638b2bbe1c99f6fb2d5e6cbb1709fff725c838cd90a1f826158a2e987"
+ },
+ "result": {
+  "expert_score (lens_cutouts.npz)": {
+   "n_test_lenses_folds1_4": 391,
+   "n_with_value": 391,
+   "bin_edges": [
+    1.5028554201126099,
+    1.7575052976608276,
+    2.243774652481079,
+    3.1584014892578125
+   ],
+   "bin_rule": "tertiles of the folds 1-4 test lenses with a value; bin i = (edge_i, edge_i+1], first bin closed below",
+   "n_value_exactly_zero": 0,
+   "n_value_gt_30": 0,
+   "bin_counts": [
+    131,
+    130,
+    130
+   ],
+   "bin_grade_counts": [
+    {
+     "A": 0,
+     "B": 131
+    },
+    {
+     "A": 66,
+     "B": 64
+    },
+    {
+     "A": 130,
+     "B": 0
+    }
+   ],
+   "recall": {
+    "baseline@8000": [
+     {
+      "recovered": 10,
+      "total": 131,
+      "rate": 0.07633587786259542,
+      "clopper_pearson_95": [
+       0.03721220811525595,
+       0.13590431698662697
+      ]
+     },
+     {
+      "recovered": 22,
+      "total": 130,
+      "rate": 0.16923076923076924,
+      "clopper_pearson_95": [
+       0.10920052681022163,
+       0.24493112684720664
+      ]
+     },
+     {
+      "recovered": 40,
+      "total": 130,
+      "rate": 0.3076923076923077,
+      "clopper_pearson_95": [
+       0.22975657881360284,
+       0.3946232845379779
+      ]
+     }
+    ],
+    "lambda0@4000": [
+     {
+      "recovered": 10,
+      "total": 131,
+      "rate": 0.07633587786259542,
+      "clopper_pearson_95": [
+       0.03721220811525595,
+       0.13590431698662697
+      ]
+     },
+     {
+      "recovered": 19,
+      "total": 130,
+      "rate": 0.14615384615384616,
+      "clopper_pearson_95": [
+       0.09034685211594924,
+       0.21879258859277764
+      ]
+     },
+     {
+      "recovered": 43,
+      "total": 130,
+      "rate": 0.33076923076923076,
+      "clopper_pearson_95": [
+       0.25078121865772013,
+       0.4186646006059337
+      ]
+     }
+    ],
+    "bnm@4000": [
+     {
+      "recovered": 23,
+      "total": 131,
+      "rate": 0.17557251908396945,
+      "clopper_pearson_95": [
+       0.11467459798488014,
+       0.2517055354510041
+      ]
+     },
+     {
+      "recovered": 51,
+      "total": 130,
+      "rate": 0.3923076923076923,
+      "clopper_pearson_95": [
+       0.3078810045098774,
+       0.48175620409738296
+      ]
+     },
+     {
+      "recovered": 84,
+      "total": 130,
+      "rate": 0.6461538461538462,
+      "clopper_pearson_95": [
+       0.5575076594894983,
+       0.7279770055067463
+      ]
+     }
+    ],
+    "freematch@1500": [
+     {
+      "recovered": 36,
+      "total": 131,
+      "rate": 0.2748091603053435,
+      "clopper_pearson_95": [
+       0.20047301576937057,
+       0.35961668237045213
+      ]
+     },
+     {
+      "recovered": 67,
+      "total": 130,
+      "rate": 0.5153846153846153,
+      "clopper_pearson_95": [
+       0.4261500490399127,
+       0.603902662044455
+      ]
+     },
+     {
+      "recovered": 99,
+      "total": 130,
+      "rate": 0.7615384615384615,
+      "clopper_pearson_95": [
+       0.6789205415154522,
+       0.8318660377296965
+      ]
+     }
+    ],
+    "dann@4000": [
+     {
+      "recovered": 36,
+      "total": 131,
+      "rate": 0.2748091603053435,
+      "clopper_pearson_95": [
+       0.20047301576937057,
+       0.35961668237045213
+      ]
+     },
+     {
+      "recovered": 68,
+      "total": 130,
+      "rate": 0.5230769230769231,
+      "clopper_pearson_95": [
+       0.43371313690291313,
+       0.6113658963229738
+      ]
+     },
+     {
+      "recovered": 91,
+      "total": 130,
+      "rate": 0.7,
+      "clopper_pearson_95": [
+       0.6134399803436301,
+       0.7772012038817627
+      ]
+     }
+    ],
+    "dann@2000": [
+     {
+      "recovered": 39,
+      "total": 131,
+      "rate": 0.29770992366412213,
+      "clopper_pearson_95": [
+       0.22101689514151188,
+       0.38379660418987827
+      ]
+     },
+     {
+      "recovered": 76,
+      "total": 130,
+      "rate": 0.5846153846153846,
+      "clopper_pearson_95": [
+       0.49494325740745526,
+       0.670343731050854
+      ]
+     },
+     {
+      "recovered": 102,
+      "total": 130,
+      "rate": 0.7846153846153846,
+      "clopper_pearson_95": [
+       0.7039736806711416,
+       0.8518529590228049
+      ]
+     }
+    ],
+    "coral@2000": [
+     {
+      "recovered": 36,
+      "total": 131,
+      "rate": 0.2748091603053435,
+      "clopper_pearson_95": [
+       0.20047301576937057,
+       0.35961668237045213
+      ]
+     },
+     {
+      "recovered": 67,
+      "total": 130,
+      "rate": 0.5153846153846153,
+      "clopper_pearson_95": [
+       0.4261500490399127,
+       0.603902662044455
+      ]
+     },
+     {
+      "recovered": 101,
+      "total": 130,
+      "rate": 0.7769230769230769,
+      "clopper_pearson_95": [
+       0.6955892441162588,
+       0.8452251763082324
+      ]
+     }
+    ]
+   }
+  },
+  "einstein_radius_effective_median_pdf (modeling_lens_mass.csv)": {
+   "n_test_lenses_folds1_4": 391,
+   "n_with_value": 245,
+   "bin_edges": [
+    0.0,
+    0.7117250445789126,
+    1.0113663553796552,
+    4.3089358741417065
+   ],
+   "bin_rule": "tertiles of the folds 1-4 test lenses with a value; bin i = (edge_i, edge_i+1], first bin closed below",
+   "n_value_exactly_zero": 2,
+   "n_value_gt_30": 0,
+   "bin_counts": [
+    82,
+    81,
+    82
+   ],
+   "bin_grade_counts": [
+    {
+     "A": 41,
+     "B": 41
+    },
+    {
+     "A": 51,
+     "B": 30
+    },
+    {
+     "A": 53,
+     "B": 29
+    }
+   ],
+   "recall": {
+    "baseline@8000": [
+     {
+      "recovered": 8,
+      "total": 82,
+      "rate": 0.0975609756097561,
+      "clopper_pearson_95": [
+       0.043068843440103845,
+       0.18321393839942762
+      ]
+     },
+     {
+      "recovered": 22,
+      "total": 81,
+      "rate": 0.2716049382716049,
+      "clopper_pearson_95": [
+       0.17868341853508563,
+       0.38185275507549393
+      ]
+     },
+     {
+      "recovered": 24,
+      "total": 82,
+      "rate": 0.2926829268292683,
+      "clopper_pearson_95": [
+       0.1973533231878524,
+       0.4035204228141883
+      ]
+     }
+    ],
+    "lambda0@4000": [
+     {
+      "recovered": 9,
+      "total": 82,
+      "rate": 0.10975609756097561,
+      "clopper_pearson_95": [
+       0.05143224530325538,
+       0.19815241402547332
+      ]
+     },
+     {
+      "recovered": 28,
+      "total": 81,
+      "rate": 0.345679012345679,
+      "clopper_pearson_95": [
+       0.24342629440057995,
+       0.4595853013916585
+      ]
+     },
+     {
+      "recovered": 27,
+      "total": 82,
+      "rate": 0.32926829268292684,
+      "clopper_pearson_95": [
+       0.2294210875023546,
+       0.44185880061611466
+      ]
+     }
+    ],
+    "bnm@4000": [
+     {
+      "recovered": 25,
+      "total": 82,
+      "rate": 0.3048780487804878,
+      "clopper_pearson_95": [
+       0.20796252902742485,
+       0.4163775756233631
+      ]
+     },
+     {
+      "recovered": 47,
+      "total": 81,
+      "rate": 0.5802469135802469,
+      "clopper_pearson_95": [
+       0.4653608043137317,
+       0.6890878290277171
+      ]
+     },
+     {
+      "recovered": 48,
+      "total": 82,
+      "rate": 0.5853658536585366,
+      "clopper_pearson_95": [
+       0.4712057994534928,
+       0.6931739258916318
+      ]
+     }
+    ],
+    "freematch@1500": [
+     {
+      "recovered": 39,
+      "total": 82,
+      "rate": 0.47560975609756095,
+      "clopper_pearson_95": [
+       0.3641162065084405,
+       0.5889165809722925
+      ]
+     },
+     {
+      "recovered": 53,
+      "total": 81,
+      "rate": 0.654320987654321,
+      "clopper_pearson_95": [
+       0.5404146986083416,
+       0.75657370559942
+      ]
+     },
+     {
+      "recovered": 56,
+      "total": 82,
+      "rate": 0.6829268292682927,
+      "clopper_pearson_95": [
+       0.5708437500390529,
+       0.7813473419775478
+      ]
+     }
+    ],
+    "dann@4000": [
+     {
+      "recovered": 38,
+      "total": 82,
+      "rate": 0.4634146341463415,
+      "clopper_pearson_95": [
+       0.3525309484388726,
+       0.5770184910294749
+      ]
+     },
+     {
+      "recovered": 59,
+      "total": 81,
+      "rate": 0.7283950617283951,
+      "clopper_pearson_95": [
+       0.618147244924506,
+       0.8213165814649144
+      ]
+     },
+     {
+      "recovered": 48,
+      "total": 82,
+      "rate": 0.5853658536585366,
+      "clopper_pearson_95": [
+       0.4712057994534928,
+       0.6931739258916318
+      ]
+     }
+    ],
+    "dann@2000": [
+     {
+      "recovered": 48,
+      "total": 82,
+      "rate": 0.5853658536585366,
+      "clopper_pearson_95": [
+       0.4712057994534928,
+       0.6931739258916318
+      ]
+     },
+     {
+      "recovered": 57,
+      "total": 81,
+      "rate": 0.7037037037037037,
+      "clopper_pearson_95": [
+       0.5919117485456062,
+       0.800070602033106
+      ]
+     },
+     {
+      "recovered": 57,
+      "total": 82,
+      "rate": 0.6951219512195121,
+      "clopper_pearson_95": [
+       0.5836224243766371,
+       0.7920374709725752
+      ]
+     }
+    ],
+    "coral@2000": [
+     {
+      "recovered": 46,
+      "total": 82,
+      "rate": 0.5609756097560976,
+      "clopper_pearson_95": [
+       0.44696641843671553,
+       0.6704497925744979
+      ]
+     },
+     {
+      "recovered": 56,
+      "total": 81,
+      "rate": 0.691358024691358,
+      "clopper_pearson_95": [
+       0.5789196420792092,
+       0.7893176456199295
+      ]
+     },
+     {
+      "recovered": 55,
+      "total": 82,
+      "rate": 0.6707317073170732,
+      "clopper_pearson_95": [
+       0.5581411993838854,
+       0.7705789124976454
+      ]
+     }
+    ]
+   }
+  },
+  "vis_lensed_source_magnitude_ab_median_pdf (modeling_mge_magnitude.csv; arc brightness)": {
+   "n_test_lenses_folds1_4": 391,
+   "n_with_value": 245,
+   "bin_edges": [
+    18.111845682376696,
+    21.949313233994754,
+    22.57420762371639,
+    41.07711668391247
+   ],
+   "bin_rule": "tertiles of the folds 1-4 test lenses with a value; bin i = (edge_i, edge_i+1], first bin closed below",
+   "n_value_exactly_zero": 0,
+   "n_value_gt_30": 1,
+   "bin_counts": [
+    82,
+    81,
+    82
+   ],
+   "bin_grade_counts": [
+    {
+     "A": 53,
+     "B": 29
+    },
+    {
+     "A": 46,
+     "B": 35
+    },
+    {
+     "A": 46,
+     "B": 36
+    }
+   ],
+   "recall": {
+    "baseline@8000": [
+     {
+      "recovered": 22,
+      "total": 82,
+      "rate": 0.2682926829268293,
+      "clopper_pearson_95": [
+       0.17638985939765728,
+       0.37755975517216905
+      ]
+     },
+     {
+      "recovered": 15,
+      "total": 81,
+      "rate": 0.18518518518518517,
+      "clopper_pearson_95": [
+       0.10751669597964444,
+       0.28697608967809857
+      ]
+     },
+     {
+      "recovered": 17,
+      "total": 82,
+      "rate": 0.2073170731707317,
+      "clopper_pearson_95": [
+       0.1256579512982651,
+       0.31105170394255083
+      ]
+     }
+    ],
+    "lambda0@4000": [
+     {
+      "recovered": 25,
+      "total": 82,
+      "rate": 0.3048780487804878,
+      "clopper_pearson_95": [
+       0.20796252902742485,
+       0.4163775756233631
+      ]
+     },
+     {
+      "recovered": 20,
+      "total": 81,
+      "rate": 0.24691358024691357,
+      "clopper_pearson_95": [
+       0.15780861682761124,
+       0.3552602104418146
+      ]
+     },
+     {
+      "recovered": 19,
+      "total": 82,
+      "rate": 0.23170731707317074,
+      "clopper_pearson_95": [
+       0.14563878592253082,
+       0.33795208176630626
+      ]
+     }
+    ],
+    "bnm@4000": [
+     {
+      "recovered": 44,
+      "total": 82,
+      "rate": 0.5365853658536586,
+      "clopper_pearson_95": [
+       0.42298150897052506,
+       0.6474690515611274
+      ]
+     },
+     {
+      "recovered": 37,
+      "total": 81,
+      "rate": 0.4567901234567901,
+      "clopper_pearson_95": [
+       0.3455796644311145,
+       0.5712537426278557
+      ]
+     },
+     {
+      "recovered": 39,
+      "total": 82,
+      "rate": 0.47560975609756095,
+      "clopper_pearson_95": [
+       0.3641162065084405,
+       0.5889165809722925
+      ]
+     }
+    ],
+    "freematch@1500": [
+     {
+      "recovered": 48,
+      "total": 82,
+      "rate": 0.5853658536585366,
+      "clopper_pearson_95": [
+       0.4712057994534928,
+       0.6931739258916318
+      ]
+     },
+     {
+      "recovered": 47,
+      "total": 81,
+      "rate": 0.5802469135802469,
+      "clopper_pearson_95": [
+       0.4653608043137317,
+       0.6890878290277171
+      ]
+     },
+     {
+      "recovered": 53,
+      "total": 82,
+      "rate": 0.6463414634146342,
+      "clopper_pearson_95": [
+       0.5329563284229164,
+       0.7488162238672743
+      ]
+     }
+    ],
+    "dann@4000": [
+     {
+      "recovered": 50,
+      "total": 82,
+      "rate": 0.6097560975609756,
+      "clopper_pearson_95": [
+       0.4957047518167979,
+       0.7156353901628536
+      ]
+     },
+     {
+      "recovered": 47,
+      "total": 81,
+      "rate": 0.5802469135802469,
+      "clopper_pearson_95": [
+       0.4653608043137317,
+       0.6890878290277171
+      ]
+     },
+     {
+      "recovered": 48,
+      "total": 82,
+      "rate": 0.5853658536585366,
+      "clopper_pearson_95": [
+       0.4712057994534928,
+       0.6931739258916318
+      ]
+     }
+    ],
+    "dann@2000": [
+     {
+      "recovered": 52,
+      "total": 82,
+      "rate": 0.6341463414634146,
+      "clopper_pearson_95": [
+       0.5204704994802775,
+       0.7378258817530137
+      ]
+     },
+     {
+      "recovered": 56,
+      "total": 81,
+      "rate": 0.691358024691358,
+      "clopper_pearson_95": [
+       0.5789196420792092,
+       0.7893176456199295
+      ]
+     },
+     {
+      "recovered": 54,
+      "total": 82,
+      "rate": 0.6585365853658537,
+      "clopper_pearson_95": [
+       0.5455126787702358,
+       0.7597345150419386
+      ]
+     }
+    ],
+    "coral@2000": [
+     {
+      "recovered": 54,
+      "total": 82,
+      "rate": 0.6585365853658537,
+      "clopper_pearson_95": [
+       0.5455126787702358,
+       0.7597345150419386
+      ]
+     },
+     {
+      "recovered": 48,
+      "total": 81,
+      "rate": 0.5925925925925926,
+      "clopper_pearson_95": [
+       0.4776978653201566,
+       0.7005101132693943
+      ]
+     },
+     {
+      "recovered": 55,
+      "total": 82,
+      "rate": 0.6707317073170732,
+      "clopper_pearson_95": [
+       0.5581411993838854,
+       0.7705789124976454
+      ]
+     }
+    ]
+   }
+  },
+  "vis_max_lensed_source_signal_to_noise_ratio (modeling_mge_magnitude.csv)": {
+   "n_test_lenses_folds1_4": 391,
+   "n_with_value": 245,
+   "bin_edges": [
+    4.5761038403876566e-08,
+    8.668254671454505,
+    13.83499848240374,
+    121.35676989420485
+   ],
+   "bin_rule": "tertiles of the folds 1-4 test lenses with a value; bin i = (edge_i, edge_i+1], first bin closed below",
+   "n_value_exactly_zero": 0,
+   "n_value_gt_30": 6,
+   "bin_counts": [
+    82,
+    81,
+    82
+   ],
+   "bin_grade_counts": [
+    {
+     "A": 46,
+     "B": 36
+    },
+    {
+     "A": 49,
+     "B": 32
+    },
+    {
+     "A": 50,
+     "B": 32
+    }
+   ],
+   "recall": {
+    "baseline@8000": [
+     {
+      "recovered": 24,
+      "total": 82,
+      "rate": 0.2926829268292683,
+      "clopper_pearson_95": [
+       0.1973533231878524,
+       0.4035204228141883
+      ]
+     },
+     {
+      "recovered": 18,
+      "total": 81,
+      "rate": 0.2222222222222222,
+      "clopper_pearson_95": [
+       0.13734189202394656,
+       0.32827775379741186
+      ]
+     },
+     {
+      "recovered": 12,
+      "total": 82,
+      "rate": 0.14634146341463414,
+      "clopper_pearson_95": [
+       0.07796814671678702,
+       0.2416795732351803
+      ]
+     }
+    ],
+    "lambda0@4000": [
+     {
+      "recovered": 26,
+      "total": 82,
+      "rate": 0.3170731707317073,
+      "clopper_pearson_95": [
+       0.218652658022452,
+       0.429156249960947
+      ]
+     },
+     {
+      "recovered": 23,
+      "total": 81,
+      "rate": 0.2839506172839506,
+      "clopper_pearson_95": [
+       0.18926196857762104,
+       0.39501338474243436
+      ]
+     },
+     {
+      "recovered": 15,
+      "total": 82,
+      "rate": 0.18292682926829268,
+      "clopper_pearson_95": [
+       0.10615514345744638,
+       0.28370037801707015
+      ]
+     }
+    ],
+    "bnm@4000": [
+     {
+      "recovered": 43,
+      "total": 82,
+      "rate": 0.524390243902439,
+      "clopper_pearson_95": [
+       0.41108341902770756,
+       0.6358837934915593
+      ]
+     },
+     {
+      "recovered": 42,
+      "total": 81,
+      "rate": 0.5185185185185185,
+      "clopper_pearson_95": [
+       0.40466196586489894,
+       0.6309811325292206
+      ]
+     },
+     {
+      "recovered": 35,
+      "total": 82,
+      "rate": 0.4268292682926829,
+      "clopper_pearson_95": [
+       0.3181557353332504,
+       0.5409459716262537
+      ]
+     }
+    ],
+    "freematch@1500": [
+     {
+      "recovered": 54,
+      "total": 82,
+      "rate": 0.6585365853658537,
+      "clopper_pearson_95": [
+       0.5455126787702358,
+       0.7597345150419386
+      ]
+     },
+     {
+      "recovered": 51,
+      "total": 81,
+      "rate": 0.6296296296296297,
+      "clopper_pearson_95": [
+       0.515117052406213,
+       0.7343630698495005
+      ]
+     },
+     {
+      "recovered": 43,
+      "total": 82,
+      "rate": 0.524390243902439,
+      "clopper_pearson_95": [
+       0.41108341902770756,
+       0.6358837934915593
+      ]
+     }
+    ],
+    "dann@4000": [
+     {
+      "recovered": 50,
+      "total": 82,
+      "rate": 0.6097560975609756,
+      "clopper_pearson_95": [
+       0.4957047518167979,
+       0.7156353901628536
+      ]
+     },
+     {
+      "recovered": 46,
+      "total": 81,
+      "rate": 0.5679012345679012,
+      "clopper_pearson_95": [
+       0.45309027548924435,
+       0.6775982615585802
+      ]
+     },
+     {
+      "recovered": 49,
+      "total": 82,
+      "rate": 0.5975609756097561,
+      "clopper_pearson_95": [
+       0.48342243036237675,
+       0.7044379546872009
+      ]
+     }
+    ],
+    "dann@2000": [
+     {
+      "recovered": 55,
+      "total": 82,
+      "rate": 0.6707317073170732,
+      "clopper_pearson_95": [
+       0.5581411993838854,
+       0.7705789124976454
+      ]
+     },
+     {
+      "recovered": 57,
+      "total": 81,
+      "rate": 0.7037037037037037,
+      "clopper_pearson_95": [
+       0.5919117485456062,
+       0.800070602033106
+      ]
+     },
+     {
+      "recovered": 50,
+      "total": 82,
+      "rate": 0.6097560975609756,
+      "clopper_pearson_95": [
+       0.4957047518167979,
+       0.7156353901628536
+      ]
+     }
+    ],
+    "coral@2000": [
+     {
+      "recovered": 58,
+      "total": 82,
+      "rate": 0.7073170731707317,
+      "clopper_pearson_95": [
+       0.5964795771858118,
+       0.8026466768121476
+      ]
+     },
+     {
+      "recovered": 50,
+      "total": 81,
+      "rate": 0.6172839506172839,
+      "clopper_pearson_95": [
+       0.5025749601550844,
+       0.7231489108748745
+      ]
+     },
+     {
+      "recovered": 49,
+      "total": 82,
+      "rate": 0.5975609756097561,
+      "clopper_pearson_95": [
+       0.48342243036237675,
+       0.7044379546872009
+      ]
+     }
+    ]
+   }
+  }
+ }
+}

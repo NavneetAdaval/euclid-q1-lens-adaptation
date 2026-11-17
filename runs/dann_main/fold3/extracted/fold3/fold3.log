@@ -1,0 +1,277 @@
+============================================================================================
+ROUND-5 DANN -- dann_nb3, fold 3, 4000 steps, lambda_horizon=2000
+============================================================================================
+  data_root       : /kaggle/input/datasets/navneet78/lens-paper-coral-r4/data/data
+  splits          : /kaggle/input/datasets/navneet78/lens-paper-coral-r4/data/data/splits/splits.json
+  cache_dir       : /kaggle/input/datasets/navneet78/lens-paper-coral-r4/data/data/feature_cache
+  init_head_from  : /kaggle/input/datasets/navneet78/lens-paper-coral-r4/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+  out_dir         : /kaggle/working/runs/dann_r5_nb3_fold3
+  torch           : 2.10.0+cu128  cuda=True
+============================================================================================
+[holdout] target pool 782 -> D trains on 704, 78 held out (10.0%), deterministic at seed 45
+[load] building the Zoobot encoder (n_blocks=3, grad_checkpointing=True) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=3 -> trainable ['stages.3', 'stages.2', 'stages.1'] (14,835,520 params, 99.2% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from /kaggle/input/datasets/navneet78/lens-paper-coral-r4/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 28.475603
+[optim] n_blocks=3  head_lr=0.0001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.05
+[optim]   group 0: head       lr=1.000e-04  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   group 2: stages.2   lr=7.500e-05  params=6,907,520
+[optim]   group 3: stages.1   lr=5.625e-05  params=479,680
+[optim]   TOTAL trainable = 14,837,441 params
+[dann] D installed: 1,711,105 params in ONE extra AdamW group (lr=0.0001, weight_decay=0.05, no lr_decay); lambda_horizon=2000 lambda_zero=False; dropout=0.2 x2, D.training=True
+[bn] 218 modules scanned, 0 BatchNorm (head + encoder + D)
+[morph] pool built: 128 ML-FP + 128 P1-reserve (of 4455 / 23160 available), fit 128 / eval 128, aug=none, seed 90255
+[abort3] no --control-curve given: condition 3 (morph vs the lambda=0 control) is INACTIVE. Conditions 1, 2, 3b and 4 still run. Expected for the control arm itself, which IS the reference.
+[dann-r5] NOTE: --max-steps 4000 differs from dann_nb3's declared 8000. Recorded as on_declared_steps=false; the two arms MUST match (max_steps is a PINNED key) or condition 3 loses its reference past the shorter one.
+[abort] ADVISORY detectors with an UNSET margin (they will not evaluate, and they could not abort anything even if they did): ["condition 3's margin M", "condition 4's src margin", "condition 4's tgt margin"]
+[abort] cond4 DIFFERENTIAL vs control, margins src None / tgt None
+[abort] mode=armed (explicit --abort-mode flag); conditions 1/2/3/3b/4 evaluated every step on column morph_proxy_auroc; cond3 margin UNSET -- 3a INACTIVE, 3b (sign flip) still live; median window k=1; cond4 sustain 500
+
+--------------------------------------------------------------------------------------------
+  round                             : 5
+  method                            : dann
+  arm                               : dann_nb3
+  run_dir                           : dann_r5_nb3_fold3
+  logit_arm                         : dann_nb3_fold3
+  n_blocks                          : 3
+  fold                              : 3
+  n_test_positives                  : 98
+  data_path                         : image_space
+  domain_adaptation                 : dann
+  lp_ft                             : True
+  init_head_from                    : /kaggle/input/datasets/navneet78/lens-paper-coral-r4/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+  init_head_from_tail               : lens-paper-coral-r4/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+  init_head_l2                      : 28.475603
+  init_head_provenance              : Baseline A step_8000 (runs/bakeoff_baseline_A) -- the SOURCE-ONLY linear probe, i.e. the 'LP' of LP->FT. DECLARED, not i ...
+  max_steps                         : 4000
+  arm_declared_steps                : 8000
+  on_declared_steps                 : False
+  development_maximum               : 8000
+  is_preregistered_budget           : True
+  confirm_steps                     : 4000
+  confirm_budget_file               : runs/dann_r5_budget.json
+  confirm_budget_sha256             : abf0dae0e313ae5388b833e7aad86171285299774a18af14f4c44309f0231fc1
+  confirm_budget_rule               : Budget = 2 x the lambda horizon, so that half of each confirmatory run trains at fixed adversarial strength. Derived fro ...
+  sensitivity_step                  : 2000
+  headline_declaration              : The headline DANN x nb3 figure is the 5-fold mean at the declared budget of 4000. The 5-fold mean at step 2000 is report ...
+  sensitivity_step_is_on_the_grid   : True
+  cross_method_budgets              : {'dann_nb3': 4000, 'coral_nb3': 2000, 'freematch_nb3': 1500}
+  budget_status                     : DECIDED 2026-09-02 as 4000 steps and hashed into runs/dann_r5_budget.json (sha256 abf0dae0e313ae53...) before any confir ...
+  selection_rule                    : NONE in this path. The budget is the selector; there is no argmax, no smoothing and no label-free rule anywhere here.
+  log_every                         : 125
+  ckpt_every                        : 250
+  batch_size                        : 256
+  true_batch                        : True
+  gradient_accumulation             : False
+  gradient_accumulation_note        : REMOVED, not merely unused (7.1a). It is invalid for every DA loss and DANN is no exception: micro-batching to 32 would  ...
+  grad_checkpointing                : True
+  grad_checkpointing_note           : MANDATORY at n_blocks=3 (7.1a): true batch 256 image-space OOMs a 14.56 GiB T4 without it. Verified bit-exact, and re-ve ...
+  steps_per_epoch                   : 187
+  epochs_planned                    : 22
+  lr                                : 0.0001
+  lr_decay                          : 0.75
+  weight_decay                      : 0.05
+  backbone_lr                       : None
+  backbone_lr_effective             : 0.0001
+  lr_protocol                       : zoobot_v2.0.1 defaults per PROJECT.md 7.1a: head_lr == top-block lr, lr_decay 0.75, weight_decay 0.05, no LR schedule. S ...
+  pos_fraction                      : 0.5
+  seed                              : 42
+  head_type                         : linear
+  dann_lambda_schedule              : 2/(1+exp(-10p))-1, p = min(step/horizon, 1)
+  dann_lambda_horizon               : 2000
+  dann_lambda_horizon_note          : DECLARED ABSOLUTE CONSTANT. NOT total_steps. It must be IDENTICAL in this development run and in every confirmatory run, ...
+  dann_lambda_zero                  : False
+  dann_lambda_zero_note             : the CONTROL arm. lambda is pinned to 0.0 at every step but the GRL and D still run, so the control exercises the identic ...
+  dann_lambda_at_step0              : 0.0
+  dann_lambda_at_max_steps          : 0.9999092042625952
+  dann_domain_label_source          : 1
+  dann_domain_label_target          : 0
+  dann_d_topology                   : 640 -> 1024 -> 1024 -> 1
+  dann_d_hidden                     : 1024
+  dann_d_norm                       : LayerNorm
+  dann_d_norm_note                  : DELIBERATE substitution for tllib's BatchNorm1d. D is fed ONE tensor holding both domains, so any batch-coupled normalis ...
+  dann_d_output                     : logits (no sigmoid); loss = BCEWithLogitsLoss
+  dann_d_dropout                    : 0.2
+  dann_d_dropout_layers             : 2
+  dann_d_dropout_note               : Dropout 0.2 after each hidden activation. Belfiore et al. (2024, A&A) apply dropout between hidden layers; we apply it a ...
+  dann_d_train_eval_semantics       : D is the FIRST module in this pipeline for which .train()/.eval() means anything -- 7.1a measured the encoder at 0 Batch ...
+  dann_single_forward_pass          : True
+  dann_single_forward_pass_note     : source and target features are CONCATENATED into one tensor and D is called ONCE per step. Two calls would hand D the do ...
+  dann_d_lr                         : 0.0001
+  dann_d_weight_decay               : 0.05
+  dann_optimizer_groups             : ONE AdamW; D is one extra param group at the head LR
+  dann_optimizer_note               : No second optimiser and no separate D learning rate. Gradient reversal is what removes the need for a D/encoder balance  ...
+  dann_attachment                   : head.forward_with_features[1] (post-adapter, post-LayerNorm)
+  dann_attachment_note              : THE SAME 640-d tensor round-1 CORAL and round-4 CORAL used, deliberately not moved. On nb3 the adversarial gradient flow ...
+  dann_d_holdout_frac               : 0.1
+  dann_d_holdout_n                  : 78
+  dann_d_holdout_note               : a fixed ~10% slice of the fold's target pool, DETERMINISTIC given seed+fold and recorded above by dataset position. Excl ...
+  spectrum_every                    : 1
+  morph_every                       : 25
+  holdout_every                     : 1
+  monitors                          : ['d_acc_train', 'd_acc_holdout', 'd_pred_source_frac', 'morph_head_auroc (condition 3)', 'morph_head_auroc_pool', 'morph ...
+  morph_proxy_instrument            : ONE pool, ML-FP (=1) vs P1-reserve (=0), TWO instruments. HEAD: the trained head's own lens logit, no fit -- the ~0.61-s ...
+  morph_proxy_n_fit_per_class       : 64
+  morph_proxy_n_eval_per_class      : 64
+  morph_proxy_ridge_alpha           : 1.0
+  morph_proxy_pool                  : {'instrument': 'morphology proxy: ML-FP (=1) vs P1-reserve (=0), both real Euclid', 'provenance': "RECOVERED from PROJEC ...
+  morph_proxy_pool_membership       : {'mlfp_in_source_train_negatives': 4455, 'mlfp_total_on_disk': 4455, 'mlfp_fraction_seen_in_training': 1.0, 'mlfp_in_tar ...
+  morph_proxy_note                  : RECOVERED, not invented. PROJECT_STATE.md records a `morphology_probe` role (ML-FP=1 vs P1-reserve=0, both real) and a s ...
+  abort_mode                        : armed
+  abort_mode_source                 : explicit --abort-mode flag
+  abort_mode_rule                   : log_only on the DEVELOPMENT fold-0 arm and on the lambda=0 CONTROL; armed on CONFIRMATORY folds 1-4. Reason (brief v3 4. ...
+  control_curve                     : None
+  allow_control_gaps                : False
+  abort4_sustain                    : 500
+  abort_conditions                  : {'1_d_overpowering': 'held-out-target domain accuracy > 0.95 for 1000 consecutive steps WITH the domain loss not falling ...
+  abort_cond3_column                : morph_proxy_auroc
+  abort_cond3_interpretation_columns: ['morph_head_auroc_pool', 'morph_head_auroc']
+  abort_cond3_interpretation_note   : the two HEAD columns are logged with NO DETECTOR ATTACHED. Arm 1 showed what they actually measure: ML-FP and P1-reserve ...
+  abort_cond3b_sustain              : 0
+  abort_advisory_only_detectors     : ['abort3_morph_vs_control', 'abort3b_morph_sign_flip', 'abort4src_rank_collapse', 'abort4tgt_rank_collapse']
+  abort_advisory_note               : conditions 3 and 4 are ADVISORY ON EVERY ARM, confirmatory included: they compute, they log, they record when they WOULD ...
+  abort_cond4_src_margin            : None
+  abort_cond4_tgt_margin            : None
+  abort_cond4_form                  : DIFFERENTIAL against the lambda=0 control at matched absolute steps, src and tgt SEPARATELY. The absolute 'PR < 20 of 64 ...
+  abort_respecified_from_control    : {'status': 'DERIVED FROM THE CONTROL ARM -- NOT a pre-registration', 'date': '2026-08-28', 'source_run': 'runs/dann_arm1 ...
+  abort_cond3_median_window_k       : 1
+  abort_cond3_median_window_note    : k=1 is no smoothing. k>1 makes 3a threshold the trailing median of the last k PAIRED DIFFERENCES (the difference is what ...
+  abort_cond3_declaration_criterion : {'rule': 'Let J = median absolute step-to-step change in morph_head_auroc_pool over arm 1, steps 2000-8000. If a candida ...
+  abort_cond3_column_note           : BOTH DETECTORS read morph_head_auroc_pool -- the trained head's own lens logit on ALL 256 pool images. The head is NOT F ...
+  abort_cond3_margin                : None
+  abort_cond3_margin_status         : UNSET. Condition 3a is INACTIVE and refuses to evaluate; an --abort-mode armed run REFUSES TO START. The margin is decla ...
+  morph_proxy_abort_note            : THREE thresholds are withdrawn, and the REASON matters. (1) The design doc's 0.55 was NOT invented -- PROJECT_STATE v2.m ...
+  feature_scale_monitor             : mean PER-DIMENSION std is the headline indicator, NOT mean ||f||. 7.15: round-4 CORAL's total feature variance fell 56x  ...
+  rank_monitor                      : participation_ratio / dims_at_90 / dims_at_99, per domain. Logged separately from the scale monitors because 7.15 establ ...
+  encoder_eval                      : live_encode
+  encoder_eval_note                 : the frozen cache is INVALID at n_blocks>0 (7.1a). Scoring a real nb3 checkpoint from the stale cache once gave TPR 0.194 ...
+  augmentation                      : weak (+-3px translate, PROJECT.md 7.3)
+  fp16                              : True
+  precision                         : fp16
+  eval_precision                    : fp32
+  device                            : cuda
+  num_workers                       : 2
+  single_gpu                        : no DataParallel / DistributedDataParallel / device sharding anywhere in this path -- halving the per-device batch would  ...
+  expect_step0_tpr                  : 0.15306122448979592
+  expect_step0_auroc                : 0.9016486400613506
+  expect_head_l2                    : 28.475603103637695
+  step0_tpr_tolerance               : 0.01020408163265306
+  step0_auroc_tolerance             : 0.001
+  step0_gate_skippable              : False
+  hard_gate                         : NON-SKIPPABLE. Step-0 TPR@1e-3 AND AUROC must reproduce the phase-1 head's own per-fold value or the run ABORTS. There i ...
+  da_hook_slot                      : Trainer.coral (see dann_round5.install_dann). train_skeleton.py is UNMODIFIED; DannLoss is installed into the one attrib ...
+  round1_dann_fold0_reference       : {'tpr_at_1e-3_last_checkpoint': 0.19387755102040816, 'read_off': 'step_15000 of 75 checkpoints (the R1 last-checkpoint r ...
+  reporting_note                    : fold 0 is DEVELOPMENT (7.11 / 7.14) and no number from it enters a headline. Report TPR@FPR=1e-3 as a RATE, never as cou ...
+  out_dir                           : /kaggle/working/runs/dann_r5_nb3_fold3
+--------------------------------------------------------------------------------------------
+
+[pin] no --reference-config given -- this run DECLARES the reference. Emit it with --emit-config and pass it to the other arm.
+
+[live] building eval datasets once (fold 3, aug='none') ...
+[live]   val=12000  test_neg=26399  test_pos=98  target=782
+
+============================================================================================
+STEP-0 GATE (known null: this IS the phase-1 model) -- fold 3, 98 test positives, scored in 110s
+  TPR@1e-3 : 0.153061   expected 0.153061   |diff| 0.000000  (ABORT > 0.010204 = one positive, live-encode path)
+  AUROC    : 0.901643   expected 0.901649   |diff| 0.000005  (ABORT > 1.0e-03)
+  ||head||2: 28.475603   pinned 28.475603  (already hard-gated at 1e-4 in build_arm)
+  NON-SKIPPABLE: the phase-1 head is fold-independent, so this gate is the only proof of fold identity.
+============================================================================================
+[gate] step-0 known null reproduces Baseline A on this fold. Proceeding.
+
+
+[train] dann_nb3 fold 3: 4000 steps, checkpoint+logits every 250, trace every 125, holdout monitor every 1
+
+
+--------------------------------------------------------------------------------------------
+[gpu] Tesla T4  |  14.56 GB total  |  2 visible device(s), using cuda:0 only (no DataParallel anywhere in this path)
+[gpu] peak so far: 3.30 GB allocated / 4.49 GB reserved
+[gpu] reference:   3.29 GB on round-4 CORAL nb3 (same encoder, same batch, same checkpointing, Kaggle T4). DANN adds D (~1.7M params) and one extra 512x640 activation, so a little above that is expected; well above it is not.
+--------------------------------------------------------------------------------------------
+
+    [step   125/4000] sup=0.14736 dom=0.49894 lam=0.1526 d_acc=0.723 d_hold=0.706 d_src%=0.423 sd_s=0.7727 sd_t=0.7651 PR_t=8.5 mhead=0.5128 mprobe=0.8707 dctl=n/a (233s, ~120 min left)
+    [step   250/4000] sup=0.06988 dom=0.55137 lam=0.4333 d_acc=0.697 d_hold=0.661 d_src%=0.440 sd_s=0.7113 sd_t=0.7016 PR_t=9.0 mhead=0.4611 mprobe=0.8645 dctl=n/a (450s, ~113 min left)
+    [ckpt   250] weights + D + logits written (115s to score)
+    [step   375/4000] sup=0.07883 dom=0.70725 lam=0.6497 d_acc=0.542 d_hold=0.544 d_src%=0.472 sd_s=0.6443 sd_t=0.6295 PR_t=6.7 mhead=0.5152 mprobe=0.8523 dctl=n/a (784s, ~126 min left)
+    [step   500/4000] sup=0.04819 dom=0.69304 lam=0.7954 d_acc=0.527 d_hold=0.463 d_src%=0.545 sd_s=0.6080 sd_t=0.5978 PR_t=5.6 mhead=0.4992 mprobe=0.8425 dctl=n/a (1001s, ~117 min left)
+    [ckpt   500] weights + D + logits written (115s to score)
+    [step   625/4000] sup=0.04673 dom=0.69290 lam=0.8849 d_acc=0.538 d_hold=0.562 d_src%=0.473 sd_s=0.6372 sd_t=0.6229 PR_t=5.7 mhead=0.4576 mprobe=0.8492 dctl=n/a (1335s, ~120 min left)
+    [step   750/4000] sup=0.04507 dom=0.70007 lam=0.9366 d_acc=0.491 d_hold=0.416 d_src%=0.591 sd_s=0.6213 sd_t=0.6121 PR_t=3.8 mhead=0.4282 mprobe=0.8455 dctl=n/a (1553s, ~112 min left)
+    [ckpt   750] weights + D + logits written (115s to score)
+    [step   875/4000] sup=0.03546 dom=0.69157 lam=0.9656 d_acc=0.529 d_hold=0.522 d_src%=0.504 sd_s=0.6124 sd_t=0.5904 PR_t=5.1 mhead=0.3937 mprobe=0.7907 dctl=n/a (1885s, ~112 min left)
+    [step  1000/4000] sup=0.03562 dom=0.68623 lam=0.9814 d_acc=0.558 d_hold=0.568 d_src%=0.462 sd_s=0.5859 sd_t=0.5860 PR_t=6.7 mhead=0.4276 mprobe=0.8584 dctl=n/a (2103s, ~105 min left)
+    [ckpt  1000] weights + D + logits written (115s to score)
+    [step  1125/4000] sup=0.03431 dom=0.69126 lam=0.9900 d_acc=0.532 d_hold=0.441 d_src%=0.561 sd_s=0.5673 sd_t=0.5759 PR_t=5.2 mhead=0.3901 mprobe=0.8330 dctl=n/a (2436s, ~104 min left)
+    [step  1250/4000] sup=0.03657 dom=0.69746 lam=0.9946 d_acc=0.526 d_hold=0.505 d_src%=0.487 sd_s=0.5992 sd_t=0.6025 PR_t=5.2 mhead=0.3777 mprobe=0.7849 dctl=n/a (2653s, ~97 min left)
+    [ckpt  1250] weights + D + logits written (116s to score)
+    [step  1375/4000] sup=0.03305 dom=0.69011 lam=0.9971 d_acc=0.531 d_hold=0.572 d_src%=0.483 sd_s=0.5801 sd_t=0.5821 PR_t=4.2 mhead=0.3808 mprobe=0.8121 dctl=n/a (2986s, ~95 min left)
+    [step  1500/4000] sup=0.03130 dom=0.68831 lam=0.9985 d_acc=0.553 d_hold=0.623 d_src%=0.442 sd_s=0.6299 sd_t=0.6476 PR_t=4.2 mhead=0.3880 mprobe=0.8432 dctl=n/a (3204s, ~89 min left)
+    [ckpt  1500] weights + D + logits written (115s to score)
+    [step  1625/4000] sup=0.02942 dom=0.69129 lam=0.9992 d_acc=0.526 d_hold=0.541 d_src%=0.485 sd_s=0.6036 sd_t=0.6079 PR_t=3.6 mhead=0.4166 mprobe=0.8293 dctl=n/a (3536s, ~86 min left)
+    [step  1750/4000] sup=0.02538 dom=0.69093 lam=0.9996 d_acc=0.532 d_hold=0.590 d_src%=0.468 sd_s=0.5627 sd_t=0.5670 PR_t=3.1 mhead=0.3856 mprobe=0.7901 dctl=n/a (3754s, ~80 min left)
+    [ckpt  1750] weights + D + logits written (115s to score)
+    [step  1875/4000] sup=0.02688 dom=0.69094 lam=0.9998 d_acc=0.526 d_hold=0.566 d_src%=0.468 sd_s=0.5948 sd_t=0.6017 PR_t=3.3 mhead=0.4913 mprobe=0.8404 dctl=n/a (4086s, ~77 min left)
+    [step  2000/4000] sup=0.02249 dom=0.69166 lam=0.9999 d_acc=0.523 d_hold=0.556 d_src%=0.473 sd_s=0.6029 sd_t=0.6016 PR_t=2.7 mhead=0.4084 mprobe=0.8274 dctl=n/a (4303s, ~72 min left)
+    [ckpt  2000] weights + D + logits written (115s to score)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! ABORT CONDITION FIRED: abort3b_morph_sign_flip  (step 2101)
+!!! morph_proxy_auroc < 0.7 -- HALF the linear morphology signal the lambda=0 control retains has been destroyed (fires on a SINGLE reading)
+!!! streak 0 steps >= sustain 0; detail {'morph_proxy_auroc': 0.69921875}
+!!! **PRIMARY DETECTOR.** Name kept for schema stability; it is a FLOOR now, not a sign flip. The 0.5 inversion point belonged to the WITHDRAWN head column and sits ~40 J below this column's control minimum -- far past catastrophic. The floor is half the measured headroom (0.5 + 0.5*0.4076 = 0.7038, rounded down); arm 1's minimum was 0.8108, ~13 J above it.
+  SUSTAIN: this detector was written with sustain 0 -- correct for a sign flip, where one reading below chance is decisive. It is NOT obviously correct for a floor. On arm 2 it first fired at step 451 and held for 7,550 of 8,000 steps, so an ARMED fold would abort at 451. Whether that is the right behaviour is a DECLARED CHOICE, not a default: if the destruction is real and sustained, aborting IS the finding. Set --abort3b-sustain deliberately before arming.
+!!! 
+!!! MODE = armed: this run STOPS after writing a final scorable checkpoint.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    [step  2125/4000] sup=0.02457 dom=0.69070 lam=0.9999 d_acc=0.523 d_hold=0.598 d_src%=0.452 sd_s=0.5887 sd_t=0.5879 PR_t=2.8 mhead=0.3667 mprobe=0.7647 dctl=n/a (4636s, ~68 min left)
+    [step  2250/4000] sup=0.02374 dom=0.69286 lam=0.9999 d_acc=0.512 d_hold=0.585 d_src%=0.477 sd_s=0.5999 sd_t=0.6042 PR_t=3.1 mhead=0.4148 mprobe=0.7998 dctl=n/a (4854s, ~63 min left)
+    [ckpt  2250] weights + D + logits written (115s to score)
+    [step  2375/4000] sup=0.02207 dom=0.69131 lam=0.9999 d_acc=0.527 d_hold=0.540 d_src%=0.484 sd_s=0.5902 sd_t=0.5917 PR_t=2.8 mhead=0.4235 mprobe=0.8096 dctl=n/a (5187s, ~59 min left)
+    [step  2500/4000] sup=0.01968 dom=0.69213 lam=0.9999 d_acc=0.521 d_hold=0.558 d_src%=0.463 sd_s=0.5777 sd_t=0.5724 PR_t=2.7 mhead=0.3448 mprobe=0.7807 dctl=n/a (5404s, ~54 min left)
+    [ckpt  2500] weights + D + logits written (116s to score)
+    [step  2625/4000] sup=0.01938 dom=0.69277 lam=0.9999 d_acc=0.512 d_hold=0.544 d_src%=0.478 sd_s=0.5680 sd_t=0.5607 PR_t=2.5 mhead=0.4653 mprobe=0.8147 dctl=n/a (5737s, ~50 min left)
+    [step  2750/4000] sup=0.01859 dom=0.69054 lam=0.9999 d_acc=0.527 d_hold=0.616 d_src%=0.448 sd_s=0.5593 sd_t=0.5435 PR_t=2.2 mhead=0.5107 mprobe=0.8122 dctl=n/a (5954s, ~45 min left)
+    [ckpt  2750] weights + D + logits written (116s to score)
+    [step  2875/4000] sup=0.01564 dom=0.69162 lam=0.9999 d_acc=0.518 d_hold=0.572 d_src%=0.466 sd_s=0.5566 sd_t=0.5554 PR_t=2.0 mhead=0.5500 mprobe=0.7712 dctl=n/a (6288s, ~41 min left)
+    [step  3000/4000] sup=0.02007 dom=0.69308 lam=0.9999 d_acc=0.519 d_hold=0.592 d_src%=0.437 sd_s=0.5680 sd_t=0.5681 PR_t=2.1 mhead=0.4754 mprobe=0.8135 dctl=n/a (6506s, ~36 min left)
+    [ckpt  3000] weights + D + logits written (115s to score)
+    [step  3125/4000] sup=0.01592 dom=0.69240 lam=0.9999 d_acc=0.516 d_hold=0.643 d_src%=0.452 sd_s=0.5635 sd_t=0.5631 PR_t=1.8 mhead=0.4439 mprobe=0.8027 dctl=n/a (6839s, ~32 min left)
+    [step  3250/4000] sup=0.01585 dom=0.69053 lam=0.9999 d_acc=0.544 d_hold=0.685 d_src%=0.438 sd_s=0.5424 sd_t=0.5360 PR_t=1.8 mhead=0.4731 mprobe=0.7720 dctl=n/a (7056s, ~27 min left)
+    [ckpt  3250] weights + D + logits written (116s to score)
+    [step  3375/4000] sup=0.01715 dom=0.68982 lam=0.9999 d_acc=0.541 d_hold=0.710 d_src%=0.399 sd_s=0.5387 sd_t=0.5252 PR_t=1.8 mhead=0.4801 mprobe=0.7657 dctl=n/a (7390s, ~23 min left)
+    [step  3500/4000] sup=0.02161 dom=0.69350 lam=0.9999 d_acc=0.512 d_hold=0.536 d_src%=0.474 sd_s=0.5778 sd_t=0.5852 PR_t=1.9 mhead=0.5253 mprobe=0.8331 dctl=n/a (7607s, ~18 min left)
+    [ckpt  3500] weights + D + logits written (116s to score)
+    [step  3625/4000] sup=0.01842 dom=0.69544 lam=0.9999 d_acc=0.509 d_hold=0.583 d_src%=0.484 sd_s=0.5426 sd_t=0.5562 PR_t=3.2 mhead=0.4468 mprobe=0.8300 dctl=n/a (7941s, ~14 min left)
+    [step  3750/4000] sup=0.01817 dom=0.69269 lam=0.9999 d_acc=0.540 d_hold=0.531 d_src%=0.509 sd_s=0.3885 sd_t=0.4082 PR_t=4.1 mhead=0.3952 mprobe=0.8010 dctl=n/a (8159s, ~9 min left)
+    [ckpt  3750] weights + D + logits written (116s to score)
+    [step  3875/4000] sup=0.01555 dom=0.69192 lam=0.9999 d_acc=0.517 d_hold=0.516 d_src%=0.526 sd_s=0.4449 sd_t=0.4468 PR_t=2.6 mhead=0.4684 mprobe=0.8286 dctl=n/a (8492s, ~5 min left)
+    [step  4000/4000] sup=0.01858 dom=0.69305 lam=0.9999 d_acc=0.525 d_hold=0.581 d_src%=0.487 sd_s=0.5622 sd_t=0.5663 PR_t=2.5 mhead=0.5500 mprobe=0.8214 dctl=n/a (8710s, ~0 min left)
+    [ckpt  4000] weights + D + logits written (116s to score)
+[retention] checkpoints 16/16
+
+============================================================================================
+ARM-COMPLETION SUMMARY -- the numbers M is declared against (morph_proxy_auroc)
+============================================================================================
+  readings                 : 160 at stride 25 (offset 1)   [from 4000 forward-filled rows]
+  trajectory               : first 0.8450  last 0.7729  min 0.6992  max 0.8821
+  k (median window)        : 1   (no smoothing)
+  J_raw  (k=1,  79 pairs)   : 0.020264
+  J_at_k (k=1,  79 pairs)   : 0.020264   <- J_raw (k=1, so J_at_k == J_raw)
+  J_early (steps 0-2000, 79 pairs): 0.011963   ratio J_early/J = 0.59
+  IQR over the last 4000 steps (160 readings): 0.047424   [0.7975, 0.8450]
+  ----------------------------------------------------------------------------------------
+  CRITERION (pre-registered): declare M iff a candidate with M >= 3.0*J can be chosen while M <= 0.24814688; i.e. iff 3.0*J <= 0.24814688, with J measured on the k=1 series 3a will threshold
+  3*J = 0.060791   ceiling 0.24814688   ->   M_DECLARABLE = True
+  AT k=1: DECLARE M in [0.0608, 0.24814688] and hash it before arm 2.
+  if J is borderline, --abort3-median-window k > 1 may be used, and k MUST BE DECLARED BEFORE M. A window chosen after a candidate M is on the table has been selected to make that M work.
+============================================================================================
+
+============================================================================================
+[done] steps 4000/4000  147.1 min  checkpoints 16/16  peak 3.3 GB allocated
+[out] /kaggle/working/runs/dann_r5_nb3_fold3
+[next] download the run directory, drop it into runs/ locally, and read the budget off the persisted logits -- CPU work, no GPU session time. The budget must be DECLARED AND HASHED before any confirmatory fold runs (7.14).
+============================================================================================

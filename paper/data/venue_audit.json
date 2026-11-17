@@ -1,0 +1,840 @@
+{
+ "runs": [
+  {
+   "dir": "runs\\bakeoff_baseline_A",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "Baseline A (frozen)",
+   "fold": 0,
+   "tables": "T1 T2 T3 T4 T5"
+  },
+  {
+   "dir": "runs\\bakeoff_baseline_A",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "Baseline A (frozen)",
+   "fold": 1,
+   "tables": "T1 T2 T3 T4 T5"
+  },
+  {
+   "dir": "runs\\bakeoff_baseline_A",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "Baseline A (frozen)",
+   "fold": 2,
+   "tables": "T1 T2 T3 T4 T5"
+  },
+  {
+   "dir": "runs\\bakeoff_baseline_A",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "Baseline A (frozen)",
+   "fold": 3,
+   "tables": "T1 T2 T3 T4 T5"
+  },
+  {
+   "dir": "runs\\bakeoff_baseline_A",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "Baseline A (frozen)",
+   "fold": 4,
+   "tables": "T1 T2 T3 T4 T5"
+  },
+  {
+   "dir": "runs\\baseline_unfrozen\\fold1\\extracted\\lambda0_r6_fold1",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "lambda=0 (nb3)",
+   "fold": 1,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\baseline_unfrozen\\fold2\\extracted\\lambda0_r6_fold2",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "lambda=0 (nb3)",
+   "fold": 2,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\baseline_unfrozen\\fold3\\extracted\\lambda0_r6_fold3",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "lambda=0 (nb3)",
+   "fold": 3,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\baseline_unfrozen\\fold4\\extracted\\lambda0_r6_fold4",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "lambda=0 (nb3)",
+   "fold": 4,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\bnm_r6_folds\\bnm_r6_fold1",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "BNM x nb3",
+   "fold": 1,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\bnm_r6_folds\\bnm_r6_fold2",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "BNM x nb3",
+   "fold": 2,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\bnm_r6_folds\\bnm_r6_fold3",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "BNM x nb3",
+   "fold": 3,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\bnm_r6_folds\\bnm_r6_fold4",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "BNM x nb3",
+   "fold": 4,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\freematch_nb3_unfrozen_fold1",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "FreeMatch x nb3",
+   "fold": 1,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\freematch_nb3_unfrozen_fold2",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "FreeMatch x nb3",
+   "fold": 2,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\freematch_nb3_unfrozen_fold3",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "FreeMatch x nb3",
+   "fold": 3,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\freematch_nb3_unfrozen_fold4",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "FreeMatch x nb3",
+   "fold": 4,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\dann_main\\fold1\\extracted\\fold1",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "DANN x nb3",
+   "fold": 1,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\dann_main\\fold2\\extracted\\fold2",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "DANN x nb3",
+   "fold": 2,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\dann_main\\fold3\\extracted\\fold3",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "DANN x nb3",
+   "fold": 3,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\dann_main\\fold4\\extracted\\fold4",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "data_path=image_space, encoder_eval=live_encode, n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "DANN x nb3",
+   "fold": 4,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "kaggle\\coral_r4\\runs\\main\\extracted\\coral_r4_confirm\\fold1",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "CORAL x nb3",
+   "fold": 1,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "kaggle\\coral_r4\\runs\\main\\extracted\\coral_r4_confirm\\fold2",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "CORAL x nb3",
+   "fold": 2,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "kaggle\\coral_r4\\runs\\main\\extracted\\coral_r4_confirm\\fold3",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "CORAL x nb3",
+   "fold": 3,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "kaggle\\coral_r4\\runs\\main\\extracted\\coral_r4_confirm\\fold4",
+   "venue": "Tesla T4",
+   "gpu_recorded": "Tesla T4",
+   "precision": "fp16",
+   "eval_precision": "fp32",
+   "code_path": "n_blocks=3",
+   "path_prefix": "/kaggle/",
+   "arm": "CORAL x nb3",
+   "fold": 4,
+   "tables": "T1 T2 T4 T5"
+  },
+  {
+   "dir": "runs\\bakeoff_coral",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "round-1 CORAL (frozen)",
+   "fold": 0,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\bakeoff_coral",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "round-1 CORAL (frozen)",
+   "fold": 1,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\bakeoff_coral",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "round-1 CORAL (frozen)",
+   "fold": 2,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\bakeoff_coral",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "round-1 CORAL (frozen)",
+   "fold": 3,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\bakeoff_coral",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "round-1 CORAL (frozen)",
+   "fold": 4,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\bakeoff_adamatch_5fold",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "/kaggle/",
+   "arm": "round-1 AdaMatch (frozen)",
+   "fold": 0,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\bakeoff_adamatch_5fold",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "/kaggle/",
+   "arm": "round-1 AdaMatch (frozen)",
+   "fold": 1,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\bakeoff_adamatch_5fold",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "/kaggle/",
+   "arm": "round-1 AdaMatch (frozen)",
+   "fold": 2,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\bakeoff_adamatch_5fold",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "/kaggle/",
+   "arm": "round-1 AdaMatch (frozen)",
+   "fold": 3,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\bakeoff_adamatch_5fold",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "/kaggle/",
+   "arm": "round-1 AdaMatch (frozen)",
+   "fold": 4,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\bakeoff_freematch_5fold",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "/kaggle/",
+   "arm": "round-1 FreeMatch (frozen)",
+   "fold": 0,
+   "tables": "T3, licensed pair"
+  },
+  {
+   "dir": "runs\\bakeoff_freematch_5fold",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "/kaggle/",
+   "arm": "round-1 FreeMatch (frozen)",
+   "fold": 1,
+   "tables": "T3, licensed pair"
+  },
+  {
+   "dir": "runs\\bakeoff_freematch_5fold",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "/kaggle/",
+   "arm": "round-1 FreeMatch (frozen)",
+   "fold": 2,
+   "tables": "T3, licensed pair"
+  },
+  {
+   "dir": "runs\\bakeoff_freematch_5fold",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "/kaggle/",
+   "arm": "round-1 FreeMatch (frozen)",
+   "fold": 3,
+   "tables": "T3, licensed pair"
+  },
+  {
+   "dir": "runs\\bakeoff_freematch_5fold",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "/kaggle/",
+   "arm": "round-1 FreeMatch (frozen)",
+   "fold": 4,
+   "tables": "T3, licensed pair"
+  },
+  {
+   "dir": "runs\\curve_dann_fold0",
+   "venue": "not recorded",
+   "gpu_recorded": null,
+   "precision": "not recorded",
+   "eval_precision": "not recorded",
+   "code_path": "not recorded",
+   "path_prefix": "none",
+   "arm": "round-1 DANN probe (frozen)",
+   "fold": 0,
+   "tables": "T3"
+  },
+  {
+   "dir": "runs\\baselineA_fold0_nb0_image_noaug_fp32",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp32",
+   "eval_precision": "not recorded",
+   "code_path": "encoder_eval=frozen_feature_cache, n_blocks=0",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "A4 cell A",
+   "fold": 0,
+   "tables": "A4"
+  },
+  {
+   "dir": "runs\\baselineA_fold0_nb0_image_weak_fp32",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp32",
+   "eval_precision": "not recorded",
+   "code_path": "encoder_eval=frozen_feature_cache, n_blocks=0",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "A4 cell B",
+   "fold": 0,
+   "tables": "A4"
+  },
+  {
+   "dir": "runs\\baselineA_fold0_nb0_image",
+   "venue": "not recorded (device: cuda)",
+   "gpu_recorded": null,
+   "precision": "fp16",
+   "eval_precision": "not recorded",
+   "code_path": "encoder_eval=frozen_feature_cache, n_blocks=0",
+   "path_prefix": "C:\\Users\\...",
+   "arm": "A4 cell C",
+   "fold": 0,
+   "tables": "A4"
+  }
+ ],
+ "contrasts": [
+  {
+   "contrast": "lambda0@4000 - baseline@8000",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "not recorded",
+    "precision": "not recorded",
+    "eval_precision": "not recorded",
+    "path_prefix": "C:\\Users\\..."
+   },
+   "venue": "cannot establish (one side not recorded)",
+   "precision": "cannot establish (one side not recorded)",
+   "eval_precision": "cannot establish (one side not recorded)"
+  },
+  {
+   "contrast": "dann@4000 - lambda0@4000",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "shared",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "coral@2000 - lambda0@2000",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "shared",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "freematch@1500 - lambda0@1500",
+   "a": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "cannot establish (one side not recorded)",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "bnm@4000 - lambda0@4000",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "shared",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "coral@2000 - lambda0@4000",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "shared",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "freematch@1500 - lambda0@4000",
+   "a": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "cannot establish (one side not recorded)",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "bnm@2000 - coral@2000",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "shared",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "bnm@4000 - dann@4000",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "shared",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "bnm@1500 - freematch@1500",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "cannot establish (one side not recorded)",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "dann@4000 - coral@2000",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "shared",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "dann@4000 - freematch@1500",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "cannot establish (one side not recorded)",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "dann@2000 - coral@2000",
+   "a": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "Tesla T4",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "shared",
+   "precision": "shared",
+   "eval_precision": "shared"
+  },
+  {
+   "contrast": "freematch nb3@1500 - round-1 freematch@8000 (licensed)",
+   "a": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp16",
+    "eval_precision": "fp32",
+    "path_prefix": "/kaggle/"
+   },
+   "b": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp16",
+    "eval_precision": "not recorded",
+    "path_prefix": "/kaggle/"
+   },
+   "venue": "cannot establish (both not recorded)",
+   "precision": "shared",
+   "eval_precision": "cannot establish (one side not recorded)"
+  },
+  {
+   "contrast": "A4 B - A (augmentation leg)",
+   "a": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp32",
+    "eval_precision": "not recorded",
+    "path_prefix": "C:\\Users\\..."
+   },
+   "b": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp32",
+    "eval_precision": "not recorded",
+    "path_prefix": "C:\\Users\\..."
+   },
+   "venue": "cannot establish (both not recorded)",
+   "precision": "shared",
+   "eval_precision": "cannot establish (both not recorded)"
+  },
+  {
+   "contrast": "A4 C - B (precision leg)",
+   "a": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp16",
+    "eval_precision": "not recorded",
+    "path_prefix": "C:\\Users\\..."
+   },
+   "b": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp32",
+    "eval_precision": "not recorded",
+    "path_prefix": "C:\\Users\\..."
+   },
+   "venue": "cannot establish (both not recorded)",
+   "precision": "DIFFERS",
+   "eval_precision": "cannot establish (both not recorded)"
+  },
+  {
+   "contrast": "A4 C - A (total)",
+   "a": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp16",
+    "eval_precision": "not recorded",
+    "path_prefix": "C:\\Users\\..."
+   },
+   "b": {
+    "venue": "not recorded (device: cuda)",
+    "precision": "fp32",
+    "eval_precision": "not recorded",
+    "path_prefix": "C:\\Users\\..."
+   },
+   "venue": "cannot establish (both not recorded)",
+   "precision": "DIFFERS",
+   "eval_precision": "cannot establish (both not recorded)"
+  }
+ ]
+}

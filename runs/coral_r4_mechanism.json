@@ -1,0 +1,77 @@
+{
+  "agreement_primary": "A_d = -|log(t_d/s_d)|  (0 = perfect agreement)",
+  "agreement_secondary": "D_d = -|s_d-t_d|/(s_d+t_d)",
+  "arms": {
+    "g0": {
+      "median_shrink_factor": 4.016797735026097,
+      "partial_spearman_primary_ctrl_logs0": -0.07470421263872092,
+      "pearson_primary": -0.6962500111850999,
+      "spearman_primary": -0.8973286220181204,
+      "spearman_secondary": -0.8973286220181204,
+      "total_var_ratio": 0.4190919511844415
+    },
+    "g1": {
+      "median_shrink_factor": 1.7741688343129856,
+      "partial_spearman_primary_ctrl_logs0": -0.05589325019818111,
+      "pearson_primary": -0.7584311174906894,
+      "spearman_primary": -0.8992727948554564,
+      "spearman_secondary": -0.8992727948554564,
+      "total_var_ratio": 0.08124444102145703
+    },
+    "g16": {
+      "median_shrink_factor": 0.4393688375144988,
+      "partial_spearman_primary_ctrl_logs0": -0.002403491470484679,
+      "pearson_primary": -0.6725246458952642,
+      "spearman_primary": -0.7557192217266157,
+      "spearman_secondary": -0.7557192217266157,
+      "total_var_ratio": 0.019299760510953844
+    },
+    "g4": {
+      "median_shrink_factor": 1.186023933035472,
+      "partial_spearman_primary_ctrl_logs0": -0.06602694660536376,
+      "pearson_primary": -0.7310786531683969,
+      "spearman_primary": -0.8522492730695144,
+      "spearman_secondary": -0.8522492730695144,
+      "total_var_ratio": 0.046322922034290205
+    }
+  },
+  "aug": "none (deterministic); see module docstring",
+  "basis": "init SOURCE eigenbasis (fixed across all checkpoints and arms)",
+  "confound_control": "gamma=0 known-null reported first; plus a partial Spearman controlling for log s_d at init",
+  "discriminative_direction": {
+    "agreement_percentile_among_all_directions": 65.15625,
+    "agreement_primary": -0.4742207767991699,
+    "g0": {
+      "median_shrink_all_directions": 4.016797735026097,
+      "shrink_factor_w": 0.27652649373564653,
+      "shrink_percentile_among_all_directions": 0.46875,
+      "w_over_median": 0.06884252381551642
+    },
+    "g1": {
+      "median_shrink_all_directions": 1.7741688343129856,
+      "shrink_factor_w": 0.02622784125804937,
+      "shrink_percentile_among_all_directions": 0.46875,
+      "w_over_median": 0.014783170998607705
+    },
+    "g16": {
+      "median_shrink_all_directions": 0.4393688375144988,
+      "shrink_factor_w": 0.008293261402723861,
+      "shrink_percentile_among_all_directions": 1.875,
+      "w_over_median": 0.01887539737601484
+    },
+    "g4": {
+      "median_shrink_all_directions": 1.186023933035472,
+      "shrink_factor_w": 0.01677145797114779,
+      "shrink_percentile_among_all_directions": 0.9375,
+      "w_over_median": 0.014140910232918701
+    },
+    "median_agreement_all_directions": -0.7044157384189704,
+    "method": "class-mean-difference direction w = (mu_pos - mu_neg)/||.||, computed on the SOURCE domain at init with REAL source labels. Unwhitened: with 640 dims and 2048 samples the pooled within-class covariance is ill-conditioned, and an LDA whitening would make w depend on the very variance structure under test.",
+    "src_var_init": 73.54664451056098,
+    "tgt_var_init": 45.77321283079504
+  },
+  "n_dims": 640,
+  "n_source": 2048,
+  "n_target": 782,
+  "shrinkage": "r_d = s_d(step2000)/s_d(init), source domain; correlated as log r_d"
+}

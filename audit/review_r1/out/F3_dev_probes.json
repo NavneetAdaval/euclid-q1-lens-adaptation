@@ -1,0 +1,204 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1/scripts/f_facts.py",
+ "test_pool": "n/a",
+ "folds": "n/a",
+ "metric": "scripts/metrics.py metric_suite / tpr_at_fpr (TPR at FPR=1e-3, full ROC with drop_intermediate=False, np.interp); thresholds from metrics.operating_threshold on the same curve",
+ "generated_utc": "2026-10-08T16:02:31+00:00",
+ "notes": [],
+ "inputs_sha256": {
+  "PROJECTv7.md": "bb71c755956f19ef15a88465f7fb3f4623af42db1be18b2fa46b117f0ef6b64f",
+  "paper/RELEASE_CURATION_REPORT.md": "6a2f0b37ce205f9e9bde3126f998ac2648b8c6f0eda0e724a63f44d0b8d41c99",
+  "paper/sections/03_data.tex": "cfe079bec9d83f5e657f10e59e6584c89fa5f78cc8ad67147756af91e674cf4e",
+  "scripts/probe_arc_on_real.py": "69f5e7f32e416f55d028ae8e44c4ef8b3c2db883f13b7cb8cc55648137de6ac5",
+  "scripts/probe_deflector_gap.py": "696e29c82be53fdf444f44d261a6a4eadef3c56f12204dadd0cdd6980c8e5245",
+  "scripts/probe_realism.py": "7e68d15bb83acc0aa85e0c1e6a63430ac8d92dfff610d46622e10d0f4bf1af09",
+  "scripts/validate_singleband.py": "1ffeb8d0da474e3febf4ea9e4622562cb702944ef29f4711694b745a2f2c2d44"
+ },
+ "result": {
+  "paper_text": [
+   {
+    "file": "paper/sections/03_data.tex",
+    "line": 31,
+    "text": "AUROC 0.995 on per-image brightness alone. Replacing it with the arc-on-real construction"
+   },
+   {
+    "file": "paper/sections/03_data.tex",
+    "line": 33,
+    "text": "--- brought the residual morphology gap between the classes to approximately 0.84 in"
+   }
+  ],
+  "project_record": [
+   {
+    "file": "PROJECTv7.md",
+    "line": 789,
+    "text": "light while real negatives had bright centres, so a classifier hit AUROC 0.995 just"
+   },
+   {
+    "file": "PROJECTv7.md",
+    "line": 791,
+    "text": "params + supersampling) brought the residual gap to a legitimate ~0.84 morphology"
+   }
+  ],
+  "earlier_search": [
+   {
+    "file": "paper/RELEASE_CURATION_REPORT.md",
+    "line": 31,
+    "text": "- **Decision 1:** the producers of \u00a73's 0.995 and 0.84 **could not be identified** from the record. The probes are dropped and the candidates are listed (\u00a72)."
+   }
+  ],
+  "auroc_0.995_per_image_brightness": {
+   "producer": "not identified",
+   "evidence": "no log, output file or note links the value 0.995 to a script; both candidates print their AUROC to stdout only (validate_singleband.py's one file output is a montage PNG, not found on disk) and no captured stdout exists in logs/ or runs/"
+  },
+  "residual_morphology_gap_0.84": {
+   "producer": "not identified",
+   "evidence": "as above: probe_arc_on_real.py and probe_realism.py print their AUROCs to stdout only and no captured output exists. Their input data/sim_arc_on_real/arc_on_real_debug.npz is on disk; re-running either would load the frozen Zoobot encoder, which this brief does not allow"
+  },
+  "candidates_what_their_code_measures": {
+   "validate_singleband.py": {
+    "lines": [
+     {
+      "file": "scripts/validate_singleband.py",
+      "line": 47,
+      "text": "def feats(stack):"
+     },
+     {
+      "file": "scripts/validate_singleband.py",
+      "line": 48,
+      "text": "return np.stack([stack.mean(1), stack.std(1),"
+     },
+     {
+      "file": "scripts/validate_singleband.py",
+      "line": 59,
+      "text": "proba = cross_val_predict(LogisticRegression(max_iter=1000), X, y,"
+     },
+     {
+      "file": "scripts/validate_singleband.py",
+      "line": 108,
+      "text": "print(f\"  BRIGHTNESS-SHORTCUT AUROC (sim vs real): {auc:.4f}\")"
+     },
+     {
+      "file": "scripts/validate_singleband.py",
+      "line": 95,
+      "text": "ds = LensDataset(\"target_unlabeled\", args.data_dir, verbose=False)"
+     }
+    ],
+    "writes_files": [
+     {
+      "file": "scripts/validate_singleband.py",
+      "line": 143,
+      "text": "fig.tight_layout(); fig.savefig(\"sim_vs_real_v2.png\", dpi=110)"
+     }
+    ]
+   },
+   "probe_deflector_gap.py": {
+    "lines": [
+     {
+      "file": "scripts/probe_deflector_gap.py",
+      "line": 32,
+      "text": "SIM_NONLENS_DIR = ROOT / \"data\" / \"sim_nonlens\" / \"shards\""
+     },
+     {
+      "file": "scripts/probe_deflector_gap.py",
+      "line": 33,
+      "text": "REAL_NEG_DIR = ROOT / \"data\" / \"q1_unlabeled\" / \"shards\""
+     },
+     {
+      "file": "scripts/probe_deflector_gap.py",
+      "line": 58,
+      "text": "def three_stats(imgs):"
+     },
+     {
+      "file": "scripts/probe_deflector_gap.py",
+      "line": 68,
+      "text": "clf = LogisticRegression(max_iter=2000, class_weight=\"balanced\")"
+     },
+     {
+      "file": "scripts/probe_deflector_gap.py",
+      "line": 89,
+      "text": "stat_auc = cv_auroc(np.concatenate([three_stats(sim), three_stats(real)]), y)"
+     },
+     {
+      "file": "scripts/probe_deflector_gap.py",
+      "line": 95,
+      "text": "enc_auc = cv_auroc(feats, y)"
+     }
+    ],
+    "writes_files": []
+   },
+   "probe_arc_on_real.py": {
+    "lines": [
+     {
+      "file": "scripts/probe_arc_on_real.py",
+      "line": 31,
+      "text": "SIM_NPZ = ROOT / \"data\" / \"sim_arc_on_real\" / \"arc_on_real_debug.npz\""
+     },
+     {
+      "file": "scripts/probe_arc_on_real.py",
+      "line": 32,
+      "text": "REAL_NEG_DIR = ROOT / \"data\" / \"q1_unlabeled\" / \"shards\""
+     },
+     {
+      "file": "scripts/probe_arc_on_real.py",
+      "line": 92,
+      "text": "auc_lens_vs_real = cv_auroc(np.concatenate([Lf, Rf]), y_lr)"
+     },
+     {
+      "file": "scripts/probe_arc_on_real.py",
+      "line": 95,
+      "text": "auc_lens_vs_bare = cv_auroc(np.concatenate([Lf, Bf]), y_lb)"
+     },
+     {
+      "file": "scripts/probe_arc_on_real.py",
+      "line": 98,
+      "text": "auc_bare_vs_real = cv_auroc(np.concatenate([Bf, Rf]), y_br)"
+     }
+    ],
+    "writes_files": []
+   },
+   "probe_realism.py": {
+    "lines": [
+     {
+      "file": "scripts/probe_realism.py",
+      "line": 37,
+      "text": "SIM_NPZ = ROOT / \"data\" / \"sim_arc_on_real\" / \"arc_on_real_debug.npz\""
+     },
+     {
+      "file": "scripts/probe_realism.py",
+      "line": 38,
+      "text": "REAL_LENS_NPZ = ROOT / \"data\" / \"q1_lenses_processed\" / \"lens_cutouts.npz\""
+     },
+     {
+      "file": "scripts/probe_realism.py",
+      "line": 10,
+      "text": "A. sim-lens  vs real-lens  -- THE realism test. LOW (~0.5-0.7) = sims look like real"
+     },
+     {
+      "file": "scripts/probe_realism.py",
+      "line": 12,
+      "text": "B. real-lens vs real-neg   -- THE control. This is the separability REAL lenses have"
+     },
+     {
+      "file": "scripts/probe_realism.py",
+      "line": 15,
+      "text": "C. sim-lens  vs real-neg   -- (0.94 from before). Compare to B: if ~equal, the sim's"
+     },
+     {
+      "file": "scripts/probe_realism.py",
+      "line": 18,
+      "text": "D. sim bare-defl vs real-lens -- do selected deflectors resemble real-lens hosts?"
+     }
+    ],
+    "writes_files": []
+   }
+  },
+  "candidate_inputs_and_outputs_on_disk": {
+   "sim_vs_real_v2.png (validate_singleband.py's only file output)": [],
+   "data/sim_arc_on_real/arc_on_real_debug.npz (probe_arc_on_real/probe_realism input)": true,
+   "data/sim_nonlens/shards (probe_deflector_gap input, path as coded)": false,
+   "data_old/sim_nonlens/shards (same name under data_old/)": true
+  },
+  "search_scope": "text files (*.md *.txt *.log *.json *.py *.csv *.ipynb) under the repo excluding venv/ and data dirs, searched for '0.995', 'brightness shortcut', '3-stat', 'arc_on_real_debug', 'realism'; hits for 0.995 are training curves / AUROC columns of unrelated runs and the paper/PROJECT text itself"
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "what": "dilute10 target feature cache for CORAL's diluted frozen stage, folds 1-4",
+ "files_sha256": {
+  "data/feature_cache_dilute10/target_fold1.npz": "1eb0a7567b963f6afffb119e943fefaf527fb837b085188cba4087230bf280a7",
+  "data/feature_cache_dilute10/target_fold2.npz": "41ef6bb64e4bd50c09bafb6b1e7d1a30e0b0f2c03738553f431248782bc85340",
+  "data/feature_cache_dilute10/target_fold3.npz": "a7b825d3ec12923f040ee1d35f91f3e015784fb1104ca6b91aec6d28ae0a39f6",
+  "data/feature_cache_dilute10/target_fold4.npz": "75d3aaec75fc00560a45e38beb52ba54fd9e1a71240f7a11be02ca45c35a7aa4"
+ },
+ "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+ "torch": "2.7.1+cu118",
+ "cudnn": 90100,
+ "batch_size": 256,
+ "aug": "none",
+ "encoder_mode": "frozen",
+ "known_null": {
+  "1": {
+   "n_rows": 782,
+   "n_byte_identical": 782,
+   "byte_identical_all": true,
+   "max_abs_diff": 0.0,
+   "first_50_byte_identical": true
+  },
+  "2": {
+   "n_rows": 782,
+   "n_byte_identical": 782,
+   "byte_identical_all": true,
+   "max_abs_diff": 0.0,
+   "first_50_byte_identical": true
+  },
+  "3": {
+   "n_rows": 782,
+   "n_byte_identical": 782,
+   "byte_identical_all": true,
+   "max_abs_diff": 0.0,
+   "first_50_byte_identical": true
+  },
+  "4": {
+   "n_rows": 784,
+   "n_byte_identical": 784,
+   "byte_identical_all": true,
+   "max_abs_diff": 0.0,
+   "first_50_byte_identical": true
+  }
+ },
+ "known_null_rule": "every existing target item re-encoded through cache_features.encode_indices with the cache's own batch geometry must be byte-identical to data/feature_cache",
+ "n_fresh_encoded": {
+  "1": 3519,
+  "2": 3519,
+  "3": 3519,
+  "4": 3528
+ },
+ "pool_sha256": "18c73d6c1cbad99e61d43fa5bc1c972e6347f328253904fa03a64cc8d68153be",
+ "part1_sha256": "bd537a025e81833e73713649c9eed68fd6a0fd3152ee29240f9a333f7c649d85",
+ "builder": "scripts/build_dilute10_cache.py",
+ "builder_sha256": "bd5fc6d0a6b123d198659206fe6832646b078787096cdaa0e38ec2ca4b4a2225",
+ "recorded_utc": "2026-10-13T14:02:13Z"
+}

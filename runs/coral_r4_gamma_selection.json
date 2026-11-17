@@ -1,0 +1,147 @@
+{
+  "arms": {
+    "1": {
+      "R": {
+        "cv": 0.9966296867708428,
+        "first_half": 0.13298282171750586,
+        "half_ratio": 1.1472485837140536,
+        "mean": 0.14277358779560648,
+        "n": 200,
+        "sd": 0.14229239608388472,
+        "second_half": 0.1525643538737071
+      },
+      "coral_raw": {
+        "cv": 0.26288791193523514,
+        "first_half": 0.0014636565768159926,
+        "half_ratio": 0.906293939746309,
+        "mean": 0.0013950798311270773,
+        "n": 200,
+        "sd": 0.00036674962378795785,
+        "second_half": 0.0013265030854381621
+      },
+      "coral_raw_START_mean_first200": 0.0130073307803832,
+      "coral_raw_step1": 0.05007469654083252,
+      "gamma": 1.0,
+      "src_feat_l2_first200": 63.99708921432495,
+      "src_feat_l2_growth": -0.8878480148315404,
+      "src_feat_l2_growth_pct": -1.3873256201671227,
+      "src_feat_l2_last200": 63.10924119949341,
+      "sup_loss": {
+        "cv": 0.7050789891722308,
+        "first_half": 0.020110060148872434,
+        "half_ratio": 0.7472485679894821,
+        "mean": 0.017568636898649858,
+        "n": 200,
+        "sd": 0.012387276745633998,
+        "second_half": 0.015027213648427278
+      }
+    },
+    "16": {
+      "R": {
+        "cv": 0.9736950100942763,
+        "first_half": 0.14561896364126625,
+        "half_ratio": 1.117349863668686,
+        "mean": 0.15416314640670525,
+        "n": 200,
+        "sd": 0.15010788639664227,
+        "second_half": 0.1627073291721442
+      },
+      "coral_raw": {
+        "cv": 0.6010479867318306,
+        "first_half": 0.00011907166692253667,
+        "half_ratio": 0.8388954369451991,
+        "mean": 0.00010948017248665564,
+        "n": 200,
+        "sd": 6.580283726015792e-05,
+        "second_half": 9.988867805077462e-05
+      },
+      "coral_raw_START_mean_first200": 0.0043087643609032965,
+      "coral_raw_step1": 0.05007469654083252,
+      "gamma": 16.0,
+      "src_feat_l2_first200": 65.05833717346191,
+      "src_feat_l2_growth": -1.6277479171752844,
+      "src_feat_l2_growth_pct": -2.50198204856558,
+      "src_feat_l2_last200": 63.43058925628662,
+      "sup_loss": {
+        "cv": 0.6681480170157384,
+        "first_half": 0.019049814858008177,
+        "half_ratio": 0.8581265286982879,
+        "mean": 0.0176984831772279,
+        "n": 200,
+        "sd": 0.011825206439051227,
+        "second_half": 0.016347151496447623
+      }
+    },
+    "4": {
+      "R": {
+        "cv": 0.8593805762415638,
+        "first_half": 0.109840247709426,
+        "half_ratio": 1.1236122468880296,
+        "mean": 0.11662904761847596,
+        "n": 200,
+        "sd": 0.10022873814887066,
+        "second_half": 0.1234178475275259
+      },
+      "coral_raw": {
+        "cv": 0.4490452030686997,
+        "first_half": 0.0003315649350406602,
+        "half_ratio": 0.8887841230859459,
+        "mean": 0.000313127292538411,
+        "n": 200,
+        "sd": 0.0001406083086642629,
+        "second_half": 0.0002946896500361618
+      },
+      "coral_raw_START_mean_first200": 0.008004190223873593,
+      "coral_raw_step1": 0.05007469654083252,
+      "gamma": 4.0,
+      "src_feat_l2_first200": 64.23432987213135,
+      "src_feat_l2_growth": -1.0839974975585989,
+      "src_feat_l2_growth_pct": -1.6875672241252742,
+      "src_feat_l2_last200": 63.150332374572756,
+      "sup_loss": {
+        "cv": 0.6779006692204418,
+        "first_half": 0.018785462761297823,
+        "half_ratio": 0.781874360411634,
+        "mean": 0.016736667221412063,
+        "n": 200,
+        "sd": 0.01134579790991507,
+        "second_half": 0.014687871681526304
+      }
+    }
+  },
+  "branch_taken": "C",
+  "constraints_for_confirmatory_runs": {
+    "coral_target_ema": false,
+    "feat_norm_ceiling": 110.0,
+    "same_gamma_both_arms": "coral_weight is a PINNED key; nb0 and nb3 MUST use this value or nb3-minus-nb0 stops isolating unfreezing"
+  },
+  "decision_rule": {
+    "A": "solution in [1,16] -> select it",
+    "B": "solution in (16,64] -> select it + require a 500-step feature-norm check",
+    "C": "solution > 64 -> rule INAPPLICABLE, select gamma=16"
+  },
+  "fit": {
+    "A": 0.1317686338011697,
+    "B": 0.027682201801331473,
+    "band_basis": "standard error of each arm's tail-mean R (CV/sqrt(200)) propagated through the same OLS fit",
+    "form": "R(g) = A * g^B, OLS on (log g, log R)",
+    "r_squared": 0.07088838850374801,
+    "solution_gamma": 6.254155033059259e+31,
+    "uncertainty_band": [
+      2.4633928165606854e+31,
+      1.4536023182545697e+32
+    ],
+    "why": "the gamma grid is geometric (4^0, 4^1, 4^2) and R spans orders of magnitude; a power law is linear in the logs, positive by construction, and uses all three points rather than bracketing two"
+  },
+  "note": "solution exceeds 64 -- the magnitude-matching rule is declared INAPPLICABLE in this regime and gamma=16 is selected: the largest swept value with MEASURED non-collapsing, strictly-aligning behaviour. Not extrapolated, because the eps^4 shrink pressure is real and monotone in gamma.",
+  "purpose": "PRE-REGISTRATION for the round-4 CORAL confirmatory runs: the gamma read-off, fixed before any confirmatory fold exists (PROJECT.md 7.14).",
+  "rule": "Sun & Saenko arXiv:1607.01719 sec.4 -- lambda set so the classification and CORAL losses are of comparable magnitude at the END of training, i.e. R(g) = g * coral_raw(g) / sup_loss(g) = 1.",
+  "selected_gamma": 16.0,
+  "sha256_of_body_without_this_field": "80310f4ec7b2100c5e26abb667a1de8367620a18b59571d7b450381835279109",
+  "source": "kaggle/coral_r4/sweep_run/runs/coral_r4_sweep",
+  "well_posedness": "The 500-step calibration objection was a SCALE-FEEDBACK argument: raw CORAL scales as\n(feature scale)^4, gamma moves the scale, so \"equalise the losses at the end of training\"\nchases a moving target and has no fixed point. That objection was CORRECT FOR THE DATA IT\nWAS MADE ON -- with the target EMA ON, nb3's equalising gamma HALVED across its own tail\nwindow (1.138 -> 0.629, CV 0.868) while the feature norm rose 25% in 400 steps.\n\nThe sweep contradicts it. Across a 16x range of gamma the source feature norm moves by\nonly -0.89, -1.08, -1.63 (about -1.4% to -2.5% of a ~64 norm). The scale is effectively\nINVARIANT to gamma, so the feedback loop the objection depended on is not operating, and\nR(g) = g * coral_raw(g) / sup_loss(g) is a well-behaved function of gamma that can be\nsolved for R = 1.\n\nThe difference between the two runs is round 4's Change 1: the target EMA is now OFF. The\nstale-EMA reference is the most likely cause of the scale growth that motivated the\nobjection -- consistent with the measured 6.0e+03 vs 8.6e-07 translation-invariance\nbreakage. Recorded here as the reason the rule is APPLIED rather than re-litigated.\n\nThe shrink pressure the eps^4 argument predicts IS present and IS monotone in gamma\n(-0.89, -1.08, -1.63 at 1/4/16). It is small over the swept range but it is real and it\ngrows with gamma, which is why the decision rule's branch C refuses to extrapolate past 64.",
+  "window": {
+    "tail_steps": 200,
+    "total_steps": 2000
+  }
+}

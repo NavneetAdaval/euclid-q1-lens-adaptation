@@ -1,0 +1,244 @@
+{
+  "reference_config": "/kaggle/input/datasets/navneet78/lens-paper-coral-r4/reference/coral_r4_g16_2000/sweep.json",
+  "rows": [
+    {
+      "key": "gamma",
+      "reference": 16.0,
+      "this_run": 16.0,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "n_blocks",
+      "reference": 3,
+      "this_run": 3,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "fold",
+      "reference": 0,
+      "this_run": 0,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "max_steps",
+      "reference": 2000,
+      "this_run": 8000,
+      "status": "EXPECTED",
+      "provenance": "stored sweep.json; expected difference: THE point of the run: 7.14's fold-0 development maximum, licensed by runs/devmax_truncation.json (8000 is the only cap that resolved a decay)"
+    },
+    {
+      "key": "log_every",
+      "reference": 125,
+      "this_run": 125,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "ckpt_every",
+      "reference": 250,
+      "this_run": 250,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "feat_norm_ceiling",
+      "reference": 110.0,
+      "this_run": 110.0,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "feat_norm_floor",
+      "reference": null,
+      "this_run": 40.0,
+      "status": "NEW",
+      "provenance": "DID NOT EXIST when the g16 arm ran -- the two-sided floor was added 2026-08-19, after it. This run adds it (40.0). It is an ABORT GUARD, not a training term: it changes no gradient and no update, and it can only fire if mean ||f|| falls below 40 against a ~63-66 trajectory. Declared, not hidden."
+    },
+    {
+      "key": "coral_target_ema",
+      "reference": false,
+      "this_run": false,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "init_head_from_tail",
+      "reference": "runs/bakeoff_coral/fold0/checkpoints/step_8000.pt",
+      "this_run": "runs/bakeoff_coral/fold0/checkpoints/step_8000.pt",
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "init_head_l2",
+      "reference": 66.268356,
+      "this_run": 66.268356,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "batch_size",
+      "reference": 256,
+      "this_run": 256,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "steps_per_epoch",
+      "reference": 187,
+      "this_run": 187,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "lr",
+      "reference": 0.0001,
+      "this_run": 0.0001,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "backbone_lr_effective",
+      "reference": 0.0001,
+      "this_run": 0.0001,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "lr_decay",
+      "reference": 0.75,
+      "this_run": 0.75,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "weight_decay",
+      "reference": 0.05,
+      "this_run": 0.05,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "coral_shrinkage",
+      "reference": 0.1,
+      "this_run": 0.1,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "coral_include_mean",
+      "reference": true,
+      "this_run": true,
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "coral_weight_schedule",
+      "reference": "constant",
+      "this_run": "constant",
+      "status": "MATCH",
+      "provenance": "shared code constant: warmup_cosine is removed from this path"
+    },
+    {
+      "key": "coral_attachment",
+      "reference": "head.forward_with_features[1] (post-adapter, post-LayerNorm)",
+      "this_run": "head.forward_with_features[1] (post-adapter, post-LayerNorm)",
+      "status": "MATCH",
+      "provenance": "shared code constant, pinned in build_config"
+    },
+    {
+      "key": "coral_ema_momentum",
+      "reference": 0.9,
+      "this_run": 0.9,
+      "status": "MATCH",
+      "provenance": "shared code constant (inert while coral_target_ema is False)"
+    },
+    {
+      "key": "precision",
+      "reference": "fp16",
+      "this_run": "fp16",
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "coral_loss_precision",
+      "reference": "fp32_autocast_disabled",
+      "this_run": "fp32_autocast_disabled",
+      "status": "MATCH",
+      "provenance": "stored sweep.json"
+    },
+    {
+      "key": "eval_precision",
+      "reference": "fp32",
+      "this_run": "fp32",
+      "status": "MATCH",
+      "provenance": "the g16 arm computed no eval at all (it ran inside the lockout). fp32 is the precision runs/coral_r4_logits was scored at, which is what this run's logits must be comparable to."
+    },
+    {
+      "key": "seed",
+      "reference": 42,
+      "this_run": 42,
+      "status": "MATCH",
+      "provenance": "shared code constant run_coral_round4.SEED"
+    },
+    {
+      "key": "augmentation",
+      "reference": "weak (+-3px translate, PROJECT.md \u00a77.3)",
+      "this_run": "weak (+-3px translate, PROJECT.md \u00a77.3)",
+      "status": "MATCH",
+      "provenance": "shared code path: build_config sets it for both runs"
+    },
+    {
+      "key": "head_type",
+      "reference": "linear",
+      "this_run": "linear",
+      "status": "MATCH",
+      "provenance": "shared code constant run_coral_round4.HEAD_TYPE"
+    },
+    {
+      "key": "pos_fraction",
+      "reference": 0.5,
+      "this_run": 0.5,
+      "status": "MATCH",
+      "provenance": "shared code constant run_coral_round4.POS_FRACTION"
+    },
+    {
+      "key": "true_batch",
+      "reference": true,
+      "this_run": true,
+      "status": "MATCH",
+      "provenance": "shared code path; 7.1a forbids accumulation for CORAL"
+    },
+    {
+      "key": "gradient_accumulation",
+      "reference": false,
+      "this_run": false,
+      "status": "MATCH",
+      "provenance": "shared code path; 7.1a forbids it for CORAL"
+    },
+    {
+      "key": "grad_checkpointing",
+      "reference": true,
+      "this_run": true,
+      "status": "MATCH",
+      "provenance": "shared code path: mandatory at n_blocks=3 (7.1a)"
+    },
+    {
+      "key": "num_workers",
+      "reference": 2,
+      "this_run": 2,
+      "status": "MATCH",
+      "provenance": "the g16 arm's own command line, logs/g16.log header: --num-workers 2"
+    }
+  ],
+  "mismatches": [],
+  "expected_differences": {
+    "max_steps": {
+      "reference": 2000,
+      "this_run": 8000,
+      "why": "THE point of the run: 7.14's fold-0 development maximum, licensed by runs/devmax_truncation.json (8000 is the only cap that resolved a decay)"
+    }
+  }
+}

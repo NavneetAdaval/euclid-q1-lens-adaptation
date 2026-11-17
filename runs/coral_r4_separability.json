@@ -1,0 +1,112 @@
+{
+  "angle_convention": "acute angle between undirected axes, arccos|cos|",
+  "init": {
+    "fisher": {
+      "angle_to_w_deg": 73.03844136818826,
+      "between_gap": 4.072867157871112,
+      "ratio": 5.740853028145332,
+      "total_var": 4.652165752237144,
+      "within_std": 0.7094533056156138
+    },
+    "fisher_frac_of_total": 0.008541877419093511,
+    "total_var_all_dims": 544.6303574713256,
+    "w": {
+      "between_gap": 13.961083132548104,
+      "ratio": 2.803057499240063,
+      "total_var": 73.54664451056097,
+      "within_std": 4.980662414642973
+    },
+    "w_frac_of_total": 0.13503956123935515
+  },
+  "known_null": "gamma=0 -- no CORAL gradient, lowest TPR; read everything against it",
+  "test1": {
+    "g0": {
+      "between_gap": 8.291504591753117,
+      "gap_over_init": 0.5939012405436336,
+      "ratio": 4.676581214323253,
+      "ratio_over_init": 1.6683857593328433,
+      "total_var": 20.33759573252746,
+      "var_over_init": 0.27652649373564653,
+      "within_over_init": 0.3559735733905591,
+      "within_std": 1.7729841975925096
+    },
+    "g1": {
+      "between_gap": 2.37724343936501,
+      "gap_over_init": 0.1702764331961347,
+      "ratio": 3.310327308332976,
+      "ratio_over_init": 1.1809701760418538,
+      "total_var": 1.928969717285183,
+      "var_over_init": 0.026227841258049396,
+      "within_over_init": 0.14418351678179891,
+      "within_std": 0.7181294228461502
+    },
+    "g16": {
+      "between_gap": 1.4107322614797653,
+      "gap_over_init": 0.10104747948895608,
+      "ratio": 4.211386343583901,
+      "ratio_over_init": 1.5024259562016298,
+      "total_var": 0.6099415482192883,
+      "var_over_init": 0.008293261402723864,
+      "within_over_init": 0.06725621257530724,
+      "within_std": 0.33498049012507086
+    },
+    "g4": {
+      "between_gap": 1.950491265214822,
+      "gap_over_init": 0.1397091648761516,
+      "ratio": 3.672638731973081,
+      "ratio_over_init": 1.310225970380119,
+      "total_var": 1.2334844573278205,
+      "var_over_init": 0.01677145797114779,
+      "within_over_init": 0.10662982419408125,
+      "within_std": 0.5310871576434484
+    }
+  },
+  "test2": {
+    "g0": {
+      "angle_to_init_fisher_deg": 75.09902304337481,
+      "angle_to_w_deg": 79.71180959807633,
+      "between_gap": 3.711928181727842,
+      "fisher_var_frac_of_total": 0.01584689755607608,
+      "ratio": 8.98018014784718,
+      "ratio_over_init_fisher": 1.564258848610232,
+      "total_var_all_dims": 228.25019918693764,
+      "w_var_frac_of_total": 0.08910220365622072,
+      "within_std": 0.4133467392207831
+    },
+    "g1": {
+      "angle_to_init_fisher_deg": 76.02967081584598,
+      "angle_to_w_deg": 82.55570454294022,
+      "between_gap": 1.847270979484994,
+      "fisher_var_frac_of_total": 0.019877123481204875,
+      "ratio": 11.45185117826931,
+      "ratio_over_init_fisher": 1.994799574579773,
+      "total_var_all_dims": 44.24818895607417,
+      "w_var_frac_of_total": 0.043594320192406055,
+      "within_std": 0.16130763059428507
+    },
+    "g16": {
+      "angle_to_init_fisher_deg": 85.95017466595199,
+      "angle_to_w_deg": 88.48772459464593,
+      "between_gap": 0.6874182741367836,
+      "fisher_var_frac_of_total": 0.011545502416370469,
+      "ratio": 12.218267947320712,
+      "ratio_over_init_fisher": 2.1283018198548107,
+      "total_var_all_dims": 10.511235466191765,
+      "w_var_frac_of_total": 0.05802757917288584,
+      "within_std": 0.0562615157156972
+    },
+    "g4": {
+      "angle_to_init_fisher_deg": 82.58314391890988,
+      "angle_to_w_deg": 85.19162993690087,
+      "between_gap": 1.1831115615100867,
+      "fisher_var_frac_of_total": 0.01428812322622989,
+      "ratio": 11.618653645085686,
+      "ratio_over_init_fisher": 2.0238549198391977,
+      "total_var_all_dims": 25.228869586651825,
+      "w_var_frac_of_total": 0.048891784591904054,
+      "within_std": 0.10182862813975907
+    }
+  },
+  "w": "mean-difference direction, computed ONCE at init and held fixed (test 1)",
+  "whitening": "Fisher v = (Sw + 0.1*tr(Sw)/D*I)^-1 (mu_pos-mu_neg); lam=0.1 is da_losses._shrink's coefficient, reused rather than tuned"
+}

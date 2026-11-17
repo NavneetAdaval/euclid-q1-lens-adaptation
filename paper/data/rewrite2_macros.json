@@ -1,0 +1,116 @@
+[
+ {
+  "name": "rwDeflPool",
+  "printed": "19\\,167",
+  "value": 19167,
+  "source": "PROJECTv7.md:772"
+ },
+ {
+  "name": "rwDeflArc",
+  "printed": "4182",
+  "value": 4182,
+  "source": "PROJECTv7.md:772"
+ },
+ {
+  "name": "rwDeflReuse",
+  "printed": "ten",
+  "value": 10,
+  "source": "PROJECTv7.md:867"
+ },
+ {
+  "name": "rwDeflDistinct",
+  "printed": "2881",
+  "value": 2881,
+  "source": "audit/review_r1/out/F5_host_properties.json -> result.populations.a"
+ },
+ {
+  "name": "rwOptLr",
+  "printed": "10^{-4}",
+  "value": 0.0001,
+  "source": "run configs of CORAL (kaggle/coral_r4/.../coral_r4_confirm/fold1-4/run.json), DANN, BNM, lambda=0 folds 1-4"
+ },
+ {
+  "name": "rwOptDecay",
+  "printed": "0.75",
+  "value": 0.75,
+  "source": "run configs of CORAL (kaggle/coral_r4/.../coral_r4_confirm/fold1-4/run.json), DANN, BNM, lambda=0 folds 1-4"
+ },
+ {
+  "name": "rwOptWd",
+  "printed": "0.05",
+  "value": 0.05,
+  "source": "run configs of CORAL (kaggle/coral_r4/.../coral_r4_confirm/fold1-4/run.json), DANN, BNM, lambda=0 folds 1-4"
+ },
+ {
+  "name": "rwFmHeadLr",
+  "printed": "10^{-3}",
+  "value": 0.001,
+  "source": "runs/freematch_nb3_unfrozen_fold1-4/run_config.json (= runs/bakeoff_freematch_5fold/run_config.json lr, weight_decay)"
+ },
+ {
+  "name": "rwFmEncLr",
+  "printed": "10^{-4}",
+  "value": 0.0001,
+  "source": "runs/freematch_nb3_unfrozen_fold1-4/run_config.json (= runs/bakeoff_freematch_5fold/run_config.json lr, weight_decay)"
+ },
+ {
+  "name": "rwFmWd",
+  "printed": "10^{-4}",
+  "value": 0.0001,
+  "source": "runs/freematch_nb3_unfrozen_fold1-4/run_config.json (= runs/bakeoff_freematch_5fold/run_config.json lr, weight_decay)"
+ },
+ {
+  "name": "rwBaseLr",
+  "printed": "10^{-3}",
+  "value": 0.001,
+  "source": "runs/bakeoff_baseline_A/run_config.json -> lr"
+ },
+ {
+  "name": "rwBaseWd",
+  "printed": "10^{-4}",
+  "value": 0.0001,
+  "source": "runs/bakeoff_baseline_A/run_config.json -> weight_decay"
+ },
+ {
+  "name": "rwBatch",
+  "printed": "256",
+  "value": 256,
+  "source": "every run config above -> batch_size"
+ },
+ {
+  "name": "rwFzSteps",
+  "printed": "500, 1500, 2875, 4875",
+  "value": null,
+  "source": "audit/curation_fold1/out/fold0_only.json -> D1.a_within_two_positives_steps"
+ },
+ {
+  "name": "rwFzStepMin",
+  "printed": "500",
+  "value": 500,
+  "source": "audit/curation_fold1/out/fold0_only.json -> D1.a_within_two_positives_steps"
+ },
+ {
+  "name": "rwFzStepMax",
+  "printed": "4875",
+  "value": 4875,
+  "source": "audit/curation_fold1/out/fold0_only.json -> D1.a_within_two_positives_steps"
+ },
+ {
+  "name": "rwFzWithinSd",
+  "printed": "11",
+  "value": 11,
+  "source": "audit/curation_fold1/out/fold0_only.json -> D1.b_within_one_sd"
+ },
+ {
+  "name": "rwFzPoints",
+  "printed": "65",
+  "value": 65,
+  "source": "audit/curation_fold1/out/fold0_only.json -> D1.b_within_one_sd.of"
+ },
+ {
+  "name": "rwBudgetPreCurve",
+  "printed": "BNM's rule and Baseline A's budget",
+  "value": null,
+  "source": "PROJECTv7.md section 7.4 (R1 pre-registered and FROZEN before results); section 7.20 (ceiling declared before the curve exists)"
+ }
+]

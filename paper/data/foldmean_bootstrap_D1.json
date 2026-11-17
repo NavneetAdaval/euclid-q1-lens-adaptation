@@ -1,0 +1,51 @@
+{
+ "structure": "shared-negative resample once per draw; per-fold thresholds; paired positive indices across arms",
+ "n_shared_negatives": 26134,
+ "per_fold": {
+  "1": {
+   "unfrozen": 0.5,
+   "round1": 0.41836734693877553,
+   "diff": 0.08163265306122447
+  },
+  "2": {
+   "unfrozen": 0.5918367346938775,
+   "round1": 0.41836734693877553,
+   "diff": 0.173469387755102
+  },
+  "3": {
+   "unfrozen": 0.42857142857142855,
+   "round1": 0.37755102040816324,
+   "diff": 0.05102040816326531
+  },
+  "4": {
+   "unfrozen": 0.5463917525773195,
+   "round1": 0.4329896907216495,
+   "diff": 0.11340206185567003
+  }
+ },
+ "unfrozen_fold_mean": 0.5166999789606564,
+ "round1_fold_mean": 0.411818851251841,
+ "diff": 0.10488112770881547,
+ "ci": [
+  0.025589101620029475,
+  0.1686835945718494
+ ],
+ "ci_half_width": 0.07154724647590996,
+ "bootstrap_median": 0.09967389017462658,
+ "frac_draws_le_0": 0.0044,
+ "ci_excludes_zero": true,
+ "B": 5000,
+ "seed": 0,
+ "sanity_anchor_paired_t": {
+  "t": 4.007686010928183,
+  "df": 3,
+  "p": 0.027868051293046925,
+  "note": "assumes fold independence -- NOT the result"
+ },
+ "test_pool": {
+  "pool": "D1",
+  "rule": "audit/decontam/rule.json",
+  "rule_sha256": "b83fa019abba5238ccfca593a3130b54be574a47359b4e2818b274efd3fd0e4b",
+  "built_by": "paper/scripts/build_pool_recomputes.py"
+ }
+}

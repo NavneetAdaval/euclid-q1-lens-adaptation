@@ -1,0 +1,47 @@
+{
+ "folds": [
+  {
+   "fold": 1,
+   "device": 0,
+   "returncode": 0,
+   "minutes": 75.50071582396825,
+   "out_dir": "/kaggle/working/runs/coral_r4_confirm",
+   "log": "/kaggle/working/runs/coral_r4_confirm/logs/fold1.log",
+   "dir": "/kaggle/working/runs/coral_r4_confirm/fold1",
+   "run_json": true,
+   "steps_completed": 2000,
+   "aborted": false,
+   "abort_reason": null,
+   "reported_checkpoint": "/kaggle/working/runs/coral_r4_confirm/fold1/checkpoints/step_2000.pt",
+   "reported_checkpoint_present": true,
+   "reported_logits": "/kaggle/working/runs/coral_r4_confirm/fold1/logits/g16_2000_fold1/step_2000.npz",
+   "reported_logits_present": true,
+   "step0_gate": "PASS",
+   "config_mismatches": [],
+   "prereg_sha256": "65c20810485968d8a24662b352bb85cd73176e3b21c039dd97f592a9e0aeade3",
+   "n_test_positives": 98,
+   "wall_minutes": 70.75506868362427,
+   "ok": true
+  }
+ ],
+ "verify": null,
+ "out_root": "/kaggle/working/runs/coral_r4_confirm",
+ "log_root": "/kaggle/working/runs/coral_r4_confirm/logs",
+ "last_started_utc": "2026-08-23T12:41:22Z",
+ "waves_this_invocation": [
+  [
+   1
+  ]
+ ],
+ "budget_for_readback": 2000,
+ "finished_utc": "2026-08-23T13:56:53Z",
+ "folds_complete": [
+  1
+ ],
+ "folds_outstanding": [
+  2,
+  3,
+  4
+ ],
+ "all_ok": false
+}

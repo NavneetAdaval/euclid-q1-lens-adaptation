@@ -1,0 +1,970 @@
+{
+ "what": "Figure 1 (F1_setup_v2.pdf) geometry before rewrite v5b item 11, data coordinates, captured from the unchanged generator",
+ "pool": "D1",
+ "geometry": [
+  {
+   "axes": 0,
+   "kind": "limits",
+   "xlim": [
+    0.0,
+    100.0
+   ],
+   "ylim": [
+    25.0,
+    100.0
+   ]
+  },
+  {
+   "axes": 0,
+   "kind": "box",
+   "xywh": [
+    0,
+    64.8,
+    31,
+    33.2
+   ]
+  },
+  {
+   "axes": 0,
+   "kind": "box",
+   "xywh": [
+    36.5,
+    64.8,
+    28,
+    33.2
+   ]
+  },
+  {
+   "axes": 0,
+   "kind": "box",
+   "xywh": [
+    69.5,
+    64.8,
+    30.5,
+    33.2
+   ]
+  },
+  {
+   "axes": 0,
+   "kind": "arrow",
+   "xy": [
+    31.4,
+    72,
+    36.1,
+    72
+   ]
+  },
+  {
+   "axes": 0,
+   "kind": "arrow",
+   "xy": [
+    64.9,
+    72,
+    69.1,
+    72
+   ]
+  },
+  {
+   "axes": 0,
+   "kind": "box",
+   "xywh": [
+    0,
+    31.4,
+    31,
+    24.4
+   ]
+  },
+  {
+   "axes": 0,
+   "kind": "box",
+   "xywh": [
+    36.5,
+    27.0,
+    63.5,
+    28.8
+   ]
+  },
+  {
+   "axes": 0,
+   "kind": "arrow",
+   "xy": [
+    15.5,
+    64.8,
+    15.5,
+    55.8
+   ]
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    15.5,
+    95.0
+   ],
+   "text": "SOURCE — labelled",
+   "fontsize": 8.0
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    15.5,
+    89.4
+   ],
+   "text": "sim lens positives   24,000",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    15.5,
+    85.0
+   ],
+   "text": "grade-X hard negatives   4,455",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    15.5,
+    80.6
+   ],
+   "text": "bare deflectors   2,881",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    15.5,
+    76.2
+   ],
+   "text": "random galaxies   16,664",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    15.5,
+    71.8
+   ],
+   "text": "balanced 1:1, fixed across folds",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    50.5,
+    95.0
+   ],
+   "text": "TARGET — no label as target",
+   "fontsize": 8.0
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    50.5,
+    89.4
+   ],
+   "text": "391 real lenses +",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    50.5,
+    85.0
+   ],
+   "text": "391 fresh random galaxies",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    50.5,
+    80.6
+   ],
+   "text": "labels pick the pool and",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    50.5,
+    76.2
+   ],
+   "text": "balance each batch 1:1",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    50.5,
+    71.8
+   ],
+   "text": "galaxies drawn fresh per fold",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    84.75,
+    95.0
+   ],
+   "text": "TEST — per fold",
+   "fontsize": 8.0
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    84.75,
+    89.4
+   ],
+   "text": "98 held-out real lenses",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    84.75,
+    85.0
+   ],
+   "text": "26,134 shared random galaxies",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    84.75,
+    80.6
+   ],
+   "text": "(26,399 drawn, less 265 excluded)",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    84.75,
+    76.2
+   ],
+   "text": "labels used to score",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    84.75,
+    71.8
+   ],
+   "text": "the held-out fold",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    33.75,
+    74.5
+   ],
+   "text": "train",
+   "fontsize": 6.4
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    67.0,
+    74.5
+   ],
+   "text": "score",
+   "fontsize": 6.4
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    15.5,
+    52.8
+   ],
+   "text": "SOURCE-VAL — labelled",
+   "fontsize": 8.0
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    15.5,
+    47.2
+   ],
+   "text": "6,000 sim positives, 6,000 negatives",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    15.5,
+    42.8
+   ],
+   "text": "(no grade X); the only selection",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    15.5,
+    38.4
+   ],
+   "text": "signal without target labels",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    68.25,
+    52.8
+   ],
+   "text": "WHAT EACH ARM SEES",
+   "fontsize": 8.0
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    68.25,
+    47.2
+   ],
+   "text": "every arm: source images and source labels",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    68.25,
+    42.8
+   ],
+   "text": "$\\lambda=0$ control: target images are loaded, but no target",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    68.25,
+    38.4
+   ],
+   "text": "gradient reaches the encoder or the head",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 0,
+   "kind": "text",
+   "xy": [
+    68.25,
+    34.0
+   ],
+   "text": "adaptation arms: a loss term computed on the target images",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 1,
+   "kind": "limits",
+   "xlim": [
+    0.0,
+    100.0
+   ],
+   "ylim": [
+    0.0,
+    100.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    11.0,
+    76.0,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    28.8,
+    76.0,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    46.6,
+    76.0,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    64.4,
+    76.0,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    82.2,
+    76.0,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    11.0,
+    63.3,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    28.8,
+    63.3,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    46.6,
+    63.3,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    64.4,
+    63.3,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    82.2,
+    63.3,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    11.0,
+    50.6,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    28.8,
+    50.6,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    46.6,
+    50.6,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    64.4,
+    50.6,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    82.2,
+    50.6,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    11.0,
+    37.9,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    28.8,
+    37.9,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    46.6,
+    37.9,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    64.4,
+    37.9,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    82.2,
+    37.9,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    11.0,
+    25.2,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    28.8,
+    25.2,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    46.6,
+    25.2,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    64.4,
+    25.2,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "box",
+   "xywh": [
+    82.2,
+    25.2,
+    16.6,
+    11.0
+   ]
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    0,
+    96
+   ],
+   "text": "FOLD ROTATION over the 489 graded real lenses — stratified by grade, each lens tested exactly once",
+   "fontsize": 7.4
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    9.4,
+    81.5
+   ],
+   "text": "fold 0",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    19.3,
+    81.5
+   ],
+   "text": "test 98",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    37.1,
+    81.5
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    54.9,
+    81.5
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    72.7,
+    81.5
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    90.5,
+    81.5
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    9.4,
+    68.8
+   ],
+   "text": "fold 1",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    19.3,
+    68.8
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    37.1,
+    68.8
+   ],
+   "text": "test 98",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    54.9,
+    68.8
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    72.7,
+    68.8
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    90.5,
+    68.8
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    9.4,
+    56.1
+   ],
+   "text": "fold 2",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    19.3,
+    56.1
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    37.1,
+    56.1
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    54.9,
+    56.1
+   ],
+   "text": "test 98",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    72.7,
+    56.1
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    90.5,
+    56.1
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    9.4,
+    43.4
+   ],
+   "text": "fold 3",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    19.3,
+    43.4
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    37.1,
+    43.4
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    54.9,
+    43.4
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    72.7,
+    43.4
+   ],
+   "text": "test 98",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    90.5,
+    43.4
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    9.4,
+    30.7
+   ],
+   "text": "fold 4",
+   "fontsize": 6.9
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    19.3,
+    30.7
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    37.1,
+    30.7
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    54.9,
+    30.7
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    72.7,
+    30.7
+   ],
+   "text": "target",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    90.5,
+    30.7
+   ],
+   "text": "test 97",
+   "fontsize": 6.2
+  },
+  {
+   "axes": 1,
+   "kind": "text",
+   "xy": [
+    54.9,
+    0.0
+   ],
+   "text": "Target negatives are drawn fresh for each fold; the target lenses of any two folds overlap by about 75%.\nTest negatives are the same shared pool in every fold (one FPR$\\,{=}\\,10^{-3}$ threshold).",
+   "fontsize": 6.4
+  }
+ ]
+}

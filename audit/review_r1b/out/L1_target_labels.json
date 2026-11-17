@@ -1,0 +1,516 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1b/scripts/l1_target_labels.py",
+ "test_pool": "n/a",
+ "folds": "n/a",
+ "metric": "scripts/metrics.py metric_suite / tpr_at_fpr (TPR at FPR=1e-3, full ROC with drop_intermediate=False, np.interp); thresholds from metrics.operating_threshold on the same curve",
+ "generated_utc": "2026-10-08T17:26:15+00:00",
+ "notes": [],
+ "inputs_sha256": {
+  "scripts/bnm_round6.py": "f1c71a7f6a70e80eadf89d137369c741dcceb313d6370eede70242b749241f05",
+  "scripts/cache_features.py": "37deb6c4dfe11a243bb324ef9cea0d0d6dd864e83fed7e9aef7368e8cb61fd5b",
+  "scripts/continuation_state.py": "7b1ac7516f907137fc3d82d1ade3dab0dafd15f440d115faf69b71b5163e1033",
+  "scripts/da_losses.py": "2d861ffc8649f4987756f5773c9e72e8bb2fba5cf790c7b227e7436ce1f89a98",
+  "scripts/dann_round5.py": "6884d4690aa1d58aaff876b1624de259028965a47e7a38a9437a8e477eff8c1e",
+  "scripts/lens_dataset.py": "87c3701b4eb8e76333b06938d3d3fda8a53e7f46afe59bbb7fee6074b566318d",
+  "scripts/live_encode.py": "fbc24be3b72367744dad9ef7659a5f6ad9aafbcb7c318a174fbf738532cf09bc",
+  "scripts/pseudolabel_precision.py": "b68895a9be1d2077b78f8ec715952044a93d6941db35cb123beb173b2be32f34",
+  "scripts/run_adamatch.py": "56964ca1532686cf804d3ed3b8ac3e07d0b116cc08758bfb4aadc2488199d6f0",
+  "scripts/run_bakeoff_adamatch.py": "b5e22a158818d79ad083ba799d1a2d9ad4a81cd2d68a573ccbb71b25890a9932",
+  "scripts/run_bakeoff_coral.py": "9a10e548b3178b637de6e2bc849a314ad2064710e78a7da49772840223a08f82",
+  "scripts/run_bakeoff_freematch.py": "6e35b3692cd1ce1fab48a12a96571bd1fefbe451fd96c8691ddee616f6ac16d6",
+  "scripts/run_bnm_r6.py": "5cb8b3f8a0f22d2089f738f2cf5a0e4d0756c6fe4661328e55d3594e9f1f0220",
+  "scripts/run_coral.py": "2a8821d38ab770ea4face2fbc323b5c0c3e0a8de84d770366575d5aeea2e8cb3",
+  "scripts/run_coral_r4_confirm.py": "0ec4f3c6cd05a854f53e3ae8d66e2fb2f3777b21abc23cfa5a6b54f34c0b9eae",
+  "scripts/run_coral_round4.py": "2dac8d4f8dbe4018ac3f987426bff180c50102c9ceaf5db7c17d99b75eb200d8",
+  "scripts/run_dann.py": "0110ac844496ec43686c63b05ca0bdca6c1e00f500983f42108093f74207dd33",
+  "scripts/run_dann_r5.py": "320ed27d74473ce1b19cd3ee3f27375b2af3cd3ce58a748228116048302e4515",
+  "scripts/run_freematch.py": "8262b7cf37fe0c6aeb0ce8b7ed657a75175ff7e1dca471548b41d6a18708150e",
+  "scripts/run_unfreeze_freematch.py": "e8f745890dbf4b349f1254f4a898d72cb33909108ca0f495c078df17823981b8",
+  "scripts/samplers.py": "32753fe586e077de2069070d77a795ea30210b5e8fc8d85b852e6c2b84fac96e",
+  "scripts/study_validators.py": "ffda6b7c4c3e9540d921205b684c0f1b75d348ce0a481f661ae6cadea8971a3a",
+  "scripts/train_skeleton.py": "06834cac81d1fdcd9a560d508a080a51902ca11b33e4cc648da9a4e76dbc3691",
+  "scripts/unfreeze_instrument.py": "df2f6277eaf9e8abe084514b579df38c5b6d119ffb36f64bb998d514943076e7",
+  "scripts/validators.py": "5b78837af5c21d0c37e03da02eb5d2f3d6b63f182114b74017fdd781c3990365"
+ },
+ "result": {
+  "shared_mechanism": {
+   "target_items_served_unlabeled": [
+    {
+     "file": "scripts/lens_dataset.py",
+     "line": 298,
+     "text": "self._add(\"real_lens\", UNLABELED, TARGET, 1,"
+    },
+    {
+     "file": "scripts/lens_dataset.py",
+     "line": 302,
+     "text": "self._add(\"random\", UNLABELED, TARGET, 0,"
+    },
+    {
+     "file": "scripts/lens_dataset.py",
+     "line": 35,
+     "text": "true identities live in `latent_labels` for DIAGNOSTICS ONLY and are never returned"
+    },
+    {
+     "file": "scripts/lens_dataset.py",
+     "line": 228,
+     "text": "self.latent_labels = np.array([d[\"latent\"] for d in self._descriptors], dtype=np.int64)"
+    },
+    {
+     "file": "scripts/lens_dataset.py",
+     "line": 235,
+     "text": "self.indices_by_latent = self._group_indices(self.latent_labels)"
+    }
+   ],
+   "balanced_sampler_reads_latent": [
+    {
+     "file": "scripts/samplers.py",
+     "line": 23,
+     "text": "we balance on ``indices_by_latent`` (latent identity {0,1}) because the served"
+    },
+    {
+     "file": "scripts/samplers.py",
+     "line": 177,
+     "text": "index_map = dataset.indices_by_latent if use_latent else dataset.indices_by_label"
+    },
+    {
+     "file": "scripts/samplers.py",
+     "line": 186,
+     "text": "def make_balanced_loader(dataset, batch_size: int, use_latent: bool = False,"
+    }
+   ],
+   "latent_stratified_target_holdout": [
+    {
+     "file": "scripts/dann_round5.py",
+     "line": 341,
+     "text": "def build_target_holdout(target_ds, *, frac: float = DEFAULT_HOLDOUT_FRAC,"
+    },
+    {
+     "file": "scripts/dann_round5.py",
+     "line": 361,
+     "text": "3. **Stratified by LATENT class**, so the monitor slice has the same ~1:1"
+    },
+    {
+     "file": "scripts/dann_round5.py",
+     "line": 371,
+     "text": "by_latent = target_ds.indices_by_latent"
+    },
+    {
+     "file": "scripts/dann_round5.py",
+     "line": 386,
+     "text": "train[cls] = np.sort(np.setdiff1d(pool, pick, assume_unique=True))"
+    }
+   ]
+  },
+  "arms": {
+   "CORAL x nb3": {
+    "producer": "scripts/run_coral_r4_confirm.py -> run_coral_round4.build_arm",
+    "sampling_mode": "b",
+    "sampling": [
+     {
+      "file": "scripts/run_coral_r4_confirm.py",
+      "line": 575,
+      "text": "A = R4.build_arm(ARM_KEY, sa, root, for_calibration=True)"
+     },
+     {
+      "file": "scripts/run_coral_round4.py",
+      "line": 513,
+      "text": "tgt_loader = make_balanced_loader(tgt_ds, batch_size, use_latent=True,"
+     }
+    ],
+    "other_training_reads": [],
+    "diagnostic_only_reads": [],
+    "checked_and_label_free": [
+     {
+      "file": "scripts/run_coral_round4.py",
+      "line": 446,
+      "text": "def gate_or_abort_coral(step0_row, expected, tol, run_key, fold, expected_auroc):"
+     },
+     {
+      "file": "scripts/unfreeze_instrument.py",
+      "line": 180,
+      "text": "def memorization_row(step: int, scores: dict, fold: int) -> dict:"
+     }
+    ]
+   },
+   "FreeMatch x nb3": {
+    "producer": "scripts/run_unfreeze_freematch.py -> run_freematch.train_freematch_fold",
+    "sampling_mode": "b",
+    "sampling": [
+     {
+      "file": "scripts/run_unfreeze_freematch.py",
+      "line": 610,
+      "text": "from run_freematch import train_freematch_fold"
+     },
+     {
+      "file": "scripts/run_freematch.py",
+      "line": 224,
+      "text": "tgt_loader = make_balanced_loader(tgt_ds, batch_size, use_latent=True,"
+     }
+    ],
+    "other_training_reads": [
+     {
+      "what": "SAT buffer rebuild (FreeMatch's thresholds) averages over batches from the same latent-balanced target loader",
+      "lines": [
+       {
+        "file": "scripts/continuation_state.py",
+        "line": 83,
+        "text": "def collect_target_batch_stats(trainer, target_loader, n_batches, verbose=True):"
+       },
+       {
+        "file": "scripts/continuation_state.py",
+        "line": 86,
+        "text": "Batches come from the SAME loader the training loop uses -- class-balanced on latent"
+       }
+      ]
+     },
+     {
+      "what": "SAF class marginal: uniform [0.5, 0.5] (a fixed constant; reads no label, matches the 1:1 target pool)",
+      "lines": [
+       {
+        "file": "scripts/da_losses.py",
+        "line": 923,
+        "text": "ft = torch.full((self.num_classes,), init)"
+       }
+      ]
+     }
+    ],
+    "diagnostic_only_reads": [],
+    "checked_and_label_free": [
+     {
+      "file": "scripts/run_unfreeze_freematch.py",
+      "line": 752,
+      "text": "def gate_or_abort(step0_row, expected, tol, run_key, fold=0, expected_auroc=None):"
+     },
+     {
+      "file": "scripts/unfreeze_instrument.py",
+      "line": 180,
+      "text": "def memorization_row(step: int, scores: dict, fold: int) -> dict:"
+     }
+    ]
+   },
+   "DANN x nb3": {
+    "producer": "scripts/run_dann_r5.py (arm dann_nb3)",
+    "sampling_mode": "b",
+    "sampling": [
+     {
+      "file": "scripts/run_dann_r5.py",
+      "line": 1043,
+      "text": "holdout = build_target_holdout(tgt_ds, frac=float(args.dann_d_holdout_frac),"
+     },
+     {
+      "file": "scripts/run_dann_r5.py",
+      "line": 1062,
+      "text": "tgt_sampler = ClassBalancedBatchSampler(holdout[\"train_pos\"], holdout[\"train_neg\"],"
+     }
+    ],
+    "other_training_reads": [
+     {
+      "what": "the ~10% held-out target slice (78 images) is chosen stratified by latent class and REMOVED from the sampler pool; abort condition 1 (armed on DANN's folds) reads D's domain accuracy on that slice (domain labels, not lens labels)",
+      "lines": [
+       {
+        "file": "scripts/dann_round5.py",
+        "line": 371,
+        "text": "by_latent = target_ds.indices_by_latent"
+       },
+       {
+        "file": "scripts/dann_round5.py",
+        "line": 461,
+        "text": "return {\"d_acc_holdout\": float(pred_target.float().mean()),"
+       },
+       {
+        "file": "scripts/run_dann_r5.py",
+        "line": 1121,
+        "text": "holdout_images = materialise_holdout_images(tgt_ds, holdout[\"holdout\"])"
+       }
+      ]
+     }
+    ],
+    "diagnostic_only_reads": [],
+    "checked_and_label_free": [
+     {
+      "file": "scripts/dann_round5.py",
+      "line": 877,
+      "text": "COND3_COLUMN = \"morph_proxy_auroc\"          # the DETECTOR column (frozen probe, adapter)"
+     },
+     {
+      "file": "scripts/dann_round5.py",
+      "line": 614,
+      "text": "# ---- morphology, TWO INSTRUMENTS on one ML-FP vs P1-reserve pool ----"
+     }
+    ]
+   },
+   "lambda=0": {
+    "producer": "scripts/run_dann_r5.py (arm dann_nb3_lambda0; same code path as DANN)",
+    "sampling_mode": "b",
+    "sampling": [
+     {
+      "file": "scripts/run_dann_r5.py",
+      "line": 1062,
+      "text": "tgt_sampler = ClassBalancedBatchSampler(holdout[\"train_pos\"], holdout[\"train_neg\"],"
+     }
+    ],
+    "other_training_reads": [
+     {
+      "what": "same latent-stratified holdout removed from the sampler pool; aborts are log_only on every fold of this arm",
+      "lines": [
+       {
+        "file": "scripts/dann_round5.py",
+        "line": 371,
+        "text": "by_latent = target_ds.indices_by_latent"
+       }
+      ]
+     }
+    ],
+    "diagnostic_only_reads": [],
+    "checked_and_label_free": []
+   },
+   "BNM x nb3": {
+    "producer": "scripts/run_bnm_r6.py",
+    "sampling_mode": "b",
+    "sampling": [
+     {
+      "file": "scripts/run_bnm_r6.py",
+      "line": 335,
+      "text": "holdout = build_target_holdout(tgt_ds, frac=D_HOLDOUT_FRAC, seed=SEED + fold)"
+     },
+     {
+      "file": "scripts/run_bnm_r6.py",
+      "line": 350,
+      "text": "tgt_sampler = ClassBalancedBatchSampler(holdout[\"train_pos\"], holdout[\"train_neg\"],"
+     }
+    ],
+    "other_training_reads": [
+     {
+      "what": "same latent-stratified 78-image holdout removed from the sampler pool",
+      "lines": [
+       {
+        "file": "scripts/dann_round5.py",
+        "line": 371,
+        "text": "by_latent = target_ds.indices_by_latent"
+       }
+      ]
+     }
+    ],
+    "diagnostic_only_reads": [
+     {
+      "what": "size-matched, latent-stratified 'trained-on' probe; its normalised nuclear norm / entropy / predicted-positive fraction are logged (the \u00a78 memorisation diagnostic), no gradient",
+      "lines": [
+       {
+        "file": "scripts/bnm_round6.py",
+        "line": 658,
+        "text": "def build_trainedon_probe(target_ds, holdout: dict, *, seed: int) -> dict:"
+       },
+       {
+        "file": "scripts/bnm_round6.py",
+        "line": 668,
+        "text": "by_latent = target_ds.indices_by_latent"
+       },
+       {
+        "file": "scripts/run_bnm_r6.py",
+        "line": 432,
+        "text": "probe = build_trainedon_probe(tgt_ds, holdout, seed=SEED + fold)"
+       }
+      ]
+     }
+    ],
+    "checked_and_label_free": []
+   },
+   "round-1 CORAL (frozen)": {
+    "producer": "scripts/run_bakeoff_coral.py -> run_coral.train_coral_fold (cached features)",
+    "sampling_mode": "b",
+    "sampling": [
+     {
+      "file": "scripts/run_bakeoff_coral.py",
+      "line": 60,
+      "text": "from run_coral import train_coral_fold, evaluate_per_fold  # noqa: E402  (existing CORAL math)"
+     },
+     {
+      "file": "scripts/run_coral.py",
+      "line": 245,
+      "text": "tgt_latent = np.asarray(tgt[\"latent_labels\"], dtype=np.int64)   # 0/1 identity (balancing only)"
+     },
+     {
+      "file": "scripts/run_coral.py",
+      "line": 250,
+      "text": "tpos_idx = np.where(tgt_latent == POS_LABEL)[0]"
+     }
+    ],
+    "other_training_reads": [],
+    "diagnostic_only_reads": [],
+    "checked_and_label_free": [
+     {
+      "file": "scripts/run_coral.py",
+      "line": 205,
+      "text": "stop_on_blowup=True,"
+     }
+    ]
+   },
+   "round-1 AdaMatch (frozen)": {
+    "producer": "scripts/run_bakeoff_adamatch.py -> run_adamatch.train_adamatch_fold",
+    "sampling_mode": "b",
+    "sampling": [
+     {
+      "file": "scripts/run_bakeoff_adamatch.py",
+      "line": 61,
+      "text": "from run_adamatch import train_adamatch_fold, _suite_from_scores  # noqa: E402  (existing math)"
+     },
+     {
+      "file": "scripts/run_adamatch.py",
+      "line": 129,
+      "text": "tgt_loader = make_balanced_loader(tgt_ds, batch_size, use_latent=True,"
+     }
+    ],
+    "other_training_reads": [],
+    "diagnostic_only_reads": [],
+    "checked_and_label_free": []
+   },
+   "round-1 FreeMatch (frozen)": {
+    "producer": "scripts/run_bakeoff_freematch.py -> run_freematch.train_freematch_fold",
+    "sampling_mode": "b",
+    "sampling": [
+     {
+      "file": "scripts/run_bakeoff_freematch.py",
+      "line": 65,
+      "text": "from run_freematch import train_freematch_fold, _suite_from_scores  # noqa: E402  (existing math)"
+     },
+     {
+      "file": "scripts/run_freematch.py",
+      "line": 224,
+      "text": "tgt_loader = make_balanced_loader(tgt_ds, batch_size, use_latent=True,"
+     }
+    ],
+    "other_training_reads": [
+     {
+      "what": "SAF class marginal uniform [0.5, 0.5] (constant)",
+      "lines": [
+       {
+        "file": "scripts/da_losses.py",
+        "line": 923,
+        "text": "ft = torch.full((self.num_classes,), init)"
+       }
+      ]
+     }
+    ],
+    "diagnostic_only_reads": [],
+    "checked_and_label_free": []
+   },
+   "round-1 DANN probe (fold 0)": {
+    "producer": "scripts/run_dann.py (runs/curve_dann_fold0)",
+    "sampling_mode": "b",
+    "sampling": [
+     {
+      "file": "scripts/run_dann.py",
+      "line": 384,
+      "text": "tgt_latent = np.asarray(tgt[\"latent_labels\"], dtype=np.int64)   # 0/1 identity (balancing)"
+     },
+     {
+      "file": "scripts/run_dann.py",
+      "line": 389,
+      "text": "tpos_idx = np.where(tgt_latent == POS_LABEL)[0]"
+     }
+    ],
+    "other_training_reads": [],
+    "diagnostic_only_reads": [],
+    "checked_and_label_free": []
+   }
+  },
+  "post_hoc_only_reads": {
+   "what": "target-identity reads in scripts that run after training on stored outputs (no effect on gradients or on which steps run)",
+   "lines": [
+    {
+     "file": "scripts/cache_features.py",
+     "line": 28,
+     "text": "latent_labels   (N,)     int64     true identity 0/1 (diagnostics only)"
+    },
+    {
+     "file": "scripts/live_encode.py",
+     "line": 162,
+     "text": "\"latent_labels\": np.asarray(ds.latent_labels, dtype=np.int64)[idx],"
+    },
+    {
+     "file": "scripts/study_validators.py",
+     "line": 244,
+     "text": "lat = np.asarray(self.tgt[\"latent_labels\"]).reshape(-1)"
+    },
+    {
+     "file": "scripts/validators.py",
+     "line": 171,
+     "text": "``latent_labels`` is used ONLY to assert the pool is balanced and is never read into the"
+    },
+    {
+     "file": "scripts/pseudolabel_precision.py",
+     "line": 63,
+     "text": "lens_dataset.py builds role=\"target\" as ``target_lens_rows`` (real lenses, latent 1)"
+    }
+   ]
+  },
+  "kaggle_bundle_copies_identical_to_scripts": {
+   "samplers.py": {
+    "scripts_sha256": "32753fe586e077de2069070d77a795ea30210b5e8fc8d85b852e6c2b84fac96e",
+    "copies": {
+     "kaggle/coral_r4/dataset/scripts/samplers.py": true,
+     "kaggle/dann_r5/scripts/samplers.py": true,
+     "kaggle/freematch/scripts/samplers.py": true,
+     "kaggle_screen_bundle/scripts/samplers.py": true,
+     "kaggle_task5_bundle/scripts/samplers.py": true
+    }
+   },
+   "lens_dataset.py": {
+    "scripts_sha256": "87c3701b4eb8e76333b06938d3d3fda8a53e7f46afe59bbb7fee6074b566318d",
+    "copies": {
+     "kaggle/coral_r4/dataset/scripts/lens_dataset.py": true,
+     "kaggle/dann_r5/scripts/lens_dataset.py": true,
+     "kaggle/freematch/scripts/lens_dataset.py": true,
+     "kaggle_screen_bundle/scripts/lens_dataset.py": true,
+     "kaggle_task5_bundle/scripts/lens_dataset.py": true
+    }
+   },
+   "dann_round5.py": {
+    "scripts_sha256": "6884d4690aa1d58aaff876b1624de259028965a47e7a38a9437a8e477eff8c1e",
+    "copies": {
+     "kaggle/dann_r5/scripts/dann_round5.py": true
+    }
+   },
+   "run_freematch.py": {
+    "scripts_sha256": "8262b7cf37fe0c6aeb0ce8b7ed657a75175ff7e1dca471548b41d6a18708150e",
+    "copies": {
+     "kaggle/coral_r4/dataset/scripts/run_freematch.py": true,
+     "kaggle/dann_r5/scripts/run_freematch.py": true,
+     "kaggle/freematch/scripts/run_freematch.py": true
+    }
+   },
+   "run_coral_round4.py": {
+    "scripts_sha256": "2dac8d4f8dbe4018ac3f987426bff180c50102c9ceaf5db7c17d99b75eb200d8",
+    "copies": {
+     "kaggle/coral_r4/dataset/scripts/run_coral_round4.py": true,
+     "kaggle/dann_r5/scripts/run_coral_round4.py": true
+    }
+   },
+   "bnm_round6.py": {
+    "scripts_sha256": "f1c71a7f6a70e80eadf89d137369c741dcceb313d6370eede70242b749241f05",
+    "copies": {
+     "kaggle/dann_r5/scripts/bnm_round6.py": true
+    }
+   },
+   "run_bnm_r6.py": {
+    "scripts_sha256": "5cb8b3f8a0f22d2089f738f2cf5a0e4d0756c6fe4661328e55d3594e9f1f0220",
+    "copies": {
+     "kaggle/dann_r5/scripts/run_bnm_r6.py": true
+    }
+   },
+   "run_dann_r5.py": {
+    "scripts_sha256": "320ed27d74473ce1b19cd3ee3f27375b2af3cd3ce58a748228116048302e4515",
+    "copies": {
+     "kaggle/dann_r5/scripts/run_dann_r5.py": true
+    }
+   }
+  },
+  "question_1_modes": {
+   "a": "uniform from the target pool, ignoring labels",
+   "b": "class-balanced / stratified on lens/non-lens identity",
+   "c": "something else"
+  },
+  "scope_note": "evaluation on the held-out test fold (step-0 gates, curve scoring, collapse gate) is excluded as the brief directs"
+ }
+}

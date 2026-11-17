@@ -1,0 +1,40 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_appendix_tables_v2.py)
+% Appendix A (rewrite v2): tables/T2_contrasts.tex's rows (make_t2_contrasts.py, protected), reordered and marked as Table 3; number tokens asserted identical.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Paired contrasts at four decimals}, folds 1--4, cleaned pool. Paired $t$-interval on the four per-fold differences (df${}=3$); the last row uses the fold-aware paired bootstrap ($B=5000$). Signs counts the folds agreeing in direction with the mean. $^{\dagger}$Registered with the $\lambda=0$ control, before it ran; $^{\ddagger}$sensitivity readout declared with those contrasts. The arms differ in head initialisation and tuning (Section~\ref{sec:arms}), and a budget match removes only the budget difference. \contrastCount{} intervals at 95\%, with no multiplicity correction; several share the control arm. $^{*}$Interval excludes zero.}
+\label{tab:contrasts4}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrlcl}
+\toprule
+Contrast & Steps & $\Delta$ TPR@$10^{-3}$ & 95\% CI & Signs & Budget \\
+\midrule
+\multicolumn{6}{l}{\textit{Frozen against unfrozen, no target signal}} \\
+$\lambda=0$ $-$ Baseline A$^{\dagger}$ & 4000 / 8000 & $0.0000$$^{a}$ & $[-0.0890, +0.0889]$ & 3/4 & --- \\
+\midrule
+\multicolumn{6}{l}{\textit{A target signal against none}} \\
+DANN $-$ $\lambda=0$$^{\dagger}$ & 4000 / 4000 & $+0.3144$$^{*}$ & $[+0.0565, +0.5722]$ & 4/4 & matched \\
+CORAL $-$ $\lambda=0$$^{\dagger}$ & 2000 / 4000 & $+0.3375$$^{*}$ & $[+0.1889, +0.4860]$ & 4/4 & unmatched \\
+FreeMatch $-$ $\lambda=0$$^{\dagger}$ & 1500 / 4000 & $+0.3325$$^{*}$ & $[+0.2272, +0.4378]$ & 4/4 & unmatched \\
+CORAL $-$ $\lambda=0$$^{\ddagger}$ & 2000 / 2000 & $+0.3068$$^{*}$ & $[+0.1834, +0.4301]$ & 4/4 & matched \\
+FreeMatch $-$ $\lambda=0$$^{\ddagger}$ & 1500 / 1500 & $+0.3223$$^{*}$ & $[+0.1984, +0.4463]$ & 4/4 & matched \\
+BNM $-$ $\lambda=0$ & 4000 / 4000 & $+0.2199$$^{*}$ & $[+0.1383, +0.3014]$ & 4/4 & matched \\
+\midrule
+\multicolumn{6}{l}{\textit{Objective against objective}} \\
+BNM $-$ CORAL & 2000 / 2000 & $-0.1176$$^{*}$ & $[-0.1772, -0.0580]$ & 4/4 & matched \\
+BNM $-$ DANN & 4000 / 4000 & $-0.0945$ & $[-0.3104, +0.1214]$ & 3/4 & matched \\
+BNM $-$ FreeMatch & 1500 / 1500 & $-0.1334$ & $[-0.2986, +0.0319]$ & 4/4 & matched \\
+DANN $-$ CORAL & 4000 / 2000 & $-0.0231$ & $[-0.2227, +0.1765]$ & 2/4 & unmatched \\
+DANN $-$ FreeMatch & 4000 / 1500 & $-0.0182$ & $[-0.2092, +0.1729]$ & 2/4 & unmatched \\
+DANN $-$ CORAL & 2000 / 2000 & $+0.0331$ & $[-0.0711, +0.1372]$ & 2/4 & matched \\
+\midrule
+\multicolumn{6}{l}{\textit{Frozen against unfrozen, same objective (fold-aware paired bootstrap)}} \\
+FreeMatch unfrozen $-$ frozen & 1500 / 8000 & $+0.1049$$^{*}$ & $[+0.0256, +0.1687]$ & 4/4 & --- \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\footnotesize $^{a}$$-0.00003$ before rounding.
+\end{table}

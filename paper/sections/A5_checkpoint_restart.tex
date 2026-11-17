@@ -1,0 +1,48 @@
+\section{Reconstructing training state across a checkpoint restart}
+\label{sec:appendix-restart}
+
+The unfrozen FreeMatch arm continues from its frozen-comparison head. Those checkpoints store
+four keys, \restartKeys{}, so the model survives and the training state around it does not.
+Continuing from such a checkpoint restarts three things: the self-adaptive threshold state,
+which re-initialises to $1/C$; the consistency weight's warm-up, which holds the consistency term at
+zero for the first \restartMuZeroSteps{} steps of the \restartScheduleStepsNs{}-step schedule;
+and AdamW's moment estimates. The fixes below implement the pre-registered intent that the
+decision boundary and the threshold start consistent with each other. Every TPR value in this
+appendix is on the original test pool, as each run scored it during training.
+
+\paragraph{The evidence.} A \restartControlStepsNs{}-step frozen continuation of the
+development-fold head, with none of this state rebuilt, ran \restartStart{} $\to$
+\restartTrough{} at step \restartTroughStep{} $\to$ \restartEnd{} in TPR@$10^{-3}$, a maximum
+drift of \restartMaxDrift{} (\restartMaxDriftPos{} positives against a one-positive resolution
+of \restartOnePos{}), with the trough inside the window where the consistency term is held at zero.
+
+\paragraph{The fixes.} \emph{Threshold state:} with the weights fixed, the moving average has
+the pool mean as its fixed point, so we rebuilt it by averaging per-batch statistics over
+\restartSatPasses{} weakly augmented passes of the \restartPool{}-image target pool
+(\restartSatBatches{} batches). Driving the real update rule, momentum \restartMomentum{}, for
+\restartEmaItersNs{} iterations agrees with this to \restartTauAgree{} on the global threshold and
+\restartPbarAgree{} on the class marginal, against a tolerance of \restartSatTol{}.
+\emph{Warm-up offset:} we resume the consistency-weight schedule at step \restartMuOffsetNs{}, so
+the consistency term is at full weight from the first step. \emph{Moment warm-up:} AdamW runs
+\restartAdamSteps{} steps under the corrected objective with the weights restored after every
+step and the encoder frozen. A probe continues to step \restartAdamProbeEnd{}, over which the
+bias-corrected second moment moved \restartAdamDebiased{} from step \restartAdamSteps{}, and
+then rolls the optimiser state back to step \restartAdamSteps{}; it does not roll back the
+threshold state, which the probe's forward passes keep updating, or the half-precision loss
+scale. We call this reconstruction, not restoration: the original values were never stored.
+The order is load the head, rebuild the threshold state, warm the moments, unfreeze, train.
+
+\paragraph{The reconstructed control.} With the three fixes, the same frozen continuation
+drifts at most \restartFixedMaxDrift{} from step 0 (\restartFixedMaxDriftPos{} positives). Over
+its \restartFixedN{} later checkpoints its mean is \restartFixedMean{} (sd \restartFixedSD{}),
+against \restartTailMean{} (sd \restartTailSD{}) over the last \restartTailN{} checkpoints of
+the frozen run itself; we ran no test of their equality.
+
+\paragraph{The step-0 gate.} Every fold is gated before training (Table~\ref{tab:restartgate2}).
+We first required exact reproduction of TPR@$10^{-3}$. That held on the development fold and on
+fold 1 and refused fold 2, whose step-0 value differed by one positive: scoring through the
+encoder inside the training loop drifts slightly from the cached scoring path. We recalibrated
+the rule before rerunning fold 2, to TPR within one positive together with an AUROC check at
+$10^{-3}$, and folds 2--4 passed.
+
+\input{tables/A5_gate_v2}

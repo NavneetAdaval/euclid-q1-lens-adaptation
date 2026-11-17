@@ -1,0 +1,271 @@
+{
+ "reference": "/kaggle/input/datasets/navneet78/lens-paper-dilute10/reference/coral_r4_nb3_dev8000_fold0/run.json",
+ "rows": [
+  {
+   "key": "gamma",
+   "reference": 16.0,
+   "this_run": 16.0,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "n_blocks",
+   "reference": 3,
+   "this_run": 3,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "fold",
+   "reference": 0,
+   "this_run": 1,
+   "status": "EXPECTED",
+   "note": "THE variable under test; fold 0 is development"
+  },
+  {
+   "key": "max_steps",
+   "reference": 8000,
+   "this_run": 2000,
+   "status": "EXPECTED",
+   "note": "8000 was the development maximum; the confirmatory budget is the pre-registered 2000 (runs/coral_r4_budget.json)"
+  },
+  {
+   "key": "log_every",
+   "reference": 125,
+   "this_run": 125,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "ckpt_every",
+   "reference": 250,
+   "this_run": 250,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "feat_norm_ceiling",
+   "reference": 110.0,
+   "this_run": 110.0,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "feat_norm_floor",
+   "reference": 40.0,
+   "this_run": 40.0,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "coral_target_ema",
+   "reference": false,
+   "this_run": false,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "init_head_from_tail",
+   "reference": "runs/bakeoff_coral/fold0/checkpoints/step_8000.pt",
+   "this_run": "dilute10/coral_frozen/fold1/checkpoints/step_8000.pt",
+   "status": "EXPECTED",
+   "note": "dilute10: the NEW frozen-stage head (part 1 4.2)"
+  },
+  {
+   "key": "init_head_l2",
+   "reference": 66.268356,
+   "this_run": 134.164185,
+   "status": "EXPECTED",
+   "note": "...and therefore from that fold's own head norm, pinned in FOLD_GATE and hard-gated by build_arm at 1e-4"
+  },
+  {
+   "key": "batch_size",
+   "reference": 256,
+   "this_run": 256,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "steps_per_epoch",
+   "reference": 187,
+   "this_run": 187,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "lr",
+   "reference": 0.0001,
+   "this_run": 0.0001,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "backbone_lr_effective",
+   "reference": 0.0001,
+   "this_run": 0.0001,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "lr_decay",
+   "reference": 0.75,
+   "this_run": 0.75,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "weight_decay",
+   "reference": 0.05,
+   "this_run": 0.05,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "coral_shrinkage",
+   "reference": 0.1,
+   "this_run": 0.1,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "coral_include_mean",
+   "reference": true,
+   "this_run": true,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "coral_weight_schedule",
+   "reference": "constant",
+   "this_run": "constant",
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "coral_attachment",
+   "reference": "head.forward_with_features[1] (post-adapter, post-LayerNorm)",
+   "this_run": "head.forward_with_features[1] (post-adapter, post-LayerNorm)",
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "coral_ema_momentum",
+   "reference": 0.9,
+   "this_run": 0.9,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "precision",
+   "reference": "fp16",
+   "this_run": "fp16",
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "coral_loss_precision",
+   "reference": "fp32_autocast_disabled",
+   "this_run": "fp32_autocast_disabled",
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "eval_precision",
+   "reference": "fp32",
+   "this_run": "fp32",
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "seed",
+   "reference": 42,
+   "this_run": 42,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "augmentation",
+   "reference": "weak (+-3px translate, PROJECT.md \u00a77.3)",
+   "this_run": "weak (+-3px translate, PROJECT.md \u00a77.3)",
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "head_type",
+   "reference": "linear",
+   "this_run": "linear",
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "pos_fraction",
+   "reference": 0.5,
+   "this_run": 0.5,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "true_batch",
+   "reference": true,
+   "this_run": true,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "gradient_accumulation",
+   "reference": false,
+   "this_run": false,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "grad_checkpointing",
+   "reference": true,
+   "this_run": true,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "num_workers",
+   "reference": 2,
+   "this_run": 2,
+   "status": "MATCH",
+   "note": ""
+  },
+  {
+   "key": "epochs_planned",
+   "reference": 43,
+   "this_run": 11,
+   "status": "EXPECTED",
+   "note": "derived from max_steps, which is itself allowlisted"
+  }
+ ],
+ "mismatches": [],
+ "allowlist": {
+  "fold": {
+   "reference": 0,
+   "required": 1,
+   "why": "THE variable under test; fold 0 is development"
+  },
+  "max_steps": {
+   "reference": 8000,
+   "required": 2000,
+   "why": "8000 was the development maximum; the confirmatory budget is the pre-registered 2000 (runs/coral_r4_budget.json)"
+  },
+  "init_head_from_tail": {
+   "reference": "runs/bakeoff_coral/fold0/checkpoints/step_8000.pt",
+   "required": "dilute10/coral_frozen/fold1/checkpoints/step_8000.pt",
+   "why": "dilute10: the NEW frozen-stage head (part 1 4.2)"
+  },
+  "init_head_l2": {
+   "reference": 66.268356,
+   "required": 134.164185,
+   "why": "...and therefore from that fold's own head norm, pinned in FOLD_GATE and hard-gated by build_arm at 1e-4"
+  },
+  "epochs_planned": {
+   "reference": 43,
+   "required": 11,
+   "why": "derived from max_steps, which is itself allowlisted"
+  }
+ }
+}

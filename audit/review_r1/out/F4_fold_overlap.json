@@ -1,0 +1,437 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1/scripts/f_facts.py",
+ "test_pool": "n/a (splits)",
+ "folds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "metric": "scripts/metrics.py metric_suite / tpr_at_fpr (TPR at FPR=1e-3, full ROC with drop_intermediate=False, np.interp); thresholds from metrics.operating_threshold on the same curve",
+ "generated_utc": "2026-10-08T15:44:48+00:00",
+ "notes": [
+  "fraction_of_row_fold_pool = shared / size of the row fold's own target pool"
+ ],
+ "inputs_sha256": {
+  "data/splits/splits.json": "7eb7749a545a619878a2a75ce9ae905db36a5ee3655ff999842644908291ac05"
+ },
+ "result": {
+  "pool_sizes": {
+   "target_lens_rows": {
+    "0": 391,
+    "1": 391,
+    "2": 391,
+    "3": 391,
+    "4": 392
+   },
+   "target_neg_object_ids": {
+    "0": 391,
+    "1": 391,
+    "2": 391,
+    "3": 391,
+    "4": 392
+   },
+   "test_lens_rows": {
+    "0": 98,
+    "1": 98,
+    "2": 98,
+    "3": 98,
+    "4": 97
+   },
+   "union_of_target_lens_rows": 489
+  },
+  "shared_target_lenses": {
+   "0": {
+    "0": {
+     "count": 391,
+     "fraction_of_row_fold_pool": 1.0
+    },
+    "1": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "2": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "3": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "4": {
+     "count": 294,
+     "fraction_of_row_fold_pool": 0.7519181585677749
+    }
+   },
+   "1": {
+    "0": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "1": {
+     "count": 391,
+     "fraction_of_row_fold_pool": 1.0
+    },
+    "2": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "3": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "4": {
+     "count": 294,
+     "fraction_of_row_fold_pool": 0.7519181585677749
+    }
+   },
+   "2": {
+    "0": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "1": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "2": {
+     "count": 391,
+     "fraction_of_row_fold_pool": 1.0
+    },
+    "3": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "4": {
+     "count": 294,
+     "fraction_of_row_fold_pool": 0.7519181585677749
+    }
+   },
+   "3": {
+    "0": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "1": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "2": {
+     "count": 293,
+     "fraction_of_row_fold_pool": 0.7493606138107417
+    },
+    "3": {
+     "count": 391,
+     "fraction_of_row_fold_pool": 1.0
+    },
+    "4": {
+     "count": 294,
+     "fraction_of_row_fold_pool": 0.7519181585677749
+    }
+   },
+   "4": {
+    "0": {
+     "count": 294,
+     "fraction_of_row_fold_pool": 0.75
+    },
+    "1": {
+     "count": 294,
+     "fraction_of_row_fold_pool": 0.75
+    },
+    "2": {
+     "count": 294,
+     "fraction_of_row_fold_pool": 0.75
+    },
+    "3": {
+     "count": 294,
+     "fraction_of_row_fold_pool": 0.75
+    },
+    "4": {
+     "count": 392,
+     "fraction_of_row_fold_pool": 1.0
+    }
+   }
+  },
+  "shared_target_negatives": {
+   "0": {
+    "0": {
+     "count": 391,
+     "fraction_of_row_fold_pool": 1.0
+    },
+    "1": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "2": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "3": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "4": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    }
+   },
+   "1": {
+    "0": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "1": {
+     "count": 391,
+     "fraction_of_row_fold_pool": 1.0
+    },
+    "2": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "3": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "4": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    }
+   },
+   "2": {
+    "0": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "1": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "2": {
+     "count": 391,
+     "fraction_of_row_fold_pool": 1.0
+    },
+    "3": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "4": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    }
+   },
+   "3": {
+    "0": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "1": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "2": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "3": {
+     "count": 391,
+     "fraction_of_row_fold_pool": 1.0
+    },
+    "4": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    }
+   },
+   "4": {
+    "0": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "1": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "2": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "3": {
+     "count": 0,
+     "fraction_of_row_fold_pool": 0.0
+    },
+    "4": {
+     "count": 392,
+     "fraction_of_row_fold_pool": 1.0
+    }
+   }
+  },
+  "shared_test_lenses_check": {
+   "0": {
+    "0": 98,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   },
+   "1": {
+    "0": 0,
+    "1": 98,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   },
+   "2": {
+    "0": 0,
+    "1": 0,
+    "2": 98,
+    "3": 0,
+    "4": 0
+   },
+   "3": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 98,
+    "4": 0
+   },
+   "4": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 97
+   }
+  },
+  "shared_source_rows": {
+   "structure": "splits.json has ONE source_train block (no per-fold copy); every fold trains on the same source rows",
+   "per_pair_count": {
+    "0": {
+     "0": 48000,
+     "1": 48000,
+     "2": 48000,
+     "3": 48000,
+     "4": 48000
+    },
+    "1": {
+     "0": 48000,
+     "1": 48000,
+     "2": 48000,
+     "3": 48000,
+     "4": 48000
+    },
+    "2": {
+     "0": 48000,
+     "1": 48000,
+     "2": 48000,
+     "3": 48000,
+     "4": 48000
+    },
+    "3": {
+     "0": 48000,
+     "1": 48000,
+     "2": 48000,
+     "3": 48000,
+     "4": 48000
+    },
+    "4": {
+     "0": 48000,
+     "1": 48000,
+     "2": 48000,
+     "3": 48000,
+     "4": 48000
+    }
+   },
+   "by_type": {
+    "sim_lens_rows": 24000,
+    "neg_mlfp": 4455,
+    "neg_bare_deflector": 2881,
+    "neg_random": 16664
+   }
+  },
+  "shared_test_negatives": {
+   "structure": "splits.json has ONE test_negatives_shared block; every fold is scored on the same negatives",
+   "per_pair_count_pre_registered_pool": {
+    "0": {
+     "0": 26399,
+     "1": 26399,
+     "2": 26399,
+     "3": 26399,
+     "4": 26399
+    },
+    "1": {
+     "0": 26399,
+     "1": 26399,
+     "2": 26399,
+     "3": 26399,
+     "4": 26399
+    },
+    "2": {
+     "0": 26399,
+     "1": 26399,
+     "2": 26399,
+     "3": 26399,
+     "4": 26399
+    },
+    "3": {
+     "0": 26399,
+     "1": 26399,
+     "2": 26399,
+     "3": 26399,
+     "4": 26399
+    },
+    "4": {
+     "0": 26399,
+     "1": 26399,
+     "2": 26399,
+     "3": 26399,
+     "4": 26399
+    }
+   },
+   "per_pair_count_D1": {
+    "0": {
+     "0": 26134,
+     "1": 26134,
+     "2": 26134,
+     "3": 26134,
+     "4": 26134
+    },
+    "1": {
+     "0": 26134,
+     "1": 26134,
+     "2": 26134,
+     "3": 26134,
+     "4": 26134
+    },
+    "2": {
+     "0": 26134,
+     "1": 26134,
+     "2": 26134,
+     "3": 26134,
+     "4": 26134
+    },
+    "3": {
+     "0": 26134,
+     "1": 26134,
+     "2": 26134,
+     "3": 26134,
+     "4": 26134
+    },
+    "4": {
+     "0": 26134,
+     "1": 26134,
+     "2": 26134,
+     "3": 26134,
+     "4": 26134
+    }
+   }
+  },
+  "lens_target_vs_test_disjoint_within_fold": {
+   "0": true,
+   "1": true,
+   "2": true,
+   "3": true,
+   "4": true
+  }
+ }
+}

@@ -1,0 +1,96 @@
+{
+  "budget_steps": 8000,
+  "epochs_trained": 43,
+  "steps_per_epoch": 188,
+  "curve_every": 250,
+  "batch_size": 256,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "pos_fraction": 0.5,
+  "seed": 42,
+  "head_type": "linear",
+  "selection_rule": "R1_last_checkpoint_step8000",
+  "curve_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "target_fpr": 0.001,
+  "method": "deep_coral",
+  "domain_adaptation": "coral",
+  "coral_peak_gamma": 1.0,
+  "coral_weight_schedule": "warmup_cosine",
+  "coral_warmup_frac": 0.1,
+  "coral_min_frac": 0.1,
+  "coral_shrinkage": 0.1,
+  "coral_include_mean": true,
+  "coral_target_ema": true,
+  "coral_ema_momentum": 0.9,
+  "stop_on_blowup": false,
+  "agreement_ref": null,
+  "folds_this_invocation": [
+    4
+  ],
+  "dilute10": {
+    "experiment": "dilute10",
+    "arm": "coral_frozen",
+    "part1_sha256": "bd537a025e81833e73713649c9eed68fd6a0fd3152ee29240f9a333f7c649d85",
+    "pool_sha256": "18c73d6c1cbad99e61d43fa5bc1c972e6347f328253904fa03a64cc8d68153be",
+    "pool_path": "data/splits/dilute10_pool.json",
+    "target_pool": "dilute10",
+    "target_sampler": "uniform",
+    "uniform_sampler_namespace": "dilute10/uniform_target_sampler/v1",
+    "realised_training_pool": {
+      "lenses": 392,
+      "galaxies": 3920,
+      "holdout": 0
+    },
+    "abort_mode": null,
+    "rebound_names": [
+      "run_coral._guarded_load -- target_fold4 from data\\feature_cache_dilute10",
+      "run_coral.ClassBalancedBatchSampler -- TARGET call -> uniform sampler",
+      "curve_hook.append_curve_row -- measurement lockout: scoring only"
+    ],
+    "imported_module_sha256": {
+      "analyze_fold0_selection.py": "4739b30eacfa370b001bfdd172b81744671aca17c4f1c6b0af2c1b3b20250cc6",
+      "curve_hook.py": "15d4e2fc699378d57185f8fe298b315128be458da1f28a2236867599d58a7403",
+      "da_losses.py": "2d861ffc8649f4987756f5773c9e72e8bb2fba5cf790c7b227e7436ce1f89a98",
+      "dilute10_batch_log.py": "3e1e6b1a0670be84605d9a4716fc9f40c5b0266bc0941a0a3c402af801019de8",
+      "dilute10_common.py": "114d937617f94bcea03abdb49788132f95cd9a8259edff0b9e9be3a001eb6936",
+      "dilute10_pool.py": "8d0971a30601030354fe0ae3409c97b5518b10c10742f60c7e73c6b3dfbe1cce",
+      "evaluate.py": "ff2cb7aacb34b35cac9eb0b35294755f5c56de46bad2700a11da7ee96dc59362",
+      "heads.py": "9f32284d2b26e8149318d3adfbf1a4e971333942a9a6cb112f9e0a2c55f00260",
+      "lens_dataset.py": "87c3701b4eb8e76333b06938d3d3fda8a53e7f46afe59bbb7fee6074b566318d",
+      "metrics.py": "5374372546d2926712368afda88b2aae5f2f2ce81da85cbb4392ade29cfa23b4",
+      "run_bakeoff_coral.py": "9a10e548b3178b637de6e2bc849a314ad2064710e78a7da49772840223a08f82",
+      "run_baseline.py": "ab021c16fd1026018a87bd4a31f972805e4436e5ec434376271820d5543208e4",
+      "run_coral.py": "2a8821d38ab770ea4face2fbc323b5c0c3e0a8de84d770366575d5aeea2e8cb3",
+      "run_dilute10_coral_frozen.py": "6819fa4594e0231adf9cbcc5649714789eb0bb7051fa800bd038777460119467",
+      "samplers.py": "32753fe586e077de2069070d77a795ea30210b5e8fc8d85b852e6c2b84fac96e",
+      "uniform_target_sampler.py": "a74d74aa9acec5f1c667797175b2356c00f0ccda7286b338501d53f4954edadb"
+    },
+    "recorded_utc": "2026-10-13T19:16:11Z",
+    "pool_verified": {
+      "pool_sha256": "18c73d6c1cbad99e61d43fa5bc1c972e6347f328253904fa03a64cc8d68153be",
+      "part1_sha256": "bd537a025e81833e73713649c9eed68fd6a0fd3152ee29240f9a333f7c649d85",
+      "pool_path": "C:\\Users\\krris\\ML\\lens_paper\\data\\splits\\dilute10_pool.json"
+    },
+    "device": "cpu",
+    "precision": "fp32",
+    "measurement_lockout": "curve rows scored, not measured; agreement column not computed",
+    "dilute_cache_dir": "data/feature_cache_dilute10",
+    "gate_values_file": "gate_values.json",
+    "fold_identity": {
+      "checked": true,
+      "target_ids_sha256": "32c31c9e4e59833826de4f941bf73dcfae83ea1a33ad8bcadd1737fd4894ed40",
+      "test_ids_sha256": "e88179460f4c23ef628ae0382c04fad4aa1d2bf869629028b18b5003fa61d918"
+    }
+  },
+  "wall_minutes": 6.0111849745114645,
+  "gate_values_file": {
+    "path": "gate_values.json",
+    "sha256": "924a51c59de08c750eab4921ec3922cf897069e950c4188bc41d76b5e181e544"
+  }
+}

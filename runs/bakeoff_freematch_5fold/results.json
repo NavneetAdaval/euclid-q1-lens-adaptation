@@ -1,0 +1,129 @@
+{
+  "method": "freematch",
+  "target_fpr": 0.001,
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "val_select_metric": "auroc",
+  "source_risk": {
+    "per_fold": {
+      "0": {
+        "ckpt": "runs/bakeoff_freematch_5fold/fold0/checkpoints/step_8000.pt",
+        "epoch": 8000,
+        "val_metric": 0.9937016666666666,
+        "n_pos": 98,
+        "tpr": 0.3877551020408163,
+        "auroc": 0.9736237689893942
+      },
+      "1": {
+        "ckpt": "runs/bakeoff_freematch_5fold/fold1/checkpoints/step_8000.pt",
+        "epoch": 8000,
+        "val_metric": 0.9930427499999999,
+        "n_pos": 98,
+        "tpr": 0.336734693877551,
+        "auroc": 0.9633114581489249
+      },
+      "2": {
+        "ckpt": "runs/bakeoff_freematch_5fold/fold2/checkpoints/step_8000.pt",
+        "epoch": 8000,
+        "val_metric": 0.9933684722222222,
+        "n_pos": 98,
+        "tpr": 0.35714285714285715,
+        "auroc": 0.963067555898453
+      },
+      "3": {
+        "ckpt": "runs/bakeoff_freematch_5fold/fold3/checkpoints/step_8000.pt",
+        "epoch": 8000,
+        "val_metric": 0.9930435,
+        "n_pos": 98,
+        "tpr": 0.3163265306122449,
+        "auroc": 0.9409887975039253
+      },
+      "4": {
+        "ckpt": "runs/bakeoff_freematch_5fold/fold4/checkpoints/step_8000.pt",
+        "epoch": 8000,
+        "val_metric": 0.9931835277777779,
+        "n_pos": 97,
+        "tpr": 0.3402061855670103,
+        "auroc": 0.963558835210487
+      }
+    },
+    "mean_tpr": 0.347633073848096,
+    "std_tpr": 0.023892451232600975,
+    "mean_auroc": 0.9609100831502368,
+    "std_auroc": 0.010732498380517264,
+    "mean_tpr_ci": [
+      0.2577735114664423,
+      0.41539238375762666
+    ],
+    "mean_auroc_ci": [
+      0.9516094859537417,
+      0.9701156539865046
+    ]
+  },
+  "oracle": {
+    "per_fold": {
+      "0": {
+        "ckpt": "runs/bakeoff_freematch_5fold/fold0/checkpoints/step_8000.pt",
+        "epoch": 8000,
+        "val_metric": 0.9937016666666666,
+        "n_pos": 98,
+        "tpr": 0.3877551020408163,
+        "auroc": 0.9736237689893942
+      },
+      "1": {
+        "ckpt": "runs/bakeoff_freematch_5fold/fold1/checkpoints/step_8000.pt",
+        "epoch": 8000,
+        "val_metric": 0.9930427499999999,
+        "n_pos": 98,
+        "tpr": 0.336734693877551,
+        "auroc": 0.9633114581489249
+      },
+      "2": {
+        "ckpt": "runs/bakeoff_freematch_5fold/fold2/checkpoints/step_8000.pt",
+        "epoch": 8000,
+        "val_metric": 0.9933684722222222,
+        "n_pos": 98,
+        "tpr": 0.35714285714285715,
+        "auroc": 0.963067555898453
+      },
+      "3": {
+        "ckpt": "runs/bakeoff_freematch_5fold/fold3/checkpoints/step_8000.pt",
+        "epoch": 8000,
+        "val_metric": 0.9930435,
+        "n_pos": 98,
+        "tpr": 0.3163265306122449,
+        "auroc": 0.9409887975039253
+      },
+      "4": {
+        "ckpt": "runs/bakeoff_freematch_5fold/fold4/checkpoints/step_8000.pt",
+        "epoch": 8000,
+        "val_metric": 0.9931835277777779,
+        "n_pos": 97,
+        "tpr": 0.3402061855670103,
+        "auroc": 0.963558835210487
+      }
+    },
+    "mean_tpr": 0.347633073848096,
+    "std_tpr": 0.023892451232600975,
+    "mean_auroc": 0.9609100831502368,
+    "std_auroc": 0.010732498380517264,
+    "mean_tpr_ci": [
+      0.2577735114664423,
+      0.41539238375762666
+    ],
+    "mean_auroc_ci": [
+      0.9516094859537417,
+      0.9701156539865046
+    ]
+  },
+  "selection_gap": {
+    "tpr": 0.0,
+    "auroc": 0.0,
+    "same_pick": true
+  }
+}

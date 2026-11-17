@@ -1,0 +1,101 @@
+# CUDA_VISIBLE_DEVICES=1
+# /usr/bin/python3 -u /kaggle/working/scripts/run_coral_gamma_sweep.py --gamma 4.0 --out-dir /kaggle/working/runs/coral_r4_sweep/g4 --fold 0 --max-steps 2000 --log-every 125 --ckpt-every 250 --feat-norm-ceiling 110.0 --num-workers 2 --data-root /kaggle/input/datasets/navneet78/lens-paper-coral-r4/data/data --splits /kaggle/input/datasets/navneet78/lens-paper-coral-r4/data/data/splits/splits.json --cache-dir /kaggle/input/datasets/navneet78/lens-paper-coral-r4/data/data/feature_cache --init-head-from /kaggle/input/datasets/navneet78/lens-paper-coral-r4/runs/bakeoff_coral/fold0/checkpoints/step_8000.pt
+============================================================================================
+ROUND-4 CORAL GAMMA SWEEP -- gamma = 4, nb3, fold 0, 2000 steps
+============================================================================================
+
+PRE-REGISTERED SELECTION CRITERION -- gamma sweep, nb3, fold 0, 2000 steps per arm
+==================================================================================
+Fixed in code and printed before any run. NOT to be amended afterwards.
+
+WHY A SWEEP AT ALL. The 500-step calibration showed magnitude-matching is ILL-POSED on the
+unfrozen arm. Raw CORAL depends on the feature scale as scale^4, the unfrozen encoder moves
+that scale, so "equalise the two losses at the end of training" has no fixed point: nb3's
+equalising gamma halved across its own tail window (1.138 -> 0.629, CV 0.868). And at
+gamma=1.0 the CORAL term is LOSING -- sup_loss falls, raw CORAL rises, the feature norm
+rises 25%. Running 8000 steps in that state would make a null result uninterpretable,
+because "CORAL did not help" and "CORAL never got any traction" look identical in the
+metric.
+
+CHOOSE THE SMALLEST gamma satisfying BOTH:
+
+  (i)  RAW CORAL IS NOT MONOTONICALLY RISING over the SECOND HALF of the window
+       (steps in (1000, 2000]).
+       Fit an ordinary-least-squares slope of raw CORAL against step over that half.
+       Resample with a MOVING-BLOCK BOOTSTRAP (block length 50 steps, B=5000) -- blocks,
+       not independent steps, because a training trace is autocorrelated and an iid
+       bootstrap would understate the slope's uncertainty by a large factor.
+       PASS iff the 95% percentile CI of the slope has LOWER BOUND <= 0.
+       i.e. FAIL only when the CI lies ENTIRELY ABOVE zero -- demonstrably rising.
+       This is the direct operationalisation of "not monotonically rising": the test is
+       against the claim that it IS rising, and a slope indistinguishable from zero passes.
+       The stricter reading (CI entirely BELOW zero = demonstrably falling) is computed and
+       reported alongside as `strictly_falling`, but it is NOT the criterion.
+
+  (ii) FEATURE-NORM GROWTH over the FULL window is MEASURABLY DAMPED relative to the
+       gamma=1.0 arm.
+       growth = mean ||f|| over the LAST 10% of steps  minus  mean ||f|| over the FIRST 10%,
+       computed on the SOURCE domain (the target domain is reported and must agree in sign).
+       Compare growth(gamma) against growth(1.0) with the same moving-block bootstrap,
+       resampling each arm independently (they are independent runs).
+       PASS iff the 95% CI of [growth(gamma) - growth(1.0)] lies ENTIRELY BELOW zero.
+       "Measurably" is the CI excluding zero; "damped" is the sign being negative.
+       VACUOUS-REFERENCE GUARD: if growth(1.0) <= 0 the reference arm did not grow, there
+       is nothing to damp, and criterion (ii) is reported INAPPLICABLE rather than passed.
+       gamma=1.0 is the reference and is never a candidate under (ii).
+
+IF NO GAMMA SATISFIES BOTH: report that, pick nothing, and propose
+EXTENDING THE SWEEP UPWARD (gamma 64, then 256). Do not relax either clause.
+
+WINDOWING UNDER AN ABORT. If an arm trips the feature-norm ceiling it stops early. All
+comparisons are then made on the LONGEST WINDOW COMMON TO BOTH ARMS, and the truncation is
+reported next to the verdict. An arm that aborts has not passed anything.
+
+METRIC HYGIENE. This sweep reads LOSS DYNAMICS and FEATURE STATISTICS ONLY. No TPR, no
+AUROC, no test-set quantity is computed, loaded, or reachable -- enforced by
+coral_round4.test_label_lockout(), not by convention.
+
+============================================================================================
+  out-dir            : /kaggle/working/runs/coral_r4_sweep/g4
+  feature-norm ceiling: 110  (HARD ABORT above this)
+  target EMA          : OFF (round-4 default)
+============================================================================================
+[lockout] test-label lockout ACTIVE: 20 binding(s) sealed (TPR/AUROC/AUPRC/metric_suite/purity/curve_hook + test_* cache splits).
+[load] building the Zoobot encoder (n_blocks=3, grad_checkpointing=True) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=3 -> trainable ['stages.3', 'stages.2', 'stages.1'] (14,835,520 params, 99.2% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from /kaggle/input/datasets/navneet78/lens-paper-coral-r4/runs/bakeoff_coral/fold0/checkpoints/step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 66.268356
+[optim] n_blocks=3  head_lr=0.0001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.05
+[optim]   group 0: head       lr=1.000e-04  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   group 2: stages.2   lr=7.500e-05  params=6,907,520
+[optim]   group 3: stages.1   lr=5.625e-05  params=479,680
+[optim]   TOTAL trainable = 14,837,441 params
+
+[train] gamma=4 starting ...
+    [step   125/2000] sup=0.24527 coral_raw=0.0107547 src|f|=64.342 tgt|f|=65.160 src_sd=0.5069 (260s)
+    [step   250/2000] sup=0.05819 coral_raw=0.00306932 src|f|=64.058 tgt|f|=64.329 src_sd=0.3860 (454s)
+    [step   375/2000] sup=0.04683 coral_raw=0.00201896 src|f|=64.029 tgt|f|=64.197 src_sd=0.3144 (648s)
+    [step   500/2000] sup=0.04059 coral_raw=0.00155755 src|f|=64.024 tgt|f|=64.130 src_sd=0.2632 (840s)
+    [step   625/2000] sup=0.03506 coral_raw=0.0011917 src|f|=64.002 tgt|f|=64.075 src_sd=0.2308 (1034s)
+    [step   750/2000] sup=0.03507 coral_raw=0.00110105 src|f|=63.952 tgt|f|=64.015 src_sd=0.2144 (1228s)
+    [step   875/2000] sup=0.03021 coral_raw=0.000874168 src|f|=63.848 tgt|f|=63.885 src_sd=0.2006 (1420s)
+    [step  1000/2000] sup=0.02686 coral_raw=0.000682735 src|f|=63.766 tgt|f|=63.803 src_sd=0.1944 (1614s)
+    [step  1125/2000] sup=0.02595 coral_raw=0.000615245 src|f|=63.675 tgt|f|=63.706 src_sd=0.1856 (1808s)
+    [step  1250/2000] sup=0.02486 coral_raw=0.00051869 src|f|=63.601 tgt|f|=63.638 src_sd=0.1797 (2000s)
+    [step  1375/2000] sup=0.02199 coral_raw=0.00056993 src|f|=63.507 tgt|f|=63.542 src_sd=0.1692 (2193s)
+    [step  1500/2000] sup=0.01996 coral_raw=0.000457073 src|f|=63.427 tgt|f|=63.456 src_sd=0.1686 (2385s)
+    [step  1625/2000] sup=0.01931 coral_raw=0.000550894 src|f|=63.361 tgt|f|=63.375 src_sd=0.1631 (2577s)
+    [step  1750/2000] sup=0.01808 coral_raw=0.000350281 src|f|=63.260 tgt|f|=63.285 src_sd=0.1613 (2770s)
+    [step  1875/2000] sup=0.01919 coral_raw=0.000320309 src|f|=63.190 tgt|f|=63.216 src_sd=0.1545 (2963s)
+    [step  2000/2000] sup=0.01510 coral_raw=0.000287389 src|f|=63.138 tgt|f|=63.176 src_sd=0.1597 (3154s)
+[lockout] released.
+
+[done] gamma=4  steps=2000  aborted=False  52.6 min
+[out] /kaggle/working/runs/coral_r4_sweep/g4/trace.csv
+[out] /kaggle/working/runs/coral_r4_sweep/g4/steps.csv
+[out] /kaggle/working/runs/coral_r4_sweep/g4/sweep.json
+[next] download the sweep directories and run LOCALLY:
+       python scripts/analyze_coral_gamma_sweep.py --sweep-dir runs/coral_r4_sweep

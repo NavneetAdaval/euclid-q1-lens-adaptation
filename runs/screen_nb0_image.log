@@ -1,0 +1,87 @@
+﻿================================================================================
+LEVER 1 SCREEN -- baselineA_fold0_nb0_image  (fold 0, 8000 steps)
+================================================================================
+  run                 : nb0_image
+  run_dir             : baselineA_fold0_nb0_image
+  n_blocks            : 0
+  lp_ft               : False
+  init_head_from      : None
+  budget_steps        : 8000
+  is_preregistered_budget: True
+  curve_every         : 250
+  batch_size          : 256
+  true_batch          : True
+  gradient_accumulation: False
+  grad_checkpointing  : False
+  lr                  : 0.001
+  backbone_lr         : None
+  lr_decay            : 0.75
+  weight_decay        : 0.0001
+  pos_fraction        : 0.5
+  seed                : 42
+  head_type           : linear
+  fold                : 0
+  selection_rule      : R1_last_checkpoint_step8000
+  method              : baseline_A_source_only
+  domain_adaptation   : None
+  encoder_eval        : frozen_feature_cache
+  augmentation        : weak (+-3px translate, PROJECT.md 7.3)
+  fp16                : True
+  device              : cuda
+  control_reference   : C:\Users\krris\ML\lens_paper\runs\bakeoff_baseline_A\checkpoints\step_8000.pt
+================================================================================
+[data] source_train n=48000  188 steps/epoch  -> 43 epochs (8084 steps; R1 = step_8000)
+python : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate 
+limits and faster downloads.
+At line:1 char:343
++ ... er\scripts; python run_screen_unfreeze.py --run nb0_image --fp16 --nu ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[ref] scoring round-1 Baseline A on target_fold0 for the agreement column ...
+    [step   250/8000] loss=0.1106  val_auroc=0.9913 val_tpr=0.5615 | fold0 tpr@1e-3=0.0918 agr=0.9012 | 1.7 min
+    [step   500/8000] loss=0.1150  val_auroc=0.9922 val_tpr=0.5627 | fold0 tpr@1e-3=0.1224 agr=0.9076 | 2.9 min
+    [step   750/8000] loss=0.1559  val_auroc=0.9933 val_tpr=0.5432 | fold0 tpr@1e-3=0.1224 agr=0.9315 | 4.1 min
+    [step  1000/8000] loss=0.1083  val_auroc=0.9936 val_tpr=0.5633 | fold0 tpr@1e-3=0.1224 agr=0.9403 | 5.3 min
+    [step  1250/8000] loss=0.1156  val_auroc=0.9935 val_tpr=0.5637 | fold0 tpr@1e-3=0.1224 agr=0.9355 | 6.5 min
+    [step  1500/8000] loss=0.0910  val_auroc=0.9937 val_tpr=0.6167 | fold0 tpr@1e-3=0.1327 agr=0.9375 | 8.2 min
+    [step  1750/8000] loss=0.1038  val_auroc=0.9942 val_tpr=0.5887 | fold0 tpr@1e-3=0.1224 agr=0.9476 | 9.4 min
+    [step  2000/8000] loss=0.0891  val_auroc=0.9942 val_tpr=0.6165 | fold0 tpr@1e-3=0.1327 agr=0.9515 | 10.8 min
+    [step  2250/8000] loss=0.0537  val_auroc=0.9940 val_tpr=0.5903 | fold0 tpr@1e-3=0.1327 agr=0.9485 | 12.1 min
+    [step  2500/8000] loss=0.1352  val_auroc=0.9943 val_tpr=0.6158 | fold0 tpr@1e-3=0.1224 agr=0.9577 | 13.3 min
+    [step  2750/8000] loss=0.1128  val_auroc=0.9937 val_tpr=0.6118 | fold0 tpr@1e-3=0.1020 agr=0.9427 | 14.8 min
+    [step  3000/8000] loss=0.0499  val_auroc=0.9944 val_tpr=0.6650 | fold0 tpr@1e-3=0.1327 agr=0.9592 | 16.3 min
+    [step  3250/8000] loss=0.1192  val_auroc=0.9936 val_tpr=0.6367 | fold0 tpr@1e-3=0.1224 agr=0.9459 | 18.0 min
+    [step  3500/8000] loss=0.1227  val_auroc=0.9945 val_tpr=0.5878 | fold0 tpr@1e-3=0.1224 agr=0.9592 | 19.3 min
+    [step  3750/8000] loss=0.0901  val_auroc=0.9944 val_tpr=0.6447 | fold0 tpr@1e-3=0.1531 agr=0.9627 | 21.2 min
+    [step  4000/8000] loss=0.1107  val_auroc=0.9944 val_tpr=0.6523 | fold0 tpr@1e-3=0.1327 agr=0.9604 | 23.2 min
+    [step  4250/8000] loss=0.0771  val_auroc=0.9944 val_tpr=0.6078 | fold0 tpr@1e-3=0.1224 agr=0.9654 | 25.0 min
+    [step  4500/8000] loss=0.0986  val_auroc=0.9941 val_tpr=0.6110 | fold0 tpr@1e-3=0.1429 agr=0.9567 | 26.1 min
+    [step  4750/8000] loss=0.0838  val_auroc=0.9945 val_tpr=0.6122 | fold0 tpr@1e-3=0.1429 agr=0.9638 | 27.4 min
+    [step  5000/8000] loss=0.0352  val_auroc=0.9943 val_tpr=0.6352 | fold0 tpr@1e-3=0.1327 agr=0.9622 | 28.8 min
+    [step  5250/8000] loss=0.1093  val_auroc=0.9943 val_tpr=0.6720 | fold0 tpr@1e-3=0.1327 agr=0.9607 | 30.2 min
+    [step  5500/8000] loss=0.1443  val_auroc=0.9944 val_tpr=0.6295 | fold0 tpr@1e-3=0.1327 agr=0.9665 | 31.5 min
+    [step  5750/8000] loss=0.0890  val_auroc=0.9947 val_tpr=0.6323 | fold0 tpr@1e-3=0.1429 agr=0.9681 | 33.2 min
+    [step  6000/8000] loss=0.0611  val_auroc=0.9946 val_tpr=0.6377 | fold0 tpr@1e-3=0.1531 agr=0.9673 | 34.9 min
+    [step  6250/8000] loss=0.1036  val_auroc=0.9945 val_tpr=0.6512 | fold0 tpr@1e-3=0.1327 agr=0.9656 | 36.7 min
+    [step  6500/8000] loss=0.1131  val_auroc=0.9947 val_tpr=0.6820 | fold0 tpr@1e-3=0.1531 agr=0.9660 | 38.5 min
+    [step  6750/8000] loss=0.1162  val_auroc=0.9947 val_tpr=0.6447 | fold0 tpr@1e-3=0.1531 agr=0.9675 | 40.1 min
+    [step  7000/8000] loss=0.0892  val_auroc=0.9944 val_tpr=0.6378 | fold0 tpr@1e-3=0.1531 agr=0.9635 | 41.5 min
+    [step  7250/8000] loss=0.0671  val_auroc=0.9947 val_tpr=0.6243 | fold0 tpr@1e-3=0.1429 agr=0.9699 | 42.7 min
+    [step  7500/8000] loss=0.0812  val_auroc=0.9945 val_tpr=0.6520 | fold0 tpr@1e-3=0.1429 agr=0.9663 | 43.9 min
+    [step  7750/8000] loss=0.0653  val_auroc=0.9944 val_tpr=0.6603 | fold0 tpr@1e-3=0.1122 agr=0.9637 | 45.1 min
+    [step  8000/8000] loss=0.1021  val_auroc=0.9947 val_tpr=0.6310 | fold0 tpr@1e-3=0.1224 agr=0.9700 | 46.2 min
+[train] done in 46.2 min (8000 steps)
+
+[R1] baselineA_fold0_nb0_image  fold0  TPR@0.001 = 0.1224   AUROC = 0.9243   AUPRC = 0.1569
+[out] run_config.json + results.json + curve.csv + scores/ -> C:\Users\krris\ML\lens_paper\runs\baselineA_fold0_nb0_image
+
+================================================================================
+CONTROL: baselineA_fold0_nb0_image  vs  baselineA_fold0_nb0_cached (fold 0)
+================================================================================
+  TPR@1e-3  nb0_image  = 0.1224
+  TPR@1e-3  nb0_cached = 0.1939
+  paired diff (image - cached) = -0.0714  CI [-0.1327, +0.0000]
+  VERDICT: PASS -- CI contains 0
+================================================================================

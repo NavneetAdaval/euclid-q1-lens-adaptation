@@ -1,0 +1,83 @@
+\section{Orderings that did not survive, and the pre-declared window average}
+\label{sec:failed}
+
+Table~\ref{tab:orderings2} lists the orderings we read off our measurements and then lost to
+their own intervals, to a null control, to a partial correlation or to a matched grid.
+
+\input{tables/AC_orderings_v2}
+
+\paragraph{BNM's carried-over predictions.} BNM's pre-registration carried two predictions
+forward unrevised. We predicted that its late checkpoints would score lower than its earlier
+ones, by too little to detect over \bnmDecayCap{} steps; on the development fold, the only
+\bnmDecayCap{}-step run, and on the original test pool, the difference (earlier minus late) is
+$\bnmDecayDelta{}$ $[\bnmDecayLo{}, \bnmDecayHi{}]$, undetectable but of the opposite sign. We
+predicted that its predicted-positive fraction on the balanced target would rise from
+\bnmPredPosStart{} toward \bnmPredPosTarget{} without collapsing; on folds 1--4 it had risen by
+the first logged step, \bnmPredPosFirstStep{}, and then stayed between \bnmPredPosMin{} and
+\bnmPredPosMax{}, with a mean of \bnmPredPosLate{} over the logged steps after
+\bnmPredPosLateFrom{}, and it did not collapse. Each prediction held only in part.
+
+\paragraph{The pre-declared window average.}
+\label{sec:resolution-fix}
+\label{sec:resolution-diagnosis}
+Before computing any windowed number, we declared and hashed a secondary analysis: average the
+per-example scores of the $k$ consecutive checkpoints ending at each arm's read-off step, for
+$k \in \{1, 2, 4, 8\}$, under two score combinations. It replaces no pre-registered read-off.
+Table~\ref{tab:window2} reports it; $k=1$ reproduces each arm's headline. Checkpoints are \ckptFm{} steps apart for FreeMatch and \ckptOther{} for the other arms, so a full $k=8$ window spans \winEightSpanFm{} training steps for FreeMatch and \winEightSpanOther{} for the others. At $k=8$ the order of
+the three unfrozen adaptation arms no longer depends on which of DANN's two read-off steps is
+used (the fifth row of Table~\ref{tab:orderings2}), but the two score combinations place DANN
+and CORAL in opposite orders.
+
+\input{tables/T6_window_v2}
+
+\paragraph{The declaration's other outputs.} Table~\ref{tab:window-secondary} gives the two
+secondary metrics the declaration named. The declaration also asked whether averaging reduces
+the checkpoint scatter by the $\sqrt{k}$ expected of independent checkpoints: at $k=8$ it
+reaches \winSqrtkLam{} of that for the control and \winSqrtkMin{}--\winSqrtkMax{} for the other
+arms (CORAL's checkpoint grid allows the test only up to $k=4$, where it reaches
+\winSqrtkCoral{}), consistent with checkpoint noise that is correlated across checkpoints for
+the control and CORAL. It also asked whether each ordering that a read-off choice could have
+caused survives the averaging. Besides the read-off inversion above, three such orderings have
+a verdict. DANN's across-fold spread is still the widest at $k=8$ on the cleaned pool
+(\winSixDann{} against CORAL's \winSixCoral{}), but not on the original pool, where BNM's is
+(\winSixBnmOrig{} against DANN's \winSixDannOrig{}). At $k=8$ the within-run checkpoint scatter
+is \winEightSdLo{} to \winEightSdHi{}, still \winEightMultLo{} to \winEightMultHi{} times the
+\winEightDiff{} difference between DANN and CORAL that we first read on the original pool. And
+on folds 1--4 the control's range across checkpoints is narrower than DANN's at both $k=1$ and
+$k=8$, so it is not the least stable arm there.
+
+\input{tables/C_window_secondary}
+
+\paragraph{Paired contrasts after the window average.} Table~\ref{tab:k8pairs6} gives the
+\rwFiveKPairsWord{} pairs among CORAL, DANN and FreeMatch at their declared read-offs, at $k=1$
+and at $k=8$ under both score combinations. FreeMatch has the highest $k=8$ fold-mean under
+both; its lead excludes zero under mean rank and not under mean logit
+(Section~\ref{sec:resolution}).
+
+\input{tables/C_k8_pairs_v6}
+
+\paragraph{Checkpoint noise under an independence assumption.} Figure~\ref{fig:resolution}
+sets each gap between two adaptation arms against the contribution checkpoint-to-checkpoint
+scatter would make to it if the two arms' checkpoint noise were independent. Under that
+assumption the gaps among CORAL, DANN and FreeMatch, between $\rvGapThreeMin{}$ and
+$\rvGapThreeMax{}$, are smaller than the noise, and the gaps between BNM and each of them,
+between $\rvGapBnmMin{}$ and $\rvGapBnmMax{}$, are larger; the largest noise figure is about
+$\rvScale{}$. BNM $-$ CORAL is the one comparison between objectives whose single-checkpoint
+interval excludes zero (Table~\ref{tab:contrasts6}). We made this analysis after the results
+were known. For at least one pair the independent noise figure exceeds the standard error the
+paired interval implies, so it overstates the noise in a paired comparison
+(Section~\ref{sec:resolution}).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{F5_resolution_v2.pdf}
+\caption{\textbf{Differences between methods against checkpoint noise.} For each pair of
+adaptation arms read at declared read-offs, the bar is the contribution of
+checkpoint-to-checkpoint scatter to a difference of four-fold means, and the point is the
+difference of the fold-means; log axis. As computed here, the gaps among CORAL, DANN and
+FreeMatch (top) lie inside the noise and the gaps between BNM and each of them (bottom) lie
+outside it. The bars assume
+that the two arms' checkpoint noise is independent, which overstates it
+(Section~\ref{sec:resolution}).}
+\label{fig:resolution}
+\end{figure}

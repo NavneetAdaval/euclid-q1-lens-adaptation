@@ -1,0 +1,45 @@
+{
+ "fold": 1,
+ "arm": "dann_nb3",
+ "status": "COMPLETE and VERIFIED LOCALLY 2026-09-03",
+ "steps": "4000/4000",
+ "checkpoints": "16 of 16 (250..4000 by 250, verified)",
+ "wall_minutes": 152.60330845117568,
+ "resumes": 0,
+ "step0_gate": {
+  "tpr": 0.14285714285714285,
+  "auroc": 0.8922785031282108,
+  "expected_tpr": 0.14285714285714285,
+  "expected_auroc": 0.8922624620134809,
+  "tpr_abs_diff": 0.0,
+  "auroc_abs_diff": 1.604111472985892e-05,
+  "verdict": "PASS",
+  "failed_halves": [],
+  "n_test_positives": 98,
+  "tpr_tolerance": 0.01020408163265306,
+  "auroc_tolerance": 0.001,
+  "skippable": false,
+  "true_init_logits": "true_init.npz"
+ },
+ "budget": {
+  "confirm_steps": 4000,
+  "is_preregistered_budget": true,
+  "confirm_budget_sha256": "abf0dae0e313ae5388b833e7aad86171285299774a18af14f4c44309f0231fc1",
+  "matches_pinned": true
+ },
+ "abort": {
+  "aborted": false,
+  "fired_arming": [],
+  "fired_advisory": [
+   "abort3b_morph_sign_flip"
+  ],
+  "note": "advisory detectors cannot abort; conditions 1 and 2 never fired"
+ },
+ "artifacts_verified": {
+  "core_fold1.tar.gz": "23 files, all 16 logits + ids + true_init",
+  "ckpt parts": "3 of 3, sha256 clean, 16 checkpoints total",
+  "screen_core.tar.gz": "NOT downloaded and NOT needed -- byte-identical content to core_fold1.tar.gz was verified on the venue (23 files, 4.13 MB uncompressed, 0 diffs)"
+ },
+ "PROVENANCE_FLAG_fold1_was_run_TWICE": "a first fold-1 run reported wall 142.9 min and a second 152.6 min, both with resumes 0 -- i.e. two independent fresh runs, the second after a Kaggle session reset cleared /kaggle/working. ONLY THE SECOND WAS EVER DOWNLOADED: the first run s logits were never retrieved (its screen_core.tar.gz failed to download at 2.34 GB). SO NO COMPARISON BETWEEN THEM WAS POSSIBLE AND NO SELECTION OCCURRED -- the first was lost to a session reset, not discarded after seeing its numbers. Recorded here so the duplicate wall-time in the logs is not later read as an unexplained discrepancy.",
+ "no_metric_computed_yet": "TPR is deliberately NOT computed until all four folds are home. Cell 7 says so, and the pre-declared headline is the 5-fold mean at 4000."
+}

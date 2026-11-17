@@ -1,0 +1,227 @@
+### BASELINE ###
+##############################################################################
+# FOLD-0 CHECKPOINT-SELECTION ANALYSIS
+# run      : C:\Users\krris\ML\lens_paper\runs\curve_baseline_fold0
+# cache    : C:\Users\krris\ML\lens_paper\data\feature_cache
+# curve    : 50 rows, steps 500-25000, target_fpr=0.001
+# budget   : 8000 steps; window 6000-8000 (final 25%)
+##############################################################################
+
+==============================================================================
+TASK A -- FLATNESS CHECK  (is TPR@1e-3 flat in the final-25% window?)
+==============================================================================
+[A1] truncate to steps <= 8000 (inclusive): 16 of 50 checkpoints kept (34 discarded beyond budget).
+[A2] window = steps 6000-8000 (inclusive): 5 checkpoints inside.
+[A3] window stats on fold0_tpr_1e-3: n=5  mean=0.2061  median=0.2041  min=0.1837  max=0.2347  range=0.0510  std=0.0196
+[A4] OLS trend across window: slope = -0.01837 TPR per 1000 steps; predicted total change over 6000-8000 = -0.0367 TPR.
+[A5] noise yardstick: paired-bootstrap CI of TPR@0.001 [0.102, 0.286] (half-width 0.092); source: recomputed at in-budget checkpoint step 8000.  [RB] metrics.paired_bootstrap, class-conditional.
+     RATIO  window-range / CI-half-width = 0.0510 / 0.0918 = 0.56
+
+[A6] VERDICT: FLAT-TIGHT
+     reasoning: near-flat slope (|change|=0.0367 < CI half 0.092) and range 0.0510 <= CI half 0.092 (ratio 0.56).
+     (numbers shown above; the tag is a judgement, not a hard threshold -- Navneet decides. [EC])
+
+==============================================================================
+TASK B -- SELECTION-RULE COMPARISON  (which fold-0 TPR each blind rule picks)
+==============================================================================
+rule                  step   TPR@1e-3  gap_to_oracle
+----------------------------------------------------
+R1 last               8000     0.1939        -0.0408
+R2 fixed-plateau      6000     0.2347        +0.0000
+R3 median             7500     0.2041        -0.0306
+ORACLE                6000     0.2347        +0.0000
+
+[guardrail -- SPEC 3] The ORACLE is the best-test checkpoint on ~98 positives, so it overfits test noise; every gap-to-oracle OVERSTATES what a real rule loses. The comparison that matters is RULE vs RULE, not rule vs oracle.
+
+[pairwise rule differences]  (compare against CI half-width 0.092 from A5)
+   R1 - R3   = -0.0102   [indistinguishable]
+   R1 - R2   = -0.0408   [indistinguishable]
+   R2 - R3   = +0.0306   [indistinguishable]
+   [RB] If all pairwise |diff| <= CI half-width, the rules are indistinguishable and R1 (last) wins on simplicity (SPEC 3; PROJECT.md 7.4).
+
+==============================================================================
+TASK C -- SOURCE-VAL PURITY@50%-COMPLETENESS SATURATION  (label-free selector)
+==============================================================================
+[C] computing source-val purity@50%-comp (raw pool, sim-lens vs sim-nonlens) over 50 checkpoints; val pool: 6000 pos / 6000 neg.
+[C] source-val purity: n=50  min=0.9990  max=1.0000  range=0.0010  mean=0.9995
+[C] Spearman(source-val purity, fold-0 test TPR@1e-3) = 0.126  (n=50)
+[C] REFERENCE (non-label-free): real-domain purity_50comp range = 0.0108 [0.0094, 0.0201].
+    Spearman(source-val purity, REAL-domain purity) = -0.283 (n=50) -- does the label-free version track the real one?
+
+[C] VERDICT: DEAD SELECTOR -- source-val purity is pinned near 1.0 (range 0.0010), so on the easy sim domain the 50%-completeness point sits at near-zero FPR and carries no selection information. Drop it as a selector. [RB] confirms the 7.6 saturation hypothesis (same mechanism as source-val AUROC ~0.99).
+
+==============================================================================
+OUTPUT 3 -- RECOMMENDED CHECKPOINT SPACING FOR THE 5-FOLD RUN
+==============================================================================
+The fold-0 curves are at ~300-500 step spacing, giving only ~5 checkpoints in
+the 6000-8000 window -- enough for a flatness verdict, NOT for a 20-point
+median (R3 as adapted from FixMatch/FlexMatch). [RB]
+  * If R1 (last) or R2 (fixed-plateau) is chosen: current ~500-step spacing is already
+    sufficient (a single checkpoint), no change needed. [EC]
+  * If R3 (median) is chosen: to resolve a ~20-checkpoint window median, log every ~100
+    steps across 6000-8000 (=> ~21 checkpoints), or every ~250 steps across
+    the whole 0-8000 budget (=> ~32 checkpoints, ~8 in-window). [EC]
+  * COST: the fold-0 hook eval is feature-space CPU (val + fold-0 pos + shared negatives
+    only; curve_hook.py). Going from ~16 to ~32 evals/fold roughly DOUBLES the curve-eval
+    overhead per fold, which is minutes -- negligible next to training. The recommendation
+    is ~250-step spacing over the full budget so whichever rule wins is well-resolved at
+    trivial cost. [EC]  [UNVERIFIED] exact minutes not benchmarked here.
+
+==============================================================================
+OUTPUT 4 -- ONE-PARAGRAPH STATEMENT FOR PROJECT.md 7.6
+==============================================================================
+This analysis tests, on fold 0 ONLY (a single disclosed use of fold-0 test
+labels, then frozen for folds 1-4), whether the blind checkpoint-selection rules R1/R2/R3
+are valid -- i.e. whether the TPR@1e-3 curve is flat inside the locked 6000-8000
+window. It establishes a per-method flatness verdict (this run: FLAT-TIGHT), the fold-0 TPR each
+rule would select and their rule-vs-rule differences relative to the fold-0 bootstrap CI,
+and whether label-free source-val purity@50%-completeness is a live selector or a saturated
+dead one. It does NOT establish anything about folds 1-4 (untouched), does NOT tune any
+hyperparameter, and does NOT license using fold-0 labels again. Rule differences are judged
+against the ~98-positive bootstrap CI, so 'indistinguishable' means within that fold's
+noise, not identical.
+
+### DANN ###
+##############################################################################
+# FOLD-0 CHECKPOINT-SELECTION ANALYSIS
+# run      : C:\Users\krris\ML\lens_paper\runs\curve_dann_fold0
+# cache    : C:\Users\krris\ML\lens_paper\data\feature_cache
+# curve    : 75 rows, steps 200-15000, target_fpr=0.001
+# budget   : 8000 steps; window 6000-8000 (final 25%)
+##############################################################################
+
+==============================================================================
+TASK A -- FLATNESS CHECK  (is TPR@1e-3 flat in the final-25% window?)
+==============================================================================
+[A1] truncate to steps <= 8000 (inclusive): 40 of 75 checkpoints kept (35 discarded beyond budget).
+[A2] window = steps 6000-8000 (inclusive): 11 checkpoints inside.
+[A3] window stats on fold0_tpr_1e-3: n=11  mean=0.1967  median=0.1939  min=0.1837  max=0.2143  range=0.0306  std=0.0103
+[A4] OLS trend across window: slope = -0.00232 TPR per 1000 steps; predicted total change over 6000-8000 = -0.0046 TPR.
+[A5] noise yardstick: paired-bootstrap CI of TPR@0.001 [0.112, 0.286] (half-width 0.087); source: SAVED final-checkpoint scores (dann_fold0.npz) -- checkpoint head not loadable by the generic linear/mlp loader.  [RB] metrics.paired_bootstrap, class-conditional.
+     RATIO  window-range / CI-half-width = 0.0306 / 0.0867 = 0.35
+
+[A6] VERDICT: FLAT-TIGHT
+     reasoning: near-flat slope (|change|=0.0046 < CI half 0.087) and range 0.0306 <= CI half 0.087 (ratio 0.35).
+     (numbers shown above; the tag is a judgement, not a hard threshold -- Navneet decides. [EC])
+
+==============================================================================
+TASK B -- SELECTION-RULE COMPARISON  (which fold-0 TPR each blind rule picks)
+==============================================================================
+rule                  step   TPR@1e-3  gap_to_oracle
+----------------------------------------------------
+R1 last               8000     0.2041        -0.0102
+R2 fixed-plateau      6000     0.2041        -0.0102
+R3 median             7800     0.1939        -0.0204
+ORACLE                6800     0.2143        +0.0000
+
+[guardrail -- SPEC 3] The ORACLE is the best-test checkpoint on ~98 positives, so it overfits test noise; every gap-to-oracle OVERSTATES what a real rule loses. The comparison that matters is RULE vs RULE, not rule vs oracle.
+
+[pairwise rule differences]  (compare against CI half-width 0.087 from A5)
+   R1 - R3   = +0.0102   [indistinguishable]
+   R1 - R2   = +0.0000   [indistinguishable]
+   R2 - R3   = +0.0102   [indistinguishable]
+   [RB] If all pairwise |diff| <= CI half-width, the rules are indistinguishable and R1 (last) wins on simplicity (SPEC 3; PROJECT.md 7.4).
+
+==============================================================================
+TASK C -- SOURCE-VAL PURITY@50%-COMPLETENESS SATURATION  (label-free selector)
+==============================================================================
+[C] computing source-val purity@50%-comp (raw pool, sim-lens vs sim-nonlens) over 75 checkpoints; val pool: 6000 pos / 6000 neg.
+[C] SKIPPED: checkpoint head is not loadable by the generic linear/mlp loader (head_type must be one of ('linear', 'mlp'), got 'dann_adapter'). Source-val purity needs to score the 'val' split through this method's head, which this script cannot reconstruct -- so Task C is not computable for this method here. NOT fabricating a value. [EC]
+
+==============================================================================
+OUTPUT 3 -- RECOMMENDED CHECKPOINT SPACING FOR THE 5-FOLD RUN
+==============================================================================
+The fold-0 curves are at ~300-500 step spacing, giving only ~5 checkpoints in
+the 6000-8000 window -- enough for a flatness verdict, NOT for a 20-point
+median (R3 as adapted from FixMatch/FlexMatch). [RB]
+  * If R1 (last) or R2 (fixed-plateau) is chosen: current ~500-step spacing is already
+    sufficient (a single checkpoint), no change needed. [EC]
+  * If R3 (median) is chosen: to resolve a ~20-checkpoint window median, log every ~100
+    steps across 6000-8000 (=> ~21 checkpoints), or every ~250 steps across
+    the whole 0-8000 budget (=> ~32 checkpoints, ~8 in-window). [EC]
+  * COST: the fold-0 hook eval is feature-space CPU (val + fold-0 pos + shared negatives
+    only; curve_hook.py). Going from ~16 to ~32 evals/fold roughly DOUBLES the curve-eval
+    overhead per fold, which is minutes -- negligible next to training. The recommendation
+    is ~250-step spacing over the full budget so whichever rule wins is well-resolved at
+    trivial cost. [EC]  [UNVERIFIED] exact minutes not benchmarked here.
+
+==============================================================================
+OUTPUT 4 -- ONE-PARAGRAPH STATEMENT FOR PROJECT.md 7.6
+==============================================================================
+This analysis tests, on fold 0 ONLY (a single disclosed use of fold-0 test
+labels, then frozen for folds 1-4), whether the blind checkpoint-selection rules R1/R2/R3
+are valid -- i.e. whether the TPR@1e-3 curve is flat inside the locked 6000-8000
+window. It establishes a per-method flatness verdict (this run: FLAT-TIGHT), the fold-0 TPR each
+rule would select and their rule-vs-rule differences relative to the fold-0 bootstrap CI,
+and whether label-free source-val purity@50%-completeness is a live selector or a saturated
+dead one. It does NOT establish anything about folds 1-4 (untouched), does NOT tune any
+hyperparameter, and does NOT license using fold-0 labels again. Rule differences are judged
+against the ~98-positive bootstrap CI, so 'indistinguishable' means within that fold's
+noise, not identical.
+
+### FREEMATCH ###
+##############################################################################
+# FOLD-0 CHECKPOINT-SELECTION ANALYSIS
+# run      : C:\Users\krris\ML\lens_paper\runs\curve_freematch_fold0
+# cache    : C:\Users\krris\ML\lens_paper\data\feature_cache
+# curve    : 18 rows, steps 300-5400, target_fpr=0.001
+# budget   : 8000 steps; window 6000-8000 (final 25%)
+##############################################################################
+
+==============================================================================
+TASK A -- FLATNESS CHECK  (is TPR@1e-3 flat in the final-25% window?)
+==============================================================================
+[A1] truncate to steps <= 8000 (inclusive): 18 of 18 checkpoints kept (0 discarded beyond budget).
+[A2] window = steps 6000-8000 (inclusive): 0 checkpoints inside.
+     [FLAG] curve ends at step 5400 < 6000: the locked window has ZERO checkpoints. Per protocol the window is NOT relocated/rescaled.
+     -> reporting descriptive stats over the AVAILABLE range only; no window verdict, no selection-rule comparison.
+[A3] available range stats on fold0_tpr_1e-3: n=18  mean=0.3073  median=0.3418  min=0.0918  max=0.3878  range=0.2959  std=0.0834
+
+[A6] VERDICT: PENDING-8K -- flatness not testable; curve stops at 5400. Re-run this method to the full 8000-step budget (the 5-fold bake-off) before a flatness verdict. [EC]
+
+==============================================================================
+TASK B -- SELECTION-RULE COMPARISON  (which fold-0 TPR each blind rule picks)
+==============================================================================
+[B] SKIPPED: no in-window checkpoints (curve stops before the window). Per protocol, no selection-rule comparison for this method until its 8000-step run exists.
+
+==============================================================================
+TASK C -- SOURCE-VAL PURITY@50%-COMPLETENESS SATURATION  (label-free selector)
+==============================================================================
+[C] computing source-val purity@50%-comp (raw pool, sim-lens vs sim-nonlens) over 18 checkpoints; val pool: 6000 pos / 6000 neg.
+[C] source-val purity: n=18  min=0.9980  max=0.9990  range=0.0010  mean=0.9985
+[C] Spearman(source-val purity, fold-0 test TPR@1e-3) = -0.141  (n=18)
+[C] REFERENCE (non-label-free): real-domain purity_50comp range = 0.1034 [0.0077, 0.1111].
+    Spearman(source-val purity, REAL-domain purity) = -0.125 (n=18) -- does the label-free version track the real one?
+
+[C] VERDICT: DEAD SELECTOR -- source-val purity is pinned near 1.0 (range 0.0010), so on the easy sim domain the 50%-completeness point sits at near-zero FPR and carries no selection information. Drop it as a selector. [RB] confirms the 7.6 saturation hypothesis (same mechanism as source-val AUROC ~0.99).
+
+==============================================================================
+OUTPUT 3 -- RECOMMENDED CHECKPOINT SPACING FOR THE 5-FOLD RUN
+==============================================================================
+The fold-0 curves are at ~300-500 step spacing, giving only ~5 checkpoints in
+the 6000-8000 window -- enough for a flatness verdict, NOT for a 20-point
+median (R3 as adapted from FixMatch/FlexMatch). [RB]
+  * If R1 (last) or R2 (fixed-plateau) is chosen: current ~500-step spacing is already
+    sufficient (a single checkpoint), no change needed. [EC]
+  * If R3 (median) is chosen: to resolve a ~20-checkpoint window median, log every ~100
+    steps across 6000-8000 (=> ~21 checkpoints), or every ~250 steps across
+    the whole 0-8000 budget (=> ~32 checkpoints, ~8 in-window). [EC]
+  * COST: the fold-0 hook eval is feature-space CPU (val + fold-0 pos + shared negatives
+    only; curve_hook.py). Going from ~16 to ~32 evals/fold roughly DOUBLES the curve-eval
+    overhead per fold, which is minutes -- negligible next to training. The recommendation
+    is ~250-step spacing over the full budget so whichever rule wins is well-resolved at
+    trivial cost. [EC]  [UNVERIFIED] exact minutes not benchmarked here.
+
+==============================================================================
+OUTPUT 4 -- ONE-PARAGRAPH STATEMENT FOR PROJECT.md 7.6
+==============================================================================
+This analysis tests, on fold 0 ONLY (a single disclosed use of fold-0 test
+labels, then frozen for folds 1-4), whether the blind checkpoint-selection rules R1/R2/R3
+are valid -- i.e. whether the TPR@1e-3 curve is flat inside the locked 6000-8000
+window. It establishes a per-method flatness verdict (this run: PENDING-8K), the fold-0 TPR each
+rule would select and their rule-vs-rule differences relative to the fold-0 bootstrap CI,
+and whether label-free source-val purity@50%-completeness is a live selector or a saturated
+dead one. It does NOT establish anything about folds 1-4 (untouched), does NOT tune any
+hyperparameter, and does NOT license using fold-0 labels again. Rule differences are judged
+against the ~98-positive bootstrap CI, so 'indistinguishable' means within that fold's
+noise, not identical.

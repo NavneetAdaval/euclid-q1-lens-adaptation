@@ -1,0 +1,170 @@
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+
+============================================================================================
+PAIRED COMPARISON   freematch_std  vs  adamatch   (diff = freematch_std - adamatch)
+HEADLINE: TPR@FPR=0.001 + purity  |  AUPRC (threshold-free)  |  AUROC SECONDARY/sanity
+purity corrected to N_N/N_P = 1:2200  (Lines et al. Q1 deployment rarity)   paired bootstrap B=1000, seed=0
+Lines source-only reference (CONTEXT, not a target): ~50% completeness @ ~24% purity on real Q1
+============================================================================================
+
+PER-FOLD  TPR@FPR=0.001   [HEADLINE]
+    fold |  n_pos |     adamatch | freematch_st |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.3776 |       0.3878 |   +0.0102 |   [-0.0510, +0.0816] |  no
+       1 |     98 |       0.2755 |       0.3367 |   +0.0612 |   [-0.0714, +0.1020] |  no
+       2 |     98 |       0.3673 |       0.3571 |   -0.0102 |   [-0.1020, +0.0816] |  no
+       3 |     98 |       0.3163 |       0.3163 |   +0.0000 |   [-0.0918, +0.0408] |  no
+       4 |     97 |       0.3196 |       0.3402 |   +0.0206 |   [-0.0412, +0.1134] |  no
+
+PER-FOLD  purity@50%-comp (corr 1:2200)   [HEADLINE]
+    fold |  n_pos |     adamatch | freematch_st |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.0811 |       0.0984 |   +0.0173 |   [-0.0090, +0.0632] |  no
+       1 |     98 |       0.0723 |       0.0556 |   -0.0167 |   [-0.0288, +0.0374] |  no
+       2 |     98 |       0.1200 |       0.1034 |   -0.0166 |   [-0.0664, +0.0200] |  no
+       3 |     98 |       0.0690 |       0.0682 |   -0.0008 |   [-0.0148, +0.0267] |  no
+       4 |     97 |       0.0550 |       0.0686 |   +0.0135 |   [-0.0110, +0.0764] |  no
+
+PER-FOLD  AUPRC   [HEADLINE (threshold-free)]
+    fold |  n_pos |     adamatch | freematch_st |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.4023 |       0.4371 |   +0.0348 |   [+0.0095, +0.0574] | yes
+       1 |     98 |       0.3531 |       0.3453 |   -0.0078 |   [-0.0294, +0.0138] |  no
+       2 |     98 |       0.3884 |       0.3773 |   -0.0112 |   [-0.0344, +0.0112] |  no
+       3 |     98 |       0.3498 |       0.3550 |   +0.0052 |   [-0.0167, +0.0258] |  no
+       4 |     97 |       0.3367 |       0.3762 |   +0.0394 |   [+0.0099, +0.0633] | yes
+
+PER-FOLD  purity@50%-comp (raw pool)   [context]
+    fold |  n_pos |     adamatch | freematch_st |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.4188 |       0.4712 |   +0.0524 |   [-0.0161, +0.1522] |  no
+       1 |     98 |       0.3889 |       0.3245 |   -0.0644 |   [-0.0969, +0.1030] |  no
+       2 |     98 |       0.5269 |       0.4851 |   -0.0417 |   [-0.1281, +0.0628] |  no
+       3 |     98 |       0.3769 |       0.3740 |   -0.0029 |   [-0.0534, +0.0838] |  no
+       4 |     97 |       0.3201 |       0.3731 |   +0.0529 |   [-0.0496, +0.1932] |  no
+
+PER-FOLD  completeness@purity=0.24 (corr 1:2200)   [context]
+    fold |  n_pos |     adamatch | freematch_st |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.2653 |       0.2653 |   +0.0000 |   [-0.0714, +0.1732] |  no
+       1 |     98 |       0.0816 |       0.0816 |   +0.0000 |   [-0.1633, +0.1064] |  no
+       2 |     98 |       0.0918 |       0.0816 |   -0.0102 |   [-0.1436, +0.1531] |  no
+       3 |     98 |       0.0102 |       0.1122 |   +0.1020 |   [-0.1633, +0.1327] |  no
+       4 |     97 |          nan |       0.1649 |       nan | (undefined -- no CI) |  no
+
+PER-FOLD  AUROC   [secondary/sanity]
+    fold |  n_pos |     adamatch | freematch_st |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.9698 |       0.9736 |   +0.0038 |   [-0.0012, +0.0096] |  no
+       1 |     98 |       0.9628 |       0.9633 |   +0.0005 |   [-0.0039, +0.0043] |  no
+       2 |     98 |       0.9616 |       0.9631 |   +0.0015 |   [-0.0038, +0.0081] |  no
+       3 |     98 |       0.9365 |       0.9410 |   +0.0045 |   [-0.0017, +0.0109] |  no
+       4 |     97 |       0.9588 |       0.9636 |   +0.0048 |   [-0.0056, +0.0204] |  no
+
+============================================================================================
+AGGREGATE (across-fold mean; paired bootstrap CI of the mean difference, B-A)
+============================================================================================
+    metric                             |    adamatch | freematch_s |     diff  | 95% CI of diff       | excl. 0
+    --------------------------------------------------------------------------------------------
+    TPR@FPR=0.001                      |      0.3313 |      0.3476 |   +0.0164 |   [-0.0286, +0.0470] |  no  <<
+    purity@50%-comp (corr 1:2200)      |      0.0795 |      0.0788 |   -0.0007 |   [-0.0110, +0.0236] |  no  <<
+    AUPRC                              |      0.3661 |      0.3782 |   +0.0121 |   [-0.0016, +0.0246] |  no
+    purity@50%-comp (raw pool)         |      0.4063 |      0.4056 |   -0.0007 |   [-0.0263, +0.0628] |  no
+    completeness@purity=0.24 (corr 1:2200) |      0.1122 |      0.1412 |   +0.0289 |   [-0.0680, +0.1173] |  no
+    AUROC                              |      0.9579 |      0.9609 |   +0.0030 |   [+0.0001, +0.0070] | YES
+
+============================================================================================
+VERDICT  (headline = TPR@1e-3 and purity; AUROC is secondary/sanity only)
+============================================================================================
+  TPR@FPR=0.001                     : diff +0.0164  ->  NOT distinguishable (CI straddles 0)
+  purity@50%-comp (corr 1:2200)     : diff -0.0007  ->  NOT distinguishable (CI straddles 0)
+  AUPRC                             : diff +0.0121  ->  NOT distinguishable (CI straddles 0)
+  AUROC (secondary/sanity)          : diff +0.0030  ->  DISTINGUISHABLE improvement (CI excludes 0, +)
+============================================================================================

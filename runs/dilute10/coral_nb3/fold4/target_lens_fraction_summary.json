@@ -1,0 +1,10 @@
+{
+  "n_batches": 2004,
+  "mean": 0.09090802769461077,
+  "sd": 0.017638799238972585,
+  "expected": 0.09090909090909091,
+  "band": 0.002,
+  "n_lenses_basis": 392,
+  "csv": "/kaggle/working/runs/dilute10/coral_nb3/fold4/target_lens_fraction.csv",
+  "band_enforced": true
+}

@@ -1,0 +1,74 @@
+\section{Related work}
+\label{sec:related}
+
+\subsection{Lens finding in Euclid and before it}
+
+The first blind strong-lens finding challenge established that surveys at this scale cannot
+be searched by eye and set the practice of quantifying a finder's efficiency and
+biases~\citep{metcalf2019challenge}. Supervised convolutional finders have since been
+characterised on ground-based imaging~\citep{holismokesXI} and used to search for lensing by
+late-type galaxies in UNIONS~\citep{unions2025}, and convolutional networks for Euclid were
+characterised before the survey began~\citep{leuzzi2024euclidprep}. On Euclid Q1, a catalogue
+of 497 grade A and B lens candidates was assembled by deep learning, Space Warps citizen
+scientists and expert vetting~\citep{discoveryengineA}; a companion study combines citizen
+science and machine learning into an ensemble purer and more complete than either
+part~\citep{discoveryengineE}; the machine-learning search is reported
+separately~\citep{lines2025discoveryengineC}, as is a vision-transformer approach to the same
+data~\citep{astrovink}.
+
+Our reference point is the Q1 sim-to-real benchmark~\citep{lines2025simstosky}. Its
+simulation-only model reaches roughly 50\% completeness at 24\% purity on real Q1 lenses. It
+reports no true-positive rate at a fixed false-positive rate. We use FPR${}=10^{-3}$, the
+point at which the closest sim-to-real lens-finding precedent reports its
+results~\citep{parul2024}; Section~\ref{sec:eval-comparability} gives how we compare the two.
+
+\subsection{Domain adaptation in astronomy}
+
+Domain adaptation has been used several times to carry astronomical classifiers from
+simulations to observations. \'Ciprijanovi\'c et al.~\citep{ciprijanovic2021} used maximum
+mean discrepancy and domain-adversarial training to classify merging galaxies across
+Illustris-1 simulations and SDSS images. Alexander et al.~\citep{alexander2023} applied domain
+adaptation to simulated strong-lens images with dark-matter substructure and also adapted a
+lens finder trained on simulations to real lensed and unlensed galaxies from the Hyper
+Suprime-Cam survey. Parul et al.~\citep{parul2024} compared three adaptation methods for lens
+finding on Hyper Suprime-Cam data and found Wasserstein-distance alignment with an equivariant
+encoder best in the unsupervised setting; their balanced target is the closest precedent for
+ours. Belfiore et al.~\citep{belfiore2024} used a domain-adversarial network to bridge
+photoionisation models and observed nebulae. Our work differs from these in its operating
+point (TPR at an FPR of $10^{-3}$, on expert-graded real lenses, with purity corrected to the survey's rarity
+of 1:2200) and in
+its design: a control that differs from one adaptation arm only in the adaptation weight.
+
+\subsection{The adaptation objectives}
+
+We use one taxonomy throughout. \emph{Marginal alignment} matches the source and target
+feature distributions, either by moment matching, as CORAL does with feature means and
+covariances~\citep{sun2016coral, gulrajani2021domainbed}, or adversarially, as DANN does by
+reversing the gradient of a domain discriminator~\citep{ganin2016dann}. \emph{Self-training}
+supervises the model with its own confident predictions on target images:
+confidence-thresholded pseudo-labels on weak and strong augmentations~\citep{sohn2020fixmatch},
+with self-adaptive thresholds and a fairness term in FreeMatch~\citep{wang2022freematch}; our
+frozen comparison also includes AdaMatch~\citep{berthelot2022adamatch}. A
+\emph{target-prediction objective}, batch nuclear-norm maximisation (BNM), uses only the
+model's predictions on target images and makes no reference to the
+source~\citep{cui2020bnm}.
+
+\subsection{Evaluation under shift}
+
+Reported adaptation gains depend on how checkpoints and hyper-parameters were chosen. On
+multi-class benchmarks, validators that use no target labels correlate poorly with target
+accuracy, and the
+accuracy lost by selecting with them often exceeds the gap between
+methods~\citep{musgrave2021realitycheck}; unsupervised hyper-parameter selection remains the
+main obstacle to fair comparison~\citep{skadabench2025}; importance-weighted validation can
+estimate target risk under covariate shift~\citep{you2019dev}; and under severe shifts in class
+proportions, most adaptation methods fall below a source-only classifier, and with design
+choices held consistent no single method is best across datasets~\citep{rlsbench}. The semi-supervised literature makes the matching point
+about protocol: every method, the baseline included, should get the same tuning budget, the
+same model and shared settings for everything that is not method-specific~\citep{oliver2018realistic}.
+
+\subsection{Positioning}
+
+We introduce no new objective. We run four published ones and a control under one protocol on
+the same folds, test whether the gain needs the class-balanced target, and report what a
+target-domain training signal buys and what this sample can and cannot resolve.

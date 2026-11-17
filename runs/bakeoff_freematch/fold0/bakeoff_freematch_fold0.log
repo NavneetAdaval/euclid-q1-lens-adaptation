@@ -1,0 +1,150 @@
+==============================================================================
+MATCHED 5-FOLD BAKE-OFF -- run 4/4: FREEMATCH @ 8000 steps (image-space, per-fold)
+           VARIANT = FreeMatch-STANDARD  (frozen; the screen-winning mode)
+==============================================================================
+  data    : /kaggle/input/datasets/navneet78/lens-paper/data/data
+  splits  : /kaggle/input/datasets/navneet78/lens-paper/data/data/splits/splits.json
+  cache   : /kaggle/input/datasets/navneet78/lens-paper/data/data/feature_cache
+  out     : /kaggle/working/runs/bakeoff_freematch
+  ref     : /kaggle/working/lens_paper/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+  budget_steps        : 8000
+  epochs_trained      : 43
+  steps_per_epoch     : 187
+  curve_every         : 250
+  batch_size          : 256
+  lr                  : 0.001
+  weight_decay        : 0.0001
+  pos_fraction        : 0.5
+  seed                : 42
+  head_type           : linear
+  selection_rule      : R1_last_checkpoint_step8000
+  curve_folds         : [0, 1, 2, 3, 4]
+  target_fpr          : 0.001
+  method              : freematch
+  domain_adaptation   : freematch
+  local_threshold_mode: standard
+  freematch_variant   : FreeMatch-standard (screen-winning; floor is a documented negative)
+  mu_max              : 1.0
+  saf_weight          : 0.01
+  sat_ema_momentum    : 0.999
+  consistency_warmup_frac: 0.1
+  fairness_target     : None
+  pos_class           : 1
+  device              : cuda
+  fp16                : True
+  num_workers         : 4
+  agreement_ref       : /kaggle/working/lens_paper/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+  folds_this_invocation: [0]
+==============================================================================
+[ref] scoring Baseline A step_8000.pt on target pools [0] ...
+[load] building the frozen Zoobot encoder (once) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[train fold 0] -> /kaggle/working/runs/bakeoff_freematch/fold0  (image-space; encoder in loop; mode=standard, mu_max=1.0, fp16=True)
+  [fold 0] head=linear  187 steps/epoch  batch=256  src=48000  tgt=782  mu_max=1.0(mid=1.00)  saf_w=0.01  sat_m=0.999  mode=standard  warmup=805 steps  cb_patience=187  fp16=on
+    [ep  1]  186.0s bce=0.1145 cons=0.1714 saf=0.1330 mu=0.000 accept=0.991 acc_pos_frac=0.260 tau=0.564 loc[neg=0.564,pos=0.487] cb=ok
+      [step    250] curve  val_auroc=0.9908 | tpr@1e-3 f0=0.0918  f1=0.0714  f2=0.0816  f3=0.0714  f4=0.1237  agr f0=0.8965
+    [ep  2]  186.9s bce=0.1797 cons=0.1824 saf=0.1495 mu=0.000 accept=0.974 acc_pos_frac=0.264 tau=0.621 loc[neg=0.621,pos=0.470] cb=ok
+      [step    500] curve  val_auroc=0.9921 | tpr@1e-3 f0=0.1224  f1=0.1122  f2=0.1224  f3=0.1020  f4=0.1340  agr f0=0.9088
+    [ep  3]  185.5s bce=0.1124 cons=0.1626 saf=0.1542 mu=0.000 accept=0.961 acc_pos_frac=0.268 tau=0.670 loc[neg=0.670,pos=0.453] cb=ok
+    [ep  4]  185.0s bce=0.1004 cons=0.1338 saf=0.1617 mu=0.000 accept=0.949 acc_pos_frac=0.267 tau=0.710 loc[neg=0.710,pos=0.435] cb=ok
+      [step    750] curve  val_auroc=0.9931 | tpr@1e-3 f0=0.1327  f1=0.1224  f2=0.1327  f3=0.1531  f4=0.1546  agr f0=0.9274
+    [ep  5]  185.5s bce=0.0941 cons=0.1349 saf=0.1427 mu=0.127 accept=0.937 acc_pos_frac=0.281 tau=0.745 loc[neg=0.745,pos=0.423] cb=ok
+      [step   1000] curve  val_auroc=0.9937 | tpr@1e-3 f0=0.1735  f1=0.1633  f2=0.1837  f3=0.1633  f4=0.1856  agr f0=0.9412
+    [ep  6]  185.2s bce=0.1091 cons=0.1090 saf=0.1114 mu=0.180 accept=0.933 acc_pos_frac=0.300 tau=0.775 loc[neg=0.775,pos=0.416] cb=ok
+      [step   1250] curve  val_auroc=0.9939 | tpr@1e-3 f0=0.1837  f1=0.1633  f2=0.1939  f3=0.1633  f4=0.2165  agr f0=0.9408
+    [ep  7]  185.4s bce=0.1146 cons=0.1036 saf=0.0940 mu=0.239 accept=0.930 acc_pos_frac=0.314 tau=0.800 loc[neg=0.800,pos=0.414] cb=ok
+    [ep  8]  185.4s bce=0.1075 cons=0.0851 saf=0.0766 mu=0.304 accept=0.927 acc_pos_frac=0.332 tau=0.822 loc[neg=0.822,pos=0.417] cb=ok
+      [step   1500] curve  val_auroc=0.9941 | tpr@1e-3 f0=0.2755  f1=0.2245  f2=0.2041  f3=0.1939  f4=0.2371  agr f0=0.9377
+    [ep  9]  185.7s bce=0.1193 cons=0.0932 saf=0.0638 mu=0.373 accept=0.921 acc_pos_frac=0.347 tau=0.841 loc[neg=0.841,pos=0.423] cb=ok
+      [step   1750] curve  val_auroc=0.9941 | tpr@1e-3 f0=0.2959  f1=0.2449  f2=0.2449  f3=0.2041  f4=0.2680  agr f0=0.9280
+    [ep 10]  185.3s bce=0.1150 cons=0.0820 saf=0.0517 mu=0.445 accept=0.919 acc_pos_frac=0.363 tau=0.857 loc[neg=0.857,pos=0.432] cb=ok
+      [step   2000] curve  val_auroc=0.9940 | tpr@1e-3 f0=0.3265  f1=0.2755  f2=0.2755  f3=0.2449  f4=0.2887  agr f0=0.9101
+    [ep 11]  185.7s bce=0.0805 cons=0.0751 saf=0.0402 mu=0.518 accept=0.911 acc_pos_frac=0.382 tau=0.870 loc[neg=0.870,pos=0.445] cb=ok
+    [ep 12]  185.3s bce=0.0815 cons=0.0911 saf=0.0297 mu=0.590 accept=0.916 acc_pos_frac=0.402 tau=0.882 loc[neg=0.882,pos=0.461] cb=ok
+      [step   2250] curve  val_auroc=0.9940 | tpr@1e-3 f0=0.3265  f1=0.2551  f2=0.2449  f3=0.2449  f4=0.3093  agr f0=0.9064
+    [ep 13]  185.2s bce=0.1483 cons=0.0702 saf=0.0253 mu=0.661 accept=0.916 acc_pos_frac=0.410 tau=0.892 loc[neg=0.892,pos=0.478] cb=ok
+      [step   2500] curve  val_auroc=0.9939 | tpr@1e-3 f0=0.3163  f1=0.2857  f2=0.2551  f3=0.2449  f4=0.2887  agr f0=0.8945
+    [ep 14]  185.2s bce=0.1028 cons=0.0618 saf=0.0208 mu=0.728 accept=0.915 acc_pos_frac=0.420 tau=0.901 loc[neg=0.901,pos=0.496] cb=ok
+      [step   2750] curve  val_auroc=0.9937 | tpr@1e-3 f0=0.3163  f1=0.2755  f2=0.3265  f3=0.2551  f4=0.3505  agr f0=0.8910
+    [ep 15]  185.6s bce=0.0818 cons=0.0574 saf=0.0172 mu=0.791 accept=0.915 acc_pos_frac=0.429 tau=0.908 loc[neg=0.908,pos=0.513] cb=ok
+    [ep 16]  185.0s bce=0.1111 cons=0.0547 saf=0.0147 mu=0.847 accept=0.913 acc_pos_frac=0.434 tau=0.914 loc[neg=0.914,pos=0.530] cb=ok
+      [step   3000] curve  val_auroc=0.9936 | tpr@1e-3 f0=0.3469  f1=0.2959  f2=0.2755  f3=0.2959  f4=0.3608  agr f0=0.8917
+    [ep 17]  185.7s bce=0.0851 cons=0.0489 saf=0.0130 mu=0.896 accept=0.911 acc_pos_frac=0.440 tau=0.920 loc[neg=0.920,pos=0.548] cb=ok
+      [step   3250] curve  val_auroc=0.9937 | tpr@1e-3 f0=0.3571  f1=0.3265  f2=0.3673  f3=0.3265  f4=0.3505  agr f0=0.8869
+    [ep 18]  185.5s bce=0.1219 cons=0.0850 saf=0.0121 mu=0.936 accept=0.910 acc_pos_frac=0.441 tau=0.925 loc[neg=0.925,pos=0.564] cb=ok
+      [step   3500] curve  val_auroc=0.9936 | tpr@1e-3 f0=0.3367  f1=0.3265  f2=0.3571  f3=0.3265  f4=0.3711  agr f0=0.8788
+    [ep 19]  185.6s bce=0.1254 cons=0.0752 saf=0.0112 mu=0.967 accept=0.908 acc_pos_frac=0.445 tau=0.929 loc[neg=0.929,pos=0.579] cb=ok
+    [ep 20]  185.3s bce=0.1260 cons=0.0470 saf=0.0103 mu=0.988 accept=0.907 acc_pos_frac=0.446 tau=0.933 loc[neg=0.933,pos=0.593] cb=ok
+      [step   3750] curve  val_auroc=0.9937 | tpr@1e-3 f0=0.3571  f1=0.3367  f2=0.3469  f3=0.3163  f4=0.3505  agr f0=0.8798
+    [ep 21]  185.8s bce=0.1040 cons=0.0453 saf=0.0103 mu=0.999 accept=0.905 acc_pos_frac=0.447 tau=0.936 loc[neg=0.936,pos=0.605] cb=ok
+      [step   4000] curve  val_auroc=0.9938 | tpr@1e-3 f0=0.3673  f1=0.3571  f2=0.3469  f3=0.3265  f4=0.3402  agr f0=0.8785
+    [ep 22]  185.7s bce=0.1315 cons=0.0557 saf=0.0100 mu=1.000 accept=0.904 acc_pos_frac=0.447 tau=0.939 loc[neg=0.939,pos=0.616] cb=ok
+      [step   4250] curve  val_auroc=0.9935 | tpr@1e-3 f0=0.3571  f1=0.3265  f2=0.3469  f3=0.3163  f4=0.3402  agr f0=0.8767
+    [ep 23]  185.5s bce=0.1384 cons=0.0550 saf=0.0096 mu=1.000 accept=0.903 acc_pos_frac=0.448 tau=0.941 loc[neg=0.941,pos=0.625] cb=ok
+    [ep 24]  184.3s bce=0.1787 cons=0.0423 saf=0.0095 mu=1.000 accept=0.900 acc_pos_frac=0.449 tau=0.943 loc[neg=0.943,pos=0.634] cb=ok
+      [step   4500] curve  val_auroc=0.9936 | tpr@1e-3 f0=0.3776  f1=0.3469  f2=0.3673  f3=0.3367  f4=0.3608  agr f0=0.8722
+    [ep 25]  185.0s bce=0.0723 cons=0.0724 saf=0.0098 mu=1.000 accept=0.898 acc_pos_frac=0.448 tau=0.945 loc[neg=0.945,pos=0.640] cb=ok
+      [step   4750] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3673  f1=0.3776  f2=0.3980  f3=0.3265  f4=0.3505  agr f0=0.8682
+    [ep 26]  185.5s bce=0.1173 cons=0.0384 saf=0.0098 mu=1.000 accept=0.899 acc_pos_frac=0.446 tau=0.946 loc[neg=0.946,pos=0.646] cb=ok
+      [step   5000] curve  val_auroc=0.9935 | tpr@1e-3 f0=0.3367  f1=0.3061  f2=0.3265  f3=0.3061  f4=0.3299  agr f0=0.8771
+    [ep 27]  185.1s bce=0.0935 cons=0.0330 saf=0.0097 mu=1.000 accept=0.897 acc_pos_frac=0.448 tau=0.948 loc[neg=0.948,pos=0.651] cb=ok
+    [ep 28]  184.6s bce=0.0725 cons=0.0549 saf=0.0089 mu=1.000 accept=0.896 acc_pos_frac=0.450 tau=0.949 loc[neg=0.949,pos=0.656] cb=ok
+      [step   5250] curve  val_auroc=0.9937 | tpr@1e-3 f0=0.3571  f1=0.3265  f2=0.3265  f3=0.2959  f4=0.3299  agr f0=0.8733
+    [ep 29]  185.3s bce=0.1411 cons=0.0562 saf=0.0093 mu=1.000 accept=0.897 acc_pos_frac=0.449 tau=0.950 loc[neg=0.950,pos=0.661] cb=ok
+      [step   5500] curve  val_auroc=0.9936 | tpr@1e-3 f0=0.3367  f1=0.3265  f2=0.4082  f3=0.3163  f4=0.3402  agr f0=0.8803
+    [ep 30]  185.9s bce=0.1106 cons=0.0444 saf=0.0090 mu=1.000 accept=0.895 acc_pos_frac=0.450 tau=0.950 loc[neg=0.950,pos=0.665] cb=ok
+      [step   5750] curve  val_auroc=0.9936 | tpr@1e-3 f0=0.3673  f1=0.3673  f2=0.4184  f3=0.3469  f4=0.3918  agr f0=0.8788
+    [ep 31]  185.7s bce=0.0563 cons=0.0345 saf=0.0093 mu=1.000 accept=0.896 acc_pos_frac=0.449 tau=0.951 loc[neg=0.951,pos=0.668] cb=ok
+    [ep 32]  185.1s bce=0.1011 cons=0.0610 saf=0.0095 mu=1.000 accept=0.896 acc_pos_frac=0.447 tau=0.952 loc[neg=0.952,pos=0.671] cb=ok
+      [step   6000] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3673  f1=0.3469  f2=0.3878  f3=0.3469  f4=0.3505  agr f0=0.8724
+    [ep 33]  184.7s bce=0.0896 cons=0.0687 saf=0.0090 mu=1.000 accept=0.895 acc_pos_frac=0.449 tau=0.952 loc[neg=0.952,pos=0.673] cb=ok
+      [step   6250] curve  val_auroc=0.9935 | tpr@1e-3 f0=0.3673  f1=0.3469  f2=0.3776  f3=0.3163  f4=0.3711  agr f0=0.8743
+    [ep 34]  185.5s bce=0.0775 cons=0.0430 saf=0.0089 mu=1.000 accept=0.895 acc_pos_frac=0.450 tau=0.953 loc[neg=0.953,pos=0.676] cb=ok
+      [step   6500] curve  val_auroc=0.9935 | tpr@1e-3 f0=0.3571  f1=0.3469  f2=0.3571  f3=0.3469  f4=0.3711  agr f0=0.8740
+    [ep 35]  185.3s bce=0.0991 cons=0.0429 saf=0.0091 mu=1.000 accept=0.897 acc_pos_frac=0.448 tau=0.953 loc[neg=0.953,pos=0.677] cb=ok
+    [ep 36]  185.2s bce=0.1486 cons=0.0380 saf=0.0094 mu=1.000 accept=0.896 acc_pos_frac=0.448 tau=0.954 loc[neg=0.954,pos=0.678] cb=ok
+      [step   6750] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3571  f1=0.3776  f2=0.3980  f3=0.3571  f4=0.3814  agr f0=0.8785
+    [ep 37]  185.3s bce=0.1035 cons=0.0288 saf=0.0092 mu=1.000 accept=0.897 acc_pos_frac=0.449 tau=0.954 loc[neg=0.954,pos=0.680] cb=ok
+      [step   7000] curve  val_auroc=0.9933 | tpr@1e-3 f0=0.3673  f1=0.3673  f2=0.4082  f3=0.3673  f4=0.3814  agr f0=0.8724
+    [ep 38]  185.1s bce=0.1112 cons=0.0577 saf=0.0094 mu=1.000 accept=0.896 acc_pos_frac=0.447 tau=0.955 loc[neg=0.955,pos=0.680] cb=ok
+      [step   7250] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3878  f1=0.3776  f2=0.4286  f3=0.3571  f4=0.3918  agr f0=0.8700
+    [ep 39]  185.2s bce=0.0933 cons=0.0448 saf=0.0093 mu=1.000 accept=0.898 acc_pos_frac=0.448 tau=0.955 loc[neg=0.955,pos=0.681] cb=ok
+    [ep 40]  185.1s bce=0.1405 cons=0.0468 saf=0.0092 mu=1.000 accept=0.899 acc_pos_frac=0.448 tau=0.955 loc[neg=0.955,pos=0.682] cb=ok
+      [step   7500] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3673  f1=0.3776  f2=0.3980  f3=0.3469  f4=0.3814  agr f0=0.8773
+    [ep 41]  185.2s bce=0.1095 cons=0.0637 saf=0.0086 mu=1.000 accept=0.896 acc_pos_frac=0.450 tau=0.956 loc[neg=0.956,pos=0.683] cb=ok
+      [step   7750] curve  val_auroc=0.9935 | tpr@1e-3 f0=0.3673  f1=0.3469  f2=0.4184  f3=0.3265  f4=0.3711  agr f0=0.8698
+    [ep 42]  185.4s bce=0.1813 cons=0.0379 saf=0.0093 mu=1.000 accept=0.898 acc_pos_frac=0.447 tau=0.956 loc[neg=0.956,pos=0.684] cb=ok
+      [step   8000] curve  val_auroc=0.9937 | tpr@1e-3 f0=0.3878  f1=0.3878  f2=0.4286  f3=0.3367  f4=0.4021  agr f0=0.8756
+    [ep 43]  185.7s bce=0.1029 cons=0.0462 saf=0.0088 mu=1.000 accept=0.900 acc_pos_frac=0.449 tau=0.956 loc[neg=0.956,pos=0.685] cb=ok  saved freematch_linear_fold0_ep43.pt
+
+[eval] R1 = single candidate step_8000.pt per fold
+
+================================================================================
+FREEMATCH  (per-fold models; metric TPR@FPR=0.001 + AUROC)
+================================================================================
+
+[SOURCE-RISK  (headline, label-free selection)]
+    fold |  epoch |  n_pos |  val_sel |  TPR@fpr |   AUROC
+    --------------------------------------------------------
+       0 |   8000 |     98 |   0.9937 |   0.3878 |  0.9736
+    across-fold mean  TPR = 0.3878 +- 0.0000   [95% CI 0.2653, 0.4898]
+    across-fold mean  AUROC = 0.9736 +- 0.0000   [95% CI 0.9526, 0.9887]
+
+[ORACLE  (best-test epoch per fold -- NOT a valid UDA result)]
+    fold |  epoch |  n_pos |  val_sel |  TPR@fpr |   AUROC
+    --------------------------------------------------------
+       0 |   8000 |     98 |   0.9937 |   0.3878 |  0.9736
+    across-fold mean  TPR = 0.3878 +- 0.0000   [95% CI 0.2653, 0.4898]
+    across-fold mean  AUROC = 0.9736 +- 0.0000   [95% CI 0.9526, 0.9887]
+
+================================================================================
+SELECTION GAP (oracle - source-risk):  TPR 0.0000   AUROC 0.0000   [same epoch picked every fold]
+================================================================================
+
+[out] results.json + raw per-fold scores -> /kaggle/working/runs/bakeoff_freematch
+
+[out] run_config.json + results.json + fold*/curve.csv + scores/ -> /kaggle/working/runs/bakeoff_freematch
+[note] variant = FreeMatch-standard (frozen)
+[next] python scripts/report_bakeoff.py /kaggle/working/runs/bakeoff_freematch
+[next] python scripts/collapse_gate.py --run /kaggle/working/runs/bakeoff_freematch/fold0 --ref /kaggle/working/lens_paper/runs/bakeoff_baseline_A/checkpoints/step_8000.pt --split target_fold0 --tpr-col fold0_tpr_1e-3

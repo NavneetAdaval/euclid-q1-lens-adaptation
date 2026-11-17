@@ -1,0 +1,10 @@
+{
+  "n_batches": 2704,
+  "mean": 0.09091132350221894,
+  "sd": 0.017569657921699972,
+  "expected": 0.09090909090909091,
+  "band": 0.002,
+  "n_lenses_basis": 392,
+  "csv": "/kaggle/working/runs/dilute10/freematch_nb3/fold4/target_lens_fraction.csv",
+  "band_enforced": true
+}

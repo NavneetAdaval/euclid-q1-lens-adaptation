@@ -1,0 +1,14 @@
+{
+ "arm": "dann",
+ "budget": 4000,
+ "steps_completed": 4000,
+ "r1_checkpoint_present": null,
+ "logit_grid": [
+  250,
+  4000,
+  250
+ ],
+ "n_expected_logits": 16,
+ "missing_logits": [],
+ "named_in_checkpoints_csv_but_missing": []
+}

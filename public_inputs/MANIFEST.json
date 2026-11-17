@@ -1,0 +1,67 @@
+{
+ "lens_ids.npz": {
+  "source": "data/q1_lenses_processed/lens_cutouts.npz (keys id_str, ra, dec)",
+  "licence": "CC-BY-4.0 (Discovery Engine v0.0.3, doi:10.5281/zenodo.15025832)",
+  "contents": "identifier and position of the 489 graded lenses, row order",
+  "bytes": 16209,
+  "sha256": "a17b8c6fc6367920589b0f873cb8b226c3723843d16d30898443e61ad87c503d",
+  "rows": 489
+ },
+ "deflectors.npz": {
+  "source": "data_old/sim_deflectors/deflector_cutouts_clean.npz (keys ra, dec, stellarmass, phz_median, mvis; object_id as exact ID)",
+  "licence": "CC BY-NC 3.0 IGO (Euclid Q1 data; credit ESA Euclid/Euclid Consortium/NASA/Q1-2025)",
+  "contents": "the 19,167-galaxy deflector sample: exact ID, position, catalogue stellar mass, photometric redshift and mvis, row order",
+  "bytes": 577851,
+  "sha256": "be29a2fda0dd83b2989cdd5a8606705fb0140cefb107a8f2ab68c5b48022c590",
+  "rows": 19167
+ },
+ "sim_meta.npz": {
+  "source": "data/sim_arc_on_real/shard_*.npz (keys object_id as exact ID, z_l, sigma_v, theta_E, target_snr)",
+  "licence": "this work (GPL-3.0); deflector IDs from CC BY-NC 3.0 IGO (Euclid Q1 data; credit ESA Euclid/Euclid Consortium/NASA/Q1-2025)",
+  "contents": "per simulated lens, in shard order: shard, deflector exact ID, z_l, sigma_v, theta_E, target arc S/N",
+  "bytes": 691058,
+  "sha256": "fbe9f0eba247d32432d1a69522b97148825afad739835144d14d0208adf3bd67",
+  "rows": 30000,
+  "shards": 60
+ },
+ "discovery_engine_v0.0.1_hard_negatives.csv": {
+  "source": "q1_discovery_engine_lens_catalog_old.csv = Discovery Engine v0.0.1 (doi:10.5281/zenodo.15003117)",
+  "licence": "CC-BY-4.0",
+  "contents": "the rows of the 4,455 grade-X hard negatives; columns id_str, grade, right_ascension, declination",
+  "bytes": 311147,
+  "sha256": "6e129e49990cfb4ebd5892ecffbf0142c9967f7f2dff8ba5cdfe49671883014c",
+  "rows": 4455
+ },
+ "discovery_engine_v0.0.3_hard_negative_rows.csv": {
+  "source": "q1_discovery_engine_lens_catalog.csv = Discovery Engine v0.0.3 (doi:10.5281/zenodo.15025832)",
+  "licence": "CC-BY-4.0",
+  "contents": "the v0.0.3 rows whose ID is one of the 4,455 hard negatives; columns id_str, grade, right_ascension, declination",
+  "bytes": 599,
+  "sha256": "0f9c22210dfa4b8a6433b630942880759708c8cf53bb71aedab4cbb61f0b881b",
+  "rows": 8
+ },
+ "mer_flux_test_negatives.csv": {
+  "source": "data_old/q1_unlabeled/metadata/partitioned_catalog.csv (the stored MER query output)",
+  "licence": "CC BY-NC 3.0 IGO (Euclid Q1 data; credit ESA Euclid/Euclid Consortium/NASA/Q1-2025)",
+  "contents": "object_id and flux_vis_psf (uJy) of the 26,399 shared test negatives",
+  "bytes": 1012016,
+  "sha256": "af9eeccf14589cdcfc4bf2752369e5d19515f1549bc004e3f44688c7d9619670",
+  "rows": 26399
+ },
+ "mer_flux_test_negatives_tiles.csv": {
+  "source": "data_old/q1_unlabeled/metadata/partitioned_catalog_with_tiles.csv (the stored MER query output)",
+  "licence": "CC BY-NC 3.0 IGO (Euclid Q1 data; credit ESA Euclid/Euclid Consortium/NASA/Q1-2025)",
+  "contents": "object_id and flux_vis_psf (uJy) of the 26,399 shared test negatives",
+  "bytes": 1008897,
+  "sha256": "80d6db49ab3fbd8973c76e890a7cadacabb04b267892251549d7090ccf8c3453",
+  "rows": 26399
+ },
+ "record_extract.json": {
+  "source": "the author's lab log PROJECTv7.md (not distributed), via scripts/write_record_extract.py",
+  "licence": "this work (GPL-3.0)",
+  "contents": "154 digest rows (103 distinct recorded_hashes: the protected inventory, runs/round7/window_prereg.json, every other file discovery on the log resolves, and one superseded text with no file); 22 values with their log line and section number; 3 check verdicts; 8 prose-claim verdicts with the sha256 of each phrase; the log's sha256 and line count; the extraction time",
+  "bytes": 39324,
+  "sha256": "171d8c510456ad7076be9089ea2499e24b6ab90064901aaf1dbf3523af82acfc",
+  "rows": 154
+ }
+}

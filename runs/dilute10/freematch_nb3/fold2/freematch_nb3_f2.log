@@ -1,0 +1,159 @@
+============================================================================================
+FREEMATCH x UNFREEZE -- freematch_nb3_unfrozen  (fold 2, 1500 steps, n_blocks=3)
+============================================================================================
+  run                     : nb3_unfrozen
+  run_dir                 : dilute10/freematch_nb3/fold2
+  n_blocks                : 3
+  fold                    : 2
+  lp_ft                   : True
+  init_head_from          : /kaggle/working/runs/dilute10/freematch_frozen/fold2/checkpoints/step_8000.pt
+  init_head_l2            : 28.258467
+  max_steps               : 1500
+  budget_steps            : 1500
+  schedule_total_steps    : 8000
+  is_preregistered_budget : True
+  curve_every             : 125
+  ckpt_every              : 500
+  batch_size              : 256
+  true_batch              : True
+  gradient_accumulation   : False
+  batch_size_is_protocol  : True
+  grad_checkpointing      : True
+  lr                      : 0.001
+  backbone_lr             : 0.0001
+  backbone_lr_effective   : 0.0001
+  lr_decay                : 0.75
+  weight_decay            : 0.0001
+  pos_fraction            : 0.5
+  seed                    : 42
+  head_type               : linear
+  selection_rule          : R1_last_checkpoint_step1500
+  method                  : freematch
+  domain_adaptation       : freematch
+  local_threshold_mode    : standard
+  freematch_variant       : FreeMatch-standard
+  mu_max                  : 1.0
+  saf_weight              : 0.01
+  sat_ema_momentum        : 0.999
+  consistency_warmup_frac : 0.1
+  fairness_target         : None
+  pos_class               : 1
+  mu_step_offset          : 8000
+  sat_rebuild             : True
+  sat_passes              : 40
+  adam_warmup_steps       : 200
+  continuation_note       : reconstruction, NOT restoration: round 1 saved head+standardizer only, so tau_global/pbar and AdamW's moments were never on disk. Each is rebuilt to its fixed point for THIS model on THIS data; whether that matches round 1's exact step-8000 state is UNVERIFIED.
+  encoder_eval            : live_encode
+  augmentation            : weak (+-3px translate, PROJECT.md 7.3)
+  fp16                    : True
+  precision               : fp16
+  eval_precision          : fp32
+  device                  : cuda
+  num_workers             : 4
+  agreement_ref           : /kaggle/working/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+  expect_step0_tpr        : 0.24489795918367346
+  expect_step0_auroc      : 0.945950333616533
+  step0_tpr_tolerance     : 0.01020408163265306
+  step0_auroc_tolerance   : 0.001
+  expect_head_l2          : 28.258467
+  hard_gate               : step-0 TPR@1e-3 must reproduce the phase-1 checkpoint's own fold-0 number; abort otherwise (BRIEF §2)
+  brief                   : BRIEF_freematch_nb3_fold0.md
+  exploratory             : True
+  reporting_note          : fold-0 CI half-width ~0.10-0.12 (§7.8): this run cannot resolve the effect and reports a decision, not a finding
+  dilute10                : {'experiment': 'dilute10', 'arm': 'freematch_nb3', 'part1_sha256': 'bd537a025e81833e73713649c9eed68fd6a0fd3152ee29240f9a333f7c649d85', 'part2_sha256': 'b8e09197a204be835fa089c858b08c7eb3e7887bfa19afd296d544d04f394503', 'part3_sha256': '1b583ea2ae5056edb410040c32613d9388e5a994bf90fc366fc93d293efb596a', 'pool_sha256': '18c73d6c1cbad99e61d43fa5bc1c972e6347f328253904fa03a64cc8d68153be', 'pool_path': 'data/splits/dilute10_pool.json', 'target_pool': 'dilute10', 'target_sampler': 'uniform', 'uniform_sampler_namespace': 'dilute10/uniform_target_sampler/v1', 'realised_training_pool': {'lenses': 391, 'galaxies': 3910, 'holdout': 0}, 'abort_mode': None, 'rebound_names': ['run_unfreeze_freematch.FOLD_GATE -- fold 2 gate <- /kaggle/working/runs/dilute10/freematch_frozen/fold2/gate_values.json', 'run_freematch.LensDataset -- target role -> diluted pool', 'run_freematch.make_balanced_loader -- TARGET loader -> uniform sampler', 'continuation_state.rebuild_sat_buffers -- asserts the uniform diluted loader; records the batch count', 'curve_hook.append_curve_row -- measurement lockout: scoring only except the step-0 gate', 'unfreeze_instrument.memorization_row -- measurement lockout: label-free memorisation row', 'run_unfreeze_freematch.evaluate_r1 -- measurement lockout: R1 scored, not measured', 'run_unfreeze_freematch.run_collapse_gate -- measurement lockout: collapse gate skipped', 'run_unfreeze_freematch.build_config -- + dilute10 provenance; run_dir'], 'imported_module_sha256': {'analyze_fold0_selection.py': '4739b30eacfa370b001bfdd172b81744671aca17c4f1c6b0af2c1b3b20250cc6', 'cache_features.py': '37deb6c4dfe11a243bb324ef9cea0d0d6dd864e83fed7e9aef7368e8cb61fd5b', 'continuation_state.py': '7b1ac7516f907137fc3d82d1ade3dab0dafd15f440d115faf69b71b5163e1033', 'curve_hook.py': '15d4e2fc699378d57185f8fe298b315128be458da1f28a2236867599d58a7403', 'da_losses.py': '2d861ffc8649f4987756f5773c9e72e8bb2fba5cf790c7b227e7436ce1f89a98', 'dilute10_batch_log.py': '3695832186df90a54cbb348b625a47787a24d3e9506c64dd40f684136df7c9e4', 'dilute10_common.py': '3fd96bdf5d5656d7c672b1f7423c6fc83b33ee2a4a7cfa58ca719a56bf2715f1', 'dilute10_pool.py': '8d0971a30601030354fe0ae3409c97b5518b10c10742f60c7e73c6b3dfbe1cce', 'evaluate.py': 'ff2cb7aacb34b35cac9eb0b35294755f5c56de46bad2700a11da7ee96dc59362', 'heads.py': '9f32284d2b26e8149318d3adfbf1a4e971333942a9a6cb112f9e0a2c55f00260', 'lens_dataset.py': '87c3701b4eb8e76333b06938d3d3fda8a53e7f46afe59bbb7fee6074b566318d', 'live_encode.py': 'fbc24be3b72367744dad9ef7659a5f6ad9aafbcb7c318a174fbf738532cf09bc', 'metrics.py': '5374372546d2926712368afda88b2aae5f2f2ce81da85cbb4392ade29cfa23b4', 'run_baseline.py': 'ab021c16fd1026018a87bd4a31f972805e4436e5ec434376271820d5543208e4', 'run_coral.py': '2a8821d38ab770ea4face2fbc323b5c0c3e0a8de84d770366575d5aeea2e8cb3', 'run_dilute10_freematch_nb3.py': '80dd9bbd78ccc1c59d91d99ab7635e2b3a2bd7177e4cc6693b29920bf5879b26', 'run_freematch.py': '8262b7cf37fe0c6aeb0ce8b7ed657a75175ff7e1dca471548b41d6a18708150e', 'run_screen_unfreeze.py': '0a07d6117d6b12d70b2a8e08b22502fee7b8ba8a2a9678747a0155a1e9482c82', 'run_unfreeze_freematch.py': 'e8f745890dbf4b349f1254f4a898d72cb33909108ca0f495c078df17823981b8', 'samplers.py': '32753fe586e077de2069070d77a795ea30210b5e8fc8d85b852e6c2b84fac96e', 'train_skeleton.py': '06834cac81d1fdcd9a560d508a080a51902ca11b33e4cc648da9a4e76dbc3691', 'unfreeze_instrument.py': 'df2f6277eaf9e8abe084514b579df38c5b6d119ffb36f64bb998d514943076e7', 'uniform_target_sampler.py': 'a74d74aa9acec5f1c667797175b2356c00f0ccda7286b338501d53f4954edadb', 'zoobot_encoder.py': 'daaea6e57023f8e2b5fe199d3e13cdb18d1688e3aa6e83a108e68f63bb39b70d'}, 'recorded_utc': '2026-10-22T16:43:04Z', 'bundle_version': 3, 'bundle_manifest_sha256': 'da5d315edd754a0234c639791079222a25d7a7b919ce61eddd5835f6e3540c7d', 'bundle_manifest_rehashed': True, 'stage_json_sha256': '3b5173cb295d8b820260e6f59ed7c4df10981122767de9eab03e9541c284675b', 'pool_verified': {'pool_sha256': '18c73d6c1cbad99e61d43fa5bc1c972e6347f328253904fa03a64cc8d68153be', 'part1_sha256': 'bd537a025e81833e73713649c9eed68fd6a0fd3152ee29240f9a333f7c649d85', 'pool_path': '/kaggle/working/data/splits/dilute10_pool.json'}, 'gate_values': {'fold': 2, 'head': '/kaggle/working/runs/dilute10/freematch_frozen/fold2/checkpoints/step_8000.pt', 'head_sha256': 'd5c071be73fe68d95e1a1463f357d7390c7c883267718326d049f4f6096e2d02', 'head_l2': 28.258467, 'tpr': 0.24489795918367346, 'auroc': 0.945950333616533, 'n_pos': 98, 'n_neg': 26399, 'pool': 'original (all shared negatives) -- what the nb3 step-0 gate measures', 'cleaned_pool': {'tpr': 0.336734693877551, 'auroc': 0.9468957476615809, 'n_pos': 98, 'n_neg': 26134, 'rule_body_sha256': 'b83fa019abba5238ccfca593a3130b54be574a47359b4e2818b274efd3fd0e4b', 'n_removed': 265}, 'from': 'logits/step_8000.npz (persisted), cross-checked against the head re-scored on cached features (max |diff| 0.0e+00)', 'recorded_utc': '2026-10-18T13:06:56Z'}, 'sat_rebuild': {}, 'measurement_lockout': 'curve rows scored except step 0; memorisation row label-free; R1 scored; collapse gate skipped'}
+============================================================================================
+[§1] no --reference-config given -- this run DECLARES the reference. Emit it with --emit-config and pass it to the other run.
+
+[ref] scoring Baseline A on target_fold2 for the agreement column ...
+[load] building the Zoobot encoder (n_blocks=3, grad_checkpointing=True) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=3 -> trainable ['stages.3', 'stages.2', 'stages.1'] (14,835,520 params, 99.2% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from /kaggle/working/runs/dilute10/freematch_frozen/fold2/checkpoints/step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 28.258467
+[optim] n_blocks=3  head_lr=0.001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.0001
+[optim]   group 0: head       lr=1.000e-03  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   group 2: stages.2   lr=7.500e-05  params=6,907,520
+[optim]   group 3: stages.1   lr=5.625e-05  params=479,680
+[optim]   TOTAL trainable = 14,837,441 params
+  [fold 2] head=linear  187 steps/epoch  batch=256  src=48000  tgt=4301  mu_max=1.0(mid=1.00)  saf_w=0.01  sat_m=0.999  mode=standard  warmup=800 steps  cb_patience=187  fp16=on
+  [continuation] reconstructing the training state a weights-only checkpoint did not save
+  [sat] reconstructing tau_global/pbar: 40 passes over a 4301-image pool at batch 256 -> 680 batches (weak aug, fp16)
+    [sat] 25/680 batches
+    [sat] 50/680 batches
+    [sat] 75/680 batches
+    [sat] 100/680 batches
+    [sat] 125/680 batches
+    [sat] 150/680 batches
+    [sat] 175/680 batches
+    [sat] 200/680 batches
+    [sat] 225/680 batches
+    [sat] 250/680 batches
+    [sat] 275/680 batches
+    [sat] 300/680 batches
+    [sat] 325/680 batches
+    [sat] 350/680 batches
+    [sat] 375/680 batches
+    [sat] 400/680 batches
+    [sat] 425/680 batches
+    [sat] 450/680 batches
+    [sat] 475/680 batches
+    [sat] 500/680 batches
+    [sat] 525/680 batches
+    [sat] 550/680 batches
+    [sat] 575/680 batches
+    [sat] 600/680 batches
+    [sat] 625/680 batches
+    [sat] 650/680 batches
+    [sat] 675/680 batches
+  [sat] tau_global : direct 0.968178 | EMA(5000) 0.965030 | predicted-with-bleed 0.965031
+  [sat]   agreement: raw |diff| 0.003148  bleed-corrected |diff| 1.02e-06
+  [sat] pbar       : direct [0.90569, 0.09431] | EMA [0.903049, 0.096951]  (bleed-corrected max|diff| 8.58e-05)
+  [sat] fairness_target LEFT ALONE at [0.5, 0.5] (a config value, not an EMA)
+  [adam] warming moments for 200 steps (probing to 500); weights restored every step; encoder left COLD (120 params frozen for the duration)
+  [adam]   step   50: ||exp_avg_sq|| = 2.315685e-04   debiased = 4.745803e-03   (1921 params with state)
+  [adam]   step  200: ||exp_avg_sq|| = 8.785029e-04   debiased = 4.844208e-03   (1921 params with state)
+  [adam]   step  500: ||exp_avg_sq|| = 1.869102e-03   debiased = 4.748482e-03   (1921 params with state)
+  [adam] rolled optimizer state back to step 200 (the probe beyond it is diagnostic only)
+  [adam] step counter 0 -> 200 (carried into training: True)
+  [adam] raw ||exp_avg_sq|| grew +112.8% over the probe -- expected: it is an EMA from zero, not a convergence signal
+  [adam] DEBIASED second moment moved -1.98% -- CONVERGED (this is the quantity Adam uses)
+  [sat] tau after the Adam warm-up: 0.968181 (drift 2.77e-06 from the rebuilt value -- it should barely move if the rebuild was the fixed point)
+  [step0] evaluating the loaded model BEFORE training (hard gate) ...
+[live] building eval datasets once (fold 2, aug='none') ...
+[live]   val=12000  test_neg=26399  test_pos=98  target=782
+      [step      0] curve  val_auroc=0.9943 | tpr@1e-3 f2=0.2449  agr f2=0.9503  mem tgt-test=nan
+
+==============================================================================
+HARD GATE (BRIEF §2) -- nb3_unfrozen step-0 known-null, fold 2
+==============================================================================
+  TPR@1e-3  0.24489795918367346  vs 0.24489795918367346   tol 0.010204 (1.0 positives)  -> ok
+  AUROC     0.9459667612641479  vs 0.945950333616533   |diff| 1.64e-05  tol 1e-03  -> ok
+  VERDICT: PASS
+==============================================================================
+      [step    125] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+    [ep  1]  512.0s bce=0.1005 cons=0.0240 saf=0.5637 mu=1.000 accept=0.914 acc_pos_frac=0.111 tau=0.969 loc[neg=0.969,pos=0.103] cb=ok
+      [step    250] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+    [ep  2]  501.5s bce=0.0957 cons=0.0033 saf=0.5529 mu=1.000 accept=0.946 acc_pos_frac=0.098 tau=0.971 loc[neg=0.971,pos=0.103] cb=ok
+      [step    375] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+      [step    500] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+    [ep  3]  669.1s bce=0.0486 cons=0.0273 saf=0.5503 mu=1.000 accept=0.955 acc_pos_frac=0.098 tau=0.974 loc[neg=0.974,pos=0.103] cb=ok
+      [step    625] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+    [ep  4]  499.9s bce=0.0360 cons=0.0123 saf=0.5510 mu=1.000 accept=0.964 acc_pos_frac=0.097 tau=0.976 loc[neg=0.976,pos=0.103] cb=ok
+      [step    750] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+      [step    875] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+    [ep  5]  667.2s bce=0.0710 cons=0.0037 saf=0.5460 mu=1.000 accept=0.968 acc_pos_frac=0.097 tau=0.978 loc[neg=0.978,pos=0.103] cb=ok
+      [step   1000] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+    [ep  6]  499.8s bce=0.0140 cons=0.0009 saf=0.5280 mu=1.000 accept=0.966 acc_pos_frac=0.101 tau=0.980 loc[neg=0.980,pos=0.104] cb=ok
+      [step   1125] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+      [step   1250] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+    [ep  7]  667.1s bce=0.0808 cons=0.0028 saf=0.5153 mu=1.000 accept=0.974 acc_pos_frac=0.104 tau=0.982 loc[neg=0.982,pos=0.105] cb=ok
+      [step   1375] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+    [ep  8]  499.4s bce=0.0124 cons=0.0052 saf=0.5134 mu=1.000 accept=0.977 acc_pos_frac=0.104 tau=0.984 loc[neg=0.984,pos=0.106] cb=ok
+      [step   1500] curve  val_auroc=nan | tpr@1e-3 f2=nan  agr f2=nan  mem tgt-test=nan
+    [ep  9]  178.4s bce=0.0344 cons=0.0121 saf=0.5255 mu=1.000 accept=0.989 acc_pos_frac=0.103 tau=0.984 loc[neg=0.984,pos=0.106] cb=ok  saved freematch_linear_fold2_ep09.pt
+[mem] peak GPU allocated = 4.60 GB   (§7.1a anchor for FreeMatch nb3 at true batch 256: 4.76 GB with gradient checkpointing; OOM on a 14.56 GiB T4 without)
+[retention] checkpoints 4/4  curve rows 13/13
+[train] done in 103.9 min
+[out] run_config.json + results.json + curve.csv + diagnostics.csv + memorization.csv + logits/ + scores/ -> /kaggle/working/runs/dilute10/freematch_nb3/fold2

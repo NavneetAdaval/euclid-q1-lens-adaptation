@@ -1,0 +1,134 @@
+\section{The budget rule, pre-registration hashes and amendments}
+\label{sec:hashes}
+
+\subsection{The budget rule}
+\label{sec:budget-detail}
+
+We fixed the budget of every arm except Baseline A on a development run on fold 0: BNM's by a
+rule declared before that run, which reads its nuclear norm (the $\gamma$ sweep on the same fold
+had already indicated that the rule would give about \bnmBudgetPreview{} steps, and it gave
+\bnmBudgetSteps{}); the others with its TPR curve in view. Baseline A's 8000 steps were fixed before any results existed. We read each arm at its
+last checkpoint, so the training budget is the model selector. Every confirmatory run
+reached its arm's final budget. BNM's ran to 4000 steps so that all its readouts came from one
+run; no part of its training depends on the total number of steps, so its step-1000 checkpoint
+is the model a 1000-step run would produce. For some arms we stated the budget as a rule derived
+from the arm's configuration: 4000 for DANN, twice its $\lambda$
+horizon; 4000 for the $\lambda=0$ control, read where its treatment is read; and 1000 for BNM,
+twice the step at which its nuclear norm reaches an analytic ceiling. Baseline A uses 8000, the
+matched budget of the frozen comparison. For CORAL we declared 2000 on cost, declining the
+development curve's maximum at 2500. For FreeMatch we first declared 2000 on robustness
+grounds, with the development curve in view, and later amended it to 1500, the development
+curve's highest point, although Section~\ref{sec:negative} shows that this maximum is poorly
+located. Only \rwBudgetPreCurve{} were fixed before the corresponding
+development curve existed; the others were chosen with that curve in view. BNM's 1000 matches
+no other arm's budget, so we read it at 4000, the step of its control. Where we compare two arms
+at the same step, a budget match removes only the budget confound; the head and tuning
+differences of Section~\ref{sec:arms} remain.
+
+\subsection{Pre-registration}
+\label{sec:prereg-detail}
+
+We fixed each arm's budget and read-off step before its own confirmatory folds ran and, except
+for the four items below, hash-protected them then. The $\lambda=0$ control's folds 1--4 and the
+four paired contrasts against it came later (Section~\ref{sec:prereg}): on 2026-09-01 we recorded
+in the DANN pre-registration that the control would be reported from the development fold alone
+(key \texttt{arm1\_folds\_1\_4\_declined}), and on 2026-09-06, after the FreeMatch, CORAL and
+DANN confirmatory folds had run, we reversed that decision. The control's own pre-registration
+precedes all its confirmatory folds, but we chose its contrasts knowing the adaptation arms'
+results.
+Two versions of our private Kaggle dataset hold copies of these files. Their dates are the
+version dates shown on the dataset page, which we read ourselves; a reader cannot check them, so
+they corroborate our account but are not independent timestamps. One holds the DANN declaration
+(see below). The other, dated \lambdaKaggleDate{}, before the $\lambda = 0$ control's first
+confirmatory fold, holds that control's pre-registration, which fixes the four paired contrasts
+against it, and the pre-registration's audit; both match their recorded digests. Four items rest on our run logs alone, which are not distributed (Data and code
+availability): Baseline A's budget, fixed
+before any results in our first frozen comparison, which predates our hash protection; the
+precedence of one DANN prediction over its development-fold test; the timing of BNM's budget;
+and FreeMatch's amended budget, whose hash file did not survive. We evaluated every condition
+declared for the $\lambda=0$ control at step zero, and across its whole development run, before
+writing it into the pre-registration. Fold 0 enters no confirmatory number: every contrast and
+every unfrozen-arm mean uses folds 1--4, 391 test positives in all.
+
+Table~\ref{tab:hashes6} lists every pre-registration and budget file with its digest, re-derived
+from disk when the paper is built. We record amendments beside a hashed file rather than
+rewriting it.
+
+\input{tables/A2_hashes_v6}
+
+\paragraph{The DANN pre-registration.} We recorded it in our run logs on 2026-08-26 and amended
+it there on 2026-08-28 and 2026-08-30. Its machine-readable file is regenerated whole by its
+writer and was last written on 2026-09-05, after DANN's confirmatory folds, so that file's own
+hash dates only the regeneration. A copy of the file as it stood on 2026-09-02, before the
+folds, survives in a private Kaggle dataset version dated 2 September 2026, and we archive it in
+the repository. Its digest, \texttt{\dannPrefoldSha{}\ldots}, is entry \dannPrefoldEntry{} of the file's hash
+history, its
+recorded time precedes the first confirmatory fold, and every one of its
+\dannPrefoldIdenticalKeys{} pre-fold keys is identical in the current file; the
+regeneration added \dannPrefoldAddedKeys{} keys reporting fold results. This copy therefore
+verifies, before the confirmatory folds, the spread prediction, the headline and sensitivity
+rule, the budget, the abort conditions as we re-specified them on 2026-08-30 from the fold-0
+control and development runs (the file labels that change derived, not pre-registered; it made
+two conditions advisory, so it could stop no run), and every other key. It does not verify two things. The first is the precedence of the
+arc-suppression prediction over its own development-fold test: the prediction is dated
+2026-08-30 in our run logs, but the 2 September copy already contains its outcome, resolved on
+2026-09-01, and the earlier file state (history entry \dannArcEntry{}) was not recovered; the
+prediction was falsified. The second is the content of the file's states before 2 September,
+history entries 1--9. The step-2000 sensitivity rule is also verifiable through the separate
+DANN budget file, which predates the folds and whose digest every confirmatory fold recorded
+when it started.
+
+\paragraph{The FreeMatch budget amendment.} We amended FreeMatch's budget from 2000 to 1500
+steps, the development curve's highest point, although Section~\ref{sec:negative} shows that
+this maximum is poorly located; every FreeMatch confirmatory result we report was run
+at 1500. Our run logs hold the original text's digest,
+\texttt{7356acda\ldots}; the file that held the amended text's digest is not in the repository
+and cannot be recreated, so no surviving hash covers the amended text.
+
+\subsection{The pre-registration of the dilution experiment}
+\label{sec:prereg-dilute}
+
+The 1:10 experiment of Section~\ref{sec:dilute-methods} was declared in three parts, each
+self-certifying, plus a pool file and an analysis plan; Table~\ref{tab:hashes6} lists them with
+their first governed run, read from the run records.
+
+\paragraph{Part 1} (\texttt{\dlShaPartOne\ldots}) fixed the pool and the sampler; the arms,
+folds, budgets and read-off steps; the reuse of the $\lambda=0$ control and the rerun of the
+CORAL and FreeMatch frozen stages; the contrasts $G$ and $D$; the three branches with their
+sentences and the qualifier; the rule that the abstract and the conclusion report every arm's
+branch, leading with DANN and BNM; and our \dlNPredWord{} predictions. The pool file's digest is
+recorded inside it.
+
+\paragraph{Part 2} (\texttt{\dlShaPartTwo\ldots}) was recorded after step-zero measurements of
+at most \dlPartTwoMaxStepsWord{} training steps per fold, but before any confirmatory run. It
+fixed the step-zero thresholds, the
+tolerance band on the lens fraction of the target batches, and which inherited stop conditions
+abort a run and which only log; CORAL's feature-norm guard is among the latter. DANN's four
+diluted folds ran from the first version of our run scripts, which did not record part 2's
+digest in the run files; our pre-run check verified part 2 before each of those runs, and every
+later run records it. Part 1 states that part 2 would record the step-zero gate values of the
+new CORAL and FreeMatch frozen heads. Those heads did not exist when part 2 was recorded, so
+part 2 fixed the rule instead: each unfrozen run is gated against the values its frozen stage
+wrote at the end of its run, in that stage's \texttt{gate\_values.json}, which we hashed before
+the unfrozen run started.
+
+\paragraph{Part 3} (\texttt{\dlShaPartThree\ldots}) was written after the first attempt of
+CORAL's unfrozen run on fold 1, on \dlAbortDate{}, stopped at step 1 on that guard and produced
+no data, and before every confirmatory CORAL and FreeMatch unfrozen run. It binds those two arms
+only. It permits that fold's rerun, keeps CORAL as pre-registered with the guard advisory, adds
+the rule that withholds the verdict from an arm whose run applies fewer than half its budget's
+optimiser updates, which we set after a label-free \dlCoralCheckSteps{}-step check in which CORAL
+applied \dlCoralCheckAppliedMin{}--\dlCoralCheckAppliedMax{} of \dlCoralCheckSteps{} updates on
+every fold, and which fired on no run; and it requires a pre-run check of FreeMatch's early
+updates before its runs. It changes nothing about how any arm is trained. Part 2 described
+itself as final; part 3 adds to it without changing any earlier key.
+
+\paragraph{The analysis plan} (\texttt{\dlShaPlan\ldots}) was hashed before any value of the
+experiment was computed. Its driver was edited once afterwards, to fix an index error in the
+scoring of the predictions that swapped BNM's and CORAL's $D$; every contrast and branch is
+unaffected.
+
+\paragraph{The memorisation plan} (\texttt{\dlShaGapPlan\ldots}) is retrospective and in no
+pre-registration: we decided on the DANN $-$ $\lambda=0$ analysis of
+Section~\ref{sec:negative} after every result was known, and declared and hashed its rule before
+computing any value.

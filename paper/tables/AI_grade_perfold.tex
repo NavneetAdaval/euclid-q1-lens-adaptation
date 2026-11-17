@@ -1,0 +1,25 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_appendix_tables_v2.py)
+% Appendix I (rewrite v1): audit/review_r1/out/A3_recall_by_grade.json.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Recall by grade, per fold}, at each fold's FPR${}=10^{-3}$ threshold on the cleaned pool: recovered/total. Sums and intervals: Table~\ref{tab:graderecall}.}
+\label{tab:gradeperfold}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+ & \multicolumn{4}{c}{grade A} & \multicolumn{4}{c}{grade B} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+Readout & f1 & f2 & f3 & f4 & f1 & f2 & f3 & f4 \\
+\midrule
+Baseline A (8000) & 10/49 & 14/49 & 12/49 & 16/49 & 4/49 & 7/49 & 5/49 & 4/48 \\
+$\lambda=0$ (4000) & 16/49 & 13/49 & 11/49 & 15/49 & 6/49 & 4/49 & 3/49 & 4/48 \\
+BNM (4000) & 27/49 & 32/49 & 28/49 & 29/49 & 12/49 & 13/49 & 9/49 & 8/48 \\
+FreeMatch (1500) & 32/49 & 34/49 & 32/49 & 38/49 & 17/49 & 24/49 & 10/49 & 15/48 \\
+DANN (4000) & 32/49 & 43/49 & 22/49 & 32/49 & 21/49 & 27/49 & 9/49 & 9/48 \\
+DANN (2000, sens.) & 35/49 & 42/49 & 35/49 & 32/49 & 21/49 & 27/49 & 14/49 & 11/48 \\
+CORAL (2000) & 32/49 & 38/49 & 35/49 & 34/49 & 14/49 & 24/49 & 14/49 & 13/48 \\
+\bottomrule
+\end{tabular}
+\end{table}

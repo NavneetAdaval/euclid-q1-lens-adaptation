@@ -1,0 +1,361 @@
+{
+ "what": "completeness at 24% purity, and it as a fraction of Lines et al.'s 0.50",
+ "metric": "metrics.metric_suite -> comp_at_purity",
+ "target_purity": 0.24,
+ "nn_np_ratio": 2200,
+ "nn_np_ratio_why": "Lines' Q1 rarity, 497 lenses in 1,086,554 images; purity is prevalence-corrected to it so the two are comparable",
+ "lines_reference_completeness": 0.5,
+ "basis": "folds 1-4 fold-mean for every per-fold-model arm; Baseline A also reports folds 0-4 because it is a single model",
+ "rule_for_undefined": "any fold where 24% purity is unreachable makes the ARM n/a -- no fold-mean, no CI, never an average over the reachable subset",
+ "interval": "paired t on the per-fold values, df = n-1. Never a bootstrap at n = 4.",
+ "arms": {
+  "CORAL x nb3": {
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "quoted_readout": 2000,
+   "readouts": {
+    "2000": {
+     "comp_at_purity_per_fold": {
+      "1": 0.3979591836734694,
+      "2": 0.6326530612244898,
+      "3": 0.47959183673469385,
+      "4": 0.4742268041237113
+     },
+     "undefined_folds": [],
+     "n_defined": 4,
+     "n_folds": 4,
+     "defined_on_all_folds": true,
+     "fold_mean": 0.4961077214390911,
+     "sd": 0.09836888781989811,
+     "pct_of_lines": 99.22154428781822,
+     "ci95": [
+      0.3395808696404127,
+      0.6526345732377695
+     ],
+     "pct_of_lines_ci95": [
+      67.91617392808253,
+      130.5269146475539
+     ]
+    }
+   }
+  },
+  "FreeMatch x nb3": {
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "quoted_readout": 1500,
+   "readouts": {
+    "1500": {
+     "comp_at_purity_per_fold": {
+      "1": 0.47959183673469385,
+      "2": 0.5612244897959183,
+      "3": 0.35714285714285715,
+      "4": 0.5360824742268041
+     },
+     "undefined_folds": [],
+     "n_defined": 4,
+     "n_folds": 4,
+     "defined_on_all_folds": true,
+     "fold_mean": 0.4835104144750684,
+     "sd": 0.09089813670098315,
+     "pct_of_lines": 96.70208289501367,
+     "ci95": [
+      0.3388711948244345,
+      0.6281496341257022
+     ],
+     "pct_of_lines_ci95": [
+      67.7742389648869,
+      125.62992682514044
+     ]
+    }
+   }
+  },
+  "DANN x nb3": {
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "quoted_readout": 4000,
+   "readouts": {
+    "4000": {
+     "comp_at_purity_per_fold": {
+      "1": 0.5,
+      "2": 0.7142857142857143,
+      "3": 0.24489795918367346,
+      "4": 0.36082474226804123
+     },
+     "undefined_folds": [],
+     "n_defined": 4,
+     "n_folds": 4,
+     "defined_on_all_folds": true,
+     "fold_mean": 0.45500210393435725,
+     "sd": 0.201879442852257,
+     "pct_of_lines": 91.00042078687144,
+     "ci95": [
+      0.13376686042535185,
+      0.7762373474433626
+     ],
+     "pct_of_lines_ci95": [
+      26.75337208507037,
+      155.24746948867252
+     ]
+    },
+    "2000": {
+     "comp_at_purity_per_fold": {
+      "1": 0.5408163265306123,
+      "2": 0.7040816326530612,
+      "3": 0.45918367346938777,
+      "4": 0.41237113402061853
+     },
+     "undefined_folds": [],
+     "n_defined": 4,
+     "n_folds": 4,
+     "defined_on_all_folds": true,
+     "fold_mean": 0.52911319166842,
+     "sd": 0.1281532471244095,
+     "pct_of_lines": 105.822638333684,
+     "ci95": [
+      0.3251927777577909,
+      0.7330336055790491
+     ],
+     "pct_of_lines_ci95": [
+      65.03855555155818,
+      146.60672111580982
+     ]
+    }
+   },
+   "note": "2000 is 7.18's pre-declared sensitivity readout."
+  },
+  "lambda=0": {
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "quoted_readout": 4000,
+   "readouts": {
+    "4000": {
+     "comp_at_purity_per_fold": {
+      "1": 0.10204081632653061,
+      "2": null,
+      "3": null,
+      "4": 0.010309278350515464
+     },
+     "undefined_folds": [
+      2,
+      3
+     ],
+     "n_defined": 2,
+     "n_folds": 4,
+     "defined_on_all_folds": false,
+     "fold_mean": null,
+     "pct_of_lines": null,
+     "ci95": null,
+     "why_na": "24% purity is unreachable on fold(s) [2, 3]; the arm is n/a with no fold-mean and no CI"
+    },
+    "2000": {
+     "comp_at_purity_per_fold": {
+      "1": 0.12244897959183673,
+      "2": 0.061224489795918366,
+      "3": 0.04081632653061224,
+      "4": null
+     },
+     "undefined_folds": [
+      4
+     ],
+     "n_defined": 3,
+     "n_folds": 4,
+     "defined_on_all_folds": false,
+     "fold_mean": null,
+     "pct_of_lines": null,
+     "ci95": null,
+     "why_na": "24% purity is unreachable on fold(s) [4]; the arm is n/a with no fold-mean and no CI"
+    },
+    "1500": {
+     "comp_at_purity_per_fold": {
+      "1": 0.08163265306122448,
+      "2": 0.061224489795918366,
+      "3": null,
+      "4": 0.030927835051546393
+     },
+     "undefined_folds": [
+      3
+     ],
+     "n_defined": 3,
+     "n_folds": 4,
+     "defined_on_all_folds": false,
+     "fold_mean": null,
+     "pct_of_lines": null,
+     "ci95": null,
+     "why_na": "24% purity is unreachable on fold(s) [3]; the arm is n/a with no fold-mean and no CI"
+    }
+   }
+  },
+  "BNM x nb3": {
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "quoted_readout": 4000,
+   "readouts": {
+    "1000": {
+     "comp_at_purity_per_fold": {
+      "1": 0.3673469387755102,
+      "2": 0.35714285714285715,
+      "3": 0.24489795918367346,
+      "4": 0.4639175257731959
+     },
+     "undefined_folds": [],
+     "n_defined": 4,
+     "n_folds": 4,
+     "defined_on_all_folds": true,
+     "fold_mean": 0.35832632021880917,
+     "sd": 0.08962564350590643,
+     "pct_of_lines": 71.66526404376184,
+     "ci95": [
+      0.21571192120176097,
+      0.5009407192358574
+     ],
+     "pct_of_lines_ci95": [
+      43.14238424035219,
+      100.18814384717147
+     ]
+    },
+    "1500": {
+     "comp_at_purity_per_fold": {
+      "1": 0.3163265306122449,
+      "2": 0.4897959183673469,
+      "3": 0.30612244897959184,
+      "4": 0.08247422680412371
+     },
+     "undefined_folds": [],
+     "n_defined": 4,
+     "n_folds": 4,
+     "defined_on_all_folds": true,
+     "fold_mean": 0.29867978119082683,
+     "sd": 0.16697007786416138,
+     "pct_of_lines": 59.735956238165365,
+     "ci95": [
+      0.03299312749491379,
+      0.5643664348867399
+     ],
+     "pct_of_lines_ci95": [
+      6.5986254989827575,
+      112.87328697734797
+     ]
+    },
+    "2000": {
+     "comp_at_purity_per_fold": {
+      "1": 0.3469387755102041,
+      "2": 0.46938775510204084,
+      "3": 0.29591836734693877,
+      "4": 0.36082474226804123
+     },
+     "undefined_folds": [],
+     "n_defined": 4,
+     "n_folds": 4,
+     "defined_on_all_folds": true,
+     "fold_mean": 0.36826741005680624,
+     "sd": 0.0729612045737047,
+     "pct_of_lines": 73.65348201136125,
+     "ci95": [
+      0.25216985209446835,
+      0.48436496801914414
+     ],
+     "pct_of_lines_ci95": [
+      50.43397041889367,
+      96.87299360382883
+     ]
+    },
+    "4000": {
+     "comp_at_purity_per_fold": {
+      "1": 0.35714285714285715,
+      "2": 0.41836734693877553,
+      "3": 0.2857142857142857,
+      "4": 0.36082474226804123
+     },
+     "undefined_folds": [],
+     "n_defined": 4,
+     "n_folds": 4,
+     "defined_on_all_folds": true,
+     "fold_mean": 0.3555123080159899,
+     "sd": 0.054324336116058795,
+     "pct_of_lines": 71.10246160319798,
+     "ci95": [
+      0.269070166636204,
+      0.4419544493957758
+     ],
+     "pct_of_lines_ci95": [
+      53.81403332724079,
+      88.39088987915515
+     ]
+    }
+   },
+   "note": "budget 1000 is `no_matched_arm_budget` (7.28) and is BNM's own-objective reading only -- never cross-arm comparable. 4000 is the mandatory readout and is the one quoted."
+  },
+  "Baseline A (frozen)": {
+   "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "quoted_readout": 8000,
+   "readouts": {
+    "8000": {
+     "comp_at_purity_per_fold": {
+      "0": 0.08163265306122448,
+      "1": 0.12244897959183673,
+      "2": 0.07142857142857142,
+      "3": 0.08163265306122448,
+      "4": 0.09278350515463918
+     },
+     "undefined_folds": [],
+     "n_defined": 5,
+     "n_folds": 5,
+     "defined_on_all_folds": true,
+     "fold_mean": 0.08998527245949926,
+     "sd": 0.019657098220276812,
+     "pct_of_lines": 17.997054491899853,
+     "ci95": [
+      NaN,
+      NaN
+     ],
+     "pct_of_lines_ci95": [
+      NaN,
+      NaN
+     ],
+     "folds_1_4": {
+      "fold_mean": 0.09207342730906795,
+      "sd": 0.022048418146213982,
+      "pct_of_lines": 18.41468546181359,
+      "ci95": [
+       0.05698947387567736,
+       0.12715738074245853
+      ]
+     }
+    }
+   },
+   "note": "single source-only model, so folds 0-4 and pooling are both legitimate for it (2); the folds-1-4 mean is given alongside for like-for-like comparison with the per-fold-model arms."
+  }
+ },
+ "test_pool": {
+  "pool": "D1",
+  "rule": "audit/decontam/rule.json",
+  "rule_sha256": "b83fa019abba5238ccfca593a3130b54be574a47359b4e2818b274efd3fd0e4b",
+  "built_by": "paper/scripts/build_pool_recomputes.py"
+ }
+}

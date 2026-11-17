@@ -1,0 +1,73 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_review_macros.py)
+% Macros for the review-round numbers (rewrite v1). Sources:
+% audit/review_r1/out, audit/review_r1b/out (input hashes re-checked), PROJECTv7.md, run files.
+% audit/review_r1/out/F4_fold_overlap.json
+\newcommand{\rvSharedTargetMin}{293}
+\newcommand{\rvSharedTargetMax}{294}
+\newcommand{\rvTargetLensPool}{391}
+\newcommand{\rvTargetOverlapPct}{75}
+% audit/review_r1/out/F5_host_properties.json
+\newcommand{\rvHostAurocMin}{0.46}
+\newcommand{\rvHostAurocMax}{0.58}
+\newcommand{\rvBareDeflN}{2881}
+\newcommand{\rvSourceNegN}{24\,000}
+\newcommand{\rvSourcePosN}{24\,000}
+% audit/review_r1/out/F6_d2_lenses.json
+\newcommand{\rvDTwoTrainNeg}{14}
+\newcommand{\rvDTwoValNeg}{6}
+\newcommand{\rvDTwoRandom}{19}
+% audit/review_r1/out/F7_lenses_in_test_pool.json
+\newcommand{\rvOwnPosMin}{4}
+\newcommand{\rvOwnPosMax}{8}
+\newcommand{\rvFsevenDaMin}{13}
+\newcommand{\rvFsevenDaMax}{18}
+\newcommand{\rvFsevenRefMin}{7}
+\newcommand{\rvFsevenRefMax}{9}
+\newcommand{\rvAboveThrN}{26}
+% audit/decontam/rule.json
+\newcommand{\rvRuleSha}{b83fa019}
+% audit/review_r1/out/A1_resolution.json
+\newcommand{\rvNoiseMin}{0.034}
+\newcommand{\rvNoiseMax}{0.053}
+\newcommand{\rvScale}{0.05}
+\newcommand{\rvGapThreeMin}{0.005}
+\newcommand{\rvGapThreeMax}{0.033}
+\newcommand{\rvGapBnmMin}{0.09}
+\newcommand{\rvGapBnmMax}{0.13}
+\newcommand{\rvSigmaMin}{0.04}
+\newcommand{\rvSigmaMax}{0.09}
+\newcommand{\rvLagMin}{-0.09}
+\newcommand{\rvLagMax}{+0.14}
+% audit/review_r1/out/A2_top_negatives.json
+\newcommand{\rvTopNegN}{191}
+% audit/review_r1/out/A2_crossmatch.json
+\newcommand{\rvTopNegC}{22}
+% audit/review_r1/out/A3_recall_by_grade.json
+\newcommand{\rvGradeRatioMin}{1.9}
+\newcommand{\rvGradeRatioMax}{3.2}
+% audit/review_r1/out/A2_magnitude_bias.json
+\newcommand{\rvAboveFaintPct}{34}
+\newcommand{\rvPoolFaintPct}{43}
+% audit/review_r1/out/A3_recall_by_property.json
+\newcommand{\rvThetaN}{245}
+\newcommand{\rvConfTestN}{391}
+% audit/review_r1/out/A3_galleries.json
+\newcommand{\rvMissedAllN}{136}
+\newcommand{\rvMissedAllB}{99}
+% runs/{dann_main,baseline_unfrozen,bnm_r6_folds}/*/run.json (dann_d_holdout_n / target_holdout_n), all 12 folds; audit/review_r1b/out/L1_target_labels.json
+\newcommand{\rvHoldoutN}{78}
+% audit/review_r1b/out/L2_bright_pool.json
+\newcommand{\rvBrightN}{14\,950}
+\newcommand{\rvBnmBrightRatio}{0.55}
+\newcommand{\rvBnmDOneRatio}{0.71}
+% runs/bnm_r6_prereg.json
+\newcommand{\rvGradShiftPct}{27.6}
+% PROJECTv7.md:494 (no-DA head AUROC)
+\newcommand{\rvEarlyNoDa}{0.61}
+% PROJECTv7.md:4143 (plain DANN head AUROC)
+\newcommand{\rvEarlyDann}{0.37}
+% PROJECTv7.md:494 (IW-CDAN head AUROC)
+\newcommand{\rvEarlyIw}{0.33}
+% PROJECTv7.md:3178-3181 (frozen linear probe)
+\newcommand{\rvEarlyProbe}{0.90}

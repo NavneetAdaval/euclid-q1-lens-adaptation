@@ -1,0 +1,100 @@
+================================================================================
+LEVER 1 SCREEN -- baselineA_fold0_nb0_image_kaggle  (fold 0, 8000 steps)
+================================================================================
+  run                 : nb0_image
+  run_dir             : baselineA_fold0_nb0_image
+  n_blocks            : 0
+  lp_ft               : False
+  init_head_from      : None
+  budget_steps        : 8000
+  is_preregistered_budget: True
+  curve_every         : 250
+  batch_size          : 256
+  true_batch          : True
+  gradient_accumulation: False
+  grad_checkpointing  : False
+  lr                  : 0.001
+  backbone_lr         : None
+  lr_decay            : 0.75
+  weight_decay        : 0.0001
+  pos_fraction        : 0.5
+  seed                : 42
+  head_type           : linear
+  fold                : 0
+  selection_rule      : R1_last_checkpoint_step8000
+  method              : baseline_A_source_only
+  domain_adaptation   : None
+  encoder_eval        : frozen_feature_cache
+  augmentation        : weak (+-3px translate, PROJECT.md 7.3)
+  fp16                : True
+  precision           : fp16
+  device              : cuda
+  control_reference   : /kaggle/working/lens_paper/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+================================================================================
+
+====================================================================================
+§1 PRECONDITION CHECK -- only n_blocks may differ from the reference run
+  reference: /kaggle/working/reference_run_config.json
+====================================================================================
+  key                    | reference                  | this run             | status
+  --------------------------------------------------------------------------------
+  augmentation           | weak (+-3px translate, PROJECT.md 7.3) | weak (+-3px translate, PROJECT.md 7.3) | ok
+  precision              | fp16                       | fp16                 | ok
+  seed                   | 42                         | 42                   | ok
+  batch_size             | 256                        | 256                  | ok
+  budget_steps           | 8000                       | 8000                 | ok
+  lr                     | 0.001                      | 0.001                | ok
+  backbone_lr            | None                       | None                 | ok
+  lr_decay               | 0.75                       | 0.75                 | ok
+  weight_decay           | 0.0001                     | 0.0001               | ok
+  pos_fraction           | 0.5                        | 0.5                  | ok
+  head_type              | linear                     | linear               | ok
+  fold                   | 0                          | 0                    | ok
+  curve_every            | 250                        | 250                  | ok
+  true_batch             | True                       | True                 | ok
+  gradient_accumulation  | False                      | False                | ok
+  n_blocks               | 0                          | 0                    | EXEMPT
+  grad_checkpointing     | False                      | False                | EXEMPT
+  --------------------------------------------------------------------------------
+  ALL PINNED SETTINGS MATCH -- the screen is measuring n_blocks alone.
+
+[data] source_train n=48000  188 steps/epoch  -> 43 epochs (8084 steps; R1 = step_8000)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[loader] num_workers=2
+[ref] scoring round-1 Baseline A on target_fold0 for the agreement column ...
+    [step   250/8000] loss=0.1033  val_auroc=0.9912 val_tpr=0.5498 | fold0 tpr@1e-3=0.0918 agr=0.9034 | 2.4 min
+    [step   500/8000] loss=0.1139  val_auroc=0.9923 val_tpr=0.5452 | fold0 tpr@1e-3=0.1020 agr=0.9116 | 4.4 min
+    [step   750/8000] loss=0.1447  val_auroc=0.9933 val_tpr=0.5667 | fold0 tpr@1e-3=0.1224 agr=0.9283 | 6.3 min
+    [step  1000/8000] loss=0.1086  val_auroc=0.9936 val_tpr=0.5582 | fold0 tpr@1e-3=0.1224 agr=0.9395 | 8.2 min
+    [step  1250/8000] loss=0.1160  val_auroc=0.9934 val_tpr=0.5670 | fold0 tpr@1e-3=0.1020 agr=0.9367 | 10.5 min
+    [step  1500/8000] loss=0.0934  val_auroc=0.9934 val_tpr=0.6295 | fold0 tpr@1e-3=0.1224 agr=0.9348 | 12.6 min
+    [step  1750/8000] loss=0.1086  val_auroc=0.9941 val_tpr=0.5932 | fold0 tpr@1e-3=0.1327 agr=0.9510 | 14.7 min
+    [step  2000/8000] loss=0.0876  val_auroc=0.9941 val_tpr=0.6088 | fold0 tpr@1e-3=0.1327 agr=0.9515 | 17.0 min
+    [step  2250/8000] loss=0.0643  val_auroc=0.9942 val_tpr=0.6013 | fold0 tpr@1e-3=0.1327 agr=0.9531 | 19.0 min
+    [step  2500/8000] loss=0.1320  val_auroc=0.9943 val_tpr=0.6227 | fold0 tpr@1e-3=0.1224 agr=0.9578 | 21.1 min
+    [step  2750/8000] loss=0.1230  val_auroc=0.9934 val_tpr=0.6435 | fold0 tpr@1e-3=0.1122 agr=0.9391 | 23.4 min
+    [step  3000/8000] loss=0.0558  val_auroc=0.9943 val_tpr=0.6442 | fold0 tpr@1e-3=0.1224 agr=0.9579 | 25.4 min
+    [step  3250/8000] loss=0.1381  val_auroc=0.9936 val_tpr=0.6298 | fold0 tpr@1e-3=0.1122 agr=0.9453 | 27.7 min
+    [step  3500/8000] loss=0.1249  val_auroc=0.9943 val_tpr=0.5932 | fold0 tpr@1e-3=0.1327 agr=0.9571 | 29.8 min
+    [step  3750/8000] loss=0.0829  val_auroc=0.9945 val_tpr=0.6538 | fold0 tpr@1e-3=0.1327 agr=0.9639 | 31.8 min
+    [step  4000/8000] loss=0.1078  val_auroc=0.9944 val_tpr=0.6583 | fold0 tpr@1e-3=0.1224 agr=0.9604 | 34.2 min
+    [step  4250/8000] loss=0.0676  val_auroc=0.9942 val_tpr=0.5918 | fold0 tpr@1e-3=0.1224 agr=0.9610 | 36.2 min
+    [step  4500/8000] loss=0.1033  val_auroc=0.9941 val_tpr=0.5895 | fold0 tpr@1e-3=0.1429 agr=0.9562 | 38.4 min
+    [step  4750/8000] loss=0.0657  val_auroc=0.9945 val_tpr=0.5833 | fold0 tpr@1e-3=0.1224 agr=0.9640 | 40.7 min
+    [step  5000/8000] loss=0.0406  val_auroc=0.9943 val_tpr=0.6387 | fold0 tpr@1e-3=0.1327 agr=0.9614 | 42.6 min
+    [step  5250/8000] loss=0.0986  val_auroc=0.9942 val_tpr=0.6600 | fold0 tpr@1e-3=0.1122 agr=0.9571 | 44.9 min
+    [step  5500/8000] loss=0.1433  val_auroc=0.9944 val_tpr=0.6405 | fold0 tpr@1e-3=0.1327 agr=0.9674 | 47.0 min
+    [step  5750/8000] loss=0.0845  val_auroc=0.9944 val_tpr=0.6692 | fold0 tpr@1e-3=0.1327 agr=0.9643 | 49.0 min
+    [step  6000/8000] loss=0.0545  val_auroc=0.9945 val_tpr=0.6433 | fold0 tpr@1e-3=0.1327 agr=0.9650 | 51.4 min
+    [step  6250/8000] loss=0.0780  val_auroc=0.9942 val_tpr=0.6548 | fold0 tpr@1e-3=0.1531 agr=0.9601 | 53.3 min
+    [step  6500/8000] loss=0.0971  val_auroc=0.9947 val_tpr=0.6648 | fold0 tpr@1e-3=0.1531 agr=0.9671 | 55.5 min
+    [step  6750/8000] loss=0.1111  val_auroc=0.9947 val_tpr=0.6863 | fold0 tpr@1e-3=0.1633 agr=0.9699 | 57.7 min
+    [step  7000/8000] loss=0.0712  val_auroc=0.9945 val_tpr=0.6482 | fold0 tpr@1e-3=0.1429 agr=0.9641 | 59.7 min
+    [step  7250/8000] loss=0.0652  val_auroc=0.9947 val_tpr=0.6522 | fold0 tpr@1e-3=0.1429 agr=0.9667 | 61.9 min
+    [step  7500/8000] loss=0.0863  val_auroc=0.9946 val_tpr=0.6558 | fold0 tpr@1e-3=0.1633 agr=0.9668 | 64.0 min
+    [step  7750/8000] loss=0.0916  val_auroc=0.9945 val_tpr=0.6490 | fold0 tpr@1e-3=0.1122 agr=0.9637 | 66.0 min
+    [step  8000/8000] loss=0.1053  val_auroc=0.9945 val_tpr=0.6110 | fold0 tpr@1e-3=0.1429 agr=0.9681 | 68.3 min
+[train] done in 68.3 min (8000 steps)
+
+[R1] baselineA_fold0_nb0_image  fold0  TPR@0.001 = 0.1429   AUROC = 0.9217   AUPRC = 0.1560
+[out] run_config.json + results.json + curve.csv + scores/ -> /kaggle/working/lens_paper/runs/baselineA_fold0_nb0_image_kaggle

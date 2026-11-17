@@ -1,0 +1,45 @@
+{
+  "structure": "shared-negative resample once per draw; per-fold thresholds; paired positive indices across arms",
+  "n_shared_negatives": 26399,
+  "per_fold": {
+    "1": {
+      "unfrozen": 0.41836734693877553,
+      "round1": 0.336734693877551,
+      "diff": 0.08163265306122452
+    },
+    "2": {
+      "unfrozen": 0.47959183673469385,
+      "round1": 0.35714285714285715,
+      "diff": 0.1224489795918367
+    },
+    "3": {
+      "unfrozen": 0.336734693877551,
+      "round1": 0.3163265306122449,
+      "diff": 0.02040816326530609
+    },
+    "4": {
+      "unfrozen": 0.4329896907216495,
+      "round1": 0.3402061855670103,
+      "diff": 0.09278350515463918
+    }
+  },
+  "unfrozen_fold_mean": 0.41692089206816746,
+  "round1_fold_mean": 0.33760256679991585,
+  "diff": 0.07931832526825161,
+  "ci": [
+    0.007520907847675166,
+    0.16897288554597095
+  ],
+  "ci_half_width": 0.08072598884914789,
+  "bootstrap_median": 0.08678729223648218,
+  "frac_draws_le_0": 0.0188,
+  "ci_excludes_zero": true,
+  "B": 5000,
+  "seed": 0,
+  "sanity_anchor_paired_t": {
+    "t": 3.6991314866107405,
+    "df": 3,
+    "p": 0.03429861538944601,
+    "note": "assumes fold independence -- NOT the result"
+  }
+}

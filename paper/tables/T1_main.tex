@@ -1,0 +1,34 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_t1_main.py)
+% T1 -- main results, folds 1-4. TPR@FPR=1e-3, fold-mean.
+% Source: each arm's per-checkpoint logits via scripts/analyze_window_average.ARMS + metrics.metric_suite.
+\begin{table}[tbp]
+\centering
+\caption{\textbf{Main results: label-free TPR at FPR${}=10^{-3}$, folds 1--4.}
+Each arm is read at the step fixed by its own budget rule, declared and hashed
+before that arm's confirmatory folds existed; what differs between arms is only
+\emph{where} each is read. \textbf{Fold 0 is development and enters no mean.}
+Values are rates; the metric quantises at $1/98$ on folds 1--3 and $1/97$ on
+fold 4. The sd is the across-fold sample sd of four values, not a standard error.
+\textbf{Baseline A's row is its folds-1--4 mean (0.1842)}, the only
+admissible comparator on the confirmatory basis; its 5-fold mean is 0.1963
+and the difference is entirely fold~0.
+$^{\dagger}$BNM's rule-derived budget of 1000 fired \texttt{no\_matched\_arm\_budget}
+and is its own-objective reading only, so the arm is reported at the mandatory
+4000 readout shared with the $\lambda=0$ known-null.
+\label{tab:main}}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrl}
+\toprule
+Arm & TPR@$10^{-3}$ & sd & Budget & Read at & Encoder \\
+\midrule
+Baseline A (frozen) & $0.1842$ & $0.0327$ & 8000 & 8000 & frozen (nb0) \\
+$\lambda=0$ unfrozen control & $0.1842$ & $0.0346$ & 4000 & 4000 & unfrozen (nb3) \\
+BNM $\times$ nb3 & $0.4040$ & $0.0378$ & 1000\,$^{\dagger}$ & 4000 & unfrozen (nb3) \\
+FreeMatch $\times$ nb3 & $0.5167$ & $0.0697$ & 1500 & 1500 & unfrozen (nb3) \\
+DANN $\times$ nb3 & $0.4985$ & $0.1706$ & 4000 & 4000 & unfrozen (nb3) \\
+CORAL $\times$ nb3 & $0.5216$ & $0.0751$ & 2000 & 2000 & unfrozen (nb3) \\
+\bottomrule
+\end{tabular}
+\end{table}

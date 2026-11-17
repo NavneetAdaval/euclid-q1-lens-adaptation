@@ -1,0 +1,39 @@
+{
+  "budget_steps": 8000,
+  "epochs_trained": 43,
+  "steps_per_epoch": 188,
+  "curve_every": 250,
+  "batch_size": 256,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "pos_fraction": 0.5,
+  "seed": 42,
+  "head_type": "linear",
+  "selection_rule": "R1_last_checkpoint_step8000",
+  "curve_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "target_fpr": 0.001,
+  "method": "deep_coral",
+  "domain_adaptation": "coral",
+  "coral_peak_gamma": 1.0,
+  "coral_weight_schedule": "warmup_cosine",
+  "coral_warmup_frac": 0.1,
+  "coral_min_frac": 0.1,
+  "coral_shrinkage": 0.1,
+  "coral_include_mean": true,
+  "coral_target_ema": true,
+  "coral_ema_momentum": 0.9,
+  "stop_on_blowup": false,
+  "agreement_ref": "C:\\Users\\krris\\ML\\lens_paper\\runs\\bakeoff_baseline_A\\checkpoints\\step_8000.pt",
+  "folds_this_invocation": [
+    1,
+    2,
+    3,
+    4
+  ]
+}

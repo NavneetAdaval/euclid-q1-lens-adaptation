@@ -1,0 +1,10 @@
+{
+ "bundle": "/kaggle/input/datasets/navneet78/lens-paper-dilute10",
+ "version": 2,
+ "data_dir": "/kaggle/input/datasets/navneet78/lens-paper-dilute10/data/data",
+ "work": "/kaggle/working",
+ "part1": "bd537a025e81833e73713649c9eed68fd6a0fd3152ee29240f9a333f7c649d85",
+ "part2": "b8e09197a204be835fa089c858b08c7eb3e7887bfa19afd296d544d04f394503",
+ "pool": "18c73d6c1cbad99e61d43fa5bc1c972e6347f328253904fa03a64cc8d68153be",
+ "manifest_sha256": "6f8cc9ce018bcfe6fca533b44b1fa1f9a411ef17f2a2e70442c8f9ea5d2e9536"
+}

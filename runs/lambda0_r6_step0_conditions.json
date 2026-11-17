@@ -1,0 +1,99 @@
+{
+  "trajectory": {
+    "file": "runs/dann_r5_arm1_control/steps.csv",
+    "n_rows": 8000,
+    "first_logged_step": 1,
+    "last_step": 8000
+  },
+  "conditions": {
+    "1_d_overpowering": {
+      "declaration": "held-out-target domain accuracy > 0.95 for 1000 consecutive steps WITH the domain loss not falling",
+      "first_logged_step_value": 0.7564102411270142,
+      "true_step0_value": null,
+      "FIRES_AT_FIRST_LOGGED_STEP": false,
+      "sustain_required_steps": 1000,
+      "longest_streak_on_arm1": 0,
+      "would_fire_on_arm1": false,
+      "runner_logged_fired_flag": false,
+      "note": "on the lambda=0 arm D trains against a representation no adversarial gradient is shaping, so this condition is about D's own capacity, not about adaptation"
+    },
+    "2_degenerate_collapse": {
+      "declaration": "d_pred_source_frac outside [0.2, 0.8] for 500 consecutive steps",
+      "first_logged_step_value": 0.43359375,
+      "true_step0_value": null,
+      "FIRES_AT_FIRST_LOGGED_STEP": false,
+      "sustain_required_steps": 500,
+      "longest_streak_on_arm1": 0,
+      "would_fire_on_arm1": false,
+      "runner_logged_fired_flag": false
+    },
+    "3a_morph_vs_control": {
+      "declaration": "morph AUROC below the lambda=0 control's value at the SAME ABSOLUTE step by more than M, sustained 500 steps",
+      "margin_M": null,
+      "status": "INACTIVE and INAPPLICABLE. M is UNSET (7.19 declared 3a UNCALIBRABLE: 3J = 0.099 against a ceiling of 0.04). It is also structurally meaningless HERE -- this arm IS the control, so the condition would compare the control against itself.",
+      "FIRES_AT_FIRST_LOGGED_STEP": false,
+      "first_logged_step_value": null,
+      "true_step0_value": null,
+      "would_fire_on_arm1": false
+    },
+    "3b_sign_flip_HEAD_column": {
+      "declaration": "morph_head_auroc_pool < 0.5 (no sustain)",
+      "first_logged_step_value": 0.435638427734375,
+      "true_step0_value": 0.56573486328125,
+      "FIRES_AT_FIRST_LOGGED_STEP": true,
+      "sustain_required_steps": null,
+      "longest_streak_on_arm1": 375,
+      "would_fire_on_arm1": true,
+      "runner_logged_fired_flag": true,
+      "note": "the ~0.57-scale instrument. NEVER quote one of these as the other (7.19): they read ~0.34 apart at step 0."
+    },
+    "3b_sign_flip_PROBE_column": {
+      "declaration": "morph_proxy_auroc < 0.7 (no sustain)",
+      "first_logged_step_value": 0.917236328125,
+      "true_step0_value": 0.920166015625,
+      "FIRES_AT_FIRST_LOGGED_STEP": false,
+      "sustain_required_steps": null,
+      "longest_streak_on_arm1": 0,
+      "would_fire_on_arm1": false,
+      "runner_logged_fired_flag": true,
+      "note": "the ~0.92-scale instrument. NEVER quote one of these as the other (7.19): they read ~0.34 apart at step 0."
+    },
+    "4_rank_collapse_src": {
+      "declaration": "src_participation_ratio < 20 of 640, sustained 500 steps",
+      "first_logged_step_value": 9.074599187597864,
+      "true_step0_value": null,
+      "FIRES_AT_FIRST_LOGGED_STEP": true,
+      "sustain_required_steps": 500,
+      "longest_streak_on_arm1": 8000,
+      "would_fire_on_arm1": true,
+      "runner_logged_fired_flag": true
+    },
+    "4_rank_collapse_tgt": {
+      "declaration": "tgt_participation_ratio < 20 of 640, sustained 500 steps",
+      "first_logged_step_value": 10.396473551656213,
+      "true_step0_value": null,
+      "FIRES_AT_FIRST_LOGGED_STEP": true,
+      "sustain_required_steps": 500,
+      "longest_streak_on_arm1": 8000,
+      "would_fire_on_arm1": true,
+      "runner_logged_fired_flag": true
+    }
+  },
+  "step0_morphology_instruments": {
+    "morph_head_auroc": 0.578125,
+    "morph_head_auroc_pool": 0.56573486328125,
+    "morph_proxy_auroc": 0.920166015625,
+    "morph_proxy_auroc_encoder": 0.92138671875,
+    "morph_n_eval": 128.0,
+    "morph_n_pool": 256.0,
+    "measure_seconds": 4.6,
+    "dann_lambda_at_step0": 0.0,
+    "dann_lambda_zero": false
+  },
+  "any_condition_fires_at_first_logged_step": true,
+  "conditions_that_would_fire_on_arm1": [
+    "3b_sign_flip_HEAD_column",
+    "4_rank_collapse_src",
+    "4_rank_collapse_tgt"
+  ]
+}

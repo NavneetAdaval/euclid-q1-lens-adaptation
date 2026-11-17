@@ -1,0 +1,46 @@
+{
+  "cells": {
+    "A_none_fp32": {
+      "config": "aug=none, fp32",
+      "tpr": 0.19387755102040816,
+      "auroc": 0.9427614373148023
+    },
+    "B_weak_fp32": {
+      "config": "aug=weak, fp32",
+      "tpr": 0.14285714285714285,
+      "auroc": 0.9214170914018852
+    },
+    "C_weak_fp16": {
+      "config": "aug=weak, fp16",
+      "tpr": 0.12244897959183673,
+      "auroc": 0.9242913499351785
+    }
+  },
+  "augmentation_effect_at_fp32": {
+    "diff": -0.05102040816326531,
+    "ci": [
+      -0.12244897959183673,
+      0.0
+    ],
+    "significant": false
+  },
+  "precision_effect_at_weak_aug": {
+    "diff": -0.020408163265306117,
+    "ci": [
+      -0.05102040816326531,
+      0.030612244897959176
+    ],
+    "significant": false
+  },
+  "total": {
+    "diff": -0.07142857142857142,
+    "ci": [
+      -0.13265306122448978,
+      -0.010204081632653045
+    ],
+    "significant": true
+  },
+  "interaction": "NOT IDENTIFIED (requires cell D: aug=none, fp16)",
+  "n_pos": 98,
+  "one_lens": 0.01020408163265306
+}

@@ -1,0 +1,872 @@
+file,line,row,col,tok,text,orig,D1,D2,delta_D1,delta_D2,provenance
+A3_orderings.tex,6,,0,0,\setlength{\tabcolsep}{4pt},4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,7,,0,0,\begin{tabular}{p{0.3\textwidth}lp{0.52\textwidth}},0.3,0.3,0.3,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,7,,0,1,\begin{tabular}{p{0.3\textwidth}lp{0.52\textwidth}},0.52,0.52,0.52,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,11,1. The budget at which the self-training arm's curve peaks,0,0,1. The budget at which the self-training arm's curve peaks,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,11,1. The budget at which the self-training arm's curve peaks,2,0,None of 24 candidate budgets (500--3375 steps) is distinguis,24.0,24.0,24.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,11,1. The budget at which the self-training arm's curve peaks,2,1,None of 24 candidate budgets (500--3375 steps) is distinguis,500.0,500.0,500.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,11,1. The budget at which the self-training arm's curve peaks,2,2,None of 24 candidate budgets (500--3375 steps) is distinguis,-3375.0,-3375.0,-3375.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,11,1. The budget at which the self-training arm's curve peaks,2,3,None of 24 candidate budgets (500--3375 steps) is distinguis,750.0,750.0,750.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,13,2. Decay sets in before the 8000-step cap,0,0,2. Decay sets in before the 8000-step cap,2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,13,2. Decay sets in before the 8000-step cap,0,1,2. Decay sets in before the 8000-step cap,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,13,2. Decay sets in before the 8000-step cap,2,0,Detectable only at the full cap of 8000; every shorter trunc,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,13,2. Decay sets in before the 8000-step cap,2,1,Detectable only at the full cap of 8000; every shorter trunc,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,13,2. Decay sets in before the 8000-step cap,2,2,Detectable only at the full cap of 8000; every shorter trunc,-6000.0,-6000.0,-6000.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,15,3. Source--target agreement at initialisation predicts which feature d,0,0,3. Source--target agreement at initialisation predicts which,3.0,3.0,3.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,15,3. Source--target agreement at initialisation predicts which feature d,2,0,"Spearman $\rho = -0.76$ at the weight used, but $-0.90$ at w",-0.76,-0.76,-0.76,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,15,3. Source--target agreement at initialisation predicts which feature d,2,1,"Spearman $\rho = -0.76$ at the weight used, but $-0.90$ at w",-0.9,-0.9,-0.9,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,15,3. Source--target agreement at initialisation predicts which feature d,2,2,"Spearman $\rho = -0.76$ at the weight used, but $-0.90$ at w",-0.002,-0.002,-0.002,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,17,4. A Fisher-ratio separability measure rises with the alignment weight,0,0,4. A Fisher-ratio separability measure rises with the alignm,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,17,4. A Fisher-ratio separability measure rises with the alignment weight,2,0,Monotone in the weight at whitening shrinkage 0.01 and 0.1; ,0.01,0.01,0.01,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,17,4. A Fisher-ratio separability measure rises with the alignment weight,2,1,Monotone in the weight at whitening shrinkage 0.01 and 0.1; ,0.1,0.1,0.1,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,17,4. A Fisher-ratio separability measure rises with the alignment weight,2,2,Monotone in the weight at whitening shrinkage 0.01 and 0.1; ,0.5,0.5,0.5,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,17,4. A Fisher-ratio separability measure rises with the alignment weight,2,3,Monotone in the weight at whitening shrinkage 0.01 and 0.1; ,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,17,4. A Fisher-ratio separability measure rises with the alignment weight,2,4,Monotone in the weight at whitening shrinkage 0.01 and 0.1; ,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,19,"5. The ranking of the three unfrozen adaptation arms, under the choice",0,0,"5. The ranking of the three unfrozen adaptation arms, under ",5.0,5.0,5.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,19,"5. The ranking of the three unfrozen adaptation arms, under the choice",2,0,At a single checkpoint DANN is first of three at step 2000 (,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,19,"5. The ranking of the three unfrozen adaptation arms, under the choice",2,1,At a single checkpoint DANN is first of three at step 2000 (,0.455,0.455,0.455,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,19,"5. The ranking of the three unfrozen adaptation arms, under the choice",2,2,At a single checkpoint DANN is first of three at step 2000 (,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,19,"5. The ranking of the three unfrozen adaptation arms, under the choice",2,3,At a single checkpoint DANN is first of three at step 2000 (,0.417,0.417,0.417,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,19,"5. The ranking of the three unfrozen adaptation arms, under the choice",2,4,At a single checkpoint DANN is first of three at step 2000 (,8.0,8.0,8.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,21,6. DANN's across-fold spread exceeds the other arms',0,0,6. DANN's across-fold spread exceeds the other arms',6.0,6.0,6.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,21,6. DANN's across-fold spread exceeds the other arms',2,0,Holds at declared budgets ($0.1525$ against FreeMatch's $0.0,0.1525,0.1706,0.1712,0.0181,0.0187,recomputed from stored scores
+A3_orderings.tex,21,6. DANN's across-fold spread exceeds the other arms',2,1,Holds at declared budgets ($0.1525$ against FreeMatch's $0.0,0.0595,0.0697,0.073,0.0102,0.0135,recomputed from stored scores
+A3_orderings.tex,21,6. DANN's across-fold spread exceeds the other arms',2,2,Holds at declared budgets ($0.1525$ against FreeMatch's $0.0,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,21,6. DANN's across-fold spread exceeds the other arms',2,3,Holds at declared budgets ($0.1525$ against FreeMatch's $0.0,0.1102,0.1125,0.1093,0.0023,-0.0009,recomputed from stored scores
+A3_orderings.tex,21,6. DANN's across-fold spread exceeds the other arms',2,4,Holds at declared budgets ($0.1525$ against FreeMatch's $0.0,0.0885,0.0751,0.074,-0.0134,-0.0145,recomputed from stored scores
+A3_orderings.tex,21,6. DANN's across-fold spread exceeds the other arms',2,5,Holds at declared budgets ($0.1525$ against FreeMatch's $0.0,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,21,6. DANN's across-fold spread exceeds the other arms',2,6,Holds at declared budgets ($0.1525$ against FreeMatch's $0.0,0.0374,0.0255,0.0277,-0.0119,-0.0097,recomputed from stored scores
+A3_orderings.tex,21,6. DANN's across-fold spread exceeds the other arms',2,7,Holds at declared budgets ($0.1525$ against FreeMatch's $0.0,0.0595,0.0697,0.073,0.0102,0.0135,recomputed from stored scores
+A3_orderings.tex,23,7. Folds 3 and 4 are intrinsically hard at the ranking level,0,0,7. Folds 3 and 4 are intrinsically hard at the ranking level,7.0,7.0,7.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,23,7. Folds 3 and 4 are intrinsically hard at the ranking level,0,1,7. Folds 3 and 4 are intrinsically hard at the ranking level,3.0,3.0,3.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,23,7. Folds 3 and 4 are intrinsically hard at the ranking level,0,2,7. Folds 3 and 4 are intrinsically hard at the ranking level,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,23,7. Folds 3 and 4 are intrinsically hard at the ranking level,2,0,"The self-training arm's AUROC on folds 3 and 4 ($0.968$, $0.",3.0,3.0,3.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,23,7. Folds 3 and 4 are intrinsically hard at the ranking level,2,1,"The self-training arm's AUROC on folds 3 and 4 ($0.968$, $0.",4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,23,7. Folds 3 and 4 are intrinsically hard at the ranking level,2,2,"The self-training arm's AUROC on folds 3 and 4 ($0.968$, $0.",0.968,0.969,0.968,0.001,0.0,recomputed from stored scores
+A3_orderings.tex,23,7. Folds 3 and 4 are intrinsically hard at the ranking level,2,3,"The self-training arm's AUROC on folds 3 and 4 ($0.968$, $0.",0.97,0.971,0.969,0.001,-0.001,recomputed from stored scores
+A3_orderings.tex,23,7. Folds 3 and 4 are intrinsically hard at the ranking level,2,4,"The self-training arm's AUROC on folds 3 and 4 ($0.968$, $0.",1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,23,7. Folds 3 and 4 are intrinsically hard at the ranking level,2,5,"The self-training arm's AUROC on folds 3 and 4 ($0.968$, $0.",0.949,0.95,0.949,0.001,0.0,recomputed from stored scores
+A3_orderings.tex,25,8. The three unfrozen adaptation arms can be ranked at all \emph{(a me,0,0,8. The three unfrozen adaptation arms can be ranked at all \,8.0,8.0,8.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,25,8. The three unfrozen adaptation arms can be ranked at all \emph{(a me,2,0,"On one fold, one run's checkpoint-to-checkpoint scatter is 2",2.8,2.8,2.8,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,25,8. The three unfrozen adaptation arms can be ranked at all \emph{(a me,2,1,"On one fold, one run's checkpoint-to-checkpoint scatter is 2",-5.1,-5.1,-5.1,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,25,8. The three unfrozen adaptation arms can be ranked at all \emph{(a me,2,2,"On one fold, one run's checkpoint-to-checkpoint scatter is 2",1.4,1.4,1.4,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,25,8. The three unfrozen adaptation arms can be ranked at all \emph{(a me,2,3,"On one fold, one run's checkpoint-to-checkpoint scatter is 2",-3.3,-3.3,-3.3,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,25,8. The three unfrozen adaptation arms can be ranked at all \emph{(a me,2,4,"On one fold, one run's checkpoint-to-checkpoint scatter is 2",1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,0,0,9. Unfreezing without an adaptation term is the least stable,9.0,9.0,9.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,0,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,250.0,250.0,250.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,1,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,-8000.0,-8000.0,-8000.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,2,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,0.276,0.276,0.276,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,3,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,0.202,0.202,0.202,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,4,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,0.176,0.176,0.176,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,5,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,0.115,0.115,0.115,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,6,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,250.0,250.0,250.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,7,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,-4000.0,-4000.0,-4000.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,8,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,0.258,0.258,0.258,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,9,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,0.256,0.256,0.256,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,10,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,0.119,0.119,0.119,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,27,9. Unfreezing without an adaptation term is the least stable arm,2,11,Holds on steps 250--8000 (checkpoint sd/mean $0.276$ against,0.133,0.133,0.133,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,29,10. The budget rule's crossing step is fixed by the trajectory,0,0,10. The budget rule's crossing step is fixed by the trajecto,10.0,10.0,10.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,29,10. The budget rule's crossing step is fixed by the trajectory,2,0,"The closest reading below the ceiling, at step 325, falls $0",325.0,325.0,325.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,29,10. The budget rule's crossing step is fixed by the trajectory,2,1,"The closest reading below the ceiling, at step 325, falls $0",0.025,0.025,0.025,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,29,10. The budget rule's crossing step is fixed by the trajectory,2,2,"The closest reading below the ceiling, at step 325, falls $0",650.0,650.0,650.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,29,10. The budget rule's crossing step is fixed by the trajectory,2,3,"The closest reading below the ceiling, at step 325, falls $0",1000.0,1000.0,1000.0,0.0,0.0,recomputed from stored scores
+A3_orderings.tex,29,10. The budget rule's crossing step is fixed by the trajectory,2,4,"The closest reading below the ceiling, at step 325, falls $0",35.0,35.0,35.0,0.0,0.0,recomputed from stored scores
+M_orderings.tex,1,,0,0,\newcommand{\orderingsCount}{10},10.0,10.0,10.0,0.0,0.0,recomputed from stored scores
+M_orderings.tex,5,,0,0,\newcommand{\spreadDannDeclared}{$0.1525$},0.1525,0.1706,0.1712,0.0181,0.0187,recomputed from stored scores
+M_orderings.tex,6,,0,0,\newcommand{\spreadDannDeclaredBudget}{4000},4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+M_orderings.tex,7,,0,0,\newcommand{\spreadFreeMatchDeclared}{$0.0595$},0.0595,0.0697,0.073,0.0102,0.0135,recomputed from stored scores
+M_orderings.tex,8,,0,0,\newcommand{\spreadFreeMatchDeclaredBudget}{1500},1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+M_orderings.tex,9,,0,0,\newcommand{\spreadDannMatched}{$0.0374$},0.0374,0.0255,0.0277,-0.0119,-0.0097,recomputed from stored scores
+M_orderings.tex,10,,0,0,\newcommand{\spreadMatchedBudget}{1500},1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+M_orderings.tex,11,,0,0,\newcommand{\meanDannDeclared}{$0.4167$},0.4167,0.4985,0.4997,0.0818,0.083,recomputed from stored scores
+M_orderings.tex,12,,0,0,\newcommand{\meanFreeMatchDeclared}{$0.4169$},0.4169,0.5167,0.5114,0.0998,0.0945,recomputed from stored scores
+M_orderings.tex,13,,0,0,\newcommand{\meanDannSensitivity}{$0.4551$},0.4551,0.5547,0.5547,0.0996,0.0996,recomputed from stored scores
+M_orderings.tex,14,,0,0,\newcommand{\meanDannSensitivityStep}{2000},2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+M_orderings.tex,15,,0,0,\newcommand{\contrastCount}{13},13.0,13.0,13.0,0.0,0.0,recomputed from stored scores
+M_orderings.tex,16,,0,0,\newcommand{\diffSdDannLambda}{$0.1393$},0.1393,0.1621,0.155,0.0228,0.0157,recomputed from stored scores
+M_orderings.tex,17,,0,0,\newcommand{\diffSdNext}{$0.1253$},0.1253,0.1357,0.1306,0.0104,0.0053,recomputed from stored scores
+T1_main.tex,3,,0,0,\caption{\textbf{Main results: label-free TPR at FPR${}=10^{,10.0,10.0,10.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,3,,0,1,\caption{\textbf{Main results: label-free TPR at FPR${}=10^{,-3.0,-3.0,-3.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,3,,0,2,\caption{\textbf{Main results: label-free TPR at FPR${}=10^{,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,3,,0,3,\caption{\textbf{Main results: label-free TPR at FPR${}=10^{,-4.0,-4.0,-4.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,6,,0,0,\emph{where} each is read. \textbf{Fold 0 is development and,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,7,,0,0,Values are rates; the metric quantises at $1/98$ on folds 1-,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,7,,0,1,Values are rates; the metric quantises at $1/98$ on folds 1-,98.0,98.0,98.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,7,,0,2,Values are rates; the metric quantises at $1/98$ on folds 1-,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,7,,0,3,Values are rates; the metric quantises at $1/98$ on folds 1-,-3.0,-3.0,-3.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,7,,0,4,Values are rates; the metric quantises at $1/98$ on folds 1-,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,7,,0,5,Values are rates; the metric quantises at $1/98$ on folds 1-,97.0,97.0,97.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,8,,0,0,"fold 4. The sd is the across-fold sample sd of four values, ",4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,9,,0,0,"\textbf{Baseline A's row is its folds-1--4 mean (0.1714)}, t",1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,9,,0,1,"\textbf{Baseline A's row is its folds-1--4 mean (0.1714)}, t",-4.0,-4.0,-4.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,9,,0,2,"\textbf{Baseline A's row is its folds-1--4 mean (0.1714)}, t",0.1714,0.1842,0.1742,0.0128,0.0028,recomputed from stored scores
+T1_main.tex,10,,0,0,admissible comparator on the confirmatory basis; its 5-fold ,5.0,5.0,5.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,10,,0,1,admissible comparator on the confirmatory basis; its 5-fold ,0.1759,0.1963,0.1878,0.0204,0.0119,recomputed from stored scores
+T1_main.tex,11,,0,0,and the difference is entirely fold~0.,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,12,,0,0,$^{\dagger}$BNM's rule-derived budget of 1000 fired \texttt{,1000.0,1000.0,1000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,14,,0,0,4000 readout shared with the $\lambda=0$ known-null.,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,14,,0,1,4000 readout shared with the $\lambda=0$ known-null.,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,17,,0,0,\setlength{\tabcolsep}{4pt},4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,20,Arm,1,0,TPR@$10^{-3}$,10.0,10.0,10.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,20,Arm,1,1,TPR@$10^{-3}$,-3.0,-3.0,-3.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,22,Baseline A (frozen),1,0,$0.1714$,0.1714,0.1842,0.1742,0.0128,0.0028,recomputed from stored scores
+T1_main.tex,22,Baseline A (frozen),2,0,$0.0274$,0.0274,0.0327,0.032,0.0053,0.0046,recomputed from stored scores
+T1_main.tex,22,Baseline A (frozen),3,0,8000,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,22,Baseline A (frozen),4,0,8000,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,23,$\lambda=0$ unfrozen control,0,0,$\lambda=0$ unfrozen control,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,23,$\lambda=0$ unfrozen control,1,0,$0.1355$,0.1355,0.1842,0.1852,0.0487,0.0497,recomputed from stored scores
+T1_main.tex,23,$\lambda=0$ unfrozen control,2,0,$0.0364$,0.0364,0.0346,0.0444,-0.0018,0.008,recomputed from stored scores
+T1_main.tex,23,$\lambda=0$ unfrozen control,3,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,23,$\lambda=0$ unfrozen control,4,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,24,BNM $\times$ nb3,1,0,$0.3274$,0.3274,0.404,0.4087,0.0766,0.0813,recomputed from stored scores
+T1_main.tex,24,BNM $\times$ nb3,2,0,$0.0357$,0.0357,0.0378,0.0451,0.0021,0.0094,recomputed from stored scores
+T1_main.tex,24,BNM $\times$ nb3,3,0,"1000\,$^{\dagger}$",1000.0,1000.0,1000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,24,BNM $\times$ nb3,4,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,25,FreeMatch $\times$ nb3,1,0,$0.4169$,0.4169,0.5167,0.5114,0.0998,0.0945,recomputed from stored scores
+T1_main.tex,25,FreeMatch $\times$ nb3,2,0,$0.0595$,0.0595,0.0697,0.073,0.0102,0.0135,recomputed from stored scores
+T1_main.tex,25,FreeMatch $\times$ nb3,3,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,25,FreeMatch $\times$ nb3,4,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,26,DANN $\times$ nb3,1,0,$0.4167$,0.4167,0.4985,0.4997,0.0818,0.083,recomputed from stored scores
+T1_main.tex,26,DANN $\times$ nb3,2,0,$0.1525$,0.1525,0.1706,0.1712,0.0181,0.0187,recomputed from stored scores
+T1_main.tex,26,DANN $\times$ nb3,3,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,26,DANN $\times$ nb3,4,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,27,CORAL $\times$ nb3,1,0,$0.4348$,0.4348,0.5216,0.5208,0.0868,0.086,recomputed from stored scores
+T1_main.tex,27,CORAL $\times$ nb3,2,0,$0.0885$,0.0885,0.0751,0.074,-0.0134,-0.0145,recomputed from stored scores
+T1_main.tex,27,CORAL $\times$ nb3,3,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T1_main.tex,27,CORAL $\times$ nb3,4,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,3,,0,0,"\caption{\textbf{Paired contrasts in TPR@$10^{-3}$, folds 1-",10.0,10.0,10.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,3,,0,1,"\caption{\textbf{Paired contrasts in TPR@$10^{-3}$, folds 1-",-3.0,-3.0,-3.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,3,,0,2,"\caption{\textbf{Paired contrasts in TPR@$10^{-3}$, folds 1-",1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,3,,0,3,"\caption{\textbf{Paired contrasts in TPR@$10^{-3}$, folds 1-",-4.0,-4.0,-4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,4,,0,0,"Paired $t$-interval on the four per-fold differences, $\math",3.0,3.0,3.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,5,,0,0,bootstrap at $n=4$. ``Signs'' counts the folds agreeing in t,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,8,,0,0,"row, so \textbf{DANN $-$ $\lambda=0$ is the only fully contr",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,11,,0,0,"different head. \textbf{Multiplicity is disclosed, not corre",13.0,13.0,13.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,12,,0,0,"at the 95\% level with no correction, sharing control arms a",95.0,95.0,95.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,14,,0,0,$^{a}$Baseline A is frozen and converged; its 8000-step budg,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,17,,0,0,value is measured by the step-0 gate \emph{inside} each unfr,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,20,,0,0,$^{c}$Budget-unmatched forms kept for continuity with the $\,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,22,,0,0,"$^{d}$Read at each arm's own declared budget, which differ (",4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,22,,0,1,"$^{d}$Read at each arm's own declared budget, which differ (",2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,22,,0,2,"$^{d}$Read at each arm's own declared budget, which differ (",1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,26,,0,0,\setlength{\tabcolsep}{4pt},4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,29,Contrast,2,0,$\Delta$ TPR@$10^{-3}$,10.0,10.0,10.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,29,Contrast,2,1,$\Delta$ TPR@$10^{-3}$,-3.0,-3.0,-3.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,29,Contrast,3,0,95\% CI,95.0,95.0,95.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,31,,0,0,\multicolumn{6}{l}{\textit{Frozen against unfrozen treatment,6.0,6.0,6.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,32,$\lambda=0$ $-$ Baseline A$^{a}$,0,0,$\lambda=0$ $-$ Baseline A$^{a}$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,32,$\lambda=0$ $-$ Baseline A$^{a}$,1,0,4000 / 8000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,32,$\lambda=0$ $-$ Baseline A$^{a}$,1,1,4000 / 8000,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,32,$\lambda=0$ $-$ Baseline A$^{a}$,2,0,$-0.0360$,-0.036,-0.0,0.011,0.036,0.047,recomputed from stored scores
+T2_contrasts.tex,32,$\lambda=0$ $-$ Baseline A$^{a}$,3,0,"$[-0.1249, +0.0530]$",-0.1249,-0.089,-0.0727,0.0359,0.0522,recomputed from stored scores
+T2_contrasts.tex,32,$\lambda=0$ $-$ Baseline A$^{a}$,3,1,"$[-0.1249, +0.0530]$",0.053,0.0889,0.0947,0.0359,0.0417,recomputed from stored scores
+T2_contrasts.tex,32,$\lambda=0$ $-$ Baseline A$^{a}$,4,0,3/4,3.0,3.0,2.0,0.0,-1.0,recomputed from stored scores
+T2_contrasts.tex,32,$\lambda=0$ $-$ Baseline A$^{a}$,4,1,3/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,33,,0,0,\multicolumn{6}{l}{\textit{A target-domain training signal v,6.0,6.0,6.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,34,DANN $-$ $\lambda=0$$^{b}$,0,0,DANN $-$ $\lambda=0$$^{b}$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,34,DANN $-$ $\lambda=0$$^{b}$,1,0,4000 / 4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,34,DANN $-$ $\lambda=0$$^{b}$,1,1,4000 / 4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,34,DANN $-$ $\lambda=0$$^{b}$,2,0,$+0.2812$$^{*}$,0.2812,0.3144,0.3145,0.0332,0.0333,recomputed from stored scores
+T2_contrasts.tex,34,DANN $-$ $\lambda=0$$^{b}$,3,0,"$[+0.0595, +0.5029]$",0.0595,0.0565,0.0679,-0.003,0.0084,recomputed from stored scores
+T2_contrasts.tex,34,DANN $-$ $\lambda=0$$^{b}$,3,1,"$[+0.0595, +0.5029]$",0.5029,0.5722,0.5611,0.0693,0.0582,recomputed from stored scores
+T2_contrasts.tex,34,DANN $-$ $\lambda=0$$^{b}$,4,0,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,34,DANN $-$ $\lambda=0$$^{b}$,4,1,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,35,CORAL $-$ $\lambda=0$,0,0,CORAL $-$ $\lambda=0$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,35,CORAL $-$ $\lambda=0$,1,0,2000 / 2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,35,CORAL $-$ $\lambda=0$,1,1,2000 / 2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,35,CORAL $-$ $\lambda=0$,2,0,$+0.2607$$^{*}$,0.2607,0.3068,0.3116,0.0461,0.0509,recomputed from stored scores
+T2_contrasts.tex,35,CORAL $-$ $\lambda=0$,3,0,"$[+0.0976, +0.4238]$",0.0976,0.1834,0.1898,0.0858,0.0922,recomputed from stored scores
+T2_contrasts.tex,35,CORAL $-$ $\lambda=0$,3,1,"$[+0.0976, +0.4238]$",0.4238,0.4301,0.4334,0.0063,0.0096,recomputed from stored scores
+T2_contrasts.tex,35,CORAL $-$ $\lambda=0$,4,0,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,35,CORAL $-$ $\lambda=0$,4,1,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,36,FreeMatch $-$ $\lambda=0$,0,0,FreeMatch $-$ $\lambda=0$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,36,FreeMatch $-$ $\lambda=0$,1,0,1500 / 1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,36,FreeMatch $-$ $\lambda=0$,1,1,1500 / 1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,36,FreeMatch $-$ $\lambda=0$,2,0,$+0.2712$$^{*}$,0.2712,0.3223,0.3296,0.0511,0.0584,recomputed from stored scores
+T2_contrasts.tex,36,FreeMatch $-$ $\lambda=0$,3,0,"$[+0.1649, +0.3776]$",0.1649,0.1984,0.2023,0.0335,0.0374,recomputed from stored scores
+T2_contrasts.tex,36,FreeMatch $-$ $\lambda=0$,3,1,"$[+0.1649, +0.3776]$",0.3776,0.4463,0.4569,0.0687,0.0793,recomputed from stored scores
+T2_contrasts.tex,36,FreeMatch $-$ $\lambda=0$,4,0,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,36,FreeMatch $-$ $\lambda=0$,4,1,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,37,BNM $-$ $\lambda=0$,0,0,BNM $-$ $\lambda=0$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,37,BNM $-$ $\lambda=0$,1,0,4000 / 4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,37,BNM $-$ $\lambda=0$,1,1,4000 / 4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,37,BNM $-$ $\lambda=0$,2,0,$+0.1919$$^{*}$,0.1919,0.2199,0.2235,0.028,0.0316,recomputed from stored scores
+T2_contrasts.tex,37,BNM $-$ $\lambda=0$,3,0,"$[+0.1278, +0.2561]$",0.1278,0.1383,0.1289,0.0105,0.0011,recomputed from stored scores
+T2_contrasts.tex,37,BNM $-$ $\lambda=0$,3,1,"$[+0.1278, +0.2561]$",0.2561,0.3014,0.3182,0.0453,0.0621,recomputed from stored scores
+T2_contrasts.tex,37,BNM $-$ $\lambda=0$,4,0,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,37,BNM $-$ $\lambda=0$,4,1,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,38,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,0,0,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,38,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,0,1,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,38,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,1,0,2000 / 4000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,38,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,1,1,2000 / 4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,38,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,2,0,$+0.2993$$^{*}$,0.2993,0.3375,0.3355,0.0382,0.0362,recomputed from stored scores
+T2_contrasts.tex,38,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,3,0,"$[+0.1386, +0.4600]$",0.1386,0.1889,0.1893,0.0503,0.0507,recomputed from stored scores
+T2_contrasts.tex,38,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,3,1,"$[+0.1386, +0.4600]$",0.46,0.486,0.4818,0.026,0.0218,recomputed from stored scores
+T2_contrasts.tex,38,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,4,0,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,38,CORAL $-$ $\lambda=0$ (at 4000)$^{c}$,4,1,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,39,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,0,0,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,39,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,0,1,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,39,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,1,0,1500 / 4000,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,39,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,1,1,1500 / 4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,39,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,2,0,$+0.2815$$^{*}$,0.2815,0.3325,0.3262,0.051,0.0447,recomputed from stored scores
+T2_contrasts.tex,39,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,3,0,"$[+0.1858, +0.3771]$",0.1858,0.2272,0.2308,0.0414,0.045,recomputed from stored scores
+T2_contrasts.tex,39,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,3,1,"$[+0.1858, +0.3771]$",0.3771,0.4378,0.4215,0.0607,0.0444,recomputed from stored scores
+T2_contrasts.tex,39,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,4,0,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,39,FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$,4,1,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,40,,0,0,\multicolumn{6}{l}{\textit{Objective against objective}} \\,6.0,6.0,6.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,41,BNM $-$ CORAL,1,0,2000 / 2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,41,BNM $-$ CORAL,1,1,2000 / 2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,41,BNM $-$ CORAL,2,0,$-0.0920$$^{*}$,-0.092,-0.1176,-0.1168,-0.0256,-0.0248,recomputed from stored scores
+T2_contrasts.tex,41,BNM $-$ CORAL,3,0,"$[-0.1680, -0.0160]$",-0.168,-0.1772,-0.1783,-0.0092,-0.0103,recomputed from stored scores
+T2_contrasts.tex,41,BNM $-$ CORAL,3,1,"$[-0.1680, -0.0160]$",-0.016,-0.058,-0.0554,-0.042,-0.0394,recomputed from stored scores
+T2_contrasts.tex,41,BNM $-$ CORAL,4,0,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,41,BNM $-$ CORAL,4,1,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,42,BNM $-$ DANN,1,0,4000 / 4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,42,BNM $-$ DANN,1,1,4000 / 4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,42,BNM $-$ DANN,2,0,$-0.0893$,-0.0893,-0.0945,-0.0909,-0.0052,-0.0016,recomputed from stored scores
+T2_contrasts.tex,42,BNM $-$ DANN,3,0,"$[-0.2887, +0.1101]$",-0.2887,-0.3104,-0.2988,-0.0217,-0.0101,recomputed from stored scores
+T2_contrasts.tex,42,BNM $-$ DANN,3,1,"$[-0.2887, +0.1101]$",0.1101,0.1214,0.1169,0.0113,0.0068,recomputed from stored scores
+T2_contrasts.tex,42,BNM $-$ DANN,4,0,3/4,3.0,3.0,3.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,42,BNM $-$ DANN,4,1,3/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,43,BNM $-$ FreeMatch,1,0,1500 / 1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,43,BNM $-$ FreeMatch,1,1,1500 / 1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,43,BNM $-$ FreeMatch,2,0,$-0.1180$,-0.118,-0.1334,-0.1253,-0.0154,-0.0073,recomputed from stored scores
+T2_contrasts.tex,43,BNM $-$ FreeMatch,3,0,"$[-0.2578, +0.0219]$",-0.2578,-0.2986,-0.2793,-0.0408,-0.0215,recomputed from stored scores
+T2_contrasts.tex,43,BNM $-$ FreeMatch,3,1,"$[-0.2578, +0.0219]$",0.0219,0.0319,0.0286,0.01,0.0067,recomputed from stored scores
+T2_contrasts.tex,43,BNM $-$ FreeMatch,4,0,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,43,BNM $-$ FreeMatch,4,1,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,44,DANN $-$ CORAL$^{d}$,1,0,4000 / 2000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,44,DANN $-$ CORAL$^{d}$,1,1,4000 / 2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,44,DANN $-$ CORAL$^{d}$,2,0,$-0.0180$,-0.018,-0.0231,-0.0211,-0.0051,-0.0031,recomputed from stored scores
+T2_contrasts.tex,44,DANN $-$ CORAL$^{d}$,3,0,"$[-0.1781, +0.1420]$",-0.1781,-0.2227,-0.2189,-0.0446,-0.0408,recomputed from stored scores
+T2_contrasts.tex,44,DANN $-$ CORAL$^{d}$,3,1,"$[-0.1781, +0.1420]$",0.142,0.1765,0.1768,0.0345,0.0348,recomputed from stored scores
+T2_contrasts.tex,44,DANN $-$ CORAL$^{d}$,4,0,2/4,2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,44,DANN $-$ CORAL$^{d}$,4,1,2/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,45,DANN $-$ FreeMatch$^{d}$,1,0,4000 / 1500,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,45,DANN $-$ FreeMatch$^{d}$,1,1,4000 / 1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,45,DANN $-$ FreeMatch$^{d}$,2,0,$-0.0002$,-0.0002,-0.0182,-0.0117,-0.018,-0.0115,recomputed from stored scores
+T2_contrasts.tex,45,DANN $-$ FreeMatch$^{d}$,3,0,"$[-0.1656, +0.1652]$",-0.1656,-0.2092,-0.1932,-0.0436,-0.0276,recomputed from stored scores
+T2_contrasts.tex,45,DANN $-$ FreeMatch$^{d}$,3,1,"$[-0.1656, +0.1652]$",0.1652,0.1729,0.1699,0.0077,0.0047,recomputed from stored scores
+T2_contrasts.tex,45,DANN $-$ FreeMatch$^{d}$,4,0,2/4,2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,45,DANN $-$ FreeMatch$^{d}$,4,1,2/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,46,DANN $-$ CORAL (both at 2000),0,0,DANN $-$ CORAL (both at 2000),2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,46,DANN $-$ CORAL (both at 2000),1,0,2000 / 2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,46,DANN $-$ CORAL (both at 2000),1,1,2000 / 2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,46,DANN $-$ CORAL (both at 2000),2,0,$+0.0203$,0.0203,0.0331,0.034,0.0128,0.0137,recomputed from stored scores
+T2_contrasts.tex,46,DANN $-$ CORAL (both at 2000),3,0,"$[-0.0772, +0.1179]$",-0.0772,-0.0711,-0.066,0.0061,0.0112,recomputed from stored scores
+T2_contrasts.tex,46,DANN $-$ CORAL (both at 2000),3,1,"$[-0.0772, +0.1179]$",0.1179,0.1372,0.1339,0.0193,0.016,recomputed from stored scores
+T2_contrasts.tex,46,DANN $-$ CORAL (both at 2000),4,0,2/4,2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,46,DANN $-$ CORAL (both at 2000),4,1,2/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,48,,0,0,"\multicolumn{6}{l}{\textit{Within-method, frozen $\rightarro",6.0,6.0,6.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,48,,0,1,"\multicolumn{6}{l}{\textit{Within-method, frozen $\rightarro",5000.0,5000.0,5000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,49,FreeMatch $\times$ nb3 $-$ FreeMatch frozen,1,0,1500 / 8000,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,49,FreeMatch $\times$ nb3 $-$ FreeMatch frozen,1,1,1500 / 8000,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,49,FreeMatch $\times$ nb3 $-$ FreeMatch frozen,2,0,$+0.0793$$^{*}$,0.0793,0.0793,0.0793,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,49,FreeMatch $\times$ nb3 $-$ FreeMatch frozen,3,0,"$[+0.0075, +0.1690]$",0.0075,0.0075,0.0075,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,49,FreeMatch $\times$ nb3 $-$ FreeMatch frozen,3,1,"$[+0.0075, +0.1690]$",0.169,0.169,0.169,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,49,FreeMatch $\times$ nb3 $-$ FreeMatch frozen,4,0,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,49,FreeMatch $\times$ nb3 $-$ FreeMatch frozen,4,1,4/4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,53,,0,0,\vspace{2pt},2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,55,,0,0,$^{e}$Round-1 FreeMatch and FreeMatch $\times$ nb3 share hea,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,57,,0,0,\texttt{n\_blocks} changed. \textbf{No other round-1 number ,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,58,,0,0,any unfrozen number in this paper} --- eight configuration f,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,62,,0,0,"($+0.0075$) is smaller than one positive ($0.0102$), so ``di",0.0075,0.0075,0.0075,0.0,0.0,recomputed from stored scores
+T2_contrasts.tex,62,,0,1,"($+0.0075$) is smaller than one positive ($0.0102$), so ``di",0.0102,0.0102,0.0102,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,3,,0,0,"\caption{\textbf{Secondary readouts, folds 1--4.} completene",1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,3,,0,1,"\caption{\textbf{Secondary readouts, folds 1--4.} completene",-4.0,-4.0,-4.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,3,,0,2,"\caption{\textbf{Secondary readouts, folds 1--4.} completene",24.0,24.0,24.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,5,,0,0,label-free sim-only completeness of 0.50. \textbf{$X$ is a s,0.5,0.5,0.5,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,6,,0,0,quoted without this interval.} \textbf{That reference point ,24.0,24.0,24.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,6,,0,1,quoted without this interval.} \textbf{That reference point ,50.0,50.0,50.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,8,,0,0,spread of $\pm 0.10$ in purity; the intervals below come onl,0.1,0.1,0.1,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,9,,0,0,sampling variability at the fixed 0.50 denominator and do no,0.5,0.5,0.5,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,11,,0,0,with 24\% purity unreachable on \emph{any},24.0,24.0,24.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,13,,0,0,reachable subset. Purity is prevalence-corrected to $N_N/N_P,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,13,,0,1,reachable subset. Purity is prevalence-corrected to $N_N/N_P,2200.0,2200.0,2200.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,15,,0,0,metric and never an arbiter: the $\lambda=0$ row is the demo,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,19,,0,0,"the declared budget, and above every other arm at 2000. Rati",2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,24,,0,0,\setlength{\tabcolsep}{4pt},4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,27,Arm,2,0,comp@24\%-pur.,24.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,27,Arm,3,0,"$X = {\cdot}/0.50$, 95\% CI",0.5,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,27,Arm,3,1,"$X = {\cdot}/0.50$, 95\% CI",95.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,27,Arm,4,0,pur.@50\%-comp.,50.0,50.0,50.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,29,Baseline A (frozen),1,0,8000,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,29,Baseline A (frozen),3,0,"\emph{n/a}\,\footnotesize(0,1,3)",0.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,29,Baseline A (frozen),3,1,"\emph{n/a}\,\footnotesize(0,1,3)",1.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,29,Baseline A (frozen),3,2,"\emph{n/a}\,\footnotesize(0,1,3)",3.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,29,Baseline A (frozen),4,0,$0.0123$,0.0123,0.0132,0.0115,0.0009,-0.0008,recomputed from stored scores
+T4_secondary.tex,29,Baseline A (frozen),5,0,$0.8970$ \\,0.897,0.8984,0.8955,0.0014,-0.0015,recomputed from stored scores
+T4_secondary.tex,30,$\lambda=0$ unfrozen control,0,0,$\lambda=0$ unfrozen control,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,30,$\lambda=0$ unfrozen control,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,30,$\lambda=0$ unfrozen control,3,0,"\emph{n/a}\,\footnotesize(2,3)",2.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,30,$\lambda=0$ unfrozen control,3,1,"\emph{n/a}\,\footnotesize(2,3)",3.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,30,$\lambda=0$ unfrozen control,4,0,$0.0091$,0.0091,0.0095,0.0094,0.0004,0.0003,recomputed from stored scores
+T4_secondary.tex,30,$\lambda=0$ unfrozen control,5,0,$0.8800$ \\,0.88,0.8815,0.8791,0.0015,-0.0009,recomputed from stored scores
+T4_secondary.tex,31,BNM $\times$ nb3,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,31,BNM $\times$ nb3,2,0,$0.1328$,0.1328,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,31,BNM $\times$ nb3,3,0,"$26.6\%$, $[+5.9, +47.2]\%$",26.6,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,31,BNM $\times$ nb3,3,1,"$26.6\%$, $[+5.9, +47.2]\%$",5.9,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,31,BNM $\times$ nb3,3,2,"$26.6\%$, $[+5.9, +47.2]\%$",47.2,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,31,BNM $\times$ nb3,4,0,$0.0531$,0.0531,0.0673,0.0644,0.0142,0.0113,recomputed from stored scores
+T4_secondary.tex,31,BNM $\times$ nb3,5,0,$0.9083$ \\,0.9083,0.9096,0.9081,0.0013,-0.0002,recomputed from stored scores
+T4_secondary.tex,32,FreeMatch $\times$ nb3,1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,32,FreeMatch $\times$ nb3,2,0,$0.1327$,0.1327,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,32,FreeMatch $\times$ nb3,3,0,"$26.5\%$, $[-23.7, +76.8]\%$",26.5,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,32,FreeMatch $\times$ nb3,3,1,"$26.5\%$, $[-23.7, +76.8]\%$",-23.7,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,32,FreeMatch $\times$ nb3,3,2,"$26.5\%$, $[-23.7, +76.8]\%$",76.8,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,32,FreeMatch $\times$ nb3,4,0,$0.1335$,0.1335,0.2594,0.2623,0.1259,0.1288,recomputed from stored scores
+T4_secondary.tex,32,FreeMatch $\times$ nb3,5,0,$0.9657$ \\,0.9657,0.9666,0.9654,0.0009,-0.0003,recomputed from stored scores
+T4_secondary.tex,33,DANN $\times$ nb3,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,33,DANN $\times$ nb3,3,0,"\emph{n/a}\,\footnotesize(1)",1.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,33,DANN $\times$ nb3,4,0,$0.1189$,0.1189,0.2794,0.2819,0.1605,0.163,recomputed from stored scores
+T4_secondary.tex,33,DANN $\times$ nb3,5,0,$0.9066$ \\,0.9066,0.9076,0.904,0.001,-0.0026,recomputed from stored scores
+T4_secondary.tex,34,"\quad DANN, sensitivity readout$^{\ddagger}$",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,34,"\quad DANN, sensitivity readout$^{\ddagger}$",2,0,$0.2655$,0.2655,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,34,"\quad DANN, sensitivity readout$^{\ddagger}$",3,0,"$53.1\%$, $[-14.1, +120.3]\%$",53.1,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,34,"\quad DANN, sensitivity readout$^{\ddagger}$",3,1,"$53.1\%$, $[-14.1, +120.3]\%$",-14.1,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,34,"\quad DANN, sensitivity readout$^{\ddagger}$",3,2,"$53.1\%$, $[-14.1, +120.3]\%$",120.3,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,34,"\quad DANN, sensitivity readout$^{\ddagger}$",4,0,$0.1500$,0.15,0.3726,0.3888,0.2226,0.2388,recomputed from stored scores
+T4_secondary.tex,34,"\quad DANN, sensitivity readout$^{\ddagger}$",5,0,$0.9315$ \\,0.9315,0.9326,0.9304,0.0011,-0.0011,recomputed from stored scores
+T4_secondary.tex,35,CORAL $\times$ nb3,1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,35,CORAL $\times$ nb3,2,0,$0.2428$,0.2428,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,35,CORAL $\times$ nb3,3,0,"$48.6\%$, $[+4.3, +92.9]\%$",48.6,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,35,CORAL $\times$ nb3,3,1,"$48.6\%$, $[+4.3, +92.9]\%$",4.3,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,35,CORAL $\times$ nb3,3,2,"$48.6\%$, $[+4.3, +92.9]\%$",92.9,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,35,CORAL $\times$ nb3,4,0,$0.1275$,0.1275,0.2381,0.2281,0.1106,0.1006,recomputed from stored scores
+T4_secondary.tex,35,CORAL $\times$ nb3,5,0,$0.9088$ \\,0.9088,0.9097,0.9059,0.0009,-0.0029,recomputed from stored scores
+T4_secondary.tex,37,"\quad Baseline A, 5-fold basis$^{\S}$",0,0,"\quad Baseline A, 5-fold basis$^{\S}$",5.0,5.0,5.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,37,"\quad Baseline A, 5-fold basis$^{\S}$",1,0,8000,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,37,"\quad Baseline A, 5-fold basis$^{\S}$",3,0,"\emph{n/a}\,\footnotesize(0,1,3)",0.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,37,"\quad Baseline A, 5-fold basis$^{\S}$",3,1,"\emph{n/a}\,\footnotesize(0,1,3)",1.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,37,"\quad Baseline A, 5-fold basis$^{\S}$",3,2,"\emph{n/a}\,\footnotesize(0,1,3)",3.0,,,,,original pool only (runs/round7/lines_ratios.json)
+T4_secondary.tex,37,"\quad Baseline A, 5-fold basis$^{\S}$",4,0,$0.0132$,0.0132,0.0143,0.013,0.0011,-0.0002,recomputed from stored scores
+T4_secondary.tex,37,"\quad Baseline A, 5-fold basis$^{\S}$",5,0,$0.9061$ \\,0.9061,0.9075,0.905,0.0014,-0.0011,recomputed from stored scores
+T4_secondary.tex,41,,0,0,\vspace{2pt},2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,43,,0,0,which 24\% purity is unreachable. $^{\S}$Baseline A is a sin,24.0,24.0,24.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,44,,0,0,so a folds-0--4 mean is legitimate for it; \textbf{only its ,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,44,,0,1,so a folds-0--4 mean is legitimate for it; \textbf{only its ,-4.0,-4.0,-4.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,44,,0,2,so a folds-0--4 mean is legitimate for it; \textbf{only its ,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T4_secondary.tex,44,,0,3,so a folds-0--4 mean is legitimate for it; \textbf{only its ,-4.0,-4.0,-4.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,3,,0,0,\caption{\textbf{Per-fold values: TPR at FPR${}=10^{-3}$ (pr,10.0,10.0,10.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,3,,0,1,\caption{\textbf{Per-fold values: TPR at FPR${}=10^{-3}$ (pr,-3.0,-3.0,-3.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,7,,0,0,\texttt{no\_matched\_arm\_budget} and is its own-objective r,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,13,,0,0,\setlength{\tabcolsep}{4pt},4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,16,Arm,2,0,fold 0$^{\dagger}$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,16,Arm,3,0,fold 1,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,16,Arm,4,0,fold 2,2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,16,Arm,5,0,fold 3,3.0,3.0,3.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,16,Arm,6,0,fold 4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,18,Baseline A,1,0,8000,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,18,Baseline A,2,0,$0.1939$,0.1939,0.2449,0.2421,0.051,0.0482,recomputed from stored scores
+T5_perfold.tex,18,Baseline A,3,0,$0.1429$,0.1429,0.1429,0.1383,0.0,-0.0046,recomputed from stored scores
+T5_perfold.tex,18,Baseline A,4,0,$0.1939$,0.1939,0.2143,0.2,0.0204,0.0061,recomputed from stored scores
+T5_perfold.tex,18,Baseline A,5,0,$0.1531$,0.1531,0.1735,0.1562,0.0204,0.0031,recomputed from stored scores
+T5_perfold.tex,18,Baseline A,6,0,$0.1959$,0.1959,0.2062,0.2022,0.0103,0.0063,recomputed from stored scores
+T5_perfold.tex,18,Baseline A,7,0,$0.1714$,0.1714,0.1842,0.1742,0.0128,0.0028,recomputed from stored scores
+T5_perfold.tex,18,Baseline A,8,0,$0.0274$ \\,0.0274,0.0327,0.032,0.0053,0.0046,recomputed from stored scores
+T5_perfold.tex,19,"$\lambda=0$\,\footnotesize(sens.)",0,0,"$\lambda=0$\,\footnotesize(sens.)",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,19,"$\lambda=0$\,\footnotesize(sens.)",1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,19,"$\lambda=0$\,\footnotesize(sens.)",3,0,$0.1633$,0.1633,0.2245,0.2234,0.0612,0.0601,recomputed from stored scores
+T5_perfold.tex,19,"$\lambda=0$\,\footnotesize(sens.)",4,0,$0.1633$,0.1633,0.1735,0.1684,0.0102,0.0051,recomputed from stored scores
+T5_perfold.tex,19,"$\lambda=0$\,\footnotesize(sens.)",5,0,$0.1531$,0.1531,0.1837,0.1667,0.0306,0.0136,recomputed from stored scores
+T5_perfold.tex,19,"$\lambda=0$\,\footnotesize(sens.)",6,0,$0.1031$,0.1031,0.1959,0.1685,0.0928,0.0654,recomputed from stored scores
+T5_perfold.tex,19,"$\lambda=0$\,\footnotesize(sens.)",7,0,$0.1457$,0.1457,0.1944,0.1818,0.0487,0.0361,recomputed from stored scores
+T5_perfold.tex,19,"$\lambda=0$\,\footnotesize(sens.)",8,0,$0.0288$ \\,0.0288,0.0221,0.0278,-0.0067,-0.001,recomputed from stored scores
+T5_perfold.tex,20,"$\lambda=0$\,\footnotesize(sens.)",0,0,"$\lambda=0$\,\footnotesize(sens.)",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,20,"$\lambda=0$\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,20,"$\lambda=0$\,\footnotesize(sens.)",3,0,$0.1939$,0.1939,0.2245,0.2234,0.0306,0.0295,recomputed from stored scores
+T5_perfold.tex,20,"$\lambda=0$\,\footnotesize(sens.)",4,0,$0.1633$,0.1633,0.2245,0.2211,0.0612,0.0578,recomputed from stored scores
+T5_perfold.tex,20,"$\lambda=0$\,\footnotesize(sens.)",5,0,$0.1224$,0.1224,0.1735,0.1562,0.0511,0.0338,recomputed from stored scores
+T5_perfold.tex,20,"$\lambda=0$\,\footnotesize(sens.)",6,0,$0.2165$,0.2165,0.2371,0.236,0.0206,0.0195,recomputed from stored scores
+T5_perfold.tex,20,"$\lambda=0$\,\footnotesize(sens.)",7,0,$0.1740$,0.174,0.2149,0.2092,0.0409,0.0352,recomputed from stored scores
+T5_perfold.tex,20,"$\lambda=0$\,\footnotesize(sens.)",8,0,$0.0407$ \\,0.0407,0.0282,0.0359,-0.0125,-0.0048,recomputed from stored scores
+T5_perfold.tex,21,$\lambda=0$,0,0,$\lambda=0$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,21,$\lambda=0$,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,21,$\lambda=0$,3,0,$0.1837$,0.1837,0.2245,0.2234,0.0408,0.0397,recomputed from stored scores
+T5_perfold.tex,21,$\lambda=0$,4,0,$0.1429$,0.1429,0.1735,0.1789,0.0306,0.036,recomputed from stored scores
+T5_perfold.tex,21,$\lambda=0$,5,0,$0.1122$,0.1122,0.1429,0.125,0.0307,0.0128,recomputed from stored scores
+T5_perfold.tex,21,$\lambda=0$,6,0,$0.1031$,0.1031,0.1959,0.2135,0.0928,0.1104,recomputed from stored scores
+T5_perfold.tex,21,$\lambda=0$,7,0,$0.1355$,0.1355,0.1842,0.1852,0.0487,0.0497,recomputed from stored scores
+T5_perfold.tex,21,$\lambda=0$,8,0,$0.0364$ \\,0.0364,0.0346,0.0444,-0.0018,0.008,recomputed from stored scores
+T5_perfold.tex,22,"BNM\,\footnotesize(own budget)",1,0,1000,1000.0,1000.0,1000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,22,"BNM\,\footnotesize(own budget)",3,0,$0.3571$,0.3571,0.4082,0.4149,0.0511,0.0578,recomputed from stored scores
+T5_perfold.tex,22,"BNM\,\footnotesize(own budget)",4,0,$0.3469$,0.3469,0.4592,0.4526,0.1123,0.1057,recomputed from stored scores
+T5_perfold.tex,22,"BNM\,\footnotesize(own budget)",5,0,$0.2653$,0.2653,0.3265,0.3125,0.0612,0.0472,recomputed from stored scores
+T5_perfold.tex,22,"BNM\,\footnotesize(own budget)",6,0,$0.3711$,0.3711,0.4845,0.4831,0.1134,0.112,recomputed from stored scores
+T5_perfold.tex,22,"BNM\,\footnotesize(own budget)",7,0,$0.3351$,0.3351,0.4196,0.4158,0.0845,0.0807,recomputed from stored scores
+T5_perfold.tex,22,"BNM\,\footnotesize(own budget)",8,0,$0.0476$ \\,0.0476,0.0697,0.0743,0.0221,0.0267,recomputed from stored scores
+T5_perfold.tex,23,"BNM\,\footnotesize(sens.)",1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,23,"BNM\,\footnotesize(sens.)",3,0,$0.2959$,0.2959,0.4082,0.4149,0.1123,0.119,recomputed from stored scores
+T5_perfold.tex,23,"BNM\,\footnotesize(sens.)",4,0,$0.3980$,0.398,0.5204,0.5263,0.1224,0.1283,recomputed from stored scores
+T5_perfold.tex,23,"BNM\,\footnotesize(sens.)",5,0,$0.3061$,0.3061,0.3469,0.3333,0.0408,0.0272,recomputed from stored scores
+T5_perfold.tex,23,"BNM\,\footnotesize(sens.)",6,0,$0.1959$,0.1959,0.2577,0.2697,0.0618,0.0738,recomputed from stored scores
+T5_perfold.tex,23,"BNM\,\footnotesize(sens.)",7,0,$0.2990$,0.299,0.3833,0.3861,0.0843,0.0871,recomputed from stored scores
+T5_perfold.tex,23,"BNM\,\footnotesize(sens.)",8,0,$0.0826$ \\,0.0826,0.1103,0.1108,0.0277,0.0282,recomputed from stored scores
+T5_perfold.tex,24,"BNM\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,24,"BNM\,\footnotesize(sens.)",3,0,$0.3163$,0.3163,0.3776,0.383,0.0613,0.0667,recomputed from stored scores
+T5_perfold.tex,24,"BNM\,\footnotesize(sens.)",4,0,$0.4082$,0.4082,0.5,0.5053,0.0918,0.0971,recomputed from stored scores
+T5_perfold.tex,24,"BNM\,\footnotesize(sens.)",5,0,$0.2959$,0.2959,0.3367,0.3229,0.0408,0.027,recomputed from stored scores
+T5_perfold.tex,24,"BNM\,\footnotesize(sens.)",6,0,$0.3505$,0.3505,0.4021,0.4045,0.0516,0.054,recomputed from stored scores
+T5_perfold.tex,24,"BNM\,\footnotesize(sens.)",7,0,$0.3427$,0.3427,0.4041,0.4039,0.0614,0.0612,recomputed from stored scores
+T5_perfold.tex,24,"BNM\,\footnotesize(sens.)",8,0,$0.0491$ \\,0.0491,0.0694,0.0759,0.0203,0.0268,recomputed from stored scores
+T5_perfold.tex,25,BNM,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,25,BNM,3,0,$0.3367$,0.3367,0.398,0.4043,0.0613,0.0676,recomputed from stored scores
+T5_perfold.tex,25,BNM,4,0,$0.3571$,0.3571,0.4592,0.4737,0.1021,0.1166,recomputed from stored scores
+T5_perfold.tex,25,BNM,5,0,$0.2755$,0.2755,0.3776,0.375,0.1021,0.0995,recomputed from stored scores
+T5_perfold.tex,25,BNM,6,0,$0.3402$,0.3402,0.3814,0.382,0.0412,0.0418,recomputed from stored scores
+T5_perfold.tex,25,BNM,7,0,$0.3274$,0.3274,0.404,0.4087,0.0766,0.0813,recomputed from stored scores
+T5_perfold.tex,25,BNM,8,0,$0.0357$ \\,0.0357,0.0378,0.0451,0.0021,0.0094,recomputed from stored scores
+T5_perfold.tex,26,FreeMatch,1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,26,FreeMatch,3,0,$0.4184$,0.4184,0.5,0.5,0.0816,0.0816,recomputed from stored scores
+T5_perfold.tex,26,FreeMatch,4,0,$0.4796$,0.4796,0.5918,0.5895,0.1122,0.1099,recomputed from stored scores
+T5_perfold.tex,26,FreeMatch,5,0,$0.3367$,0.3367,0.4286,0.4167,0.0919,0.08,recomputed from stored scores
+T5_perfold.tex,26,FreeMatch,6,0,$0.4330$,0.433,0.5464,0.5393,0.1134,0.1063,recomputed from stored scores
+T5_perfold.tex,26,FreeMatch,7,0,$0.4169$,0.4169,0.5167,0.5114,0.0998,0.0945,recomputed from stored scores
+T5_perfold.tex,26,FreeMatch,8,0,$0.0595$ \\,0.0595,0.0697,0.073,0.0102,0.0135,recomputed from stored scores
+T5_perfold.tex,27,"DANN\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,27,"DANN\,\footnotesize(sens.)",3,0,$0.4490$,0.449,0.5714,0.5851,0.1224,0.1361,recomputed from stored scores
+T5_perfold.tex,27,"DANN\,\footnotesize(sens.)",4,0,$0.6122$,0.6122,0.7041,0.6947,0.0919,0.0825,recomputed from stored scores
+T5_perfold.tex,27,"DANN\,\footnotesize(sens.)",5,0,$0.3673$,0.3673,0.5,0.4896,0.1327,0.1223,recomputed from stored scores
+T5_perfold.tex,27,"DANN\,\footnotesize(sens.)",6,0,$0.3918$,0.3918,0.4433,0.4494,0.0515,0.0576,recomputed from stored scores
+T5_perfold.tex,27,"DANN\,\footnotesize(sens.)",7,0,$0.4551$,0.4551,0.5547,0.5547,0.0996,0.0996,recomputed from stored scores
+T5_perfold.tex,27,"DANN\,\footnotesize(sens.)",8,0,$0.1102$ \\,0.1102,0.1125,0.1093,0.0023,-0.0009,recomputed from stored scores
+T5_perfold.tex,28,DANN,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,28,DANN,3,0,$0.4286$,0.4286,0.5408,0.5532,0.1122,0.1246,recomputed from stored scores
+T5_perfold.tex,28,DANN,4,0,$0.6224$,0.6224,0.7143,0.7053,0.0919,0.0829,recomputed from stored scores
+T5_perfold.tex,28,DANN,5,0,$0.2653$,0.2653,0.3163,0.3021,0.051,0.0368,recomputed from stored scores
+T5_perfold.tex,28,DANN,6,0,$0.3505$,0.3505,0.4227,0.4382,0.0722,0.0877,recomputed from stored scores
+T5_perfold.tex,28,DANN,7,0,$0.4167$,0.4167,0.4985,0.4997,0.0818,0.083,recomputed from stored scores
+T5_perfold.tex,28,DANN,8,0,$0.1525$ \\,0.1525,0.1706,0.1712,0.0181,0.0187,recomputed from stored scores
+T5_perfold.tex,29,CORAL,1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,29,CORAL,3,0,$0.3571$,0.3571,0.4694,0.4787,0.1123,0.1216,recomputed from stored scores
+T5_perfold.tex,29,CORAL,4,0,$0.5612$,0.5612,0.6327,0.6316,0.0715,0.0704,recomputed from stored scores
+T5_perfold.tex,29,CORAL,5,0,$0.3980$,0.398,0.5,0.4896,0.102,0.0916,recomputed from stored scores
+T5_perfold.tex,29,CORAL,6,0,$0.4227$,0.4227,0.4845,0.4831,0.0618,0.0604,recomputed from stored scores
+T5_perfold.tex,29,CORAL,7,0,$0.4348$,0.4348,0.5216,0.5208,0.0868,0.086,recomputed from stored scores
+T5_perfold.tex,29,CORAL,8,0,$0.0885$ \\,0.0885,0.0751,0.074,-0.0134,-0.0145,recomputed from stored scores
+T5_perfold.tex,33,,0,0,\vspace{2pt},2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,34,,0,0,\footnotesize $^{\dagger}$fold 0 is the development fold and,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,36,,0,0,"fold-0 run on this grid, not that the value is undefined.",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,45,,0,0,\texttt{no\_matched\_arm\_budget} and is its own-objective r,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,51,,0,0,\setlength{\tabcolsep}{4pt},4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,54,Arm,2,0,fold 0$^{\dagger}$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,54,Arm,3,0,fold 1,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,54,Arm,4,0,fold 2,2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,54,Arm,5,0,fold 3,3.0,3.0,3.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,54,Arm,6,0,fold 4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,56,Baseline A,1,0,8000,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,56,Baseline A,2,0,$0.9427$,0.9427,0.9439,0.9429,0.0012,0.0002,recomputed from stored scores
+T5_perfold.tex,56,Baseline A,3,0,$0.8923$,0.8923,0.8937,0.8938,0.0014,0.0015,recomputed from stored scores
+T5_perfold.tex,56,Baseline A,4,0,$0.9031$,0.9031,0.9045,0.9015,0.0014,-0.0016,recomputed from stored scores
+T5_perfold.tex,56,Baseline A,5,0,$0.9016$,0.9016,0.9031,0.901,0.0015,-0.0006,recomputed from stored scores
+T5_perfold.tex,56,Baseline A,6,0,$0.8908$,0.8908,0.8922,0.8858,0.0014,-0.005,recomputed from stored scores
+T5_perfold.tex,56,Baseline A,7,0,$0.8970$,0.897,0.8984,0.8955,0.0014,-0.0015,recomputed from stored scores
+T5_perfold.tex,56,Baseline A,8,0,$0.0063$ \\,0.0063,0.0063,0.0074,0.0,0.0011,recomputed from stored scores
+T5_perfold.tex,57,"$\lambda=0$\,\footnotesize(sens.)",0,0,"$\lambda=0$\,\footnotesize(sens.)",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,57,"$\lambda=0$\,\footnotesize(sens.)",1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,57,"$\lambda=0$\,\footnotesize(sens.)",3,0,$0.8915$,0.8915,0.8931,0.8898,0.0016,-0.0017,recomputed from stored scores
+T5_perfold.tex,57,"$\lambda=0$\,\footnotesize(sens.)",4,0,$0.8936$,0.8936,0.8952,0.8923,0.0016,-0.0013,recomputed from stored scores
+T5_perfold.tex,57,"$\lambda=0$\,\footnotesize(sens.)",5,0,$0.8722$,0.8722,0.8738,0.8711,0.0016,-0.0011,recomputed from stored scores
+T5_perfold.tex,57,"$\lambda=0$\,\footnotesize(sens.)",6,0,$0.8859$,0.8859,0.8878,0.8798,0.0019,-0.0061,recomputed from stored scores
+T5_perfold.tex,57,"$\lambda=0$\,\footnotesize(sens.)",7,0,$0.8858$,0.8858,0.8875,0.8833,0.0017,-0.0025,recomputed from stored scores
+T5_perfold.tex,57,"$\lambda=0$\,\footnotesize(sens.)",8,0,$0.0097$ \\,0.0097,0.0097,0.0097,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,58,"$\lambda=0$\,\footnotesize(sens.)",0,0,"$\lambda=0$\,\footnotesize(sens.)",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,58,"$\lambda=0$\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,58,"$\lambda=0$\,\footnotesize(sens.)",3,0,$0.8854$,0.8854,0.8874,0.8849,0.002,-0.0005,recomputed from stored scores
+T5_perfold.tex,58,"$\lambda=0$\,\footnotesize(sens.)",4,0,$0.8776$,0.8776,0.8791,0.8756,0.0015,-0.002,recomputed from stored scores
+T5_perfold.tex,58,"$\lambda=0$\,\footnotesize(sens.)",5,0,$0.8886$,0.8886,0.8905,0.8883,0.0019,-0.0003,recomputed from stored scores
+T5_perfold.tex,58,"$\lambda=0$\,\footnotesize(sens.)",6,0,$0.9169$,0.9169,0.9187,0.9134,0.0018,-0.0035,recomputed from stored scores
+T5_perfold.tex,58,"$\lambda=0$\,\footnotesize(sens.)",7,0,$0.8921$,0.8921,0.8939,0.8906,0.0018,-0.0015,recomputed from stored scores
+T5_perfold.tex,58,"$\lambda=0$\,\footnotesize(sens.)",8,0,$0.0171$ \\,0.0171,0.0172,0.0161,0.0001,-0.001,recomputed from stored scores
+T5_perfold.tex,59,$\lambda=0$,0,0,$\lambda=0$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,59,$\lambda=0$,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,59,$\lambda=0$,3,0,$0.8709$,0.8709,0.8728,0.8706,0.0019,-0.0003,recomputed from stored scores
+T5_perfold.tex,59,$\lambda=0$,4,0,$0.8662$,0.8662,0.8674,0.865,0.0012,-0.0012,recomputed from stored scores
+T5_perfold.tex,59,$\lambda=0$,5,0,$0.8759$,0.8759,0.8776,0.875,0.0017,-0.0009,recomputed from stored scores
+T5_perfold.tex,59,$\lambda=0$,6,0,$0.9071$,0.9071,0.9084,0.906,0.0013,-0.0011,recomputed from stored scores
+T5_perfold.tex,59,$\lambda=0$,7,0,$0.8800$,0.88,0.8815,0.8791,0.0015,-0.0009,recomputed from stored scores
+T5_perfold.tex,59,$\lambda=0$,8,0,$0.0185$ \\,0.0185,0.0184,0.0184,-0.0001,-0.0001,recomputed from stored scores
+T5_perfold.tex,60,"BNM\,\footnotesize(own budget)",1,0,1000,1000.0,1000.0,1000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,60,"BNM\,\footnotesize(own budget)",3,0,$0.9507$,0.9507,0.9521,0.9519,0.0014,0.0012,recomputed from stored scores
+T5_perfold.tex,60,"BNM\,\footnotesize(own budget)",4,0,$0.9317$,0.9317,0.9332,0.9311,0.0015,-0.0006,recomputed from stored scores
+T5_perfold.tex,60,"BNM\,\footnotesize(own budget)",5,0,$0.8876$,0.8876,0.889,0.8867,0.0014,-0.0009,recomputed from stored scores
+T5_perfold.tex,60,"BNM\,\footnotesize(own budget)",6,0,$0.9400$,0.94,0.9412,0.9387,0.0012,-0.0013,recomputed from stored scores
+T5_perfold.tex,60,"BNM\,\footnotesize(own budget)",7,0,$0.9275$,0.9275,0.9289,0.9271,0.0014,-0.0004,recomputed from stored scores
+T5_perfold.tex,60,"BNM\,\footnotesize(own budget)",8,0,$0.0277$ \\,0.0277,0.0277,0.0283,0.0,0.0006,recomputed from stored scores
+T5_perfold.tex,61,"BNM\,\footnotesize(sens.)",1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,61,"BNM\,\footnotesize(sens.)",3,0,$0.9261$,0.9261,0.9274,0.9285,0.0013,0.0024,recomputed from stored scores
+T5_perfold.tex,61,"BNM\,\footnotesize(sens.)",4,0,$0.9464$,0.9464,0.9475,0.9463,0.0011,-0.0001,recomputed from stored scores
+T5_perfold.tex,61,"BNM\,\footnotesize(sens.)",5,0,$0.9208$,0.9208,0.9222,0.9206,0.0014,-0.0002,recomputed from stored scores
+T5_perfold.tex,61,"BNM\,\footnotesize(sens.)",6,0,$0.8716$,0.8716,0.8729,0.8657,0.0013,-0.0059,recomputed from stored scores
+T5_perfold.tex,61,"BNM\,\footnotesize(sens.)",7,0,$0.9163$,0.9163,0.9175,0.9153,0.0012,-0.001,recomputed from stored scores
+T5_perfold.tex,61,"BNM\,\footnotesize(sens.)",8,0,$0.0317$ \\,0.0317,0.0317,0.0347,0.0,0.003,recomputed from stored scores
+T5_perfold.tex,62,"BNM\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,62,"BNM\,\footnotesize(sens.)",3,0,$0.9013$,0.9013,0.9026,0.9019,0.0013,0.0006,recomputed from stored scores
+T5_perfold.tex,62,"BNM\,\footnotesize(sens.)",4,0,$0.9302$,0.9302,0.9318,0.9312,0.0016,0.001,recomputed from stored scores
+T5_perfold.tex,62,"BNM\,\footnotesize(sens.)",5,0,$0.8714$,0.8714,0.8728,0.8701,0.0014,-0.0013,recomputed from stored scores
+T5_perfold.tex,62,"BNM\,\footnotesize(sens.)",6,0,$0.9029$,0.9029,0.9047,0.9013,0.0018,-0.0016,recomputed from stored scores
+T5_perfold.tex,62,"BNM\,\footnotesize(sens.)",7,0,$0.9015$,0.9015,0.903,0.9011,0.0015,-0.0004,recomputed from stored scores
+T5_perfold.tex,62,"BNM\,\footnotesize(sens.)",8,0,$0.0240$ \\,0.024,0.0241,0.0249,0.0001,0.0009,recomputed from stored scores
+T5_perfold.tex,63,BNM,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,63,BNM,3,0,$0.9303$,0.9303,0.9314,0.9306,0.0011,0.0003,recomputed from stored scores
+T5_perfold.tex,63,BNM,4,0,$0.9025$,0.9025,0.9039,0.9031,0.0014,0.0006,recomputed from stored scores
+T5_perfold.tex,63,BNM,5,0,$0.9044$,0.9044,0.9058,0.9039,0.0014,-0.0005,recomputed from stored scores
+T5_perfold.tex,63,BNM,6,0,$0.8959$,0.8959,0.8974,0.8947,0.0015,-0.0012,recomputed from stored scores
+T5_perfold.tex,63,BNM,7,0,$0.9083$,0.9083,0.9096,0.9081,0.0013,-0.0002,recomputed from stored scores
+T5_perfold.tex,63,BNM,8,0,$0.0151$ \\,0.0151,0.015,0.0156,-0.0001,0.0005,recomputed from stored scores
+T5_perfold.tex,64,FreeMatch,1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,64,FreeMatch,3,0,$0.9488$,0.9488,0.9499,0.9485,0.0011,-0.0003,recomputed from stored scores
+T5_perfold.tex,64,FreeMatch,4,0,$0.9760$,0.976,0.9768,0.9762,0.0008,0.0002,recomputed from stored scores
+T5_perfold.tex,64,FreeMatch,5,0,$0.9678$,0.9678,0.9688,0.9682,0.001,0.0004,recomputed from stored scores
+T5_perfold.tex,64,FreeMatch,6,0,$0.9701$,0.9701,0.971,0.9687,0.0009,-0.0014,recomputed from stored scores
+T5_perfold.tex,64,FreeMatch,7,0,$0.9657$,0.9657,0.9666,0.9654,0.0009,-0.0003,recomputed from stored scores
+T5_perfold.tex,64,FreeMatch,8,0,$0.0118$ \\,0.0118,0.0117,0.0118,-0.0001,0.0,recomputed from stored scores
+T5_perfold.tex,65,"DANN\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,65,"DANN\,\footnotesize(sens.)",3,0,$0.9265$,0.9265,0.9274,0.9257,0.0009,-0.0008,recomputed from stored scores
+T5_perfold.tex,65,"DANN\,\footnotesize(sens.)",4,0,$0.9545$,0.9545,0.9552,0.9538,0.0007,-0.0007,recomputed from stored scores
+T5_perfold.tex,65,"DANN\,\footnotesize(sens.)",5,0,$0.9006$,0.9006,0.902,0.9,0.0014,-0.0006,recomputed from stored scores
+T5_perfold.tex,65,"DANN\,\footnotesize(sens.)",6,0,$0.9445$,0.9445,0.9457,0.942,0.0012,-0.0025,recomputed from stored scores
+T5_perfold.tex,65,"DANN\,\footnotesize(sens.)",7,0,$0.9315$,0.9315,0.9326,0.9304,0.0011,-0.0011,recomputed from stored scores
+T5_perfold.tex,65,"DANN\,\footnotesize(sens.)",8,0,$0.0236$ \\,0.0236,0.0234,0.0233,-0.0002,-0.0003,recomputed from stored scores
+T5_perfold.tex,66,DANN,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,66,DANN,3,0,$0.9534$,0.9534,0.9544,0.9539,0.001,0.0005,recomputed from stored scores
+T5_perfold.tex,66,DANN,4,0,$0.9809$,0.9809,0.9815,0.9809,0.0006,0.0,recomputed from stored scores
+T5_perfold.tex,66,DANN,5,0,$0.8657$,0.8657,0.8672,0.8644,0.0015,-0.0013,recomputed from stored scores
+T5_perfold.tex,66,DANN,6,0,$0.8262$,0.8262,0.8272,0.8167,0.001,-0.0095,recomputed from stored scores
+T5_perfold.tex,66,DANN,7,0,$0.9066$,0.9066,0.9076,0.904,0.001,-0.0026,recomputed from stored scores
+T5_perfold.tex,66,DANN,8,0,$0.0727$ \\,0.0727,0.0725,0.0766,-0.0002,0.0039,recomputed from stored scores
+T5_perfold.tex,67,CORAL,1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,67,CORAL,3,0,$0.9158$,0.9158,0.9168,0.9136,0.001,-0.0022,recomputed from stored scores
+T5_perfold.tex,67,CORAL,4,0,$0.9394$,0.9394,0.9401,0.9382,0.0007,-0.0012,recomputed from stored scores
+T5_perfold.tex,67,CORAL,5,0,$0.8913$,0.8913,0.8922,0.89,0.0009,-0.0013,recomputed from stored scores
+T5_perfold.tex,67,CORAL,6,0,$0.8886$,0.8886,0.8896,0.8819,0.001,-0.0067,recomputed from stored scores
+T5_perfold.tex,67,CORAL,7,0,$0.9088$,0.9088,0.9097,0.9059,0.0009,-0.0029,recomputed from stored scores
+T5_perfold.tex,67,CORAL,8,0,$0.0238$ \\,0.0238,0.0237,0.0254,-0.0001,0.0016,recomputed from stored scores
+T5_perfold.tex,71,,0,0,\vspace{2pt},2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,72,,0,0,\footnotesize $^{\dagger}$fold 0 is the development fold and,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,74,,0,0,"fold-0 run on this grid, not that the value is undefined.",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,79,,0,0,\caption{\textbf{Per-fold values: completeness at 24\% purit,24.0,24.0,24.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,83,,0,0,\texttt{no\_matched\_arm\_budget} and is its own-objective r,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,89,,0,0,\setlength{\tabcolsep}{4pt},4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,92,Arm,2,0,fold 0$^{\dagger}$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,92,Arm,3,0,fold 1,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,92,Arm,4,0,fold 2,2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,92,Arm,5,0,fold 3,3.0,3.0,3.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,92,Arm,6,0,fold 4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,94,Baseline A,1,0,8000,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,94,Baseline A,4,0,$0.0204$,0.0204,0.0714,0.0632,0.051,0.0428,recomputed from stored scores
+T5_perfold.tex,94,Baseline A,6,0,$0.0206$,0.0206,0.0928,0.0674,0.0722,0.0468,recomputed from stored scores
+T5_perfold.tex,95,"$\lambda=0$\,\footnotesize(sens.)",0,0,"$\lambda=0$\,\footnotesize(sens.)",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,95,"$\lambda=0$\,\footnotesize(sens.)",1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,95,"$\lambda=0$\,\footnotesize(sens.)",3,0,$0.0102$,0.0102,0.0816,0.0745,0.0714,0.0643,recomputed from stored scores
+T5_perfold.tex,95,"$\lambda=0$\,\footnotesize(sens.)",4,0,$0.0612$,0.0612,0.0612,0.0632,0.0,0.002,recomputed from stored scores
+T5_perfold.tex,96,"$\lambda=0$\,\footnotesize(sens.)",0,0,"$\lambda=0$\,\footnotesize(sens.)",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,96,"$\lambda=0$\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,96,"$\lambda=0$\,\footnotesize(sens.)",3,0,$0.0306$,0.0306,0.1224,0.117,0.0918,0.0864,recomputed from stored scores
+T5_perfold.tex,96,"$\lambda=0$\,\footnotesize(sens.)",4,0,$0.0306$,0.0306,0.0612,0.0632,0.0306,0.0326,recomputed from stored scores
+T5_perfold.tex,97,$\lambda=0$,0,0,$\lambda=0$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,97,$\lambda=0$,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,97,$\lambda=0$,3,0,$0.0612$,0.0612,0.102,0.0957,0.0408,0.0345,recomputed from stored scores
+T5_perfold.tex,97,$\lambda=0$,6,0,$0.0103$,0.0103,0.0103,0.0112,0.0,0.0009,recomputed from stored scores
+T5_perfold.tex,98,"BNM\,\footnotesize(own budget)",1,0,1000,1000.0,1000.0,1000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,98,"BNM\,\footnotesize(own budget)",3,0,$0.0816$,0.0816,0.3673,0.3723,0.2857,0.2907,recomputed from stored scores
+T5_perfold.tex,98,"BNM\,\footnotesize(own budget)",4,0,$0.0612$,0.0612,0.3571,0.3579,0.2959,0.2967,recomputed from stored scores
+T5_perfold.tex,98,"BNM\,\footnotesize(own budget)",5,0,$0.0102$,0.0102,0.2449,0.2292,0.2347,0.219,recomputed from stored scores
+T5_perfold.tex,98,"BNM\,\footnotesize(own budget)",6,0,$0.1134$,0.1134,0.4639,0.4607,0.3505,0.3473,recomputed from stored scores
+T5_perfold.tex,98,"BNM\,\footnotesize(own budget)",7,0,$0.0666$,0.0666,0.3583,0.355,0.2917,0.2884,recomputed from stored scores
+T5_perfold.tex,98,"BNM\,\footnotesize(own budget)",8,0,$0.0433$ \\,0.0433,0.0896,0.0954,0.0463,0.0521,recomputed from stored scores
+T5_perfold.tex,99,"BNM\,\footnotesize(sens.)",1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,99,"BNM\,\footnotesize(sens.)",3,0,$0.0306$,0.0306,0.3163,0.3191,0.2857,0.2885,recomputed from stored scores
+T5_perfold.tex,99,"BNM\,\footnotesize(sens.)",4,0,$0.0408$,0.0408,0.4898,0.4947,0.449,0.4539,recomputed from stored scores
+T5_perfold.tex,99,"BNM\,\footnotesize(sens.)",5,0,$0.0510$,0.051,0.3061,0.2917,0.2551,0.2407,recomputed from stored scores
+T5_perfold.tex,99,"BNM\,\footnotesize(sens.)",6,0,$0.0619$,0.0619,0.0825,0.0899,0.0206,0.028,recomputed from stored scores
+T5_perfold.tex,99,"BNM\,\footnotesize(sens.)",7,0,$0.0461$,0.0461,0.2987,0.2989,0.2526,0.2528,recomputed from stored scores
+T5_perfold.tex,99,"BNM\,\footnotesize(sens.)",8,0,$0.0134$ \\,0.0134,0.167,0.1658,0.1536,0.1524,recomputed from stored scores
+T5_perfold.tex,100,"BNM\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,100,"BNM\,\footnotesize(sens.)",3,0,$0.0714$,0.0714,0.3469,0.3511,0.2755,0.2797,recomputed from stored scores
+T5_perfold.tex,100,"BNM\,\footnotesize(sens.)",5,0,$0.1327$,0.1327,0.2959,0.2812,0.1632,0.1485,recomputed from stored scores
+T5_perfold.tex,100,"BNM\,\footnotesize(sens.)",6,0,$0.0722$,0.0722,0.3608,0.3708,0.2886,0.2986,recomputed from stored scores
+T5_perfold.tex,101,BNM,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,101,BNM,3,0,$0.1429$,0.1429,0.3571,0.3617,0.2142,0.2188,recomputed from stored scores
+T5_perfold.tex,101,BNM,4,0,$0.1531$,0.1531,0.4184,0.4316,0.2653,0.2785,recomputed from stored scores
+T5_perfold.tex,101,BNM,5,0,$0.1939$,0.1939,0.2857,0.2812,0.0918,0.0873,recomputed from stored scores
+T5_perfold.tex,101,BNM,6,0,$0.0412$,0.0412,0.3608,0.3596,0.3196,0.3184,recomputed from stored scores
+T5_perfold.tex,101,BNM,7,0,$0.1328$,0.1328,0.3555,0.3585,0.2227,0.2257,recomputed from stored scores
+T5_perfold.tex,101,BNM,8,0,$0.0649$ \\,0.0649,0.0543,0.0614,-0.0106,-0.0035,recomputed from stored scores
+T5_perfold.tex,102,FreeMatch,1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,102,FreeMatch,3,0,$0.0816$,0.0816,0.4796,0.4894,0.398,0.4078,recomputed from stored scores
+T5_perfold.tex,102,FreeMatch,4,0,$0.3673$,0.3673,0.5612,0.5579,0.1939,0.1906,recomputed from stored scores
+T5_perfold.tex,102,FreeMatch,5,0,$0.0510$,0.051,0.3571,0.3438,0.3061,0.2928,recomputed from stored scores
+T5_perfold.tex,102,FreeMatch,6,0,$0.0309$,0.0309,0.5361,0.5393,0.5052,0.5084,recomputed from stored scores
+T5_perfold.tex,102,FreeMatch,7,0,$0.1327$,0.1327,0.4835,0.4826,0.3508,0.3499,recomputed from stored scores
+T5_perfold.tex,102,FreeMatch,8,0,$0.1578$ \\,0.1578,0.0909,0.097,-0.0669,-0.0608,recomputed from stored scores
+T5_perfold.tex,103,"DANN\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,103,"DANN\,\footnotesize(sens.)",3,0,$0.2959$,0.2959,0.5408,0.5532,0.2449,0.2573,recomputed from stored scores
+T5_perfold.tex,103,"DANN\,\footnotesize(sens.)",4,0,$0.5510$,0.551,0.7041,0.6947,0.1531,0.1437,recomputed from stored scores
+T5_perfold.tex,103,"DANN\,\footnotesize(sens.)",5,0,$0.1327$,0.1327,0.4592,0.4167,0.3265,0.284,recomputed from stored scores
+T5_perfold.tex,103,"DANN\,\footnotesize(sens.)",6,0,$0.0825$,0.0825,0.4124,0.4157,0.3299,0.3332,recomputed from stored scores
+T5_perfold.tex,103,"DANN\,\footnotesize(sens.)",7,0,$0.2655$,0.2655,0.5291,0.5201,0.2636,0.2546,recomputed from stored scores
+T5_perfold.tex,103,"DANN\,\footnotesize(sens.)",8,0,$0.2110$ \\,0.211,0.1282,0.1331,-0.0828,-0.0779,recomputed from stored scores
+T5_perfold.tex,104,DANN,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,104,DANN,4,0,$0.6122$,0.6122,0.7143,0.7053,0.1021,0.0931,recomputed from stored scores
+T5_perfold.tex,104,DANN,5,0,$0.1327$,0.1327,0.2449,0.2292,0.1122,0.0965,recomputed from stored scores
+T5_perfold.tex,104,DANN,6,0,$0.0103$,0.0103,0.3608,0.3933,0.3505,0.383,recomputed from stored scores
+T5_perfold.tex,105,CORAL,1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,105,CORAL,3,0,$0.1122$,0.1122,0.398,0.4787,0.2858,0.3665,recomputed from stored scores
+T5_perfold.tex,105,CORAL,4,0,$0.4286$,0.4286,0.6327,0.6316,0.2041,0.203,recomputed from stored scores
+T5_perfold.tex,105,CORAL,5,0,$0.2653$,0.2653,0.4796,0.4688,0.2143,0.2035,recomputed from stored scores
+T5_perfold.tex,105,CORAL,6,0,$0.1649$,0.1649,0.4742,0.4719,0.3093,0.307,recomputed from stored scores
+T5_perfold.tex,105,CORAL,7,0,$0.2428$,0.2428,0.4961,0.5127,0.2533,0.2699,recomputed from stored scores
+T5_perfold.tex,105,CORAL,8,0,$0.1392$ \\,0.1392,0.0984,0.0793,-0.0408,-0.0599,recomputed from stored scores
+T5_perfold.tex,109,,0,0,\vspace{2pt},2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,110,,0,0,\footnotesize $^{\dagger}$fold 0 is the development fold and,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,112,,0,0,"fold-0 run on this grid, not that the value is undefined.",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,117,,0,0,\caption{\textbf{Per-fold values: purity at 50\% completenes,50.0,50.0,50.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,117,,0,1,\caption{\textbf{Per-fold values: purity at 50\% completenes,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,117,,0,2,\caption{\textbf{Per-fold values: purity at 50\% completenes,2200.0,2200.0,2200.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,121,,0,0,\texttt{no\_matched\_arm\_budget} and is its own-objective r,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,127,,0,0,\setlength{\tabcolsep}{4pt},4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,130,Arm,2,0,fold 0$^{\dagger}$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,130,Arm,3,0,fold 1,1.0,1.0,1.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,130,Arm,4,0,fold 2,2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,130,Arm,5,0,fold 3,3.0,3.0,3.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,130,Arm,6,0,fold 4,4.0,4.0,4.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,132,Baseline A,1,0,8000,8000.0,8000.0,8000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,132,Baseline A,2,0,$0.0169$,0.0169,0.0186,0.0191,0.0017,0.0022,recomputed from stored scores
+T5_perfold.tex,132,Baseline A,3,0,$0.0123$,0.0123,0.0132,0.0142,0.0009,0.0019,recomputed from stored scores
+T5_perfold.tex,132,Baseline A,4,0,$0.0095$,0.0095,0.01,0.0085,0.0005,-0.001,recomputed from stored scores
+T5_perfold.tex,132,Baseline A,5,0,$0.0128$,0.0128,0.0138,0.0111,0.001,-0.0017,recomputed from stored scores
+T5_perfold.tex,132,Baseline A,6,0,$0.0146$,0.0146,0.0158,0.0121,0.0012,-0.0025,recomputed from stored scores
+T5_perfold.tex,132,Baseline A,7,0,$0.0123$,0.0123,0.0132,0.0115,0.0009,-0.0008,recomputed from stored scores
+T5_perfold.tex,132,Baseline A,8,0,$0.0021$ \\,0.0021,0.0024,0.0024,0.0003,0.0003,recomputed from stored scores
+T5_perfold.tex,133,"$\lambda=0$\,\footnotesize(sens.)",0,0,"$\lambda=0$\,\footnotesize(sens.)",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,133,"$\lambda=0$\,\footnotesize(sens.)",1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,133,"$\lambda=0$\,\footnotesize(sens.)",3,0,$0.0203$,0.0203,0.0224,0.0237,0.0021,0.0034,recomputed from stored scores
+T5_perfold.tex,133,"$\lambda=0$\,\footnotesize(sens.)",4,0,$0.0091$,0.0091,0.0096,0.0096,0.0005,0.0005,recomputed from stored scores
+T5_perfold.tex,133,"$\lambda=0$\,\footnotesize(sens.)",5,0,$0.0061$,0.0061,0.0063,0.0062,0.0002,0.0001,recomputed from stored scores
+T5_perfold.tex,133,"$\lambda=0$\,\footnotesize(sens.)",6,0,$0.0061$,0.0061,0.0063,0.0058,0.0002,-0.0003,recomputed from stored scores
+T5_perfold.tex,133,"$\lambda=0$\,\footnotesize(sens.)",7,0,$0.0104$,0.0104,0.0112,0.0113,0.0008,0.0009,recomputed from stored scores
+T5_perfold.tex,133,"$\lambda=0$\,\footnotesize(sens.)",8,0,$0.0067$ \\,0.0067,0.0077,0.0084,0.001,0.0017,recomputed from stored scores
+T5_perfold.tex,134,"$\lambda=0$\,\footnotesize(sens.)",0,0,"$\lambda=0$\,\footnotesize(sens.)",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,134,"$\lambda=0$\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,134,"$\lambda=0$\,\footnotesize(sens.)",3,0,$0.0128$,0.0128,0.0138,0.0147,0.001,0.0019,recomputed from stored scores
+T5_perfold.tex,134,"$\lambda=0$\,\footnotesize(sens.)",4,0,$0.0065$,0.0065,0.0068,0.0063,0.0003,-0.0002,recomputed from stored scores
+T5_perfold.tex,134,"$\lambda=0$\,\footnotesize(sens.)",5,0,$0.0073$,0.0073,0.0077,0.0069,0.0004,-0.0004,recomputed from stored scores
+T5_perfold.tex,134,"$\lambda=0$\,\footnotesize(sens.)",6,0,$0.0140$,0.014,0.0153,0.0121,0.0013,-0.0019,recomputed from stored scores
+T5_perfold.tex,134,"$\lambda=0$\,\footnotesize(sens.)",7,0,$0.0102$,0.0102,0.0109,0.01,0.0007,-0.0002,recomputed from stored scores
+T5_perfold.tex,134,"$\lambda=0$\,\footnotesize(sens.)",8,0,$0.0038$ \\,0.0038,0.0043,0.0041,0.0005,0.0003,recomputed from stored scores
+T5_perfold.tex,135,$\lambda=0$,0,0,$\lambda=0$,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,135,$\lambda=0$,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,135,$\lambda=0$,3,0,$0.0140$,0.014,0.0147,0.0153,0.0007,0.0013,recomputed from stored scores
+T5_perfold.tex,135,$\lambda=0$,4,0,$0.0086$,0.0086,0.0088,0.0089,0.0002,0.0003,recomputed from stored scores
+T5_perfold.tex,135,$\lambda=0$,5,0,$0.0062$,0.0062,0.0064,0.0064,0.0002,0.0002,recomputed from stored scores
+T5_perfold.tex,135,$\lambda=0$,6,0,$0.0078$,0.0078,0.0081,0.0073,0.0003,-0.0005,recomputed from stored scores
+T5_perfold.tex,135,$\lambda=0$,7,0,$0.0091$,0.0091,0.0095,0.0094,0.0004,0.0003,recomputed from stored scores
+T5_perfold.tex,135,$\lambda=0$,8,0,$0.0034$ \\,0.0034,0.0036,0.004,0.0002,0.0006,recomputed from stored scores
+T5_perfold.tex,136,"BNM\,\footnotesize(own budget)",1,0,1000,1000.0,1000.0,1000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,136,"BNM\,\footnotesize(own budget)",3,0,$0.0759$,0.0759,0.1008,0.1451,0.0249,0.0692,recomputed from stored scores
+T5_perfold.tex,136,"BNM\,\footnotesize(own budget)",4,0,$0.0870$,0.087,0.1265,0.1226,0.0395,0.0356,recomputed from stored scores
+T5_perfold.tex,136,"BNM\,\footnotesize(own budget)",5,0,$0.0270$,0.027,0.0303,0.027,0.0033,0.0,recomputed from stored scores
+T5_perfold.tex,136,"BNM\,\footnotesize(own budget)",6,0,$0.0992$,0.0992,0.1545,0.1133,0.0553,0.0141,recomputed from stored scores
+T5_perfold.tex,136,"BNM\,\footnotesize(own budget)",7,0,$0.0723$,0.0723,0.103,0.102,0.0307,0.0297,recomputed from stored scores
+T5_perfold.tex,136,"BNM\,\footnotesize(own budget)",8,0,$0.0316$ \\,0.0316,0.0532,0.0517,0.0216,0.0201,recomputed from stored scores
+T5_perfold.tex,137,"BNM\,\footnotesize(sens.)",1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,137,"BNM\,\footnotesize(sens.)",3,0,$0.0606$,0.0606,0.0772,0.0826,0.0166,0.022,recomputed from stored scores
+T5_perfold.tex,137,"BNM\,\footnotesize(sens.)",4,0,$0.1304$,0.1304,0.2205,0.2382,0.0901,0.1078,recomputed from stored scores
+T5_perfold.tex,137,"BNM\,\footnotesize(sens.)",5,0,$0.0414$,0.0414,0.0483,0.0464,0.0069,0.005,recomputed from stored scores
+T5_perfold.tex,137,"BNM\,\footnotesize(sens.)",6,0,$0.0199$,0.0199,0.0216,0.0192,0.0017,-0.0007,recomputed from stored scores
+T5_perfold.tex,137,"BNM\,\footnotesize(sens.)",7,0,$0.0631$,0.0631,0.0919,0.0966,0.0288,0.0335,recomputed from stored scores
+T5_perfold.tex,137,"BNM\,\footnotesize(sens.)",8,0,$0.0479$ \\,0.0479,0.0887,0.0979,0.0408,0.05,recomputed from stored scores
+T5_perfold.tex,138,"BNM\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,138,"BNM\,\footnotesize(sens.)",3,0,$0.0513$,0.0513,0.0619,0.0653,0.0106,0.014,recomputed from stored scores
+T5_perfold.tex,138,"BNM\,\footnotesize(sens.)",4,0,$0.1154$,0.1154,0.192,0.2018,0.0766,0.0864,recomputed from stored scores
+T5_perfold.tex,138,"BNM\,\footnotesize(sens.)",5,0,$0.0276$,0.0276,0.0311,0.0297,0.0035,0.0021,recomputed from stored scores
+T5_perfold.tex,138,"BNM\,\footnotesize(sens.)",6,0,$0.0678$,0.0678,0.0915,0.0915,0.0237,0.0237,recomputed from stored scores
+T5_perfold.tex,138,"BNM\,\footnotesize(sens.)",7,0,$0.0655$,0.0655,0.0941,0.0971,0.0286,0.0316,recomputed from stored scores
+T5_perfold.tex,138,"BNM\,\footnotesize(sens.)",8,0,$0.0371$ \\,0.0371,0.0697,0.0742,0.0326,0.0371,recomputed from stored scores
+T5_perfold.tex,139,BNM,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,139,BNM,3,0,$0.0674$,0.0674,0.0862,0.0862,0.0188,0.0188,recomputed from stored scores
+T5_perfold.tex,139,BNM,4,0,$0.0625$,0.0625,0.0826,0.0908,0.0201,0.0283,recomputed from stored scores
+T5_perfold.tex,139,BNM,5,0,$0.0583$,0.0583,0.0734,0.0566,0.0151,-0.0017,recomputed from stored scores
+T5_perfold.tex,139,BNM,6,0,$0.0244$,0.0244,0.0271,0.0241,0.0027,-0.0003,recomputed from stored scores
+T5_perfold.tex,139,BNM,7,0,$0.0531$,0.0531,0.0673,0.0644,0.0142,0.0113,recomputed from stored scores
+T5_perfold.tex,139,BNM,8,0,$0.0195$ \\,0.0195,0.0273,0.0309,0.0078,0.0114,recomputed from stored scores
+T5_perfold.tex,140,FreeMatch,1,0,1500,1500.0,1500.0,1500.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,140,FreeMatch,3,0,$0.1176$,0.1176,0.2126,0.229,0.095,0.1114,recomputed from stored scores
+T5_perfold.tex,140,FreeMatch,4,0,$0.1765$,0.1765,0.3726,0.3726,0.1961,0.1961,recomputed from stored scores
+T5_perfold.tex,140,FreeMatch,5,0,$0.0822$,0.0822,0.1214,0.1166,0.0392,0.0344,recomputed from stored scores
+T5_perfold.tex,140,FreeMatch,6,0,$0.1579$,0.1579,0.3311,0.3311,0.1732,0.1732,recomputed from stored scores
+T5_perfold.tex,140,FreeMatch,7,0,$0.1335$,0.1335,0.2594,0.2623,0.1259,0.1288,recomputed from stored scores
+T5_perfold.tex,140,FreeMatch,8,0,$0.0421$ \\,0.0421,0.1143,0.1144,0.0722,0.0723,recomputed from stored scores
+T5_perfold.tex,141,"DANN\,\footnotesize(sens.)",1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,141,"DANN\,\footnotesize(sens.)",3,0,$0.1463$,0.1463,0.3136,0.3976,0.1673,0.2513,recomputed from stored scores
+T5_perfold.tex,141,"DANN\,\footnotesize(sens.)",4,0,$0.2609$,0.2609,0.8559,0.8559,0.595,0.595,recomputed from stored scores
+T5_perfold.tex,141,"DANN\,\footnotesize(sens.)",5,0,$0.1132$,0.1132,0.2052,0.1803,0.092,0.0671,recomputed from stored scores
+T5_perfold.tex,141,"DANN\,\footnotesize(sens.)",6,0,$0.0795$,0.0795,0.1155,0.1214,0.036,0.0419,recomputed from stored scores
+T5_perfold.tex,141,"DANN\,\footnotesize(sens.)",7,0,$0.1500$,0.15,0.3726,0.3888,0.2226,0.2388,recomputed from stored scores
+T5_perfold.tex,141,"DANN\,\footnotesize(sens.)",8,0,$0.0788$ \\,0.0788,0.3323,0.3333,0.2535,0.2545,recomputed from stored scores
+T5_perfold.tex,142,DANN,1,0,4000,4000.0,4000.0,4000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,142,DANN,3,0,$0.1395$,0.1395,0.2481,0.2589,0.1086,0.1194,recomputed from stored scores
+T5_perfold.tex,142,DANN,4,0,$0.2400$,0.24,0.7481,0.7481,0.5081,0.5081,recomputed from stored scores
+T5_perfold.tex,142,DANN,5,0,$0.0321$,0.0321,0.0383,0.0374,0.0062,0.0053,recomputed from stored scores
+T5_perfold.tex,142,DANN,6,0,$0.0638$,0.0638,0.0831,0.0831,0.0193,0.0193,recomputed from stored scores
+T5_perfold.tex,142,DANN,7,0,$0.1189$,0.1189,0.2794,0.2819,0.1605,0.163,recomputed from stored scores
+T5_perfold.tex,142,DANN,8,0,$0.0925$ \\,0.0925,0.3252,0.3251,0.2327,0.2326,recomputed from stored scores
+T5_perfold.tex,143,CORAL,1,0,2000,2000.0,2000.0,2000.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,143,CORAL,3,0,$0.0923$,0.0923,0.1322,0.1451,0.0399,0.0528,recomputed from stored scores
+T5_perfold.tex,143,CORAL,4,0,$0.2000$,0.2,0.459,0.459,0.259,0.259,recomputed from stored scores
+T5_perfold.tex,143,CORAL,5,0,$0.1224$,0.1224,0.2126,0.1803,0.0902,0.0579,recomputed from stored scores
+T5_perfold.tex,143,CORAL,6,0,$0.0952$,0.0952,0.1487,0.1279,0.0535,0.0327,recomputed from stored scores
+T5_perfold.tex,143,CORAL,7,0,$0.1275$,0.1275,0.2381,0.2281,0.1106,0.1006,recomputed from stored scores
+T5_perfold.tex,143,CORAL,8,0,$0.0502$ \\,0.0502,0.1513,0.1555,0.1011,0.1053,recomputed from stored scores
+T5_perfold.tex,147,,0,0,\vspace{2pt},2.0,2.0,2.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,148,,0,0,\footnotesize $^{\dagger}$fold 0 is the development fold and,0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T5_perfold.tex,150,,0,0,"fold-0 run on this grid, not that the value is undefined.",0.0,0.0,0.0,0.0,0.0,recomputed from stored scores
+T6_window.tex,4,,0,0,TPR@$10^{-3}$ under an average of the $k$ consecutive checkp,10.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,4,,0,1,TPR@$10^{-3}$ under an average of the $k$ consecutive checkp,-3.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,9,,0,0,declared secondary analysis and replaces no hashed headline.,1.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,20,,0,0,\setlength{\tabcolsep}{4pt},4.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,23,,3,0,\multicolumn{4}{c}{\texttt{mean\_logit} (primary)},4.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,23,,4,0,\multicolumn{4}{c}{\texttt{mean\_rank} (secondary)} \\,4.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,24,,0,0,\cmidrule(lr){4-7}\cmidrule(lr){8-11},4.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,24,,0,1,\cmidrule(lr){4-7}\cmidrule(lr){8-11},7.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,24,,0,2,\cmidrule(lr){4-7}\cmidrule(lr){8-11},8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,24,,0,3,\cmidrule(lr){4-7}\cmidrule(lr){8-11},11.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,25,Arm,3,0,$k{=}1$,1.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,25,Arm,4,0,$k{=}2$,2.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,25,Arm,5,0,$k{=}4$,4.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,25,Arm,6,0,$k{=}8$,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,25,Arm,7,0,$k{=}1$,1.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,25,Arm,8,0,$k{=}2$,2.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,25,Arm,9,0,$k{=}4$,4.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,25,Arm,10,0,$k{=}8$ \\,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,27,CORAL,1,0,2000,2000.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,27,CORAL,2,0,8,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,27,CORAL,3,0,$0.4348$,0.4348,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,27,CORAL,4,0,$0.4501$,0.4501,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,27,CORAL,5,0,$0.4450$,0.445,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,27,CORAL,6,0,$0.4577$,0.4577,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,27,CORAL,7,0,$0.4348$,0.4348,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,27,CORAL,8,0,$0.4501$,0.4501,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,27,CORAL,9,0,$0.4332$,0.4332,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,27,CORAL,10,0,$0.4194$ \\,0.4194,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,28,FreeMatch,1,0,1500,1500.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,28,FreeMatch,2,0,8,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,28,FreeMatch,3,0,$0.4169$,0.4169,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,28,FreeMatch,4,0,$0.4247$,0.4247,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,28,FreeMatch,5,0,$0.4476$,0.4476,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,28,FreeMatch,6,0,$0.4604$,0.4604,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,28,FreeMatch,7,0,$0.4169$,0.4169,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,28,FreeMatch,8,0,$0.4150$,0.415,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,28,FreeMatch,9,0,$0.4392$,0.4392,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,28,FreeMatch,10,0,$0.4348$ \\,0.4348,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,29,DANN,1,0,4000,4000.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,29,DANN,2,0,8,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,29,DANN,3,0,$0.4167$,0.4167,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,29,DANN,4,0,$0.4193$,0.4193,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,29,DANN,5,0,$0.4449$,0.4449,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,29,DANN,6,0,$0.4577$,0.4577,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,29,DANN,7,0,$0.4167$,0.4167,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,29,DANN,8,0,$0.4194$,0.4194,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,29,DANN,9,0,$0.4143$,0.4143,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,29,DANN,10,0,$0.3964$ \\,0.3964,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,30,"DANN\,\footnotesize(sens.)",1,0,2000,2000.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,30,"DANN\,\footnotesize(sens.)",2,0,8,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,30,"DANN\,\footnotesize(sens.)",3,0,$0.4551$,0.4551,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,30,"DANN\,\footnotesize(sens.)",4,0,$0.4859$,0.4859,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,30,"DANN\,\footnotesize(sens.)",5,0,$0.4449$,0.4449,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,30,"DANN\,\footnotesize(sens.)",6,0,$0.4271$,0.4271,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,30,"DANN\,\footnotesize(sens.)",7,0,$0.4551$,0.4551,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,30,"DANN\,\footnotesize(sens.)",8,0,$0.4690$,0.469,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,30,"DANN\,\footnotesize(sens.)",9,0,$0.4117$,0.4117,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,30,"DANN\,\footnotesize(sens.)",10,0,$0.3709$ \\,0.3709,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,0,0,$\lambda=0$,0.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,1,0,4000,4000.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,2,0,8,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,3,0,$0.1355$,0.1355,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,4,0,$0.1534$,0.1534,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,5,0,$0.1612$,0.1612,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,6,0,$0.1715$,0.1715,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,7,0,$0.1355$,0.1355,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,8,0,$0.1458$,0.1458,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,9,0,$0.1715$,0.1715,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,31,$\lambda=0$,10,0,$0.1689$ \\,0.1689,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",0,0,"$\lambda=0$\,\footnotesize(sens.)",0.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",1,0,2000,2000.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",2,0,8,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",3,0,$0.1740$,0.174,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",4,0,$0.1689$,0.1689,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",5,0,$0.1918$,0.1918,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",6,0,$0.2148$,0.2148,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",7,0,$0.1740$,0.174,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",8,0,$0.1765$,0.1765,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",9,0,$0.1944$,0.1944,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,32,"$\lambda=0$\,\footnotesize(sens.)",10,0,$0.2097$ \\,0.2097,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",0,0,"$\lambda=0$\,\footnotesize(sens.)",0.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",1,0,1500,1500.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",2,0,6,6.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",3,0,$0.1457$,0.1457,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",4,0,$0.1738$,0.1738,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",5,0,$0.1944$,0.1944,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",6,0,$0.2174$,0.2174,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",7,0,$0.1457$,0.1457,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",8,0,$0.1825$,0.1825,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",9,0,$0.1944$,0.1944,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,33,"$\lambda=0$\,\footnotesize(sens.)",10,0,$0.2148$ \\,0.2148,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,34,"BNM\,\footnotesize(own budget)",1,0,1000,1000.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,34,"BNM\,\footnotesize(own budget)",2,0,4,4.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,34,"BNM\,\footnotesize(own budget)",3,0,$0.3351$,0.3351,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,34,"BNM\,\footnotesize(own budget)",4,0,$0.3351$,0.3351,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,34,"BNM\,\footnotesize(own budget)",5,0,$0.3274$,0.3274,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,34,"BNM\,\footnotesize(own budget)",6,0,$0.3274$,0.3274,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,34,"BNM\,\footnotesize(own budget)",7,0,$0.3351$,0.3351,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,34,"BNM\,\footnotesize(own budget)",8,0,$0.3193$,0.3193,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,34,"BNM\,\footnotesize(own budget)",9,0,$0.3121$,0.3121,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,34,"BNM\,\footnotesize(own budget)",10,0,$0.3121$ \\,0.3121,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,35,"BNM\,\footnotesize(sens.)",1,0,1500,1500.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,35,"BNM\,\footnotesize(sens.)",2,0,6,6.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,35,"BNM\,\footnotesize(sens.)",3,0,$0.2990$,0.299,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,35,"BNM\,\footnotesize(sens.)",4,0,$0.3451$,0.3451,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,35,"BNM\,\footnotesize(sens.)",5,0,$0.3631$,0.3631,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,35,"BNM\,\footnotesize(sens.)",6,0,$0.3580$,0.358,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,35,"BNM\,\footnotesize(sens.)",7,0,$0.2990$,0.299,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,35,"BNM\,\footnotesize(sens.)",8,0,$0.3358$,0.3358,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,35,"BNM\,\footnotesize(sens.)",9,0,$0.3411$,0.3411,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,35,"BNM\,\footnotesize(sens.)",10,0,$0.3376$ \\,0.3376,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,36,"BNM\,\footnotesize(sens.)",1,0,2000,2000.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,36,"BNM\,\footnotesize(sens.)",2,0,8,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,36,"BNM\,\footnotesize(sens.)",3,0,$0.3427$,0.3427,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,36,"BNM\,\footnotesize(sens.)",4,0,$0.3631$,0.3631,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,36,"BNM\,\footnotesize(sens.)",5,0,$0.3759$,0.3759,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,36,"BNM\,\footnotesize(sens.)",6,0,$0.3631$,0.3631,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,36,"BNM\,\footnotesize(sens.)",7,0,$0.3427$,0.3427,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,36,"BNM\,\footnotesize(sens.)",8,0,$0.3401$,0.3401,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,36,"BNM\,\footnotesize(sens.)",9,0,$0.3631$,0.3631,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,36,"BNM\,\footnotesize(sens.)",10,0,$0.3529$ \\,0.3529,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,37,BNM,1,0,4000,4000.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,37,BNM,2,0,8,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,37,BNM,3,0,$0.3274$,0.3274,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,37,BNM,4,0,$0.3453$,0.3453,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,37,BNM,5,0,$0.3683$,0.3683,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,37,BNM,6,0,$0.3810$,0.381,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,37,BNM,7,0,$0.3274$,0.3274,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,37,BNM,8,0,$0.3335$,0.3335,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,37,BNM,9,0,$0.3274$,0.3274,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,37,BNM,10,0,$0.3427$ \\,0.3427,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,38,Baseline A,1,0,8000,8000.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,38,Baseline A,2,0,8,8.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,38,Baseline A,3,0,$0.1759$,0.1759,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,38,Baseline A,4,0,$0.1718$,0.1718,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,38,Baseline A,5,0,$0.1657$,0.1657,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,38,Baseline A,6,0,$0.1637$,0.1637,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,38,Baseline A,7,0,$0.1759$,0.1759,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,38,Baseline A,8,0,$0.1739$,0.1739,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,38,Baseline A,9,0,$0.1698$,0.1698,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,38,Baseline A,10,0,$0.1657$ \\,0.1657,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,42,,0,0,\vspace{2pt},2.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,43,,0,0,\footnotesize Baseline A's row is a folds-0--4 mean --- it i,0.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,43,,0,1,\footnotesize Baseline A's row is a folds-0--4 mean --- it i,-4.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,44,,0,0,"source-only model, so fold-0 inclusion is legitimate for it;",0.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,45,,0,0,folds 1--4. Its per-step score vectors are recomputed on CPU,1.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,45,,0,1,folds 1--4. Its per-step score vectors are recomputed on CPU,-4.0,,,,,original pool only (runs/round7/window_average.json)
+T6_window.tex,46,,0,0,"640-d feature cache and the retained per-step head weights, ",640.0,,,,,original pool only (runs/round7/window_average.json)

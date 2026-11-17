@@ -1,0 +1,2 @@
+[report] C:\Users\krris\ML\lens_paper\runs\bakeoff_coral: folds [0, 1, 2, 3, 4] (98, 98, 98, 98, 97 positives)
+[report] ERROR: fold 1's negative scores differ from fold 0's. The pooled aggregate assumes ONE model scoring the SHARED negative pool (PROJECT.md 4.4); with per-fold models the FPR=1e-3 threshold is not identical across folds and pooling is invalid. Report per-fold mean +- std instead, and re-run with --no-check-shared-negs only if you understand that the pooled row will be meaningless.

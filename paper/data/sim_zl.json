@@ -1,0 +1,11 @@
+{
+ "source": "data/sim_arc_on_real/shard_*.npz, key z_l only",
+ "n_shards": 60,
+ "n_lenses": 30000,
+ "z_l_p10": 0.47999998927116394,
+ "z_l_median": 0.6499999761581421,
+ "z_l_p90": 0.7599999904632568,
+ "z_l_min": 0.10000000149011612,
+ "z_l_max": 0.7900000214576721,
+ "note": "over simulated lenses, not unique deflectors; z_l is the stored photometric-redshift median"
+}

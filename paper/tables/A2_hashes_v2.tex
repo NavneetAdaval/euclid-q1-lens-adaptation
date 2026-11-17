@@ -1,0 +1,38 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_appendix_relabel_v2.py)
+% Relabelled copy of tables/A2_hashes.tex; tabular number tokens asserted identical, caption/notes token changes declared.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Protected artifacts and when each was recorded.} Each enrolled file is made read-only once written and is checked by digest at every build. \emph{Recorded} is the file's own timestamp; where it has none, \emph{Source} says whether its timing rests on a flag inside the file, on a dated Kaggle dataset version, or on our run logs alone. \emph{vs.\ runs} compares it with the start of the first confirmatory run it governs. Two kinds of digest are checked: a whole-file digest, and a self-certifying digest of the file body with its own hash field removed. \emph{Enrolled} says whether the file is in the inventory that every analysis run re-checks; every row's digest, enrolled or not, matches its file when the table is built. Eight artifacts are hashed; seven are re-checked by every analysis run, and the window-averaging declaration is hashed but not enrolled. The DANN pre-registration has two rows, its archived pre-fold copy and the file as regenerated after the folds. A date without a time is a day-only record. The last row is protected but governs no run.}
+\label{tab:hashes2}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\TRAG}p{2.6cm}>{\TRAG}p{1.3cm}>{\TRAG}p{1.75cm}>{\TRAG}p{1.3cm}>{\TRAG}p{1.3cm}>{\TRAG}p{1.4cm}l>{\TRAG}p{1.4cm}}
+\toprule
+Artifact & Recorded (UTC) & Source & First run (UTC) & vs.\ runs & Digest & sha256 (first 16) & Enrolled \\
+\midrule
+BNM budget & --- & run logs only & 2026-09-14 11:36 & not checkable & whole file & \texttt{5b92e161ed1e301f} & yes \\
+BNM pre-registration & --- & file (flag only) & 2026-09-14 11:36 & before (flag) & whole file & \texttt{d205f6784213b75d} & yes \\
+CORAL budget & 2026-08-21 18:01 & file & 2026-08-23 12:42 & before & self-certifying & \texttt{65c20810485968d8} & yes \\
+DANN budget + sensitivity readout & 2026-09-02 & file & 2026-09-03 13:54 & before & self-certifying & \texttt{abf0dae0e313ae53} & yes \\
+DANN pre-registration, pre-fold copy & 2026-09-02 16:26 & archived copy & 2026-09-03 13:54 & before & self-certifying & \texttt{51351308196ad332} & no (archived) \\
+DANN pre-registration, regenerated file & 2026-09-05 11:43 & file & 2026-09-03 13:54 & \textbf{after} & self-certifying & \texttt{3ad1fc361a150b95} & yes \\
+$\lambda=0$ control pre-registration & --- & Kaggle dataset version, 6 Sept 2026 & 2026-09-07 08:38 & before & self-certifying & \texttt{c1694a479eafb040} & yes \\
+Checkpoint-window averaging declaration & --- & file (flag only) & --- & before (flag) & self-certifying & \texttt{a572b81e4c730590} & \textbf{no} \\
+\midrule
+\multicolumn{8}{l}{\emph{Protected, not a pre-registration (governs no run):}} \\
+BNM step-0 gradient norms, re-measured & --- & run logs only & --- & n/a & whole file & \texttt{04930f2fe924b99a} & yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begingroup\footnotesize\noindent\textbf{Notes to Table~\ref{tab:hashes2}.} What each file fixed: 
+\emph{BNM budget}: budget 1000, BNM's rule-derived budget. The file carries no timestamp and no before-flag, so its timing rests on our run logs alone.
+\emph{BNM pre-registration}: the weight $\gamma$. BNM's weight came from a development-fold sweep over a grid set by gradient norms at step zero; the sweep read the nuclear norm and the predicted-positive fraction, never TPR. The budget was left undecided, because its rule reads a crossing only the development run produces.
+\emph{CORAL budget}: budget 2000, declared on cost, declining the development curve's maximum.
+\emph{DANN budget and sensitivity readout}: budget 4000, $2 \times$ the $\lambda$ horizon, and the step-2000 sensitivity declaration, which we call the headline-and-sensitivity rule: the headline is the mean at 4000, and the mean at step 2000 is a budget-sensitivity check reported beside the headline, not instead of it. Every confirmatory fold records this file's self-certifying digest when it starts, so the rule is verified as fixed before the folds. The declaration says ``5-fold mean'', but the same file excludes fold 0 from every headline, and we report folds 1--4; with the development fold, the five-fold means on the cleaned pool are \dDannFiveFoldFourK{} at 4000 and \dDannFiveFoldTwoK{} at 2000.
+\emph{DANN pre-registration}: the arms, the abort conditions, the rule for declaring the margin $M$, the budget decision, the headline-and-sensitivity rule, and the predictions, among them the arc-suppression prediction and the spread prediction. We regenerated the file after the folds; the first row is the copy that predates them, and every one of its \dannPrefoldIdenticalKeys{} pre-fold keys is unchanged in the second. The copy is entry \dannPrefoldEntry{} of the file's hash history, and we archive it in the repository; the regeneration, on 2026-09-05, added \dannPrefoldAddedKeys{} keys reporting fold results. The copy does not establish that the arc-suppression prediction preceded its own development-fold test, whose outcome it already contains; entry \dannArcEntry{} of the hash history was not recovered.
+\emph{$\lambda=0$ control pre-registration}: budget 4000, under the rule that the control is read where its treatment is read; three outcome branches (low, near the adaptation arms, in between), which decided whether BNM would run, with no run by default; and the four paired contrasts against the control. The file's description of two other arms' budgets is wrong: it attributes FreeMatch's 1500 to the saturation of its adaptive threshold, which completes 90\% of its rise on the development fold only at step \fmTauNinetyStep{}, and CORAL's 2000 to its configuration. Appendix~\ref{sec:budget-detail} gives the bases recorded at the time (FreeMatch: the development curve's highest point; CORAL: cost). The sentence governs nothing in the control's run.
+\emph{Checkpoint-window averaging declaration}: $k=8$ primary, the grid $\{1,2,4,8\}$, both score combinations, and a window that ends at each arm's read-off step; it governs analyses, not training runs.
+\emph{BNM step-0 gradient norms, re-measured}: a second, later measurement. The $\gamma$ grid is never re-derived from it, and its original measuring run is lost. Protected, but not a pre-registration: it governs no run.
+A further digest in our run logs, \texttt{7356acda\ldots}, is the hash of a superseded pre-registration text; the text is lost, and we keep its digest in \texttt{public\_inputs/\allowbreak record\_extract.json}. The window-averaging row, marked \emph{no} under \emph{Enrolled}, is hashed in our run logs, and its digest matches the file, but it is absent from the inventory that every analysis run re-checks, so it has neither the re-check nor the read-only protection of the other seven. We did not enrol it after the fact, because that would date its protection to the writing of this paper.\par\endgroup

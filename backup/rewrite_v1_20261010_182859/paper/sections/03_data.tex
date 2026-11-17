@@ -1,0 +1,251 @@
+\section{Data}
+\label{sec:data}
+
+Four image populations enter this work, all built on Euclid Q1 VIS
+images~\citep{euclidq1overview, euclidq1data}: simulated lenses with matched negatives, forming
+the labelled source domain; expert-graded real lenses, whose labels are used only at
+evaluation; an unlabelled pool of real Euclid galaxies; and objects graded X (not a lens) by expert
+inspection, used as hard negatives. Figure~\ref{fig:setup} gives the structure of the splits; this section
+gives the reasons.
+
+\subsection{Arc-on-real simulations}
+
+The source domain is simulated, and only the arc in it is simulated. Each positive is a
+real Euclid VIS cutout of a galaxy --- the deflector --- with a ray-traced arc
+painted on; each matched negative is the \emph{same} galaxy with no arc. The deflectors are
+galaxies from the Q1 catalogue whose stored values satisfy $\log M_* \geq \DeflMassFloor{}$
+and $\DeflZmin{} \leq z_{\rm phot} \leq \DeflZmax{}$~\citep{euclidq1phz}. We generated
+30\,000 such pairs from 19\,167 of them, roughly 4\,182 of which can
+produce an arc with Einstein radius $\theta_E \ge 0.75''$. Painting onto real cutouts
+retains the real line-of-sight objects, noise and point-spread-function variation,
+confining the sim-to-real gap to the arc; this is standard
+practice~\citep{holismokesXI, lines2025discoveryengineC, unions2025}, although the lensed
+sources here are parametric models rather than the real HST source galaxies that
+Euclid Collaboration: Lines et al.~\citep{lines2025discoveryengineC} and \citet{unions2025} lens
+(Section~\ref{sec:sim-pipeline}). The matched bare deflector is
+the point of the construction: a positive and its negative differ in the arc and nothing
+else, so the host galaxy carries no class information (Figure~\ref{fig:cutouts}).
+
+An earlier fully synthetic generator lacked that property. Its simulated lenses had no
+deflector light while the real negatives had bright centres, and a classifier reached
+AUROC 0.995 on per-image brightness alone. Replacing it with the arc-on-real construction
+--- real deflector light, raw flux, softened S\'ersic parameters, supersampled rendering
+--- brought the residual morphology gap between the classes to approximately 0.84 in
+AUROC. The shortcut had been invisible in every metric we were watching at the time.
+
+\subsection{The simulation pipeline}
+\label{sec:sim-pipeline}
+
+The deflector's velocity dispersion $\sigma_v$ was assigned by abundance matching to the
+function below; the Einstein radius $\theta_E$ followed from $\sigma_v$ under a singular
+isothermal ellipsoid (SIE); and the source redshift $z_s$ was drawn so that $\theta_E$
+fell in an acceptable range given the deflector's photometric redshift
+$z_l$~\citep{euclidq1phz}. The background source is a
+\emph{parametric model}, not a real HST image: sources were
+drawn with GalSim~\citep{rowe2015galsim} as parametric models (single S\'ersic or
+bulge-plus-disk) fitted to COSMOS F814W galaxies from its $I < \simSourceSample$ sample, the
+training sample and fits described by~\citet{mandelbaum2014great3}, through
+\texttt{COSMOSCatalog} with \texttt{gal\_type="\simSourceGalType"},
+passing no catalogue exclusion arguments, and kept if their half-light radius lay between
+$\simSourceHlrMin''$ and $\simSourceHlrMax''$. The source was ray-traced through the SIE with
+\texttt{lenstronomy}~\citep{birrer2018lenstronomy, birrer2021lenstronomy}, convolved with a Gaussian PSF of FWHM $0.16''$,
+scaled so that its brightest arc pixel reached a signal-to-noise ratio drawn uniformly
+between \simArcSnrMin{} and \simArcSnrMax{} against the cutout's background, and added to
+the cutout; no source magnitude cut was applied. Poisson noise was added to the
+arc alone, the cutout already carrying real Euclid noise. The output is 60 shards of
+30\,000 lenses and 30\,000 matched non-lenses at $64 \times 64$ pixels and $0.1''$/pixel;
+realised Einstein radii have 10th, 50th and 90th percentiles $0.77''$, $0.92''$, $1.4''$.
+
+Velocity dispersions were abundance-matched to the SDSS DR5 early-type (E/S0) velocity
+dispersion function of~\citet{choi2007vdf}, a modified Schechter function deconvolved for
+measurement error. The implementation uses
+\begin{equation}
+  \frac{\mathrm{d}n}{\mathrm{d}\sigma} \;\propto\;
+  \left(\frac{\sigma}{\sigma_*}\right)^{\alpha}
+  \exp\!\left[-\left(\frac{\sigma}{\sigma_*}\right)^{\beta}\right] \frac{1}{\sigma}
+  \label{eq:vdf}
+\end{equation}
+with $\sigma_* = 161$\,km\,s$^{-1}$, $\alpha = 2.32$ and $\beta = 2.67$, on a uniform grid
+of 6\,000 points over $\sigma \in [80, 400]$\,km\,s$^{-1}$, normalised numerically so the
+amplitude does not enter. The dispersions were sorted and assigned to deflectors by
+stellar-mass rank --- a rank-to-rank map rather than a fit --- under a fixed seed. Two
+assumptions are ours rather than part of that measurement: the function describes central
+stellar velocity dispersions, which we use directly as the SIE velocity dispersion; and it
+is measured at $z \lesssim 0.1$, which we apply to every deflector without redshift
+evolution.
+
+Every image enters the encoder through one fixed transformation applied before
+augmentation: a per-image clip at the 0th and 99.7th percentiles, a rescale to $[0,1]$,
+and an $\operatorname{arcsinh}$ stretch at $q = 1$, bounded by
+$\operatorname{arcsinh}(1) \approx 0.881$, resized to $224 \times 224$. This is the
+\texttt{fits\_to\_jpg\_like\_scaling} recipe as implemented in the \texttt{galaxy-datasets}
+package, reproduced from that source code rather than from a paper, applied once rather than twice;
+re-stretching an augmented image would skew the per-image percentiles. At training time a
+random positional shift was applied to every class equally. Random centroid shifts are
+established practice and not a detail: training and testing on perfectly centred images
+drops a baseline ResNet lens finder's AUROC from $0.9913$ to $0.8332$ and its
+true-positive rate at zero false positives to $0\%$, the network otherwise learning spatial
+offset as a determinant feature~\citep{holismokesXI}. Their shift is $\pm 5$ pixels on
+HSC, about $\pm 0.84''$; the $\pm 3$ pixels used here is this work's own choice, which at
+Euclid VIS's $0.1''$/pixel is $0.3''$ --- a smaller shift in angular terms, roughly a
+third of the median Einstein radius, and inside the encoder's own training-augmentation
+range. Applying it equally is what stops it becoming a class cue.
+
+\subsection{Real lenses and the unlabelled pool}
+
+The positive evaluation class is 489 real strong lenses from the Euclid Q1 Discovery
+Engine catalogue, 246 of catalogue grade A and 243 of grade B~\citep{discoveryengineA},
+taken with their cutouts from the catalogue's data record~\citep{discoveryenginecat}.
+Experts graded each image on a response scale of A (confident lens), B (probable lens), C
+(possible lens, with features that can be explained without lensing) and X (not a lens);
+the scores of about ten experts per image are averaged with a correction for each expert's
+optimism, and the catalogue grades are cuts on that aggregate, grade A above 2 and grade B
+above 1.5~\citep{discoveryengineA}. The positive class is catalogue grades A and B,
+following the benchmark~\citep{lines2025simstosky}; catalogue grade C falls below the B cut
+and is excluded. The same survey team's ensemble study treats grade C candidates as
+non-lenses for calibration, on the grounds that they are typically not lensed
+systems~\citep{discoveryengineE}. The catalogue lists 497 grade A/B systems; eight are absent from the processed set for reasons the download and cutout logs record individually and none of which is a selection rule --- three appear in none of the released archives, three have no FITS file in the archive member that holds them, and two failed on read --- leaving 489. All 489 were used regardless of which archive stored them, the class being
+defined by expert grade rather than by any downstream modelling outcome.
+
+The unlabelled pool is approximately 225\,000 real Euclid VIS cutouts, cut from the
+Q1 MER mosaics, of objects selected from the MER catalogue by VIS PSF-fit flux between
+\FluxMin{} and \FluxMax{}~$\mu$Jy ($I_E \approx \MagFaint{}$ to $\MagBright{}$ in PSF
+magnitude, which for resolved galaxies reads fainter than the total
+magnitude)~\citep{euclidq1mer}. The same query required a VIS detection and positive Y, J
+and H template-fit fluxes, a point-like probability below 0.3, an extended probability above
+0.5 and a spurious probability below 0.3, within four boxes covering the Q1 fields, and was
+capped at 250\,000 rows with no ordering specified. Since the cap was reached and the query
+specifies no ordering, this parent pool is the archive's first 250\,000 matches rather than a
+random draw from all matching objects. Objects are assigned to roles by a hash of their object
+ID, which depends on no object property, and the training, validation and target negatives are
+then drawn with a fixed seed. Separately,
+4\,455 objects graded X --- not a lens --- by expert inspection in version 0.0.1 of the
+Discovery Engine catalogue~\citep{discoveryenginecat001}, drawn from the highest-scoring
+candidates of its networks and visual inspection~\citep{discoveryengineA}, were included
+among the source negatives as hard negatives; later versions publish grades A--C
+only~\citep{discoveryenginecat}, and \GradeXnowC{} of them are graded C in version 0.0.3
+and were kept as negatives. These are the arc mimics that produce real false positives, and
+curating such a set is established practice~\citep{holismokesXI, astrovink}. They appear in training
+only, and in no evaluation pool.
+
+\subsection{Splits and fold rotation}
+
+Assignments are fixed by a single splits file built deterministically under seed 42, the
+sole source of truth for every membership. There are four roles.
+
+\textbf{Source-train} is 24\,000 simulated positives against 24\,000 negatives: all 4\,455
+grade-X hard negatives, 2\,881 unique bare deflectors and 16\,664 random unlabelled
+galaxies. The simulated lenses were split 80/20 into train and validation \emph{grouped by
+deflector identifier}, one deflector having been reused for up to ten lenses, so ungrouped
+splitting would place near-identical images on both sides~\citep{astrovink}.
+\textbf{Source-validation} is the held-out 6\,000 positives against 6\,000 negatives from
+a disjoint partition, with no grade-X hard negatives. With no real lens labels available
+for training, model selection cannot follow the supervised workflow and must rest on a
+proxy~\citep{rlsbench}; the proxy available here is held-out source data. It is a weak one: \citet{musgrave2021realitycheck} find that
+source accuracy screens out poor models but does not identify good ones --- low source
+accuracy goes with low target accuracy, while high source accuracy does not imply high
+target accuracy --- and Section~\ref{sec:eval} returns to it.
+
+\textbf{Target} rotates: for fold $k$ it is the roughly 391 graded real lenses of the
+\emph{other four} folds together with roughly 391 random real galaxies from a reserved
+partition. The real lenses in the target pool are the graded lenses of the other folds,
+and they enter without their labels --- they supply real-lens density to the adaptation
+objective, and no label of theirs reaches any loss. The pool is balanced at approximately
+1:1 by construction, which is a theoretical requirement rather than a convenience: when
+source and target label distributions differ, marginal-alignment methods provably cannot
+minimise target error~\citep{zhao2020gls, classimbalanceda}, and our source is balanced 1:1.
+\citet{parul2024} obtained a working marginal-alignment result in an astronomical setting
+on this construction. Deployment prevalence is not represented here; it is handled at
+inference by threshold calibration, and because the primary metric depends only on score
+ranking (Section~\ref{sec:eval}) balancing the target does not distort it. Target
+negatives are drawn \emph{fresh per fold} and are disjoint across folds: they are part of
+training, so sharing them would give the fold models overlapping training data and
+correlate them, and the spread across folds would then understate the uncertainty of the
+fold mean. In cross-validation, non-overlapping training partitions have been reported to
+give less optimistic variance estimates than overlapping ones~\citep{irredundant_kfold}.
+
+\textbf{Test} is per fold: that fold's roughly 98 held-out graded lenses --- the one place
+a real lens label is used --- against a single \emph{shared} pool of \TestNegDOne{} random real
+galaxies (\TestNegDrawn{} as drawn, less the \DOneRemoved{} excluded below), identical for every fold. Sharing is the deliberate opposite of the target
+choice, for the opposite reason: the metric is a true-positive rate at a threshold set by
+a false-positive rate on the negatives, so one shared pool holds that threshold fixed and
+makes fold-to-fold variation reflect positive recovery rather than negative-tail noise.
+The size also matches the established Q1 convention of order 30\,000 test
+negatives~\citep{lines2025simstosky, astrovink}; there, ``random'' describes how the pool
+was drawn, and each object is then individually inspected (graded non-lens internally, or
+rejected by citizen science), not left unvetted. Ours are drawn from the parent pool by ID hash and seeded sampling only, passed
+through the screening cut above and no further individual inspection, which is
+the deployment regime a search actually faces. The benchmark draws its non-lens sample from a Q1
+search population limited at $I_E < 22.5$~\citep{lines2025simstosky}; ours extends to $\MagFaint{}$ in PSF magnitude, and
+\FracFaintTest{}\% of our test negatives are fainter than 22.5 in that quantity, so the two
+pools are not matched in depth. Test negatives exclude any object sharing an
+exact Euclid ID with a catalogued lens or a simulation host galaxy (\DOneRemoved{}
+objects); values on the pre-registered pool are given in Appendix~\ref{app:prereg_pool}.
+
+The 489 lenses were divided into five folds stratified by grade and grouped by object
+identifier, so each fold holds a comparable A/B mixture and any duplicated physical lens
+stays on one side. Four folds hold 98 test positives and one holds 97; each lens is tested
+exactly once, and the partition into a test role and a target role is exact on every fold.
+
+\subsection{Leakage audit}
+
+The splits were checked in two independent layers. The builder's own audit enforces nine
+groups of rules --- covering disjointness, class balance, partition provenance, fold
+rotation, grade representation, the confinement of hard negatives to training, and the
+exclusion of simulation deflectors from every negative role --- and refuses to write the
+file unless all of them hold. They are listed in Appendix~\ref{sec:splitrules}. All pass
+on the real data. A second layer is not a formality: an independent Q1 lens-finding
+pipeline that also splits at catalogue level, for the same reason, still needed a
+perceptual-hash follow-up to catch four near-duplicate pairs its catalogue-level split had
+let through~\citep{astrovink}.
+
+A separate verifier then re-derived the checks the builder cannot make, in the spirit of a
+medical-imaging foundation-model survey whose treatment of leakage in adaptation pipelines
+motivates this audit~\citep{domain_leakage}, and found two things. Perceptual
+hashing of the 489 lenses flagged eight similar pairs, whose sky positions are all more
+than 3\,900 arcseconds apart, so they are distinct systems sharing the canonical
+bright-elliptical-plus-ring appearance and were recorded as inspected and cleared. A
+cross-match of simulation deflectors against the raw negative pool found 20 simulation
+hosts in it; the builder was changed to purge simulation-deflector identifiers before
+drawing, and the verifier then reported none in any negative role. Both checks compared
+identifiers as the files store them, and the deflector files and simulation shards store
+them rounded. Matched by exact Euclid ID, rebuilt from the deflector files' coordinates,
+\DeflAllNeg{} simulation hosts are among the negatives: the \DOneDeflNeg{} in the test pool
+are excluded by the test-set definition above, and \DeflOtherNeg{} remain among the
+training, validation and target negatives. The simulation shards carry no sky coordinates,
+so a host present under a different identifier would not be caught by either check.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{F1_setup.pdf}
+\caption{\textbf{The four data roles, the fold rotation, and which arm sees what.} Every
+count is read from the splits file; the shared test negatives are counted after the
+exclusion described in the text. \textbf{No real lens label enters a training loss}:
+the graded lenses appear in the target pool as unlabelled images and in the test pool as
+labels used at evaluation only. Target negatives are fresh per fold so the fold models
+stay uncorrelated; test negatives are one shared pool so the FPR${}=10^{-3}$ threshold is
+identical across folds. The $\sim$1:1 target balance follows from the label-shift argument
+above, and it is also what caps the pool at 782 images: the available positives are the
+other folds' graded lenses, and matching the source ratio fixes the negatives to the same
+count. That 782-image pool is the exposure the memorisation diagnostic reported later
+measures.}
+\label{fig:setup}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{F2_cutouts.pdf}
+\caption{\textbf{One example from each image population.} All four panels use the same
+stretch --- the per-image arcsinh the encoder receives --- so they are comparable as
+inputs to the model rather than in absolute flux. The examples follow a declared rule
+rather than being chosen by eye: the simulated lens sits at its shard's \emph{median}
+Einstein radius, and the second panel is \textbf{the same real galaxy with no arc painted
+on}; the real lens is the grade-A lens at the median expert score. At the median Einstein
+radius the arc is faint, which is what a median rather than a hand-picked example looks
+like. In a UMAP embedding of their own feature space, Euclid Collaboration: Lines et al.~\citep{lines2025simstosky} find that
+real Q1 lenses tend to have fainter arcs and less complete Einstein rings than their
+simulations, and attribute part of the sim-to-real gap to that; whether our simulations are
+deficient in that same region we did not measure, and we note their finding without
+asserting the connection. Image credit: ESA Euclid/Euclid Consortium/NASA/Q1-2025.}
+\label{fig:cutouts}
+\end{figure}

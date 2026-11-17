@@ -1,0 +1,881 @@
+% =====================================================================================
+% refs.bib
+% =====================================================================================
+%
+% TWO PROVENANCE TIERS, and the difference is stated rather than smoothed over.
+%
+% TIER 1 -- VERIFIED (2026-09-19). Checked against the paper's own arXiv abstract page,
+% the CVF/AAAI/PMLR proceedings, or the publisher record. Several of these carry
+% DELIBERATE DEFECTS -- a missing author field, an `others` placeholder, no arXiv ID --
+% and each such entry's note says what is missing and why. They are left FAILING LOUDLY
+% rather than completed by inference: an entry with no author field renders visibly
+% wrong if cited before it is finished, which is the point.
+%
+% TIER 2 -- UNVERIFIED, inherited from PROJECT.md. Where the record gives an identifier
+% and a short descriptor but no title or authors, the descriptor is the title IN SQUARE
+% BRACKETS and the entry is flagged VERIFY. Nothing in these was filled in from memory.
+%
+% Every key here has a row in citation_register.md saying what the paper claims and what
+% this paper claims with it. A \cite whose key has no register row is an error.
+% =====================================================================================
+
+
+% ============================ TIER 1: VERIFIED ==============================
+
+@inproceedings{kumar2022lpft,
+  author    = {Kumar, Ananya and Raghunathan, Aditi and Jones, Robbie and Ma, Tengyu and Liang, Percy},
+  title     = {Fine-Tuning can Distort Pretrained Features and Underperform Out-of-Distribution},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2022},
+  eprint    = {2202.10054},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  annote    = {Why this project's unfrozen arms use LP->FT ordering. The feature-distortion
+               phenomenon it describes is observed directly here in the lambda=0 arm,
+               which ends below the frozen head it initialised from.}
+}
+
+@inproceedings{sohn2020fixmatch,
+  author    = {Sohn, Kihyuk and Berthelot, David and Li, Chun-Liang and Zhang, Zizhao and Carlini, Nicholas and Cubuk, Ekin D. and Kurakin, Alex and Zhang, Han and Raffel, Colin},
+  title     = {{FixMatch}: Simplifying Semi-Supervised Learning with Consistency and Confidence},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2020},
+  eprint    = {2001.07685},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+
+@inproceedings{wang2022freematch,
+  author    = {Wang, Yidong and Chen, Hao and Heng, Qiang and Hou, Wenxin and Fan, Yue and
+               Wu, Zhen and Wang, Jindong and Savvides, Marios and Shinozaki, Takahiro and
+               Raj, Bhiksha and Schiele, Bernt and Xie, Xing},
+  title     = {{FreeMatch}: Self-adaptive Thresholding for Semi-supervised Learning},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023},
+  eprint    = {2205.07246},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+@article{ganin2016dann,
+  author  = {Ganin, Yaroslav and Ustinova, Evgeniya and Ajakan, Hana and Germain, Pascal and Larochelle, Hugo and Laviolette, Fran\c{c}ois and Marchand, Mario and Lempitsky, Victor},
+  title   = {Domain-Adversarial Training of Neural Networks},
+  journal = {Journal of Machine Learning Research},
+  volume  = {17},
+  number  = {59},
+  pages   = {1--35},
+  year    = {2016},
+  eprint  = {1505.07818},
+  archivePrefix = {arXiv},
+  primaryClass  = {stat.ML}
+}
+
+
+@inproceedings{berthelot2022adamatch,
+  author    = {Berthelot, David and Roelofs, Rebecca and Sohn, Kihyuk and Carlini, Nicholas and Kurakin, Alex},
+  title     = {{AdaMatch}: A Unified Approach to Semi-Supervised Learning and Domain Adaptation},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2022},
+  eprint    = {2106.04732},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+
+
+
+@article{skadabench2025,
+  author  = {Lalou, Yanis and Gnassounou, Th\'eo and Collas, Antoine and
+             de Mathelin, Antoine and Kachaiev, Oleksii and Odonnat, Ambroise and
+             Moreau, Thomas and Gramfort, Alexandre and Flamary, R\'emi},
+  title   = {{SKADA-Bench}: Benchmarking Unsupervised Domain Adaptation Methods with
+             Realistic Validation On Diverse Modalities},
+  journal = {Transactions on Machine Learning Research},
+  year    = {2025},
+  url     = {https://openreview.net/forum?id=k9F63DV3Qe},
+  eprint  = {2407.11676},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+@inproceedings{you2019dev,
+  author    = {You, Kaichao and Wang, Ximei and Long, Mingsheng and Jordan, Michael I.},
+  title     = {Towards Accurate Model Selection in Deep Unsupervised Domain Adaptation},
+  booktitle = {Proceedings of the 36th International Conference on Machine Learning (ICML)},
+  editor    = {Chaudhuri, Kamalika and Salakhutdinov, Ruslan},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {97},
+  pages     = {7124--7133},
+  year      = {2019}
+}
+
+@article{metcalf2019challenge,
+  author  = {Metcalf, R. B. and Meneghetti, M. and Avestruz, C. and Bellagamba, F. and
+             Bom, C. R. and Bertin, E. and Cabanac, R. and Courbin, F. and Davies, A. and
+             Decenci\`ere, E. and Flamary, R. and Gavazzi, R. and Geiger, M. and
+             Hartley, P. and Huertas-Company, M. and Jackson, N. and Jacobs, C. and
+             Jullo, E. and Kneib, J.-P. and Koopmans, L. V. E. and Lanusse, F. and
+             Li, C.-L. and Ma, Q. and Makler, M. and Li, N. and Lightman, M. and
+             Petrillo, C. E. and Serjeant, S. and Sch\"afer, C. and Sonnenfeld, A. and
+             Tagore, A. and Tortora, C. and Tuccillo, D. and Valent\'in, M. B. and
+             Velasco-Forero, S. and Verdoes Kleijn, G. A. and Vernardos, G.},
+  title   = {The strong gravitational lens finding challenge},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {625},
+  pages   = {A119},
+  year    = {2019},
+  doi     = {10.1051/0004-6361/201832797}
+}
+
+@article{mandelbaum2014great3,
+  author  = {Mandelbaum, Rachel and Rowe, Barnaby and Bosch, James and Chang, Chihway and
+             Courbin, Frederic and Gill, Mandeep and Jarvis, Mike and Kannawadi, Arun and
+             Kacprzak, Tomasz and Lackner, Claire and Leauthaud, Alexie and
+             Miyatake, Hironao and Nakajima, Reiko and Rhodes, Jason and Simet, Melanie and
+             Zuntz, Joe and Armstrong, Bob and Bridle, Sarah and Coupon, Jean and
+             Dietrich, J{\"o}rg P. and Gentile, Marc and Heymans, Catherine and
+             Jurling, Alden S. and Kent, Stephen M. and Kirkby, David and Margala, Daniel and
+             Massey, Richard and Melchior, Peter and Peterson, John and Roodman, Aaron and
+             Schrabback, Tim},
+  title   = {The Third Gravitational Lensing Accuracy Testing ({GREAT3}) Challenge Handbook},
+  journal = {The Astrophysical Journal Supplement Series},
+  volume  = {212},
+  number  = {1},
+  pages   = {5},
+  year    = {2014},
+  doi     = {10.1088/0067-0049/212/1/5},
+  eprint  = {1308.4982},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.CO}
+}
+
+@article{rowe2015galsim,
+  author  = {Rowe, Barnaby and Jarvis, Mike and Mandelbaum, Rachel and
+             Bernstein, Gary M. and Bosch, James and Simet, Melanie and
+             Meyers, Joshua E. and Kacprzak, Tomasz and Nakajima, Reiko and
+             Zuntz, Joe and Miyatake, Hironao and Dietrich, J\"org P. and
+             Armstrong, Robert and Melchior, Peter and Gill, Mandeep S. S.},
+  title   = {{GalSim}: The modular galaxy image simulation toolkit},
+  journal = {Astronomy and Computing},
+  volume  = {10},
+  pages   = {121--150},
+  year    = {2015},
+  doi     = {10.1016/j.ascom.2015.02.002},
+  eprint  = {1407.7676},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM},
+  annote  = {Volume and page confirmed from the ADS reference the GalSim project itself
+             links (2015A\&C....10..121R). Author list from the arXiv PDF title page.}
+}
+
+@article{birrer2018lenstronomy,
+  author  = {Birrer, Simon and Amara, Adam},
+  title   = {lenstronomy: multi-purpose gravitational lens modelling software package},
+  journal = {Physics of the Dark Universe},
+  volume  = {22},
+  pages   = {189},
+  year    = {2018},
+  eprint  = {1803.09746},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.CO}
+}
+
+@article{birrer2021lenstronomy,
+  author  = {Birrer, Simon and Shajib, Anowar J. and Gilman, Daniel and Galan, Aymeric and
+             Aalbers, Jelle and Millon, Martin and Morgan, Robert and Pagano, Giulia and
+             Park, Ji Won and Teodori, Luca and Tessore, Nicolas and Ueland, Madison and
+             Van de Vyvere, Lyne and Wagner-Carena, Sebastian and Wempe, Ewoud and
+             Yang, Lilan and Ding, Xuheng and Schmidt, Thomas and Sluse, Dominique and
+             Zhang, Ming and Amara, Adam},
+  title   = {lenstronomy {II}: A gravitational lensing software ecosystem},
+  journal = {Journal of Open Source Software},
+  volume  = {6},
+  number  = {62},
+  pages   = {3283},
+  year    = {2021},
+  doi     = {10.21105/joss.03283},
+  eprint  = {2106.05976},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM}
+}
+
+@article{leuzzi2024euclidprep,
+  author  = {{Euclid Collaboration} and Leuzzi, L. and Meneghetti, M. and Angora, G. and
+             Metcalf, R. B. and Moscardini, L. and others},
+  title   = {{Euclid} preparation. {XXXIII}. {C}haracterization of convolutional neural networks
+             for the identification of galaxy-galaxy strong-lensing events},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {681},
+  pages   = {A68},
+  year    = {2024},
+  doi     = {10.1051/0004-6361/202347244},
+  eprint  = {2307.08736},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.GA},
+  annote  = {Metadata evidence: abstract (A&A article page, ADS and the RWTH
+             institutional record). STILL SECOND-HAND: the claim attached to it came via
+             Lines, so the sentence citing it must say that Lines reports it, unless the
+             paper itself is checked.}
+}
+
+@article{lines2025discoveryengineC,
+  author  = {{Euclid Collaboration} and Lines, N. E. P. and Collett, T. E. and
+             Walmsley, M. and Rojas, K. and Li, T. and Leuzzi, L. and others},
+  title   = {{Euclid Quick Data Release (Q1)}. {XXVIII}. {The Strong Lensing Discovery Engine C} --
+             {F}inding lenses with machine learning},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {711},
+  pages   = {A28},
+  year    = {2026},
+  doi     = {10.1051/0004-6361/202554542},
+  eprint  = {2503.15326},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.GA},
+  annote  = {NOT THE BENCHMARK -- that is lines2025simstosky (2512.05899). The key says
+             2025 (the arXiv year); the published version is A&A 711 (2026).}
+}
+
+@article{choi2007vdf,
+  author  = {Choi, Yun-Young and Park, Changbom and Vogeley, Michael S.},
+  title   = {Internal and Collective Properties of Galaxies in the {Sloan Digital Sky
+             Survey}},
+  journal = {The Astrophysical Journal},
+  year    = {2007},
+  volume  = {658},
+  number  = {2},
+  pages   = {884--897},
+  doi     = {10.1086/511060},
+  eprint  = {astro-ph/0611607},
+  archivePrefix = {arXiv},
+  annote  = {Checked against the full text (Sect. 4.2, Eq. 4). The VDF parameters are the
+             only set the paper reports -- phi* = 8.0e-3 h^3 Mpc^-3, sigma* = 161 +/- 5,
+             alpha = 2.32 +/- 0.10, beta = 2.67 +/- 0.07 -- for the measurement-error-
+             deconvolved E/S0 VDF; there is no table of fitted rows. Measured at z <~ 0.1.
+             The code's constants are in scripts/generate_arc_on_real.py:71.}
+}
+
+@inproceedings{gulrajani2021domainbed,
+  author    = {Gulrajani, Ishaan and Lopez-Paz, David},
+  title     = {In Search of Lost Domain Generalization},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2021},
+  eprint    = {2007.01434},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+@article{lines2025simstosky,
+  author  = {{Euclid Collaboration} and Lines, N. E. P. and Collett, T. E. and
+             Holloway, P. and Rojas, K. and Schuldt, S. and Metcalf, R. B. and
+             Li, T. and Verma, A. and Despali, G. and Courbin, F. and
+             Gavazzi, R. and Tortora, C. and Cl\'ement, B. and others},
+  title   = {{Euclid Quick Data Release (Q1)}. {XXXII}. {F}rom simulations to sky: Advancing
+             machine-learning lens detection with real {Euclid} data},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {711},
+  pages   = {A32},
+  year    = {2026},
+  doi     = {10.1051/0004-6361/202558456},
+  eprint  = {2512.05899},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM}
+}
+
+
+% ---- added from batch 8: six entries that were author-less until 2026-09-19 ----
+@article{discoveryengineA,
+  author  = {{Euclid Collaboration} and Walmsley, M. and Holloway, P. and Lines, N. E. P. and
+             Rojas, K. and Collett, T. E. and others},
+  title   = {{Euclid Quick Data Release (Q1)}. {XXVI}. {The Strong Lensing Discovery Engine A} --
+             {S}ystem overview and first lens sample},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {711},
+  pages   = {A26},
+  year    = {2026},
+  doi     = {10.1051/0004-6361/202555141},
+  eprint  = {2503.15324},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.GA}
+}
+
+@article{discoveryengineE,
+  author  = {{Euclid Collaboration} and Holloway, P. and Verma, A. and Walmsley, M. and
+             Marshall, P. J. and More, A. and Collett, T. E. and others},
+  title   = {{Euclid Quick Data Release (Q1)}. {XXX}. {The Strong Lensing Discovery Engine E} --
+             {E}nsemble classification of strong gravitational lenses: lessons for
+             {Data Release 1}},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {711},
+  pages   = {A30},
+  year    = {2026},
+  doi     = {10.1051/0004-6361/202554617},
+  eprint  = {2503.15328},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.GA},
+  annote  = {THE 52 +/- 2\% FIGURE IS THE ENSEMBLE'S PURITY FOR GRADE A/B AT 50\%
+             COMPLETENESS, measured against the expert-graded subset as ground truth -- it
+             is NOT the purity of the graded A/B sample itself.}
+}
+
+@article{unions2025,
+  author  = {Acevedo Barroso, J. A. and Cl\'ement, B. and Courbin, F. and Gavazzi, R. and
+             Lemon, C. and Rojas, K. and Scott, D. and Gwyn, S. and Hammer, F. and
+             Hudson, M. J. and Magnier, E. A.},
+  title   = {Searching for strong lensing by late-type galaxies in {UNIONS}},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {706},
+  pages   = {A146},
+  year    = {2026},
+  doi     = {10.1051/0004-6361/202554555},
+  eprint  = {2503.10610},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.GA}
+}
+
+@article{holismokesXI,
+  author  = {Ca\~nameras, R. and Schuldt, S. and Shu, Y. and Suyu, S. H. and
+             Taubenberger, S. and Andika, I. T. and Bag, S. and Inoue, K. T. and
+             Jaelani, A. T. and Leal-Taix\'e, L. and Meinhardt, T. and Melo, A. and
+             More, A.},
+  title   = {{HOLISMOKES} -- {XI}. {E}valuation of supervised neural networks for strong-lens
+             searches in ground-based imaging surveys},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {692},
+  pages   = {A72},
+  year    = {2024},
+  doi     = {10.1051/0004-6361/202347072},
+  eprint  = {2306.03136},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.GA},
+  annote  = {TPR0 and TPR10 are true-positive rates at a fixed NUMBER of false positives
+             (0 and 10) on a test set of 189 lenses and 70910 non-lenses -- TPR10
+             corresponds to FPR of about 1.4e-4, NOT 1e-3. Their centroid-shift
+             augmentation is +/-5 pixels, not +/-3.}
+}
+
+@inproceedings{rlsbench,
+  author    = {Garg, S. and Erickson, N. and Sharpnack, J. and Smola, A. J. and
+               Balakrishnan, S. and Lipton, Z. C.},
+  title     = {{RLS}bench: Domain Adaptation Under Relaxed Label Shift},
+  booktitle = {Proceedings of the 40th International Conference on Machine Learning (ICML)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {202},
+  pages     = {10879--10928},
+  year      = {2023},
+  eprint    = {2302.03020},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+@misc{astrovink,
+  author       = {{Euclid Collaboration} and Vincken, S. H. and Rojas, K. and Melchior, M. and
+                  Lines, N. E. P. and Collett, T. E. and Verma, A. and Holloway, P. and others},
+  title        = {{Euclid Quick Data Release (Q1)}. {AstroVink}: A vision transformer approach to
+                  find strong gravitational lens systems},
+  year         = {2026},
+  eprint       = {2604.21977},
+  archivePrefix= {arXiv},
+  primaryClass = {astro-ph.IM},
+  annote       = {Cited as an arXiv preprint (arXiv:2604.21977, submitted 23 Apr 2026;
+                  metadata at evidence level abstract). A&A publication is not established:
+                  the authors' repository and model card describe the journal paper as in
+                  preparation for A&A, and INSPIRE lists no journal publication, so no
+                  journal field and no submission note are given. The arXiv listing shows
+                  1192 authors; the first seven are from the paper's title page, in the
+                  Euclid Collaboration convention used by the other Q1 entries.}
+}
+
+% ---- added 2026-10-01 (credits_provenance_brief.md): the Q1 data credit and overview ----
+@misc{euclidq1data,
+  author       = {{European Space Agency}},
+  title        = {Euclid {Q1} data from the {Euclid} mission of the {European Space Agency}
+                  ({ESA})},
+  year         = {2025},
+  doi          = {10.57780/esa-2853f3b},
+  annote       = {The data credit required by the ESA Cosmos page "Q1 Data License and
+                  Credits" (read at evidence level body): licence CC BY-NC 3.0 IGO, credit
+                  "ESA Euclid/Euclid Consortium/NASA/Q1-2025", and a required acknowledgement
+                  sentence whose DOI must be in the bibliography and cited in the text. The
+                  title is that sentence's own description of the data; the DOI landing
+                  page's title was not read, so none is claimed for it.}
+}
+
+@article{euclidq1overview,
+  author  = {{Euclid Collaboration} and Aussel, H. and others},
+  title   = {{Euclid Quick Data Release (Q1)}. {I}. {D}ata release overview},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {711},
+  pages   = {A1},
+  year    = {2026},
+  doi     = {10.1051/0004-6361/202554610},
+  eprint  = {2503.15302},
+  archivePrefix = {arXiv},
+  annote  = {Metadata from the A&A page (evidence level abstract). Only the first author is
+             recorded; the rest of the list was not read, so it is "others" rather than
+             filled in. The title separator follows the other Q1 entries (". I.") where the
+             A&A page prints "(Q1) -- I."; no arXiv subject class was recorded.}
+}
+
+% ---- added 2026-10-01 (provenance_fixes_brief.md): the Q1 products and data record used ----
+@article{euclidq1mer,
+  author  = {{Euclid Collaboration} and Romelli, E. and others},
+  title   = {{Euclid Quick Data Release (Q1)}. {IV}. {F}rom images to multi-wavelength
+             catalogues: The {Euclid} {MERge} processing function},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {711},
+  pages   = {A4},
+  year    = {2026},
+  doi     = {10.1051/0004-6361/202554586},
+  eprint  = {2503.15305},
+  archivePrefix = {arXiv},
+  annote  = {Metadata at evidence level abstract. Only the first author is recorded, hence
+             "others". Title separator as in the other Q1 entries. Cited for the MER
+             catalogue and the MER mosaics the unlabelled pool was selected from and cut
+             out of.}
+}
+
+@article{euclidq1phz,
+  author  = {{Euclid Collaboration} and Tucci, M. and others},
+  title   = {{Euclid Quick Data Release (Q1)}. {V}. {P}hotometric redshifts and physical
+             properties of galaxies through the {PHZ} processing function},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {711},
+  pages   = {A5},
+  year    = {2026},
+  doi     = {10.1051/0004-6361/202554588},
+  eprint  = {2503.15306},
+  archivePrefix = {arXiv},
+  annote  = {Metadata at evidence level abstract. Only the first author is recorded, hence
+             "others". Title separator as in the other Q1 entries. Cited for the
+             photometric redshifts and stellar masses the deflector selection used.}
+}
+
+@misc{discoveryenginecat,
+  author       = {Walmsley, M. and Holloway, P. and Lines, N. and others},
+  title        = {{Euclid Quick Data Release (Q1)}: {The Strong Lensing Discovery Engine}},
+  howpublished = {Zenodo, version 0.0.3},
+  year         = {2025},
+  doi          = {10.5281/zenodo.15025832},
+  annote       = {The data record (evidence level body), licence CC-BY-4.0. Files: the lens
+                  catalogue csv (422.4 kB), five modeling csv files, and the cutout archives
+                  lens.zip (3.1 GB), unsuccess.zip (315.7 MB), group.zip (255.1 MB) and
+                  recenter.zip (56.4 MB). The project's copies of the catalogue and the four
+                  zips match these names and sizes (paper/PROVENANCE_FIXES_REPORT.md).}
+}
+
+% ---- added 2026-10-01 (gradex_brief.md): the earlier version that carried grade X ----
+@misc{discoveryenginecat001,
+  author       = {Walmsley, Mike and Holloway, Philip and Lines, Natalie and Rojas, Karina and
+                  Collett, Thomas and Verma, Aprajita and Li, Tian and Nightingale, James and
+                  Despali, Giulia and Schuldt, Stefan},
+  title        = {{Euclid Quick Data Release (Q1)}: {The Strong Lensing Discovery Engine}},
+  howpublished = {Zenodo, version 0.0.1},
+  year         = {2025},
+  doi          = {10.5281/zenodo.15003117},
+  annote       = {Version 0.0.1 of the record cited as discoveryenginecat, published 11 March
+                  2025 (evidence level body); it describes itself as a placeholder for the
+                  public release and holds one lens-catalogue csv, displayed as 1.0 MB. The
+                  project's grade-X file matches it by size and grade structure; no checksum
+                  was available (paper/GRADEX_REPORT.md). The ten creators, in order, and
+                  the resource type (dataset) and licence (CC-BY-4.0) are from the 0.0.1
+                  record page (evidence level body).}
+}
+
+% ---- added 2026-11-01 (brief_final_review_fixes.md, PROJECTv7 7.63): ESA Datalabs and ----
+% ---- the software the code imports. Each was checked against the record named in its annote. ----
+@incollection{navarro2024datalabs,
+  author    = {Navarro, Vicente and {del Rio}, Sara and Diego, Miguel Angel and
+               Lopez-Caniego, Marcos and Marinic, Filip and Kruk, Sandor and Reerink, Jan and
+               Arviset, Christophe},
+  title     = {{ESA Datalabs}: Digital Innovation in Space Science},
+  booktitle = {Space Data Management},
+  editor    = {Cortesi, Agostino},
+  series    = {Studies in Big Data},
+  volume    = {141},
+  pages     = {1--13},
+  publisher = {Springer},
+  address   = {Singapore},
+  year      = {2024},
+  doi       = {10.1007/978-981-97-0041-7_1},
+  annote    = {Authors (eight, in order, spelt as the record gives them), title, book, editor,
+               series, pages, publisher and year from the Crossref record of the DOI; the
+               series volume (141) from the book's Springer page. Cited in the
+               acknowledgements' ESA Datalabs sentence.}
+}
+
+@inproceedings{paszke2019pytorch,
+  author    = {Paszke, Adam and Gross, Sam and Massa, Francisco and Lerer, Adam and
+               Bradbury, James and Chanan, Gregory and Killeen, Trevor and Lin, Zeming and
+               Gimelshein, Natalia and Antiga, Luca and Desmaison, Alban and K{\"o}pf, Andreas and
+               Yang, Edward and DeVito, Zach and Raison, Martin and Tejani, Alykhan and
+               Chilamkurthy, Sasank and Steiner, Benoit and Fang, Lu and Bai, Junjie and
+               Chintala, Soumith},
+  title     = {{PyTorch}: An Imperative Style, High-Performance Deep Learning Library},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {32},
+  year      = {2019},
+  eprint    = {1912.01703},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  annote    = {Title, venue, volume and year from the NeurIPS 2019 proceedings page; the 21
+               authors in order from the arXiv record. Cited for the training and evaluation
+               code (torch is imported by 79 files in scripts/ and 5 in paper/scripts/).}
+}
+
+@misc{wightman2019timm,
+  author       = {Wightman, Ross},
+  title        = {{PyTorch} Image Models},
+  howpublished = {GitHub repository, {\urlstyle{rm}\url{https://github.com/rwightman/pytorch-image-models}}},
+  year         = {2019},
+  doi          = {10.5281/zenodo.4414861},
+  annote       = {The citation the timm repository asks for. The DOI is the Zenodo concept
+                  record, which resolves to the latest version; the version the runs used is
+                  not recorded (CITATION_PROVENANCE.md: timm unpinned). Cited because the
+                  encoder is built through timm (scripts/model.py, scripts/zoobot_encoder.py).}
+}
+
+@article{harris2020numpy,
+  author  = {Harris, Charles R. and Millman, K. Jarrod and {van der Walt}, St{\'e}fan J. and
+             Gommers, Ralf and Virtanen, Pauli and Cournapeau, David and Wieser, Eric and
+             Taylor, Julian and Berg, Sebastian and Smith, Nathaniel J. and Kern, Robert and
+             Picus, Matti and Hoyer, Stephan and {van Kerkwijk}, Marten H. and Brett, Matthew and
+             Haldane, Allan and {del R{\'i}o}, Jaime Fern{\'a}ndez and Wiebe, Mark and
+             Peterson, Pearu and G{\'e}rard-Marchant, Pierre and Sheppard, Kevin and
+             Reddy, Tyler and Weckesser, Warren and Abbasi, Hameer and Gohlke, Christoph and
+             Oliphant, Travis E.},
+  title   = {Array programming with {NumPy}},
+  journal = {Nature},
+  volume  = {585},
+  number  = {7825},
+  pages   = {357--362},
+  year    = {2020},
+  doi     = {10.1038/s41586-020-2649-2},
+  annote  = {All 26 authors, in order, and the bibliographic fields from the Crossref record.}
+}
+
+@article{virtanen2020scipy,
+  author  = {Virtanen, Pauli and Gommers, Ralf and Oliphant, Travis E. and others},
+  title   = {{SciPy} 1.0: fundamental algorithms for scientific computing in {Python}},
+  journal = {Nature Methods},
+  volume  = {17},
+  number  = {3},
+  pages   = {261--272},
+  year    = {2020},
+  doi     = {10.1038/s41592-019-0686-2},
+  annote  = {Bibliographic fields from the Crossref record, which lists 112 authors; the first
+             three are given, in the convention used here for long author lists.}
+}
+
+@article{pedregosa2011sklearn,
+  author  = {Pedregosa, Fabian and Varoquaux, Ga{\"e}l and Gramfort, Alexandre and
+             Michel, Vincent and Thirion, Bertrand and Grisel, Olivier and Blondel, Mathieu and
+             Prettenhofer, Peter and Weiss, Ron and Dubourg, Vincent and Vanderplas, Jake and
+             Passos, Alexandre and Cournapeau, David and Brucher, Matthieu and Perrot, Matthieu and
+             Duchesnay, {\'E}douard},
+  title   = {Scikit-learn: Machine Learning in {Python}},
+  journal = {Journal of Machine Learning Research},
+  volume  = {12},
+  number  = {85},
+  pages   = {2825--2830},
+  year    = {2011},
+  annote  = {All 16 authors, in order, and the fields from the JMLR article page (no DOI).}
+}
+
+@article{hunter2007matplotlib,
+  author  = {Hunter, John D.},
+  title   = {Matplotlib: A {2D} Graphics Environment},
+  journal = {Computing in Science \& Engineering},
+  volume  = {9},
+  number  = {3},
+  pages   = {90--95},
+  year    = {2007},
+  doi     = {10.1109/MCSE.2007.55},
+  annote  = {Fields from the Crossref record.}
+}
+
+@article{astropy2022,
+  author  = {{Astropy Collaboration} and Price-Whelan, Adrian M. and Lim, Pey Lian and
+             Earl, Nicholas and others},
+  title   = {The {Astropy} Project: Sustaining and Growing a Community-oriented Open-source
+             Project and the Latest Major Release (v5.0) of the Core Package},
+  journal = {The Astrophysical Journal},
+  volume  = {935},
+  number  = {2},
+  pages   = {167},
+  year    = {2022},
+  doi     = {10.3847/1538-4357/ac7c74},
+  annote  = {Fields from the Crossref record (138 authors; the collaboration and the first
+             three named authors are given). Astropy's CITATION file asks for its three
+             papers, or the most recent one when space is limited; the most recent is cited.
+             Cited because the data pipeline imports astropy (13 files in scripts/: FITS
+             cutouts, WCS, the arc generator).}
+}
+
+% ================= TIER 2: UNVERIFIED, inherited from PROJECT.md ============
+
+@article{parul2024,
+  author  = {Parul, Hanna and Gleyzer, Sergei and Reddy, Pranath and Toomey, Michael W.},
+  title   = {Domain Adaptation in Application to Gravitational Lens Finding},
+  journal = {The Astrophysical Journal},
+  volume  = {990},
+  pages   = {47},
+  year    = {2025},
+  eprint  = {2410.01203},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM},
+  annote  = {Published version; the preprint is dated 2024 and the project record cites it
+             as such. The bibliography key stays `parul2024` for continuity with the
+             project record; the published year is 2025.}
+}
+
+@inproceedings{zhao2019invariant,
+  author    = {Zhao, Han and Tachet des Combes, R\'emi and Zhang, Kun and Gordon, Geoffrey J.},
+  title     = {On Learning Invariant Representations for Domain Adaptation},
+  booktitle = {Proceedings of the 36th International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {97},
+  pages     = {7523--7532},
+  year      = {2019},
+  annote    = {Added in paper v6e (review fixes, C.2) on the author's instruction: the k = 2
+               information-theoretic lower bound that zhao2020gls extends.}
+}
+
+@inproceedings{zhao2020gls,
+  author    = {Tachet des Combes, R. and Zhao, H. and Wang, Y.-X. and Gordon, G.},
+  title     = {Domain Adaptation with Conditional Distribution Matching and Generalized
+               Label Shift},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2020},
+  eprint    = {2003.04475},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  annote    = {CITE AS "Tachet des Combes et al. 2020", not "Zhao et al." -- the first two
+               authors contributed equally and Tachet des Combes is listed first. The
+               bibliography key is historical and kept to avoid touching every site.
+               The k = 2 version of Theorem 2.1 is due to Zhao, Tachet des Combes, Zhang
+               and Gordon, ICML 2019; this paper extends it to k classes and to CDAN.}
+}
+
+@inproceedings{classimbalanceda,
+  author    = {Tan, Shuhan and Peng, Xingchao and Saenko, Kate},
+  title     = {Class-Imbalanced Domain Adaptation: An Empirical Odyssey},
+  booktitle = {Computer Vision -- ECCV 2020 Workshops},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {12535},
+  pages     = {585--602},
+  year      = {2020},
+  eprint    = {1910.10320},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  annote    = {Author list and venue confirmed at source. The claim this paper cites it for
+               is abstract-level; the body has not been read here.}
+}
+
+@inproceedings{sun2016coral,
+  author    = {Sun, Baochen and Saenko, Kate},
+  title     = {Deep {CORAL}: Correlation Alignment for Deep Domain Adaptation},
+  booktitle = {ECCV 2016 Workshops},
+  year      = {2016},
+  doi       = {10.1007/978-3-319-49409-8_35},
+  eprint    = {1607.01719},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  annote    = {Loss is the squared Frobenius norm of the difference between source and
+               target batch covariances, scaled by 1/(4d^2) -- second-order only, no
+               first-moment term. The alignment weight is set so the classification and
+               CORAL losses are roughly equal at end of training (confirmed at source,
+               incl. Fig. 2(b)) -- a rule this project measured to be undefined in its own
+               regime. Applied at the last fully connected layer in their experiments.}
+}
+
+@inproceedings{cui2020bnm,
+  author    = {Cui, Shuhao and Wang, Shuhui and Zhuo, Junbao and Li, Liang and
+               Huang, Qingming and Tian, Qi},
+  title     = {Towards Discriminability and Diversity: Batch Nuclear-norm Maximization
+               under Label Insufficient Situations},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {3941--3950},
+  year      = {2020},
+  doi       = {10.1109/CVPR42600.2020.00400},
+  eprint    = {2003.12237},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  annote    = {Oral. Title confirmed against the CVF proceedings. The journal extension,
+               arXiv:2107.06154, is "Fast Batch Nuclear-norm Maximization and Minimization
+               for Robust Domain Adaptation" -- it adds nuclear-norm minimisation on the
+               source batch, so it is not simply a longer version; cite the CVPR paper.}
+}
+
+@article{belfiore2024,
+  author  = {Belfiore, F. and Ginolfi, M. and Blanc, G. and Boquien, M. and
+             Chevance, M. and Congiu, E. and Glover, S. C. O. and Groves, B. and
+             Klessen, R. S. and M\'endez-Delgado, J. E. and Williams, T. G.},
+  title   = {Machine learning the gap between real and simulated nebulae: A
+             domain-adaptation approach to classify ionised nebulae in nearby galaxies},
+  journal = {Astronomy \& Astrophysics},
+  volume  = {694},
+  pages   = {A212},
+  year    = {2025},
+  doi     = {10.1051/0004-6361/202451934},
+  eprint  = {2410.16370},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.GA}
+}
+
+@inproceedings{oliver2018realistic,
+  author    = {Oliver, Avital and Odena, Augustus and Raffel, Colin and
+               Cubuk, Ekin D. and Goodfellow, Ian J.},
+  title     = {Realistic Evaluation of Deep Semi-Supervised Learning Algorithms},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  pages     = {3235--3246},
+  year      = {2018},
+  eprint    = {1804.09170},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  annote    = {Authors confirmed from the paper's own title page (the first three are
+               marked equal contribution). Page range from two independent citation lists,
+               not from the publisher record -- confirm if the venue format requires pages.}
+}
+
+@misc{musgrave2021realitycheck,
+  author       = {Musgrave, Kevin and Belongie, Serge and Lim, Ser-Nam},
+  title        = {Unsupervised Domain Adaptation: A Reality Check},
+  year         = {2021},
+  eprint       = {2111.15672},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CV}
+}
+
+
+@article{alexander2023,
+  author  = {Alexander, Stephon and Gleyzer, Sergei and Parul, Hanna and Reddy, Pranath and
+             Tidball, Marcos and Toomey, Michael W.},
+  title   = {Domain Adaptation for Simulation-based Dark Matter Searches with Strong
+             Gravitational Lensing},
+  journal = {The Astrophysical Journal},
+  volume  = {954},
+  pages   = {28},
+  year    = {2023},
+  doi     = {10.3847/1538-4357/acdfc7}
+}
+
+@article{ciprijanovic2021,
+  author  = {{\'C}iprijanovi{\'c}, A. and Kafkes, D. and Downey, K. and Jenkins, S. and
+             Perdue, G. N. and Madireddy, S. and Johnston, T. and Snyder, G. F. and Nord, B.},
+  title   = {{DeepMerge -- II}. {Building} robust deep learning algorithms for merging galaxy
+             identification across domains},
+  journal = {Monthly Notices of the Royal Astronomical Society},
+  volume  = {506},
+  pages   = {677},
+  year    = {2021},
+  doi     = {10.1093/mnras/stab1677}
+}
+
+@article{bengio2004,
+  author  = {Bengio, Yoshua and Grandvalet, Yves},
+  title   = {No Unbiased Estimator of the Variance of {K}-Fold Cross-Validation},
+  journal = {Journal of Machine Learning Research},
+  volume  = {5},
+  pages   = {1089--1105},
+  year    = {2004}
+}
+
+@article{nadeau2003,
+  author  = {Nadeau, Claude and Bengio, Yoshua},
+  title   = {Inference for the Generalization Error},
+  journal = {Machine Learning},
+  volume  = {52},
+  pages   = {239--281},
+  year    = {2003},
+  doi     = {10.1023/A:1024068626366}
+}
+
+@article{kapoor2023,
+  author  = {Kapoor, Sayash and Narayanan, Arvind},
+  title   = {Leakage and the reproducibility crisis in machine-learning-based science},
+  journal = {Patterns},
+  volume  = {4},
+  number  = {9},
+  pages   = {100804},
+  year    = {2023},
+  doi     = {10.1016/j.patter.2023.100804}
+}
+
+@inproceedings{lipton2018,
+  author    = {Lipton, Zachary and Wang, Yu-Xiang and Smola, Alexander},
+  title     = {Detecting and Correcting for Label Shift with Black Box Predictors},
+  booktitle = {Proceedings of the 35th International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {80},
+  pages     = {3122--3130},
+  year      = {2018}
+}
+
+@article{quadrianto2009,
+  author  = {Quadrianto, Novi and Smola, Alex J. and Caetano, Tib{\'e}rio S. and Le, Quoc V.},
+  title   = {Estimating Labels from Label Proportions},
+  journal = {Journal of Machine Learning Research},
+  volume  = {10},
+  number  = {82},
+  pages   = {2349--2374},
+  year    = {2009},
+  url     = {https://jmlr.org/papers/v10/quadrianto09a.html}
+}
+
+@article{saerens2002,
+  author  = {Saerens, Marco and Latinne, Patrice and Decaestecker, Christine},
+  title   = {Adjusting the Outputs of a Classifier to New a Priori Probabilities: A Simple
+             Procedure},
+  journal = {Neural Computation},
+  volume  = {14},
+  number  = {1},
+  pages   = {21--41},
+  year    = {2002},
+  doi     = {10.1162/089976602753284446}
+}
+
+@misc{walmsley2024scaling,
+  author       = {Walmsley, Mike and Bowles, Micah and Scaife, Anna M. M. and
+                  Makechemu, Jason Shingirai and Gordon, Alexander J. and
+                  Ferguson, Annette M. N. and Mann, Robert G. and Pearson, James and
+                  Popp, J{\"u}rgen J. and Bovy, Jo and Speagle, Josh and Dickinson, Hugh and
+                  Fortson, Lucy and G{\'e}ron, Tobias and Kruk, Sandor and Lintott, Chris J. and
+                  Mantha, Kameswara and Mohan, Devina and O'Ryan, David and
+                  Slijepcevic, Inigo V.},
+  title        = {Scaling Laws for Galaxy Images},
+  year         = {2024},
+  eprint       = {2404.02973},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CV}
+}
+
+@article{zoobot,
+  author  = {Walmsley, Mike and Allen, Campbell and Aussel, Ben and Bowles, Micah and
+             Gregorowicz, Kasia and Slijepcevic, Inigo Val and Lintott, Chris J. and
+             Scaife, Anna M. M. and Jab{\l}o{\'n}ska, Maja and Karchev, Kosio and
+             Lanzieri, Denise and Mohan, Devina and O'Ryan, David and Saiguhan, Bharath and
+             Su{\'a}rez, Crisel and Guerra-Varas, Nicol{\'a}s and Velu, Renuka},
+  title   = {Zoobot: Adaptable Deep Learning Models for Galaxy Morphology},
+  journal = {Journal of Open Source Software},
+  volume  = {8},
+  number  = {85},
+  pages   = {5312},
+  year    = {2023},
+  doi     = {10.21105/joss.05312}
+}
+
+@misc{headgradnorm,
+  author       = {Wu, Fangzheng and Summa, Brian},
+  title        = {Model-Centric Diagnostics: A Framework for Internal State Readouts},
+  year         = {2026},
+  eprint       = {2601.16874},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CV},
+  annote       = {Tested and rejected here: the useful direction flips across methods. The
+                  cited version is a conceptual framework only -- its abstract states that
+                  a preliminary version introduced the head-gradient probe cited here, and
+                  that full algorithmic details, theoretical analysis and experimental
+                  validation are left to a forthcoming paper. Cited for provenance of the
+                  idea, not as a validated method.}
+}

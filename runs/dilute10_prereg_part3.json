@@ -1,0 +1,278 @@
+{
+  "binding_on": [
+    "coral_nb3",
+    "freematch_nb3"
+  ],
+  "brief": {
+    "decisions_extracted_from": "the brief's three blockquotes, in order",
+    "path": "C:/Users/krris/Downloads/brief_dilute10_part3.md",
+    "sha256": "3d2fc3e14f11aaaaac30e6236a4c53f3c2941fdc6d83e4563fdfd9d28ba7af05"
+  },
+  "coral_nb3_fold1_rerun": {
+    "logged_reason": "the 2026-10-17 run stopped at step 1 on a guard that part 2 declares advisory (an implementation nonconformance, since fixed, PROJECTv7 7.46-7.47). It produced no confirmatory data.",
+    "permitted": true,
+    "record": "runs/dilute10/coral_nb3/fold1_ABORTED_20261017/",
+    "record_file_sha256": "afb703cf47bf9f924e242e2ba9d9c7a0be351ad265d1b79598624adf056779e5",
+    "rerun_dir": "runs/dilute10/coral_nb3/fold1/",
+    "under": "part 1 stop condition 6"
+  },
+  "decision_coral_nb3": "CORAL × nb3 runs exactly as pre-registered: fp16, γ = 16, no retuning, no change to any threshold, scaler or precision setting. The round-4 feature-norm guard is advisory, as part 2 §D.5 already declares; it logs every firing to `dilute10_feature_norm_advisory.csv` and stops nothing. A label-free 300-step measurement on folds 1–4 (§7.47) showed recovery by step 10–11 and 290–291 of 300 updates applied, with every loss and weight finite.",
+  "evidence": {
+    "coral_nb3_300_step_summary": {
+      "configuration": "pre-registered CORAL x nb3: fp16, gamma 16, real new 1:10 frozen heads, dilute10 + uniform; feature-norm guard log-only; label-free (no step-0 gate, no scorer)",
+      "definition_recovery_step": "the step after the last scaler skip within the 300 steps, i.e. the first step after which no further step is skipped; round 4's own rate after its 3-5 calibration skips (all in steps 1-5) is 0 skips through step 300 on every fold, so 'at or below round 4's early rate' means no further skip",
+      "per_fold": {
+        "1": {
+          "applied_updates_of_300": 291,
+          "config_diff_mismatches": [],
+          "every_loss_finite": true,
+          "every_weight_finite": true,
+          "feat_l2_below_110": "never",
+          "feat_l2_src_tgt_at_300": [
+            130.04263305664062,
+            130.15187072753906
+          ],
+          "final_scale": 128.0,
+          "init_head_l2": 134.164185,
+          "nonfinite_grad_steps": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "raw_coral_at": {
+            "1": 12.629927635192871,
+            "100": 0.003583227051422,
+            "300": 0.00398577144369483,
+            "50": 0.002969598863273859
+          },
+          "recovery_step": 10,
+          "skipped_steps": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "steps_run": 300
+        },
+        "2": {
+          "applied_updates_of_300": 290,
+          "config_diff_mismatches": [],
+          "every_loss_finite": true,
+          "every_weight_finite": true,
+          "feat_l2_below_110": "never",
+          "feat_l2_src_tgt_at_300": [
+            131.09149169921875,
+            131.1241455078125
+          ],
+          "final_scale": 64.0,
+          "init_head_l2": 139.048126,
+          "nonfinite_grad_steps": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "raw_coral_at": {
+            "1": 10.070751190185547,
+            "100": 0.003526317188516259,
+            "300": 0.002895788522437215,
+            "50": 0.0024011179339140654
+          },
+          "recovery_step": 11,
+          "skipped_steps": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "steps_run": 300
+        },
+        "3": {
+          "applied_updates_of_300": 291,
+          "config_diff_mismatches": [],
+          "every_loss_finite": true,
+          "every_weight_finite": true,
+          "feat_l2_below_110": "never",
+          "feat_l2_src_tgt_at_300": [
+            128.828369140625,
+            128.90347290039062
+          ],
+          "final_scale": 128.0,
+          "init_head_l2": 133.419052,
+          "nonfinite_grad_steps": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "raw_coral_at": {
+            "1": 10.551669120788574,
+            "100": 0.003011008957400918,
+            "300": 0.002479016315191984,
+            "50": 0.002362932311370969
+          },
+          "recovery_step": 10,
+          "skipped_steps": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "steps_run": 300
+        },
+        "4": {
+          "applied_updates_of_300": 291,
+          "config_diff_mismatches": [],
+          "every_loss_finite": true,
+          "every_weight_finite": true,
+          "feat_l2_below_110": "never",
+          "feat_l2_src_tgt_at_300": [
+            128.71212768554688,
+            128.81529235839844
+          ],
+          "final_scale": 128.0,
+          "init_head_l2": 137.103989,
+          "nonfinite_grad_steps": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "raw_coral_at": {
+            "1": 14.936824798583984,
+            "100": 0.003558042226359248,
+            "300": 0.0031398136634379625,
+            "50": 0.0023704059422016144
+          },
+          "recovery_step": 10,
+          "skipped_steps": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "steps_run": 300
+        }
+      },
+      "source": "audit/dilute10_coral_300/summary.json"
+    },
+    "known_null": {
+      "config_diff_mismatches": [],
+      "fold": 1,
+      "init_head": "runs/bakeoff_coral/fold1/checkpoints/step_8000.pt",
+      "mode": "original",
+      "passed": true,
+      "raw_coral_range_harness_1_10": [
+        0.013847285881638527,
+        0.04917863383889198
+      ],
+      "raw_coral_range_round4_1_10": [
+        0.0126313092187047,
+        0.05049218609929085
+      ],
+      "reference": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold1/steps.csv",
+      "scale_identical_every_step": true,
+      "skipped_steps_harness": [
+        1,
+        2,
+        4
+      ],
+      "skipped_steps_round4": [
+        1,
+        2,
+        4
+      ],
+      "src_f_step1_harness_round4": [
+        67.57833862304688,
+        67.451904296875
+      ],
+      "steps": 30,
+      "tgt_f_step1_harness_round4": [
+        70.85171508789062,
+        70.78456115722656
+      ]
+    },
+    "section_7_46_10_step": {
+      "audit/dilute10_coral_guard/m_f1.json": "1994a0ad7e0dfc08af0cc97dd2f3a9045e59c5928da385ff48bcf4b592232059",
+      "audit/dilute10_coral_guard/m_f2.json": "e4915cfdf874e69d55276b1acc4480be8ce49a1163b88fb637b17ed84d590afc",
+      "audit/dilute10_coral_guard/m_f3.json": "504fb36f451e36a6117232ba1cfac5b7ec387b502f9a5d29ff41d1875e852207",
+      "audit/dilute10_coral_guard/m_f4.json": "8141175d8688912575ec7a9defc0847b1ad7488c69cdf26d2db28893f11b204a",
+      "audit/dilute10_coral_guard/measure10.py": "9a2d56e1ac8ba44e40481cd97ac9cdecd46012e219bb3dbf37b7610c855edb06"
+    },
+    "section_7_47_300_step": {
+      "audit/dilute10_coral_300/analyze.py": "d01e427999c300562681f9f45b080bf9899f8f79c2e8a302179497a6d0740480",
+      "audit/dilute10_coral_300/blocks.md": "3344bdd770888e6ce67ed3aff0f5c0554cbabef3bd9f83e570eb1eafb27b9712",
+      "audit/dilute10_coral_300/d_f1.json": "54a752699d087cd4a3a1cc81f867d65b4aafacecf330902d26adaf41f2ec3856",
+      "audit/dilute10_coral_300/d_f2.json": "9c335cfd0f2f6ed68b16dbcf57c38f5d261edecbba05c5c5d19966676eba1d0a",
+      "audit/dilute10_coral_300/d_f3.json": "d87711a05991a317e689b5dbef32a2de425312d7a9942d8d70bd2a08d46a6cd7",
+      "audit/dilute10_coral_300/d_f4.json": "42f8213ae5df50c372387ff5e4c8a89ed2ae4afb4750924c322f35f214f93cd5",
+      "audit/dilute10_coral_300/fp32_f1.json": "bf4befbc5c80370500bd831747206993ca5984b7b749fa85f3be511aae96988e",
+      "audit/dilute10_coral_300/kn_f1.json": "5f9ad47653d6cda49842fc826fde1a9bd18df902d3073df5ec181bc33e30e141",
+      "audit/dilute10_coral_300/measure300.py": "c2a9fc8083a03feb73a24f32acc473126f15b9adce4405de36721d3af3a705a1",
+      "audit/dilute10_coral_300/summary.json": "b163af6431627c10a64b5a8f2cf34ff8fe8b1a5cd3c8b6905cf7eb93602667b6"
+    }
+  },
+  "experiment": "dilute10 -- the 1:10 diluted-target rerun",
+  "freematch_nb3_rule": "Before bundle v3 is built, FreeMatch × nb3 receives the same label-free 300-step measurement as §7.47, with its real 1:10 frozen heads on folds 1–4 and a known-null (original mode reproduces its recorded early behaviour). If on every fold the recovery step is ≤ 150 (10% of its 1500-step budget) and at least 270 of 300 updates are applied, with every loss and weight finite, FreeMatch × nb3 runs exactly as pre-registered. Otherwise nothing further runs, and the author decides.",
+  "no_verdict_rule": "For CORAL × nb3 and FreeMatch × nb3 (the two stages that start from new 1:10 frozen heads): if a run applies fewer than 50% of its budget's optimiser updates (GradScaler skips counted as not applied), it is reported as a numerical failure under the pre-registered protocol, and that arm receives no branch verdict (part 1 §7). Its values are reported descriptively. Each run's skip count and applied fraction are reported regardless.",
+  "part": 3,
+  "part1": {
+    "path": "runs/dilute10_prereg_part1.json",
+    "recorded_utc": "2026-10-13T13:19:14Z",
+    "sha256": "bd537a025e81833e73713649c9eed68fd6a0fd3152ee29240f9a333f7c649d85",
+    "verified": true
+  },
+  "part2": {
+    "path": "runs/dilute10_prereg_part2.json",
+    "recorded_utc": "2026-10-13T18:07:33Z",
+    "sha256": "b8e09197a204be835fa089c858b08c7eb3e7887bfa19afd296d544d04f394503",
+    "verified": true
+  },
+  "recorded_utc": "2026-10-19T14:13:40Z",
+  "sha256_of_body_without_this_field": "1b583ea2ae5056edb410040c32613d9388e5a994bf90fc366fc93d293efb596a",
+  "status": "part 3 of 3 -- FINAL; binding on CORAL x nb3 and FreeMatch x nb3 only; it changes nothing about how any arm is trained; it must be enrolled in runs/protected_artifacts.json before either CORAL x nb3 or FreeMatch x nb3 runs",
+  "writer_sha256": "79935dd45d08a4b8a0ce72d6356bdd326e4260b50839d7a40993cc5c4f7d4470"
+}

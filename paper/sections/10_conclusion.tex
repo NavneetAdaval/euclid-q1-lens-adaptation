@@ -1,0 +1,24 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We measured what unsupervised domain adaptation adds to a simulation-trained lens finder on
+Euclid Q1, at the false-positive rate a search runs at. With a class-balanced target, each of
+four published objectives raised the TPR at FPR${}=10^{-3}$ from $\dFmBaseline{}$ to between
+$\dHeadMin{}$ and $\dHeadMax{}$, measured against a control that differs from one of them only
+in its adaptation weight. Because the target batches are balanced, that signal includes a known
+class proportion as well as real images, and our design cannot separate the two. In a second
+pre-registered experiment, a first test toward survey prevalence, we diluted the target to one
+lens per ten galaxies and drew its batches without the labels. DANN still raised TPR over the
+control, by $\dlGDann{}$ $[\dlGDannLo{}, \dlGDannHi{}]$, and BNM by $\dlGBnm{}$
+$[\dlGBnmLoThree{}, \dlGBnmHi{}]$, though for both the comparison with the balanced target
+cannot rule out that much of the original gain was lost; for CORAL and FreeMatch we cannot detect a gain. We
+could not establish a ranking of CORAL, DANN and FreeMatch: at their declared read-offs every
+paired interval includes zero, and an \rwFiveKWord{}-checkpoint average favours FreeMatch with an
+interval excluding zero under only one of its two pre-declared score combinations. Settling the
+ranking needs more graded lenses rather than another read-off convention. Two conditions limit how far
+these numbers carry. Our simulation-only baseline is weak, so the gains are measured from a low
+starting point. And every target we used, the diluted one included, is built from a lens
+catalogue that a new survey will not have, and is far denser in lenses than the sky. The next
+experiment is a target with no catalogue in it at all: random galaxies drawn from the survey, at
+its own prevalence, which removes the remaining use of the labels and the remaining gap in lens
+density.

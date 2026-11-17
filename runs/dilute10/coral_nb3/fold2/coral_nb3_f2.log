@@ -1,0 +1,147 @@
+================================================================================================
+ROUND-4 CORAL CONFIRMATORY -- fold 2 of [1, 2, 3, 4]
+================================================================================================
+  splits          : /kaggle/input/datasets/navneet78/lens-paper-dilute10/data/data/splits/splits.json
+  data_root       : /kaggle/input/datasets/navneet78/lens-paper-dilute10/data/data
+  cache_dir       : /kaggle/input/datasets/navneet78/lens-paper-dilute10/data/data/feature_cache
+  init_head_from  : /kaggle/working/runs/dilute10/coral_frozen/fold2/checkpoints/step_8000.pt
+  prereg          : /kaggle/input/datasets/navneet78/lens-paper-dilute10/runs/coral_r4_budget.json
+  dev_run_json    : /kaggle/input/datasets/navneet78/lens-paper-dilute10/reference/coral_r4_nb3_dev8000_fold0/run.json
+  reference_ids   : /kaggle/input/datasets/navneet78/lens-paper-dilute10/reference/coral_r4_logits/ids.npz
+  out_dir         : /kaggle/working/runs/dilute10/coral_nb3/fold2
+  torch           : 2.11.0+cu128  cuda=True  devices=1
+
+================================================================================================
+FOLD 2 -- CONFIRMATORY   (coral_nb3, gamma=16, 2000 steps)
+================================================================================================
+  test positives (splits_v6)  : 98
+  one-positive resolution     : 0.010204   (a RATE -- never reported as a count, PROJECT.md 9)
+  step-0 gate (FOLD_GATE[2])  : TPR@1e-3 0.142857   AUROC 0.902736   ||head||2 139.048126
+  pre-registration            : /kaggle/input/datasets/navneet78/lens-paper-dilute10/runs/coral_r4_budget.json
+  pre-registration sha256     : 65c20810485968d8a24662b352bb85cd73176e3b21c039dd97f592a9e0aeade3  VERIFIED
+  budget / read-off           : 2000 steps, FINAL checkpoint (step_2000.pt) -- THE BUDGET IS THE SELECTOR
+  budget provenance           : DECLARED (see the pre-registration for the grounds)
+  LP->FT init                 : dilute10/coral_frozen/fold2/checkpoints/step_8000.pt
+================================================================================================
+[load] building the Zoobot encoder (n_blocks=3, grad_checkpointing=True) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=3 -> trainable ['stages.3', 'stages.2', 'stages.1'] (14,835,520 params, 99.2% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from /kaggle/working/runs/dilute10/coral_frozen/fold2/checkpoints/step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 139.048141
+[optim] n_blocks=3  head_lr=0.0001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.05
+[optim]   group 0: head       lr=1.000e-04  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   group 2: stages.2   lr=7.500e-05  params=6,907,520
+[optim]   group 3: stages.1   lr=5.625e-05  params=479,680
+[optim]   TOTAL trainable = 14,837,441 params
+
+====================================================================================================
+CONFIG DIFF -- this confirmatory fold vs the fold-0 DEVELOPMENT arm
+  reference: /kaggle/input/datasets/navneet78/lens-paper-dilute10/reference/coral_r4_nb3_dev8000_fold0/run.json
+====================================================================================================
+  key                        fold-0 arm                       this run                   status
+  ------------------------------------------------------------------------------------------------
+  gamma                      16.0                             16.0                       MATCH
+  n_blocks                   3                                3                          MATCH
+* fold                       0                                2                          EXPECTED
+* max_steps                  8000                             2000                       EXPECTED
+  log_every                  125                              125                        MATCH
+  ckpt_every                 250                              250                        MATCH
+  feat_norm_ceiling          110.0                            110.0                      MATCH
+  feat_norm_floor            40.0                             40.0                       MATCH
+  coral_target_ema           False                            False                      MATCH
+* init_head_from_tail        runs/bakeoff_coral/fold0/checkp  dilute10/coral_frozen/fol  EXPECTED
+* init_head_l2               66.268356                        139.048126                 EXPECTED
+  batch_size                 256                              256                        MATCH
+  steps_per_epoch            187                              187                        MATCH
+  lr                         0.0001                           0.0001                     MATCH
+  backbone_lr_effective      0.0001                           0.0001                     MATCH
+  lr_decay                   0.75                             0.75                       MATCH
+  weight_decay               0.05                             0.05                       MATCH
+  coral_shrinkage            0.1                              0.1                        MATCH
+  coral_include_mean         True                             True                       MATCH
+  coral_weight_schedule      constant                         constant                   MATCH
+  coral_attachment           head.forward_with_features[1] (  head.forward_with_feature  MATCH
+  coral_ema_momentum         0.9                              0.9                        MATCH
+  precision                  fp16                             fp16                       MATCH
+  coral_loss_precision       fp32_autocast_disabled           fp32_autocast_disabled     MATCH
+  eval_precision             fp32                             fp32                       MATCH
+  seed                       42                               42                         MATCH
+  augmentation               weak (+-3px translate, PROJECT.  weak (+-3px translate, PR  MATCH
+  head_type                  linear                           linear                     MATCH
+  pos_fraction               0.5                              0.5                        MATCH
+  true_batch                 True                             True                       MATCH
+  gradient_accumulation      False                            False                      MATCH
+  grad_checkpointing         True                             True                       MATCH
+  num_workers                2                                2                          MATCH
+* epochs_planned             43                               11                         EXPECTED
+  ------------------------------------------------------------------------------------------------
+  legend:  (blank) identical   * allowlisted difference   X MISMATCH
+    fold: THE variable under test; fold 0 is development
+    max_steps: 8000 was the development maximum; the confirmatory budget is the pre-registered 2000 (runs/coral_r4_budget.json)
+    init_head_from_tail: dilute10: the NEW frozen-stage head (part 1 4.2)
+    init_head_l2: ...and therefore from that fold's own head norm, pinned in FOLD_GATE and hard-gated by build_arm at 1e-4
+    epochs_planned: derived from max_steps, which is itself allowlisted
+  => 0 mismatch(es)
+====================================================================================================
+[live] building eval datasets once (fold 2, aug='none') ...
+[live]   val=12000  test_neg=26399  test_pos=98  target=782
+
+============================================================================================
+STEP-0 GATE, fold 2 (known null: this IS the phase-1 model), 116s
+  TPR@1e-3 : 0.142857   expected 0.142857   |diff| 0.000000   (one positive on THIS fold = 0.010204; abort > 0.05)
+  AUROC    : 0.902732   expected 0.902736   |diff| 0.000004   (abort > 0.01)
+  positives: 98   negatives: 26399
+============================================================================================
+[gate] fold 2 step-0 known null reproduces round-1 CORAL. Proceeding.
+
+[ids] fold 2: 98 pos / 26399 neg | shared negative pool matches the reference: True | positives differ from fold 0's: True
+
+[train] fold 2: 2000 steps, checkpoint+logits every 250, trace every 125
+
+
+--------------------------------------------------------------------------------------------
+[gpu] Tesla T4  |  14.56 GB total  |  1 visible device(s), using cuda:0 only (no DataParallel anywhere in this path)
+[gpu] peak so far: 3.17 GB allocated / 4.46 GB reserved
+[gpu] reference:   3.29 GB allocated on the SAME arm's 2000-step Kaggle T4 run (sweep.json peak_gpu_gb); 5.86 GB observed locally at batch 256
+--------------------------------------------------------------------------------------------
+
+    [step   125/2000] sup=0.42857 coral_raw=1.37834 src|f|=134.866 tgt|f|=137.044 src_sd=0.4374 tgt_sd=0.4389 (212s, ~53 min left)
+    [step   250/2000] sup=0.24766 coral_raw=0.00322946 src|f|=133.467 tgt|f|=133.444 src_sd=0.1873 tgt_sd=0.1776 (408s, ~48 min left)
+    [ckpt   250] weights + logits written (121s to score)
+    [step   375/2000] sup=0.19371 coral_raw=0.00281358 src|f|=132.667 tgt|f|=132.699 src_sd=0.1785 tgt_sd=0.1662 (726s, ~52 min left)
+    [step   500/2000] sup=0.16093 coral_raw=0.00259843 src|f|=131.885 tgt|f|=131.907 src_sd=0.1705 tgt_sd=0.1546 (920s, ~46 min left)
+    [ckpt   500] weights + logits written (121s to score)
+    [step   625/2000] sup=0.14343 coral_raw=0.00251963 src|f|=131.240 tgt|f|=131.254 src_sd=0.1623 tgt_sd=0.1435 (1238s, ~45 min left)
+    [step   750/2000] sup=0.11794 coral_raw=0.0025019 src|f|=130.600 tgt|f|=130.612 src_sd=0.1579 tgt_sd=0.1369 (1434s, ~40 min left)
+    [ckpt   750] weights + logits written (120s to score)
+    [step   875/2000] sup=0.10923 coral_raw=0.00248135 src|f|=129.812 tgt|f|=129.820 src_sd=0.1516 tgt_sd=0.1282 (1749s, ~37 min left)
+    [step  1000/2000] sup=0.09191 coral_raw=0.00241047 src|f|=128.935 tgt|f|=128.941 src_sd=0.1455 tgt_sd=0.1209 (1945s, ~32 min left)
+    [ckpt  1000] weights + logits written (120s to score)
+    [step  1125/2000] sup=0.08883 coral_raw=0.00236383 src|f|=128.154 tgt|f|=128.156 src_sd=0.1416 tgt_sd=0.1156 (2261s, ~29 min left)
+    [step  1250/2000] sup=0.07894 coral_raw=0.00230448 src|f|=127.339 tgt|f|=127.342 src_sd=0.1355 tgt_sd=0.1090 (2455s, ~25 min left)
+    [ckpt  1250] weights + logits written (120s to score)
+    [step  1375/2000] sup=0.07799 coral_raw=0.00226185 src|f|=126.564 tgt|f|=126.563 src_sd=0.1323 tgt_sd=0.1046 (2771s, ~21 min left)
+    [step  1500/2000] sup=0.07285 coral_raw=0.00218529 src|f|=125.641 tgt|f|=125.642 src_sd=0.1264 tgt_sd=0.0991 (2965s, ~16 min left)
+    [ckpt  1500] weights + logits written (121s to score)
+    [step  1625/2000] sup=0.06729 coral_raw=0.00218512 src|f|=124.830 tgt|f|=124.828 src_sd=0.1242 tgt_sd=0.0954 (3280s, ~13 min left)
+    [step  1750/2000] sup=0.06481 coral_raw=0.00212847 src|f|=123.931 tgt|f|=123.927 src_sd=0.1225 tgt_sd=0.0929 (3474s, ~8 min left)
+    [ckpt  1750] weights + logits written (120s to score)
+    [step  1875/2000] sup=0.06370 coral_raw=0.0021247 src|f|=122.984 tgt|f|=122.981 src_sd=0.1197 tgt_sd=0.0883 (3790s, ~4 min left)
+    [step  2000/2000] sup=0.05806 coral_raw=0.00203801 src|f|=122.047 tgt|f|=122.040 src_sd=0.1179 tgt_sd=0.0857 (3983s, ~0 min left)
+    [ckpt  2000] weights + logits written (120s to score)
+
+============================================================================================
+=== FOLD 2 COMPLETE -- THE REPORTED RESULT IS step_2000
+=== reported checkpoint : checkpoints/step_2000.pt  (present: True)
+=== reported logits     : logits/g16_2000_fold2/step_2000.npz  (present: True)
+=== 
+=== The other checkpoints in this directory are LAB RECORD AND DIAGNOSTICS ONLY.
+=== Reading a result off any of them would be the oracle selection the hashed
+=== pre-registration exists to prevent. THE BUDGET IS THE SELECTOR.
+=== 
+=== steps 2000/2000   aborted=False   68.4 min
+============================================================================================
+
+[out] /kaggle/working/runs/dilute10/coral_nb3/fold2

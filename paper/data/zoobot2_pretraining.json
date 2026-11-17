@@ -1,0 +1,22 @@
+{
+  "source": "walmsley2024scaling (arXiv:2404.02973), Appendix C.1 -- transcribed from the verified brief, thousands of images",
+  "total_reported_k": 842,
+  "campaigns_k": {
+    "GZ DESI": 397,
+    "GZ 2": 188,
+    "GZ Hubble": 94,
+    "GZ CANDELS": 47,
+    "GZ UKIDSS": 69,
+    "GZ Cosmic Dawn": 45
+  },
+  "telescopes": {
+    "GZ DESI": "Blanco (primarily)",
+    "GZ 2": "SDSS",
+    "GZ Hubble": "HST",
+    "GZ CANDELS": "HST",
+    "GZ UKIDSS": "UKIRT",
+    "GZ Cosmic Dawn": "Subaru (H2O)"
+  },
+  "euclid_campaigns": 0,
+  "note": "The per-campaign counts are each rounded to the nearest thousand and sum to 840k; the paper reports 842k in total. The difference is within the rounding of six counts."
+}

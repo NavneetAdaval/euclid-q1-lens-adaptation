@@ -1,0 +1,93 @@
+\section{Limitations}
+\label{sec:limitations}
+
+\paragraph{The target and its labels.} This is the deepest limitation. In our main design each
+fold's target pool is built from the graded lenses of the other folds and an equal number of
+random galaxies, and every target batch is balanced 1:1 using the catalogue labels
+(Section~\ref{sec:labels}). A search on new survey data has no graded lenses to build such a
+pool from; it would face the survey's own rarity, about one lens found per 2200 objects
+searched~\citep{lines2025simstosky}. Our dilution experiment
+removes the balancing of the batches but keeps a pool built from catalogue lenses, and its
+1:\dlRatio{} is still about \dlDenserWord{} times denser in lenses than the survey's 1:2200; we
+tested no target at survey prevalence, so our results do not transfer unaltered to that
+setting. The dilution changes more than the proportion (Section~\ref{sec:dilute-methods}). It ran one ratio, with one seed per fold, and CORAL's diluted run is entangled
+with the head its frozen stage produced (Section~\ref{sec:results-dilute}). The theory that
+motivated balancing covers marginal alignment, which is CORAL and
+DANN here~\citep{zhao2019invariant, zhao2020gls}, and a benchmark finds such methods fragile
+under shifts in class proportions~\citep{classimbalanceda}; it does not speak directly to FreeMatch or
+BNM, and we applied the balanced target to every arm to keep the comparison matched. The
+closest precedent shares the constraint: its balanced target of 1754 lenses and 1754
+non-lenses is also built from known lens candidates~\citep{parul2024}.
+
+Balancing is not the only remedy for differing class proportions. \citet{zhao2020gls} estimate
+the class ratio between domains from the source confusion matrix and the target predictions,
+then reweight the adversarial and classification losses by it, which needs no target label. We
+tried one such method, IW-CDAN, only in early frozen runs with an imbalanced target, where it
+collapsed together with DANN (Section~\ref{sec:labels}). Label-shift estimation methods that
+need no target labels, such as re-estimating the class prior by
+expectation--maximisation~\citep{saerens2002} or black-box shift
+estimation~\citep{lipton2018}, are a natural next step.
+
+\paragraph{What the target signal contains.} Because every target batch of the main design is
+half lenses and half galaxies, the adaptation arms see not only real images but a known class
+proportion, and each
+objective can use it: BNM's diversity term favours a batch whose predictions split evenly,
+FreeMatch's fairness term targets a uniform class marginal, and DANN and CORAL align the
+target's feature distribution with that of the balanced source. Learning from groups of
+unlabelled examples whose class proportions are known has been studied as a learning problem in
+its own right~\citep{quadrianto2009}. The $\lambda = 0$ control removes both the target images'
+gradient and this proportion, apart from the few half-precision steps it skips
+(Section~\ref{sec:arms}), so our contrasts cannot say how much of the gain comes from
+adapting to real images and how much from the known proportion. The dilution experiment answers
+this only in part. DANN keeps a detectable gain over the control without batches balanced 1:1
+(Section~\ref{sec:results-dilute}), although the comparison with the balanced target cannot
+rule out that it lost much of its gain. Every objective still sees a target whose composition
+we fixed with the labels, and FreeMatch's fairness term still assumes a uniform class mix, so
+we still cannot separate adapting to real images from the class proportion.
+
+\paragraph{The diluted runs' numerics.} CORAL's unfrozen stage on the diluted target skipped its
+first \dlCoralSkipMin{}--\dlCoralSkipMax{} optimiser updates on every fold, before its loss
+scaling settled, and none after, so it applied at least \dlCoralAppliedPct{}\% of its budget's
+updates. Its inherited
+feature-norm guard, which our pre-registration made advisory, fired on every step. Its first
+attempt on fold 1 stopped at step 1 on that guard, an implementation error that produced no
+data, and the third part of our pre-registration permitted the rerun
+(Appendices~\ref{sec:prereg-dilute} and~\ref{app:dilute10}).
+
+\paragraph{A weak simulation-only baseline.} Our simulation-only baseline recovers
+$\dLrBaseline{}$\% of the benchmark's completeness, so the
+gains we report are measured from a low starting point, against a control that is itself one
+source-only fine-tune (Section~\ref{sec:results-ablation}).
+
+\paragraph{When the control was added.} The control and its contrasts were added after the
+adaptation arms' results were known; its own runs were pre-registered, but the decision to make
+those comparisons was not (Section~\ref{sec:prereg}).
+
+\paragraph{Fold dependence, four folds and one seed.} Every interval rests on four folds whose
+target pools overlap (Section~\ref{sec:intervals}). Every reported result comes from a single
+run per fold with one seed, so seed variance is not separated from fold variance anywhere. The
+ranking analysis of Section~\ref{sec:resolution} is approximate for the same reason.
+
+\paragraph{Test negatives and depth.} \FracFaintTest{}\% of our test negatives are fainter
+than the benchmark's limit of
+$I_E = 22.5$ (Section~\ref{sec:splits}). Some may be lenses: the exact-ID audit found
+catalogued lenses in the original pool, and $\rvTopNegC{}$ of the highest-scoring negatives in
+the cleaned pool are grade-C
+candidates (Section~\ref{sec:findmiss}). Restricting the pool to the benchmark's depth leaves
+every contrast we recomputed (Table~\ref{tab:bright}) with the same zero-inclusion
+(Appendix~\ref{app:bright}), but purity values are
+not directly comparable with the benchmark's. Our positives were found mostly by
+machine-learning finders, one of them built on Zoobot, the encoder we use, so recall on them may
+overstate recall on lenses such finders miss~\citep{lines2025discoveryengineC, discoveryengineA}.
+
+\paragraph{The simulations.} Our lensed sources are parametric profiles fitted to COSMOS
+galaxies, so they lack the clumps and irregular structure of real high-redshift sources; in HST
+imaging only about a fifth of galaxies are fully described by such
+models~\citep{mandelbaum2014great3}. The deflector velocity dispersions follow a local
+($z \lesssim 0.1$) velocity dispersion function, while our deflectors lie at a median redshift
+of \simZlMedian{}, and we apply no evolution. \DeflUnphysN{} deflectors carry catalogue values outside the
+physical range ($\log M_* > \DeflUnphysMass{}$ or an absolute VIS magnitude below $\DeflUnphysMag{}$),
+and \DeflUnphysDrawn{} of these host \DeflUnphysLenses{} of the simulated lenses.
+
+\paragraph{Software.} We did not pin or record the versions of \texttt{timm} and GalSim used in
+training and simulation (Appendix~\ref{app:repro}).

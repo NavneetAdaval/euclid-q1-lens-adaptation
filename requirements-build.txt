@@ -1,0 +1,12 @@
+# The environment that rebuilds the paper's tables, figures and numbers (paper/scripts/make_all.py,
+# scripts/integrity.py), read from the machine that produced paper v6c (Python 3.13.12, Windows).
+# It is NOT the training environment: the library versions used in training were not recorded
+# (paper, Appendix J). torch/torchvision are imported by the build only through scripts/samplers.py
+# and scripts/lens_dataset.py (make_m_prose.py); a CPU build is enough, and no GPU is used.
+numpy==2.4.3
+pandas==3.0.2
+scipy==1.17.1
+scikit-learn==1.8.0
+matplotlib==3.10.9
+torch==2.7.1
+torchvision==0.22.1

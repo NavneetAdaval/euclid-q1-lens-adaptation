@@ -1,0 +1,43 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_dilute10_tables.py)
+% Table 2 (paper v6): tables/T3v2_contrasts.tex unchanged, plus the 1:10 block from runs/dilute10_analysis/results.json (G primary).
+\begin{table}[tbp]
+\centering
+\caption{\textbf{Paired contrasts} in TPR at FPR${}=10^{-3}$, folds 1--4, cleaned pool: mean difference, paired $t$-interval (df${}=3$), and the number of folds agreeing in sign. $^{\dagger}$Registered with the $\lambda=0$ control, before it ran but after the adaptation arms' results were known (Section~\ref{sec:prereg}). $^{\ddagger}$Sensitivity readout declared with those contrasts. Steps give where each arm is read. $^{\S}$From the second experiment, with a 1:10 target whose batches are drawn without the labels (Section~\ref{sec:results-dilute}): the arm's diluted run against the same $\lambda=0$ control, pre-registered as that experiment's primary contrast; a bound that rounds to zero at two decimals is shown at three, and the matched-step forms and the balanced $-$ diluted contrasts are in Table~\ref{tab:dl-contrasts4}. Four-decimal values: Tables~\ref{tab:contrasts4} and~\ref{tab:dl-contrasts4}.}
+\label{tab:contrasts6}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrc}
+\toprule
+Contrast & Steps & $\Delta$ & 95\% CI & Signs \\
+\midrule
+\multicolumn{5}{l}{\textit{Frozen against unfrozen, no target signal}} \\
+$\lambda=0$ $-$ Baseline A$^{\dagger}$ & 4000 / 8000 & $0.00$ & $[-0.09, +0.09]$ & 3/4 \\
+\midrule
+\multicolumn{5}{l}{\textit{A target signal against none}} \\
+DANN $-$ $\lambda=0$$^{\dagger}$ & 4000 / 4000 & $+0.31$ & $[+0.06, +0.57]$ & 4/4 \\
+CORAL $-$ $\lambda=0$$^{\dagger}$ & 2000 / 4000 & $+0.34$ & $[+0.19, +0.49]$ & 4/4 \\
+FreeMatch $-$ $\lambda=0$$^{\dagger}$ & 1500 / 4000 & $+0.33$ & $[+0.23, +0.44]$ & 4/4 \\
+CORAL $-$ $\lambda=0$$^{\ddagger}$ & 2000 / 2000 & $+0.31$ & $[+0.18, +0.43]$ & 4/4 \\
+FreeMatch $-$ $\lambda=0$$^{\ddagger}$ & 1500 / 1500 & $+0.32$ & $[+0.20, +0.45]$ & 4/4 \\
+BNM $-$ $\lambda=0$ & 4000 / 4000 & $+0.22$ & $[+0.14, +0.30]$ & 4/4 \\
+\midrule
+\multicolumn{5}{l}{\textit{A target signal against none, 1:10 target}} \\
+DANN$^{\S}$ $-$ $\lambda=0$ & 4000 / 4000 & $+0.33$ & $[+0.29, +0.38]$ & 4/4 \\
+BNM$^{\S}$ $-$ $\lambda=0$ & 4000 / 4000 & $+0.19$ & $[+0.003, +0.39]$ & 4/4 \\
+CORAL$^{\S}$ $-$ $\lambda=0$ & 2000 / 4000 & $+0.01$ & $[-0.03, +0.05]$ & 3/4 \\
+FreeMatch$^{\S}$ $-$ $\lambda=0$ & 1500 / 4000 & $+0.25$ & $[-0.004, +0.51]$ & 4/4 \\
+\midrule
+\multicolumn{5}{l}{\textit{Objective against objective}} \\
+BNM $-$ CORAL & 2000 / 2000 & $-0.12$ & $[-0.18, -0.06]$ & 4/4 \\
+BNM $-$ DANN & 4000 / 4000 & $-0.09$ & $[-0.31, +0.12]$ & 3/4 \\
+BNM $-$ FreeMatch & 1500 / 1500 & $-0.13$ & $[-0.30, +0.03]$ & 4/4 \\
+DANN $-$ CORAL & 4000 / 2000 & $-0.02$ & $[-0.22, +0.18]$ & 2/4 \\
+DANN $-$ FreeMatch & 4000 / 1500 & $-0.02$ & $[-0.21, +0.17]$ & 2/4 \\
+DANN $-$ CORAL & 2000 / 2000 & $+0.03$ & $[-0.07, +0.14]$ & 2/4 \\
+\midrule
+\multicolumn{5}{l}{\textit{Frozen against unfrozen, same objective (fold-aware paired bootstrap)}} \\
+FreeMatch unfrozen $-$ frozen & 1500 / 8000 & $+0.10$ & $[+0.03, +0.17]$ & 4/4 \\
+\bottomrule
+\end{tabular}
+\end{table}

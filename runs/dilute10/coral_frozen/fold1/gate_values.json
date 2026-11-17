@@ -1,0 +1,21 @@
+{
+  "fold": 1,
+  "head": "C:\\Users\\krris\\ML\\lens_paper\\runs\\dilute10\\coral_frozen\\fold1\\checkpoints\\step_8000.pt",
+  "head_sha256": "0f9dbe3226cff4821918f1ee82781674460c3233875912bffef0a4f10e068a4c",
+  "head_l2": 134.164185,
+  "tpr": 0.16326530612244897,
+  "auroc": 0.8933950033667015,
+  "n_pos": 98,
+  "n_neg": 26399,
+  "pool": "original (all shared negatives) -- what the nb3 step-0 gate measures",
+  "cleaned_pool": {
+    "tpr": 0.19387755102040816,
+    "auroc": 0.894966756887189,
+    "n_pos": 98,
+    "n_neg": 26134,
+    "rule_body_sha256": "b83fa019abba5238ccfca593a3130b54be574a47359b4e2818b274efd3fd0e4b",
+    "n_removed": 265
+  },
+  "from": "logits/step_8000.npz (persisted), cross-checked against the head re-scored on cached features (max |diff| 0.0e+00)",
+  "recorded_utc": "2026-10-13T19:04:05Z"
+}

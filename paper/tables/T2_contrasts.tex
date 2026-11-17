@@ -1,0 +1,70 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_t2_contrasts.py)
+% T2 -- paired contrasts, folds 1-4, TPR@FPR=1e-3.
+% Estimator: paired t on 4 differences, df=3 (analyze_lambda0_r6.paired_t),
+% except the final row, paper/data/foldmean_bootstrap_D1.json (bootstrap_foldmean.py on this pool),
+% under the fold-aware paired bootstrap it was published with.
+\begin{table}[tbp]
+\centering
+\caption{\textbf{Paired contrasts in TPR@$10^{-3}$, folds 1--4.}
+Paired $t$-interval on the four per-fold differences, $\mathrm{df}=3$; never a
+bootstrap at $n=4$. ``Signs'' counts the folds agreeing in the direction of the
+point estimate. \textbf{A budget match removes the budget confound and nothing
+else}: head initialisation and each arm's own tuning budget travel with every
+row, so \textbf{DANN $-$ $\lambda=0$ is the only fully controlled pair here}
+(same head, same budget, differing in $\lambda$ alone) --- and it carries the
+widest interval, while the two tightest belong to arms initialised from a
+different head. \textbf{Multiplicity is disclosed, not corrected}: 13 intervals
+at the 95\% level with no correction, sharing control arms and therefore not
+independent.
+$^{a}$Baseline A is frozen and converged; its 8000-step budget is not
+commensurable with an unfrozen step count, so no budget-match state is claimed.
+The comparison is nonetheless the most tightly paired in the project: the frozen
+value is measured by the step-0 gate \emph{inside} each unfrozen run, on the same
+fold, the same head and the same evaluation path.
+$^{b}$The only fully controlled pair.
+$^{c}$Budget-unmatched forms kept for continuity with the $\lambda=0$ headline
+readout; never quoted as matched.
+$^{d}$Read at each arm's own declared budget, which differ (4000 / 2000 / 1500);
+unmatched by construction.}
+\label{tab:contrasts}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\TRAG}p{4.2cm}lrlcl}
+\toprule
+Contrast & Steps & $\Delta$ TPR@$10^{-3}$ & 95\% CI & Signs & Budget \\
+\midrule
+\multicolumn{6}{l}{\textit{Frozen against unfrozen treatment}} \\
+$\lambda=0$ $-$ Baseline A$^{a}$ & 4000 / 8000 & $0.0000$$^{f}$ & $[-0.0890, +0.0889]$ & 3/4 & --- \\
+\multicolumn{6}{l}{\textit{A target-domain training signal vs.\ none} (each DA arm against the unfrozen no-signal control)} \\
+DANN $-$ $\lambda=0$$^{b}$ & 4000 / 4000 & $+0.3144$$^{*}$ & $[+0.0565, +0.5722]$ & 4/4 & matched \\
+CORAL $-$ $\lambda=0$ & 2000 / 2000 & $+0.3068$$^{*}$ & $[+0.1834, +0.4301]$ & 4/4 & matched \\
+FreeMatch $-$ $\lambda=0$ & 1500 / 1500 & $+0.3223$$^{*}$ & $[+0.1984, +0.4463]$ & 4/4 & matched \\
+BNM $-$ $\lambda=0$ & 4000 / 4000 & $+0.2199$$^{*}$ & $[+0.1383, +0.3014]$ & 4/4 & matched \\
+CORAL $-$ $\lambda=0$ (at 4000)$^{c}$ & 2000 / 4000 & $+0.3375$$^{*}$ & $[+0.1889, +0.4860]$ & 4/4 & \textbf{unmatched} \\
+FreeMatch $-$ $\lambda=0$ (at 4000)$^{c}$ & 1500 / 4000 & $+0.3325$$^{*}$ & $[+0.2272, +0.4378]$ & 4/4 & \textbf{unmatched} \\
+\multicolumn{6}{l}{\textit{Objective against objective}} \\
+BNM $-$ CORAL & 2000 / 2000 & $-0.1176$$^{*}$ & $[-0.1772, -0.0580]$ & 4/4 & matched \\
+BNM $-$ DANN & 4000 / 4000 & $-0.0945$ & $[-0.3104, +0.1214]$ & 3/4 & matched \\
+BNM $-$ FreeMatch & 1500 / 1500 & $-0.1334$ & $[-0.2986, +0.0319]$ & 4/4 & matched \\
+DANN $-$ CORAL$^{d}$ & 4000 / 2000 & $-0.0231$ & $[-0.2227, +0.1765]$ & 2/4 & \textbf{unmatched} \\
+DANN $-$ FreeMatch$^{d}$ & 4000 / 1500 & $-0.0182$ & $[-0.2092, +0.1729]$ & 2/4 & \textbf{unmatched} \\
+DANN $-$ CORAL (both at 2000) & 2000 / 2000 & $+0.0331$ & $[-0.0711, +0.1372]$ & 2/4 & matched \\
+\midrule
+\multicolumn{6}{@{\hspace{\tabcolsep}}p{\dimexpr\textwidth-\tabcolsep-\tabcolsep\relax}@{}}{\textit{Within-method, frozen $\rightarrow$ unfrozen (the one comparison licensed across rounds$^{e}$); fold-aware paired bootstrap, $B=5000$}} \\
+FreeMatch $\times$ nb3 $-$ FreeMatch frozen & 1500 / 8000 & $+0.1049$$^{*}$ & $[+0.0256, +0.1687]$ & 4/4 & --- \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\footnotesize $^{*}$interval excludes zero. $^{f}$$-0.00003$ before rounding.
+$^{e}$Round-1 FreeMatch and FreeMatch $\times$ nb3 share head LR, weight decay,
+augmentation, precision, batch composition and the same training function; only
+\texttt{n\_blocks} changed. \textbf{No other round-1 number is differenced against
+any unfrozen number in this paper} --- eight configuration fields separate round-1
+CORAL from CORAL $\times$ nb3. This row is recomputed on the test pool of Section~\ref{sec:data}
+under the \textbf{fold-aware paired bootstrap} it was published with, and is not
+re-estimated under the $t$-interval used above; its lower bound
+($+0.0256$) exceeds one positive ($0.0102$), so ``distinguishable from
+zero'' and ``larger than one positive'' are both supported.
+\end{table}

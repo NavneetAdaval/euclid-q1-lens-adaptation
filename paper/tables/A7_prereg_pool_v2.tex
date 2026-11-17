@@ -1,0 +1,57 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_appendix_relabel_v2.py)
+% Relabelled copy of tables/A7_prereg_pool.tex; tabular number tokens asserted identical, caption/notes token changes declared.
+\begin{table}[htbp]
+\centering
+\caption{Fold-mean TPR@$10^{-3}$ (folds 1--4) and the paired contrasts on the
+original test pool (test negatives exactly as drawn), on the cleaned pool of the
+main text, which excludes the 265 objects of
+Section~\ref{sec:testpool}, and on that pool also without the 20 test lenses of Section~\ref{sec:testpool} (``reduced'').}
+\label{tab:prereg_pool2}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrr}
+\toprule
+\multicolumn{5}{l}{\textit{(a) Fold-mean TPR@$10^{-3}$}} \\
+Arm & Read at & Original & cleaned pool & reduced \\
+\midrule
+CORAL & 2000 & $0.4348$ & $0.5216$ & $0.5208$ \\
+FreeMatch & 1500 & $0.4169$ & $0.5167$ & $0.5114$ \\
+DANN & 4000 & $0.4167$ & $0.4985$ & $0.4997$ \\
+DANN, sensitivity readout & 2000 & $0.4551$ & $0.5547$ & $0.5547$ \\
+$\lambda=0$ unfrozen control & 4000 & $0.1355$ & $0.1842$ & $0.1852$ \\
+BNM & 4000 & $0.3274$ & $0.4040$ & $0.4087$ \\
+Baseline A (frozen) & 8000 & $0.1714$ & $0.1842$ & $0.1742$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{6pt}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\TRAG}p{3.0cm}lllc}
+\toprule
+\multicolumn{5}{l}{\textit{(b) Paired contrasts, $\Delta$ TPR@$10^{-3}$ and 95\% CI}} \\
+Contrast & Steps & Original & cleaned pool & Zero-inclusion \\
+\midrule
+$\lambda=0$ $-$ Baseline A & 4000 / 8000 & $-0.0360$ $[-0.1249, +0.0530]$ & $0.0000$$^{\dagger}$ $[-0.0890, +0.0889]$ & same \\
+DANN $-$ $\lambda=0$ & 4000 / 4000 & $+0.2812$ $[+0.0595, +0.5029]$ & $+0.3144$ $[+0.0565, +0.5722]$ & same \\
+CORAL $-$ $\lambda=0$ & 2000 / 2000 & $+0.2607$ $[+0.0976, +0.4238]$ & $+0.3068$ $[+0.1834, +0.4301]$ & same \\
+FreeMatch $-$ $\lambda=0$ & 1500 / 1500 & $+0.2712$ $[+0.1649, +0.3776]$ & $+0.3223$ $[+0.1984, +0.4463]$ & same \\
+BNM $-$ $\lambda=0$ & 4000 / 4000 & $+0.1919$ $[+0.1278, +0.2561]$ & $+0.2199$ $[+0.1383, +0.3014]$ & same \\
+CORAL $-$ $\lambda=0$ (at 4000) & 2000 / 4000 & $+0.2993$ $[+0.1386, +0.4600]$ & $+0.3375$ $[+0.1889, +0.4860]$ & same \\
+FreeMatch $-$ $\lambda=0$ (at 4000) & 1500 / 4000 & $+0.2815$ $[+0.1858, +0.3771]$ & $+0.3325$ $[+0.2272, +0.4378]$ & same \\
+BNM $-$ CORAL & 2000 / 2000 & $-0.0920$ $[-0.1680, -0.0160]$ & $-0.1176$ $[-0.1772, -0.0580]$ & same \\
+BNM $-$ DANN & 4000 / 4000 & $-0.0893$ $[-0.2887, +0.1101]$ & $-0.0945$ $[-0.3104, +0.1214]$ & same \\
+BNM $-$ FreeMatch & 1500 / 1500 & $-0.1180$ $[-0.2578, +0.0219]$ & $-0.1334$ $[-0.2986, +0.0319]$ & same \\
+DANN $-$ CORAL & 4000 / 2000 & $-0.0180$ $[-0.1781, +0.1420]$ & $-0.0231$ $[-0.2227, +0.1765]$ & same \\
+DANN $-$ FreeMatch & 4000 / 1500 & $-0.0002$ $[-0.1656, +0.1652]$ & $-0.0182$ $[-0.2092, +0.1729]$ & same \\
+DANN $-$ CORAL (both at 2000) & 2000 / 2000 & $+0.0203$ $[-0.0772, +0.1179]$ & $+0.0331$ $[-0.0711, +0.1372]$ & same \\
+\midrule
+FreeMatch unfrozen $-$ frozen$^{\ast}$ & 1500 / 8000 & $+0.0793$ $[+0.0075, +0.1690]$ & $+0.1049$ $[+0.0256, +0.1687]$ & same \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\footnotesize Intervals as in Table~\ref{tab:contrasts2}: paired $t$, df $=3$;
+$^{\ast}$fold-aware paired bootstrap, $B=5000$. $^{\dagger}$$-0.00003$ before rounding.
+\end{table}

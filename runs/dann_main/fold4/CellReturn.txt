@@ -1,0 +1,42 @@
+CONFIRMATORY FOLDS -- DANN x nb3 at the budget B = 4000
+====================================================================================
+
+FOLD 1
+  NOT STARTED
+
+FOLD 2
+  NOT STARTED
+
+FOLD 3
+  NOT STARTED
+
+FOLD 4
+  steps        : 4000 / 4000   checkpoints 16 of 16
+  budget       : confirm_steps 4000, is_preregistered_budget True
+  wall         : 139.6 min   resumes 0   fp16 skipped 3.0
+  step-0 gate  : PASS  TPR 0.195876 (expect 0.195876, |diff| 0.000000)
+  aborted      : False   reason None
+  fired        : ARMING []   ADVISORY ['abort3b_morph_sign_flip']
+
+====================================================================================
+PROGRESS
+====================================================================================
+  complete        : [4]  (1 of 4)
+  not started     : [1, 2, 3]   -- set FOLD and run Cell 5
+
+====================================================================================
+INTEGRITY (folds that have run)
+====================================================================================
+  gates PASS      : 1 of 1
+  aborted         : none
+  ARMING fired    : none
+  advisory fired  : [(4, ['abort3b_morph_sign_flip'])]
+
+  NOTE: advisory detectors firing is EXPECTED and stops nothing -- fold 0's
+  probe fell early and stayed down. Only ARMING detectors can abort.
+
+  3 fold(s) still to go. This cell is safe to re-run at any point.
+
+NO TPR IS COMPUTED HERE. metric_hygiene: checkpoints are SCORED (logits
+persisted) but never MEASURED. The fold-mean is computed locally from the
+logits, after all four folds are home.

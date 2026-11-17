@@ -1,0 +1,29 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_dilute10_tables.py)
+% Appendix K: the 10 t-intervals. runs/dilute10_analysis/results.json G and D.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{The ten paired $t$-intervals of the 1:10 experiment} at four decimals, folds 1--4, cleaned pool (df${}=3$). $G$ is diluted $-$ $\lambda=0$; its primary form reads the control at 4000 and decides the branch, and its matched-step form, a pre-declared sensitivity readout, reads the control at the arm's own step. $D$ is balanced $-$ diluted at the same read-off; it carries no verdict and includes the noise of a changed batch order. No multiplicity correction. $^{*}$Interval excludes zero.}
+\label{tab:dl-contrasts4}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrlcl}
+\toprule
+Contrast & Steps & $\Delta$ TPR@$10^{-3}$ & 95\% CI & Signs & Role \\
+\midrule
+\multicolumn{6}{l}{\textit{$G$: diluted $-$ $\lambda=0$}} \\
+DANN $-$ $\lambda=0$ & 4000 / 4000 & $+0.3350$$^{*}$ & $[+0.2913, +0.3787]$ & 4/4 & primary \\
+BNM $-$ $\lambda=0$ & 4000 / 4000 & $+0.1941$$^{*}$ & $[+0.0029, +0.3854]$ & 4/4 & primary \\
+CORAL $-$ $\lambda=0$ & 2000 / 4000 & $+0.0102$ & $[-0.0251, +0.0454]$ & 3/4 & primary \\
+CORAL $-$ $\lambda=0$ & 2000 / 2000 & $-0.0206$ & $[-0.0740, +0.0329]$ & 3/4 & sensitivity \\
+FreeMatch $-$ $\lambda=0$ & 1500 / 4000 & $+0.2533$ & $[-0.0042, +0.5107]$ & 4/4 & primary \\
+FreeMatch $-$ $\lambda=0$ & 1500 / 1500 & $+0.2431$ & $[-0.0229, +0.5090]$ & 4/4 & sensitivity \\
+\midrule
+\multicolumn{6}{l}{\textit{$D$: balanced $-$ diluted}} \\
+DANN & 4000 / 4000 & $-0.0206$ & $[-0.2840, +0.2427]$ & 2/4 & secondary \\
+BNM & 4000 / 4000 & $+0.0257$ & $[-0.1076, +0.1591]$ & 2/4 & secondary \\
+CORAL & 2000 / 2000 & $+0.3273$$^{*}$ & $[+0.1925, +0.4621]$ & 4/4 & secondary \\
+FreeMatch & 1500 / 1500 & $+0.0793$ & $[-0.0800, +0.2385]$ & 3/4 & secondary \\
+\bottomrule
+\end{tabular}
+\end{table}

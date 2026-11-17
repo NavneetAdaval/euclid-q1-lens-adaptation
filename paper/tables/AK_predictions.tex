@@ -1,0 +1,47 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_dilute10_tables.py)
+% Appendix K: prediction scoring. runs/dilute10_analysis/results.json predictions.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Our four predictions for the 1:10 experiment, scored as written.} Each prediction, recorded before any run, is split into its components; where its wording admits two literal readings, both are scored. \emph{Rests on} gives the stored value each score reads; relative loss is $D$ / (balanced $-$ $\lambda=0$). No prediction was amended. Component 3d(ii) takes a maximum over \dlBnmPpN{} single-batch values and would be met by batch noise alone; we do not count it as support (Section~\ref{sec:results-dilute}).}
+\label{tab:dl-predictions}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l>{\TRAG}p{5.4cm}l>{\TRAG}p{5.0cm}}
+\toprule
+ID & Component & Score & Rests on \\
+\midrule
+1a & DANN degrades (D point $>$ 0) & failed & D = $-$0.0206 \\
+1b(i) & G point $<$ +0.31 (as stated) & failed & G = +0.3350 \\
+1b(ii) & G point $<$ reproduced balanced $-$ $\lambda=0$ & failed & G = +0.3350 vs +0.3144 \\
+1c(i) & D is positive: point & failed & D = $-$0.0206 \\
+1c(ii) & D is positive: interval excludes zero above & failed & D CI [$-$0.2840, +0.2427] \\
+1d & G's interval (probably) includes zero & failed & G CI [+0.2913, +0.3787] \\
+1e & branch COLLAPSES or SHRINKS & failed & branch SURVIVES \\
+1e' & 'with a wide D' & not testable & 'wide' is not operationalised in part 1 \\
+1f & mechanism (marginal alignment pulls lenses toward galaxies; prior collapses) & not testable & no stored quantity measures it \\
+\midrule
+2a & CORAL degrades (D point $>$ 0) & held & D = +0.3273 \\
+2b(i) & less than DANN, absolute & failed & D CORAL +0.3273 vs DANN $-$0.0206 \\
+2b(ii) & less than DANN, relative & failed & relative loss CORAL 0.9699 vs DANN $-$0.0657 \\
+2c & G's interval excludes zero & failed & G CI [$-$0.0251, +0.0454] \\
+2d & branch SHRINKS or SURVIVES & failed & branch COLLAPSES \\
+2e & mechanism (moment matching a weaker pull) & not testable & no stored quantity \\
+\midrule
+3a & BNM degrades (D point $>$ 0) & held & D = +0.0257 \\
+3b & the most of the four in relative terms & failed & relative loss DANN $-$0.0657, BNM 0.1171, CORAL 0.9699, FreeMatch 0.2384 \\
+3c & G's interval may include zero & not testable & permissive wording; G CI [+0.0029, +0.3854] \\
+3d(i) & predicted-positive fraction $>$ 0.09 at step 4000 & mixed 1/4 & step-4000 values f1 0.1055, f2 0.0586, f3 0.0742, f4 0.0352 \\
+3d(ii) & predicted-positive fraction $>$ 0.09 at any logged step & held & max per fold f1 0.1055, f2 0.0938, f3 0.1016, f4 0.0938 \\
+3e & mechanism (high-scoring negatives) & not testable & needs a new measurement \\
+\midrule
+4a & FreeMatch degrades (D point $>$ 0) & held & D = +0.0793 \\
+4b(i) & less than BNM, absolute & failed & D FreeMatch +0.0793 vs BNM +0.0257 \\
+4b(ii) & less than BNM, relative & failed & relative loss FreeMatch 0.2384 vs BNM 0.1171 \\
+4c & G's interval still excludes zero & failed & G CI [$-$0.0042, +0.5107] \\
+4d(i) & head start shrinks: point & held & diluted frozen 0.3019 vs main-design frozen 0.4118 \\
+4d(ii) & head start shrinks: bootstrap interval wholly below zero & held & diluted $-$ main design = $-$0.1099 [$-$0.1634, $-$0.0689] \\
+4e & mechanism (uniform fairness target; adaptive thresholds) & not testable & no stored quantity \\
+\bottomrule
+\end{tabular}
+\end{table}

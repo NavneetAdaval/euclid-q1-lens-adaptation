@@ -1,0 +1,188 @@
+{
+ "target_purity": 0.24,
+ "nn_np_ratio": 2200.0,
+ "lines_completeness": 0.5,
+ "x": "purity, prevalence-corrected to 1:2200",
+ "y": "completeness (= TPR = recall)",
+ "curve": "precision-recall envelope, same construction as the tabulated value",
+ "arms": {
+  "CORAL x nb3": {
+   "readout": 2000,
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "max_purity_per_fold": {
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0
+   },
+   "reaches_24pct_per_fold": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true
+   },
+   "drawn_curve_at_24pct": 0.4970572895148109,
+   "exact_completeness_at_24pct_per_fold": [
+    0.3979591836734694,
+    0.6326530612244898,
+    0.47959183673469385,
+    0.4742268041237113
+   ],
+   "exact_fold_mean_at_24pct": 0.4961077214390911
+  },
+  "FreeMatch x nb3": {
+   "readout": 1500,
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "max_purity_per_fold": {
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0
+   },
+   "reaches_24pct_per_fold": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true
+   },
+   "drawn_curve_at_24pct": 0.4835104144750684,
+   "exact_completeness_at_24pct_per_fold": [
+    0.47959183673469385,
+    0.5612244897959183,
+    0.35714285714285715,
+    0.5360824742268041
+   ],
+   "exact_fold_mean_at_24pct": 0.4835104144750684
+  },
+  "DANN x nb3": {
+   "readout": 4000,
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "max_purity_per_fold": {
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0
+   },
+   "reaches_24pct_per_fold": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true
+   },
+   "drawn_curve_at_24pct": 0.45439671669646436,
+   "exact_completeness_at_24pct_per_fold": [
+    0.5,
+    0.7142857142857143,
+    0.24489795918367346,
+    0.36082474226804123
+   ],
+   "exact_fold_mean_at_24pct": 0.4550021039343573
+  },
+  "lambda=0": {
+   "readout": 4000,
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "max_purity_per_fold": {
+    "1": 0.45902272807109984,
+    "2": 0.19512595756118684,
+    "3": 0.09174524493249174,
+    "4": 1.0
+   },
+   "reaches_24pct_per_fold": {
+    "1": true,
+    "2": false,
+    "3": false,
+    "4": true
+   },
+   "drawn_curve_at_24pct": null,
+   "exact_completeness_at_24pct_per_fold": [
+    0.10204081632653061,
+    NaN,
+    NaN,
+    0.010309278350515464
+   ],
+   "exact_fold_mean_at_24pct": null
+  },
+  "BNM x nb3": {
+   "readout": 4000,
+   "folds": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "max_purity_per_fold": {
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0
+   },
+   "reaches_24pct_per_fold": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true
+   },
+   "drawn_curve_at_24pct": 0.35357698511606667,
+   "exact_completeness_at_24pct_per_fold": [
+    0.35714285714285715,
+    0.41836734693877553,
+    0.2857142857142857,
+    0.36082474226804123
+   ],
+   "exact_fold_mean_at_24pct": 0.3555123080159899
+  },
+  "Baseline A (frozen)": {
+   "readout": 8000,
+   "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "max_purity_per_fold": {
+    "0": 1.0,
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0
+   },
+   "reaches_24pct_per_fold": {
+    "0": true,
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true
+   },
+   "drawn_curve_at_24pct": 0.08871192145237546,
+   "exact_completeness_at_24pct_per_fold": [
+    0.08163265306122448,
+    0.12244897959183673,
+    0.07142857142857142,
+    0.08163265306122448,
+    0.09278350515463918
+   ],
+   "exact_fold_mean_at_24pct": 0.08998527245949925
+  }
+ }
+}

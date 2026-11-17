@@ -1,0 +1,147 @@
+{
+ "declared_before_any_windowed_number_was_computed": true,
+ "k": {
+  "declared_in_advance": true,
+  "grid": [
+   1,
+   2,
+   4,
+   8
+  ],
+  "justification": "k=8 from the checkpoint sd of 0.05-0.09 and a sqrt(k) noise reduction: 8 checkpoints take 0.05-0.09 to 0.018-0.032, which is the scale of the differences the nb3 table tries to resolve. k=1 IS the existing single-point read-off and is the comparison basis, not a new estimator. k=2 and k=4 are declared here so the sqrt(k) curve has interior points; they are reported whatever they show.",
+  "k_may_not_be_varied_after_results_are_seen": true,
+  "primary": 8
+ },
+ "metric": {
+  "primary": "TPR@FPR=1e-3, interpolated, drop_intermediate=False, always a rate",
+  "secondary_reported": [
+   "auroc",
+   "comp_at_purity (24% purity, corrected to 1:2200)"
+  ],
+  "undefined_values": "n/a with no CI and no fold-mean, as everywhere else"
+ },
+ "no_significance_claims_beyond_the_declared_forms": "the unit is the fold, n=4 (n=5 for Baseline A). Paired t on differences, df=n-1, exactly as 7.22 and 7.28. Never a bootstrap at n=4.",
+ "reads_a_metric_to_place_the_window": false,
+ "round": 7,
+ "scatter_test": {
+  "a_large_shortfall_means": "the checkpoint noise is autocorrelated rather than independent, which is itself a reportable line",
+  "estimator": "for each arm and fold, slide the k-window over EVERY valid position on that arm's own checkpoint grid, compute the metric at each position, and take the sd across positions. Compare against the same fold's k=1 sd computed on the same set of positions, so the two sds are over the same steps.",
+  "expectation": "sd_k = sd_1 / sqrt(k)",
+  "question": "does the achieved scatter reduction match the sqrt(k) expectation?"
+ },
+ "scope": {
+  "arms": {
+   "BNM x nb3": {
+    "folds": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "grid": "250..4000 step 250",
+    "note": "1000 is no_matched_arm_budget; 4000 is the mandatory one",
+    "readouts": [
+     1000,
+     1500,
+     2000,
+     4000
+    ]
+   },
+   "Baseline A (frozen)": {
+    "folds": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "grid": "250..8000 step 250",
+    "note": "round-1 R1 last-checkpoint. Only step_8000 scores were retained, so the per-checkpoint score vectors are RECOMPUTED on CPU from the frozen 640-d feature cache and the retained per-step head weights. No GPU, no training.",
+    "readouts": [
+     8000
+    ]
+   },
+   "CORAL x nb3": {
+    "folds": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "grid": "250..2000 step 250",
+    "readouts": [
+     2000
+    ]
+   },
+   "DANN x nb3": {
+    "folds": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "grid": "250..4000 step 250",
+    "note": "2000 is 7.18's pre-declared sensitivity readout",
+    "readouts": [
+     4000,
+     2000
+    ]
+   },
+   "FreeMatch x nb3": {
+    "folds": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "grid": "125..1500 step 125",
+    "readouts": [
+     1500
+    ]
+   },
+   "lambda=0": {
+    "folds": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "grid": "250..4000 step 250",
+    "readouts": [
+     4000,
+     2000,
+     1500
+    ]
+   }
+  },
+  "note": "every arm and both baselines, at every mandatory readout. Read-off steps are copied from each arm's own pre-registration/budget record; none is chosen here."
+ },
+ "score_combination": {
+  "primary": {
+   "name": "mean_logit",
+   "rule": "arithmetic mean, per image, of the RAW saved logits over the window's checkpoints; the metric is then computed once on the averaged score vector"
+  },
+  "secondary": {
+   "name": "mean_rank",
+   "rule": "per checkpoint, replace each image's logit by its rank over that checkpoint's full eval pool divided by (N-1) so it lies in [0,1]; average those across the window. Scale-free.",
+   "why_declared": "mean_logit is the literal reading of 'average scores', but it is not invariant to a checkpoint whose logit scale has drifted: one wide-scale checkpoint can dominate the mean and the window would then be a single-point read-off wearing a disguise. mean_rank cannot do that. Both are declared NOW and BOTH are reported for every arm; neither is promoted after the fact."
+  },
+  "weights_are_never_averaged": "scores only. Averaging weights across checkpoints of an unfrozen encoder is a different and unlicensed intervention."
+ },
+ "sha256_of_body_without_this_field": "a572b81e4c73059053666b43624221681bd43c36a38dd10af0413c9a9fdd429d",
+ "status": "DECLARED SECONDARY ANALYSIS -- replaces no hashed headline",
+ "task": "checkpoint-window averaging",
+ "the_verdict_it_owes": "7.16 records nine orderings as dissolved. This analysis must state, for each ordering that a read-off choice could plausibly have caused, whether it SURVIVES window averaging or NOT. Orderings survived => the limit is in the data and 7.16 is stronger than nine anecdotes. Orderings did not survive => the read-off choice was the fault, the fix is located, and 7.16's affected entries get updated rather than left standing alongside a contradicting claim.",
+ "what_this_is_not": {
+  "hashed_headlines_stand": "every pre-registered single-point number in 7.12, 7.15, 7.18, 7.22 and 7.28 remains the arm's reported result",
+  "labelled_everywhere": "DECLARED SECONDARY ANALYSIS",
+  "not_a_replacement_for_any_hashed_headline": true
+ },
+ "why": "Single-point read-off is the noisiest estimator available. 7.16's eighth entry measures a within-run checkpoint sd of 0.0402-0.0914 on fold 0 against between-method differences of 0.018, and fold 0's BNM curve moves 0.5102 -> 0.2857 across one 250-step gap. Averaging k consecutive checkpoints' SCORES reduces that scatter by sqrt(k) IF the checkpoint noise is independent. Whether it actually does is the measurement.",
+ "window_placement": {
+  "placed_by": "the pre-registered read-off point -- so the rule reads no metric",
+  "rule": "the k consecutive AVAILABLE checkpoints ending AT the pre-registered read-off step, inclusive of that step",
+  "step_0_excluded": "step 0 is the initialisation, not a trained checkpoint; it never enters a window",
+  "truncation": "where fewer than k trained checkpoints exist at or before the read-off, the window is truncated to all that do exist and the ACHIEVED k is reported next to the value"
+ }
+}

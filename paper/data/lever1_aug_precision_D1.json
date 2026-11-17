@@ -1,0 +1,63 @@
+{
+ "cells": {
+  "A_none_fp32": {
+   "config": "aug=none, fp32",
+   "tpr": 0.23469387755102042,
+   "auroc": 0.9439782877258962
+  },
+  "B_weak_fp32": {
+   "config": "aug=weak, fp32",
+   "tpr": 0.17346938775510204,
+   "auroc": 0.9225709569049937
+  },
+  "C_weak_fp16": {
+   "config": "aug=weak, fp16",
+   "tpr": 0.15306122448979592,
+   "auroc": 0.9255559650966837
+  }
+ },
+ "augmentation_effect_at_fp32": {
+  "diff": -0.06122448979591838,
+  "ci": [
+   -0.1326530612244898,
+   0.0
+  ],
+  "significant": false
+ },
+ "precision_effect_at_weak_aug": {
+  "diff": -0.020408163265306117,
+  "ci": [
+   -0.05102040816326531,
+   0.020408163265306145
+  ],
+  "significant": false
+ },
+ "total": {
+  "diff": -0.0816326530612245,
+  "ci": [
+   -0.14285714285714285,
+   -0.010204081632653045
+  ],
+  "significant": true
+ },
+ "interaction": "NOT IDENTIFIED (requires cell D: aug=none, fp16)",
+ "n_pos": 98,
+ "one_lens": 0.01020408163265306,
+ "venue_portability": {
+  "tpr_local": 0.15306122448979592,
+  "tpr_kaggle": 0.17346938775510204,
+  "diff": 0.020408163265306117,
+  "lenses": 1.9999999999999996,
+  "ci": [
+   -0.020408163265306117,
+   0.05102040816326531
+  ],
+  "exceeds_one_lens": true
+ },
+ "test_pool": {
+  "pool": "D1",
+  "rule": "audit/decontam/rule.json",
+  "rule_sha256": "b83fa019abba5238ccfca593a3130b54be574a47359b4e2818b274efd3fd0e4b",
+  "built_by": "paper/scripts/build_pool_recomputes.py"
+ }
+}

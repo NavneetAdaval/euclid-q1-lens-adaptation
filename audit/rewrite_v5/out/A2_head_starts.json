@@ -1,0 +1,71 @@
+{
+ "status": "post_hoc_exploratory",
+ "pool": "D1",
+ "producing_script": "audit/rewrite_v5/scripts/a2_a3_starts_noise.py",
+ "init_head_from": {
+  "freematch": [
+   "bakeoff_freematch_5fold/fold1/checkpoints/step_8000.pt",
+   "bakeoff_freematch_5fold/fold2/checkpoints/step_8000.pt",
+   "bakeoff_freematch_5fold/fold3/checkpoints/step_8000.pt",
+   "bakeoff_freematch_5fold/fold4/checkpoints/step_8000.pt"
+  ],
+  "coral": [
+   "bakeoff_coral/fold1/checkpoints/step_8000.pt",
+   "bakeoff_coral/fold2/checkpoints/step_8000.pt",
+   "bakeoff_coral/fold3/checkpoints/step_8000.pt",
+   "bakeoff_coral/fold4/checkpoints/step_8000.pt"
+  ],
+  "dann": [
+   "bakeoff_baseline_A/checkpoints/step_8000.pt",
+   "bakeoff_baseline_A/checkpoints/step_8000.pt",
+   "bakeoff_baseline_A/checkpoints/step_8000.pt",
+   "bakeoff_baseline_A/checkpoints/step_8000.pt"
+  ],
+  "lambda0": [
+   "bakeoff_baseline_A/checkpoints/step_8000.pt",
+   "bakeoff_baseline_A/checkpoints/step_8000.pt",
+   "bakeoff_baseline_A/checkpoints/step_8000.pt",
+   "bakeoff_baseline_A/checkpoints/step_8000.pt"
+  ],
+  "bnm": [
+   "bakeoff_baseline_A/checkpoints/step_8000.pt",
+   "bakeoff_baseline_A/checkpoints/step_8000.pt",
+   "bakeoff_baseline_A/checkpoints/step_8000.pt",
+   "bakeoff_baseline_A/checkpoints/step_8000.pt"
+  ]
+ },
+ "starts": {
+  "freematch": {
+   "run": "bakeoff_freematch_5fold",
+   "per_fold": {
+    "1": 0.41836734693877553,
+    "2": 0.41836734693877553,
+    "3": 0.37755102040816324,
+    "4": 0.4329896907216495
+   },
+   "fold_mean": 0.411818851251841
+  },
+  "coral": {
+   "run": "bakeoff_coral",
+   "per_fold": {
+    "1": 0.1836734693877551,
+    "2": 0.22448979591836735,
+    "3": 0.1836734693877551,
+    "4": 0.24742268041237114
+   },
+   "fold_mean": 0.20981485377656217
+  }
+ },
+ "checks": {
+  "unfrozen_freematch_1500": 0.5166999789606564,
+  "lambda0_4000": 0.18417315379760152,
+  "unfrozen_minus_start": 0.10488112770881547,
+  "table5_last_row_target": 0.1049,
+  "unfrozen_minus_start_equals_table5_to_4dp": true,
+  "freematch_minus_lambda0": 0.33252682516305493,
+  "start_minus_lambda0": 0.22764569745423946,
+  "identity_holds": true,
+  "freematch_minus_lambda0_equals_0_3325_to_4dp": true,
+  "coral_start_minus_lambda0": 0.025641699978960653
+ }
+}

@@ -1,0 +1,26 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_dilute10_tables.py)
+% Appendix K: pool sensitivities. runs/dilute10_analysis/results.json sensitivities (orig, D2).
+\begin{table}[htbp]
+\centering
+\caption{\textbf{The ten contrasts of the 1:10 experiment on the original and the reduced test pools}, beside whether the cleaned pool's interval excludes zero. The original pool keeps every drawn test negative (Section~\ref{sec:testpool}); the reduced pool also removes the test lenses that appear in training or validation. Match: the same zero-inclusion as on the cleaned pool. Paired $t$-intervals (df${}=3$).}
+\label{tab:dl-sensitivity}
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{llcrcrc}
+\toprule
+Contrast & Steps & Cleaned & Original pool & Match & Reduced pool & Match \\
+\midrule
+$G$ DANN & 4000 / 4000 & excl. & $+0.2814$ $[+0.2388, +0.3240]$ & yes & $+0.3336$ $[+0.2846, +0.3826]$ & yes \\
+$G$ BNM & 4000 / 4000 & excl. & $+0.1610$ $[+0.0471, +0.2749]$ & yes & $+0.2015$ $[+0.0036, +0.3994]$ & yes \\
+$G$ CORAL & 2000 / 4000 & incl. & $+0.0333$ $[-0.0006, +0.0672]$ & yes & $-0.0009$ $[-0.0601, +0.0584]$ & yes \\
+$G$ CORAL & 2000 / 2000 & incl. & $-0.0052$ $[-0.0561, +0.0457]$ & yes & $-0.0248$ $[-0.0901, +0.0405]$ & yes \\
+$G$ FreeMatch & 1500 / 4000 & incl. & $+0.2099$ $[+0.0051, +0.4147]$ & \textbf{no} & $+0.2457$ $[-0.0035, +0.4948]$ & yes \\
+$G$ FreeMatch & 1500 / 1500 & incl. & $+0.1997$ $[+0.0071, +0.3923]$ & \textbf{no} & $+0.2491$ $[-0.0187, +0.5169]$ & yes \\
+$D$ DANN & 4000 / 4000 & incl. & $-0.0002$ $[-0.2233, +0.2230]$ & yes & $-0.0191$ $[-0.2788, +0.2406]$ & yes \\
+$D$ BNM & 4000 / 4000 & incl. & $+0.0310$ $[-0.0915, +0.1534]$ & yes & $+0.0220$ $[-0.1083, +0.1524]$ & yes \\
+$D$ CORAL & 2000 / 2000 & excl. & $+0.2660$ $[+0.1065, +0.4255]$ & yes & $+0.3364$ $[+0.2066, +0.4662]$ & yes \\
+$D$ FreeMatch & 1500 / 1500 & incl. & $+0.0715$ $[-0.0542, +0.1972]$ & yes & $+0.0805$ $[-0.0782, +0.2392]$ & yes \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,24 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_prereg_fixes.py)
+% Appendix C: the window declaration's secondaries, from paper/data/window_average_D1.json.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{The window average's secondary metrics.} Fold-mean AUROC and completeness at 24\% purity, folds 1--4, cleaned pool, for a single checkpoint ($k=1$, each arm's headline) and for the declared eight-checkpoint average under each score combination. The declaration named both metrics as secondaries (Table~\ref{tab:window2} gives TPR). \emph{n/a}: 24\% purity is unreachable on at least one fold.}
+\label{tab:window-secondary}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+ & & \multicolumn{3}{c}{AUROC} & \multicolumn{3}{c}{completeness at 24\% purity} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+Arm & Read at & $k{=}1$ & $k{=}8$, logit & $k{=}8$, rank & $k{=}1$ & $k{=}8$, logit & $k{=}8$, rank \\
+\midrule
+CORAL & 2000 & $0.9097$ & $0.9423$ & $0.9369$ & $0.4961$ & $0.5421$ & $0.4884$ \\
+FreeMatch & 1500 & $0.9666$ & $0.9756$ & $0.9735$ & $0.4835$ & $0.5677$ & $0.5626$ \\
+DANN & 4000 & $0.9076$ & $0.9540$ & $0.9451$ & $0.4550$ & $0.5394$ & $0.4679$ \\
+DANN\,\footnotesize(sens.) & 2000 & $0.9326$ & $0.9539$ & $0.9513$ & $0.5291$ & $0.5166$ & $0.4194$ \\
+$\lambda=0$ & 4000 & $0.8815$ & $0.8935$ & $0.8922$ & \emph{n/a} & $0.0587$ & $0.0715$ \\
+BNM & 4000 & $0.9096$ & $0.9234$ & $0.9155$ & $0.3555$ & $0.4397$ & $0.3682$ \\
+\bottomrule
+\end{tabular}
+\end{table}

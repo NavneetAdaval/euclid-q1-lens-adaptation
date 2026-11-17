@@ -1,0 +1,1202 @@
+{
+  "arms_folds_budgets_readoffs": {
+    "budgets_checked_against_the_runs": {
+      "BNM x nb3": 4000,
+      "CORAL x nb3": 2000,
+      "DANN x nb3": 4000,
+      "FreeMatch x nb3": 1500,
+      "lambda=0 (prereg CONFIRM_STEPS)": 4000
+    },
+    "frozen_stages_rerun": {
+      "CORAL frozen": "an exact replica of the round-1 frozen CORAL run CORAL nb3 started from (runs/bakeoff_coral, warmup_cosine), except for the pool and the sampler",
+      "FreeMatch frozen": "an exact replica of round-1 frozen FreeMatch (image-space, weak augmentation, fp16, 8000 steps, R1 = step 8000), except for the pool and the sampler",
+      "round1_configs": {
+        "CORAL": {
+          "batch_size": 256,
+          "budget_steps": 8000,
+          "coral_ema_momentum": 0.9,
+          "coral_include_mean": true,
+          "coral_min_frac": 0.1,
+          "coral_peak_gamma": 1.0,
+          "coral_shrinkage": 0.1,
+          "coral_target_ema": true,
+          "coral_warmup_frac": 0.1,
+          "coral_weight_schedule": "warmup_cosine",
+          "head_type": "linear",
+          "lr": 0.001,
+          "pos_fraction": 0.5,
+          "seed": 42,
+          "selection_rule": "R1_last_checkpoint_step8000",
+          "stop_on_blowup": false,
+          "weight_decay": 0.0001
+        },
+        "FreeMatch": {
+          "batch_size": 256,
+          "budget_steps": 8000,
+          "consistency_warmup_frac": 0.1,
+          "device": "cuda",
+          "fairness_target": null,
+          "fp16": true,
+          "freematch_variant": "FreeMatch-standard (screen-winning; floor is a documented negative)",
+          "head_type": "linear",
+          "local_threshold_mode": "standard",
+          "lr": 0.001,
+          "mu_max": 1.0,
+          "pos_class": 1,
+          "pos_fraction": 0.5,
+          "saf_weight": 0.01,
+          "sat_ema_momentum": 0.999,
+          "seed": 42,
+          "selection_rule": "R1_last_checkpoint_step8000",
+          "weight_decay": 0.0001
+        }
+      },
+      "their_final_heads": "initialise section 4.1",
+      "their_own_tpr": "a DESCRIPTIVE SECONDARY (section 6)"
+    },
+    "lambda0_control": {
+      "CAVEAT_declared_now": "If the target sampler shares a random number stream with the source sampler or the augmentation, changing it reorders the source batches. In that case the lambda=0 run is 'the same model up to batch order'. This is disclosed, not rerun. Resolved by the code brief.",
+      "reused": "the existing lambda=0 folds 1-4",
+      "why": "they pass no target gradient, so the target pool and sampler do not enter what the model learns"
+    },
+    "step0_gates": {
+      "CORAL_and_FreeMatch": "taken against THEIR NEW FROZEN HEAD'S OWN per-fold values, recorded when section 4.2 finishes",
+      "DANN_and_BNM": "keep their per-fold step-0 gates against Baseline A's values (the original runs' expect_step0_* fields, referenced under artifacts)",
+      "DISCLOSURE": "FreeMatch x nb3 fold 1 originally ran its gate at an EXACT tolerance with no AUROC half; folds 2-4 ran at one positive + AUROC 1e-3. The rerun uses one positive + AUROC 1e-3 on every fold.",
+      "tolerance": "unchanged: one positive on the live-encode path, plus |AUROC diff| <= 1e-3",
+      "tolerance_as_run_coral_one_positive_resolution": {
+        "1": 0.01020408163265306,
+        "2": 0.01020408163265306,
+        "3": 0.01020408163265306,
+        "4": 0.010309278350515464
+      },
+      "tolerance_as_run_dann_bnm_positives_and_auroc": {
+        "BNM x nb3": [
+          1,
+          0.001
+        ],
+        "DANN x nb3": [
+          1,
+          0.001
+        ]
+      },
+      "tolerance_as_run_freematch": {
+        "1": {
+          "auroc_half": false,
+          "auroc_tolerance": null,
+          "positive_tolerance": 0.0
+        },
+        "2": {
+          "auroc_half": true,
+          "auroc_tolerance": 0.001,
+          "positive_tolerance": 0.01020408163265306
+        },
+        "3": {
+          "auroc_half": true,
+          "auroc_tolerance": 0.001,
+          "positive_tolerance": 0.01020408163265306
+        },
+        "4": {
+          "auroc_half": true,
+          "auroc_tolerance": 0.001,
+          "positive_tolerance": 0.01020408163265306
+        }
+      }
+    },
+    "unfrozen": [
+      {
+        "arm": "DANN x nb3",
+        "contrast_against_lambda0_at": {
+          "primary": 4000
+        },
+        "read_at": 4000,
+        "starts_from": "Baseline A head (unchanged)",
+        "trained_to": 4000
+      },
+      {
+        "arm": "BNM x nb3",
+        "contrast_against_lambda0_at": {
+          "primary": 4000
+        },
+        "read_at": 4000,
+        "starts_from": "Baseline A head (unchanged)",
+        "trained_to": 4000
+      },
+      {
+        "arm": "CORAL x nb3",
+        "contrast_against_lambda0_at": {
+          "primary": 4000,
+          "sensitivity": 2000
+        },
+        "read_at": 2000,
+        "starts_from": "NEW frozen-stage head (section 4.2)",
+        "trained_to": 2000
+      },
+      {
+        "arm": "FreeMatch x nb3",
+        "contrast_against_lambda0_at": {
+          "primary": 4000,
+          "sensitivity": 1500
+        },
+        "read_at": 1500,
+        "starts_from": "NEW frozen-stage head (section 4.2), with the Appendix E state reconstruction",
+        "trained_to": 1500
+      }
+    ]
+  },
+  "artifacts": {
+    "BNM x nb3": {
+      "1": {
+        "ids": {
+          "path": "runs/bnm_r6_folds/bnm_r6_fold1/logits/ids.npz",
+          "sha256": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad"
+        },
+        "step_4000": {
+          "path": "runs/bnm_r6_folds/bnm_r6_fold1/logits/bnm_nb3_fold1/step_4000.npz",
+          "sha256": "1959d498ef28c368567a6bb305d70a7c26d9995f1a9ee90730e507e77891687a"
+        }
+      },
+      "2": {
+        "ids": {
+          "path": "runs/bnm_r6_folds/bnm_r6_fold2/logits/ids.npz",
+          "sha256": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048"
+        },
+        "step_4000": {
+          "path": "runs/bnm_r6_folds/bnm_r6_fold2/logits/bnm_nb3_fold2/step_4000.npz",
+          "sha256": "d8e4289a37e82b1df2a76b8aeff9a04c9d63943150304facd2b8250e9c679967"
+        }
+      },
+      "3": {
+        "ids": {
+          "path": "runs/bnm_r6_folds/bnm_r6_fold3/logits/ids.npz",
+          "sha256": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d"
+        },
+        "step_4000": {
+          "path": "runs/bnm_r6_folds/bnm_r6_fold3/logits/bnm_nb3_fold3/step_4000.npz",
+          "sha256": "f6cee70433175849fc95276d218def55b059db28a1207e162884d9a6633de24c"
+        }
+      },
+      "4": {
+        "ids": {
+          "path": "runs/bnm_r6_folds/bnm_r6_fold4/logits/ids.npz",
+          "sha256": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979"
+        },
+        "step_4000": {
+          "path": "runs/bnm_r6_folds/bnm_r6_fold4/logits/bnm_nb3_fold4/step_4000.npz",
+          "sha256": "30edf66b41c7cc5939d5ac828c7a2658dd024cd56fbbf7493921fcc58dd6edc0"
+        }
+      }
+    },
+    "CORAL x nb3": {
+      "1": {
+        "ids": {
+          "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold1/logits/ids.npz",
+          "sha256": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad"
+        },
+        "step_2000": {
+          "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold1/logits/g16_2000_fold1/step_2000.npz",
+          "sha256": "a93ca63fa01ec6c103e95808f1819d9e21f9a87ac65761e979e3a766818b600b"
+        }
+      },
+      "2": {
+        "ids": {
+          "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold2/logits/ids.npz",
+          "sha256": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048"
+        },
+        "step_2000": {
+          "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold2/logits/g16_2000_fold2/step_2000.npz",
+          "sha256": "8b527ecd0107dd313da7e6250092bee51b3dbc9b320ddb9cfff41b6cf0126e96"
+        }
+      },
+      "3": {
+        "ids": {
+          "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold3/logits/ids.npz",
+          "sha256": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d"
+        },
+        "step_2000": {
+          "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold3/logits/g16_2000_fold3/step_2000.npz",
+          "sha256": "fe0e7630f584f67290f3c3952bfe8efacea8c54a8345fb62e1dc09d5f29e7fdb"
+        }
+      },
+      "4": {
+        "ids": {
+          "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold4/logits/ids.npz",
+          "sha256": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979"
+        },
+        "step_2000": {
+          "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold4/logits/g16_2000_fold4/step_2000.npz",
+          "sha256": "fda681bb033eaa38e6c44574e5a688a0ed832943ec7f416c8f4ddc989943b054"
+        }
+      }
+    },
+    "DANN x nb3": {
+      "1": {
+        "ids": {
+          "path": "runs/dann_main/fold1/extracted/fold1/logits/ids.npz",
+          "sha256": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad"
+        },
+        "step_4000": {
+          "path": "runs/dann_main/fold1/extracted/fold1/logits/dann_nb3_fold1/step_4000.npz",
+          "sha256": "62ab6b1ecaba5da27f8618cd891275ff1bfa35211957986872ecc9cd9977c6c6"
+        }
+      },
+      "2": {
+        "ids": {
+          "path": "runs/dann_main/fold2/extracted/fold2/logits/ids.npz",
+          "sha256": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048"
+        },
+        "step_4000": {
+          "path": "runs/dann_main/fold2/extracted/fold2/logits/dann_nb3_fold2/step_4000.npz",
+          "sha256": "437571529155e516ca3d699ec0c4600381cf872b1cddc894e6ebdba760b5f8de"
+        }
+      },
+      "3": {
+        "ids": {
+          "path": "runs/dann_main/fold3/extracted/fold3/logits/ids.npz",
+          "sha256": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d"
+        },
+        "step_4000": {
+          "path": "runs/dann_main/fold3/extracted/fold3/logits/dann_nb3_fold3/step_4000.npz",
+          "sha256": "2167a7b9fa9c3739eb3b06e5991b3ad4dbda35c35fd9dd181a69d027be4d4659"
+        }
+      },
+      "4": {
+        "ids": {
+          "path": "runs/dann_main/fold4/extracted/fold4/logits/ids.npz",
+          "sha256": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979"
+        },
+        "step_4000": {
+          "path": "runs/dann_main/fold4/extracted/fold4/logits/dann_nb3_fold4/step_4000.npz",
+          "sha256": "d2e49613f2e1d19b9e58b4bbd11b4d8ff6b35ab6ee36416380c6c0f0ed96b864"
+        }
+      }
+    },
+    "FreeMatch x nb3": {
+      "1": {
+        "ids": {
+          "path": "runs/freematch_nb3_unfrozen_fold1/logits/ids.npz",
+          "sha256": "561a8f470df2583a3358cf9d93ad4b268765bf5f55ebbcfecdc43f958afe67da"
+        },
+        "step_1500": {
+          "path": "runs/freematch_nb3_unfrozen_fold1/logits/step_1500.npz",
+          "sha256": "a2e2b0ea130ca7ed568716fa077b9194f73577e05862ce5a8ada418f44bbc870"
+        }
+      },
+      "2": {
+        "ids": {
+          "path": "runs/freematch_nb3_unfrozen_fold2/logits/ids.npz",
+          "sha256": "0724145b3a9527ece4996e7d91a27fca9b880f3ab2368f2a54648576f4535492"
+        },
+        "step_1500": {
+          "path": "runs/freematch_nb3_unfrozen_fold2/logits/step_1500.npz",
+          "sha256": "5cf8a5590d87dd7b1395c42e2b6ff445ae979c724d449e77bd9c698c110bc564"
+        }
+      },
+      "3": {
+        "ids": {
+          "path": "runs/freematch_nb3_unfrozen_fold3/logits/ids.npz",
+          "sha256": "76411979ce7618722edb37e9992aed6b180214df4019852cbb95fe494bdebf10"
+        },
+        "step_1500": {
+          "path": "runs/freematch_nb3_unfrozen_fold3/logits/step_1500.npz",
+          "sha256": "d3502cd0bc802b6cacaca911b543d02b2415693b5d4c4a18429f906a1fc9a759"
+        }
+      },
+      "4": {
+        "ids": {
+          "path": "runs/freematch_nb3_unfrozen_fold4/logits/ids.npz",
+          "sha256": "2a1de09932a8694ab29f61c2b9f9040c299bcfc560ece02e7b052111afeb6270"
+        },
+        "step_1500": {
+          "path": "runs/freematch_nb3_unfrozen_fold4/logits/step_1500.npz",
+          "sha256": "e274d55638b2bbe1c99f6fb2d5e6cbb1709fff725c838cd90a1f826158a2e987"
+        }
+      }
+    },
+    "lambda=0": {
+      "1": {
+        "ids": {
+          "path": "runs/baseline_unfrozen/fold1/extracted/lambda0_r6_fold1/logits/ids.npz",
+          "sha256": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad"
+        },
+        "step_1500": {
+          "path": "runs/baseline_unfrozen/fold1/extracted/lambda0_r6_fold1/logits/dann_nb3_lambda0_fold1/step_1500.npz",
+          "sha256": "b0c0277af46fa3b60565e35b323f35ab4e50ceeb7769be68bb62790105d7b5d9"
+        },
+        "step_2000": {
+          "path": "runs/baseline_unfrozen/fold1/extracted/lambda0_r6_fold1/logits/dann_nb3_lambda0_fold1/step_2000.npz",
+          "sha256": "92ddfa2d8d6a22508ec6edbea9496beae4fbb2d53dc62037a29b4b12dc40aa6d"
+        },
+        "step_4000": {
+          "path": "runs/baseline_unfrozen/fold1/extracted/lambda0_r6_fold1/logits/dann_nb3_lambda0_fold1/step_4000.npz",
+          "sha256": "378364428795dc8f5654328f1b43a018a12c8e494bb35ed0c08f1cfac030e90f"
+        }
+      },
+      "2": {
+        "ids": {
+          "path": "runs/baseline_unfrozen/fold2/extracted/lambda0_r6_fold2/logits/ids.npz",
+          "sha256": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048"
+        },
+        "step_1500": {
+          "path": "runs/baseline_unfrozen/fold2/extracted/lambda0_r6_fold2/logits/dann_nb3_lambda0_fold2/step_1500.npz",
+          "sha256": "f7af275d0f65ff753af463158bb780ecf92763701b354c2bf9aaac99daee3bdc"
+        },
+        "step_2000": {
+          "path": "runs/baseline_unfrozen/fold2/extracted/lambda0_r6_fold2/logits/dann_nb3_lambda0_fold2/step_2000.npz",
+          "sha256": "d899cc12e474c8b43d4a3b1c5c7c37022a13baa1e8cb7504c0afbb5c61aa9059"
+        },
+        "step_4000": {
+          "path": "runs/baseline_unfrozen/fold2/extracted/lambda0_r6_fold2/logits/dann_nb3_lambda0_fold2/step_4000.npz",
+          "sha256": "6ed955d76e08118906f345eec9d119f1eb40f51be5c44c9fc601284f36c9b2f1"
+        }
+      },
+      "3": {
+        "ids": {
+          "path": "runs/baseline_unfrozen/fold3/extracted/lambda0_r6_fold3/logits/ids.npz",
+          "sha256": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d"
+        },
+        "step_1500": {
+          "path": "runs/baseline_unfrozen/fold3/extracted/lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_1500.npz",
+          "sha256": "b4a173506ab7a019cd0793919e3eaac32a5ec03ca1d540a042f5373f3ddb3517"
+        },
+        "step_2000": {
+          "path": "runs/baseline_unfrozen/fold3/extracted/lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_2000.npz",
+          "sha256": "bf618f023c08c61854fe149603a13689cb8ee31ea95591d4c9a5004fcf141061"
+        },
+        "step_4000": {
+          "path": "runs/baseline_unfrozen/fold3/extracted/lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_4000.npz",
+          "sha256": "c50675658ce5116eaed936d0b04d70b66b0f0059bbe1462b21c8eea38c93e643"
+        }
+      },
+      "4": {
+        "ids": {
+          "path": "runs/baseline_unfrozen/fold4/extracted/lambda0_r6_fold4/logits/ids.npz",
+          "sha256": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979"
+        },
+        "step_1500": {
+          "path": "runs/baseline_unfrozen/fold4/extracted/lambda0_r6_fold4/logits/dann_nb3_lambda0_fold4/step_1500.npz",
+          "sha256": "9de716f2dece125193a2afc97c5c8350c9655bf59ebb73e43951367e325f6eb9"
+        },
+        "step_2000": {
+          "path": "runs/baseline_unfrozen/fold4/extracted/lambda0_r6_fold4/logits/dann_nb3_lambda0_fold4/step_2000.npz",
+          "sha256": "7d3dc526545a82d158b36fcb7edf9dad0f4e465b4c0ee1573d1bbf19a86813f5"
+        },
+        "step_4000": {
+          "path": "runs/baseline_unfrozen/fold4/extracted/lambda0_r6_fold4/logits/dann_nb3_lambda0_fold4/step_4000.npz",
+          "sha256": "e86de6f7c351fc46b58468e06bedf1a8bbc7bfcec6fee3948785a9f8c4e54330"
+        }
+      }
+    },
+    "round1_frozen_scores (descriptive comparison, section 6)": {
+      "bakeoff_coral": {
+        "1": {
+          "path": "runs/bakeoff_coral/scores/coral_fold1.npz",
+          "sha256": "42e41aa0e2262a0b7dec2a67299b1f4b5a687c67bcad6bff633a7b055a436fd6"
+        },
+        "2": {
+          "path": "runs/bakeoff_coral/scores/coral_fold2.npz",
+          "sha256": "ffd844077171d14b82e4f3b581d0239326ea1a17a4c8ab8815bba698b7f73514"
+        },
+        "3": {
+          "path": "runs/bakeoff_coral/scores/coral_fold3.npz",
+          "sha256": "eae73e7c2132ff5640ab143b5a806bcaca5c93f0558994db2254215c7f4a71ca"
+        },
+        "4": {
+          "path": "runs/bakeoff_coral/scores/coral_fold4.npz",
+          "sha256": "7946900d82b97b722c0764c9b61cba9c748d772e43b78f9ba48dd7e0814de2ff"
+        }
+      },
+      "bakeoff_freematch_5fold": {
+        "1": {
+          "path": "runs/bakeoff_freematch_5fold/scores/freematch_fold1.npz",
+          "sha256": "e87237d664936f36c89b52c026a24db8e5162cc99a15d07657a10a1c8f6ade6f"
+        },
+        "2": {
+          "path": "runs/bakeoff_freematch_5fold/scores/freematch_fold2.npz",
+          "sha256": "e6136e3735d5f443263c854b8fbe15207193ba6e9f36daf6b9d276c584504148"
+        },
+        "3": {
+          "path": "runs/bakeoff_freematch_5fold/scores/freematch_fold3.npz",
+          "sha256": "198989ff9e2ea59f689177cd68c22d88f2a0aa260efd6c40f33f490da6faa1a9"
+        },
+        "4": {
+          "path": "runs/bakeoff_freematch_5fold/scores/freematch_fold4.npz",
+          "sha256": "0af79c15cb88fbfe27778c211adda8a1dfc27360f0ac968d13dc49f0d1596e5f"
+        }
+      }
+    },
+    "step0_gate_reference_values (read in part 2, not here)": {
+      "BNM x nb3": {
+        "1": {
+          "fields": [
+            "expect_step0_tpr",
+            "expect_step0_auroc"
+          ],
+          "path": "runs/bnm_r6_folds/bnm_r6_fold1/run_config.json",
+          "sha256": "06f4116e1e20c0d03d998f82be568ac402c3ce4ca1d30141e4709220c074f3e8"
+        },
+        "2": {
+          "fields": [
+            "expect_step0_tpr",
+            "expect_step0_auroc"
+          ],
+          "path": "runs/bnm_r6_folds/bnm_r6_fold2/run_config.json",
+          "sha256": "57be2a7c40316dfaa0ccf6a4f665a8f18bac72bf99d7ffd0d2bc787f4b525eed"
+        },
+        "3": {
+          "fields": [
+            "expect_step0_tpr",
+            "expect_step0_auroc"
+          ],
+          "path": "runs/bnm_r6_folds/bnm_r6_fold3/run_config.json",
+          "sha256": "67368ba4d4639ef12a7f61508a57a8bcf73eed187d3d1889a39a7aa60f82c3b7"
+        },
+        "4": {
+          "fields": [
+            "expect_step0_tpr",
+            "expect_step0_auroc"
+          ],
+          "path": "runs/bnm_r6_folds/bnm_r6_fold4/run_config.json",
+          "sha256": "5fdc6c0e0e4f714a0d466809b46ecc07e2dc79e4571ba826b5df2367021c3054"
+        }
+      },
+      "DANN x nb3": {
+        "1": {
+          "fields": [
+            "expect_step0_tpr",
+            "expect_step0_auroc"
+          ],
+          "path": "runs/dann_main/fold1/extracted/fold1/run_config.json",
+          "sha256": "e4e841b3280c6fe799d76ac0266a965740c8ce7e529bffd6f7b852c4f4bd77cc"
+        },
+        "2": {
+          "fields": [
+            "expect_step0_tpr",
+            "expect_step0_auroc"
+          ],
+          "path": "runs/dann_main/fold2/extracted/fold2/run_config.json",
+          "sha256": "464080d203f70fd029272e7f71796626c0cae6ce6072d3f4b3a3a7f61a3d6d13"
+        },
+        "3": {
+          "fields": [
+            "expect_step0_tpr",
+            "expect_step0_auroc"
+          ],
+          "path": "runs/dann_main/fold3/extracted/fold3/run_config.json",
+          "sha256": "16c559a722a59a3cc9d348f32df90e7e98dcabc80f5cf66de6718e0a8139c886"
+        },
+        "4": {
+          "fields": [
+            "expect_step0_tpr",
+            "expect_step0_auroc"
+          ],
+          "path": "runs/dann_main/fold4/extracted/fold4/run_config.json",
+          "sha256": "dbafea6b4e4254fb8f617f3134db99e35ec5d9b17b4d941f763cc1db1a5d2636"
+        }
+      }
+    }
+  },
+  "branches": {
+    "abstract_and_conclusion_rule_VERBATIM": "**Abstract and conclusion rule.** Report every arm's branch. Lead with DANN (the fully controlled pair) and BNM (whose objective depends most directly on the class balance). Frame the experiment only as a first test toward survey prevalence, matching \u00a78 and the conclusion's stated next experiment.",
+    "definitions": {
+      "D": "balanced - diluted",
+      "G": "diluted - lambda=0"
+    },
+    "mandatory_qualifier_VERBATIM": "**Mandatory qualifier.** Under SURVIVES, if D's upper bound exceeds half of (balanced \u2212 \u03bb=0), add: \"\u2026though the interval admits losing up to [D upper] of the original [balanced \u2212 \u03bb=0].\"",
+    "per_arm": true,
+    "table_VERBATIM": [
+      {
+        "branch": "SURVIVES",
+        "condition": "G's interval excludes zero, and D's interval includes zero or is negative",
+        "licensed_sentence": "\"With a 1:10 target drawn without the labels, [arm] still raises TPR@10\u207b\u00b3 over the control by G [CI], and we detect no loss against the balanced target (D [CI]).\""
+      },
+      {
+        "branch": "SHRINKS",
+        "condition": "G's interval excludes zero, and D's interval excludes zero (positive)",
+        "licensed_sentence": "\"With a 1:10 target, [arm] still raises TPR@10\u207b\u00b3 over the control by G [CI], but by less than with a balanced target (D [CI]). Dilution also changes the number of real lenses per batch and how often each is seen, so we do not attribute the loss to the proportion alone.\""
+      },
+      {
+        "branch": "COLLAPSES",
+        "condition": "G's interval includes zero",
+        "licensed_sentence": "\"We cannot detect a gain for [arm] with a 1:10 target: G [CI].\""
+      }
+    ]
+  },
+  "brief": {
+    "brief_path_basename": "brief_dilute10_prereg.md",
+    "brief_sha256": "c523b6370c537876bcf45755caf2e6b42f213b44a206410224ccd993321a2936",
+    "method": "each stored passage, whitespace-normalised, is a substring of the whitespace-normalised brief (blockquote markers and table pipes removed)",
+    "n_passages_checked": 13
+  },
+  "contrasts": {
+    "common_method": {
+      "computation": "every value from stored logits through metrics.metric_suite, never from printed tables (7.31)",
+      "folds": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "interval": "paired t-interval on the four per-fold differences, df = 3",
+      "metric": "TPR@1e-3",
+      "pool": "cleaned test pool, rule audit/decontam/rule.json body sha256 b83fa019abba5238ccfca593a3130b54be574a47359b4e2818b274efd3fd0e4b"
+    },
+    "descriptive": [
+      "retained fraction (diluted - lambda=0)/(balanced - lambda=0), point estimate only",
+      "frozen-stage diluted FreeMatch and CORAL against their round-1 frozen heads, folds 1-4, class-conditional paired bootstrap as in the frozen comparison (2 intervals)",
+      "realised lens fraction per target batch, mean and sd per run",
+      "BNM's predicted-positive fraction trajectory"
+    ],
+    "multiplicity": "10 new t-intervals plus 2 bootstrap intervals, NO correction. Disclosed.",
+    "primary": {
+      "list": [
+        "DANN@4000 - l0@4000",
+        "BNM@4000 - l0@4000",
+        "CORAL@2000 - l0@4000",
+        "CORAL@2000 - l0@2000 (sensitivity)",
+        "FreeMatch@1500 - l0@4000",
+        "FreeMatch@1500 - l0@1500 (sensitivity)"
+      ],
+      "n_intervals": 6,
+      "what": "for each arm, diluted - lambda=0, at the steps in section 4.1"
+    },
+    "secondary": {
+      "caveat": "they include batch-order noise, because the sampler changes the draw sequence",
+      "n_intervals": 4,
+      "verdict": "NONE -- reported as intervals",
+      "what": "for each arm, balanced - diluted at the same read-off; balanced per-fold values from the stored logits of the paper's runs"
+    },
+    "sensitivities": "original and reduced pools in an appendix only"
+  },
+  "cost": {
+    "notes": {
+      "coral_frozen_mtimes": {
+        "basis": "FILESYSTEM mtimes of runs/bakeoff_coral/fold*/curve.csv, NOT a logged time",
+        "fold1_first_to_last_checkpoint_minutes": 1.8085333943367004,
+        "fold_to_fold_minutes": {
+          "1->2": 1.9614042003949483,
+          "2->3": 1.9815405329068503,
+          "3->4": 1.9744787295659383
+        }
+      },
+      "forward_throughput": {
+        "images_per_pass": 26497,
+        "images_per_second": 222.29026845637583,
+        "median_seconds_per_pass": 119.2,
+        "n_passes": 64,
+        "source": "runs/dann_r5_curves/dann_r5_rescore.json rows[*].score_seconds (nb3 checkpoints through live_encode on a T4)"
+      },
+      "freematch_frozen_logged_time_covers": "the 43 logged epoch durations only -- excludes encoder build, the curve-point evaluations if they fall outside the epoch timer, and packaging; the round-1 logs record no session start/end",
+      "freematch_sat_rebuild": {
+        "1": {
+          "batches_after": 680,
+          "batches_before": 160,
+          "central_basis": "extra batches x 256 images at the recorded forward throughput",
+          "extra_batches": 520,
+          "extra_minutes_central": 9.980943754638892,
+          "extra_minutes_upper": 27.623520781199137,
+          "pool_after": 4301,
+          "pool_before": 782,
+          "upper_basis": "extra batches x this fold's recorded mean seconds per TRAINING step (forward+backward, all three streams)"
+        },
+        "2": {
+          "batches_after": 680,
+          "batches_before": 160,
+          "central_basis": "extra batches x 256 images at the recorded forward throughput",
+          "extra_batches": 520,
+          "extra_minutes_central": 9.980943754638892,
+          "extra_minutes_upper": 29.824971547550625,
+          "pool_after": 4301,
+          "pool_before": 782,
+          "upper_basis": "extra batches x this fold's recorded mean seconds per TRAINING step (forward+backward, all three streams)"
+        },
+        "3": {
+          "batches_after": 680,
+          "batches_before": 160,
+          "central_basis": "extra batches x 256 images at the recorded forward throughput",
+          "extra_batches": 520,
+          "extra_minutes_central": 9.980943754638892,
+          "extra_minutes_upper": 28.780492931683856,
+          "pool_after": 4301,
+          "pool_before": 782,
+          "upper_basis": "extra batches x this fold's recorded mean seconds per TRAINING step (forward+backward, all three streams)"
+        },
+        "4": {
+          "batches_after": 680,
+          "batches_before": 160,
+          "central_basis": "extra batches x 256 images at the recorded forward throughput",
+          "extra_batches": 520,
+          "extra_minutes_central": 9.980943754638892,
+          "extra_minutes_upper": 29.24728061199188,
+          "pool_after": 4312,
+          "pool_before": 784,
+          "upper_basis": "extra batches x this fold's recorded mean seconds per TRAINING step (forward+backward, all three streams)"
+        }
+      },
+      "freematch_train_minutes_covers": "time.time() around train_freematch_fold: SAT rebuild, Adam warm-up, step-0 evaluation and training; NOT encoder build or packaging"
+    },
+    "ordering_constraint": "each fold's FreeMatch / CORAL frozen stage must finish and its head be home before that fold's unfrozen stage starts, so the lower bound is not reachable in one pass",
+    "per_arm": {
+      "BNM x nb3 (rerun, 4000 steps)": {
+        "gpu_hours": 8.80364884403017,
+        "kaggle_sessions_if_run_alone": 1
+      },
+      "CORAL frozen stage (rerun, 8000 steps, CPU)": {
+        "gpu_hours": 0.0,
+        "kaggle_sessions_if_run_alone": 0
+      },
+      "CORAL frozen-cache encode (new galaxies)": {
+        "gpu_hours": 0.01760086047477073,
+        "kaggle_sessions_if_run_alone": 1
+      },
+      "CORAL x nb3 (rerun, 2000 steps)": {
+        "gpu_hours": 4.606054386297862,
+        "kaggle_sessions_if_run_alone": 1
+      },
+      "DANN x nb3 (rerun, 4000 steps)": {
+        "gpu_hours": 9.619809659322103,
+        "kaggle_sessions_if_run_alone": 1
+      },
+      "FreeMatch frozen stage (rerun, 8000 steps)": {
+        "gpu_hours": 8.573361111111112,
+        "kaggle_sessions_if_run_alone": 1
+      },
+      "FreeMatch x nb3 (rerun, 1500 steps)": {
+        "gpu_hours": 8.498033466486577,
+        "kaggle_sessions_if_run_alone": 1
+      }
+    },
+    "per_arm_per_fold": {
+      "BNM x nb3 (rerun, 4000 steps)": {
+        "1": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 2.323430419034428,
+          "minutes": 139.40582514206568,
+          "source": "runs/bnm_r6_folds/bnm_r6_fold1/run.json:wall_minutes"
+        },
+        "2": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 2.25182484500938,
+          "minutes": 135.1094907005628,
+          "source": "runs/bnm_r6_folds/bnm_r6_fold2/run.json:wall_minutes"
+        },
+        "3": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 2.0379221694337,
+          "minutes": 122.27533016602199,
+          "source": "runs/bnm_r6_folds/bnm_r6_fold3/run.json:wall_minutes"
+        },
+        "4": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 2.190471410552661,
+          "minutes": 131.42828463315965,
+          "source": "runs/bnm_r6_folds/bnm_r6_fold4/run.json:wall_minutes"
+        }
+      },
+      "CORAL frozen stage (rerun, 8000 steps, CPU)": {
+        "1": {
+          "cpu_minutes_from_mtimes": null,
+          "gpu": "cpu",
+          "gpu_hours": 0.0,
+          "minutes": 0.0,
+          "source": "no logged wall time exists (bakeoff_coral_folds1234.log has no timestamps); CPU, so 0 GPU-hours"
+        },
+        "2": {
+          "cpu_minutes_from_mtimes": 1.9614042003949483,
+          "gpu": "cpu",
+          "gpu_hours": 0.0,
+          "minutes": 0.0,
+          "source": "no logged wall time exists (bakeoff_coral_folds1234.log has no timestamps); CPU, so 0 GPU-hours"
+        },
+        "3": {
+          "cpu_minutes_from_mtimes": 1.9815405329068503,
+          "gpu": "cpu",
+          "gpu_hours": 0.0,
+          "minutes": 0.0,
+          "source": "no logged wall time exists (bakeoff_coral_folds1234.log has no timestamps); CPU, so 0 GPU-hours"
+        },
+        "4": {
+          "cpu_minutes_from_mtimes": 1.9744787295659383,
+          "gpu": "cpu",
+          "gpu_hours": 0.0,
+          "minutes": 0.0,
+          "source": "no logged wall time exists (bakeoff_coral_folds1234.log has no timestamps); CPU, so 0 GPU-hours"
+        }
+      },
+      "CORAL frozen-cache encode (new galaxies)": {
+        "all": {
+          "gpu": "any (T4 rate used)",
+          "gpu_hours": 0.01760086047477073,
+          "minutes": 1.0560516284862438,
+          "n_images": 14085,
+          "source": "n_fresh_negatives x the recorded forward throughput (derived, one frozen forward per image, aug='none')"
+        }
+      },
+      "CORAL x nb3 (rerun, 2000 steps)": {
+        "1": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 1.1792511447270713,
+          "minutes": 70.75506868362427,
+          "source": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold1/run.json:wall_minutes"
+        },
+        "2": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 1.1381697240802977,
+          "minutes": 68.29018344481786,
+          "source": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold2/run.json:wall_minutes"
+        },
+        "3": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 1.1965085661411285,
+          "minutes": 71.7905139684677,
+          "source": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold3/run.json:wall_minutes"
+        },
+        "4": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 1.0921249513493645,
+          "minutes": 65.52749708096187,
+          "source": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold4/run.json:wall_minutes"
+        }
+      },
+      "DANN x nb3 (rerun, 4000 steps)": {
+        "1": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 2.543388474186261,
+          "minutes": 152.60330845117568,
+          "source": "runs/dann_main/fold1/extracted/fold1/run.json:wall_minutes"
+        },
+        "2": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 2.2982056328985427,
+          "minutes": 137.89233797391256,
+          "source": "runs/dann_main/fold2/extracted/fold2/run.json:wall_minutes"
+        },
+        "3": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 2.452025604777866,
+          "minutes": 147.12153628667195,
+          "source": "runs/dann_main/fold3/extracted/fold3/run.json:wall_minutes"
+        },
+        "4": {
+          "gpu": "Tesla T4",
+          "gpu_hours": 2.326189947459433,
+          "minutes": 139.57139684756598,
+          "source": "runs/dann_main/fold4/extracted/fold4/run.json:wall_minutes"
+        }
+      },
+      "FreeMatch frozen stage (rerun, 8000 steps)": {
+        "1": {
+          "gpu": "Tesla T4 (PROJECTv7.md: image-space methods ran on Kaggle T4)",
+          "gpu_hours": 2.0703055555555556,
+          "minutes": 124.21833333333333,
+          "source": "runs/bakeoff_freematch/fold1/bakeoff_freematch_fold1.log: sum of 43 logged per-epoch seconds"
+        },
+        "2": {
+          "gpu": "Tesla T4 (PROJECTv7.md: image-space methods ran on Kaggle T4)",
+          "gpu_hours": 2.136722222222222,
+          "minutes": 128.20333333333332,
+          "source": "runs/bakeoff_freematch/fold2/bakeoff_freematch_fold2.log: sum of 43 logged per-epoch seconds"
+        },
+        "3": {
+          "gpu": "Tesla T4 (PROJECTv7.md: image-space methods ran on Kaggle T4)",
+          "gpu_hours": 2.0615,
+          "minutes": 123.69,
+          "source": "runs/bakeoff_freematch/fold3/bakeoff_freematch_fold3.log: sum of 43 logged per-epoch seconds"
+        },
+        "4": {
+          "gpu": "Tesla T4 (PROJECTv7.md: image-space methods ran on Kaggle T4)",
+          "gpu_hours": 2.3048333333333333,
+          "minutes": 138.29,
+          "source": "runs/bakeoff_freematch/fold4/bakeoff_freematch_fold4.log: sum of 43 logged per-epoch seconds"
+        }
+      },
+      "FreeMatch x nb3 (rerun, 1500 steps)": {
+        "1": {
+          "gpu": "Tesla T4 (PROJECTv7.md 7.12; not recorded in the run's files)",
+          "gpu_hours": 2.037117973725001,
+          "minutes": 122.22707842350006,
+          "recorded_train_minutes": 94.60355764230093,
+          "source": "runs/freematch_nb3_unfrozen_fold1/results.json:train_minutes + SAT rebuild upper bound"
+        },
+        "2": {
+          "gpu": "Tesla T4 (PROJECTv7.md 7.12; not recorded in the run's files)",
+          "gpu_hours": 2.18910797647017,
+          "minutes": 131.3464785882102,
+          "recorded_train_minutes": 101.52150704065959,
+          "source": "runs/freematch_nb3_unfrozen_fold2/results.json:train_minutes + SAT rebuild upper bound"
+        },
+        "3": {
+          "gpu": "Tesla T4 (PROJECTv7.md 7.12; not recorded in the run's files)",
+          "gpu_hours": 2.120446043446329,
+          "minutes": 127.22676260677973,
+          "recorded_train_minutes": 98.44626967509588,
+          "source": "runs/freematch_nb3_unfrozen_fold3/results.json:train_minutes + SAT rebuild upper bound"
+        },
+        "4": {
+          "gpu": "Tesla T4 (PROJECTv7.md 7.12; not recorded in the run's files)",
+          "gpu_hours": 2.1513614728450774,
+          "minutes": 129.08168837070465,
+          "recorded_train_minutes": 99.83440775871277,
+          "source": "runs/freematch_nb3_unfrozen_fold4/results.json:train_minutes + SAT rebuild upper bound"
+        }
+      }
+    },
+    "session_rule": "a Kaggle session = T4 x2, two folds concurrently, whole folds only, at most 10 h per lane (the 12 h cap less a 2 h margin, PROJECTv7.md 7.11); first-fit-decreasing",
+    "total_gpu_hours": 40.118508327722594,
+    "total_kaggle_sessions_if_each_arm_separate": 6,
+    "total_kaggle_sessions_lower_bound": 3
+  },
+  "experiment": "dilute10",
+  "head_provenance": {
+    "BNM x nb3": {
+      "init_head_from": "runs/bakeoff_baseline_A/checkpoints/step_8000.pt (Baseline A, unchanged; no frozen stage is rerun)"
+    },
+    "CORAL x nb3": {
+      "frozen_stage_augmentation": "none -- trains on the cached 640-d features, which cache_features.py builds with aug=\"none\"",
+      "frozen_stage_config": {
+        "batch_size": 256,
+        "budget_steps": 8000,
+        "coral_ema_momentum": 0.9,
+        "coral_include_mean": true,
+        "coral_min_frac": 0.1,
+        "coral_peak_gamma": 1.0,
+        "coral_shrinkage": 0.1,
+        "coral_target_ema": true,
+        "coral_warmup_frac": 0.1,
+        "coral_weight_schedule": "warmup_cosine",
+        "head_type": "linear",
+        "lr": 0.001,
+        "pos_fraction": 0.5,
+        "seed": 42,
+        "selection_rule": "R1_last_checkpoint_step8000",
+        "stop_on_blowup": false,
+        "weight_decay": 0.0001
+      },
+      "frozen_stage_device": "cpu (run_bakeoff_coral.py trains with device=\"cpu\")",
+      "frozen_stage_head_init": "fresh linear head, seed 42 (the runner passes no init_head_from)",
+      "frozen_stage_input": "data/feature_cache (frozen encoder, n_blocks=0)",
+      "frozen_stage_precision": "fp32",
+      "init_head_from": {
+        "1": "runs/bakeoff_coral/fold1/checkpoints/step_8000.pt",
+        "2": "runs/bakeoff_coral/fold2/checkpoints/step_8000.pt",
+        "3": "runs/bakeoff_coral/fold3/checkpoints/step_8000.pt",
+        "4": "runs/bakeoff_coral/fold4/checkpoints/step_8000.pt"
+      },
+      "init_head_from_sha256": {
+        "1": "4b034146841c063e32844459fcf2aafb9b4cf0c9b4948fda8aae4cd5b8016a05",
+        "2": "7a4de66ad17af456b4088287ce9108acfa2dadda6bd76ec9863515ccc5b17d2d",
+        "3": "6a40e2cbe716cebed0bb02184c6ace1425216f4e03ac0d0d3a7377e8f8370e2d",
+        "4": "e5ae13945c233dd7e56d8b92ed5a5b89fde1c59ca6366f3f3685a7437512e460"
+      },
+      "run_config": "runs/bakeoff_coral/run_config.json",
+      "run_config_sha256": "489c710e46a1515dbfd1bd6d6d85b9e3b4f4baf2b82421c8fa20b8025ec09432",
+      "which_round1_coral_run": "runs/bakeoff_coral -- the matched 8000-step round-1 CORAL bake-off, run with coral_weight_schedule = 'warmup_cosine' (peak gamma 1.0, warmup_frac 0.1, min_frac 0.1, target EMA True). It is the warmup_cosine variant, NOT the original constant-gamma runs/coral."
+    },
+    "DANN x nb3": {
+      "init_head_from": "runs/bakeoff_baseline_A/checkpoints/step_8000.pt (Baseline A, unchanged; no frozen stage is rerun)"
+    },
+    "FreeMatch x nb3": {
+      "frozen_stage_augmentation": "image-space, encoder (n_blocks=0) in the loop; source = weak view only (n_views=1), target = weak + strong views (n_views=2); LensDataset aug=\"weak\" (2 sites in run_freematch.py)",
+      "frozen_stage_config": {
+        "batch_size": 256,
+        "budget_steps": 8000,
+        "consistency_warmup_frac": 0.1,
+        "device": "cuda",
+        "fairness_target": null,
+        "fp16": true,
+        "freematch_variant": "FreeMatch-standard (screen-winning; floor is a documented negative)",
+        "head_type": "linear",
+        "local_threshold_mode": "standard",
+        "lr": 0.001,
+        "mu_max": 1.0,
+        "pos_class": 1,
+        "pos_fraction": 0.5,
+        "saf_weight": 0.01,
+        "sat_ema_momentum": 0.999,
+        "seed": 42,
+        "selection_rule": "R1_last_checkpoint_step8000",
+        "weight_decay": 0.0001
+      },
+      "frozen_stage_head_init": "fresh linear head, seed 42 (the runner passes no init_head_from)",
+      "frozen_stage_precision": "fp16 autocast on the encoder forwards",
+      "frozen_stage_schedule": "8000 steps, R1 = step 8000; consistency warm-up fraction 0.1, mu_max 1.0, SAF weight 0.01, SAT EMA 0.999, lr 0.001 constant (train_skeleton.ZOOBOT_COSINE_SCHEDULE is False)",
+      "init_head_from": {
+        "1": "runs/bakeoff_freematch_5fold/fold1/checkpoints/step_8000.pt",
+        "2": "runs/bakeoff_freematch_5fold/fold2/checkpoints/step_8000.pt",
+        "3": "runs/bakeoff_freematch_5fold/fold3/checkpoints/step_8000.pt",
+        "4": "runs/bakeoff_freematch_5fold/fold4/checkpoints/step_8000.pt"
+      },
+      "init_head_from_sha256": {
+        "1": "7af80166778dc34e37f3539cfb0dd222cf1431232f14d48dd1108024202d3a49",
+        "2": "52c03f833979acf340305db7b21d94b1c6a482a1452df37ccec492434cded1eb",
+        "3": "1a5b7dbae1556374770e51aea7e7aea7b11dc217430c1489d6151eab7b217425",
+        "4": "851c5e412791d6cf594589b24ee4b2d841023e1c00f4e5233973bde3742f042c"
+      },
+      "run_config": "runs/bakeoff_freematch_5fold/run_config.json",
+      "run_config_sha256": "a04639295ff78da20a0ceee005ce670e7913fdee0cfca5129bf7cdbbee1e8d87"
+    }
+  },
+  "no_test_label_scan": {
+    "clean": true,
+    "file": "scripts/write_dilute10_prereg.py",
+    "forbidden_tokens": [
+      "metric_suite",
+      "roc_auc_score",
+      "roc_curve",
+      "tpr_at_fpr",
+      "auroc",
+      "tpr",
+      "pos_scores",
+      "neg_scores",
+      "score_features",
+      "load_checkpoint",
+      "np",
+      "numpy",
+      "test_lens_rows"
+    ],
+    "known_null_fired_on": [
+      "metric_suite",
+      "np",
+      "numpy"
+    ],
+    "logit_files": "hashed as bytes, never loaded",
+    "step0_gate_values": "referenced by path and hash; recorded in part 2"
+  },
+  "part_2_will_record": [
+    "the step-0 values of every threshold on the new pool and each one's declared status (armed / advisory with reason)",
+    "the lens-fraction band for stop condition 4",
+    "the RNG-coupling finding (section 4.3 caveat)",
+    "the per-fold step-0 gate values of the new CORAL / FreeMatch frozen heads (when section 4.2 finishes)",
+    "this file's digest"
+  ],
+  "pool": {
+    "builder": "scripts/build_dilute10_pool.py",
+    "builder_sha256": "e7df7fcbffae2317f36c7563736e6d5c36e69645c83b09b47168c69c28c4b911",
+    "capacity": {
+      "eligible_after_screens": 37595,
+      "fresh_needed_per_fold": {
+        "1": 3519,
+        "2": 3519,
+        "3": 3519,
+        "4": 3528
+      },
+      "fresh_needed_total": 14085,
+      "p2_partition_size": 39943,
+      "sufficient": true
+    },
+    "existing_negatives_screen_hits_NOT_REMOVED": {
+      "1": {
+        "a_discovery_engine_grade_AB_lenses": 0,
+        "b_simulation_hosts": 7,
+        "c_grade_X_hard_negatives": 0
+      },
+      "2": {
+        "a_discovery_engine_grade_AB_lenses": 0,
+        "b_simulation_hosts": 7,
+        "c_grade_X_hard_negatives": 0
+      },
+      "3": {
+        "a_discovery_engine_grade_AB_lenses": 0,
+        "b_simulation_hosts": 3,
+        "c_grade_X_hard_negatives": 0
+      },
+      "4": {
+        "a_discovery_engine_grade_AB_lenses": 0,
+        "b_simulation_hosts": 6,
+        "c_grade_X_hard_negatives": 0
+      }
+    },
+    "expected_lens_fraction_per_batch": {
+      "1": 0.09090909090909091,
+      "2": 0.09090909090909091,
+      "3": 0.09090909090909091,
+      "4": 0.09090909090909091
+    },
+    "inputs_sha256": {
+      "audit/decontam/rule.json": "495e560ef934f723a588e3622af28cc28f45ec734bc1defe4d34a831c9e302b9",
+      "data/q1_lenses_processed/lens_cutouts.npz": "4c62ce2d2f987d0719bb606e85a43a0ae57fe5bc5bccd5fe5525250340d0c877",
+      "data/splits/splits.json": "7eb7749a545a619878a2a75ce9ae905db36a5ee3655ff999842644908291ac05",
+      "data_old/q1_lenses/q1_discovery_engine_lens_catalog.csv": "ee5e60cd507413eabf3da8ffa37a3c527212da00feb29083cf516a86d6f26877",
+      "data_old/q1_lenses/q1_discovery_engine_lens_catalog_old.csv": "f3fc6da4ce18e2bf2bee142c56fa431b12085a72d61f6f3337d9281c516d2c0e",
+      "data_old/sim_deflectors/deflector_cutouts_clean.npz": "aaffa65f42628940d8f01e4adeaa65932f7eb11ee1e464a840d48b7735100c45",
+      "scripts/exact_ids.py": "936c2787c33e396eff6c6e9b66e94a2564ee67a98b42fd18bbd0d654fd712ea8"
+    },
+    "path": "data/splits/dilute10_pool.json",
+    "per_fold": {
+      "1": {
+        "n_existing_negatives": 391,
+        "n_fresh_negatives": 3519,
+        "n_lenses": 391,
+        "n_negatives": 3910
+      },
+      "2": {
+        "n_existing_negatives": 391,
+        "n_fresh_negatives": 3519,
+        "n_lenses": 391,
+        "n_negatives": 3910
+      },
+      "3": {
+        "n_existing_negatives": 391,
+        "n_fresh_negatives": 3519,
+        "n_lenses": 391,
+        "n_negatives": 3910
+      },
+      "4": {
+        "n_existing_negatives": 392,
+        "n_fresh_negatives": 3528,
+        "n_lenses": 392,
+        "n_negatives": 3920
+      }
+    },
+    "realised_ratios": {
+      "1": {
+        "dann_bnm_holdout_kept_byte_identical": "39+39=78",
+        "dann_bnm_training_pool": "352:3871",
+        "dann_bnm_training_pool_lens_fraction": 0.08335306654037414,
+        "dann_bnm_training_pool_negatives_per_lens": 10.997159090909092,
+        "whole_pool": "391:3910",
+        "whole_pool_lens_fraction": 0.09090909090909091
+      },
+      "2": {
+        "dann_bnm_holdout_kept_byte_identical": "39+39=78",
+        "dann_bnm_training_pool": "352:3871",
+        "dann_bnm_training_pool_lens_fraction": 0.08335306654037414,
+        "dann_bnm_training_pool_negatives_per_lens": 10.997159090909092,
+        "whole_pool": "391:3910",
+        "whole_pool_lens_fraction": 0.09090909090909091
+      },
+      "3": {
+        "dann_bnm_holdout_kept_byte_identical": "39+39=78",
+        "dann_bnm_training_pool": "352:3871",
+        "dann_bnm_training_pool_lens_fraction": 0.08335306654037414,
+        "dann_bnm_training_pool_negatives_per_lens": 10.997159090909092,
+        "whole_pool": "391:3910",
+        "whole_pool_lens_fraction": 0.09090909090909091
+      },
+      "4": {
+        "dann_bnm_holdout_kept_byte_identical": "39+39=78",
+        "dann_bnm_training_pool": "353:3881",
+        "dann_bnm_training_pool_lens_fraction": 0.08337269721303732,
+        "dann_bnm_training_pool_negatives_per_lens": 10.994334277620396,
+        "whole_pool": "392:3920",
+        "whole_pool_lens_fraction": 0.09090909090909091
+      }
+    },
+    "reference_sets": {
+      "a_discovery_engine_grade_AB_lenses": {
+        "n": 497,
+        "sha256_of_sorted_ids": "ae8200de5463794bc6a396b9ce5f4a097f27d9d7dedb4df8db8213e079fc3658"
+      },
+      "b_simulation_hosts": {
+        "n": 3601,
+        "sha256_of_sorted_ids": "c622fc02f74e967899fdc1a190440d08451f0925a1e8aeb3ca81dbc9a36f0a89"
+      },
+      "c_grade_X_hard_negatives": {
+        "n": 4940,
+        "sha256_of_sorted_ids": "476761e8757ef5b7cd27b5dbb45589647bfc7985d0bdd89e5ba26b850f478883"
+      }
+    },
+    "screened_out_of_P2": {
+      "1_splits_role:real_lens_rows (all 489; covers every target and test lens)": 21,
+      "1_splits_role:source_train+val.sim_lens_hosts": 397,
+      "1_splits_role:source_train.neg_bare_deflector": 330,
+      "1_splits_role:source_train.neg_mlfp": 0,
+      "1_splits_role:source_train.neg_random": 0,
+      "1_splits_role:target_fold0.neg": 391,
+      "1_splits_role:target_fold1.neg": 391,
+      "1_splits_role:target_fold2.neg": 391,
+      "1_splits_role:target_fold3.neg": 391,
+      "1_splits_role:target_fold4.neg": 392,
+      "1_splits_role:test_negatives_shared": 0,
+      "1_splits_role:val.neg_bare_deflector": 67,
+      "1_splits_role:val.neg_random": 0,
+      "1_splits_roles_any": 2348,
+      "3_any_exact_screen": 418,
+      "3_exact_screen_not_already_in_a_role": 0,
+      "3a_discovery_engine_grade_AB_lenses": 21,
+      "3b_simulation_hosts": 397,
+      "3c_grade_X_hard_negatives": 0,
+      "total_excluded": 2348
+    },
+    "seed": 20261013,
+    "seed_namespacing": "numpy.random.default_rng([seed, fold]); folds drawn in order 1, 2, 3, 4 from the sorted eligible P2 ids, each fold's draws removed before the next",
+    "whole_file_sha256": "18c73d6c1cbad99e61d43fa5bc1c972e6347f328253904fa03a64cc8d68153be"
+  },
+  "predictions_VERBATIM": {
+    "items": [
+      "1. **DANN degrades.** G's point estimate falls below the balanced +0.31. D is positive. Given DANN's fold sd (0.17), G's interval probably includes zero (COLLAPSES, or SHRINKS with a wide D). *Reason:* under label shift, marginal alignment cannot minimise target error (Tachet des Combes et al. 2020; Tan et al. 2020), and aligning a 1:10 target with a 1:1 source pulls lens features toward galaxies. In early runs, DANN and IW-CDAN collapsed with an imbalanced target (paper \u00a74.4). That evidence is **motivation, not measurement**: it used a frozen encoder, an earlier pipeline and a different imbalance, and its artifacts are not in the repository.",
+      "2. **CORAL degrades,** for the same reason through moment matching, but less than DANN. G's interval still excludes zero (SHRINKS or SURVIVES). *Reason:* its balanced interval is tighter ([+0.19, +0.49]), and covariance alignment is a weaker pull than an adversary.",
+      "3. **BNM degrades, the most of the four in relative terms.** G's interval may include zero. Its predicted-positive fraction drifts above the true ~0.09. *Reason:* its diversity term rewards a batch whose predictions split evenly, so at 1:10 it pushes galaxies toward the lens class. That creates high-scoring negatives, which is exactly what TPR at a fixed FPR penalises.",
+      "4. **FreeMatch degrades, less than BNM, and G's interval still excludes zero.** *Reason:* its fairness target stays uniform (no retuning), which is wrong at 1:10. Its self-adaptive per-class thresholds partly absorb the shift, and pseudo-labels still enter only above a confidence threshold. Its frozen stage is also rerun at 1:10, so its head start (0.41 on the balanced pool) is predicted to shrink."
+    ],
+    "numbers_inside_NOT_checked_here": "the balanced values quoted in the reasons (+0.31, sd 0.17, [+0.19, +0.49], 0.41) are test metrics; this part reads none, so they are recorded as the brief states them",
+    "rule": "recorded verbatim; scored either way, never amended"
+  },
+  "recorded_before_any_run": true,
+  "recorded_utc": "2026-10-13T13:19:14Z",
+  "revision_rule": "Nothing here may be revised after any run of this experiment starts. Part 2 adds, it does not amend.",
+  "sha256_of_body_without_this_field": "bd537a025e81833e73713649c9eed68fd6a0fd3152ee29240f9a333f7c649d85",
+  "status": "part 1 of 2 \u2014 design; step-0 threshold values pending (part 2)",
+  "stop_conditions": [
+    "1. The code brief's known-null fails. With the option off, every arm's emitted config and first target and source batches must be bit-identical to the original runs. If not, run nothing.",
+    "2. A step-0 gate fails: that fold stops.",
+    "3. A threshold evaluated at step 0 on the new pool would already fire, or is degenerate (for example, BNM's drift floor below 0). It is declared ADVISORY WITH ITS REASON, in part 2, before any run. It is never loosened until it cannot fire.",
+    "4. The realised mean lens fraction of a run's target batches falls outside the band derived in part 2 (expected about 0.091). This indicates a sampler bug: stop.",
+    "5. BNM's gamma invariant breaks, or DANN's armed conditions 1-2 fire: as in the original runs.",
+    "6. A fold misses its budget: stop and report. Never rerun a completed fold. A fold may be rerun only for a logged infrastructure failure, with the reason recorded.",
+    "7. Any per-checkpoint logits are missing at packaging: refuse, as in the round-6 cells."
+  ],
+  "what_dilution_changes_VERBATIM": "Dilution changes three things at once: the target's class proportion (1:1 \u2192 1:10), the number of real lenses per target batch (128 \u2192 about 23), and how often each target lens is seen (about 5.5\u00d7 less often for a fixed step budget). The negative side also becomes about 10\u00d7 more varied. A change in the gain therefore cannot be attributed to the proportion alone. This experiment is a first test of whether the gain survives a target far from balanced, toward survey prevalence; it does not separate adaptation to real images from the class proportion.",
+  "what_the_experiment_is": {
+    "arms": [
+      "DANN x nb3",
+      "BNM x nb3",
+      "CORAL x nb3",
+      "FreeMatch x nb3"
+    ],
+    "author_declinable": "The CORAL frozen-stage rerun may be declined by the author; if so, delete it here, in section 4.2, and its rows in sections 6 and 7 (brief 4.2). Recorded as INCLUDED.",
+    "change_1_pool": "The target pool is diluted to 1:10. Each fold's target lenses are unchanged (391; 392 on fold 4). Its galaxies are the fold's existing target negatives plus fresh P2 draws, up to exactly 10x the number of lenses.",
+    "change_2_sampler": "Target batches are drawn uniformly without replacement from the training pool, cycling, with no use of the latent labels.",
+    "folds": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "frozen_stages_rerun": "The frozen stages that the unfrozen CORAL and FreeMatch arms start from are also rerun under the new pool and sampler (section 4.2).",
+    "lambda0_control": "reused, not rerun",
+    "unchanged": {
+      "bnm_gamma": 0.00787,
+      "budgets_read_offs_and_step0_gates": true,
+      "coral_gamma": 16.0,
+      "coral_target_ema": false,
+      "coral_weight_schedule": "constant",
+      "dann_bnm_holdout": {
+        "frac_in_code": 0.1,
+        "how_the_pool_supports_it": "existing negatives keep their dataset positions (lenses, then the original negatives, then the fresh draws), so the recorded holdout positions name the same objects; the code brief must pin the holdout to those 78 rather than re-drawing 10% of the larger pool",
+        "n": 78,
+        "requirement": "byte-identical to the original runs (the same 78 objects)"
+      },
+      "dann_lambda_horizon": 2000,
+      "dann_lambda_schedule": "2/(1+exp(-10p))-1, p = min(step/horizon, 1)",
+      "freematch_defaults": {
+        "fairness_target_config": null,
+        "fairness_target_effective": [
+          0.5,
+          0.5
+        ],
+        "note": "not retuned for 1:10",
+        "sat_passes": 40
+      },
+      "heads_and_head_initialisation": true,
+      "optimiser_settings": true,
+      "seed": [
+        42,
+        42,
+        42,
+        42
+      ],
+      "source_loader": true
+    }
+  }
+}

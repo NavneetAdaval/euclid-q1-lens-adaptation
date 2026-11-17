@@ -1,0 +1,20 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_dilute10_tables.py)
+% Main-text table of the 1:10 experiment. runs/dilute10_analysis/results.json (per_arm, G primary, D, verdicts).
+\begin{table}[tbp]
+\centering
+\caption{\textbf{The 1:10 target, with batches drawn without the labels.} Per arm, folds 1--4, cleaned pool: the diluted run's TPR at FPR${}=10^{-3}$ (mean and sample sd) at the arm's read-off step; $G$, diluted $-$ $\lambda=0$, with the control read at 4000, the primary contrast; $D$, balanced $-$ diluted at the same read-off, secondary and without a verdict; and the pre-registered branch. Paired $t$-intervals (df${}=3$); Signs counts the folds agreeing with $G$'s sign. A bound that rounds to zero at two decimals is shown at three. The $\lambda=0$ control ($\dlLamTpr{}$) is shared with Table~\ref{tab:main2}. Matched-step forms, four-decimal values and per-fold values: Appendix~\ref{app:dilute10}.}
+\label{tab:dilute}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrcrl}
+\toprule
+Arm & Read at & TPR@$10^{-3}$ & sd & $G$, 95\% CI & Signs & $D$, 95\% CI & Branch \\
+\midrule
+DANN & 4000 & $0.52$ & $0.01$ & $+0.33$ $[+0.29, +0.38]$ & 4/4 & $-0.02$ $[-0.28, +0.24]$ & survives \\
+BNM & 4000 & $0.38$ & $0.12$ & $+0.19$ $[+0.003, +0.39]$ & 4/4 & $+0.03$ $[-0.11, +0.16]$ & survives \\
+CORAL & 2000 & $0.19$ & $0.04$ & $+0.01$ $[-0.03, +0.05]$ & 3/4 & $+0.33$ $[+0.19, +0.46]$ & collapses \\
+FreeMatch & 1500 & $0.44$ & $0.15$ & $+0.25$ $[-0.004, +0.51]$ & 4/4 & $+0.08$ $[-0.08, +0.24]$ & collapses \\
+\bottomrule
+\end{tabular}
+\end{table}

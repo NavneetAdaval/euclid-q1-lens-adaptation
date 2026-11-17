@@ -1,0 +1,68 @@
+﻿
+================================================================================
+CONTROL: baselineA_fold0_nb0_image  vs  baselineA_fold0_nb0_cached (fold 0)
+================================================================================
+  TPR@1e-3  nb0_image  = 0.1224
+  TPR@1e-3  nb0_cached = 0.1939
+  paired diff (image - cached) = -0.0714  CI [-0.1327, +0.0000]
+  VERDICT: PASS -- CI contains 0
+================================================================================
+================================================================================
+LEVER 1 SCREEN -- baselineA_fold0_nb1  (fold 0, 8000 steps)
+================================================================================
+  run                 : nb1
+  run_dir             : baselineA_fold0_nb1
+  n_blocks            : 1
+  lp_ft               : True
+  init_head_from      : C:\Users\krris\ML\lens_paper\runs\bakeoff_baseline_A\checkpoints\step_8000.pt
+  budget_steps        : 8000
+  is_preregistered_budget: True
+  curve_every         : 250
+  batch_size          : 256
+  true_batch          : True
+  gradient_accumulation: False
+  grad_checkpointing  : False
+  lr                  : 0.001
+  backbone_lr         : None
+  lr_decay            : 0.75
+  weight_decay        : 0.0001
+  pos_fraction        : 0.5
+  seed                : 42
+  head_type           : linear
+  fold                : 0
+  selection_rule      : R1_last_checkpoint_step8000
+  method              : baseline_A_source_only
+  domain_adaptation   : None
+  encoder_eval        : live_encode
+  augmentation        : weak (+-3px translate, PROJECT.md 7.3)
+  fp16                : True
+  device              : cuda
+  control_reference   : C:\Users\krris\ML\lens_paper\runs\bakeoff_baseline_A\checkpoints\step_8000.pt
+================================================================================
+[data] source_train n=48000  188 steps/epoch  -> 43 epochs (8084 steps; R1 = step_8000)
+python : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate 
+limits and faster downloads.
+At line:1 char:343
++ ... er\scripts; python run_screen_unfreeze.py --run nb1 --fp16 --num-work ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=1 -> trainable ['stages.3'] (7,448,320 params, 49.8% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from C:\Users\krris\ML\lens_paper\runs\bakeoff_baseline_A\checkpoints\step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 28.475605
+[optim] n_blocks=1  head_lr=0.001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.0001
+[optim]   group 0: head       lr=1.000e-03  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   TOTAL trainable = 7,450,241 params
+[loader] num_workers=2
+[ref] scoring round-1 Baseline A on target_fold0 for the agreement column ...
+[live] building eval datasets once (fold 0, aug='none') ...
+[live]   val=12000  test_neg=26399  test_pos=98  target=782
+    [step   250/8000] loss=0.0771  val_auroc=0.9958 val_tpr=0.7675 | fold0 tpr@1e-3=0.1837 agr=0.9559 | 3.7 min
+    [step   500/8000] loss=0.1164  val_auroc=0.9959 val_tpr=0.7882 | fold0 tpr@1e-3=0.1633 agr=0.9417 | 6.6 min
+    [step   750/8000] loss=0.0951  val_auroc=0.9957 val_tpr=0.8393 | fold0 tpr@1e-3=0.1429 agr=0.8660 | 9.6 min
+    [step  1000/8000] loss=0.0451  val_auroc=0.9956 val_tpr=0.7833 | fold0 tpr@1e-3=0.1429 agr=0.8944 | 12.5 min
+    [step  1250/8000] loss=0.0553  val_auroc=0.9962 val_tpr=0.8208 | fold0 tpr@1e-3=0.1735 agr=0.8650 | 15.6 min
+    [step  1500/8000] loss=0.0515  val_auroc=0.9960 val_tpr=0.8555 | fold0 tpr@1e-3=0.1429 agr=0.9085 | 18.6 min

@@ -1,0 +1,113 @@
+{
+  "bundle": "dann_r5_results",
+  "built_utc": "2026-09-07T20:16:11Z",
+  "created": "2026-09-07T20:16:11Z",
+  "total_mb": 1247.4,
+  "run_dirs": [
+    "lambda0_r6_fold3"
+  ],
+  "max_part_bytes": 480000000,
+  "parts": [
+    {
+      "name": "ckpt_lambda0_r6_fold3_part01of03.tar",
+      "bytes": 463738880,
+      "mb": 463.7,
+      "sha256": "129ccc475e2843abc339d44cab2f823346d881165156d717976a4c55c0757ff9",
+      "n_files": 7,
+      "members": [
+        "lambda0_r6_fold3/checkpoints/step_250.pt",
+        "lambda0_r6_fold3/checkpoints/step_500.pt",
+        "lambda0_r6_fold3/checkpoints/step_750.pt",
+        "lambda0_r6_fold3/checkpoints/step_1000.pt",
+        "lambda0_r6_fold3/checkpoints/step_1250.pt",
+        "lambda0_r6_fold3/checkpoints/step_1500.pt",
+        "lambda0_r6_fold3/checkpoints/step_1750.pt"
+      ],
+      "steps": [
+        250,
+        500,
+        750,
+        1000,
+        1250,
+        1500,
+        1750
+      ]
+    },
+    {
+      "name": "ckpt_lambda0_r6_fold3_part02of03.tar",
+      "bytes": 463738880,
+      "mb": 463.7,
+      "sha256": "440e2ea804b6bebcf72f382e2a73de8e67512d29e5fa69baa3f62023311af02e",
+      "n_files": 7,
+      "members": [
+        "lambda0_r6_fold3/checkpoints/step_2000.pt",
+        "lambda0_r6_fold3/checkpoints/step_2250.pt",
+        "lambda0_r6_fold3/checkpoints/step_2500.pt",
+        "lambda0_r6_fold3/checkpoints/step_2750.pt",
+        "lambda0_r6_fold3/checkpoints/step_3000.pt",
+        "lambda0_r6_fold3/checkpoints/step_3250.pt",
+        "lambda0_r6_fold3/checkpoints/step_3500.pt"
+      ],
+      "steps": [
+        2000,
+        2250,
+        2500,
+        2750,
+        3000,
+        3250,
+        3500
+      ]
+    },
+    {
+      "name": "ckpt_lambda0_r6_fold3_part03of03.tar",
+      "bytes": 132505600,
+      "mb": 132.5,
+      "sha256": "19eb17e0fdfd42c9605b202b1daffe77232ea47b39d66dd419e07383286aa074",
+      "n_files": 2,
+      "members": [
+        "lambda0_r6_fold3/checkpoints/step_3750.pt",
+        "lambda0_r6_fold3/checkpoints/step_4000.pt"
+      ],
+      "steps": [
+        3750,
+        4000
+      ]
+    },
+    {
+      "name": "screen_core.tar.gz",
+      "bytes": 187398954,
+      "mb": 187.4,
+      "sha256": "8a04c490b389f8a9f6dd4833fe963388a52239fbd20d89e2b558496c0d00de13",
+      "n_files": 24,
+      "members": [
+        "lambda0_r6_fold3/checkpoints.csv",
+        "lambda0_r6_fold3/run.json",
+        "lambda0_r6_fold3/run_config.json",
+        "lambda0_r6_fold3/steps.csv",
+        "lambda0_r6_fold3/trace.csv",
+        "lambda0_r6_fold3/logits/ids.npz",
+        "lambda0_r6_fold3/logits/true_init.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_1000.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_1250.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_1500.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_1750.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_2000.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_2250.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_250.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_2500.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_2750.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_3000.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_3250.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_3500.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_3750.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_4000.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_500.npz",
+        "lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_750.npz",
+        "lambda0_r6_fold3/resume/latest.pt"
+      ]
+    }
+  ],
+  "n_parts": 4,
+  "total_bytes": 1247382314,
+  "note": "INDEPENDENT self-contained tars, not `tar | split`. A part that fails to download can be re-fetched and verified on its own, and the parts extract in any order (7.7). Checkpoints are stored UNCOMPRESSED -- float32 weights barely deflate."
+}

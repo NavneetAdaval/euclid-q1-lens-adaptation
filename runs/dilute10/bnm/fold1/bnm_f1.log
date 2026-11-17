@@ -1,0 +1,73 @@
+[holdout] target pool 4301 -> BNM trains on 4223, 78 held out (matched to the lambda=0 arm's sampler, seed 43)
+[load] Zoobot encoder (n_blocks=3, grad_checkpointing=True) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=3 -> trainable ['stages.3', 'stages.2', 'stages.1'] (14,835,520 params, 99.2% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from /kaggle/input/datasets/navneet78/lens-paper-dilute10/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 28.475603
+[optim] n_blocks=3  head_lr=0.0001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.05
+[optim]   group 0: head       lr=1.000e-04  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   group 2: stages.2   lr=7.500e-05  params=6,907,520
+[optim]   group 3: stages.1   lr=5.625e-05  params=479,680
+[optim]   TOTAL trainable = 14,837,441 params
+[standardizer] fitted from cached source_train (/kaggle/input/datasets/navneet78/lens-paper-dilute10/data/data/feature_cache)
+[bnm] installed: gamma=0.00787, target_only=True, source_in_loss=False, params=0, buffers=0, ramp=None
+[morph] pool built: 128 ML-FP + 128 P1-reserve (of 4455 / 23160 available), fit 128 / eval 128, aug=none, seed 90253
+[diagnostic] size-matched target probes: 78 trained-on vs 78 held-out (disjoint: True)
+[live] building eval datasets once (fold 1, aug='none') ...
+[live]   val=12000  test_neg=26399  test_pos=98  target=782
+[gate] fold 1: TPR 0.14285714 vs 0.14285714 (|d|=0.00e+00, tol 1.02e-02) | AUROC 0.89227850 vs 0.89226246 (|d|=1.60e-05, tol 1e-03) -> PASS
+[lockout] test-label lockout ACTIVE: 20 binding(s) sealed (TPR/AUROC/AUPRC/metric_suite/purity/curve_hook + test_* cache splits).
+    [step   125/4000] sup=0.08504 bnm=9.3857 ent=0.0514 pos%=0.0586 g_eff=0.00787 gate=ok adv=ok (~103 min left)
+    [step   250/4000] sup=0.06359 bnm=9.6791 ent=0.0557 pos%=0.0742 g_eff=0.00787 gate=ok adv=ok (~96 min left)
+    [ckpt   250] weights + logits written (110s to score)
+    [step   375/4000] sup=0.05788 bnm=9.9419 ent=0.0488 pos%=0.1016 g_eff=0.00787 gate=ok adv=ok (~109 min left)
+    [step   500/4000] sup=0.04198 bnm=9.3603 ent=0.0277 pos%=0.0430 g_eff=0.00787 gate=ok adv=ok (~100 min left)
+    [ckpt   500] weights + logits written (110s to score)
+    [step   625/4000] sup=0.08186 bnm=9.5007 ent=0.0193 pos%=0.0508 g_eff=0.00787 gate=ok adv=ok (~103 min left)
+    [step   750/4000] sup=0.04284 bnm=9.5876 ent=0.0364 pos%=0.0625 g_eff=0.00787 gate=ok adv=ok (~96 min left)
+    [ckpt   750] weights + logits written (110s to score)
+    [step   875/4000] sup=0.01084 bnm=9.8136 ent=0.0286 pos%=0.0820 g_eff=0.00787 gate=ok adv=ok (~96 min left)
+    [step  1000/4000] sup=0.01928 bnm=9.7142 ent=0.0399 pos%=0.0781 g_eff=0.00787 gate=ok adv=ok (~90 min left)
+    [ckpt  1000] weights + logits written (110s to score)
+    [step  1125/4000] sup=0.04498 bnm=9.5298 ent=0.0276 pos%=0.0547 g_eff=0.00787 gate=ok adv=ok (~89 min left)
+    [step  1250/4000] sup=0.01923 bnm=9.6343 ent=0.0245 pos%=0.0586 g_eff=0.00787 gate=ok adv=ok (~83 min left)
+    [ckpt  1250] weights + logits written (110s to score)
+    [step  1375/4000] sup=0.06152 bnm=9.6258 ent=0.0216 pos%=0.0625 g_eff=0.00787 gate=ok adv=ok (~81 min left)
+    [step  1500/4000] sup=0.01178 bnm=9.7171 ent=0.0227 pos%=0.0703 g_eff=0.00787 gate=ok adv=ok (~76 min left)
+    [ckpt  1500] weights + logits written (109s to score)
+    [step  1625/4000] sup=0.02103 bnm=9.3408 ent=0.0211 pos%=0.0391 g_eff=0.00787 gate=ok adv=ok (~73 min left)
+    [step  1750/4000] sup=0.00096 bnm=9.4406 ent=0.0170 pos%=0.0469 g_eff=0.00787 gate=ok adv=ok (~68 min left)
+    [ckpt  1750] weights + logits written (110s to score)
+    [step  1875/4000] sup=0.00785 bnm=9.8385 ent=0.0343 pos%=0.0898 g_eff=0.00787 gate=ok adv=ok (~66 min left)
+    [step  2000/4000] sup=0.00541 bnm=9.6487 ent=0.0260 pos%=0.0664 g_eff=0.00787 gate=ok adv=ok (~61 min left)
+    [ckpt  2000] weights + logits written (109s to score)
+    [step  2125/4000] sup=0.00932 bnm=9.5947 ent=0.0172 pos%=0.0547 g_eff=0.00787 gate=ok adv=ok (~58 min left)
+    [step  2250/4000] sup=0.00243 bnm=9.4911 ent=0.0116 pos%=0.0469 g_eff=0.00787 gate=ok adv=ok (~53 min left)
+    [ckpt  2250] weights + logits written (110s to score)
+    [step  2375/4000] sup=0.01329 bnm=9.7134 ent=0.0218 pos%=0.0703 g_eff=0.00787 gate=ok adv=ok (~50 min left)
+    [step  2500/4000] sup=0.00270 bnm=9.6141 ent=0.0181 pos%=0.0586 g_eff=0.00787 gate=ok adv=ok (~46 min left)
+    [ckpt  2500] weights + logits written (109s to score)
+    [step  2625/4000] sup=0.01428 bnm=9.2769 ent=0.0255 pos%=0.0430 g_eff=0.00787 gate=ok adv=ok (~43 min left)
+    [step  2750/4000] sup=0.03542 bnm=9.8460 ent=0.0185 pos%=0.0781 g_eff=0.00787 gate=ok adv=ok (~38 min left)
+    [ckpt  2750] weights + logits written (109s to score)
+    [step  2875/4000] sup=0.01443 bnm=9.3462 ent=0.0131 pos%=0.0430 g_eff=0.00787 gate=ok adv=ok (~35 min left)
+    [step  3000/4000] sup=0.02082 bnm=9.5655 ent=0.0119 pos%=0.0508 g_eff=0.00787 gate=ok adv=ok (~31 min left)
+    [ckpt  3000] weights + logits written (109s to score)
+    [step  3125/4000] sup=0.00232 bnm=9.4832 ent=0.0152 pos%=0.0469 g_eff=0.00787 gate=ok adv=ok (~27 min left)
+    [step  3250/4000] sup=0.00111 bnm=9.4298 ent=0.0112 pos%=0.0430 g_eff=0.00787 gate=ok adv=ok (~23 min left)
+    [ckpt  3250] weights + logits written (110s to score)
+    [step  3375/4000] sup=0.00172 bnm=9.9283 ent=0.0216 pos%=0.0938 g_eff=0.00787 gate=ok adv=ok (~19 min left)
+    [step  3500/4000] sup=0.00639 bnm=9.6049 ent=0.0182 pos%=0.0586 g_eff=0.00787 gate=ok adv=ok (~15 min left)
+    [ckpt  3500] weights + logits written (110s to score)
+    [step  3625/4000] sup=0.02852 bnm=9.4548 ent=0.0158 pos%=0.0508 g_eff=0.00787 gate=ok adv=ok (~12 min left)
+    [step  3750/4000] sup=0.00739 bnm=9.1542 ent=0.0100 pos%=0.0312 g_eff=0.00787 gate=ok adv=ok (~8 min left)
+    [ckpt  3750] weights + logits written (110s to score)
+    [step  3875/4000] sup=0.00107 bnm=9.4120 ent=0.0157 pos%=0.0469 g_eff=0.00787 gate=ok adv=ok (~4 min left)
+    [step  4000/4000] sup=0.01755 bnm=10.1092 ent=0.0175 pos%=0.1055 g_eff=0.00787 gate=ok adv=ok (~0 min left)
+    [ckpt  4000] weights + logits written (110s to score)
+[lockout] released.
+
+[bnm-r6] done: 4000 steps, 16 checkpoints, 124.8 min
+[bnm-r6] gamma invariant: 4000 observations, HELD=True, gamma_effective range [0.0078699995, 0.0078700003]

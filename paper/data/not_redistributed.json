@@ -1,0 +1,1681 @@
+{
+ "what": "Inputs that the post hoc review analyses (audit/review_r1/out, audit/review_r1b/out) recorded by sha256 and that this release deliberately does not redistribute. paper/scripts/make_review_macros.py accepts an absent input only if it is listed here with the same recorded hash; scripts/verify_withheld_inputs.py checks a user's own copies.",
+ "sha256_source": "copied from each review file's inputs_sha256, not recomputed",
+ "n": 156,
+ "entries": [
+  {
+   "path": "data/q1_lenses_processed/lens_cutouts.npz",
+   "sha256": "4c62ce2d2f987d0719bb606e85a43a0ae57fe5bc5bccd5fe5525250340d0c877",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json",
+    "audit/review_r1/out/A3_galleries.json",
+    "audit/review_r1/out/A3_lens_columns.json",
+    "audit/review_r1/out/A3_recall_by_grade.json",
+    "audit/review_r1/out/A3_recall_by_property.json",
+    "audit/review_r1/out/F6_d2_lenses.json",
+    "audit/review_r1/out/F7_lenses_in_test_pool.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102019586.npz",
+   "sha256": "225b41f0a562d9af4209e8eafedd88014c91c2e2e2ac70032e3528f526568c15",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102019593.npz",
+   "sha256": "bc8df5a0798b8a9eed12f0754807113ebe8d76497875a258316cafae3c2a9283",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102020054.npz",
+   "sha256": "cf779a370381ac33dcfb46e74b4a2f33c333b225e598ad9156fc8cc2ac8104f4",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102020055.npz",
+   "sha256": "b17b68a20134a22b0e1072a612a4d73a5e506b9bc30a3b0bbadaeebb91944b8d",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102020056.npz",
+   "sha256": "bf7465251a634fbad899dcd5b62a5f59b6fc0c5af3cbbc6596d431c7ae31ac36",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102020059.npz",
+   "sha256": "31f22c69f5c867c0566097fb8ddf968f274b6bf03d0c393385d09c76d9d10001",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102020063.npz",
+   "sha256": "8bfb008996ae2b9353441d92e483a2eda351d026ad4cd59a9a3edded849535dd",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102020529.npz",
+   "sha256": "47d61bbbfbd67524515928fa45ba3999b960f75b226dfaa2105198bbbf73233e",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102020535.npz",
+   "sha256": "b57a193b1106aafa4dab0ad6aacabc99e1bd1829a0a829d47b0661d2c2f99bf5",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102020540.npz",
+   "sha256": "5b37e757e2a28c5a40880a9ef509257d8fab6a9b7a10669793c238364d891e6e",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021009.npz",
+   "sha256": "42b757da31434c00a06c5551f6f17226284dcbeb3fbaef4d338b9dccc3609276",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021013.npz",
+   "sha256": "1ed24ccafb331420a55b704b60a72e6a031830de58b8e24f04651925c9c51bc1",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021015.npz",
+   "sha256": "04521fed28f70fe583baea49c7dd4a606749983442d88ff69863746133e63e23",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021016.npz",
+   "sha256": "211f92de233f98e86bb05e068d3c58c23a3466720d01509378d5d09ebee6532b",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021019.npz",
+   "sha256": "91c8e3649263ab1ab8f284b96593916855fd1f307d1ec5a5ae9563be423059c8",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021493.npz",
+   "sha256": "8decf267f5dd40bf1b62265bbe61168fbb29a5adbde38a3fdaad93d284586349",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021494.npz",
+   "sha256": "aaabafd51749218f1309e3f4720ae12db433f28c6afa770153ff4ad3a0c030cb",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021495.npz",
+   "sha256": "1394a37f15f3fdabd52c45e1fab2c7f8e46709ab0e972702cd852601065a186f",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021497.npz",
+   "sha256": "7cac956517184804cbcb5293a142b93cec0c6f3d801bbb7ce7ff21ad64b54d4a",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021498.npz",
+   "sha256": "ab2f4ce4a4ff2012991a549d0614fd3580703e4b6331fbaa71da78dd3b8f5d36",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021500.npz",
+   "sha256": "baeb7bb8f17d6c016a1b7300860a5e06ec43214f5999edc9d559db595412b9fd",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021501.npz",
+   "sha256": "224a1d023b3169fc0a2eee0301f058e74983602b8bfa26ddc8fc951b451e40fc",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021504.npz",
+   "sha256": "282a520bee16a65e8992e314465400d0207c56aecb4f372a24d38eed2a7f8671",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021981.npz",
+   "sha256": "3cbff02bebacd637289c38417edf78bbaca5a3df3efe69f40e3d323df1af40ec",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021982.npz",
+   "sha256": "e411f4bd8c67590f13080063b195de81c79967726279e9b77bbbcaa4f3b2bf96",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021985.npz",
+   "sha256": "85e0c6fc6aa707e935e95f00ad69be492fd6ffbe89aae1a9a6ea0a9bd6ed7440",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021986.npz",
+   "sha256": "8e65998c30049ebec1c6dd9f972d4e4ea8860d5c2e5e02446cb7279054c557ac",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021989.npz",
+   "sha256": "ab27e61af69b0886a2f23fe9984ebb9c26d32b140a009f0ae8d8fad2b5fd5fe4",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102021990.npz",
+   "sha256": "d3404be99fb79f05914f1d49a596cca83640eb4d9f154ab938cb477f084f29ce",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102022477.npz",
+   "sha256": "46c48737525b457f7249d0819c81adaa07d09943a0a6f980f4464f46203a89b7",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102022478.npz",
+   "sha256": "5b1e91c8f3eb079fe0bf4ca15d0dab1baebbff4c5e885d8e3184efaacbac23ea",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102022482.npz",
+   "sha256": "59cdeb187b59caa5510e9a5f0d0526da6e1c2bcf2d30baddf4abb7b0fc591eb4",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102022973.npz",
+   "sha256": "e83802e44512f4742a8c0e13daf1bee336a7fc89aa6f6c4747681b8c005236af",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102022974.npz",
+   "sha256": "ba8f6a183fb2ed29389e750bb98a059a563910eea35b45bbc0b7472ed2caecec",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102022977.npz",
+   "sha256": "9ac10a3d2406faf65af32f5ceaf299c0cc034c3e19ed4bb3e1a2daeff6d6d2da",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102022979.npz",
+   "sha256": "e0b9d5b3b75712ece260347e0da932a93b9171a051d088ea3dff92fbf9cc5494",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102023476.npz",
+   "sha256": "4355ed4966795384b05a96084d2951176ce5e1df7aebcbe105641b7e6a12ac26",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102023477.npz",
+   "sha256": "5f9741e3980168d1e7c80248eba4ca9b366a0befbd8ce2fb7f81514ba7459fd2",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102023479.npz",
+   "sha256": "2d61a039b29ac6f7269ddc09fdfa674298712e0ec6a8ac8e2b9db9822fcdea99",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102023480.npz",
+   "sha256": "9690ab91d0f30b62cb4a4cd751f079152a8116dbb33a57e268f96bbef24426e4",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102023482.npz",
+   "sha256": "50b95692129118eeaebfc721fe618e67c2d590484abe1d09dece959b778bc842",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102042283.npz",
+   "sha256": "8e0eb94f24836d8ed2b59663fc631463b53ba5924d722a6b4bbf37bffb4517f9",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102042286.npz",
+   "sha256": "f5cadd8d568c1bec0f06d0184dc151a3bb7ea9a346906404b70c77182764bf43",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102042287.npz",
+   "sha256": "59ec389ab5605104d763603c3d15612e86ab8c7e92b0e1bd64a2669e277a8e68",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102042913.npz",
+   "sha256": "288ce9058984c48b9eb3a16e3d0100f637c34836754936f9fed8a813a3134476",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102042915.npz",
+   "sha256": "0e8664559decec07bd4d9cb22fab2fbbd1f13f9741b060544fd2fa7d06b08deb",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102043546.npz",
+   "sha256": "207d9ae0e43d05e4700cfcaf3b4e1f84c3f689d9463223cca083c163920f6853",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102043548.npz",
+   "sha256": "24ea2244d96621c278dcdb4000d3e8f2bd69b94343e48d404d1623eece0c19a8",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102043552.npz",
+   "sha256": "fd05b590e5689f5802a816716f9865a0f4402836e6b897f5e39e99b740b3d020",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102044182.npz",
+   "sha256": "205e1e9b3f47e66c1244f0e52458f2124b6e0058868d4617c54e0f330d902cc3",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102044183.npz",
+   "sha256": "bca08b37476255f1e3f216ee84a8ab1be29667a1b81d29c97e15ff381d0f4ee4",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102044185.npz",
+   "sha256": "24a540454f7f89c64365d5c86d3a5d09b78dd576a29f24e36a99c311504b0f98",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102044821.npz",
+   "sha256": "46bcac4a651c40ff2c3acb9b02a6ab0f3e4ac33c6641e3bc1661604830d9f3cc",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102045465.npz",
+   "sha256": "0034b424e6a193e55512feab629db171b19f3d9a3c3c8d88624160f5f5e325e9",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102045466.npz",
+   "sha256": "1e846495d1740e6ced31f1148a0fcbead2e0ec5707b2076b4b9e15a0f9bbaecb",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102045468.npz",
+   "sha256": "40c6dfbc313b711f536a20d108f545d5ba7ee776e9fe00f075178f375868cd16",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102046111.npz",
+   "sha256": "bd21c725f1bbe817f3700c144589a548f4104c90d34b3f689e7a848b00295e5a",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102157958.npz",
+   "sha256": "6401208c1ba156e53603228a2da30111b26eee533ff204373b7817109aa303c3",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158271.npz",
+   "sha256": "42471060e6f6a0c6c533631fe852057679a79da93e1cef7ef7f8f7d3038642b9",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158272.npz",
+   "sha256": "2fdc1202173ea99bde1d5d3bb0845ea1bea5ed2d06b9827f8ce3c1b8c052d9ee",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158276.npz",
+   "sha256": "48d39f8526f103908207da7e93fd9df2fd54d5df0a63462762340447a6c0473f",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158278.npz",
+   "sha256": "d4025e39de1249949236e40d61be2912f5ac05374646bf2117a5fb5a8303f881",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158584.npz",
+   "sha256": "c61bff4284cfb4e6c1d443a29cd593da169480f9b01b03494ac9e52670600f10",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158586.npz",
+   "sha256": "a5f1131b50b64c4f0ecd05e8c25547b1f7adf9742f4b6baf22858c7f097e9cb1",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158587.npz",
+   "sha256": "aac610959a20a4b3d0903c5ec36a3309b2def9f087b7e4366e286717570eb4ea",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158590.npz",
+   "sha256": "efc1cd656cbc55cd9cba83783df287f01f645697aac497f14a33c0bc2773e842",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158889.npz",
+   "sha256": "a6c8a82dcc1a64ad1ba8c9f730aa831b92ef53ee1538b0db83c9bc99707f84d7",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158895.npz",
+   "sha256": "66c9ea134d1825f962196dbd992c9b2e127e95794097852df65496c42f2221de",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102158896.npz",
+   "sha256": "7054e46ff60655fe98a9b0939601e2a80b5e7d5b7a96541fc37349b5e4dd51a4",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102159188.npz",
+   "sha256": "493b8cbaeba0021122f6c04b07f080043f780350200602c1240e1ecc1b6dbc4e",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102159191.npz",
+   "sha256": "430d4a4c90404ea1c09b5e61d224ef4f13efee857d3a68c58245f2f71d819016",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102159484.npz",
+   "sha256": "3c3249ade98d713941d9fda978db9e06a681564ec20bfa3cb0f277635e20c2f9",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102159485.npz",
+   "sha256": "e984dfe19f4b822e471ffd64282b32dbcd9c51312198c25bf2ddb0e74285543e",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102159486.npz",
+   "sha256": "5ebc42127dfe1b787bf757b016075393f6f2d372712d223b76bbca576456798d",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102159488.npz",
+   "sha256": "3decfee625a5e544aa6c1194e1b9217a7ac3b402dffa59abca15c0dcb7320f66",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102159490.npz",
+   "sha256": "a6bdbd0426f1b68a8b1cbda2ed919cf2549617d64c25dca48782ec73510a64bb",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102159492.npz",
+   "sha256": "cf1491eba2045a81701960eddd8ead600819142341ca4bbb3aa9ab9ed1816503",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102159772.npz",
+   "sha256": "96f5904c3a279d16771b47b3594e6d72434937f33e0969dbe6b18718ce40c12d",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102159776.npz",
+   "sha256": "33fc055ba0fc1162a1dad17fd5df5fee11b207a6632bf21b7c3c2ae087422962",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102160057.npz",
+   "sha256": "3c2b76629880aaaf38ada147384a87daab8d3d10397312653cde784e1630d49a",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102160061.npz",
+   "sha256": "f8c7e1d68554653a7fb1af77ebb889efc0e69528e54a731e5492c3f0dbfe0e21",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102160063.npz",
+   "sha256": "0db416dd60f6237f17a5e043c1ef6af490b379022437ef4290e0090d59227c83",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102160339.npz",
+   "sha256": "c7fa73f4f0e416e664428095c862f2b28de717434c3cf23223bc51c98c26197b",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/q1_unlabeled/shards/shard_tile102160611.npz",
+   "sha256": "4f226efe8f93331494d631e439ced170adca0cc2bafa2fcdf7ad67f583c7b326",
+   "category": "euclid_pixels",
+   "reason": "Euclid Q1 image cutouts; the images are not redistributed (ESA Euclid Science Archive / Discovery Engine archives)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000000.npz",
+   "sha256": "647a2a02b7f65f5223094ef43877c08ebcfe5eb812e670742e6c7a0ee8e1cf44",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000001.npz",
+   "sha256": "abe59cd77082760b69952563b3e452465e34ed8ab916e452e41a60ba6384fe1a",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000002.npz",
+   "sha256": "d4475f476c6398df4dd0c5f3875bf157df4142340cd44cf228f40d74e06169d7",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000003.npz",
+   "sha256": "5651ae2b98a1206d5b41e580cfa0b78f62e5b90b687cda80c1035ef4d35ac432",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000004.npz",
+   "sha256": "0426b6ebe903b7fee7dc14d7f8c049428a19a9a9246ca05a81a5caad792d2131",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000005.npz",
+   "sha256": "b4f5231d7475139ab9b6188659af989d8d34d1e8bfc92964708aae8d3deac689",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000006.npz",
+   "sha256": "fe5513f797bdcbb10ffd07289aa71163c88865f0dc50b669b2ceffb3e27946f4",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000007.npz",
+   "sha256": "176c4046825f9c543751a11afee48d532a61ec4526775466fa0725b267518ea3",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000008.npz",
+   "sha256": "396a19add03d5b3486e65df5a32be2c844211f70a59fab786c093c40ec24972e",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000009.npz",
+   "sha256": "0688714fae3494f0b5aceb7ed2cd9514595450684372545e7e3fbec6c4d9cce4",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000010.npz",
+   "sha256": "f858ffb7073f33ec64e500e2753175d05ba22a8ead76ef9cbc5b8a5c92d04cbd",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000011.npz",
+   "sha256": "802c9de5cdf20f63b24487a3bca2bf5fbe49956fe4c8dd0f368829c75ce435e8",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000012.npz",
+   "sha256": "67fdacdfa01d93bf35b1f80ddecb61749a67a5efa2dd3ca38ecbf63793b28310",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000013.npz",
+   "sha256": "6a34ee605750d5f973084c3e9c12b482914bd864ce91de21357f44c2a3e2dc7e",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000014.npz",
+   "sha256": "dce067b68c5d7634ef1239e07e4ed5cd61a7a352defb19fc229ad59ac636b2a8",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000015.npz",
+   "sha256": "95da11c1de92663b84f784a7de66a4c6e2e34196c17944b78c6ebfbacc45e409",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000016.npz",
+   "sha256": "165c9ecd199ba2ba4e609ae2935e88430efa78e4ff5c3fd685c4b6ac7ccc894d",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000017.npz",
+   "sha256": "a42b51c1fc54e39fd81602bb26cd5ff4a5d4cc9327fb2cfd0d3e462045b59200",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000018.npz",
+   "sha256": "b57ee94866d0985008dc570c614fb27fe77801abff39a04294a3b2b6643e15fd",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000019.npz",
+   "sha256": "d959315cbb5d7049b7f0c5493d0d7a6d3898a625b4e8a8d7b7a71b5bdc0778df",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000020.npz",
+   "sha256": "4d920232b64ee8f4dbaf953c0150d96c6ccc7cac6b2882434ad13e2af4acbf48",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000021.npz",
+   "sha256": "5a931b347ce733c05a77b54d3f08a3c275fcf9e6b8ebc5d53ce4a3ff51006e30",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000022.npz",
+   "sha256": "5a3804584dee2b70b457bc6461c37b67a98a2c376120015f99a66e23a6121fa7",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000023.npz",
+   "sha256": "e99e1920f6930771d314f8da4aec54319868626e52652120b312ebca6334be87",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000024.npz",
+   "sha256": "c0da4fa5d0cf04ddb3288ce332feb08584f2587bcb5a604d5905265dfbf1b28b",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000025.npz",
+   "sha256": "fa8610791874ddf4fb0bd6744d6de70b032681eef91b68e4ede3b178b456fa6c",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000026.npz",
+   "sha256": "fda1363af5ac7322e6a5e6e5a6719ddb22d3d89a38e94d2cd3da2b195bdb8a60",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000027.npz",
+   "sha256": "e94e147610b6aebe8ee48fbd3221ffb48a26ff30da9eb6b682c58a0f336796f3",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000028.npz",
+   "sha256": "d99cf4638936b0a11488e2f3bed4b9cd0729d23daae536c5fe11363dce23fefa",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_000029.npz",
+   "sha256": "02f05ec61ae7e064adfda26cdbdc04a15623316b18d3f2397101fe12efa6545b",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100000.npz",
+   "sha256": "011ccf09b0276f3a95b2a81ee86b903cd00f72710ebbeb4ceb2b8baf44dc4650",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100001.npz",
+   "sha256": "de22524a30226741f4b995940518932b00b66f7ccd640c5c4c7b7a106f595a36",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100002.npz",
+   "sha256": "7c68af5b04cd9030854c30a0dbef534ef8f2af9f014499e66b5644691366dded",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100003.npz",
+   "sha256": "f5b139dd923f43d0f47ad082daa0473551135438866c20849a48c5aa50789714",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100004.npz",
+   "sha256": "e84c7eceeca6f74fb258f99cdf3bf517294938b9617f53a9892e7b88d268c7e4",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100005.npz",
+   "sha256": "0aa033d6ed06a08790fc9aeee96c6fd114100fb56aa43acc77725812f1f0641d",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100006.npz",
+   "sha256": "81ea95f567f426ac39fe1809287111185e6b785f3999da12b97e2932fbdab012",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100007.npz",
+   "sha256": "751226c0ff66c7921eced6dbbc9015b1aa5e68b6f8a9592b484a60565caba78e",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100008.npz",
+   "sha256": "9fd7e5c1b38e75f7308d0f0b26ec331e08bc6e100b7e0a925bda59111d1cf88c",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100009.npz",
+   "sha256": "8c9aaf31a7e5fde4663890bde537d0d228b1e80dfa16ce09b7541ac07438293a",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100010.npz",
+   "sha256": "45b16b73a66fd8c79c61bbbfafa744214dc73f63ae0a4b02a98ded38f2dc68c6",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100011.npz",
+   "sha256": "14c4c2011921d24b2e82c539f1e766429a7c2b01feacea8559762887d9fd8df7",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100012.npz",
+   "sha256": "59011761dc38338f83dd631108bb6a9224274c21c66427ddeda50c7809e5098d",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100013.npz",
+   "sha256": "aaacadb02c3d8a795659650b40313e8df434a8e2f1e652efc349f1fc69136b4a",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100014.npz",
+   "sha256": "076660d69c643e34906456e733f648422c811528a4924331f7245b2df61d704b",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100015.npz",
+   "sha256": "20b2c0371412b0d4fb41dba4454ce161f5934c16d8db5f2809fc2a88641155aa",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100016.npz",
+   "sha256": "4c6e121313a092c3fda7f33be6e4f97d5c84eb585ee581c135b045b11fac8860",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100017.npz",
+   "sha256": "861eae9045eb8be9a137705ed4bfde2b98e9465ce7eec606ed6f58522699ff45",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100018.npz",
+   "sha256": "120aec352d55aabec78657d1e66da85db4466eea50b96341e98b5f07990618d3",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100019.npz",
+   "sha256": "2e43cb368f630ab0d6e08fba243b876d1e240ebd99f7248180cb47d36fbc5d38",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100020.npz",
+   "sha256": "1c76e348c3ac9cb8f558c66e0008a092974310a57b1874355daf28403e5a9b31",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100021.npz",
+   "sha256": "235e3cc9a0428e5ab734a5f6a416b7b849ae552e197a4ae13faec77b51aecfa3",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100022.npz",
+   "sha256": "1bef5068c84adaa15f7d5d7cdbfdfe1649ae12b93bec5ab18ad7a54c22a3dfda",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100023.npz",
+   "sha256": "bcc82bf01deea39a39ce2412bb3bea5d39179d186b717b7855bf9137df59dc7b",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100024.npz",
+   "sha256": "a41f7ff13ee598d650a949101d10db3d51cb0546609bf3308246e16c3f6ba646",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100025.npz",
+   "sha256": "746ff7498e12923fef91266a3b1641c18c9c34b7080ae201d01e4519cd2d0fd8",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100026.npz",
+   "sha256": "66929a5fa94de6897ef1668f07b9444b2732804945772fe830c6f1e040eb4072",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100027.npz",
+   "sha256": "2f499de2e5ba5567cd248a40f68919f85c22721945cb4ad875ef587d3a672c90",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100028.npz",
+   "sha256": "34a6b4df841a4602fdf81e12a3ffcc674b750a6c0478a2f808a366c36513ccff",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data/sim_arc_on_real/shard_100029.npz",
+   "sha256": "9f9369c1f29ea8429343c4e474f67378bb1a4dc305f393fa91a79787bffa8e64",
+   "category": "simulated_pixels",
+   "reason": "simulated lenses painted onto Euclid Q1 cutouts; image data, not redistributed (regenerate with scripts/generate_arc_on_real.py)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "data_old/q1_lenses/lens_manifest_positive.csv",
+   "sha256": "359b776d4b5d6c7ed0e53c530c8ddcc232e9eb518f72de98b6a10f36ff5fa182",
+   "category": "catalogue_csv",
+   "reason": "catalogue file from Euclid Q1 / the Discovery Engine publication; not redistributed in full (the columns the build needs are in public_inputs/)",
+   "recorded_in": [
+    "audit/review_r1/out/A3_galleries.json",
+    "audit/review_r1/out/A3_lens_columns.json",
+    "audit/review_r1/out/A3_recall_by_grade.json",
+    "audit/review_r1/out/A3_recall_by_property.json"
+   ]
+  },
+  {
+   "path": "data_old/q1_lenses/modeling_lens_mass.csv",
+   "sha256": "f2a52616a1ac65137b34abe0892d251e18e2c60e9a64c459914102f44ec49db5",
+   "category": "catalogue_csv",
+   "reason": "catalogue file from Euclid Q1 / the Discovery Engine publication; not redistributed in full (the columns the build needs are in public_inputs/)",
+   "recorded_in": [
+    "audit/review_r1/out/A3_galleries.json",
+    "audit/review_r1/out/A3_lens_columns.json",
+    "audit/review_r1/out/A3_recall_by_grade.json",
+    "audit/review_r1/out/A3_recall_by_property.json"
+   ]
+  },
+  {
+   "path": "data_old/q1_lenses/modeling_lens_mge.csv",
+   "sha256": "b85f7c78aebe898a3d7d77d07a72568cd2d596b525883b358b792e4ce9fa2432",
+   "category": "catalogue_csv",
+   "reason": "catalogue file from Euclid Q1 / the Discovery Engine publication; not redistributed in full (the columns the build needs are in public_inputs/)",
+   "recorded_in": [
+    "audit/review_r1/out/A3_galleries.json",
+    "audit/review_r1/out/A3_lens_columns.json",
+    "audit/review_r1/out/A3_recall_by_grade.json",
+    "audit/review_r1/out/A3_recall_by_property.json"
+   ]
+  },
+  {
+   "path": "data_old/q1_lenses/modeling_lens_sersic.csv",
+   "sha256": "c0b05783ecfdcb4068c3487db11c7eda18e070f8011726fc17d50a04aecd5dc2",
+   "category": "catalogue_csv",
+   "reason": "catalogue file from Euclid Q1 / the Discovery Engine publication; not redistributed in full (the columns the build needs are in public_inputs/)",
+   "recorded_in": [
+    "audit/review_r1/out/A3_galleries.json",
+    "audit/review_r1/out/A3_lens_columns.json",
+    "audit/review_r1/out/A3_recall_by_grade.json",
+    "audit/review_r1/out/A3_recall_by_property.json"
+   ]
+  },
+  {
+   "path": "data_old/q1_lenses/modeling_mge_magnitude.csv",
+   "sha256": "764f786e0cc003602258b724fa96c99f0a95dc084381dde36c5e37b2f98f937f",
+   "category": "catalogue_csv",
+   "reason": "catalogue file from Euclid Q1 / the Discovery Engine publication; not redistributed in full (the columns the build needs are in public_inputs/)",
+   "recorded_in": [
+    "audit/review_r1/out/A3_galleries.json",
+    "audit/review_r1/out/A3_lens_columns.json",
+    "audit/review_r1/out/A3_recall_by_grade.json",
+    "audit/review_r1/out/A3_recall_by_property.json"
+   ]
+  },
+  {
+   "path": "data_old/q1_lenses/q1_discovery_engine_lens_catalog.csv",
+   "sha256": "ee5e60cd507413eabf3da8ffa37a3c527212da00feb29083cf516a86d6f26877",
+   "category": "catalogue_csv",
+   "reason": "catalogue file from Euclid Q1 / the Discovery Engine publication; not redistributed in full (the columns the build needs are in public_inputs/)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json",
+    "audit/review_r1/out/A3_galleries.json",
+    "audit/review_r1/out/A3_lens_columns.json",
+    "audit/review_r1/out/A3_recall_by_grade.json",
+    "audit/review_r1/out/A3_recall_by_property.json"
+   ]
+  },
+  {
+   "path": "data_old/q1_lenses/q1_discovery_engine_lens_catalog_old.csv",
+   "sha256": "f3fc6da4ce18e2bf2bee142c56fa431b12085a72d61f6f3337d9281c516d2c0e",
+   "category": "catalogue_csv",
+   "reason": "catalogue file from Euclid Q1 / the Discovery Engine publication; not redistributed in full (the columns the build needs are in public_inputs/)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json",
+    "audit/review_r1/out/A3_galleries.json",
+    "audit/review_r1/out/A3_lens_columns.json",
+    "audit/review_r1/out/A3_recall_by_grade.json",
+    "audit/review_r1/out/A3_recall_by_property.json",
+    "audit/review_r1/out/F5_host_properties.json"
+   ]
+  },
+  {
+   "path": "data_old/q1_unlabeled/metadata/partitioned_catalog.csv",
+   "sha256": "24698072023f9e210a2c3ab094d51c014b8dfd26846f045ee49e9306308bd430",
+   "category": "catalogue_csv",
+   "reason": "catalogue file from Euclid Q1 / the Discovery Engine publication; not redistributed in full (the columns the build needs are in public_inputs/)",
+   "recorded_in": [
+    "audit/review_r1/out/A2_crossmatch.json",
+    "audit/review_r1/out/A2_magnitude_bias.json",
+    "audit/review_r1/out/A2_top_negatives.json",
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1b/out/L2_bright_pool.json"
+   ]
+  },
+  {
+   "path": "data_old/sim_deflectors/deflector_cutouts_clean.npz",
+   "sha256": "aaffa65f42628940d8f01e4adeaa65932f7eb11ee1e464a840d48b7735100c45",
+   "category": "deflector_pixels",
+   "reason": "Euclid Q1 cutouts of the deflector sample; image data, not redistributed (IDs and positions are in public_inputs/deflectors.npz)",
+   "recorded_in": [
+    "audit/review_r1/out/F5_host_properties.json",
+    "audit/review_r1/out/F6_d2_lenses.json"
+   ]
+  },
+  {
+   "path": "paper/RELEASE_CURATION_REPORT.md",
+   "sha256": "6a2f0b37ce205f9e9bde3126f998ac2648b8c6f0eda0e724a63f44d0b8d41c99",
+   "category": "superseded_draft",
+   "reason": "superseded working document of the project, not part of the release",
+   "recorded_in": [
+    "audit/review_r1/out/F3_dev_probes.json"
+   ]
+  },
+  {
+   "path": "paper_DRAFT.zip",
+   "sha256": "86a2c7bb2f88294fbc9af3076bf82e76b5770c7728f110c98bbe4486c522ad99",
+   "category": "superseded_draft",
+   "reason": "superseded working document of the project, not part of the release",
+   "recorded_in": [
+    "audit/review_r1/out/FINISH_tools.json",
+    "audit/review_r1b/out/FINISH_tools.json"
+   ]
+  }
+ ]
+}

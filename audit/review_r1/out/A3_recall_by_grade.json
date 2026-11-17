@@ -1,0 +1,718 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1/scripts/a3_breakdowns.py",
+ "test_pool": "D1",
+ "folds": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "metric": "scripts/metrics.py metric_suite / tpr_at_fpr (TPR at FPR=1e-3, full ROC with drop_intermediate=False, np.interp); thresholds from metrics.operating_threshold on the same curve",
+ "generated_utc": "2026-10-08T16:07:29+00:00",
+ "notes": [
+  "descriptive; no contrast formed",
+  "dann@2000 is DANN's pre-declared sensitivity readout"
+ ],
+ "inputs_sha256": {
+  "data/q1_lenses_processed/lens_cutouts.npz": "4c62ce2d2f987d0719bb606e85a43a0ae57fe5bc5bccd5fe5525250340d0c877",
+  "data_old/q1_lenses/lens_manifest_positive.csv": "359b776d4b5d6c7ed0e53c530c8ddcc232e9eb518f72de98b6a10f36ff5fa182",
+  "data_old/q1_lenses/modeling_lens_mass.csv": "f2a52616a1ac65137b34abe0892d251e18e2c60e9a64c459914102f44ec49db5",
+  "data_old/q1_lenses/modeling_lens_mge.csv": "b85f7c78aebe898a3d7d77d07a72568cd2d596b525883b358b792e4ce9fa2432",
+  "data_old/q1_lenses/modeling_lens_sersic.csv": "c0b05783ecfdcb4068c3487db11c7eda18e070f8011726fc17d50a04aecd5dc2",
+  "data_old/q1_lenses/modeling_mge_magnitude.csv": "764f786e0cc003602258b724fa96c99f0a95dc084381dde36c5e37b2f98f937f",
+  "data_old/q1_lenses/q1_discovery_engine_lens_catalog.csv": "ee5e60cd507413eabf3da8ffa37a3c527212da00feb29083cf516a86d6f26877",
+  "data_old/q1_lenses/q1_discovery_engine_lens_catalog_old.csv": "f3fc6da4ce18e2bf2bee142c56fa431b12085a72d61f6f3337d9281c516d2c0e",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold1/logits/g16_2000_fold1/step_2000.npz": "a93ca63fa01ec6c103e95808f1819d9e21f9a87ac65761e979e3a766818b600b",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold1/logits/ids.npz": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold2/logits/g16_2000_fold2/step_2000.npz": "8b527ecd0107dd313da7e6250092bee51b3dbc9b320ddb9cfff41b6cf0126e96",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold2/logits/ids.npz": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold3/logits/g16_2000_fold3/step_2000.npz": "fe0e7630f584f67290f3c3952bfe8efacea8c54a8345fb62e1dc09d5f29e7fdb",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold3/logits/ids.npz": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold4/logits/g16_2000_fold4/step_2000.npz": "fda681bb033eaa38e6c44574e5a688a0ed832943ec7f416c8f4ddc989943b054",
+  "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold4/logits/ids.npz": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979",
+  "runs/bakeoff_baseline_A/scores/step_8000_fold1.npz": "bb1b7173d6de7373f484d7ff0b943bcfb94a7e0e72ce7352016207130603eda2",
+  "runs/bakeoff_baseline_A/scores/step_8000_fold2.npz": "f77916488bbccc6faa559cd6c12d217efea83700e18d168bdf6febaa0cb03edd",
+  "runs/bakeoff_baseline_A/scores/step_8000_fold3.npz": "7f9b0f535873b730e76f019849e48a1bfad5423869477f4a15a8108d09f21a2d",
+  "runs/bakeoff_baseline_A/scores/step_8000_fold4.npz": "07bbff88d209cf08a47ee3a698b75912af816ad7bb395ef810b696e2f91a0b51",
+  "runs/baseline_unfrozen/fold1/extracted/lambda0_r6_fold1/logits/dann_nb3_lambda0_fold1/step_4000.npz": "378364428795dc8f5654328f1b43a018a12c8e494bb35ed0c08f1cfac030e90f",
+  "runs/baseline_unfrozen/fold1/extracted/lambda0_r6_fold1/logits/ids.npz": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad",
+  "runs/baseline_unfrozen/fold2/extracted/lambda0_r6_fold2/logits/dann_nb3_lambda0_fold2/step_4000.npz": "6ed955d76e08118906f345eec9d119f1eb40f51be5c44c9fc601284f36c9b2f1",
+  "runs/baseline_unfrozen/fold2/extracted/lambda0_r6_fold2/logits/ids.npz": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048",
+  "runs/baseline_unfrozen/fold3/extracted/lambda0_r6_fold3/logits/dann_nb3_lambda0_fold3/step_4000.npz": "c50675658ce5116eaed936d0b04d70b66b0f0059bbe1462b21c8eea38c93e643",
+  "runs/baseline_unfrozen/fold3/extracted/lambda0_r6_fold3/logits/ids.npz": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d",
+  "runs/baseline_unfrozen/fold4/extracted/lambda0_r6_fold4/logits/dann_nb3_lambda0_fold4/step_4000.npz": "e86de6f7c351fc46b58468e06bedf1a8bbc7bfcec6fee3948785a9f8c4e54330",
+  "runs/baseline_unfrozen/fold4/extracted/lambda0_r6_fold4/logits/ids.npz": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979",
+  "runs/bnm_r6_folds/bnm_r6_fold1/logits/bnm_nb3_fold1/step_4000.npz": "1959d498ef28c368567a6bb305d70a7c26d9995f1a9ee90730e507e77891687a",
+  "runs/bnm_r6_folds/bnm_r6_fold1/logits/ids.npz": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad",
+  "runs/bnm_r6_folds/bnm_r6_fold2/logits/bnm_nb3_fold2/step_4000.npz": "d8e4289a37e82b1df2a76b8aeff9a04c9d63943150304facd2b8250e9c679967",
+  "runs/bnm_r6_folds/bnm_r6_fold2/logits/ids.npz": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048",
+  "runs/bnm_r6_folds/bnm_r6_fold3/logits/bnm_nb3_fold3/step_4000.npz": "f6cee70433175849fc95276d218def55b059db28a1207e162884d9a6633de24c",
+  "runs/bnm_r6_folds/bnm_r6_fold3/logits/ids.npz": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d",
+  "runs/bnm_r6_folds/bnm_r6_fold4/logits/bnm_nb3_fold4/step_4000.npz": "30edf66b41c7cc5939d5ac828c7a2658dd024cd56fbbf7493921fcc58dd6edc0",
+  "runs/bnm_r6_folds/bnm_r6_fold4/logits/ids.npz": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979",
+  "runs/dann_main/fold1/extracted/fold1/logits/dann_nb3_fold1/step_2000.npz": "68475571b5207a90911bf60a428e2cb292febff1c12be5b8a4d5a0cc54ea19a0",
+  "runs/dann_main/fold1/extracted/fold1/logits/dann_nb3_fold1/step_4000.npz": "62ab6b1ecaba5da27f8618cd891275ff1bfa35211957986872ecc9cd9977c6c6",
+  "runs/dann_main/fold1/extracted/fold1/logits/ids.npz": "e291eeae689b0e6968df52b1d3f6ee6c7a3dc07cbd041b9142d752d505c744ad",
+  "runs/dann_main/fold2/extracted/fold2/logits/dann_nb3_fold2/step_2000.npz": "b019350aae0def3ded2d20fe83503af1a6a99c51b13c6877bd3ff46bf48e69db",
+  "runs/dann_main/fold2/extracted/fold2/logits/dann_nb3_fold2/step_4000.npz": "437571529155e516ca3d699ec0c4600381cf872b1cddc894e6ebdba760b5f8de",
+  "runs/dann_main/fold2/extracted/fold2/logits/ids.npz": "6e357d2873d44a3a88c7288f8b1de9180ca56ac3c59b2f788100dbbe69721048",
+  "runs/dann_main/fold3/extracted/fold3/logits/dann_nb3_fold3/step_2000.npz": "806788a0d3a79fec51c8661ef372116d3a915f5d4a55b4fc58271c7796fc71ac",
+  "runs/dann_main/fold3/extracted/fold3/logits/dann_nb3_fold3/step_4000.npz": "2167a7b9fa9c3739eb3b06e5991b3ad4dbda35c35fd9dd181a69d027be4d4659",
+  "runs/dann_main/fold3/extracted/fold3/logits/ids.npz": "ee8da010d104687a2e0be1e47bd3dd25d7c4c0c0f95f13ff9d7640de5963206d",
+  "runs/dann_main/fold4/extracted/fold4/logits/dann_nb3_fold4/step_2000.npz": "a1c9189fcaac3f3f8768fe5ca9cb6782f5844341ed498c61c41dc9d0ba9b2550",
+  "runs/dann_main/fold4/extracted/fold4/logits/dann_nb3_fold4/step_4000.npz": "d2e49613f2e1d19b9e58b4bbd11b4d8ff6b35ab6ee36416380c6c0f0ed96b864",
+  "runs/dann_main/fold4/extracted/fold4/logits/ids.npz": "8aeeee38fcedeff3883e24d31966782cadd643491907f5308dc1b4f4eb026979",
+  "runs/freematch_nb3_unfrozen_fold1/logits/ids.npz": "561a8f470df2583a3358cf9d93ad4b268765bf5f55ebbcfecdc43f958afe67da",
+  "runs/freematch_nb3_unfrozen_fold1/logits/step_1500.npz": "a2e2b0ea130ca7ed568716fa077b9194f73577e05862ce5a8ada418f44bbc870",
+  "runs/freematch_nb3_unfrozen_fold2/logits/ids.npz": "0724145b3a9527ece4996e7d91a27fca9b880f3ab2368f2a54648576f4535492",
+  "runs/freematch_nb3_unfrozen_fold2/logits/step_1500.npz": "5cf8a5590d87dd7b1395c42e2b6ff445ae979c724d449e77bd9c698c110bc564",
+  "runs/freematch_nb3_unfrozen_fold3/logits/ids.npz": "76411979ce7618722edb37e9992aed6b180214df4019852cbb95fe494bdebf10",
+  "runs/freematch_nb3_unfrozen_fold3/logits/step_1500.npz": "d3502cd0bc802b6cacaca911b543d02b2415693b5d4c4a18429f906a1fc9a759",
+  "runs/freematch_nb3_unfrozen_fold4/logits/ids.npz": "2a1de09932a8694ab29f61c2b9f9040c299bcfc560ece02e7b052111afeb6270",
+  "runs/freematch_nb3_unfrozen_fold4/logits/step_1500.npz": "e274d55638b2bbe1c99f6fb2d5e6cbb1709fff725c838cd90a1f826158a2e987"
+ },
+ "result": {
+  "by_arm": {
+   "baseline@8000": {
+    "A": {
+     "per_fold": {
+      "1": {
+       "recovered": 10,
+       "total": 49
+      },
+      "2": {
+       "recovered": 14,
+       "total": 49
+      },
+      "3": {
+       "recovered": 12,
+       "total": 49
+      },
+      "4": {
+       "recovered": 16,
+       "total": 49
+      }
+     },
+     "summed": {
+      "recovered": 52,
+      "total": 196,
+      "rate": 0.2653061224489796,
+      "clopper_pearson_95": [
+       0.2049308196955373,
+       0.33292860864645096
+      ]
+     }
+    },
+    "B": {
+     "per_fold": {
+      "1": {
+       "recovered": 4,
+       "total": 49
+      },
+      "2": {
+       "recovered": 7,
+       "total": 49
+      },
+      "3": {
+       "recovered": 5,
+       "total": 49
+      },
+      "4": {
+       "recovered": 4,
+       "total": 48
+      }
+     },
+     "summed": {
+      "recovered": 20,
+      "total": 195,
+      "rate": 0.10256410256410256,
+      "clopper_pearson_95": [
+       0.06378268009266834,
+       0.15395242418773292
+      ]
+     }
+    },
+    "grades_present_other_than_A_B": []
+   },
+   "lambda0@4000": {
+    "A": {
+     "per_fold": {
+      "1": {
+       "recovered": 16,
+       "total": 49
+      },
+      "2": {
+       "recovered": 13,
+       "total": 49
+      },
+      "3": {
+       "recovered": 11,
+       "total": 49
+      },
+      "4": {
+       "recovered": 15,
+       "total": 49
+      }
+     },
+     "summed": {
+      "recovered": 55,
+      "total": 196,
+      "rate": 0.28061224489795916,
+      "clopper_pearson_95": [
+       0.21892022776557954,
+       0.34907304635562714
+      ]
+     }
+    },
+    "B": {
+     "per_fold": {
+      "1": {
+       "recovered": 6,
+       "total": 49
+      },
+      "2": {
+       "recovered": 4,
+       "total": 49
+      },
+      "3": {
+       "recovered": 3,
+       "total": 49
+      },
+      "4": {
+       "recovered": 4,
+       "total": 48
+      }
+     },
+     "summed": {
+      "recovered": 17,
+      "total": 195,
+      "rate": 0.08717948717948718,
+      "clopper_pearson_95": [
+       0.051606800860799586,
+       0.13591321752356678
+      ]
+     }
+    },
+    "grades_present_other_than_A_B": []
+   },
+   "bnm@4000": {
+    "A": {
+     "per_fold": {
+      "1": {
+       "recovered": 27,
+       "total": 49
+      },
+      "2": {
+       "recovered": 32,
+       "total": 49
+      },
+      "3": {
+       "recovered": 28,
+       "total": 49
+      },
+      "4": {
+       "recovered": 29,
+       "total": 49
+      }
+     },
+     "summed": {
+      "recovered": 116,
+      "total": 196,
+      "rate": 0.5918367346938775,
+      "clopper_pearson_95": [
+       0.5195197514862824,
+       0.6613320233991999
+      ]
+     }
+    },
+    "B": {
+     "per_fold": {
+      "1": {
+       "recovered": 12,
+       "total": 49
+      },
+      "2": {
+       "recovered": 13,
+       "total": 49
+      },
+      "3": {
+       "recovered": 9,
+       "total": 49
+      },
+      "4": {
+       "recovered": 8,
+       "total": 48
+      }
+     },
+     "summed": {
+      "recovered": 42,
+      "total": 195,
+      "rate": 0.2153846153846154,
+      "clopper_pearson_95": [
+       0.159858624159962,
+       0.2797771121831496
+      ]
+     }
+    },
+    "grades_present_other_than_A_B": []
+   },
+   "freematch@1500": {
+    "A": {
+     "per_fold": {
+      "1": {
+       "recovered": 32,
+       "total": 49
+      },
+      "2": {
+       "recovered": 34,
+       "total": 49
+      },
+      "3": {
+       "recovered": 32,
+       "total": 49
+      },
+      "4": {
+       "recovered": 38,
+       "total": 49
+      }
+     },
+     "summed": {
+      "recovered": 136,
+      "total": 196,
+      "rate": 0.6938775510204082,
+      "clopper_pearson_95": [
+       0.6242140064841974,
+       0.7575666250979182
+      ]
+     }
+    },
+    "B": {
+     "per_fold": {
+      "1": {
+       "recovered": 17,
+       "total": 49
+      },
+      "2": {
+       "recovered": 24,
+       "total": 49
+      },
+      "3": {
+       "recovered": 10,
+       "total": 49
+      },
+      "4": {
+       "recovered": 15,
+       "total": 48
+      }
+     },
+     "summed": {
+      "recovered": 66,
+      "total": 195,
+      "rate": 0.3384615384615385,
+      "clopper_pearson_95": [
+       0.27240467706791915,
+       0.40951611412799427
+      ]
+     }
+    },
+    "grades_present_other_than_A_B": []
+   },
+   "dann@4000": {
+    "A": {
+     "per_fold": {
+      "1": {
+       "recovered": 32,
+       "total": 49
+      },
+      "2": {
+       "recovered": 43,
+       "total": 49
+      },
+      "3": {
+       "recovered": 22,
+       "total": 49
+      },
+      "4": {
+       "recovered": 32,
+       "total": 49
+      }
+     },
+     "summed": {
+      "recovered": 129,
+      "total": 196,
+      "rate": 0.6581632653061225,
+      "clopper_pearson_95": [
+       0.5871959001957642,
+       0.7242632315162543
+      ]
+     }
+    },
+    "B": {
+     "per_fold": {
+      "1": {
+       "recovered": 21,
+       "total": 49
+      },
+      "2": {
+       "recovered": 27,
+       "total": 49
+      },
+      "3": {
+       "recovered": 9,
+       "total": 49
+      },
+      "4": {
+       "recovered": 9,
+       "total": 48
+      }
+     },
+     "summed": {
+      "recovered": 66,
+      "total": 195,
+      "rate": 0.3384615384615385,
+      "clopper_pearson_95": [
+       0.27240467706791915,
+       0.40951611412799427
+      ]
+     }
+    },
+    "grades_present_other_than_A_B": []
+   },
+   "dann@2000": {
+    "A": {
+     "per_fold": {
+      "1": {
+       "recovered": 35,
+       "total": 49
+      },
+      "2": {
+       "recovered": 42,
+       "total": 49
+      },
+      "3": {
+       "recovered": 35,
+       "total": 49
+      },
+      "4": {
+       "recovered": 32,
+       "total": 49
+      }
+     },
+     "summed": {
+      "recovered": 144,
+      "total": 196,
+      "rate": 0.7346938775510204,
+      "clopper_pearson_95": [
+       0.6670713913535489,
+       0.7950691803044627
+      ]
+     }
+    },
+    "B": {
+     "per_fold": {
+      "1": {
+       "recovered": 21,
+       "total": 49
+      },
+      "2": {
+       "recovered": 27,
+       "total": 49
+      },
+      "3": {
+       "recovered": 14,
+       "total": 49
+      },
+      "4": {
+       "recovered": 11,
+       "total": 48
+      }
+     },
+     "summed": {
+      "recovered": 73,
+      "total": 195,
+      "rate": 0.37435897435897436,
+      "clopper_pearson_95": [
+       0.30625283497540073,
+       0.4463482332809799
+      ]
+     }
+    },
+    "grades_present_other_than_A_B": []
+   },
+   "coral@2000": {
+    "A": {
+     "per_fold": {
+      "1": {
+       "recovered": 32,
+       "total": 49
+      },
+      "2": {
+       "recovered": 38,
+       "total": 49
+      },
+      "3": {
+       "recovered": 35,
+       "total": 49
+      },
+      "4": {
+       "recovered": 34,
+       "total": 49
+      }
+     },
+     "summed": {
+      "recovered": 139,
+      "total": 196,
+      "rate": 0.7091836734693877,
+      "clopper_pearson_95": [
+       0.6402133667923663,
+       0.7717033369898629
+      ]
+     }
+    },
+    "B": {
+     "per_fold": {
+      "1": {
+       "recovered": 14,
+       "total": 49
+      },
+      "2": {
+       "recovered": 24,
+       "total": 49
+      },
+      "3": {
+       "recovered": 14,
+       "total": 49
+      },
+      "4": {
+       "recovered": 13,
+       "total": 48
+      }
+     },
+     "summed": {
+      "recovered": 65,
+      "total": 195,
+      "rate": 0.3333333333333333,
+      "clopper_pearson_95": [
+       0.2676030520012401,
+       0.40422088503754666
+      ]
+     }
+    },
+    "grades_present_other_than_A_B": []
+   }
+  },
+  "threshold_checks": {
+   "baseline@8000": {
+    "1": {
+     "threshold": 2.9944081554412842,
+     "n_pos": 98,
+     "n_recovered_count": 14,
+     "count_rate": 0.14285714285714285,
+     "interpolated_tpr": 0.14285714285714285
+    },
+    "2": {
+     "threshold": 2.9944081554412842,
+     "n_pos": 98,
+     "n_recovered_count": 21,
+     "count_rate": 0.21428571428571427,
+     "interpolated_tpr": 0.21428571428571427
+    },
+    "3": {
+     "threshold": 2.980187706947327,
+     "n_pos": 98,
+     "n_recovered_count": 17,
+     "count_rate": 0.17346938775510204,
+     "interpolated_tpr": 0.17346938775510204
+    },
+    "4": {
+     "threshold": 2.9944081554412842,
+     "n_pos": 97,
+     "n_recovered_count": 20,
+     "count_rate": 0.20618556701030927,
+     "interpolated_tpr": 0.20618556701030927
+    }
+   },
+   "lambda0@4000": {
+    "1": {
+     "threshold": 4.117854246139526,
+     "n_pos": 98,
+     "n_recovered_count": 22,
+     "count_rate": 0.22448979591836735,
+     "interpolated_tpr": 0.22448979591836735
+    },
+    "2": {
+     "threshold": 3.1485510158538816,
+     "n_pos": 98,
+     "n_recovered_count": 17,
+     "count_rate": 0.17346938775510204,
+     "interpolated_tpr": 0.17346938775510204
+    },
+    "3": {
+     "threshold": 4.886419063568115,
+     "n_pos": 98,
+     "n_recovered_count": 14,
+     "count_rate": 0.14285714285714285,
+     "interpolated_tpr": 0.14285714285714285
+    },
+    "4": {
+     "threshold": 4.485301758766174,
+     "n_pos": 97,
+     "n_recovered_count": 19,
+     "count_rate": 0.1958762886597938,
+     "interpolated_tpr": 0.1958762886597938
+    }
+   },
+   "bnm@4000": {
+    "1": {
+     "threshold": 5.718588985443115,
+     "n_pos": 98,
+     "n_recovered_count": 39,
+     "count_rate": 0.3979591836734694,
+     "interpolated_tpr": 0.3979591836734694
+    },
+    "2": {
+     "threshold": 3.1178678245544433,
+     "n_pos": 98,
+     "n_recovered_count": 45,
+     "count_rate": 0.45918367346938777,
+     "interpolated_tpr": 0.45918367346938777
+    },
+    "3": {
+     "threshold": 3.1528262820243835,
+     "n_pos": 98,
+     "n_recovered_count": 37,
+     "count_rate": 0.37755102040816324,
+     "interpolated_tpr": 0.37755102040816324
+    },
+    "4": {
+     "threshold": 4.128761122703552,
+     "n_pos": 97,
+     "n_recovered_count": 37,
+     "count_rate": 0.38144329896907214,
+     "interpolated_tpr": 0.38144329896907214
+    }
+   },
+   "freematch@1500": {
+    "1": {
+     "threshold": 4.606090906143188,
+     "n_pos": 98,
+     "n_recovered_count": 49,
+     "count_rate": 0.5,
+     "interpolated_tpr": 0.5
+    },
+    "2": {
+     "threshold": 6.496557975769043,
+     "n_pos": 98,
+     "n_recovered_count": 58,
+     "count_rate": 0.5918367346938775,
+     "interpolated_tpr": 0.5918367346938775
+    },
+    "3": {
+     "threshold": 3.424569435596466,
+     "n_pos": 98,
+     "n_recovered_count": 42,
+     "count_rate": 0.42857142857142855,
+     "interpolated_tpr": 0.42857142857142855
+    },
+    "4": {
+     "threshold": 4.442755937576294,
+     "n_pos": 97,
+     "n_recovered_count": 53,
+     "count_rate": 0.5463917525773195,
+     "interpolated_tpr": 0.5463917525773195
+    }
+   },
+   "dann@4000": {
+    "1": {
+     "threshold": 5.18892430305481,
+     "n_pos": 98,
+     "n_recovered_count": 53,
+     "count_rate": 0.5408163265306123,
+     "interpolated_tpr": 0.5408163265306123
+    },
+    "2": {
+     "threshold": 2.060209252357483,
+     "n_pos": 98,
+     "n_recovered_count": 70,
+     "count_rate": 0.7142857142857143,
+     "interpolated_tpr": 0.7142857142857143
+    },
+    "3": {
+     "threshold": 2.017822708368301,
+     "n_pos": 98,
+     "n_recovered_count": 31,
+     "count_rate": 0.3163265306122449,
+     "interpolated_tpr": 0.3163265306122449
+    },
+    "4": {
+     "threshold": 2.858316764831543,
+     "n_pos": 97,
+     "n_recovered_count": 41,
+     "count_rate": 0.422680412371134,
+     "interpolated_tpr": 0.422680412371134
+    }
+   },
+   "dann@2000": {
+    "1": {
+     "threshold": 1.7303623948097229,
+     "n_pos": 98,
+     "n_recovered_count": 56,
+     "count_rate": 0.5714285714285714,
+     "interpolated_tpr": 0.5714285714285714
+    },
+    "2": {
+     "threshold": 3.1703422732353213,
+     "n_pos": 98,
+     "n_recovered_count": 69,
+     "count_rate": 0.7040816326530612,
+     "interpolated_tpr": 0.7040816326530612
+    },
+    "3": {
+     "threshold": 2.9017934765815734,
+     "n_pos": 98,
+     "n_recovered_count": 49,
+     "count_rate": 0.5,
+     "interpolated_tpr": 0.5
+    },
+    "4": {
+     "threshold": 2.2731608109474184,
+     "n_pos": 97,
+     "n_recovered_count": 43,
+     "count_rate": 0.44329896907216493,
+     "interpolated_tpr": 0.44329896907216493
+    }
+   },
+   "coral@2000": {
+    "1": {
+     "threshold": 2.718024281024933,
+     "n_pos": 98,
+     "n_recovered_count": 46,
+     "count_rate": 0.46938775510204084,
+     "interpolated_tpr": 0.46938775510204084
+    },
+    "2": {
+     "threshold": 3.8391558084487913,
+     "n_pos": 98,
+     "n_recovered_count": 62,
+     "count_rate": 0.6326530612244898,
+     "interpolated_tpr": 0.6326530612244898
+    },
+    "3": {
+     "threshold": 2.1782183980941774,
+     "n_pos": 98,
+     "n_recovered_count": 49,
+     "count_rate": 0.5,
+     "interpolated_tpr": 0.5
+    },
+    "4": {
+     "threshold": 0.9659934957027435,
+     "n_pos": 97,
+     "n_recovered_count": 47,
+     "count_rate": 0.4845360824742268,
+     "interpolated_tpr": 0.4845360824742268
+    }
+   }
+  }
+ }
+}

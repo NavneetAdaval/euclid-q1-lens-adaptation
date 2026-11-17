@@ -1,0 +1,316 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1/scripts/f_facts.py",
+ "test_pool": "n/a",
+ "folds": "n/a",
+ "metric": "scripts/metrics.py metric_suite / tpr_at_fpr (TPR at FPR=1e-3, full ROC with drop_intermediate=False, np.interp); thresholds from metrics.operating_threshold on the same curve",
+ "generated_utc": "2026-10-08T15:44:47+00:00",
+ "notes": [
+  "Steps: the contrast entries name no step. lambda=0's step is the file's budget (4000) with 1500/2000 as declared sensitivity readouts; the other arm's step is its own declared read-off (_common.ARM_META, verified by crosscheck.py)."
+ ],
+ "inputs_sha256": {
+  "paper/scripts/_common.py": "a08ec76ef92457c0ce93af5111b20298c0d7767b9c8b22b8c4e5b1b5f6effe16",
+  "runs/lambda0_r6_prereg.json": "883cca8dd3da1a5e96290bdca2fe2ddea971696a69488e53612cc8cd35a08170"
+ },
+ "result": {
+  "file": "runs/lambda0_r6_prereg.json",
+  "paired_contrasts_verbatim": {
+   "key": "reporting.paired_contrasts",
+   "entries": [
+    {
+     "contrast": "lambda=0 - Baseline A (frozen)",
+     "isolates": "unfreezing alone"
+    },
+    {
+     "contrast": "DANN x nb3 - lambda=0",
+     "isolates": "the adversarial term alone -- the only fully controlled contrast"
+    },
+    {
+     "contrast": "CORAL x nb3 - lambda=0",
+     "isolates": "DA vs no DA, CONFOUNDED"
+    },
+    {
+     "contrast": "FreeMatch x nb3 - lambda=0",
+     "isolates": "DA vs no DA, CONFOUNDED"
+    }
+   ],
+   "line_citations": [
+    {
+     "file": "runs/lambda0_r6_prereg.json",
+     "line": 112,
+     "text": "\"contrast\": \"lambda=0 - Baseline A (frozen)\","
+    },
+    {
+     "file": "runs/lambda0_r6_prereg.json",
+     "line": 116,
+     "text": "\"contrast\": \"DANN x nb3 - lambda=0\","
+    },
+    {
+     "file": "runs/lambda0_r6_prereg.json",
+     "line": 120,
+     "text": "\"contrast\": \"CORAL x nb3 - lambda=0\","
+    },
+    {
+     "file": "runs/lambda0_r6_prereg.json",
+     "line": 124,
+     "text": "\"contrast\": \"FreeMatch x nb3 - lambda=0\","
+    }
+   ]
+  },
+  "step_fields_in_the_file": {
+   "budget.CONFIRM_STEPS": 4000,
+   "budget.rule": "THE CONTROL IS READ WHERE ITS TREATMENT IS READ. Budget = 4000, DANN x nb3's declared budget.",
+   "reporting.computed_at": [
+    "the declared budget 4000",
+    "step 1500",
+    "step 2000"
+   ],
+   "sensitivity_readouts.steps": [
+    1500,
+    2000
+   ],
+   "sensitivity_readouts.clause": "Reported ALONGSIDE the headline; they do NOT replace it, whichever is higher. 7.18's clause, verbatim.",
+   "sensitivity_readouts.what_they_buy": "budget-matched comparators against FreeMatch x nb3 (1500) and CORAL x nb3 (2000), which the 4000 headline does not provide",
+   "budget.alternative_considered_and_declined": {
+    "alternative": "read this arm at EACH DA arm's own budget (1500 / 2000 / 4000), which is the coherent choice if its primary role were 'method-neutral baseline for all three DA arms' rather than 'DANN's control'",
+    "declined_because": "7.18 treats the lambda contrast as this arm's most striking claim, and no single budget serves the method-neutral role. Recorded so a reader sees the choice was made, not assumed.",
+    "partially_recovered_by": "the pre-declared sensitivity readouts at 1500 and 2000 below, which give the budget-matched comparators for free"
+   },
+   "line_citations": [
+    {
+     "file": "runs/lambda0_r6_prereg.json",
+     "line": 9,
+     "text": "\"CONFIRM_STEPS\": 4000,"
+    },
+    {
+     "file": "runs/lambda0_r6_prereg.json",
+     "line": 102,
+     "text": "\"computed_at\": ["
+    },
+    {
+     "file": "runs/lambda0_r6_prereg.json",
+     "line": 208,
+     "text": "\"what_they_buy\": \"budget-matched comparators against FreeMatch x nb3 (1500) and CORAL x nb3 (2000), which the 4000 headline does not provide\""
+    },
+    {
+     "file": "runs/lambda0_r6_prereg.json",
+     "line": 200,
+     "text": "\"clause\": \"Reported ALONGSIDE the headline; they do NOT replace it, whichever is higher. 7.18's clause, verbatim.\","
+    },
+    {
+     "file": "runs/lambda0_r6_prereg.json",
+     "line": 203,
+     "text": "\"steps\": ["
+    }
+   ]
+  },
+  "contrast_entries_name_a_step": false,
+  "reading_of_each_contrast": {
+   "lambda=0 - Baseline A (frozen)": {
+    "arm_a": "lambda0",
+    "step_a": 4000,
+    "arm_b": "baseline",
+    "step_b": 8000,
+    "sensitivity_forms": [],
+    "headline_form_rows": [
+     0
+    ]
+   },
+   "DANN x nb3 - lambda=0": {
+    "arm_a": "dann",
+    "step_a": 4000,
+    "arm_b": "lambda0",
+    "step_b": 4000,
+    "sensitivity_forms": [],
+    "headline_form_rows": [
+     1
+    ]
+   },
+   "CORAL x nb3 - lambda=0": {
+    "arm_a": "coral",
+    "step_a": 2000,
+    "arm_b": "lambda0",
+    "step_b": 4000,
+    "sensitivity_forms": [
+     {
+      "arm_a": "coral",
+      "step_a": 2000,
+      "arm_b": "lambda0",
+      "step_b": 2000,
+      "rows": [
+       2
+      ]
+     }
+    ],
+    "headline_form_rows": [
+     5
+    ]
+   },
+   "FreeMatch x nb3 - lambda=0": {
+    "arm_a": "freematch",
+    "step_a": 1500,
+    "arm_b": "lambda0",
+    "step_b": 4000,
+    "sensitivity_forms": [
+     {
+      "arm_a": "freematch",
+      "step_a": 1500,
+      "arm_b": "lambda0",
+      "step_b": 1500,
+      "rows": [
+       3
+      ]
+     }
+    ],
+    "headline_form_rows": [
+     6
+    ]
+   }
+  },
+  "contrast_rows": {
+   "file": "paper/scripts/_common.py",
+   "line_of_CONTRAST_ROWS": 561,
+   "rows": [
+    {
+     "index": 0,
+     "panel": "A",
+     "label": "$\\lambda=0$ $-$ Baseline A",
+     "arm_a": "lambda0",
+     "step_a": 4000,
+     "arm_b": "baseline",
+     "step_b": 8000,
+     "budget": "---"
+    },
+    {
+     "index": 1,
+     "panel": "B",
+     "label": "DANN $-$ $\\lambda=0$",
+     "arm_a": "dann",
+     "step_a": 4000,
+     "arm_b": "lambda0",
+     "step_b": 4000,
+     "budget": "matched"
+    },
+    {
+     "index": 2,
+     "panel": "B",
+     "label": "CORAL $-$ $\\lambda=0$",
+     "arm_a": "coral",
+     "step_a": 2000,
+     "arm_b": "lambda0",
+     "step_b": 2000,
+     "budget": "matched"
+    },
+    {
+     "index": 3,
+     "panel": "B",
+     "label": "FreeMatch $-$ $\\lambda=0$",
+     "arm_a": "freematch",
+     "step_a": 1500,
+     "arm_b": "lambda0",
+     "step_b": 1500,
+     "budget": "matched"
+    },
+    {
+     "index": 4,
+     "panel": "B",
+     "label": "BNM $-$ $\\lambda=0$",
+     "arm_a": "bnm",
+     "step_a": 4000,
+     "arm_b": "lambda0",
+     "step_b": 4000,
+     "budget": "matched"
+    },
+    {
+     "index": 5,
+     "panel": "B",
+     "label": "CORAL $-$ $\\lambda=0$ (at 4000)",
+     "arm_a": "coral",
+     "step_a": 2000,
+     "arm_b": "lambda0",
+     "step_b": 4000,
+     "budget": "\\textbf{unmatched}"
+    },
+    {
+     "index": 6,
+     "panel": "B",
+     "label": "FreeMatch $-$ $\\lambda=0$ (at 4000)",
+     "arm_a": "freematch",
+     "step_a": 1500,
+     "arm_b": "lambda0",
+     "step_b": 4000,
+     "budget": "\\textbf{unmatched}"
+    },
+    {
+     "index": 7,
+     "panel": "C",
+     "label": "BNM $-$ CORAL",
+     "arm_a": "bnm",
+     "step_a": 2000,
+     "arm_b": "coral",
+     "step_b": 2000,
+     "budget": "matched"
+    },
+    {
+     "index": 8,
+     "panel": "C",
+     "label": "BNM $-$ DANN",
+     "arm_a": "bnm",
+     "step_a": 4000,
+     "arm_b": "dann",
+     "step_b": 4000,
+     "budget": "matched"
+    },
+    {
+     "index": 9,
+     "panel": "C",
+     "label": "BNM $-$ FreeMatch",
+     "arm_a": "bnm",
+     "step_a": 1500,
+     "arm_b": "freematch",
+     "step_b": 1500,
+     "budget": "matched"
+    },
+    {
+     "index": 10,
+     "panel": "C",
+     "label": "DANN $-$ CORAL",
+     "arm_a": "dann",
+     "step_a": 4000,
+     "arm_b": "coral",
+     "step_b": 2000,
+     "budget": "\\textbf{unmatched}"
+    },
+    {
+     "index": 11,
+     "panel": "C",
+     "label": "DANN $-$ FreeMatch",
+     "arm_a": "dann",
+     "step_a": 4000,
+     "arm_b": "freematch",
+     "step_b": 1500,
+     "budget": "\\textbf{unmatched}"
+    },
+    {
+     "index": 12,
+     "panel": "C",
+     "label": "DANN $-$ CORAL (both at 2000)",
+     "arm_a": "dann",
+     "step_a": 2000,
+     "arm_b": "coral",
+     "step_b": 2000,
+     "budget": "matched"
+    }
+   ]
+  },
+  "contrast_rows_not_corresponding_to_any_preregistered_contrast": [
+   4,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ]
+ }
+}

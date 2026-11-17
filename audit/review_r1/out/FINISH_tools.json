@@ -1,0 +1,269 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1/scripts/record_finish.py",
+ "test_pool": "as each tool",
+ "folds": "as each tool",
+ "metric": "scripts/metrics.py metric_suite / tpr_at_fpr (TPR at FPR=1e-3, full ROC with drop_intermediate=False, np.interp); thresholds from metrics.operating_threshold on the same curve",
+ "generated_utc": "2026-10-08T16:19:24+00:00",
+ "notes": [],
+ "inputs_sha256": {
+  "paper_DRAFT.zip": "86a2c7bb2f88294fbc9af3076bf82e76b5770c7728f110c98bbe4486c522ad99"
+ },
+ "result": {
+  "environment": "every tool run with PYTHONDONTWRITEBYTECODE=1 and paper/data redirected (PAPER_DATA_DIR) to a scratch copy; nothing under the repo was written",
+  "1_make_all": {
+   "how": "run with PAPER_TABLES_DIR / PAPER_FIGURES_DIR / PAPER_DATA_DIR pointed at scratch copies of paper/{tables,figures,data}",
+   "summary_lines": [
+    "1314 checks, 0 mismatch(es) -> ..\\..\\AppData\\Local\\Temp\\claude\\C--Users-krris-ML-lens-paper\\8650b63a-71b4-491b-b9eb-85e651251ab7\\scratchpad\\makeall\\data\\crosscheck.json",
+    "ALL TABLES AND FIGURES REBUILT. No number disagrees with PROJECT.md."
+   ],
+   "byte_comparison_with_tracked": {
+    "tables/A2_hashes.tex": {
+     "byte_identical": true
+    },
+    "tables/A3_orderings.tex": {
+     "byte_identical": true
+    },
+    "tables/A4_augprec.tex": {
+     "byte_identical": true
+    },
+    "tables/A5_gate.tex": {
+     "byte_identical": true
+    },
+    "tables/A7_prereg_pool.tex": {
+     "byte_identical": true
+    },
+    "tables/M_a2.tex": {
+     "byte_identical": true
+    },
+    "tables/M_augprec.tex": {
+     "byte_identical": true
+    },
+    "tables/M_batch.tex": {
+     "byte_identical": true
+    },
+    "tables/M_orderings.tex": {
+     "byte_identical": true
+    },
+    "tables/M_pool.tex": {
+     "byte_identical": true
+    },
+    "tables/M_prose.tex": {
+     "byte_identical": true
+    },
+    "tables/M_restart.tex": {
+     "byte_identical": true
+    },
+    "tables/M_sim_source.tex": {
+     "byte_identical": true
+    },
+    "tables/M_sim_zl.tex": {
+     "byte_identical": true
+    },
+    "tables/M_venue.tex": {
+     "byte_identical": true
+    },
+    "tables/M_zoobot2.tex": {
+     "byte_identical": true
+    },
+    "tables/T1_main.tex": {
+     "byte_identical": true
+    },
+    "tables/T2_contrasts.tex": {
+     "byte_identical": true
+    },
+    "tables/T3_round1.tex": {
+     "byte_identical": true
+    },
+    "tables/T4_secondary.tex": {
+     "byte_identical": true
+    },
+    "tables/T5_perfold.tex": {
+     "byte_identical": true
+    },
+    "tables/T6_window.tex": {
+     "byte_identical": true
+    },
+    "figures/F1_setup.pdf": {
+     "byte_identical": false,
+     "identical_except_CreationDate": true,
+     "creation_dates": {
+      "tracked": "20261004235500+05'1800'",
+      "regenerated": "20261008213626+05'1800'"
+     }
+    },
+    "figures/F2_cutouts.pdf": {
+     "byte_identical": false,
+     "identical_except_CreationDate": true,
+     "creation_dates": {
+      "tracked": "20261004235510+05'1800'",
+      "regenerated": "20261008213638+05'1800'"
+     }
+    },
+    "figures/F3_forest.pdf": {
+     "byte_identical": false,
+     "identical_except_CreationDate": true,
+     "creation_dates": {
+      "tracked": "20261004235529+05'1800'",
+      "regenerated": "20261008213708+05'1800'"
+     }
+    },
+    "figures/F4_fold0_curves.pdf": {
+     "byte_identical": false,
+     "identical_except_CreationDate": true,
+     "creation_dates": {
+      "tracked": "20261004235533+05'1800'",
+      "regenerated": "20261008213711+05'1800'"
+     }
+    },
+    "figures/F5_resolution.pdf": {
+     "byte_identical": false,
+     "identical_except_CreationDate": true,
+     "creation_dates": {
+      "tracked": "20261004235536+05'1800'",
+      "regenerated": "20261008213714+05'1800'"
+     }
+    },
+    "figures/F6_completeness_purity.json": {
+     "byte_identical": true
+    },
+    "figures/F6_completeness_purity.pdf": {
+     "byte_identical": false,
+     "identical_except_CreationDate": true,
+     "creation_dates": {
+      "tracked": "20261004235546+05'1800'",
+      "regenerated": "20261008213731+05'1800'"
+     }
+    },
+    "data/crosscheck.json": {
+     "byte_identical": true
+    },
+    "data/fold0_curves_D1.json": {
+     "byte_identical": true
+    },
+    "data/foldmean_bootstrap_D1.json": {
+     "byte_identical": true
+    },
+    "data/lever1_aug_precision_D1.json": {
+     "byte_identical": true
+    },
+    "data/lines_ratios_D1.json": {
+     "byte_identical": true
+    },
+    "data/prereg_pool_summary.json": {
+     "byte_identical": true
+    },
+    "data/prose_claims_D1.json": {
+     "byte_identical": true
+    },
+    "data/release_manifest.json": {
+     "byte_identical": true
+    },
+    "data/round1_paired_adamatch.json": {
+     "byte_identical": true
+    },
+    "data/round1_paired_adamatch_D1.json": {
+     "byte_identical": true
+    },
+    "data/round1_paired_coral.json": {
+     "byte_identical": true
+    },
+    "data/round1_paired_coral_D1.json": {
+     "byte_identical": true
+    },
+    "data/round1_paired_freematch.json": {
+     "byte_identical": true
+    },
+    "data/round1_paired_freematch_D1.json": {
+     "byte_identical": true
+    },
+    "data/sim_zl.json": {
+     "byte_identical": true
+    },
+    "data/venue_audit.json": {
+     "byte_identical": true
+    },
+    "data/venue_coral_repro.json": {
+     "byte_identical": true
+    },
+    "data/window_average_D1.json": {
+     "byte_identical": true
+    },
+    "data/window_fold0_D1.json": {
+     "byte_identical": true
+    },
+    "data/zoobot2_pretraining.json": {
+     "byte_identical": true
+    }
+   },
+   "make_m_prose_claims": {
+    "n": 51,
+    "n_holds": 51
+   },
+   "n_outputs": 49,
+   "n_byte_identical": 43,
+   "in_place_run": "SKIPPED: the six figure PDFs are not byte-identical (they differ only in /CreationDate), so an in-place run would rewrite tracked outputs"
+  },
+  "2_check_latex": [
+   "40 .tex files: inputs and graphics resolve, braces and",
+   "THIS DOES NOT ESTABLISH THAT THE DOCUMENT COMPILES.",
+   "rc=0"
+  ],
+  "3_crosscheck": {
+   "summary_lines": [
+    "1314 checks, 0 mismatch(es) -> ..\\..\\AppData\\Local\\Temp\\claude\\C--Users-krris-ML-lens-paper\\8650b63a-71b4-491b-b9eb-85e651251ab7\\scratchpad\\tools\\data\\crosscheck.json",
+    "pre-registered pool vs PROJECT.md: 209; D1 / A7 vs the exact-ID audit: 696; A3 window rows + prose macros: 409",
+    "rc=0"
+   ],
+   "crosscheck_json_byte_identical_to_tracked": true
+  },
+  "4_prose_macros_verify": [
+   "192 replaced, 192 verified against the typed original, 0 mismatches; 185 of the 192 still in the text, 7 removed by approved wording",
+   "rc=0"
+  ],
+  "5_verify_orig_tables": {
+   "tokens": [
+    "10 tables regenerated on the pre-registered pool; tokens: 10 identical, 0 differ",
+    "rc=0"
+   ],
+   "bytes": [
+    "10 tables regenerated on the pre-registered pool; bytes: 10 identical, 0 differ",
+    "rc=0"
+   ]
+  },
+  "6_test_make_archive": [
+   "25/25 passed",
+   "rc=0"
+  ],
+  "7_integrity_verify": [
+   "[integrity] 7 protected artifact(s) verified",
+   "rc=0"
+  ],
+  "8_make_archive_draft": {
+   "how": "audit/review_r1/scripts/make_archive_draft_redirected.py: make_archive.main() unchanged, OUT_DRAFT pointed at the scratch dir, so <repo>/paper_DRAFT.zip was not rewritten",
+   "summary_lines": [
+    "SUBMISSION GATE -- 8 violation(s)",
+    "WARNING: --draft given; writing paper_DRAFT.zip despite 8 violation(s). Do not upload it.",
+    "wrote ..\\..\\AppData\\Local\\Temp\\claude\\C--Users-krris-ML-lens-paper\\8650b63a-71b4-491b-b9eb-85e651251ab7\\scratchpad\\tools\\paper_DRAFT.zip (0.31 MB, verified: every build reference resolves inside the unzipped archive)",
+    "rc=0"
+   ],
+   "scratch_zip_vs_tracked_zip": {
+    "entries_scratch": 48,
+    "entries_tracked": 48,
+    "same_entry_names": true,
+    "entries_with_different_content": []
+   }
+  },
+  "9_tectonic": {
+   "how": "tectonic 0.17.0 from C:/Users/krris/ML/_tex_env, run on the unzipped scratch paper_DRAFT.zip",
+   "summary_lines": [
+    "note: Writing `main.pdf` (542.04296875 KiB)",
+    "rc=0",
+    "Pages:           52"
+   ],
+   "overfull_boxes": 0,
+   "underfull_boxes": 5,
+   "latex_warnings": 0
+  }
+ }
+}

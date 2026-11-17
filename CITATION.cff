@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this code or these stored results, please cite the paper below."
+title: "What a target-domain training signal buys a sim-to-real lens finder on Euclid Q1, from a balanced to a 1:10 target -- code, stored results and identifier lists"
+type: software
+license: GPL-3.0-only
+doi: "10.5281/zenodo.24285258"
+authors:
+  - given-names: "Navneet Kumar"
+    family-names: "Adaval"
+    email: "krrishadaval@gmail.com"
+    affiliation: "SRM Institute of Science and Technology"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24285258"
+    description: "Archived release of this repository (Zenodo)"
+repository-code: "https://github.com/NavneetAdaval/euclid-q1-lens-adaptation"
+preferred-citation:
+  type: article
+  title: "What a target-domain training signal buys a sim-to-real lens finder on Euclid Q1, from a balanced to a 1:10 target"
+  authors:
+    - given-names: "Navneet Kumar"
+      family-names: "Adaval"
+  identifiers:
+    - type: other
+      value: "arXiv: forthcoming"

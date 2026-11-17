@@ -1,0 +1,210 @@
+============================================================================================
+FREEMATCH x UNFREEZE -- freematch_fold0_nb0_control  (fold 0, 2000 steps, n_blocks=0)
+============================================================================================
+  run                     : nb0_control
+  run_dir                 : freematch_fold0_nb0_control
+  n_blocks                : 0
+  lp_ft                   : True
+  init_head_from          : /kaggle/input/datasets/navneet78/lens-data/runs/bakeoff_freematch_5fold/fold0/checkpoints/step_8000.pt
+  init_head_l2            : 29.414692
+  max_steps               : 2000
+  budget_steps            : 2000
+  schedule_total_steps    : 8000
+  is_preregistered_budget : True
+  curve_every             : 125
+  ckpt_every              : 500
+  batch_size              : 256
+  true_batch              : True
+  gradient_accumulation   : False
+  batch_size_is_protocol  : True
+  grad_checkpointing      : False
+  lr                      : 0.001
+  backbone_lr             : None
+  backbone_lr_effective   : None
+  lr_decay                : 0.75
+  weight_decay            : 0.0001
+  pos_fraction            : 0.5
+  seed                    : 42
+  head_type               : linear
+  fold                    : 0
+  selection_rule          : R1_last_checkpoint_step2000
+  method                  : freematch
+  domain_adaptation       : freematch
+  local_threshold_mode    : standard
+  freematch_variant       : FreeMatch-standard
+  mu_max                  : 1.0
+  saf_weight              : 0.01
+  sat_ema_momentum        : 0.999
+  consistency_warmup_frac : 0.1
+  fairness_target         : None
+  pos_class               : 1
+  mu_step_offset          : 8000
+  sat_rebuild             : True
+  sat_passes              : 40
+  adam_warmup_steps       : 200
+  continuation_note       : reconstruction, NOT restoration: round 1 saved head+standardizer only, so tau_global/pbar and AdamW's moments were never on disk. Each is rebuilt to its fixed point for THIS model on THIS data; whether that matches round 1's exact step-8000 state is UNVERIFIED.
+  encoder_eval            : frozen_feature_cache
+  augmentation            : weak (+-3px translate, PROJECT.md 7.3)
+  fp16                    : True
+  precision               : fp16
+  eval_precision          : fp32
+  device                  : cuda
+  num_workers             : 4
+  agreement_ref           : /kaggle/input/datasets/navneet78/lens-data/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+  expect_step0_tpr        : 0.3877551020408163
+  hard_gate               : step-0 TPR@1e-3 must reproduce the phase-1 checkpoint's own fold-0 number; abort otherwise (BRIEF §2)
+  brief                   : BRIEF_freematch_nb3_fold0.md
+  exploratory             : True
+  reporting_note          : fold-0 CI half-width ~0.10-0.12 (§7.8): this run cannot resolve the effect and reports a decision, not a finding
+============================================================================================
+[§1] no --reference-config given -- this run DECLARES the reference. Emit it with --emit-config and pass it to the other run.
+
+[ref] scoring Baseline A on target_fold0 for the agreement column ...
+[load] building the Zoobot encoder (n_blocks=0, grad_checkpointing=False) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[LP->FT] head initialised from /kaggle/input/datasets/navneet78/lens-data/runs/bakeoff_freematch_5fold/fold0/checkpoints/step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 29.414692
+  [fold 0] head=linear  187 steps/epoch  batch=256  src=48000  tgt=782  mu_max=1.0(mid=1.00)  saf_w=0.01  sat_m=0.999  mode=standard  warmup=800 steps  cb_patience=187  fp16=on
+  [continuation] reconstructing the training state a weights-only checkpoint did not save
+  [sat] reconstructing tau_global/pbar: 40 passes over a 782-image pool at batch 256 -> 160 batches (weak aug, fp16)
+    [sat] 25/160 batches
+    [sat] 50/160 batches
+    [sat] 75/160 batches
+    [sat] 100/160 batches
+    [sat] 125/160 batches
+    [sat] 150/160 batches
+  [sat] tau_global : direct 0.958608 | EMA(5000) 0.955531 | predicted-with-bleed 0.955526
+  [sat]   agreement: raw |diff| 0.003077  bleed-corrected |diff| 5.09e-06
+  [sat] pbar       : direct [0.585049, 0.414951] | EMA [0.584569, 0.415431]  (bleed-corrected max|diff| 9.12e-05)
+  [sat] fairness_target LEFT ALONE at [0.5, 0.5] (a config value, not an EMA)
+  [adam] warming moments for 200 steps (probing to 500); weights restored every step; encoder left COLD (0 params frozen for the duration)
+  [adam]   step   50: ||exp_avg_sq|| = 2.788032e-04   debiased = 5.713840e-03   (1921 params with state)
+  [adam]   step  200: ||exp_avg_sq|| = 1.033109e-03   debiased = 5.696735e-03   (1921 params with state)
+  [adam]   step  500: ||exp_avg_sq|| = 2.292079e-03   debiased = 5.823060e-03   (1921 params with state)
+  [adam] rolled optimizer state back to step 200 (the probe beyond it is diagnostic only)
+  [adam] step counter 0 -> 200 (carried into training: True)
+  [adam] raw ||exp_avg_sq|| grew +121.9% over the probe -- expected: it is an EMA from zero, not a convergence signal
+  [adam] DEBIASED second moment moved +2.22% -- CONVERGED (this is the quantity Adam uses)
+  [sat] tau after the Adam warm-up: 0.958655 (drift 4.72e-05 from the rebuilt value -- it should barely move if the rebuild was the fixed point)
+  [step0] evaluating the loaded model BEFORE training (hard gate) ...
+      [step      0] curve  val_auroc=0.9937 | tpr@1e-3 f0=0.3878  agr f0=0.8756  mem tgt-test=-0.0074
+
+==============================================================================
+HARD GATE (BRIEF §2) -- nb0_control step-0 known-null
+==============================================================================
+  step-0 TPR@1e-3 = 0.3877551020408163
+  expected        = 0.3877551020408163   (tolerance 0.0)
+  VERDICT: PASS
+==============================================================================
+      [step    125] curve  val_auroc=0.9936 | tpr@1e-3 f0=0.3878  agr f0=0.8742  mem tgt-test=-0.0053
+    [ep  1]  178.0s bce=0.0957 cons=0.0526 saf=0.0078 mu=1.000 accept=0.893 acc_pos_frac=0.454 tau=0.958 loc[neg=0.958,pos=0.683] cb=ok
+      [step    250] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3776  agr f0=0.8767  mem tgt-test=-0.0049
+    [ep  2]  177.5s bce=0.1393 cons=0.0269 saf=0.0083 mu=1.000 accept=0.896 acc_pos_frac=0.452 tau=0.958 loc[neg=0.958,pos=0.685] cb=ok
+      [step    375] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3673  agr f0=0.8721  mem tgt-test=-0.0026
+      [step    500] curve  val_auroc=0.9935 | tpr@1e-3 f0=0.3878  agr f0=0.8770  mem tgt-test=-0.0031
+    [ep  3]  177.6s bce=0.1048 cons=0.0214 saf=0.0089 mu=1.000 accept=0.897 acc_pos_frac=0.449 tau=0.958 loc[neg=0.958,pos=0.685] cb=ok
+      [step    625] curve  val_auroc=0.9935 | tpr@1e-3 f0=0.3776  agr f0=0.8722  mem tgt-test=-0.0034
+    [ep  4]  177.9s bce=0.1543 cons=0.0403 saf=0.0090 mu=1.000 accept=0.896 acc_pos_frac=0.450 tau=0.958 loc[neg=0.958,pos=0.686] cb=ok
+      [step    750] curve  val_auroc=0.9933 | tpr@1e-3 f0=0.3571  agr f0=0.8804  mem tgt-test=-0.0026
+      [step    875] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3469  agr f0=0.8782  mem tgt-test=-0.0021
+    [ep  5]  178.1s bce=0.1356 cons=0.0293 saf=0.0085 mu=1.000 accept=0.899 acc_pos_frac=0.451 tau=0.958 loc[neg=0.958,pos=0.687] cb=ok
+      [step   1000] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3673  agr f0=0.8727  mem tgt-test=-0.0018
+    [ep  6]  177.3s bce=0.1250 cons=0.0477 saf=0.0081 mu=1.000 accept=0.897 acc_pos_frac=0.451 tau=0.958 loc[neg=0.958,pos=0.688] cb=ok
+      [step   1125] curve  val_auroc=0.9931 | tpr@1e-3 f0=0.3673  agr f0=0.8750  mem tgt-test=0.0039
+      [step   1250] curve  val_auroc=0.9935 | tpr@1e-3 f0=0.3673  agr f0=0.8729  mem tgt-test=-0.0035
+    [ep  7]  178.1s bce=0.1179 cons=0.0304 saf=0.0089 mu=1.000 accept=0.899 acc_pos_frac=0.449 tau=0.958 loc[neg=0.958,pos=0.688] cb=ok
+      [step   1375] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3673  agr f0=0.8811  mem tgt-test=-0.0032
+    [ep  8]  178.3s bce=0.0815 cons=0.0232 saf=0.0087 mu=1.000 accept=0.898 acc_pos_frac=0.449 tau=0.959 loc[neg=0.959,pos=0.689] cb=ok
+      [step   1500] curve  val_auroc=0.9936 | tpr@1e-3 f0=0.3673  agr f0=0.8803  mem tgt-test=-0.0024
+      [step   1625] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3776  agr f0=0.8805  mem tgt-test=-0.0017
+    [ep  9]  178.5s bce=0.1147 cons=0.0351 saf=0.0082 mu=1.000 accept=0.898 acc_pos_frac=0.451 tau=0.959 loc[neg=0.959,pos=0.689] cb=ok
+      [step   1750] curve  val_auroc=0.9935 | tpr@1e-3 f0=0.3673  agr f0=0.8731  mem tgt-test=-0.0027
+    [ep 10]  177.0s bce=0.1218 cons=0.0447 saf=0.0089 mu=1.000 accept=0.899 acc_pos_frac=0.448 tau=0.959 loc[neg=0.959,pos=0.689] cb=ok
+      [step   1875] curve  val_auroc=0.9934 | tpr@1e-3 f0=0.3571  agr f0=0.8722  mem tgt-test=-0.0050
+      [step   2000] curve  val_auroc=0.9933 | tpr@1e-3 f0=0.3571  agr f0=0.8715  mem tgt-test=0.0002
+    [ep 11]  125.1s bce=0.0428 cons=0.0376 saf=0.0080 mu=1.000 accept=0.898 acc_pos_frac=0.452 tau=0.959 loc[neg=0.959,pos=0.690] cb=ok  saved freematch_linear_fold0_ep11.pt
+[mem] peak GPU allocated = 1.80 GB   (§7.1a anchor for FreeMatch nb3 at true batch 256: 4.76 GB with gradient checkpointing; OOM on a 14.56 GiB T4 without)
+[retention] checkpoints 5/5  curve rows 17/17
+[train] done in 42.1 min
+
+[R1] freematch_fold0_nb0_control  fold0  TPR@0.001 = 0.3571   AUROC = 0.9702   AUPRC = 0.4207
+
+==============================================================================
+§5.5 COLLAPSE GATE (post-hoc; never a stopper) -- freematch_fold0_nb0_control
+==============================================================================
+
+==============================================================================
+G1 -- AGREEMENT CURVE   [freematch_fold0_nb0_control]
+==============================================================================
+  source    : INLINE column 'agreement_fold0' from runs/freematch_fold0_nb0_control/curve.csv
+              (live-encoded during training; the post-hoc recompute is INVALID for an unfrozen encoder)
+  DA run    : runs/freematch_fold0_nb0_control  (17 curve points)
+
+  agreement curve:
+      step |  agreement |     delta
+    -------+------------+----------
+         0 |     0.8756 |      --  
+       125 |     0.8742 |   -0.0014
+       250 |     0.8767 |   +0.0025
+       375 |     0.8721 |   -0.0046
+       500 |     0.8770 |   +0.0050
+       625 |     0.8722 |   -0.0049
+       750 |     0.8804 |   +0.0083
+       875 |     0.8782 |   -0.0022
+      1000 |     0.8727 |   -0.0055
+      1125 |     0.8750 |   +0.0024
+      1250 |     0.8729 |   -0.0022
+      1375 |     0.8811 |   +0.0083
+      1500 |     0.8803 |   -0.0009
+      1625 |     0.8805 |   +0.0002
+      1750 |     0.8731 |   -0.0074
+      1875 |     0.8722 |   -0.0009
+      2000 |     0.8715 |   -0.0007
+
+==============================================================================
+G2 -- DROP DETECTOR   [freematch_fold0_nb0_control]
+==============================================================================
+
+  RAW curve statistics -- freematch_fold0_nb0_control (no thresholds involved):
+    largest drop within W=1000 steps : +0.0096  (step 1375 -> 2000)
+    curve minimum                        : 0.8715  (at step 2000)
+
+  GATE (uncalibrated settings -- fire/no-fire is a CANDIDATE, not a verdict):
+    setting | W     | M     | F     | cliff        | floor        | FIRE at
+    -----------------------------------------------------------------------
+    strict  | 1000  | 0.15  | 0.50  | no           | no           | -- no fire --
+    loose   | 1000  | 0.30  | 0.20  | no           | no           | -- no fire --
+
+  OVERLAY -- agreement vs the known freematch_fold0_nb0_control TPR@1e-3 curve:
+      step |  agreement | TPR@1e-3 |  agreement bar
+    -------+------------+----------+----------------------------------
+         0 |     0.8756 |   0.3878 | ##########################
+       125 |     0.8742 |   0.3878 | ##########################
+       250 |     0.8767 |   0.3776 | ##########################
+       375 |     0.8721 |   0.3673 | ##########################
+       500 |     0.8770 |   0.3878 | ##########################
+       625 |     0.8722 |   0.3776 | ##########################
+       750 |     0.8804 |   0.3571 | ##########################
+       875 |     0.8782 |   0.3469 | ##########################
+      1000 |     0.8727 |   0.3673 | ##########################
+      1125 |     0.8750 |   0.3673 | ##########################
+      1250 |     0.8729 |   0.3673 | ##########################
+      1375 |     0.8811 |   0.3673 | ##########################
+      1500 |     0.8803 |   0.3673 | ##########################
+      1625 |     0.8805 |   0.3776 | ##########################
+      1750 |     0.8731 |   0.3673 | ##########################
+      1875 |     0.8722 |   0.3571 | ##########################
+      2000 |     0.8715 |   0.3571 | ##########################
+
+  SHAPE: first=0.8756  last=0.8715  min=0.8715  max=0.8811  total range=0.0096   -> starts high and declines gradually, then levels (as spec 1 predicted)
+  CAVEAT [important]: the healthy curve's DYNAMIC RANGE is only 0.0096.
+    Agreement barely moved while the run's real metric changed a lot, so
+    this run gives an upper anchor ('healthy lives near 0.88')
+    but NO evidence about how far a collapse would push it. The headroom
+    between healthy and collapse is [UNVERIFIED] -- see the scope note.
+  reference : ../input/datasets/navneet78/lens-data/runs/bakeoff_baseline_A/checkpoints/step_8000.pt  (Baseline A, R1/final)
+  pool      : target_fold0  (n=782 unlabeled target rows)
+  DA run    : runs/freematch_fold0_nb0_control  (5 loadable checkpoints, 0 skipped)
+[gate] lock-step inline vs post-hoc: max|diff| = 0.0 over 5 points -> MATCH
+[gate] -> /kaggle/working/runs/freematch_fold0_nb0_control/gate_fold0.json
+[out] run_config.json + results.json + curve.csv + diagnostics.csv + memorization.csv + logits/ + scores/ -> /kaggle/working/runs/freematch_fold0_nb0_control

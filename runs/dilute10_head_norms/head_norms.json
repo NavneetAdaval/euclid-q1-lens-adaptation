@@ -1,0 +1,350 @@
+{
+ "what": "L2 norms of the stored final frozen-stage heads (step 8000) that initialise the unfrozen CORAL x nb3 and FreeMatch x nb3 arms; diluted (1:10) vs round 1",
+ "reads": "ckpt['head'] state dicts only; no encoder, no data, no scorer",
+ "head_l2_definition": "sqrt of the sum of squares over every head tensor (trunk.0.weight, trunk.0.bias, classifier.weight, classifier.bias), as run_unfreeze_freematch.head_l2_norm",
+ "unit_gain_norm": 25.298221281347036,
+ "torch_version": "2.7.1+cu118",
+ "script_sha256": "248f474a2256773bee686b50be6d99ed8c6630d9d5aa1b9406253cab9bc5e374",
+ "heads": {
+  "coral": {
+   "diluted": {
+    "1": {
+     "path": "runs/dilute10/coral_frozen/fold1/checkpoints/step_8000.pt",
+     "sha256": "0f9dbe3226cff4821918f1ee82781674460c3233875912bffef0a4f10e068a4c",
+     "ln_gain_norm": 97.00087461836452,
+     "ln_bias_norm": 92.6236135262379,
+     "classifier_weight_norm": 3.4160944114280998,
+     "head_l2": 134.1641845703125,
+     "head_l2_float64": 134.16417915041836,
+     "recorded_head_l2": {
+      "path": "runs/dilute10/coral_frozen/fold1/gate_values.json",
+      "key": "head_l2",
+      "value": 134.164185,
+      "match_6dp": true
+     }
+    },
+    "2": {
+     "path": "runs/dilute10/coral_frozen/fold2/checkpoints/step_8000.pt",
+     "sha256": "f8ef3be5f38de293d257482c4b1cbe8d5a5f467b5c9ed5a1ec293acb8d7d6f8d",
+     "ln_gain_norm": 103.66544893494655,
+     "ln_bias_norm": 92.60980107036619,
+     "classifier_weight_norm": 3.3492879529348603,
+     "head_l2": 139.04812622070312,
+     "head_l2_float64": 139.04813885362594,
+     "recorded_head_l2": {
+      "path": "runs/dilute10/coral_frozen/fold2/gate_values.json",
+      "key": "head_l2",
+      "value": 139.048126,
+      "match_6dp": true
+     }
+    },
+    "3": {
+     "path": "runs/dilute10/coral_frozen/fold3/checkpoints/step_8000.pt",
+     "sha256": "5f541b90aa10edd0a4d626eb348e7e4edf6f187c357c5adbba0e487d9211cb9d",
+     "ln_gain_norm": 98.2179781046679,
+     "ln_bias_norm": 90.23577359378608,
+     "classifier_weight_norm": 3.3670098208712416,
+     "head_l2": 133.41905212402344,
+     "head_l2_float64": 133.41906356697956,
+     "recorded_head_l2": {
+      "path": "runs/dilute10/coral_frozen/fold3/gate_values.json",
+      "key": "head_l2",
+      "value": 133.419052,
+      "match_6dp": true
+     }
+    },
+    "4": {
+     "path": "runs/dilute10/coral_frozen/fold4/checkpoints/step_8000.pt",
+     "sha256": "b9b73039b64f5e534858499f250110e7fd9fb91000d9c82c74685f3db88d3f1e",
+     "ln_gain_norm": 102.19048237653324,
+     "ln_bias_norm": 91.34145209159574,
+     "classifier_weight_norm": 3.361641872560425,
+     "head_l2": 137.10398864746094,
+     "head_l2_float64": 137.10398900867284,
+     "recorded_head_l2": {
+      "path": "runs/dilute10/coral_frozen/fold4/gate_values.json",
+      "key": "head_l2",
+      "value": 137.103989,
+      "match_6dp": true
+     }
+    }
+   },
+   "round1": {
+    "1": {
+     "path": "runs/bakeoff_coral/fold1/checkpoints/step_8000.pt",
+     "sha256": "4b034146841c063e32844459fcf2aafb9b4cf0c9b4948fda8aae4cd5b8016a05",
+     "ln_gain_norm": 22.38369638118531,
+     "ln_bias_norm": 63.61592494146077,
+     "classifier_weight_norm": 3.633160900951257,
+     "head_l2": 67.53693389892578,
+     "head_l2_float64": 67.53693235451391,
+     "recorded_head_l2": {
+      "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold1/run.json",
+      "key": "init_head_l2",
+      "value": 67.536934,
+      "match_6dp": true
+     }
+    },
+    "2": {
+     "path": "runs/bakeoff_coral/fold2/checkpoints/step_8000.pt",
+     "sha256": "7a4de66ad17af456b4088287ce9108acfa2dadda6bd76ec9863515ccc5b17d2d",
+     "ln_gain_norm": 33.07492882668057,
+     "ln_bias_norm": 64.52248384545918,
+     "classifier_weight_norm": 3.6362946545145767,
+     "head_l2": 72.59725952148438,
+     "head_l2_float64": 72.59725943608247,
+     "recorded_head_l2": {
+      "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold2/run.json",
+      "key": "init_head_l2",
+      "value": 72.59726,
+      "match_6dp": true
+     }
+    },
+    "3": {
+     "path": "runs/bakeoff_coral/fold3/checkpoints/step_8000.pt",
+     "sha256": "6a40e2cbe716cebed0bb02184c6ace1425216f4e03ac0d0d3a7377e8f8370e2d",
+     "ln_gain_norm": 24.02089835771533,
+     "ln_bias_norm": 63.74780694468372,
+     "classifier_weight_norm": 3.630678354791587,
+     "head_l2": 68.22010803222656,
+     "head_l2_float64": 68.22010638783699,
+     "recorded_head_l2": {
+      "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold3/run.json",
+      "key": "init_head_l2",
+      "value": 68.220108,
+      "match_6dp": true
+     }
+    },
+    "4": {
+     "path": "runs/bakeoff_coral/fold4/checkpoints/step_8000.pt",
+     "sha256": "e5ae13945c233dd7e56d8b92ed5a5b89fde1c59ca6366f3f3685a7437512e460",
+     "ln_gain_norm": 23.361426287423093,
+     "ln_bias_norm": 61.63378291591633,
+     "classifier_weight_norm": 3.6748207850591594,
+     "head_l2": 66.01517486572266,
+     "head_l2_float64": 66.01517040527659,
+     "recorded_head_l2": {
+      "path": "kaggle/coral_r4/runs/main/extracted/coral_r4_confirm/fold4/run.json",
+      "key": "init_head_l2",
+      "value": 66.015175,
+      "match_6dp": true
+     }
+    }
+   }
+  },
+  "freematch": {
+   "diluted": {
+    "1": {
+     "path": "runs/dilute10/freematch_frozen/fold1/checkpoints/step_8000.pt",
+     "sha256": "2416eb7a33748eda107e02cbc28304e15012c9500af5d87ed504f42c1dbf3a3f",
+     "ln_gain_norm": 27.92974074118019,
+     "ln_bias_norm": 0.8720497733565123,
+     "classifier_weight_norm": 4.132797609142516,
+     "head_l2": 28.24732780456543,
+     "head_l2_float64": 28.247326674360682,
+     "recorded_head_l2": {
+      "path": "runs/dilute10/freematch_frozen/fold1/gate_values.json",
+      "key": "head_l2",
+      "value": 28.247328,
+      "match_6dp": true
+     }
+    },
+    "2": {
+     "path": "runs/dilute10/freematch_frozen/fold2/checkpoints/step_8000.pt",
+     "sha256": "d5c071be73fe68d95e1a1463f357d7390c7c883267718326d049f4f6096e2d02",
+     "ln_gain_norm": 27.947119752381354,
+     "ln_bias_norm": 0.8559685241592415,
+     "classifier_weight_norm": 4.094726001243792,
+     "head_l2": 28.258466720581055,
+     "head_l2_float64": 28.258467512003403,
+     "recorded_head_l2": {
+      "path": "runs/dilute10/freematch_frozen/fold2/gate_values.json",
+      "key": "head_l2",
+      "value": 28.258467,
+      "match_6dp": true
+     }
+    },
+    "3": {
+     "path": "runs/dilute10/freematch_frozen/fold3/checkpoints/step_8000.pt",
+     "sha256": "f590e5c37cea1839f0871f7cd1b6d1be78d071b06af28be60fb03147b885982f",
+     "ln_gain_norm": 28.125538280071414,
+     "ln_bias_norm": 0.8491096215443756,
+     "classifier_weight_norm": 4.139725958806239,
+     "head_l2": 28.441299438476562,
+     "head_l2_float64": 28.441298160167147,
+     "recorded_head_l2": {
+      "path": "runs/dilute10/freematch_frozen/fold3/gate_values.json",
+      "key": "head_l2",
+      "value": 28.441299,
+      "match_6dp": true
+     }
+    },
+    "4": {
+     "path": "runs/dilute10/freematch_frozen/fold4/checkpoints/step_8000.pt",
+     "sha256": "d3ef46d6e96c801defecd775f4257c0e9f01717711a4fc9a861036e0b71bfa05",
+     "ln_gain_norm": 27.878469389501003,
+     "ln_bias_norm": 0.8321070258495615,
+     "classifier_weight_norm": 4.121163889352881,
+     "head_l2": 28.1937198638916,
+     "head_l2_float64": 28.19372045245295,
+     "recorded_head_l2": {
+      "path": "runs/dilute10/freematch_frozen/fold4/gate_values.json",
+      "key": "head_l2",
+      "value": 28.19372,
+      "match_6dp": true
+     }
+    }
+   },
+   "round1": {
+    "1": {
+     "path": "runs/bakeoff_freematch_5fold/fold1/checkpoints/step_8000.pt",
+     "sha256": "7af80166778dc34e37f3539cfb0dd222cf1431232f14d48dd1108024202d3a49",
+     "ln_gain_norm": 28.890650215341736,
+     "ln_bias_norm": 0.7109286972200853,
+     "classifier_weight_norm": 4.711698924490191,
+     "head_l2": 29.280975341796875,
+     "head_l2_float64": 29.280974316899734,
+     "recorded_head_l2": {
+      "path": "runs/freematch_nb3_unfrozen_fold1/run_config.json",
+      "key": "init_head_l2",
+      "value": 29.280975,
+      "match_6dp": true
+     }
+    },
+    "2": {
+     "path": "runs/bakeoff_freematch_5fold/fold2/checkpoints/step_8000.pt",
+     "sha256": "52c03f833979acf340305db7b21d94b1c6a482a1452df37ccec492434cded1eb",
+     "ln_gain_norm": 28.90655193810725,
+     "ln_bias_norm": 0.7292980762262617,
+     "classifier_weight_norm": 4.681887112778984,
+     "head_l2": 29.292333602905273,
+     "head_l2_float64": 29.29233368879806,
+     "recorded_head_l2": {
+      "path": "runs/freematch_nb3_unfrozen_fold2/run_config.json",
+      "key": "init_head_l2",
+      "value": 29.292334,
+      "match_6dp": true
+     }
+    },
+    "3": {
+     "path": "runs/bakeoff_freematch_5fold/fold3/checkpoints/step_8000.pt",
+     "sha256": "1a5b7dbae1556374770e51aea7e7aea7b11dc217430c1489d6151eab7b217425",
+     "ln_gain_norm": 29.076177997927765,
+     "ln_bias_norm": 0.776767879384956,
+     "classifier_weight_norm": 4.707350423512575,
+     "head_l2": 29.465051651000977,
+     "head_l2_float64": 29.46505209740904,
+     "recorded_head_l2": {
+      "path": "runs/freematch_nb3_unfrozen_fold3/run_config.json",
+      "key": "init_head_l2",
+      "value": 29.465052,
+      "match_6dp": true
+     }
+    },
+    "4": {
+     "path": "runs/bakeoff_freematch_5fold/fold4/checkpoints/step_8000.pt",
+     "sha256": "851c5e412791d6cf594589b24ee4b2d841023e1c00f4e5233973bde3742f042c",
+     "ln_gain_norm": 28.845132287105308,
+     "ln_bias_norm": 0.7206528079206754,
+     "classifier_weight_norm": 4.721106141006272,
+     "head_l2": 29.23781967163086,
+     "head_l2_float64": 29.237819421332613,
+     "recorded_head_l2": {
+      "path": "runs/freematch_nb3_unfrozen_fold4/run_config.json",
+      "key": "init_head_l2",
+      "value": 29.23782,
+      "match_6dp": true
+     }
+    }
+   }
+  }
+ },
+ "checks": {
+  "s746_coral_1dp": {
+   "ln_gain_norm/diluted/fold1": {
+    "s746": 97.0,
+    "computed_1dp": "97.0",
+    "match": true
+   },
+   "ln_gain_norm/diluted/fold2": {
+    "s746": 103.7,
+    "computed_1dp": "103.7",
+    "match": true
+   },
+   "ln_gain_norm/diluted/fold3": {
+    "s746": 98.2,
+    "computed_1dp": "98.2",
+    "match": true
+   },
+   "ln_gain_norm/diluted/fold4": {
+    "s746": 102.2,
+    "computed_1dp": "102.2",
+    "match": true
+   },
+   "ln_gain_norm/round1/fold1": {
+    "s746": 22.4,
+    "computed_1dp": "22.4",
+    "match": true
+   },
+   "ln_gain_norm/round1/fold2": {
+    "s746": 33.1,
+    "computed_1dp": "33.1",
+    "match": true
+   },
+   "ln_gain_norm/round1/fold3": {
+    "s746": 24.0,
+    "computed_1dp": "24.0",
+    "match": true
+   },
+   "ln_gain_norm/round1/fold4": {
+    "s746": 23.4,
+    "computed_1dp": "23.4",
+    "match": true
+   },
+   "head_l2/diluted/fold1": {
+    "s746": 134.2,
+    "computed_1dp": "134.2",
+    "match": true
+   },
+   "head_l2/diluted/fold2": {
+    "s746": 139.0,
+    "computed_1dp": "139.0",
+    "match": true
+   },
+   "head_l2/diluted/fold3": {
+    "s746": 133.4,
+    "computed_1dp": "133.4",
+    "match": true
+   },
+   "head_l2/diluted/fold4": {
+    "s746": 137.1,
+    "computed_1dp": "137.1",
+    "match": true
+   },
+   "head_l2/round1/fold1": {
+    "s746": 67.5,
+    "computed_1dp": "67.5",
+    "match": true
+   },
+   "head_l2/round1/fold2": {
+    "s746": 72.6,
+    "computed_1dp": "72.6",
+    "match": true
+   },
+   "head_l2/round1/fold3": {
+    "s746": 68.2,
+    "computed_1dp": "68.2",
+    "match": true
+   },
+   "head_l2/round1/fold4": {
+    "s746": 66.0,
+    "computed_1dp": "66.0",
+    "match": true
+   }
+  },
+  "recorded_head_l2_6dp": "all match",
+  "passed": true,
+  "failures": []
+ },
+ "written_utc": "2026-10-23T20:20:42Z"
+}

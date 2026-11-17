@@ -1,0 +1,50 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_t3_round1.py)
+% T3 -- round 1 bake-off, FROZEN protocol, 5-FOLD basis.
+% Means/sd: runs/bakeoff_*/scores/*.npz, test pool D1 (orig asserted equal to metric_suite.json).
+% Paired column: paper/data/round1_paired_*_D1.json (compare_methods.py, B=1000, seed 0).
+% DANN row: runs/curve_dann_fold0/results.json (fold-0 probe).
+\begin{table}[tbp]
+\centering
+\caption{\textbf{Round 1: the domain-adaptation bake-off under the frozen
+protocol.} \textbf{Basis: 5-fold means, frozen encoder} --- deliberately
+different from every other results table in this paper, whose basis is folds
+1--4 with three encoder blocks unfrozen. \textbf{No number in this table is
+differenced against any unfrozen number}; eight configuration fields separate
+round-1 CORAL from CORAL $\times$ nb3 alone. All methods ran a matched protocol:
+frozen Zoobot encoder, batch 256, 8000 steps, selection rule R1 (last
+checkpoint) pre-registered and frozen before results. The paired column is the
+\textbf{class-conditional paired bootstrap} ($B=1000$, seed 0) round 1 published
+under, not the $t$-interval used on the confirmatory folds. A \emph{pooled} entry
+exists only for Baseline A: it is one source-only model scoring all five folds
+under one common threshold, whereas every DA arm trains a different model per
+fold, so no common threshold exists and the pooled figure is suppressed at source.
+The last column counts the folds on which 24\% purity is reachable at all.}
+\label{tab:round1}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\TRAG}p{1.8cm}>{\TRAG}p{1.4cm}rrl>{\TRAG}p{2.65cm}l}
+\toprule
+Method & Family & TPR@$10^{-3}$ & pooled & vs.\ Baseline A, 95\% CI & Verdict & comp@24\% \\
+\midrule
+Baseline A (source-only) & reference & $0.1963 \pm 0.0351$ & $0.1963$ & --- & reference & 5/5 \\
+CORAL (warmup-cosine) & marginal alignment & $0.2189 \pm 0.0305$ & \emph{n/a} & $+0.0225$ $[+0.0001, +0.0532]$ & \textbf{distinguishable}~$\uparrow$ & 5/5 \\
+AdaMatch & self-training & $0.4253 \pm 0.0473$ & \emph{n/a} & $+0.2290$ $[+0.1738, +0.2799]$ & \textbf{distinguishable}~$\uparrow$ & 5/5 \\
+FreeMatch (standard) & self-training & $0.4254 \pm 0.0328$ & \emph{n/a} & $+0.2290$ $[+0.1861, +0.2986]$ & \textbf{distinguishable}~$\uparrow$ & 5/5 \\
+\midrule
+DANN$^{\dagger}$ & marginal alignment & $0.1939$ & \emph{n/a} & --- & documented negative & \emph{n/a} \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\footnotesize $^{\dagger}$\textbf{Fold-0 probe only, not a matched 5-fold run}
+--- a cached-feature run with a different adapter, optimiser and budget, entered
+here as a tier placement and nothing more. Its value is the R1 last checkpoint
+(step15000); even oracle selection over all 75 of its
+checkpoints leaves it at $0.2143$, against
+Baseline A's own fold-0 value, so the placement does not turn on the read-off rule.
+Because its basis is one fold it carries no across-fold spread and no pooled value.
+Its value is computed on the pre-registered test pool
+(Appendix~\ref{app:prereg_pool}); every other row uses the test pool of
+Section~\ref{sec:data}.
+\end{table}

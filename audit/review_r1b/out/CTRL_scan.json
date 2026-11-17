@@ -1,0 +1,23 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1b/scripts/ctrl_scan_r1b.py",
+ "test_pool": "n/a",
+ "folds": "n/a",
+ "rule": "flag bytes < 0x20 except 0x0A, 0x09, and 0x0D followed by 0x0A",
+ "scanned": {
+  "REPORT_review_r1b.md": 13868,
+  "out/CTRL_scan.json": 695,
+  "out/FINISH_tools.json": 6519,
+  "out/L1_target_labels.json": 18152,
+  "out/L2_bright_pool.json": 34485,
+  "out/SNAPSHOT_diff.json": 3751,
+  "scripts/ctrl_scan_r1b.py": 1673,
+  "scripts/l1_target_labels.py": 12832,
+  "scripts/l2_bright_pool.py": 7629,
+  "scripts/record_r1b.py": 7062
+ },
+ "skipped_binary": [],
+ "files_with_control_chars": {},
+ "n_scanned": 10,
+ "n_flagged": 0
+}

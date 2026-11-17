@@ -1,0 +1,14 @@
+{
+  "tpr": 0.19387755102040816,
+  "auroc": 0.9427614373148023,
+  "auprc": 0.19168457089769247,
+  "purity_corr": 0.016996534249635754,
+  "n_pos": 98,
+  "n_neg": 26399,
+  "ckpt": "C:\\Users\\krris\\ML\\lens_paper\\runs\\baselineA_fold0_nb0_image_noaug_fp32\\checkpoints\\step_8000.pt",
+  "run": "nb0_image",
+  "run_dir": "baselineA_fold0_nb0_image",
+  "n_blocks": 0,
+  "train_minutes": 56.34766558011373,
+  "steps": 8000
+}

@@ -1,0 +1,9 @@
+{
+  "n_batches": 8084,
+  "mean": 0.09091163873082632,
+  "sd": 0.01732974714360961,
+  "expected": 0.09090909090909091,
+  "band": 0.002,
+  "n_lenses_basis": 392,
+  "csv": "C:\\Users\\krris\\ML\\lens_paper\\runs\\dilute10\\coral_frozen\\fold4\\target_lens_fraction.csv"
+}

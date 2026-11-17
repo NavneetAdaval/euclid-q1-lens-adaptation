@@ -1,0 +1,58 @@
+{
+ "what": "FreeMatch unfrozen (n_blocks=3) fold-0 DEVELOPMENT run, 8000 steps; fold 0 only. No fold-1 input.",
+ "computed": "2026-10-10, read-only, CPU, no model loaded (stored per-checkpoint logits only)",
+ "inputs": {
+  "run_dir": "runs/freematch_fold0_nb3_unfrozen",
+  "curve_csv": {"path": "runs/freematch_fold0_nb3_unfrozen/curve.csv",
+                "sha256": "af7920ffc4f2b2f1f24c44f6d49ab085db1fe5684f7086ff9ff9b2c2986bd216"},
+  "logits": {"glob": "runs/freematch_fold0_nb3_unfrozen/logits/step_*.npz", "n_files": 65,
+             "steps": [0, 8000], "spacing": 125,
+             "ids_npz_sha256": "a9329d2b09d02ac7a96d9b9c186f217557c878c3225d01e52ad827b695e7e25f"},
+  "n_pos": 98,
+  "n_neg": {"orig": 26399, "D1": 26134}
+ },
+ "routine": "scripts/metrics.tpr_at_fpr(y, s, 1e-3) per checkpoint; pools via paper/scripts/_common.pool_filter(pool_name='orig' | 'D1')",
+ "script": "C:/Users/krris/AppData/Local/Temp/claude/C--Users-krris-ML-lens-paper/8650b63a-71b4-491b-b9eb-85e651251ab7/scratchpad/cf1/fold0_only.py (session scratch, outside the repo)",
+ "definitions": {
+  "within_two_positives": "TPR >= peak - 2/98",
+  "within_one_sd": "TPR >= peak - sd, sd over all 65 curve points",
+  "peak_z": "(peak - curve mean) / sd",
+  "sd": "reported with ddof=0 (np.std / np.nanstd default, as scripts/analyze_turn_timing.py prints) and ddof=1"
+ },
+ "check_recomputed_orig_vs_curve_csv_max_abs_diff": 0.0,
+ "orig": {
+  "n_points": 65, "peak_tpr": 0.5204081632653061, "argmax_steps": [1250, 1500], "mean": 0.4073466248037677,
+  "a_within_two_positives_steps": [750, 1250, 1500, 1875],
+  "b_within_one_sd": {"ddof0": {"sd": 0.0636301084337399, "n": 16, "of": 65},
+                      "ddof1": {"sd": 0.06412529184312456, "n": 16, "of": 65}},
+  "c_peak_z": {"ddof0": 1.7768559765896532, "ddof1": 1.7631348756763712}
+ },
+ "D1": {
+  "n_points": 65, "peak_tpr": 0.6938775510204082, "argmax_steps": [500], "mean": 0.5675039246467818,
+  "a_within_two_positives_steps": [500, 1500, 2875, 4875],
+  "b_within_one_sd": {"ddof0": {"sd": 0.06536722778262422, "n": 11, "of": 65},
+                      "ddof1": {"sd": 0.06587592983440728, "n": 11, "of": 65}},
+  "c_peak_z": {"ddof0": 1.933287224507611, "ddof1": 1.9183581422120721}
+ },
+ "vs_record": {
+  "a": {"record": "{750, 1250, 1500, 1875} (PROJECTv7.md:2005, :2299-2300)", "orig": "reproduces", "D1": "differs: {500, 1500, 2875, 4875}"},
+  "b": {"record": "16 of 65 (PROJECTv7.md:2010, :2299, :2306)", "orig": "reproduces (both ddof)", "D1": "differs: 11 of 65"},
+  "c": {"record": "+1.78 (PROJECTv7.md:2298, :2306)", "orig": "reproduces with ddof=0 (+1.777); ddof=1 gives +1.763", "D1": "differs: +1.933 (ddof0)",
+        "note": "the record's quoted fold-0 per-checkpoint sd 0.0641 (PROJECTv7.md:2053, scripts/analyze_turn_timing.py:165) is the ddof=1 value; +1.78 is the ddof=0 z"}
+ },
+ "d_decay_onset_table11_row2": {
+  "fold0_only": true,
+  "evidence": [
+   "paper/scripts/make_a3_orderings.py:59 reads runs/devmax_truncation.json['fold0_development']['per_cap'] only",
+   "runs/devmax_truncation.json fold0_development.run_dir = runs/freematch_fold0_nb3_unfrozen, curve_csv = runs/freematch_fold0_nb3_unfrozen/curve.csv, 65 points, steps 0-8000",
+   "scripts/analyze_devmax_truncation.py:566 computes fold0_development via analyse_run('fold0-dev', DEV_RUN, 0, ...) BEFORE the fold-1 pass at :588; the fold-1 result is written to a separate key, fold1_partial_secondary",
+   "per_cap primary.detected: 1500-6000 false, 8000 true"
+  ],
+  "pool": "orig (runs/devmax_truncation.json is not pool-recomputed)"
+ },
+ "per_step": {
+  "step": [0, 125, 250, 375, 500, 625, 750, 875, 1000, 1125, 1250, 1375, 1500, 1625, 1750, 1875, 2000, 2125, 2250, 2375, 2500, 2625, 2750, 2875, 3000, 3125, 3250, 3375, 3500, 3625, 3750, 3875, 4000, 4125, 4250, 4375, 4500, 4625, 4750, 4875, 5000, 5125, 5250, 5375, 5500, 5625, 5750, 5875, 6000, 6125, 6250, 6375, 6500, 6625, 6750, 6875, 7000, 7125, 7250, 7375, 7500, 7625, 7750, 7875, 8000],
+  "tpr_orig_6dp": [0.387755, 0.44898, 0.459184, 0.473459, 0.44898, 0.397959, 0.510204, 0.479592, 0.459184, 0.367347, 0.520408, 0.459184, 0.520408, 0.408163, 0.408163, 0.5, 0.418367, 0.428571, 0.428571, 0.428571, 0.377551, 0.408163, 0.469388, 0.438776, 0.428571, 0.459184, 0.479592, 0.44898, 0.459184, 0.469388, 0.387755, 0.367347, 0.428571, 0.408163, 0.367347, 0.44898, 0.428571, 0.397959, 0.397959, 0.44898, 0.459184, 0.44898, 0.438776, 0.459184, 0.306122, 0.387755, 0.326531, 0.387755, 0.408163, 0.265306, 0.357143, 0.418367, 0.371418, 0.255102, 0.357143, 0.397959, 0.306122, 0.346939, 0.377551, 0.387755, 0.285714, 0.234694, 0.408163, 0.244898, 0.367347],
+  "tpr_D1_6dp": [0.479592, 0.602041, 0.591837, 0.663265, 0.693878, 0.663265, 0.622449, 0.622449, 0.571429, 0.469388, 0.632653, 0.561224, 0.683673, 0.5, 0.591837, 0.653061, 0.540816, 0.622449, 0.55102, 0.581633, 0.540816, 0.622449, 0.632653, 0.673469, 0.653061, 0.55102, 0.591837, 0.55102, 0.591837, 0.602041, 0.632653, 0.510204, 0.540816, 0.591837, 0.540816, 0.612245, 0.540816, 0.571429, 0.540816, 0.683673, 0.55102, 0.581633, 0.540816, 0.571429, 0.44898, 0.622449, 0.520408, 0.540816, 0.581633, 0.5, 0.5, 0.571429, 0.540816, 0.571429, 0.571429, 0.571429, 0.479592, 0.55102, 0.510204, 0.602041, 0.459184, 0.357143, 0.530612, 0.408163, 0.530612]
+ }
+}

@@ -1,0 +1,123 @@
+{
+  "stage": "0a",
+  "part_a": {
+    "batch": 256,
+    "states": {
+      "collapsed_confident": {
+        "nuclear_over_min_bc": 8.0,
+        "frobenius": 16.0
+      },
+      "balanced_confident": {
+        "nuclear_over_min_bc": 11.31370735168457,
+        "frobenius": 16.0
+      },
+      "maximally_uncertain": {
+        "nuclear_over_min_bc": 5.656854152679443,
+        "frobenius": 11.313708305358887
+      }
+    },
+    "checks": {
+      "collapsed_confident_matches_declared": true,
+      "balanced_confident_matches_declared": true,
+      "maximally_uncertain_matches_declared": true,
+      "balanced_is_argmax": true,
+      "frobenius_CANNOT_separate_collapse": true,
+      "nuclear_CAN_separate_collapse": true,
+      "prefers_collapse_over_uncertainty": true,
+      "loss_is_negative": true,
+      "loss_is_differentiable": true,
+      "descent_step_raises_nuclear_norm": true
+    },
+    "analytic_margin_collapsed_to_balanced": 0.4142134189605713,
+    "gradient_direction": {
+      "nuclear_before": 5.686196327209473,
+      "nuclear_after": 5.997504711151123
+    },
+    "PASS": true
+  },
+  "part_b": {
+    "SKIPPED": false,
+    "fold": 0,
+    "n_target_images": 782,
+    "batch": 256,
+    "n_batches": 3,
+    "head": "runs/bakeoff_baseline_A/checkpoints/step_8000.pt",
+    "at_init": {
+      "nuclear_mean": 9.77041212717692,
+      "nuclear_sd": 0.014535629292558097,
+      "pred_pos_frac_mean": 0.22916666666666666
+    },
+    "temperature_sweep": [
+      {
+        "temperature": 0.05,
+        "nuclear_mean": 6.163017590840657,
+        "pred_pos_frac_mean": 0.22916666666666666
+      },
+      {
+        "temperature": 0.1,
+        "nuclear_mean": 6.648653507232666,
+        "pred_pos_frac_mean": 0.22916666666666666
+      },
+      {
+        "temperature": 0.25,
+        "nuclear_mean": 7.792509078979492,
+        "pred_pos_frac_mean": 0.22916666666666666
+      },
+      {
+        "temperature": 0.5,
+        "nuclear_mean": 8.874944686889648,
+        "pred_pos_frac_mean": 0.22916666666666666
+      },
+      {
+        "temperature": 1.0,
+        "nuclear_mean": 9.77041212717692,
+        "pred_pos_frac_mean": 0.22916666666666666
+      },
+      {
+        "temperature": 2.0,
+        "nuclear_mean": 10.31489372253418,
+        "pred_pos_frac_mean": 0.22916666666666666
+      },
+      {
+        "temperature": 5.0,
+        "nuclear_mean": 10.643240292867025,
+        "pred_pos_frac_mean": 0.22916666666666666
+      },
+      {
+        "temperature": 10.0,
+        "nuclear_mean": 10.741488774617514,
+        "pred_pos_frac_mean": 0.22916666666666666
+      },
+      {
+        "temperature": 50.0,
+        "nuclear_mean": 10.826668739318848,
+        "pred_pos_frac_mean": 0.22916666666666666
+      },
+      {
+        "temperature": 200.0,
+        "nuclear_mean": 10.841291427612305,
+        "pred_pos_frac_mean": 0.22916666666666666
+      }
+    ],
+    "reachable": {
+      "min": 6.163017590840657,
+      "max": 10.841291427612305,
+      "margin": 0.7590881849379103
+    },
+    "decomposition": {
+      "init": 9.77041212717692,
+      "confident_at_current_split": 10.841291427612305,
+      "balanced_confident_max": 11.31370735168457,
+      "total_gain_available": 1.5432952245076503,
+      "confidence_component": 1.0708793004353847,
+      "diversity_component": 0.4724159240722656,
+      "confidence_share": 0.6938914106839292,
+      "diversity_share": 0.3061085893160708
+    },
+    "analytic_margin": 0.4142134189605713,
+    "empirical_over_analytic": 1.8326016256131177,
+    "floor_frac_declared_before_running": 0.5,
+    "PASS": true
+  },
+  "PASS": true
+}

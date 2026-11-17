@@ -1,0 +1,32 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_k8_pairs.py)
+% Appendix C (rewrite v5): k=1 and k=8 paired contrasts among CORAL, DANN and FreeMatch, from audit/rewrite_v5/out/A3_window_pairs.json.
+\begin{table}[tbp]
+\centering
+\caption{\textbf{Paired contrasts among the three unfrozen adaptation arms} at each arm's declared read-off ($k=1$) and after the pre-declared $k=8$ window average, folds 1--4, cleaned pool, paired $t$ ($\mathrm{df}=3$). At $k=1$ the two score combinations coincide. Computed after the results were known, from the declared window rule; ten further intervals at $k=8$, and two at $k=1$ that Table~\ref{tab:contrasts2} does not report, all without multiplicity correction. Each pair's first line gives $\Delta$ and the signs, the folds agreeing in direction with the mean; the second line gives the 95\% interval. $^{*}$Interval excludes zero.}
+\label{tab:k8pairs}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{llrcrcrc}
+\toprule
+ & & \multicolumn{2}{c}{$k=1$} & \multicolumn{2}{c}{$k=8$, mean logit (primary)} & \multicolumn{2}{c}{$k=8$, mean rank (secondary)} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+Pair & Steps & $\Delta$ (95\% CI) & Signs & $\Delta$ (95\% CI) & Signs & $\Delta$ (95\% CI) & Signs \\
+\midrule
+DANN $-$ CORAL & 4000 / 2000 & $-0.0231$ & 2/4 & $+0.0100$ & 3/4 & $-0.0436$ & 3/4 \\
+ &  & $[-0.2227, +0.1765]$ &  & $[-0.0833, +0.1034]$ &  & $[-0.1251, +0.0379]$ &  \\
+\addlinespace
+DANN $-$ CORAL & 2000 / 2000 & $+0.0331$ & 2/4 & $+0.0026$ & 2/4 & $-0.0511$ & 4/4 \\
+ &  & $[-0.0711, +0.1372]$ &  & $[-0.0587, +0.0639]$ &  & $[-0.1073, +0.0051]$ &  \\
+\addlinespace
+DANN $-$ FreeMatch & 4000 / 1500 & $-0.0182$ & 2/4 & $-0.0360$ & 3/4 & $-0.1024$$^{*}$ & 4/4 \\
+ &  & $[-0.2092, +0.1729]$ &  & $[-0.1312, +0.0592]$ &  & $[-0.1327, -0.0720]$ &  \\
+\addlinespace
+DANN $-$ FreeMatch & 2000 / 1500 & $+0.0380$ & 3/4 & $-0.0435$ & 4/4 & $-0.1099$$^{*}$ & 4/4 \\
+ &  & $[-0.1148, +0.1908]$ &  & $[-0.0987, +0.0118]$ &  & $[-0.1520, -0.0677]$ &  \\
+\addlinespace
+CORAL $-$ FreeMatch & 2000 / 1500 & $+0.0049$ & 2/4 & $-0.0460$ & 3/4 & $-0.0588$$^{*}$ & 4/4 \\
+ &  & $[-0.0933, +0.1032]$ &  & $[-0.0999, +0.0078]$ &  & $[-0.1106, -0.0069]$ &  \\
+\bottomrule
+\end{tabular}
+\end{table}

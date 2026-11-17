@@ -1,0 +1,9 @@
+{
+  "n_batches": 4004,
+  "mean": 0.08336195054945054,
+  "sd": 0.016350908460259606,
+  "expected": 0.08335306654037414,
+  "band": 0.002,
+  "n_lenses_basis": 391,
+  "csv": "/kaggle/working/runs/dilute10/dann/fold1/target_lens_fraction.csv"
+}

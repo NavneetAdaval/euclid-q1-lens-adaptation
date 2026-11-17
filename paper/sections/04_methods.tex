@@ -1,0 +1,244 @@
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Encoder and head}
+
+Every arm uses the Zoobot greyscale encoder~\citep{zoobot}, a ConvNeXt-Nano loaded from the
+Hugging Face hub. The Zoobot 2.0 encoders start from ImageNet-12k weights and are trained on
+about \zoobotPretrainImages{} Galaxy Zoo--labelled images from ground-based and HST surveys,
+none of them Euclid~\citep{walmsley2024scaling}; the greyscale encoder we use was released
+later, and its training is not described separately. The encoder returns a 640-dimensional feature
+vector. Every arm passes it through a fixed per-dimension standardisation, fitted on cached
+source features, before the head. On top sits one head, identical across arms: $\mathrm{LayerNorm}(640)$ followed by a
+linear map to a single logit, 1921 trainable parameters. The encoder contains no batch
+normalisation and no active dropout, so train and evaluation modes compute the same features.
+Appendix~\ref{app:repro} records the software versions.
+
+\subsection{Frozen and unfrozen regimes}
+
+Arms run either \emph{frozen}, with only the head trained, or \emph{unfrozen}, with the top
+three timm stages of the encoder trained as well. Because ConvNeXt-Nano is top-heavy, that is
+14\,835\,520 trainable encoder parameters, 99.2\% of the encoder, so the unfrozen regime is
+close to full fine-tuning; the benchmark fine-tunes the last three blocks of the same
+backbone~\citep{lines2025simstosky}, which we implement as these three stages. Unfrozen arms
+start from a converged head trained with the encoder frozen and then train the encoder, the order that avoids distorting pretrained features out of
+distribution~\citep{kumar2022lpft}. Each unfrozen run is gated at step zero against its head's
+recorded value on that fold, which is the check that the run used the right fold.
+BNM's pre-registration required both halves of its step-zero gate to match exactly; its runner
+applied one positive and $\bnmGateAurocTol{}$ in AUROC, as for DANN. TPR matched exactly on
+every fold and AUROC within $\bnmGateAurocBound{}$. All arms
+use batch size \rwBatch{} and AdamW. The unfrozen CORAL, DANN, BNM and $\lambda=0$ arms use
+the encoder's published fine-tuning defaults (learning rate $\rwOptLr{}$, layer-wise decay
+\rwOptDecay{}, weight decay \rwOptWd{}). The unfrozen FreeMatch arm keeps the settings of its
+frozen-comparison run (head learning rate $\rwFmHeadLr{}$, encoder learning rate
+$\rwFmEncLr{}$, weight decay $\rwFmWd{}$), so that its frozen-to-unfrozen comparison changes
+only the encoder setting. Baseline A, which trains only the head, uses learning rate
+$\rwBaseLr{}$ and weight decay $\rwBaseWd{}$. We tuned no optimiser setting for any arm, apart
+from one comparison: for the CORAL, DANN, BNM and $\lambda = 0$
+arms, we compared the encoder's published defaults with one alternative on the development
+fold, using the source-only arm, and kept the defaults, which did not score higher. Every step includes a labelled source batch of
+\batchSourceRows{} rows, balanced 1:1, next to \batchTargetRows{} target rows in every arm that
+loads target images.
+
+\subsection{The arms}
+\label{sec:arms}
+
+\paragraph{Baseline A.} Supervised training on the labelled source with the encoder frozen and
+no target term. It sees no target image, so one model serves all five folds.
+
+\paragraph{The $\lambda=0$ control.} The DANN arm with its adaptation weight $\lambda$ set to
+zero. Target images pass through the discriminator, but the gradient-reversal layer returns
+zero gradient, so no target-derived gradient reaches the encoder or the head. The
+discriminator itself still trains, and in half precision an overflow in its gradients skips the
+whole step; the control skipped \lamSkipFoldTwo{} and DANN \dannSkipFoldTwo{} of 4000 steps on
+fold 2, so the control's update schedule is not wholly independent of the target images. DANN and this
+control share a head, a budget, a seed and a step grid and differ, in every training-relevant
+respect, only in $\lambda$. DANN's confirmatory folds ran with abort conditions armed, while the
+control's folds only logged them; no arming condition fired on DANN, and every DANN fold ran its
+full 4000 steps. This makes DANN $-$ $\lambda=0$ the only fully controlled pair in this paper. Most other contrasts
+also carry one or both of two differences that pairing by fold does not remove. The unfrozen arms start
+from three different heads: CORAL from its frozen-comparison heads, FreeMatch from its own,
+and DANN, BNM and the control from Baseline A's. Their tuning effort also differs. CORAL's
+alignment weight came from a three-point sweep that read only loss magnitudes and feature
+statistics. BNM's weight came from a development-fold sweep over a grid set by gradient norms
+at step zero; the sweep read the nuclear norm and the predicted-positive fraction, never TPR.
+FreeMatch's local-threshold variant was chosen over an alternative by a development-fold
+screen of the metric, and DANN carried no tuning. BNM's runner numbers epochs from zero and
+DANN's and the control's from one, so on each fold its batches are a different shuffle of the
+same source data, and BNM $-$ $\lambda=0$ is not matched in batch order.
+
+\paragraph{BNM.} Batch nuclear-norm maximisation~\citep{cui2020bnm} acts on target predictions
+only: no domain comparison, pseudo-label, threshold or discriminator, and one weight,
+$\gamma = 0.00787$. Its loss is the nuclear norm divided by $\min(B, C) = \bnmNucDenom{}$, as
+in \citeauthor{cui2020bnm}'s code, so $\gamma$ refers to that normalisation. Maximising the nuclear norm of the batch prediction matrix raises both
+confidence and prediction diversity~\citep{cui2020bnm}. Before any run, we checked,
+analytically and on cached target features, that the objective separates a balanced confident batch from a collapsed one at
+our two-class setting.
+
+\paragraph{FreeMatch.} A consistency objective between weakly and strongly augmented target
+views, with self-adaptive confidence thresholds and a fairness term~\citep{wang2022freematch}.
+We kept FreeMatch's threshold momentum (\fmSatMomentum{}) and fairness weight
+(\fmSafWeight{}), but our fairness term compares the mean confident prediction with a fixed
+uniform target rather than FreeMatch's running class estimate, and our consistency weight
+follows AdaMatch's cosine ramp~\citep{berthelot2022adamatch} over the first half of training,
+with no consistency term for the first \fmWarmupPct{}\% of steps; the unfrozen stage starts
+after that ramp, so it trains at full weight throughout. Its strong view is the augmentation of
+Section~\ref{sec:sim-pipeline}.
+
+\paragraph{DANN.} A domain discriminator behind a gradient-reversal
+layer~\citep{ganin2016dann}, mapping $640 \rightarrow 1024 \rightarrow 1024 \rightarrow 1$ with
+layer normalisation, ReLU and dropout after each hidden layer; the dropout rate of 0.2 is that
+of~\citet{belfiore2024}, and the placement is our choice. The discriminator of \citet{ganin2016dann},
+of the same widths, has no normalisation layer; we chose layer rather than batch normalisation so
+the discriminator cannot read the domain from batch statistics. It shares the AdamW optimiser,
+at learning rate $\dannDiscLr{}$ and weight decay \dannDiscWd{}, without the learning-rate
+annealing of \citet{ganin2016dann}. The adaptation weight follows $\lambda = \tanh(5s/2000)$ in the
+step $s$ up to step 2000, after which it stays at $\tanh(5)$: their schedule, with training
+progress replaced by a fixed horizon of 2000 steps.
+
+\paragraph{CORAL.} We ran the DomainBed variant of correlation
+alignment~\citep{gulrajani2021domainbed}, which aligns feature means and covariances rather
+than covariances alone~\citep{sun2016coral}. Our head emits a single logit, so we compute the
+loss one layer earlier, on the 640-dimensional layer-normalised features, with weight
+$\gamma = 16$, after shrinking each covariance \coralShrinkPct{}\% toward a scaled identity; as
+in DomainBed, both the mean and covariance terms are averaged over their entries rather than
+scaled by \citeauthor{sun2016coral}'s $1/(4d^2)$. With the encoder changing every step, we disabled the running average of the
+target covariance.
+
+\subsection{Where labels enter}
+\label{sec:labels}
+
+\paragraph{The balanced design.} No real-lens label is ever used as a training target, but
+labels shape training in two ways, and we use them a third time for evaluation. First, they
+build each fold's target pool: the
+$\rvTargetLensPool{}$ graded lenses of the other four folds, without their labels, plus an
+equal number of random galaxies. Second, they balance every target batch: our sampler draws
+half of each batch from the lens part of the pool and half from the galaxy part, using the
+catalogue labels to tell them apart. The DANN, BNM and $\lambda=0$ runs also hold out a
+$\rvHoldoutN{}$-image slice of the target pool, chosen half lenses and half galaxies in the
+same way, and FreeMatch rebuilds its confidence thresholds from the same balanced loader.
+Third, the labels of the held-out fold score the test. Baseline A loads no target images, and
+the $\lambda=0$ control passes no target gradient to the encoder or the head, so neither is
+trained on the target labels; the control's only dependence on them is through the few
+half-precision steps it skips (Section~\ref{sec:arms}). Every adaptation arm does depend on
+them. Because the batches are balanced, the class proportion itself reaches every
+adaptation objective (Section~\ref{sec:limitations}).
+
+\paragraph{The diluted design.} In our second experiment (Section~\ref{sec:dilute-methods}) the
+labels still choose the pool: which \dlPoolLens{} lenses enter it, and the exact count of
+\dlRatio{} galaxies per lens (Section~\ref{sec:splits}). Target batches are drawn uniformly at
+random from the pool, without the labels, so a batch of \batchTargetRows{} holds about
+\dlBatchLens{} lenses on average (about \dlBatchLensTrain{} for DANN and BNM, whose holdout is
+removed), and the number varies from batch to batch. The DANN and BNM
+runs keep the \dlHoldout{}-image holdout of the balanced design, which is half lenses by
+construction, so their training pool is \dlTrainLens{}:\dlTrainGal{}
+(\dlTrainLensFour{}:\dlTrainGalFour{} on fold 4) and their batches average a lens fraction of
+$\dlTrainFracThree{}$ rather than $\dlPoolFracThree{}$. FreeMatch rebuilds its threshold state
+from the uniform sampler.
+
+\paragraph{Why the main design is balanced.} We chose a balanced target because adaptation
+failed without one. In early runs with a frozen
+encoder and a target far less balanced than the source, DANN and an importance-weighted
+variant, IW-CDAN~\citep{zhao2020gls}, both collapsed. On a morphology test (grade-X objects
+against random galaxies), alignment lowered the trained head's AUROC from $\rvEarlyNoDa{}$ to
+$\rvEarlyDann{}$ for DANN and $\rvEarlyIw{}$ for IW-CDAN, while a linear probe on the same
+frozen features reached $\rvEarlyProbe{}$. The information was still in the features, but
+alignment removed the head's access to it. Those runs used an earlier pipeline and this proxy
+test, and their run artifacts are not in our repository, so we report them as the reason for
+the design, not as a result. We then tested part of the design's main weakness
+(Section~\ref{sec:results-dilute}): with the encoder unfrozen and a 1:10 target whose batches are
+drawn without the labels, DANN keeps a detectable gain over the control, although the comparison
+with the balanced target cannot rule out that it lost much of that gain. The early runs differed from these in their frozen encoder,
+their pipeline and the degree of imbalance, so the two observations do not contradict each
+other.
+
+\subsection{The budget rule}
+\label{sec:budget}
+
+We fixed each unfrozen arm's training budget on the development fold, fold 0, and read every arm at its
+last checkpoint, so the budget is the model selector. Fold 0 enters no confirmatory number.
+BNM's budget came from a rule declared before its development run, and Baseline A's was fixed
+before any results; the others were chosen with the development curve in view.
+Appendix~\ref{sec:hashes} gives each budget, its basis and its timing. The development fold is
+scored against the same shared test negatives as the confirmatory folds, so the budgets we chose
+with its curve in view saw those negatives, though none of the confirmatory positives.
+
+\subsection{Pre-registration}
+\label{sec:prereg}
+
+We fixed each arm's budget and read-off step before its own confirmatory folds ran, and
+hash-protected them then, with four exceptions that rest on our run logs alone
+(Appendix~\ref{sec:hashes}). The $\lambda=0$ control was a later addition. On 2026-09-01 we had
+decided to run it on the development fold only; on 2026-09-06, after the FreeMatch, CORAL and
+DANN confirmatory folds had run, we extended it to folds 1--4, because those arms were unfrozen
+and the baseline they were being compared with was not, so their gains could not be attributed
+to adaptation. Its budget, read-off rule and decision branches, and the four paired contrasts
+against it, were declared and hash-protected before any of its confirmatory folds ran, so the
+registration fixes how the control was run and read; the choice of contrasts was made with the
+adaptation arms' results known. Appendix~\ref{sec:hashes} lists each file, its digest and its
+timing, and the four exceptions.
+
+\subsection{The diluted-target experiment}
+\label{sec:dilute-methods}
+
+The second experiment asks whether the gain over the control needs the balanced target. It
+changes two things: the target pool, diluted to one lens per \dlRatio{} galaxies
+(Section~\ref{sec:splits}), and the sampler, which draws target batches uniformly, without the
+labels (Section~\ref{sec:labels}). Nothing else changes: the heads, optimisers, adaptation
+weights, seeds, budgets, read-off steps and step-zero gate rules, apart from two tolerances,
+are those of the main design, and we retuned nothing.
+
+CORAL and FreeMatch start their unfrozen runs from a head trained with the encoder frozen, so we
+reran those frozen stages on the diluted target, with the new pool and sampler and no other
+change. Their final heads initialise the unfrozen CORAL and FreeMatch arms, and each unfrozen
+run's step-zero gate is taken against its new head. FreeMatch's fold 1, whose balanced run was
+gated at an exact tolerance, now uses the one-positive tolerance of the other folds. CORAL's
+gate, which in the main design only warned between one positive and \coralGateWarnTpr{} in TPR
+or between $\coralGateAurocWarn{}$ and \coralGateAurocAbort{} in AUROC,
+now stops a run outside one positive or $\dlGateAurocTol{}$ in AUROC, as for the other arms. DANN and BNM
+start from Baseline A's head, as before. We reused the $\lambda=0$ control without rerunning it:
+it passes no target gradient to the encoder or the head, so the target pool and sampler enter
+what it learns only through the few half-precision steps it skips (Section~\ref{sec:arms}). We
+checked that the new sampler shares no random stream with the source sampler or the
+augmentation: replaying the samplers alone over the first \dlRngSteps{} training steps of every
+arm and fold (for FreeMatch, after its threshold rebuild and warm-up), the source batches under
+the new sampler were bit-identical to those under the balanced sampler.
+
+Dilution changes three things at once. It lowers the target's class proportion from 1:1 to
+1:\dlRatio{}; it cuts the number of real lenses in a target batch from \dlBatchLensBal{} to
+about \dlBatchLens{} (about \dlBatchLensTrain{} for DANN and BNM, whose holdout is removed); and for a fixed number of steps each target lens is seen about
+\dlExposureRatio{} times less often. The galaxy side of the target also becomes about
+\dlRatio{} times more varied. A change in the gain therefore cannot be attributed to the
+proportion alone. The experiment tests whether the gain survives a target far from balanced, as
+a first step toward survey prevalence; it does not separate adapting to real images from the
+class proportion.
+
+We pre-registered two contrasts per arm, each a paired $t$-interval over folds 1--4 on the
+cleaned pool. The primary, $G$, is the diluted run minus the $\lambda=0$ control, with the
+control read at 4000 as in the main design's contrasts against the control; for CORAL and FreeMatch,
+the same contrast with the control read at the arm's own step is a pre-declared sensitivity
+readout. The secondary, $D$, is the balanced run minus the diluted run at the same read-off
+step. It carries no verdict, and it includes the noise of a changed batch order. Each arm's
+branch follows from $G$ and $D$:
+\begin{itemize}
+\item \emph{survives}: $G$'s interval excludes zero, and $D$'s includes zero or is negative;
+\item \emph{shrinks}: $G$'s interval excludes zero, and $D$'s excludes zero and is positive;
+\item \emph{collapses}: $G$'s interval includes zero.
+\end{itemize}
+Each branch has a fixed sentence, which we report with its numbers filled in
+(Section~\ref{sec:results-dilute}). Under \emph{survives}, if $D$'s upper bound exceeds half of
+the arm's balanced gain over the control, the sentence must add that the interval admits losing
+up to that bound. \emph{Collapses} means only that we cannot detect a gain.
+
+The pre-registration has three parts (Appendix~\ref{sec:hashes}). The first, recorded before
+any run, fixes the pool, the sampler, the arms, the contrasts, the branches and our predictions.
+The second, recorded after step-zero measurements of at most \dlPartTwoMaxStepsWord{}
+training steps per fold, but before any confirmatory run, fixes the step-zero thresholds and which inherited
+stop conditions abort a run and which only log. The third was recorded after the first attempt
+of CORAL's unfrozen run on fold 1 stopped at its first step (Section~\ref{sec:limitations}), and
+before any confirmatory CORAL or FreeMatch unfrozen run. It adds a rule that withholds the verdict from an arm whose run applies fewer than half its
+budget's optimiser updates; we set it after a label-free \dlCoralCheckSteps{}-step check in which
+CORAL applied \dlCoralCheckAppliedMin{}--\dlCoralCheckAppliedMax{} of \dlCoralCheckSteps{} updates
+on every fold, and it fired on no run.
+We hashed the analysis plan before computing any value. Appendix~\ref{app:dilute10} gives every
+run's skipped updates and applied fraction.

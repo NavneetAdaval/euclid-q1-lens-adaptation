@@ -1,0 +1,1079 @@
+{
+  "purpose": "round-5 DANN gradient reachability at n_blocks 0 and 3, measured the way round 4 measured CORAL's -- backprop the domain term ALONE, fp32, no autocast, and read the gradients.",
+  "probe_batch": 4,
+  "lambda_used": 1.0,
+  "expected_nb3_encoder_elements": 14835520,
+  "expected_note": "PROJECT.md 7.1a's measured count for n_blocks=3 (stages.1/2/3). Expect a small shortfall in the exactly-zero direction: dead GELU units in stages.3 mlp.fc2 that no image in a small probe batch activates. Round 4 measured 27,524 (0.19%). The reachable TENSOR SET is the structural claim; the element count is reported with its shortfall attributed.",
+  "difference_from_round4": "CORAL's LayerNorm BIAS gradient is analytically zero (covariance is shift-invariant, the first-moment term is a difference of means), and round 4 had to attribute a 1e-11 residual to float cancellation. D is an arbitrary function of the features, so DANN GENUINELY reaches the bias. Expect ~1,280 head elements here where round 4 expected 640.",
+  "arms": {
+    "nb0": {
+      "n_blocks": 0,
+      "lambda_used": 1.0,
+      "reachable_param_elements": 1204020,
+      "reachable_tensors": 12,
+      "reachable_by_tensor": {
+        "head.trunk.0.weight": 640,
+        "head.trunk.0.bias": 640,
+        "discriminator.net.0.weight": 655360,
+        "discriminator.net.0.bias": 1024,
+        "discriminator.net.1.weight": 530,
+        "discriminator.net.1.bias": 530,
+        "discriminator.net.4.weight": 542720,
+        "discriminator.net.4.bias": 1024,
+        "discriminator.net.5.weight": 517,
+        "discriminator.net.5.bias": 517,
+        "discriminator.net.8.weight": 517,
+        "discriminator.net.8.bias": 1
+      },
+      "zero_grad_tensors": {},
+      "no_grad_tensors": 146,
+      "reachable_prefixes": [
+        "discriminator.net",
+        "head.trunk"
+      ],
+      "grad_scale_by_tensor": {
+        "head.trunk.0.weight": {
+          "rms": 0.0006265768315643072,
+          "max": 0.005345551297068596,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "head.trunk.0.bias": {
+          "rms": 0.0006229750579223037,
+          "max": 0.0020423103123903275,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "discriminator.net.0.weight": {
+          "rms": 0.0008254456333816051,
+          "max": 0.013553902506828308,
+          "numel": 655360,
+          "n_exact_zero": 0
+        },
+        "discriminator.net.0.bias": {
+          "rms": 0.0008236845606006682,
+          "max": 0.0036118826828897,
+          "numel": 1024,
+          "n_exact_zero": 0
+        },
+        "discriminator.net.1.weight": {
+          "rms": 0.0005011291359551251,
+          "max": 0.003252275288105011,
+          "numel": 1024,
+          "n_exact_zero": 494
+        },
+        "discriminator.net.1.bias": {
+          "rms": 0.0004941204679198563,
+          "max": 0.0021574879065155983,
+          "numel": 1024,
+          "n_exact_zero": 494
+        },
+        "discriminator.net.4.weight": {
+          "rms": 0.0008157399133779109,
+          "max": 0.020968426018953323,
+          "numel": 1048576,
+          "n_exact_zero": 505856
+        },
+        "discriminator.net.4.bias": {
+          "rms": 0.0011584860039874911,
+          "max": 0.00625245226547122,
+          "numel": 1024,
+          "n_exact_zero": 0
+        },
+        "discriminator.net.5.weight": {
+          "rms": 0.0004357050056569278,
+          "max": 0.002496653236448765,
+          "numel": 1024,
+          "n_exact_zero": 507
+        },
+        "discriminator.net.5.bias": {
+          "rms": 0.00046177886542864144,
+          "max": 0.0025069117546081543,
+          "numel": 1024,
+          "n_exact_zero": 507
+        },
+        "discriminator.net.8.weight": {
+          "rms": 0.025360919535160065,
+          "max": 0.11203223466873169,
+          "numel": 1024,
+          "n_exact_zero": 507
+        },
+        "discriminator.net.8.bias": {
+          "rms": 0.03552689403295517,
+          "max": 0.03552689403295517,
+          "numel": 1,
+          "n_exact_zero": 0
+        }
+      },
+      "head_elements_reachable": 1280,
+      "discriminator_elements_reachable": 1202740,
+      "encoder_elements_with_grad": 0,
+      "encoder_elements_exactly_zero": 0,
+      "encoder_elements_reachable": 0,
+      "layernorm_gain_rms": 0.0006265768315643072,
+      "layernorm_bias_rms": 0.0006229750579223037,
+      "domain_loss_value": 0.6953713893890381,
+      "d_probed_in_eval_mode": true,
+      "d_probed_in_eval_note": "dropout OFF for the probe, so the reachable-D count is a property of the graph rather than of one random mask. Encoder and head reachability is unaffected.",
+      "encoder_prefixes_touched": [],
+      "encoder_shortfall_vs_7_1a": null
+    },
+    "nb3": {
+      "n_blocks": 3,
+      "lambda_used": 1.0,
+      "reachable_param_elements": 16012019,
+      "reachable_tensors": 132,
+      "reachable_by_tensor": {
+        "head.trunk.0.weight": 640,
+        "head.trunk.0.bias": 640,
+        "encoder.stages.1.downsample.0.weight": 80,
+        "encoder.stages.1.downsample.0.bias": 80,
+        "encoder.stages.1.downsample.1.weight": 51200,
+        "encoder.stages.1.downsample.1.bias": 160,
+        "encoder.stages.1.blocks.0.gamma": 160,
+        "encoder.stages.1.blocks.0.conv_dw.weight": 7840,
+        "encoder.stages.1.blocks.0.conv_dw.bias": 160,
+        "encoder.stages.1.blocks.0.norm.weight": 160,
+        "encoder.stages.1.blocks.0.norm.bias": 160,
+        "encoder.stages.1.blocks.0.mlp.fc1.weight": 102400,
+        "encoder.stages.1.blocks.0.mlp.fc1.bias": 640,
+        "encoder.stages.1.blocks.0.mlp.fc2.weight": 102400,
+        "encoder.stages.1.blocks.0.mlp.fc2.bias": 160,
+        "encoder.stages.1.blocks.1.gamma": 160,
+        "encoder.stages.1.blocks.1.conv_dw.weight": 7840,
+        "encoder.stages.1.blocks.1.conv_dw.bias": 160,
+        "encoder.stages.1.blocks.1.norm.weight": 160,
+        "encoder.stages.1.blocks.1.norm.bias": 160,
+        "encoder.stages.1.blocks.1.mlp.fc1.weight": 102400,
+        "encoder.stages.1.blocks.1.mlp.fc1.bias": 640,
+        "encoder.stages.1.blocks.1.mlp.fc2.weight": 102400,
+        "encoder.stages.1.blocks.1.mlp.fc2.bias": 160,
+        "encoder.stages.2.downsample.0.weight": 160,
+        "encoder.stages.2.downsample.0.bias": 160,
+        "encoder.stages.2.downsample.1.weight": 204800,
+        "encoder.stages.2.downsample.1.bias": 320,
+        "encoder.stages.2.blocks.0.gamma": 320,
+        "encoder.stages.2.blocks.0.conv_dw.weight": 15680,
+        "encoder.stages.2.blocks.0.conv_dw.bias": 320,
+        "encoder.stages.2.blocks.0.norm.weight": 320,
+        "encoder.stages.2.blocks.0.norm.bias": 320,
+        "encoder.stages.2.blocks.0.mlp.fc1.weight": 409600,
+        "encoder.stages.2.blocks.0.mlp.fc1.bias": 1280,
+        "encoder.stages.2.blocks.0.mlp.fc2.weight": 409600,
+        "encoder.stages.2.blocks.0.mlp.fc2.bias": 320,
+        "encoder.stages.2.blocks.1.gamma": 320,
+        "encoder.stages.2.blocks.1.conv_dw.weight": 15680,
+        "encoder.stages.2.blocks.1.conv_dw.bias": 320,
+        "encoder.stages.2.blocks.1.norm.weight": 320,
+        "encoder.stages.2.blocks.1.norm.bias": 320,
+        "encoder.stages.2.blocks.1.mlp.fc1.weight": 409600,
+        "encoder.stages.2.blocks.1.mlp.fc1.bias": 1280,
+        "encoder.stages.2.blocks.1.mlp.fc2.weight": 409600,
+        "encoder.stages.2.blocks.1.mlp.fc2.bias": 320,
+        "encoder.stages.2.blocks.2.gamma": 320,
+        "encoder.stages.2.blocks.2.conv_dw.weight": 15680,
+        "encoder.stages.2.blocks.2.conv_dw.bias": 320,
+        "encoder.stages.2.blocks.2.norm.weight": 320,
+        "encoder.stages.2.blocks.2.norm.bias": 320,
+        "encoder.stages.2.blocks.2.mlp.fc1.weight": 409600,
+        "encoder.stages.2.blocks.2.mlp.fc1.bias": 1280,
+        "encoder.stages.2.blocks.2.mlp.fc2.weight": 409600,
+        "encoder.stages.2.blocks.2.mlp.fc2.bias": 320,
+        "encoder.stages.2.blocks.3.gamma": 320,
+        "encoder.stages.2.blocks.3.conv_dw.weight": 15680,
+        "encoder.stages.2.blocks.3.conv_dw.bias": 320,
+        "encoder.stages.2.blocks.3.norm.weight": 320,
+        "encoder.stages.2.blocks.3.norm.bias": 320,
+        "encoder.stages.2.blocks.3.mlp.fc1.weight": 409600,
+        "encoder.stages.2.blocks.3.mlp.fc1.bias": 1280,
+        "encoder.stages.2.blocks.3.mlp.fc2.weight": 409600,
+        "encoder.stages.2.blocks.3.mlp.fc2.bias": 320,
+        "encoder.stages.2.blocks.4.gamma": 320,
+        "encoder.stages.2.blocks.4.conv_dw.weight": 15680,
+        "encoder.stages.2.blocks.4.conv_dw.bias": 320,
+        "encoder.stages.2.blocks.4.norm.weight": 320,
+        "encoder.stages.2.blocks.4.norm.bias": 320,
+        "encoder.stages.2.blocks.4.mlp.fc1.weight": 409600,
+        "encoder.stages.2.blocks.4.mlp.fc1.bias": 1280,
+        "encoder.stages.2.blocks.4.mlp.fc2.weight": 409600,
+        "encoder.stages.2.blocks.4.mlp.fc2.bias": 320,
+        "encoder.stages.2.blocks.5.gamma": 320,
+        "encoder.stages.2.blocks.5.conv_dw.weight": 15680,
+        "encoder.stages.2.blocks.5.conv_dw.bias": 320,
+        "encoder.stages.2.blocks.5.norm.weight": 320,
+        "encoder.stages.2.blocks.5.norm.bias": 320,
+        "encoder.stages.2.blocks.5.mlp.fc1.weight": 409600,
+        "encoder.stages.2.blocks.5.mlp.fc1.bias": 1280,
+        "encoder.stages.2.blocks.5.mlp.fc2.weight": 409600,
+        "encoder.stages.2.blocks.5.mlp.fc2.bias": 320,
+        "encoder.stages.2.blocks.6.gamma": 320,
+        "encoder.stages.2.blocks.6.conv_dw.weight": 15680,
+        "encoder.stages.2.blocks.6.conv_dw.bias": 320,
+        "encoder.stages.2.blocks.6.norm.weight": 320,
+        "encoder.stages.2.blocks.6.norm.bias": 320,
+        "encoder.stages.2.blocks.6.mlp.fc1.weight": 409600,
+        "encoder.stages.2.blocks.6.mlp.fc1.bias": 1280,
+        "encoder.stages.2.blocks.6.mlp.fc2.weight": 409600,
+        "encoder.stages.2.blocks.6.mlp.fc2.bias": 320,
+        "encoder.stages.2.blocks.7.gamma": 320,
+        "encoder.stages.2.blocks.7.conv_dw.weight": 15680,
+        "encoder.stages.2.blocks.7.conv_dw.bias": 320,
+        "encoder.stages.2.blocks.7.norm.weight": 320,
+        "encoder.stages.2.blocks.7.norm.bias": 320,
+        "encoder.stages.2.blocks.7.mlp.fc1.weight": 409600,
+        "encoder.stages.2.blocks.7.mlp.fc1.bias": 1280,
+        "encoder.stages.2.blocks.7.mlp.fc2.weight": 409600,
+        "encoder.stages.2.blocks.7.mlp.fc2.bias": 320,
+        "encoder.stages.3.downsample.0.weight": 320,
+        "encoder.stages.3.downsample.0.bias": 320,
+        "encoder.stages.3.downsample.1.weight": 819200,
+        "encoder.stages.3.downsample.1.bias": 640,
+        "encoder.stages.3.blocks.0.gamma": 640,
+        "encoder.stages.3.blocks.0.conv_dw.weight": 31360,
+        "encoder.stages.3.blocks.0.conv_dw.bias": 640,
+        "encoder.stages.3.blocks.0.norm.weight": 640,
+        "encoder.stages.3.blocks.0.norm.bias": 640,
+        "encoder.stages.3.blocks.0.mlp.fc1.weight": 1638399,
+        "encoder.stages.3.blocks.0.mlp.fc1.bias": 2560,
+        "encoder.stages.3.blocks.0.mlp.fc2.weight": 1626240,
+        "encoder.stages.3.blocks.0.mlp.fc2.bias": 640,
+        "encoder.stages.3.blocks.1.gamma": 640,
+        "encoder.stages.3.blocks.1.conv_dw.weight": 31360,
+        "encoder.stages.3.blocks.1.conv_dw.bias": 640,
+        "encoder.stages.3.blocks.1.norm.weight": 640,
+        "encoder.stages.3.blocks.1.norm.bias": 640,
+        "encoder.stages.3.blocks.1.mlp.fc1.weight": 1638400,
+        "encoder.stages.3.blocks.1.mlp.fc1.bias": 2560,
+        "encoder.stages.3.blocks.1.mlp.fc2.weight": 1623040,
+        "encoder.stages.3.blocks.1.mlp.fc2.bias": 640,
+        "discriminator.net.0.weight": 655360,
+        "discriminator.net.0.bias": 1024,
+        "discriminator.net.1.weight": 530,
+        "discriminator.net.1.bias": 530,
+        "discriminator.net.4.weight": 542720,
+        "discriminator.net.4.bias": 1024,
+        "discriminator.net.5.weight": 517,
+        "discriminator.net.5.bias": 517,
+        "discriminator.net.8.weight": 517,
+        "discriminator.net.8.bias": 1
+      },
+      "zero_grad_tensors": {},
+      "no_grad_tensors": 26,
+      "reachable_prefixes": [
+        "discriminator.net",
+        "encoder.stages",
+        "head.trunk"
+      ],
+      "grad_scale_by_tensor": {
+        "head.trunk.0.weight": {
+          "rms": 0.0006265768315643072,
+          "max": 0.005345551297068596,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "head.trunk.0.bias": {
+          "rms": 0.0006229750579223037,
+          "max": 0.0020423103123903275,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.downsample.0.weight": {
+          "rms": 0.001361797098070383,
+          "max": 0.008652105927467346,
+          "numel": 80,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.downsample.0.bias": {
+          "rms": 0.0015912173548713326,
+          "max": 0.00403854064643383,
+          "numel": 80,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.downsample.1.weight": {
+          "rms": 0.0004372958792373538,
+          "max": 0.011757127940654755,
+          "numel": 51200,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.downsample.1.bias": {
+          "rms": 0.0013745673932135105,
+          "max": 0.007506109774112701,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.0.gamma": {
+          "rms": 0.0001755692792357877,
+          "max": 0.0011374265886843204,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.0.conv_dw.weight": {
+          "rms": 0.001221584971062839,
+          "max": 0.015286356210708618,
+          "numel": 7840,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.0.conv_dw.bias": {
+          "rms": 0.0032657203264534473,
+          "max": 0.010649912059307098,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.0.norm.weight": {
+          "rms": 9.229718125425279e-05,
+          "max": 0.0006201807409524918,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.0.norm.bias": {
+          "rms": 9.904102626023814e-05,
+          "max": 0.0002936067758128047,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.0.mlp.fc1.weight": {
+          "rms": 0.00019104119564872235,
+          "max": 0.007072407752275467,
+          "numel": 102400,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.0.mlp.fc1.bias": {
+          "rms": 0.00013316821423359215,
+          "max": 0.0010138084180653095,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.0.mlp.fc2.weight": {
+          "rms": 0.00022478659229818732,
+          "max": 0.019084475934505463,
+          "numel": 102400,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.0.mlp.fc2.bias": {
+          "rms": 0.0012078990694135427,
+          "max": 0.007072851061820984,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.1.gamma": {
+          "rms": 0.00024175543512683362,
+          "max": 0.0021477295085787773,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.1.conv_dw.weight": {
+          "rms": 0.0013041209895163774,
+          "max": 0.0123768150806427,
+          "numel": 7840,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.1.conv_dw.bias": {
+          "rms": 0.004626650363206863,
+          "max": 0.018236011266708374,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.1.norm.weight": {
+          "rms": 0.00013274473894853145,
+          "max": 0.0008672787807881832,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.1.norm.bias": {
+          "rms": 0.00011510316107887775,
+          "max": 0.0003330353647470474,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.1.mlp.fc1.weight": {
+          "rms": 0.00031185380066744983,
+          "max": 0.024708688259124756,
+          "numel": 102400,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.1.mlp.fc1.bias": {
+          "rms": 0.00015201511268969625,
+          "max": 0.0009907344356179237,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.1.mlp.fc2.weight": {
+          "rms": 0.0003552776761353016,
+          "max": 0.010489163920283318,
+          "numel": 102400,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.1.blocks.1.mlp.fc2.bias": {
+          "rms": 0.00117196305654943,
+          "max": 0.0035329610109329224,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.downsample.0.weight": {
+          "rms": 0.000894579105079174,
+          "max": 0.005011662840843201,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.downsample.0.bias": {
+          "rms": 0.001971969148144126,
+          "max": 0.005381623283028603,
+          "numel": 160,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.downsample.1.weight": {
+          "rms": 0.00021580733300652355,
+          "max": 0.006117545068264008,
+          "numel": 204800,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.downsample.1.bias": {
+          "rms": 0.0012178864562883973,
+          "max": 0.005550935864448547,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.0.gamma": {
+          "rms": 0.00026799156330525875,
+          "max": 0.0015021730214357376,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.0.conv_dw.weight": {
+          "rms": 0.00025638440274633467,
+          "max": 0.0025574956089258194,
+          "numel": 15680,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.0.conv_dw.bias": {
+          "rms": 0.0010440392652526498,
+          "max": 0.0031393729150295258,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.0.norm.weight": {
+          "rms": 7.620989345014095e-05,
+          "max": 0.00037274486385285854,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.0.norm.bias": {
+          "rms": 8.406760753132403e-05,
+          "max": 0.0003155100275762379,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.0.mlp.fc1.weight": {
+          "rms": 8.705614891368896e-05,
+          "max": 0.00274644885212183,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.0.mlp.fc1.bias": {
+          "rms": 7.077296322677284e-05,
+          "max": 0.0005682215560227633,
+          "numel": 1280,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.0.mlp.fc2.weight": {
+          "rms": 9.595527080819011e-05,
+          "max": 0.005496688187122345,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.0.mlp.fc2.bias": {
+          "rms": 0.00045216071885079145,
+          "max": 0.0017965235747396946,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.1.gamma": {
+          "rms": 0.00016773745301179588,
+          "max": 0.0012521769385784864,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.1.conv_dw.weight": {
+          "rms": 0.0004585689166560769,
+          "max": 0.007124871015548706,
+          "numel": 15680,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.1.conv_dw.bias": {
+          "rms": 0.0017244236078113317,
+          "max": 0.006431961432099342,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.1.norm.weight": {
+          "rms": 6.988539098529145e-05,
+          "max": 0.0003693064209073782,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.1.norm.bias": {
+          "rms": 7.419916801154613e-05,
+          "max": 0.00022700289264321327,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.1.mlp.fc1.weight": {
+          "rms": 9.246245463145897e-05,
+          "max": 0.003073246218264103,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.1.mlp.fc1.bias": {
+          "rms": 7.392794941551983e-05,
+          "max": 0.0005667989607900381,
+          "numel": 1280,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.1.mlp.fc2.weight": {
+          "rms": 8.96536439540796e-05,
+          "max": 0.0022888733074069023,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.1.mlp.fc2.bias": {
+          "rms": 0.0006168428808450699,
+          "max": 0.0023667258210480213,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.2.gamma": {
+          "rms": 0.00016350249643437564,
+          "max": 0.001639104913920164,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.2.conv_dw.weight": {
+          "rms": 0.0005592491943389177,
+          "max": 0.0032205600291490555,
+          "numel": 15680,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.2.conv_dw.bias": {
+          "rms": 0.0020605858881026506,
+          "max": 0.0072105154395103455,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.2.norm.weight": {
+          "rms": 8.082704880507663e-05,
+          "max": 0.0005638694856315851,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.2.norm.bias": {
+          "rms": 9.35343632590957e-05,
+          "max": 0.00028132996521890163,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.2.mlp.fc1.weight": {
+          "rms": 0.00010880515037570149,
+          "max": 0.005597762763500214,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.2.mlp.fc1.bias": {
+          "rms": 8.756077295402065e-05,
+          "max": 0.0008323071524500847,
+          "numel": 1280,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.2.mlp.fc2.weight": {
+          "rms": 0.0001006192178465426,
+          "max": 0.0029044058173894882,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.2.mlp.fc2.bias": {
+          "rms": 0.0008179399883374572,
+          "max": 0.0038850903511047363,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.3.gamma": {
+          "rms": 0.00013391383981797844,
+          "max": 0.0014066523872315884,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.3.conv_dw.weight": {
+          "rms": 0.0008083899738267064,
+          "max": 0.0062753185629844666,
+          "numel": 15680,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.3.conv_dw.bias": {
+          "rms": 0.002433402230963111,
+          "max": 0.008215680718421936,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.3.norm.weight": {
+          "rms": 0.0001276932453038171,
+          "max": 0.001683584414422512,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.3.norm.bias": {
+          "rms": 0.00010131065209861845,
+          "max": 0.0002704416401684284,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.3.mlp.fc1.weight": {
+          "rms": 0.00010735858086263761,
+          "max": 0.005271822214126587,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.3.mlp.fc1.bias": {
+          "rms": 8.395530312554911e-05,
+          "max": 0.0005988548509776592,
+          "numel": 1280,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.3.mlp.fc2.weight": {
+          "rms": 0.00010592232865747064,
+          "max": 0.0036141052842140198,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.3.mlp.fc2.bias": {
+          "rms": 0.0008491871412843466,
+          "max": 0.0028342576697468758,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.4.gamma": {
+          "rms": 0.00013240794942248613,
+          "max": 0.0009838537080213428,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.4.conv_dw.weight": {
+          "rms": 0.0006825806922279298,
+          "max": 0.005456749349832535,
+          "numel": 15680,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.4.conv_dw.bias": {
+          "rms": 0.001749380142427981,
+          "max": 0.00734642893075943,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.4.norm.weight": {
+          "rms": 0.00010258674592478201,
+          "max": 0.0008377705235034227,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.4.norm.bias": {
+          "rms": 8.65446199895814e-05,
+          "max": 0.0002787710400298238,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.4.mlp.fc1.weight": {
+          "rms": 9.214374586008489e-05,
+          "max": 0.00693255290389061,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.4.mlp.fc1.bias": {
+          "rms": 8.408334542764351e-05,
+          "max": 0.001017862930893898,
+          "numel": 1280,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.4.mlp.fc2.weight": {
+          "rms": 7.751290104351938e-05,
+          "max": 0.0021067531779408455,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.4.mlp.fc2.bias": {
+          "rms": 0.0006635714089497924,
+          "max": 0.0023570097982883453,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.5.gamma": {
+          "rms": 0.00015628304390702397,
+          "max": 0.0016591781750321388,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.5.conv_dw.weight": {
+          "rms": 0.0003778044192586094,
+          "max": 0.004661921411752701,
+          "numel": 15680,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.5.conv_dw.bias": {
+          "rms": 0.0007239156402647495,
+          "max": 0.0029238220304250717,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.5.norm.weight": {
+          "rms": 0.00012273788161110133,
+          "max": 0.0008380371145904064,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.5.norm.bias": {
+          "rms": 0.00011373108281986788,
+          "max": 0.00032758829183876514,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.5.mlp.fc1.weight": {
+          "rms": 0.0001400964247295633,
+          "max": 0.005855869501829147,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.5.mlp.fc1.bias": {
+          "rms": 0.00010058216867037117,
+          "max": 0.0008681034669280052,
+          "numel": 1280,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.5.mlp.fc2.weight": {
+          "rms": 0.00015640251513104886,
+          "max": 0.005684971809387207,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.5.mlp.fc2.bias": {
+          "rms": 0.0009447170305065811,
+          "max": 0.003027789294719696,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.6.gamma": {
+          "rms": 0.0001644127769395709,
+          "max": 0.002358783036470413,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.6.conv_dw.weight": {
+          "rms": 0.0007465477101504803,
+          "max": 0.01578296720981598,
+          "numel": 15680,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.6.conv_dw.bias": {
+          "rms": 0.0005324199446476996,
+          "max": 0.0020575812086462975,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.6.norm.weight": {
+          "rms": 0.00014176331751514226,
+          "max": 0.001926281489431858,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.6.norm.bias": {
+          "rms": 9.294640767620876e-05,
+          "max": 0.000418998533859849,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.6.mlp.fc1.weight": {
+          "rms": 0.00013774320541415364,
+          "max": 0.008411519229412079,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.6.mlp.fc1.bias": {
+          "rms": 8.688410889590159e-05,
+          "max": 0.0009597712196409702,
+          "numel": 1280,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.6.mlp.fc2.weight": {
+          "rms": 0.00015334328054450452,
+          "max": 0.008745267987251282,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.6.mlp.fc2.bias": {
+          "rms": 0.0013041746569797397,
+          "max": 0.004894670099020004,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.7.gamma": {
+          "rms": 9.237499762093648e-05,
+          "max": 0.0005363365635275841,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.7.conv_dw.weight": {
+          "rms": 0.0004896310856565833,
+          "max": 0.006579134613275528,
+          "numel": 15680,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.7.conv_dw.bias": {
+          "rms": 0.0006980178295634687,
+          "max": 0.0038639772683382034,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.7.norm.weight": {
+          "rms": 0.00010891794227063656,
+          "max": 0.0006409210618585348,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.7.norm.bias": {
+          "rms": 0.00011681157047860324,
+          "max": 0.00035300781019032,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.7.mlp.fc1.weight": {
+          "rms": 0.00015624127991031855,
+          "max": 0.014441557228565216,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.7.mlp.fc1.bias": {
+          "rms": 0.00010263569129165262,
+          "max": 0.001623731106519699,
+          "numel": 1280,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.7.mlp.fc2.weight": {
+          "rms": 0.00017861975356936455,
+          "max": 0.009517617523670197,
+          "numel": 409600,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.2.blocks.7.mlp.fc2.bias": {
+          "rms": 0.0016230662586167455,
+          "max": 0.004930857568979263,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.downsample.0.weight": {
+          "rms": 0.0031986318062990904,
+          "max": 0.056040018796920776,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.downsample.0.bias": {
+          "rms": 0.006309397518634796,
+          "max": 0.018073834478855133,
+          "numel": 320,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.downsample.1.weight": {
+          "rms": 0.00017464597476646304,
+          "max": 0.002276243641972542,
+          "numel": 819200,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.downsample.1.bias": {
+          "rms": 0.0023298661690205336,
+          "max": 0.007468950003385544,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.0.gamma": {
+          "rms": 0.00018702437228057534,
+          "max": 0.0014490652829408646,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.0.conv_dw.weight": {
+          "rms": 0.00024536412092857063,
+          "max": 0.004258820787072182,
+          "numel": 31360,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.0.conv_dw.bias": {
+          "rms": 0.0016966346884146333,
+          "max": 0.00955667719244957,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.0.norm.weight": {
+          "rms": 0.000132796834805049,
+          "max": 0.0017645107582211494,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.0.norm.bias": {
+          "rms": 0.0001375538413412869,
+          "max": 0.0006897493731230497,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.0.mlp.fc1.weight": {
+          "rms": 0.00011131490464322269,
+          "max": 0.014896169304847717,
+          "numel": 1638400,
+          "n_exact_zero": 1
+        },
+        "encoder.stages.3.blocks.0.mlp.fc1.bias": {
+          "rms": 9.349395259050652e-05,
+          "max": 0.0017280117608606815,
+          "numel": 2560,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.0.mlp.fc2.weight": {
+          "rms": 0.00011836442718049511,
+          "max": 0.0036050379276275635,
+          "numel": 1638400,
+          "n_exact_zero": 12160
+        },
+        "encoder.stages.3.blocks.0.mlp.fc2.bias": {
+          "rms": 0.003123506670817733,
+          "max": 0.012094855308532715,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.1.gamma": {
+          "rms": 9.939069423126057e-05,
+          "max": 0.0008800760842859745,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.1.conv_dw.weight": {
+          "rms": 0.0003036107518710196,
+          "max": 0.006861276924610138,
+          "numel": 31360,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.1.conv_dw.bias": {
+          "rms": 0.0013015852309763432,
+          "max": 0.006018288433551788,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.1.norm.weight": {
+          "rms": 0.00012637516192626208,
+          "max": 0.0010383096523582935,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.1.norm.bias": {
+          "rms": 0.00014375975297298282,
+          "max": 0.0004961381200700998,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.1.mlp.fc1.weight": {
+          "rms": 0.00013386861246544868,
+          "max": 0.028007641434669495,
+          "numel": 1638400,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.1.mlp.fc1.bias": {
+          "rms": 9.797852544579655e-05,
+          "max": 0.002496575005352497,
+          "numel": 2560,
+          "n_exact_zero": 0
+        },
+        "encoder.stages.3.blocks.1.mlp.fc2.weight": {
+          "rms": 8.781115320743993e-05,
+          "max": 0.0033868933096528053,
+          "numel": 1638400,
+          "n_exact_zero": 15360
+        },
+        "encoder.stages.3.blocks.1.mlp.fc2.bias": {
+          "rms": 0.0038494630716741085,
+          "max": 0.014843128621578217,
+          "numel": 640,
+          "n_exact_zero": 0
+        },
+        "discriminator.net.0.weight": {
+          "rms": 0.0008254456333816051,
+          "max": 0.013553902506828308,
+          "numel": 655360,
+          "n_exact_zero": 0
+        },
+        "discriminator.net.0.bias": {
+          "rms": 0.0008236845606006682,
+          "max": 0.0036118826828897,
+          "numel": 1024,
+          "n_exact_zero": 0
+        },
+        "discriminator.net.1.weight": {
+          "rms": 0.0005011291359551251,
+          "max": 0.003252275288105011,
+          "numel": 1024,
+          "n_exact_zero": 494
+        },
+        "discriminator.net.1.bias": {
+          "rms": 0.0004941204679198563,
+          "max": 0.0021574879065155983,
+          "numel": 1024,
+          "n_exact_zero": 494
+        },
+        "discriminator.net.4.weight": {
+          "rms": 0.0008157399133779109,
+          "max": 0.020968426018953323,
+          "numel": 1048576,
+          "n_exact_zero": 505856
+        },
+        "discriminator.net.4.bias": {
+          "rms": 0.0011584860039874911,
+          "max": 0.00625245226547122,
+          "numel": 1024,
+          "n_exact_zero": 0
+        },
+        "discriminator.net.5.weight": {
+          "rms": 0.0004357050056569278,
+          "max": 0.002496653236448765,
+          "numel": 1024,
+          "n_exact_zero": 507
+        },
+        "discriminator.net.5.bias": {
+          "rms": 0.00046177886542864144,
+          "max": 0.0025069117546081543,
+          "numel": 1024,
+          "n_exact_zero": 507
+        },
+        "discriminator.net.8.weight": {
+          "rms": 0.025360919535160065,
+          "max": 0.11203223466873169,
+          "numel": 1024,
+          "n_exact_zero": 507
+        },
+        "discriminator.net.8.bias": {
+          "rms": 0.03552689403295517,
+          "max": 0.03552689403295517,
+          "numel": 1,
+          "n_exact_zero": 0
+        }
+      },
+      "head_elements_reachable": 1280,
+      "discriminator_elements_reachable": 1202740,
+      "encoder_elements_with_grad": 14835520,
+      "encoder_elements_exactly_zero": 27521,
+      "encoder_elements_reachable": 14807999,
+      "layernorm_gain_rms": 0.0006265768315643072,
+      "layernorm_bias_rms": 0.0006229750579223037,
+      "domain_loss_value": 0.6953713893890381,
+      "d_probed_in_eval_mode": true,
+      "d_probed_in_eval_note": "dropout OFF for the probe, so the reachable-D count is a property of the graph rather than of one random mask. Encoder and head reachability is unaffected.",
+      "encoder_prefixes_touched": [
+        "stages.1",
+        "stages.2",
+        "stages.3"
+      ],
+      "encoder_shortfall_vs_7_1a": 27521
+    }
+  }
+}

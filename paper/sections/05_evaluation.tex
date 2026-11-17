@@ -1,0 +1,113 @@
+\section{Evaluation}
+\label{sec:eval}
+
+\subsection{The metric}
+
+Our primary metric is the true-positive rate at a false-positive rate of $10^{-3}$, written
+TPR@$10^{-3}$: we set the threshold so that one non-lens in a thousand is flagged and report the
+fraction of real lenses recovered there. We interpolate the ROC curve to FPR${}=10^{-3}$ with
+every intermediate point kept. Lens finding has been reported at this
+point~\citep{parul2024}, and at lens rarity a false-positive rate near $10^{-3}$ or lower is
+needed for a selected sample not to be dominated by non-lenses~\citep{discoveryengineE}. The
+metric depends only on the ranking of scores, so it does not depend on the class ratio of the
+test pool. We
+report AUROC as a secondary check only: with about 26\,000 negatives against 98 positives it
+can look healthy while the operating point is poor. The metric is discrete, with a step of
+$1/98 \approx 0.010$ on folds 1--3 and $1/97$ on fold 4.
+
+\subsection{Pooling}
+
+Baseline A is one model scoring all five folds, so a single pooled ROC curve is valid for it.
+Every adaptation arm trains a different model per fold, so no common threshold exists. We
+report those arms as a fold mean with the across-fold standard deviation and always compare
+fold mean with fold mean.
+
+\subsection{Intervals and fold dependence}
+\label{sec:intervals}
+
+Each comparison is paired: two arms ran on the same folds, so we difference within fold and
+report a paired $t$-interval on the four per-fold differences, with $\mathrm{df} = 3$. At
+$n = 4$ a bootstrap has at most 35 distinct resamples (256 ordered draws), so we fixed the $t$-interval in
+the pre-registration. The frozen comparison (Table~\ref{tab:frozen}) and the FreeMatch
+unfrozen $-$ frozen contrast use paired bootstraps instead; we say so where they appear. An
+interval that admits zero is not evidence that two arms are equal: it
+means this measurement, at four folds and about 98 positives each, cannot separate them.
+
+The four confirmatory folds are not independent. Any two folds share $\rvSharedTargetMin{}$
+to $\rvSharedTargetMax{}$ of their $\rvTargetLensPool{}$ target lenses, and every fold uses
+the same source set and the same test negatives. Variance estimates that ignore such overlap
+between training sets can understate the true variance by a wide
+margin~\citep{bengio2004, nadeau2003}, so our intervals are probably too narrow. We expect the
+main design's contrasts against the control to survive this, because their intervals sit far
+from zero. The narrower comparisons may not, and neither may the dilution experiment's BNM
+contrast, whose interval clears zero by \dlGBnmLoAbsThree{}.
+
+\subsection{The contrast set}
+
+Table~\ref{tab:contrasts6} reports \contrastCount{} paired $t$-intervals and one bootstrap interval from the main design, beside
+the four primary contrasts of the dilution experiment, at the 95\% level, with no
+multiplicity correction; several share a control arm, so they are not independent. Four were
+registered with the $\lambda=0$ control, before it ran but after the adaptation arms' results
+were known (Section~\ref{sec:prereg}; marked $\dagger$): $\lambda=0$ against Baseline A,
+and DANN, CORAL and FreeMatch each against $\lambda=0$, with $\lambda=0$ read at its budget of
+4000. The same CORAL and FreeMatch contrasts with $\lambda=0$ read at 2000 and 1500 were
+declared with them as sensitivity readouts (marked $\ddagger$). The other contrasts, including
+BNM $-$ $\lambda=0$, were not among the four. The dilution experiment
+(Section~\ref{sec:dilute-methods}) adds \dlNtWord{} paired $t$-intervals (\dlNtG{} for $G$,
+\dlNtD{} for $D$) and \dlNbootWord{} bootstrap intervals, which compare its frozen stages with
+those of the main design, again with no multiplicity correction. They share the $\lambda=0$
+control with the contrasts above.
+
+\subsection{The test pool, and the change we made after pre-registration}
+\label{sec:testpool}
+
+We drew the test negatives from the parent pool before we knew that rounded identifiers hid
+duplicates. Matching by exact Euclid ID showed that \DOneLensNeg{} catalogued grade A and B
+lenses and \DOneDeflNeg{} simulation host galaxies were among the \TestNegDrawn{} test
+negatives. In each fold, $\rvOwnPosMin{}$ to $\rvOwnPosMax{}$ of the \DOneLensNeg{} were that fold's own
+test positives, counted a second time as negatives. We wrote and hashed an exclusion rule
+(\texttt{rule.json}, self-certifying digest \texttt{\rvRuleSha{}\ldots}) before recomputing anything, applied
+it to the stored scores, and retrained nothing. The cleaned pool holds \TestNegDOne{}
+negatives, and every number in the main text uses it.
+
+The change raises every arm's TPR, by $\dPoolUpMin{}$ to $\dPoolUpMax{}$, and raises the
+adaptation arms the most. On the original pool, the adaptation arms placed $\rvFsevenDaMin{}$
+to $\rvFsevenDaMax{}$ of the \DOneLensNeg{} catalogued lenses among the $\rvAboveThrN{}$ negatives above
+each fold's threshold, against $\rvFsevenRefMin{}$ to $\rvFsevenRefMax{}$ for Baseline A and
+the control. The original pool therefore penalised the stronger models for ranking real
+lenses highly. No contrast of the main design changes whether its interval includes zero
+(Appendix~\ref{app:prereg_pool}). In the dilution experiment, whose analysis we pre-registered
+on the cleaned pool, both forms of FreeMatch's contrast against the control exclude zero on the
+original pool (Table~\ref{tab:dl-sensitivity}).
+
+\rwDTwoWord{} of the test lenses also appear in training or validation as negatives: $\rvDTwoRandom{}$ as random galaxies, and one as a bare deflector
+that also hosts simulated lenses. Fourteen of them were training negatives and entered the
+loss labelled as non-lenses. The other six were validation negatives, which no loss uses.
+Removing them changes each arm's fold-mean TPR by at most $\dPoolDTwoMax{}$
+(Appendix~\ref{app:prereg_pool}).
+
+\subsection{Secondary readouts and comparability to the benchmark}
+\label{sec:eval-comparability}
+
+We also report the completeness at 24\% purity, the operating point of the
+benchmark~\citep{lines2025simstosky}. Purity depends on rarity, and our pool is
+far denser in lenses than the sky, so we correct it to $N_N/N_P = 2200$, the ratio of objects
+searched to lenses found in Q1, which~\citep{lines2025simstosky} adopts and we follow for
+comparability, by
+\begin{equation}
+  \mathrm{purity} \;=\; \frac{\mathrm{TPR}}{\mathrm{TPR} + \mathrm{FPR} \cdot 2200}.
+  \label{eq:purity}
+\end{equation}
+We take the completeness as the largest TPR among thresholds at which the corrected purity is
+at least 24\%, since purity need not fall monotonically along the curve; a fold with no such
+threshold is n/a, and an arm with an n/a fold has no fold mean and no interval. We
+express completeness as a ratio to the benchmark's 0.50.
+
+Lines et al.'s simulation-only model never sees a target image. Our Baseline A and $\lambda=0$
+control are comparable to it in that respect, but our adaptation arms are not: they also see
+a target built with catalogue labels, balanced 1:1 in the main design and diluted to 1:10 in
+the second experiment (Section~\ref{sec:labels}). Their benchmark ratios compare a model given
+such a target with one given none. The benchmark's
+figure is a mean over ten initialisations with a spread of $\pm 0.10$ in purity, which our
+intervals do not include, and its negatives are not matched to ours in depth
+(Section~\ref{sec:splits}).

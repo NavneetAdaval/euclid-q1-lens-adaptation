@@ -1,0 +1,11 @@
+{
+ "bundle": "/kaggle/input/datasets/guki07/lens-paper-dilute10",
+ "version": 3,
+ "data_dir": "/kaggle/input/datasets/guki07/lens-paper-dilute10/data/data",
+ "work": "/kaggle/working",
+ "part1": "bd537a025e81833e73713649c9eed68fd6a0fd3152ee29240f9a333f7c649d85",
+ "part2": "b8e09197a204be835fa089c858b08c7eb3e7887bfa19afd296d544d04f394503",
+ "part3": "1b583ea2ae5056edb410040c32613d9388e5a994bf90fc366fc93d293efb596a",
+ "pool": "18c73d6c1cbad99e61d43fa5bc1c972e6347f328253904fa03a64cc8d68153be",
+ "manifest_sha256": "da5d315edd754a0234c639791079222a25d7a7b919ce61eddd5835f6e3540c7d"
+}

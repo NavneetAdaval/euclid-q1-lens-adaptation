@@ -1,0 +1,437 @@
+============================================================================================
+FREEMATCH x UNFREEZE -- freematch_fold0_nb3_unfrozen  (fold 0, 8000 steps, n_blocks=3)
+============================================================================================
+  run                     : nb3_unfrozen
+  run_dir                 : freematch_fold0_nb3_unfrozen
+  n_blocks                : 3
+  lp_ft                   : True
+  init_head_from          : /kaggle/input/datasets/navneet78/lens-data/runs/bakeoff_freematch_5fold/fold0/checkpoints/step_8000.pt
+  init_head_l2            : 29.414692
+  max_steps               : 8000
+  budget_steps            : 8000
+  schedule_total_steps    : 8000
+  is_preregistered_budget : True
+  curve_every             : 125
+  ckpt_every              : 500
+  batch_size              : 256
+  true_batch              : True
+  gradient_accumulation   : False
+  batch_size_is_protocol  : True
+  grad_checkpointing      : True
+  lr                      : 0.001
+  backbone_lr             : 0.0001
+  backbone_lr_effective   : 0.0001
+  lr_decay                : 0.75
+  weight_decay            : 0.0001
+  pos_fraction            : 0.5
+  seed                    : 42
+  head_type               : linear
+  fold                    : 0
+  selection_rule          : R1_last_checkpoint_step8000
+  method                  : freematch
+  domain_adaptation       : freematch
+  local_threshold_mode    : standard
+  freematch_variant       : FreeMatch-standard
+  mu_max                  : 1.0
+  saf_weight              : 0.01
+  sat_ema_momentum        : 0.999
+  consistency_warmup_frac : 0.1
+  fairness_target         : None
+  pos_class               : 1
+  mu_step_offset          : 8000
+  sat_rebuild             : True
+  sat_passes              : 40
+  adam_warmup_steps       : 200
+  continuation_note       : reconstruction, NOT restoration: round 1 saved head+standardizer only, so tau_global/pbar and AdamW's moments were never on disk. Each is rebuilt to its fixed point for THIS model on THIS data; whether that matches round 1's exact step-8000 state is UNVERIFIED.
+  encoder_eval            : live_encode
+  augmentation            : weak (+-3px translate, PROJECT.md 7.3)
+  fp16                    : True
+  precision               : fp16
+  eval_precision          : fp32
+  device                  : cuda
+  num_workers             : 4
+  agreement_ref           : /kaggle/input/datasets/navneet78/lens-data/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+  expect_step0_tpr        : 0.3877551020408163
+  hard_gate               : step-0 TPR@1e-3 must reproduce the phase-1 checkpoint's own fold-0 number; abort otherwise (BRIEF §2)
+  brief                   : BRIEF_freematch_nb3_fold0.md
+  exploratory             : True
+  reporting_note          : fold-0 CI half-width ~0.10-0.12 (§7.8): this run cannot resolve the effect and reports a decision, not a finding
+============================================================================================
+
+============================================================================================
+§1 PRECONDITION CHECK -- only n_blocks, grad_checkpointing and max_steps may differ
+  reference: /kaggle/working/ref_nb0/run_config.json
+============================================================================================
+  key                      | reference                    | this run               | status
+  ----------------------------------------------------------------------------------------
+  augmentation             | weak (+-3px translate, PROJE | weak (+-3px translate, | ok
+  precision                | fp16                         | fp16                   | ok
+  seed                     | 42                           | 42                     | ok
+  batch_size               | 256                          | 256                    | ok
+  lr                       | 0.001                        | 0.001                  | ok
+  lr_decay                 | 0.75                         | 0.75                   | ok
+  weight_decay             | 0.0001                       | 0.0001                 | ok
+  pos_fraction             | 0.5                          | 0.5                    | ok
+  head_type                | linear                       | linear                 | ok
+  fold                     | 0                            | 0                      | ok
+  curve_every              | 125                          | 125                    | ok
+  ckpt_every               | 500                          | 500                    | ok
+  true_batch               | True                         | True                   | ok
+  gradient_accumulation    | False                        | False                  | ok
+  init_head_from           | /kaggle/input/datasets/navne | /kaggle/input/datasets | ok
+  init_head_l2             | 29.414692                    | 29.414692              | ok
+  schedule_total_steps     | 8000                         | 8000                   | ok
+  method                   | freematch                    | freematch              | ok
+  local_threshold_mode     | standard                     | standard               | ok
+  mu_max                   | 1.0                          | 1.0                    | ok
+  saf_weight               | 0.01                         | 0.01                   | ok
+  sat_ema_momentum         | 0.999                        | 0.999                  | ok
+  consistency_warmup_frac  | 0.1                          | 0.1                    | ok
+  fairness_target          | None                         | None                   | ok
+  pos_class                | 1                            | 1                      | ok
+  eval_precision           | fp32                         | fp32                   | ok
+  mu_step_offset           | 8000                         | 8000                   | ok
+  sat_rebuild              | True                         | True                   | ok
+  sat_passes               | 40                           | 40                     | ok
+  adam_warmup_steps        | 200                          | 200                    | ok
+  n_blocks                 | 0                            | 3                      | EXEMPT
+  grad_checkpointing       | False                        | True                   | EXEMPT
+  max_steps                | 2000                         | 8000                   | EXEMPT
+  budget_steps             | 2000                         | 8000                   | EXEMPT
+  backbone_lr              | None                         | 0.0001                 | EXEMPT
+  backbone_lr_effective    | None                         | 0.0001                 | EXEMPT
+  encoder_eval             | frozen_feature_cache         | live_encode            | EXEMPT
+  epochs_planned           | <absent>                     | <absent>               | EXEMPT
+  run                      | nb0_control                  | nb3_unfrozen           | EXEMPT
+  run_dir                  | freematch_fold0_nb0_control  | freematch_fold0_nb3_un | EXEMPT
+  device                   | cuda                         | cuda                   | EXEMPT
+  num_workers              | 4                            | 4                      | EXEMPT
+  ----------------------------------------------------------------------------------------
+  ALL PINNED SETTINGS MATCH.
+
+[ref] scoring Baseline A on target_fold0 for the agreement column ...
+[load] building the Zoobot encoder (n_blocks=3, grad_checkpointing=True) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=3 -> trainable ['stages.3', 'stages.2', 'stages.1'] (14,835,520 params, 99.2% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from /kaggle/input/datasets/navneet78/lens-data/runs/bakeoff_freematch_5fold/fold0/checkpoints/step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 29.414692
+[optim] n_blocks=3  head_lr=0.001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.0001
+[optim]   group 0: head       lr=1.000e-03  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   group 2: stages.2   lr=7.500e-05  params=6,907,520
+[optim]   group 3: stages.1   lr=5.625e-05  params=479,680
+[optim]   TOTAL trainable = 14,837,441 params
+  [fold 0] head=linear  187 steps/epoch  batch=256  src=48000  tgt=782  mu_max=1.0(mid=1.00)  saf_w=0.01  sat_m=0.999  mode=standard  warmup=800 steps  cb_patience=187  fp16=on
+  [continuation] reconstructing the training state a weights-only checkpoint did not save
+  [sat] reconstructing tau_global/pbar: 40 passes over a 782-image pool at batch 256 -> 160 batches (weak aug, fp16)
+    [sat] 25/160 batches
+    [sat] 50/160 batches
+    [sat] 75/160 batches
+    [sat] 100/160 batches
+    [sat] 125/160 batches
+    [sat] 150/160 batches
+  [sat] tau_global : direct 0.958608 | EMA(5000) 0.955531 | predicted-with-bleed 0.955526
+  [sat]   agreement: raw |diff| 0.003077  bleed-corrected |diff| 5.09e-06
+  [sat] pbar       : direct [0.585049, 0.414951] | EMA [0.584569, 0.415431]  (bleed-corrected max|diff| 9.12e-05)
+  [sat] fairness_target LEFT ALONE at [0.5, 0.5] (a config value, not an EMA)
+  [adam] warming moments for 200 steps (probing to 500); weights restored every step; encoder left COLD (120 params frozen for the duration)
+  [adam]   step   50: ||exp_avg_sq|| = 2.788032e-04   debiased = 5.713840e-03   (1921 params with state)
+  [adam]   step  200: ||exp_avg_sq|| = 1.033109e-03   debiased = 5.696735e-03   (1921 params with state)
+  [adam]   step  500: ||exp_avg_sq|| = 2.292079e-03   debiased = 5.823060e-03   (1921 params with state)
+  [adam] rolled optimizer state back to step 200 (the probe beyond it is diagnostic only)
+  [adam] step counter 0 -> 200 (carried into training: True)
+  [adam] raw ||exp_avg_sq|| grew +121.9% over the probe -- expected: it is an EMA from zero, not a convergence signal
+  [adam] DEBIASED second moment moved +2.22% -- CONVERGED (this is the quantity Adam uses)
+  [sat] tau after the Adam warm-up: 0.958655 (drift 4.72e-05 from the rebuilt value -- it should barely move if the rebuild was the fixed point)
+  [step0] evaluating the loaded model BEFORE training (hard gate) ...
+[live] building eval datasets once (fold 0, aug='none') ...
+[live]   val=12000  test_neg=26399  test_pos=98  target=782
+      [step      0] curve  val_auroc=0.9937 | tpr@1e-3 f0=0.3878  agr f0=0.8756  mem tgt-test=-0.0075
+
+==============================================================================
+HARD GATE (BRIEF §2) -- nb3_unfrozen step-0 known-null
+==============================================================================
+  step-0 TPR@1e-3 = 0.3877551020408163
+  expected        = 0.3877551020408163   (tolerance 0.0)
+  VERDICT: PASS
+==============================================================================
+      [step    125] curve  val_auroc=0.9959 | tpr@1e-3 f0=0.4490  agr f0=0.8636  mem tgt-test=-0.0043
+    [ep  1]  516.9s bce=0.0925 cons=0.0264 saf=0.0262 mu=1.000 accept=0.907 acc_pos_frac=0.454 tau=0.960 loc[neg=0.960,pos=0.687] cb=ok
+      [step    250] curve  val_auroc=0.9974 | tpr@1e-3 f0=0.4592  agr f0=0.8496  mem tgt-test=-0.0119
+    [ep  2]  506.2s bce=0.1067 cons=0.0075 saf=0.0052 mu=1.000 accept=0.950 acc_pos_frac=0.461 tau=0.963 loc[neg=0.963,pos=0.703] cb=ok
+      [step    375] curve  val_auroc=0.9971 | tpr@1e-3 f0=0.4735  agr f0=0.8222  mem tgt-test=0.0129
+      [step    500] curve  val_auroc=0.9971 | tpr@1e-3 f0=0.4490  agr f0=0.8141  mem tgt-test=0.0176
+    [ep  3]  673.7s bce=0.0336 cons=0.0293 saf=0.0039 mu=1.000 accept=0.974 acc_pos_frac=0.462 tau=0.967 loc[neg=0.967,pos=0.721] cb=ok
+      [step    625] curve  val_auroc=0.9981 | tpr@1e-3 f0=0.3980  agr f0=0.8159  mem tgt-test=0.0470
+    [ep  4]  503.7s bce=0.0703 cons=0.0205 saf=0.0041 mu=1.000 accept=0.981 acc_pos_frac=0.460 tau=0.971 loc[neg=0.971,pos=0.737] cb=ok
+      [step    750] curve  val_auroc=0.9977 | tpr@1e-3 f0=0.5102  agr f0=0.7959  mem tgt-test=0.0286
+      [step    875] curve  val_auroc=0.9976 | tpr@1e-3 f0=0.4796  agr f0=0.7887  mem tgt-test=0.0561
+    [ep  5]  671.3s bce=0.0338 cons=0.0049 saf=0.0042 mu=1.000 accept=0.987 acc_pos_frac=0.459 tau=0.975 loc[neg=0.975,pos=0.752] cb=ok
+      [step   1000] curve  val_auroc=0.9977 | tpr@1e-3 f0=0.4592  agr f0=0.7895  mem tgt-test=0.0176
+    [ep  6]  502.2s bce=0.0451 cons=0.0204 saf=0.0047 mu=1.000 accept=0.984 acc_pos_frac=0.456 tau=0.978 loc[neg=0.978,pos=0.762] cb=ok
+      [step   1125] curve  val_auroc=0.9978 | tpr@1e-3 f0=0.3673  agr f0=0.8064  mem tgt-test=0.0423
+      [step   1250] curve  val_auroc=0.9984 | tpr@1e-3 f0=0.5204  agr f0=0.7739  mem tgt-test=0.0554
+    [ep  7]  671.1s bce=0.0432 cons=0.0060 saf=0.0058 mu=1.000 accept=0.982 acc_pos_frac=0.451 tau=0.980 loc[neg=0.980,pos=0.769] cb=ok
+      [step   1375] curve  val_auroc=0.9982 | tpr@1e-3 f0=0.4592  agr f0=0.7881  mem tgt-test=0.0632
+    [ep  8]  501.5s bce=0.0458 cons=0.0036 saf=0.0051 mu=1.000 accept=0.989 acc_pos_frac=0.454 tau=0.982 loc[neg=0.982,pos=0.776] cb=ok
+      [step   1500] curve  val_auroc=0.9985 | tpr@1e-3 f0=0.5204  agr f0=0.7802  mem tgt-test=0.0192
+      [step   1625] curve  val_auroc=0.9980 | tpr@1e-3 f0=0.4082  agr f0=0.7235  mem tgt-test=0.0815
+    [ep  9]  669.5s bce=0.0344 cons=0.0047 saf=0.0055 mu=1.000 accept=0.990 acc_pos_frac=0.451 tau=0.985 loc[neg=0.985,pos=0.782] cb=ok
+      [step   1750] curve  val_auroc=0.9988 | tpr@1e-3 f0=0.4082  agr f0=0.7399  mem tgt-test=0.0308
+    [ep 10]  501.4s bce=0.0121 cons=0.0033 saf=0.0053 mu=1.000 accept=0.991 acc_pos_frac=0.452 tau=0.986 loc[neg=0.986,pos=0.787] cb=ok
+      [step   1875] curve  val_auroc=0.9984 | tpr@1e-3 f0=0.5000  agr f0=0.7332  mem tgt-test=-0.0006
+      [step   2000] curve  val_auroc=0.9980 | tpr@1e-3 f0=0.4184  agr f0=0.7551  mem tgt-test=0.0531
+    [ep 11]  670.1s bce=0.0670 cons=0.0068 saf=0.0053 mu=1.000 accept=0.993 acc_pos_frac=0.452 tau=0.988 loc[neg=0.988,pos=0.791] cb=ok
+      [step   2125] curve  val_auroc=0.9986 | tpr@1e-3 f0=0.4286  agr f0=0.7041  mem tgt-test=0.0701
+    [ep 12]  501.1s bce=0.0199 cons=0.0022 saf=0.0049 mu=1.000 accept=0.992 acc_pos_frac=0.454 tau=0.989 loc[neg=0.989,pos=0.796] cb=ok
+      [step   2250] curve  val_auroc=0.9980 | tpr@1e-3 f0=0.4286  agr f0=0.7392  mem tgt-test=0.0550
+      [step   2375] curve  val_auroc=0.9979 | tpr@1e-3 f0=0.4286  agr f0=0.7224  mem tgt-test=0.0705
+    [ep 13]  669.3s bce=0.0126 cons=0.0015 saf=0.0048 mu=1.000 accept=0.991 acc_pos_frac=0.454 tau=0.990 loc[neg=0.990,pos=0.800] cb=ok
+      [step   2500] curve  val_auroc=0.9982 | tpr@1e-3 f0=0.3776  agr f0=0.7487  mem tgt-test=0.0611
+    [ep 14]  500.7s bce=0.0333 cons=0.0095 saf=0.0052 mu=1.000 accept=0.989 acc_pos_frac=0.453 tau=0.991 loc[neg=0.991,pos=0.803] cb=ok
+      [step   2625] curve  val_auroc=0.9979 | tpr@1e-3 f0=0.4082  agr f0=0.7079  mem tgt-test=0.0710
+      [step   2750] curve  val_auroc=0.9982 | tpr@1e-3 f0=0.4694  agr f0=0.7179  mem tgt-test=0.0409
+    [ep 15]  669.3s bce=0.0127 cons=0.0009 saf=0.0048 mu=1.000 accept=0.994 acc_pos_frac=0.454 tau=0.992 loc[neg=0.992,pos=0.806] cb=ok
+      [step   2875] curve  val_auroc=0.9980 | tpr@1e-3 f0=0.4388  agr f0=0.7287  mem tgt-test=0.0567
+    [ep 16]  500.5s bce=0.0237 cons=0.0112 saf=0.0048 mu=1.000 accept=0.994 acc_pos_frac=0.454 tau=0.993 loc[neg=0.993,pos=0.810] cb=ok
+      [step   3000] curve  val_auroc=0.9983 | tpr@1e-3 f0=0.4286  agr f0=0.7433  mem tgt-test=0.0417
+      [step   3125] curve  val_auroc=0.9985 | tpr@1e-3 f0=0.4592  agr f0=0.7307  mem tgt-test=0.0678
+    [ep 17]  669.1s bce=0.0159 cons=0.0051 saf=0.0048 mu=1.000 accept=0.994 acc_pos_frac=0.454 tau=0.994 loc[neg=0.994,pos=0.812] cb=ok
+      [step   3250] curve  val_auroc=0.9984 | tpr@1e-3 f0=0.4796  agr f0=0.7015  mem tgt-test=0.0348
+    [ep 18]  500.9s bce=0.0295 cons=0.0007 saf=0.0050 mu=1.000 accept=0.993 acc_pos_frac=0.453 tau=0.994 loc[neg=0.994,pos=0.814] cb=ok
+      [step   3375] curve  val_auroc=0.9984 | tpr@1e-3 f0=0.4490  agr f0=0.7089  mem tgt-test=0.0706
+      [step   3500] curve  val_auroc=0.9982 | tpr@1e-3 f0=0.4592  agr f0=0.7114  mem tgt-test=0.0352
+    [ep 19]  668.8s bce=0.0123 cons=0.0187 saf=0.0048 mu=1.000 accept=0.996 acc_pos_frac=0.454 tau=0.995 loc[neg=0.995,pos=0.816] cb=ok
+      [step   3625] curve  val_auroc=0.9985 | tpr@1e-3 f0=0.4694  agr f0=0.7454  mem tgt-test=0.1059
+    [ep 20]  499.9s bce=0.0021 cons=0.0009 saf=0.0047 mu=1.000 accept=0.994 acc_pos_frac=0.455 tau=0.995 loc[neg=0.995,pos=0.818] cb=ok
+      [step   3750] curve  val_auroc=0.9979 | tpr@1e-3 f0=0.3878  agr f0=0.6606  mem tgt-test=0.0461
+      [step   3875] curve  val_auroc=0.9985 | tpr@1e-3 f0=0.3673  agr f0=0.7234  mem tgt-test=0.0407
+    [ep 21]  669.0s bce=0.0151 cons=0.0036 saf=0.0046 mu=1.000 accept=0.995 acc_pos_frac=0.455 tau=0.996 loc[neg=0.996,pos=0.820] cb=ok
+      [step   4000] curve  val_auroc=0.9988 | tpr@1e-3 f0=0.4286  agr f0=0.7219  mem tgt-test=0.0467
+    [ep 22]  500.3s bce=0.0042 cons=0.0017 saf=0.0048 mu=1.000 accept=0.995 acc_pos_frac=0.454 tau=0.996 loc[neg=0.996,pos=0.821] cb=ok
+      [step   4125] curve  val_auroc=0.9987 | tpr@1e-3 f0=0.4082  agr f0=0.7269  mem tgt-test=0.0607
+      [step   4250] curve  val_auroc=0.9985 | tpr@1e-3 f0=0.3673  agr f0=0.7068  mem tgt-test=0.0710
+    [ep 23]  668.9s bce=0.0082 cons=0.0022 saf=0.0051 mu=1.000 accept=0.992 acc_pos_frac=0.452 tau=0.996 loc[neg=0.996,pos=0.820] cb=ok
+      [step   4375] curve  val_auroc=0.9985 | tpr@1e-3 f0=0.4490  agr f0=0.7026  mem tgt-test=0.0572
+    [ep 24]  501.0s bce=0.0082 cons=0.0081 saf=0.0052 mu=1.000 accept=0.993 acc_pos_frac=0.452 tau=0.996 loc[neg=0.996,pos=0.820] cb=ok
+      [step   4500] curve  val_auroc=0.9980 | tpr@1e-3 f0=0.4286  agr f0=0.7132  mem tgt-test=0.0729
+      [step   4625] curve  val_auroc=0.9980 | tpr@1e-3 f0=0.3980  agr f0=0.7143  mem tgt-test=0.0378
+    [ep 25]  669.6s bce=0.0030 cons=0.0009 saf=0.0050 mu=1.000 accept=0.995 acc_pos_frac=0.453 tau=0.997 loc[neg=0.997,pos=0.820] cb=ok
+      [step   4750] curve  val_auroc=0.9979 | tpr@1e-3 f0=0.3980  agr f0=0.7182  mem tgt-test=0.0594
+    [ep 26]  501.0s bce=0.0109 cons=0.0223 saf=0.0051 mu=1.000 accept=0.994 acc_pos_frac=0.452 tau=0.997 loc[neg=0.997,pos=0.820] cb=ok
+      [step   4875] curve  val_auroc=0.9985 | tpr@1e-3 f0=0.4490  agr f0=0.7140  mem tgt-test=0.0345
+      [step   5000] curve  val_auroc=0.9986 | tpr@1e-3 f0=0.4592  agr f0=0.7277  mem tgt-test=0.0320
+    [ep 27]  669.9s bce=0.0034 cons=0.0002 saf=0.0051 mu=1.000 accept=0.995 acc_pos_frac=0.452 tau=0.997 loc[neg=0.997,pos=0.820] cb=ok
+      [step   5125] curve  val_auroc=0.9989 | tpr@1e-3 f0=0.4490  agr f0=0.7448  mem tgt-test=0.0416
+    [ep 28]  501.3s bce=0.0010 cons=0.0004 saf=0.0049 mu=1.000 accept=0.994 acc_pos_frac=0.453 tau=0.997 loc[neg=0.997,pos=0.821] cb=ok
+      [step   5250] curve  val_auroc=0.9990 | tpr@1e-3 f0=0.4388  agr f0=0.7356  mem tgt-test=0.0419
+      [step   5375] curve  val_auroc=0.9982 | tpr@1e-3 f0=0.4592  agr f0=0.7141  mem tgt-test=0.0599
+    [ep 29]  669.4s bce=0.0021 cons=0.0005 saf=0.0050 mu=1.000 accept=0.994 acc_pos_frac=0.453 tau=0.997 loc[neg=0.997,pos=0.821] cb=ok
+      [step   5500] curve  val_auroc=0.9987 | tpr@1e-3 f0=0.3061  agr f0=0.7307  mem tgt-test=0.0756
+    [ep 30]  500.7s bce=0.0108 cons=0.0079 saf=0.0052 mu=1.000 accept=0.992 acc_pos_frac=0.452 tau=0.997 loc[neg=0.997,pos=0.820] cb=ok
+      [step   5625] curve  val_auroc=0.9985 | tpr@1e-3 f0=0.3878  agr f0=0.7282  mem tgt-test=0.0261
+      [step   5750] curve  val_auroc=0.9986 | tpr@1e-3 f0=0.3265  agr f0=0.7444  mem tgt-test=0.0849
+    [ep 31]  670.7s bce=0.0010 cons=0.0004 saf=0.0053 mu=1.000 accept=0.993 acc_pos_frac=0.452 tau=0.997 loc[neg=0.997,pos=0.819] cb=ok
+      [step   5875] curve  val_auroc=0.9986 | tpr@1e-3 f0=0.3878  agr f0=0.7449  mem tgt-test=0.0512
+    [ep 32]  500.9s bce=0.0050 cons=0.0004 saf=0.0059 mu=1.000 accept=0.992 acc_pos_frac=0.449 tau=0.997 loc[neg=0.997,pos=0.817] cb=ok
+      [step   6000] curve  val_auroc=0.9989 | tpr@1e-3 f0=0.4082  agr f0=0.7413  mem tgt-test=0.0198
+      [step   6125] curve  val_auroc=0.9989 | tpr@1e-3 f0=0.2653  agr f0=0.7186  mem tgt-test=0.0567
+    [ep 33]  668.9s bce=0.0022 cons=0.0035 saf=0.0062 mu=1.000 accept=0.996 acc_pos_frac=0.447 tau=0.998 loc[neg=0.998,pos=0.815] cb=ok
+      [step   6250] curve  val_auroc=0.9991 | tpr@1e-3 f0=0.3571  agr f0=0.7118  mem tgt-test=0.1063
+    [ep 34]  500.8s bce=0.0006 cons=0.0013 saf=0.0062 mu=1.000 accept=0.996 acc_pos_frac=0.447 tau=0.998 loc[neg=0.998,pos=0.813] cb=ok
+      [step   6375] curve  val_auroc=0.9990 | tpr@1e-3 f0=0.4184  agr f0=0.7069  mem tgt-test=0.0684
+      [step   6500] curve  val_auroc=0.9987 | tpr@1e-3 f0=0.3714  agr f0=0.7144  mem tgt-test=0.0617
+    [ep 35]  668.9s bce=0.0102 cons=0.0038 saf=0.0064 mu=1.000 accept=0.995 acc_pos_frac=0.446 tau=0.998 loc[neg=0.998,pos=0.810] cb=ok
+      [step   6625] curve  val_auroc=0.9989 | tpr@1e-3 f0=0.2551  agr f0=0.7241  mem tgt-test=0.0519
+    [ep 36]  500.5s bce=0.0014 cons=0.0046 saf=0.0069 mu=1.000 accept=0.995 acc_pos_frac=0.444 tau=0.998 loc[neg=0.998,pos=0.807] cb=ok
+      [step   6750] curve  val_auroc=0.9990 | tpr@1e-3 f0=0.3571  agr f0=0.7450  mem tgt-test=0.0354
+      [step   6875] curve  val_auroc=0.9990 | tpr@1e-3 f0=0.3980  agr f0=0.7132  mem tgt-test=0.0490
+    [ep 37]  667.0s bce=0.0033 cons=0.0000 saf=0.0067 mu=1.000 accept=0.995 acc_pos_frac=0.445 tau=0.998 loc[neg=0.998,pos=0.806] cb=ok
+      [step   7000] curve  val_auroc=0.9989 | tpr@1e-3 f0=0.3061  agr f0=0.7200  mem tgt-test=0.0650
+    [ep 38]  498.7s bce=0.0027 cons=0.0003 saf=0.0065 mu=1.000 accept=0.997 acc_pos_frac=0.446 tau=0.998 loc[neg=0.998,pos=0.805] cb=ok
+      [step   7125] curve  val_auroc=0.9986 | tpr@1e-3 f0=0.3469  agr f0=0.7328  mem tgt-test=0.0582
+      [step   7250] curve  val_auroc=0.9988 | tpr@1e-3 f0=0.3776  agr f0=0.7456  mem tgt-test=0.0329
+    [ep 39]  667.0s bce=0.0161 cons=0.0170 saf=0.0064 mu=1.000 accept=0.997 acc_pos_frac=0.446 tau=0.998 loc[neg=0.998,pos=0.804] cb=ok
+      [step   7375] curve  val_auroc=0.9986 | tpr@1e-3 f0=0.3878  agr f0=0.7431  mem tgt-test=0.0381
+    [ep 40]  499.9s bce=0.0074 cons=0.0278 saf=0.0065 mu=1.000 accept=0.996 acc_pos_frac=0.446 tau=0.998 loc[neg=0.998,pos=0.803] cb=ok
+      [step   7500] curve  val_auroc=0.9987 | tpr@1e-3 f0=0.2857  agr f0=0.7261  mem tgt-test=0.0884
+      [step   7625] curve  val_auroc=0.9987 | tpr@1e-3 f0=0.2347  agr f0=0.7478  mem tgt-test=0.0415
+    [ep 41]  668.2s bce=0.0115 cons=0.0033 saf=0.0064 mu=1.000 accept=0.995 acc_pos_frac=0.446 tau=0.998 loc[neg=0.998,pos=0.803] cb=ok
+      [step   7750] curve  val_auroc=0.9988 | tpr@1e-3 f0=0.4082  agr f0=0.7654  mem tgt-test=0.0522
+    [ep 42]  499.0s bce=0.0195 cons=0.0006 saf=0.0062 mu=1.000 accept=0.996 acc_pos_frac=0.447 tau=0.998 loc[neg=0.998,pos=0.803] cb=ok
+      [step   7875] curve  val_auroc=0.9985 | tpr@1e-3 f0=0.2449  agr f0=0.7445  mem tgt-test=0.0944
+      [step   8000] curve  val_auroc=0.9981 | tpr@1e-3 f0=0.3673  agr f0=0.7112  mem tgt-test=0.0539
+    [ep 43]  595.0s bce=0.0179 cons=0.0003 saf=0.0061 mu=1.000 accept=0.993 acc_pos_frac=0.447 tau=0.998 loc[neg=0.998,pos=0.803] cb=ok  saved freematch_linear_fold0_ep43.pt
+[mem] peak GPU allocated = 4.60 GB   (§7.1a anchor for FreeMatch nb3 at true batch 256: 4.76 GB with gradient checkpointing; OOM on a 14.56 GiB T4 without)
+[retention] checkpoints 17/17  curve rows 65/65
+[train] done in 431.6 min
+
+[R1] freematch_fold0_nb3_unfrozen  fold0  TPR@0.001 = 0.3673   AUROC = 0.9736   AUPRC = 0.4705
+
+==============================================================================
+§5.5 COLLAPSE GATE (post-hoc; never a stopper) -- freematch_fold0_nb3_unfrozen
+==============================================================================
+
+==============================================================================
+G1 -- AGREEMENT CURVE   [freematch_fold0_nb3_unfrozen]
+==============================================================================
+  source    : INLINE column 'agreement_fold0' from runs/freematch_fold0_nb3_unfrozen/curve.csv
+              (live-encoded during training; the post-hoc recompute is INVALID for an unfrozen encoder)
+  DA run    : runs/freematch_fold0_nb3_unfrozen  (65 curve points)
+
+  agreement curve:
+      step |  agreement |     delta
+    -------+------------+----------
+         0 |     0.8756 |      --  
+       125 |     0.8636 |   -0.0120
+       250 |     0.8496 |   -0.0140
+       375 |     0.8222 |   -0.0274
+       500 |     0.8141 |   -0.0081
+       625 |     0.8159 |   +0.0018
+       750 |     0.7959 |   -0.0200
+       875 |     0.7887 |   -0.0072
+      1000 |     0.7895 |   +0.0008
+      1125 |     0.8064 |   +0.0169
+      1250 |     0.7739 |   -0.0325
+      1375 |     0.7881 |   +0.0142
+      1500 |     0.7802 |   -0.0078
+      1625 |     0.7235 |   -0.0567
+      1750 |     0.7399 |   +0.0163
+      1875 |     0.7332 |   -0.0067
+      2000 |     0.7551 |   +0.0219
+      2125 |     0.7041 |   -0.0510
+      2250 |     0.7392 |   +0.0350
+      2375 |     0.7224 |   -0.0167
+      2500 |     0.7487 |   +0.0263
+      2625 |     0.7079 |   -0.0408
+      2750 |     0.7179 |   +0.0100
+      2875 |     0.7287 |   +0.0108
+      3000 |     0.7433 |   +0.0145
+      3125 |     0.7307 |   -0.0126
+      3250 |     0.7015 |   -0.0291
+      3375 |     0.7089 |   +0.0074
+      3500 |     0.7114 |   +0.0025
+      3625 |     0.7454 |   +0.0340
+      3750 |     0.6606 |   -0.0848
+      3875 |     0.7234 |   +0.0628
+      4000 |     0.7219 |   -0.0015
+      4125 |     0.7269 |   +0.0050
+      4250 |     0.7068 |   -0.0201
+      4375 |     0.7026 |   -0.0042
+      4500 |     0.7132 |   +0.0106
+      4625 |     0.7143 |   +0.0011
+      4750 |     0.7182 |   +0.0039
+      4875 |     0.7140 |   -0.0042
+      5000 |     0.7277 |   +0.0137
+      5125 |     0.7448 |   +0.0171
+      5250 |     0.7356 |   -0.0092
+      5375 |     0.7141 |   -0.0215
+      5500 |     0.7307 |   +0.0166
+      5625 |     0.7282 |   -0.0025
+      5750 |     0.7444 |   +0.0162
+      5875 |     0.7449 |   +0.0006
+      6000 |     0.7413 |   -0.0036
+      6125 |     0.7186 |   -0.0227
+      6250 |     0.7118 |   -0.0069
+      6375 |     0.7069 |   -0.0049
+      6500 |     0.7144 |   +0.0076
+      6625 |     0.7241 |   +0.0097
+      6750 |     0.7450 |   +0.0208
+      6875 |     0.7132 |   -0.0318
+      7000 |     0.7200 |   +0.0068
+      7125 |     0.7328 |   +0.0128
+      7250 |     0.7456 |   +0.0128
+      7375 |     0.7431 |   -0.0026
+      7500 |     0.7261 |   -0.0169
+      7625 |     0.7478 |   +0.0217
+      7750 |     0.7654 |   +0.0176
+      7875 |     0.7445 |   -0.0209
+      8000 |     0.7112 |   -0.0333
+
+==============================================================================
+G2 -- DROP DETECTOR   [freematch_fold0_nb3_unfrozen]
+==============================================================================
+
+  RAW curve statistics -- freematch_fold0_nb3_unfrozen (no thresholds involved):
+    largest drop within W=1000 steps : +0.1023  (step 1125 -> 2125)
+    curve minimum                        : 0.6606  (at step 3750)
+
+  GATE (uncalibrated settings -- fire/no-fire is a CANDIDATE, not a verdict):
+    setting | W     | M     | F     | cliff        | floor        | FIRE at
+    -----------------------------------------------------------------------
+    strict  | 1000  | 0.15  | 0.50  | no           | no           | -- no fire --
+    loose   | 1000  | 0.30  | 0.20  | no           | no           | -- no fire --
+
+  OVERLAY -- agreement vs the known freematch_fold0_nb3_unfrozen TPR@1e-3 curve:
+      step |  agreement | TPR@1e-3 |  agreement bar
+    -------+------------+----------+----------------------------------
+         0 |     0.8756 |   0.3878 | ##########################
+       125 |     0.8636 |   0.4490 | ##########################
+       250 |     0.8496 |   0.4592 | #########################
+       375 |     0.8222 |   0.4735 | #########################
+       500 |     0.8141 |   0.4490 | ########################
+       625 |     0.8159 |   0.3980 | ########################
+       750 |     0.7959 |   0.5102 | ########################
+       875 |     0.7887 |   0.4796 | ########################
+      1000 |     0.7895 |   0.4592 | ########################
+      1125 |     0.8064 |   0.3673 | ########################
+      1250 |     0.7739 |   0.5204 | #######################
+      1375 |     0.7881 |   0.4592 | ########################
+      1500 |     0.7802 |   0.5204 | #######################
+      1625 |     0.7235 |   0.4082 | ######################
+      1750 |     0.7399 |   0.4082 | ######################
+      1875 |     0.7332 |   0.5000 | ######################
+      2000 |     0.7551 |   0.4184 | #######################
+      2125 |     0.7041 |   0.4286 | #####################
+      2250 |     0.7392 |   0.4286 | ######################
+      2375 |     0.7224 |   0.4286 | ######################
+      2500 |     0.7487 |   0.3776 | ######################
+      2625 |     0.7079 |   0.4082 | #####################
+      2750 |     0.7179 |   0.4694 | ######################
+      2875 |     0.7287 |   0.4388 | ######################
+      3000 |     0.7433 |   0.4286 | ######################
+      3125 |     0.7307 |   0.4592 | ######################
+      3250 |     0.7015 |   0.4796 | #####################
+      3375 |     0.7089 |   0.4490 | #####################
+      3500 |     0.7114 |   0.4592 | #####################
+      3625 |     0.7454 |   0.4694 | ######################
+      3750 |     0.6606 |   0.3878 | ####################
+      3875 |     0.7234 |   0.3673 | ######################
+      4000 |     0.7219 |   0.4286 | ######################
+      4125 |     0.7269 |   0.4082 | ######################
+      4250 |     0.7068 |   0.3673 | #####################
+      4375 |     0.7026 |   0.4490 | #####################
+      4500 |     0.7132 |   0.4286 | #####################
+      4625 |     0.7143 |   0.3980 | #####################
+      4750 |     0.7182 |   0.3980 | ######################
+      4875 |     0.7140 |   0.4490 | #####################
+      5000 |     0.7277 |   0.4592 | ######################
+      5125 |     0.7448 |   0.4490 | ######################
+      5250 |     0.7356 |   0.4388 | ######################
+      5375 |     0.7141 |   0.4592 | #####################
+      5500 |     0.7307 |   0.3061 | ######################
+      5625 |     0.7282 |   0.3878 | ######################
+      5750 |     0.7444 |   0.3265 | ######################
+      5875 |     0.7449 |   0.3878 | ######################
+      6000 |     0.7413 |   0.4082 | ######################
+      6125 |     0.7186 |   0.2653 | ######################
+      6250 |     0.7118 |   0.3571 | #####################
+      6375 |     0.7069 |   0.4184 | #####################
+      6500 |     0.7144 |   0.3714 | #####################
+      6625 |     0.7241 |   0.2551 | ######################
+      6750 |     0.7450 |   0.3571 | ######################
+      6875 |     0.7132 |   0.3980 | #####################
+      7000 |     0.7200 |   0.3061 | ######################
+      7125 |     0.7328 |   0.3469 | ######################
+      7250 |     0.7456 |   0.3776 | ######################
+      7375 |     0.7431 |   0.3878 | ######################
+      7500 |     0.7261 |   0.2857 | ######################
+      7625 |     0.7478 |   0.2347 | ######################
+      7750 |     0.7654 |   0.4082 | #######################
+      7875 |     0.7445 |   0.2449 | ######################
+      8000 |     0.7112 |   0.3673 | #####################
+
+  SHAPE: first=0.8756  last=0.7112  min=0.6606  max=0.8756  total range=0.2150   -> starts high and declines gradually, then levels (as spec 1 predicted)
+[gate] -> /kaggle/working/runs/freematch_fold0_nb3_unfrozen/gate_fold0.json
+[out] run_config.json + results.json + curve.csv + diagnostics.csv + memorization.csv + logits/ + scores/ -> /kaggle/working/runs/freematch_fold0_nb3_unfrozen

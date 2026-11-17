@@ -1,0 +1,40 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_a2_hashes.py)
+% Appendix: protected pre-registration artifacts.
+% Digests RE-DERIVED at build time by scripts/integrity.protected_files();
+% dates READ from each file's own fields; first-run times READ from the runs' own files.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{The protected artifacts, and when each was recorded relative to the runs it governs.} Each file is read-only once written and checked by digest, so an overwrite fails loudly instead of succeeding quietly. \textbf{The digests and the dates are read from the files at build time, not transcribed.} \emph{Recorded} is the file's own timestamp; where a file carries none, \emph{Source} says whether it carries its own before-flag or whether its timing rests on the project record alone. \emph{vs.\ runs} compares that with the earliest start time of the confirmatory runs the file governs, read from those runs' own files. The DANN pre-registration's file was regenerated after DANN's confirmatory folds, so its row is dated from an archived pre-fold copy whose digest matches the file's recorded hash history, and the build asserts that the copy's pre-registered keys are unchanged in the current file (see the notes and Appendix~\ref{sec:hashes}). Two flavours of digest are checked separately: a whole-file digest, and a self-certifying one taken over the JSON body with its own hash field removed. \textbf{The last column separates hashed from verified}: eight artifacts are hashed in the record, seven are in the inventory every analysis run re-checks, and the eighth is recorded but unenrolled. The last row is protected but is not a pre-registration: it governs no run.}
+\label{tab:hashes}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\TRAG}p{2.6cm}>{\TRAG}p{1.3cm}>{\TRAG}p{1.75cm}>{\TRAG}p{1.3cm}>{\TRAG}p{1.3cm}>{\TRAG}p{1.4cm}l>{\TRAG}p{1.4cm}}
+\toprule
+Artifact & Recorded (UTC) & Source & First run (UTC) & vs.\ runs & Flavour & sha256 (first 16) & Verified \\
+\midrule
+BNM $\times$ nb3 budget & --- & record only & 2026-09-14 11:36 & not checkable & whole\_\allowbreak{}file & \texttt{5b92e161ed1e301f} & yes \\
+BNM $\times$ nb3 pre-registration & --- & file (flag only) & 2026-09-14 11:36 & before (flag) & whole\_\allowbreak{}file & \texttt{d205f6784213b75d} & yes \\
+CORAL $\times$ nb3 budget & 2026-08-21 18:01 & file & 2026-08-23 12:42 & before & self\_\allowbreak{}certifying & \texttt{65c20810485968d8} & yes \\
+DANN $\times$ nb3 budget + sensitivity readout & 2026-09-02 & file & 2026-09-03 13:54 & before & self\_\allowbreak{}certifying & \texttt{abf0dae0e313ae53} & yes \\
+DANN $\times$ nb3 pre-registration, pre-fold copy & 2026-09-02 16:26 & archived copy & 2026-09-03 13:54 & before & self\_\allowbreak{}certifying & \texttt{51351308196ad332} & no (archived) \\
+DANN $\times$ nb3 pre-registration, regenerated file & 2026-09-05 11:43 & file & 2026-09-03 13:54 & \textbf{after} & self\_\allowbreak{}certifying & \texttt{3ad1fc361a150b95} & yes \\
+$\lambda=0$ control pre-registration & --- & Kaggle dataset version, 6 Sept 2026 & 2026-09-07 08:38 & before & self\_\allowbreak{}certifying & \texttt{c1694a479eafb040} & yes \\
+Checkpoint-window averaging declaration & --- & file (flag only) & --- & before (flag) & self\_\allowbreak{}certifying & \texttt{a572b81e4c730590} & \textbf{no} \\
+\midrule
+\multicolumn{8}{l}{\emph{Protected, not a pre-registration (governs no run):}} \\
+BNM step-0 gradient norms, re-measured & --- & record only & --- & n/a & whole\_\allowbreak{}file & \texttt{04930f2fe924b99a} & yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begingroup\footnotesize\noindent\textbf{Notes to Table~\ref{tab:hashes}.} What each one fixed: 
+\emph{BNM $\times$ nb3 budget} --- budget 1000, outcome \texttt{no\_matched\_arm\_budget}: the arm's own-objective reading only, never cross-arm comparable. The file carries no timestamp and no before-flag, so its timing rests on the project record alone.
+\emph{BNM $\times$ nb3 pre-registration} --- $\gamma$ from a metric-blind rule; budget left OPEN because the budget rule reads a crossing only the development run produces.
+\emph{CORAL $\times$ nb3 budget} --- budget 2000, declared on cost and explicitly not the argmax.
+\emph{DANN $\times$ nb3 budget + sensitivity readout} --- budget 4000 = 2 $\times$ the $\lambda$ horizon, and the step-2000 sensitivity pre-declaration: the headline is the mean at 4000, and the mean at step 2000 is a budget-sensitivity check that \emph{does not replace it, whichever is higher} (key \texttt{PRE\_DECLARED\_headline\_and\_sensitivity}). Every confirmatory fold records this file's self-certifying digest when it starts, so this rule is verified as fixed before the folds.
+\emph{DANN $\times$ nb3 pre-registration} --- arms, abort conditions, the rule for declaring the margin M, the budget decision, the headline/sensitivity rule, and the predictions, including \texttt{prediction\_arc\_suppression} and \texttt{3\_spread\_not\_mean}. The date and the \emph{before} are those of a pre-fold copy of this file (history entry \dannPrefoldEntry{}, archived as \texttt{evidence/prefold/dann\_r5\_prereg\_kaggle\_v2\_20260902.json}); the file itself was regenerated after the folds, on 2026-09-05, which added \dannPrefoldAddedKeys{} post-fold keys and left all \dannPrefoldIdenticalKeys{} pre-fold keys identical. The copy does \emph{not} establish the arc-suppression prediction's precedence over its own fold-0 test, whose outcome it already contains (history entry \dannArcEntry{} was not recovered).
+\emph{$\lambda=0$ control pre-registration} --- budget 4000 under the rule \emph{the control is read where its treatment is read}; both decision branches, and the four pre-registered paired contrasts.
+\emph{Checkpoint-window averaging declaration} --- $k=8$ primary, the grid $\{1,2,4,8\}$, both score combinations, and the window placed by the pre-registered read-off so the rule reads no metric; it governs analyses, not training runs.
+\emph{BNM step-0 gradient norms, re-measured} --- a second, later measurement; the $\gamma$ grid is never re-derived from it and its original measuring run is lost. Protected, but not a pre-registration: it governs no run.
+A further digest in the project record, \texttt{7356acda\ldots}, is the hash of a \emph{superseded} pre-registration text, kept deliberately and correctly matching no live file. \textbf{The one row marked \emph{no} above is hashed in the record but absent from \texttt{runs/protected\_artifacts.json}}, the inventory \texttt{verify()} walks, so it receives neither the re-check nor the read-only protection the other seven do. It is reported here rather than quietly enrolled, because enrolling it now would date its protection to the paper rather than to the declaration.\par\endgroup

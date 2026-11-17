@@ -1,0 +1,14 @@
+{
+ "arm": "freematch_nb3",
+ "budget": 1500,
+ "steps_completed": 1500,
+ "r1_checkpoint_present": true,
+ "logit_grid": [
+  0,
+  1500,
+  125
+ ],
+ "n_expected_logits": 13,
+ "missing_logits": [],
+ "named_in_checkpoints_csv_but_missing": []
+}

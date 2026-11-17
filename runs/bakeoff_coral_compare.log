@@ -1,0 +1,118 @@
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:247: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+
+============================================================================================
+PAIRED COMPARISON   coral  vs  baseline_A   (diff = coral - baseline_A)
+HEADLINE: TPR@FPR=0.001 + purity  |  AUPRC (threshold-free)  |  AUROC SECONDARY/sanity
+purity corrected to N_N/N_P = 1:2200  (Lines et al. Q1 deployment rarity)   paired bootstrap B=1000, seed=0
+Lines source-only reference (CONTEXT, not a target): ~50% completeness @ ~24% purity on real Q1
+============================================================================================
+
+PER-FOLD  TPR@FPR=0.001   [HEADLINE]
+    fold |  n_pos |   baseline_A |        coral |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.1939 |       0.2143 |   +0.0204 | [-0.0408, +0.0918] |  no
+       1 |     98 |       0.1429 |       0.1735 |   +0.0306 | [+0.0000, +0.0714] |  no
+       2 |     98 |       0.1939 |       0.2143 |   +0.0204 | [-0.0408, +0.0714] |  no
+       3 |     98 |       0.1531 |       0.1531 |   +0.0000 | [-0.0306, +0.0408] |  no
+       4 |     97 |       0.1959 |       0.2062 |   +0.0103 | [-0.0515, +0.0722] |  no
+
+PER-FOLD  purity@50%-comp (corr 1:2200)   [HEADLINE]
+    fold |  n_pos |   baseline_A |        coral |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.0169 |       0.0162 |   -0.0007 | [-0.0049, +0.0101] |  no
+       1 |     98 |       0.0123 |       0.0116 |   -0.0007 | [-0.0058, +0.0035] |  no
+       2 |     98 |       0.0095 |       0.0084 |   -0.0011 | [-0.0137, +0.0047] |  no
+       3 |     98 |       0.0128 |       0.0155 |   +0.0026 | [-0.0027, +0.0093] |  no
+       4 |     97 |       0.0146 |       0.0116 |   -0.0031 | [-0.0060, +0.0082] |  no
+
+PER-FOLD  AUPRC   [HEADLINE (threshold-free)]
+    fold |  n_pos |   baseline_A |        coral |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.1921 |       0.2101 |   +0.0181 | [-0.0043, +0.0453] |  no
+       1 |     98 |       0.1384 |       0.1659 |   +0.0275 | [+0.0093, +0.0511] | yes
+       2 |     98 |       0.1830 |       0.1865 |   +0.0035 | [-0.0155, +0.0259] |  no
+       3 |     98 |       0.1541 |       0.1684 |   +0.0144 | [-0.0054, +0.0379] |  no
+       4 |     97 |       0.1860 |       0.2064 |   +0.0205 | [-0.0060, +0.0487] |  no
+
+PER-FOLD  purity@50%-comp (raw pool)   [context]
+    fold |  n_pos |   baseline_A |        coral |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.1234 |       0.1186 |   -0.0048 | [-0.0313, +0.0565] |  no
+       1 |     98 |       0.0925 |       0.0877 |   -0.0048 | [-0.0371, +0.0235] |  no
+       2 |     98 |       0.0728 |       0.0648 |   -0.0080 | [-0.0752, +0.0267] |  no
+       3 |     98 |       0.0959 |       0.1137 |   +0.0178 | [-0.0196, +0.0580] |  no
+       4 |     97 |       0.1071 |       0.0864 |   -0.0207 | [-0.0400, +0.0483] |  no
+
+PER-FOLD  completeness@purity=0.24 (corr 1:2200)   [context]
+    fold |  n_pos |   baseline_A |        coral |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |          nan |          nan |       nan | [-0.0253, +0.1171] |  no
+       1 |     98 |          nan |          nan |       nan | [-0.0878, +0.1286] |  no
+       2 |     98 |       0.0204 |       0.0204 |   +0.0000 | [-0.0510, +0.0408] |  no
+       3 |     98 |          nan |          nan |       nan | [-0.0423, +0.1122] |  no
+       4 |     97 |       0.0206 |       0.0619 |   +0.0412 | [-0.0309, +0.1229] |  no
+
+PER-FOLD  AUROC   [secondary/sanity]
+    fold |  n_pos |   baseline_A |        coral |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.9427 |       0.9477 |   +0.0050 | [-0.0012, +0.0128] |  no
+       1 |     98 |       0.8923 |       0.9074 |   +0.0151 | [+0.0052, +0.0269] | yes
+       2 |     98 |       0.9031 |       0.9050 |   +0.0018 | [-0.0076, +0.0106] |  no
+       3 |     98 |       0.9016 |       0.9050 |   +0.0033 | [-0.0065, +0.0136] |  no
+       4 |     97 |       0.8908 |       0.9028 |   +0.0120 | [+0.0013, +0.0222] | yes
+
+============================================================================================
+AGGREGATE (across-fold mean; paired bootstrap CI of the mean difference, B-A)
+============================================================================================
+    metric                             |  baseline_A |       coral |     diff  | 95% CI of diff       | excl. 0
+    --------------------------------------------------------------------------------------------
+    TPR@FPR=0.001                      |      0.1759 |      0.1923 |   +0.0163 | [-0.0062, +0.0429] |  no  <<
+    purity@50%-comp (corr 1:2200)      |      0.0132 |      0.0127 |   -0.0006 | [-0.0025, +0.0036] |  no  <<
+    AUPRC                              |      0.1707 |      0.1875 |   +0.0168 | [+0.0037, +0.0319] | YES
+    purity@50%-comp (raw pool)         |      0.0983 |      0.0942 |   -0.0041 | [-0.0158, +0.0208] |  no
+    completeness@purity=0.24 (corr 1:2200) |      0.0205 |      0.0411 |   +0.0206 | [-0.0312, +0.0697] |  no
+    AUROC                              |      0.9061 |      0.9136 |   +0.0075 | [+0.0032, +0.0119] | YES
+
+============================================================================================
+VERDICT  (headline = TPR@1e-3 and purity; AUROC is secondary/sanity only)
+============================================================================================
+  TPR@FPR=0.001                     : diff +0.0163  ->  NOT distinguishable (CI straddles 0)
+  purity@50%-comp (corr 1:2200)     : diff -0.0006  ->  NOT distinguishable (CI straddles 0)
+  AUPRC                             : diff +0.0168  ->  DISTINGUISHABLE improvement (CI excludes 0, +)
+  AUROC (secondary/sanity)          : diff +0.0075  ->  DISTINGUISHABLE improvement (CI excludes 0, +)
+============================================================================================

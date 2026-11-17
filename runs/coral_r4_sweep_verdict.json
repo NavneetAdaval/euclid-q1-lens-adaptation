@@ -1,0 +1,189 @@
+{
+  "criterion": "\nPRE-REGISTERED SELECTION CRITERION -- gamma sweep, nb3, fold 0, 2000 steps per arm\n==================================================================================\nFixed in code and printed before any run. NOT to be amended afterwards.\n\nWHY A SWEEP AT ALL. The 500-step calibration showed magnitude-matching is ILL-POSED on the\nunfrozen arm. Raw CORAL depends on the feature scale as scale^4, the unfrozen encoder moves\nthat scale, so \"equalise the two losses at the end of training\" has no fixed point: nb3's\nequalising gamma halved across its own tail window (1.138 -> 0.629, CV 0.868). And at\ngamma=1.0 the CORAL term is LOSING -- sup_loss falls, raw CORAL rises, the feature norm\nrises 25%. Running 8000 steps in that state would make a null result uninterpretable,\nbecause \"CORAL did not help\" and \"CORAL never got any traction\" look identical in the\nmetric.\n\nCHOOSE THE SMALLEST gamma satisfying BOTH:\n\n  (i)  RAW CORAL IS NOT MONOTONICALLY RISING over the SECOND HALF of the window\n       (steps in (1000, 2000]).\n       Fit an ordinary-least-squares slope of raw CORAL against step over that half.\n       Resample with a MOVING-BLOCK BOOTSTRAP (block length 50 steps, B=5000) -- blocks,\n       not independent steps, because a training trace is autocorrelated and an iid\n       bootstrap would understate the slope's uncertainty by a large factor.\n       PASS iff the 95% percentile CI of the slope has LOWER BOUND <= 0.\n       i.e. FAIL only when the CI lies ENTIRELY ABOVE zero -- demonstrably rising.\n       This is the direct operationalisation of \"not monotonically rising\": the test is\n       against the claim that it IS rising, and a slope indistinguishable from zero passes.\n       The stricter reading (CI entirely BELOW zero = demonstrably falling) is computed and\n       reported alongside as `strictly_falling`, but it is NOT the criterion.\n\n  (ii) FEATURE-NORM GROWTH over the FULL window is MEASURABLY DAMPED relative to the\n       gamma=1.0 arm.\n       growth = mean ||f|| over the LAST 10% of steps  minus  mean ||f|| over the FIRST 10%,\n       computed on the SOURCE domain (the target domain is reported and must agree in sign).\n       Compare growth(gamma) against growth(1.0) with the same moving-block bootstrap,\n       resampling each arm independently (they are independent runs).\n       PASS iff the 95% CI of [growth(gamma) - growth(1.0)] lies ENTIRELY BELOW zero.\n       \"Measurably\" is the CI excluding zero; \"damped\" is the sign being negative.\n       VACUOUS-REFERENCE GUARD: if growth(1.0) <= 0 the reference arm did not grow, there\n       is nothing to damp, and criterion (ii) is reported INAPPLICABLE rather than passed.\n       gamma=1.0 is the reference and is never a candidate under (ii).\n\nIF NO GAMMA SATISFIES BOTH: report that, pick nothing, and propose\nEXTENDING THE SWEEP UPWARD (gamma 64, then 256). Do not relax either clause.\n\nWINDOWING UNDER AN ABORT. If an arm trips the feature-norm ceiling it stops early. All\ncomparisons are then made on the LONGEST WINDOW COMMON TO BOTH ARMS, and the truncation is\nreported next to the verdict. An arm that aborts has not passed anything.\n\nMETRIC HYGIENE. This sweep reads LOSS DYNAMICS and FEATURE STATISTICS ONLY. No TPR, no\nAUROC, no test-set quantity is computed, loaded, or reachable -- enforced by\ncoral_round4.test_label_lockout(), not by convention.\n",
+  "reference_gamma": 1.0,
+  "block": 50,
+  "bootstrap": 5000,
+  "alpha": 0.05,
+  "arms": {
+    "1.0": {
+      "dir": "kaggle/coral_r4/sweep_run/runs/coral_r4_sweep\\g1",
+      "source": "steps.csv",
+      "n_rows": 2000,
+      "steps_completed": 2000,
+      "aborted": false,
+      "abort_reason": null,
+      "sup_first10pct": 0.1857688284665346,
+      "sup_last10pct": 0.017568636898649858,
+      "coral_first10pct": 0.0130073307803832,
+      "coral_last10pct": 0.0013950798311270773,
+      "src_l2_first10pct": 63.99708921432495,
+      "src_l2_last10pct": 63.10924119949341,
+      "tgt_l2_first10pct": 65.07807567596436,
+      "tgt_l2_last10pct": 63.15882551193237,
+      "src_sd_last10pct": 0.219265753403306,
+      "tgt_sd_last10pct": 0.2217180510610342,
+      "criterion_i": {
+        "slope": -9.697423361987155e-07,
+        "ci": [
+          -1.2038545566764072e-06,
+          -7.834669797563128e-07
+        ],
+        "n_points": 1000,
+        "block": 50,
+        "B": 5000,
+        "not_rising": true,
+        "strictly_falling": true,
+        "strictly_rising": false
+      },
+      "src_norm_growth": {
+        "growth": -0.8878480148315404,
+        "ci": [
+          -0.8836526756286608,
+          -0.7706722311973586
+        ],
+        "n_points": 2000,
+        "head_tail_n": 200,
+        "block": 50
+      },
+      "tgt_norm_growth": {
+        "growth": -1.9192501640319861,
+        "ci": [
+          -2.0942480640411363,
+          -1.504198110580442
+        ],
+        "n_points": 2000,
+        "head_tail_n": 200,
+        "block": 50
+      },
+      "domains_agree_in_sign": true,
+      "criterion_ii": {
+        "reference": true,
+        "passed": null
+      },
+      "passes_both": false
+    },
+    "4.0": {
+      "dir": "kaggle/coral_r4/sweep_run/runs/coral_r4_sweep\\g4",
+      "source": "steps.csv",
+      "n_rows": 2000,
+      "steps_completed": 2000,
+      "aborted": false,
+      "abort_reason": null,
+      "sup_first10pct": 0.17627633311785756,
+      "sup_last10pct": 0.016736667221412063,
+      "coral_first10pct": 0.008004190223873593,
+      "coral_last10pct": 0.000313127292538411,
+      "src_l2_first10pct": 64.23432987213135,
+      "src_l2_last10pct": 63.150332374572756,
+      "tgt_l2_first10pct": 64.86232967376709,
+      "tgt_l2_last10pct": 63.18233093261719,
+      "src_sd_last10pct": 0.15735260590910913,
+      "tgt_sd_last10pct": 0.16849067948758603,
+      "criterion_i": {
+        "slope": -3.7564389704499693e-07,
+        "ci": [
+          -4.787750145542054e-07,
+          -3.0951066784491606e-07
+        ],
+        "n_points": 1000,
+        "block": 50,
+        "B": 5000,
+        "not_rising": true,
+        "strictly_falling": true,
+        "strictly_rising": false
+      },
+      "src_norm_growth": {
+        "growth": -1.0839974975585989,
+        "ci": [
+          -1.1246820998191807,
+          -0.9200382423400885
+        ],
+        "n_points": 2000,
+        "head_tail_n": 200,
+        "block": 50
+      },
+      "tgt_norm_growth": {
+        "growth": -1.6799987411499018,
+        "ci": [
+          -1.878964542865753,
+          -1.2383049564361586
+        ],
+        "n_points": 2000,
+        "head_tail_n": 200,
+        "block": 50
+      },
+      "domains_agree_in_sign": true,
+      "criterion_ii": {
+        "applicable": false,
+        "passed": false,
+        "reason": "the gamma=1.0 reference arm did not grow (growth -0.8878); there is nothing to damp, so criterion (ii) is INAPPLICABLE, not passed",
+        "diff": -0.19614948272705846
+      },
+      "passes_both": false
+    },
+    "16.0": {
+      "dir": "kaggle/coral_r4/sweep_run/runs/coral_r4_sweep\\g16",
+      "source": "steps.csv",
+      "n_rows": 2000,
+      "steps_completed": 2000,
+      "aborted": false,
+      "abort_reason": null,
+      "sup_first10pct": 0.11529544349759817,
+      "sup_last10pct": 0.0176984831772279,
+      "coral_first10pct": 0.0043087643609032965,
+      "coral_last10pct": 0.00010948017248665564,
+      "src_l2_first10pct": 65.05833717346191,
+      "src_l2_last10pct": 63.43058925628662,
+      "tgt_l2_first10pct": 65.36019523620605,
+      "tgt_l2_last10pct": 63.43907520294189,
+      "src_sd_last10pct": 0.10843791101127863,
+      "tgt_sd_last10pct": 0.11124515388160944,
+      "criterion_i": {
+        "slope": -6.385251595611022e-08,
+        "ci": [
+          -8.489873590670588e-08,
+          -4.8082225738735956e-08
+        ],
+        "n_points": 1000,
+        "block": 50,
+        "B": 5000,
+        "not_rising": true,
+        "strictly_falling": true,
+        "strictly_rising": false
+      },
+      "src_norm_growth": {
+        "growth": -1.6277479171752844,
+        "ci": [
+          -1.699215287208552,
+          -1.4222656478881857
+        ],
+        "n_points": 2000,
+        "head_tail_n": 200,
+        "block": 50
+      },
+      "tgt_norm_growth": {
+        "growth": -1.9211200332641596,
+        "ci": [
+          -2.027399725437169,
+          -1.5350150418281525
+        ],
+        "n_points": 2000,
+        "head_tail_n": 200,
+        "block": 50
+      },
+      "domains_agree_in_sign": true,
+      "criterion_ii": {
+        "applicable": false,
+        "passed": false,
+        "reason": "the gamma=1.0 reference arm did not grow (growth -0.8878); there is nothing to damp, so criterion (ii) is INAPPLICABLE, not passed",
+        "diff": -0.739899902343744
+      },
+      "passes_both": false
+    }
+  },
+  "common_window_steps": 2000,
+  "truncated_for_comparison": [],
+  "selected_gamma": null,
+  "passing_gammas": [],
+  "recommendation": "NO gamma in the swept set satisfies both clauses. The pre-registered instruction is to EXTEND THE SWEEP UPWARD (gamma 64, then 256) and NOT to relax either clause."
+}

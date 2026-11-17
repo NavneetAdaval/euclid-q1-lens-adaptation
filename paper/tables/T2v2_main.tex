@@ -1,0 +1,23 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_main_tables_v2.py)
+% Table 2 (rewrite v1): the main table at two decimals. _common.fold_mean on pool D1.
+\begin{table}[tbp]
+\centering
+\caption{\textbf{Main results.} TPR at FPR${}=10^{-3}$ on the cleaned test pool, mean and sample sd over the confirmatory folds 1--4; each arm is read at its final budget except BNM, whose rule gave 1000 steps and which is read at 4000, where its control is read (Appendix~\ref{sec:budget-detail}). Per-fold and four-decimal values: Appendix~\ref{app:perfold}.}
+\label{tab:main2}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrl}
+\toprule
+Arm & TPR@$10^{-3}$ & sd & Read at & Encoder \\
+\midrule
+Baseline A & $0.18$ & $0.03$ & 8000 & frozen \\
+$\lambda=0$ control & $0.18$ & $0.03$ & 4000 & unfrozen \\
+BNM & $0.40$ & $0.04$ & 4000 & unfrozen \\
+FreeMatch & $0.52$ & $0.07$ & 1500 & unfrozen \\
+DANN & $0.50$ & $0.17$ & 4000 & unfrozen \\
+CORAL & $0.52$ & $0.08$ & 2000 & unfrozen \\
+DANN, sensitivity readout & $0.55$ & $0.11$ & 2000 & unfrozen \\
+\bottomrule
+\end{tabular}
+\end{table}

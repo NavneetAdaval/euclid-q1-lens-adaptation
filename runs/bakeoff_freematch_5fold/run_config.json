@@ -1,0 +1,38 @@
+{
+  "budget_steps": 8000,
+  "epochs_trained": 43,
+  "steps_per_epoch": 187,
+  "curve_every": 250,
+  "batch_size": 256,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "pos_fraction": 0.5,
+  "seed": 42,
+  "head_type": "linear",
+  "selection_rule": "R1_last_checkpoint_step8000",
+  "curve_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "target_fpr": 0.001,
+  "method": "freematch",
+  "domain_adaptation": "freematch",
+  "local_threshold_mode": "standard",
+  "freematch_variant": "FreeMatch-standard (screen-winning; floor is a documented negative)",
+  "mu_max": 1.0,
+  "saf_weight": 0.01,
+  "sat_ema_momentum": 0.999,
+  "consistency_warmup_frac": 0.1,
+  "fairness_target": null,
+  "pos_class": 1,
+  "device": "cuda",
+  "fp16": true,
+  "num_workers": 4,
+  "agreement_ref": "/kaggle/working/lens_paper/runs/bakeoff_baseline_A/checkpoints/step_8000.pt",
+  "folds_this_invocation": [
+    0
+  ]
+}

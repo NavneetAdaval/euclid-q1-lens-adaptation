@@ -1,0 +1,1341 @@
+{
+  "round": 6,
+  "arm": "dann_nb3_lambda0",
+  "folds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "budget": 4000,
+  "sensitivity_steps": [
+    1500,
+    2000
+  ],
+  "part_a_script_provenance": {
+    "match_target": "dann_confirm_fold1",
+    "matrix": {
+      "calibrate_morph_r5.py": {
+        "arm1_lambda0_fold0": "7c29d3211277a8a3",
+        "arm2_dann_fold0": "7c29d3211277a8a3",
+        "dann_confirm_fold1": "7c29d3211277a8a3",
+        "dann_confirm_fold2": "7c29d3211277a8a3",
+        "dann_confirm_fold3": "7c29d3211277a8a3",
+        "dann_confirm_fold4": "7c29d3211277a8a3",
+        "CURRENT": "7c29d3211277a8a3"
+      },
+      "coral_round4.py": {
+        "arm1_lambda0_fold0": "f0a0e38b781c5cce",
+        "arm2_dann_fold0": "f0a0e38b781c5cce",
+        "dann_confirm_fold1": "f0a0e38b781c5cce",
+        "dann_confirm_fold2": "f0a0e38b781c5cce",
+        "dann_confirm_fold3": "f0a0e38b781c5cce",
+        "dann_confirm_fold4": "f0a0e38b781c5cce",
+        "CURRENT": "f0a0e38b781c5cce"
+      },
+      "da_losses.py": {
+        "arm1_lambda0_fold0": "6b05cd66dd7ad345",
+        "arm2_dann_fold0": "6b05cd66dd7ad345",
+        "dann_confirm_fold1": "6b05cd66dd7ad345",
+        "dann_confirm_fold2": "6b05cd66dd7ad345",
+        "dann_confirm_fold3": "6b05cd66dd7ad345",
+        "dann_confirm_fold4": "6b05cd66dd7ad345",
+        "CURRENT": "db8ba9ecb2a1364f"
+      },
+      "dann_round5.py": {
+        "arm1_lambda0_fold0": "e186e4ae99ae7d54",
+        "arm2_dann_fold0": "c24fc4677f542bc4",
+        "dann_confirm_fold1": "6884d4690aa1d58a",
+        "dann_confirm_fold2": "6884d4690aa1d58a",
+        "dann_confirm_fold3": "6884d4690aa1d58a",
+        "dann_confirm_fold4": "6884d4690aa1d58a",
+        "CURRENT": "6884d4690aa1d58a"
+      },
+      "evaluate.py": {
+        "arm1_lambda0_fold0": "ff2cb7aacb34b35c",
+        "arm2_dann_fold0": "ff2cb7aacb34b35c",
+        "dann_confirm_fold1": "ff2cb7aacb34b35c",
+        "dann_confirm_fold2": "ff2cb7aacb34b35c",
+        "dann_confirm_fold3": "ff2cb7aacb34b35c",
+        "dann_confirm_fold4": "ff2cb7aacb34b35c",
+        "CURRENT": "ff2cb7aacb34b35c"
+      },
+      "heads.py": {
+        "arm1_lambda0_fold0": "9f32284d2b26e814",
+        "arm2_dann_fold0": "9f32284d2b26e814",
+        "dann_confirm_fold1": "9f32284d2b26e814",
+        "dann_confirm_fold2": "9f32284d2b26e814",
+        "dann_confirm_fold3": "9f32284d2b26e814",
+        "dann_confirm_fold4": "9f32284d2b26e814",
+        "CURRENT": "9f32284d2b26e814"
+      },
+      "lens_dataset.py": {
+        "arm1_lambda0_fold0": "87c3701b4eb8e763",
+        "arm2_dann_fold0": "87c3701b4eb8e763",
+        "dann_confirm_fold1": "87c3701b4eb8e763",
+        "dann_confirm_fold2": "87c3701b4eb8e763",
+        "dann_confirm_fold3": "87c3701b4eb8e763",
+        "dann_confirm_fold4": "87c3701b4eb8e763",
+        "CURRENT": "87c3701b4eb8e763"
+      },
+      "live_encode.py": {
+        "arm1_lambda0_fold0": "fbc24be3b7236774",
+        "arm2_dann_fold0": "fbc24be3b7236774",
+        "dann_confirm_fold1": "fbc24be3b7236774",
+        "dann_confirm_fold2": "fbc24be3b7236774",
+        "dann_confirm_fold3": "fbc24be3b7236774",
+        "dann_confirm_fold4": "fbc24be3b7236774",
+        "CURRENT": "fbc24be3b7236774"
+      },
+      "metrics.py": {
+        "arm1_lambda0_fold0": "5374372546d29267",
+        "arm2_dann_fold0": "5374372546d29267",
+        "dann_confirm_fold1": "5374372546d29267",
+        "dann_confirm_fold2": "5374372546d29267",
+        "dann_confirm_fold3": "5374372546d29267",
+        "dann_confirm_fold4": "5374372546d29267",
+        "CURRENT": "5374372546d29267"
+      },
+      "morph_proxy.py": {
+        "arm1_lambda0_fold0": "ca28a6cfdc2d954a",
+        "arm2_dann_fold0": "ca28a6cfdc2d954a",
+        "dann_confirm_fold1": "ca28a6cfdc2d954a",
+        "dann_confirm_fold2": "ca28a6cfdc2d954a",
+        "dann_confirm_fold3": "ca28a6cfdc2d954a",
+        "dann_confirm_fold4": "ca28a6cfdc2d954a",
+        "CURRENT": "ca28a6cfdc2d954a"
+      },
+      "run_dann_r5.py": {
+        "arm1_lambda0_fold0": "9b6e38669cb2e66c",
+        "arm2_dann_fold0": "4fd5964f37202dfd",
+        "dann_confirm_fold1": "320ed27d74473ce1",
+        "dann_confirm_fold2": "320ed27d74473ce1",
+        "dann_confirm_fold3": "320ed27d74473ce1",
+        "dann_confirm_fold4": "320ed27d74473ce1",
+        "CURRENT": "320ed27d74473ce1"
+      },
+      "samplers.py": {
+        "arm1_lambda0_fold0": "32753fe586e077de",
+        "arm2_dann_fold0": "32753fe586e077de",
+        "dann_confirm_fold1": "32753fe586e077de",
+        "dann_confirm_fold2": "32753fe586e077de",
+        "dann_confirm_fold3": "32753fe586e077de",
+        "dann_confirm_fold4": "32753fe586e077de",
+        "CURRENT": "32753fe586e077de"
+      },
+      "train_skeleton.py": {
+        "arm1_lambda0_fold0": "06834cac81d1fdcd",
+        "arm2_dann_fold0": "06834cac81d1fdcd",
+        "dann_confirm_fold1": "06834cac81d1fdcd",
+        "dann_confirm_fold2": "06834cac81d1fdcd",
+        "dann_confirm_fold3": "06834cac81d1fdcd",
+        "dann_confirm_fold4": "06834cac81d1fdcd",
+        "CURRENT": "06834cac81d1fdcd"
+      },
+      "zoobot_encoder.py": {
+        "arm1_lambda0_fold0": "daaea6e57023f8e2",
+        "arm2_dann_fold0": "daaea6e57023f8e2",
+        "dann_confirm_fold1": "daaea6e57023f8e2",
+        "dann_confirm_fold2": "daaea6e57023f8e2",
+        "dann_confirm_fold3": "daaea6e57023f8e2",
+        "dann_confirm_fold4": "daaea6e57023f8e2",
+        "CURRENT": "daaea6e57023f8e2"
+      }
+    },
+    "files": {
+      "calibrate_morph_r5.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "7c29d3211277a8a3"
+      },
+      "coral_round4.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "f0a0e38b781c5cce"
+      },
+      "da_losses.py": {
+        "status": "APPEND_ONLY",
+        "target": "6b05cd66dd7ad345",
+        "current": "db8ba9ecb2a1364f",
+        "identical_through_line": 1441,
+        "appended_lines": 176,
+        "proof": "sha256 of lines 1-1441 of the current file == 6b05cd66dd7ad345, the whole-file hash dann_confirm_fold1 recorded. Every byte it executed is bit-identical; the difference is entirely below line 1441."
+      },
+      "dann_round5.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "6884d4690aa1d58a"
+      },
+      "evaluate.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "ff2cb7aacb34b35c"
+      },
+      "heads.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "9f32284d2b26e814"
+      },
+      "lens_dataset.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "87c3701b4eb8e763"
+      },
+      "live_encode.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "fbc24be3b7236774"
+      },
+      "metrics.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "5374372546d29267"
+      },
+      "morph_proxy.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "ca28a6cfdc2d954a"
+      },
+      "run_dann_r5.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "320ed27d74473ce1"
+      },
+      "samplers.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "32753fe586e077de"
+      },
+      "train_skeleton.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "06834cac81d1fdcd"
+      },
+      "zoobot_encoder.py": {
+        "status": "IDENTICAL_TO_TARGET",
+        "sha16": "daaea6e57023f8e2"
+      }
+    },
+    "n_distinct_versions": {
+      "calibrate_morph_r5.py": 1,
+      "coral_round4.py": 1,
+      "da_losses.py": 2,
+      "dann_round5.py": 3,
+      "evaluate.py": 1,
+      "heads.py": 1,
+      "lens_dataset.py": 1,
+      "live_encode.py": 1,
+      "metrics.py": 1,
+      "morph_proxy.py": 1,
+      "run_dann_r5.py": 3,
+      "samplers.py": 1,
+      "train_skeleton.py": 1,
+      "zoobot_encoder.py": 1
+    },
+    "PASS": true
+  },
+  "part_b_config_fields": {
+    "PASS": true,
+    "training_relevant": {
+      "n_blocks": {
+        "identical_everywhere": true,
+        "value": 3,
+        "values": null
+      },
+      "data_path": {
+        "identical_everywhere": true,
+        "value": "image_space",
+        "values": null
+      },
+      "lp_ft": {
+        "identical_everywhere": true,
+        "value": true,
+        "values": null
+      },
+      "init_head_l2": {
+        "identical_everywhere": true,
+        "value": 28.475603,
+        "values": null
+      },
+      "head_type": {
+        "identical_everywhere": true,
+        "value": "linear",
+        "values": null
+      },
+      "lr": {
+        "identical_everywhere": true,
+        "value": 0.0001,
+        "values": null
+      },
+      "lr_decay": {
+        "identical_everywhere": true,
+        "value": 0.75,
+        "values": null
+      },
+      "weight_decay": {
+        "identical_everywhere": true,
+        "value": 0.05,
+        "values": null
+      },
+      "backbone_lr_effective": {
+        "identical_everywhere": true,
+        "value": 0.0001,
+        "values": null
+      },
+      "batch_size": {
+        "identical_everywhere": true,
+        "value": 256,
+        "values": null
+      },
+      "true_batch": {
+        "identical_everywhere": true,
+        "value": true,
+        "values": null
+      },
+      "gradient_accumulation": {
+        "identical_everywhere": true,
+        "value": false,
+        "values": null
+      },
+      "grad_checkpointing": {
+        "identical_everywhere": true,
+        "value": true,
+        "values": null
+      },
+      "steps_per_epoch": {
+        "identical_everywhere": true,
+        "value": 187,
+        "values": null
+      },
+      "pos_fraction": {
+        "identical_everywhere": true,
+        "value": 0.5,
+        "values": null
+      },
+      "seed": {
+        "identical_everywhere": true,
+        "value": 42,
+        "values": null
+      },
+      "augmentation": {
+        "identical_everywhere": true,
+        "value": "weak (+-3px translate, PROJECT.md 7.3)",
+        "values": null
+      },
+      "fp16": {
+        "identical_everywhere": true,
+        "value": true,
+        "values": null
+      },
+      "precision": {
+        "identical_everywhere": true,
+        "value": "fp16",
+        "values": null
+      },
+      "eval_precision": {
+        "identical_everywhere": true,
+        "value": "fp32",
+        "values": null
+      },
+      "num_workers": {
+        "identical_everywhere": true,
+        "value": 2,
+        "values": null
+      },
+      "encoder_eval": {
+        "identical_everywhere": true,
+        "value": "live_encode",
+        "values": null
+      },
+      "log_every": {
+        "identical_everywhere": true,
+        "value": 125,
+        "values": null
+      },
+      "ckpt_every": {
+        "identical_everywhere": true,
+        "value": 250,
+        "values": null
+      },
+      "dann_lambda_schedule": {
+        "identical_everywhere": true,
+        "value": "2/(1+exp(-10p))-1, p = min(step/horizon, 1)",
+        "values": null
+      },
+      "dann_lambda_horizon": {
+        "identical_everywhere": true,
+        "value": 2000,
+        "values": null
+      },
+      "dann_d_topology": {
+        "identical_everywhere": true,
+        "value": "640 -> 1024 -> 1024 -> 1",
+        "values": null
+      },
+      "dann_d_hidden": {
+        "identical_everywhere": true,
+        "value": 1024,
+        "values": null
+      },
+      "dann_d_norm": {
+        "identical_everywhere": true,
+        "value": "LayerNorm",
+        "values": null
+      },
+      "dann_d_dropout": {
+        "identical_everywhere": true,
+        "value": 0.2,
+        "values": null
+      },
+      "dann_d_dropout_layers": {
+        "identical_everywhere": true,
+        "value": 2,
+        "values": null
+      },
+      "dann_d_lr": {
+        "identical_everywhere": true,
+        "value": 0.0001,
+        "values": null
+      },
+      "dann_d_weight_decay": {
+        "identical_everywhere": true,
+        "value": 0.05,
+        "values": null
+      },
+      "dann_d_holdout_frac": {
+        "identical_everywhere": true,
+        "value": 0.1,
+        "values": null
+      },
+      "dann_attachment": {
+        "identical_everywhere": true,
+        "value": "head.forward_with_features[1] (post-adapter, post-LayerNorm)",
+        "values": null
+      },
+      "dann_single_forward_pass": {
+        "identical_everywhere": true,
+        "value": true,
+        "values": null
+      },
+      "da_hook_slot": {
+        "identical_everywhere": true,
+        "value": "Trainer.coral (see dann_round5.install_dann). train_skeleton.py is UNMODIFIED; DannLoss is installed into the one attribute train_step reaches its DA term through, at coral_weight=1.0. coral_weight=1.0 is not a fudge: canonical DANN adds the domain term unweighted and lambda lives in the GRL.",
+        "values": null
+      },
+      "domain_adaptation": {
+        "identical_everywhere": true,
+        "value": "dann",
+        "values": null
+      }
+    },
+    "n_runs_compared": 10,
+    "runs_compared": [
+      "arm1_lambda0_fold0",
+      "arm2_dann_fold0",
+      "dann_confirm_fold1",
+      "dann_confirm_fold2",
+      "dann_confirm_fold3",
+      "dann_confirm_fold4",
+      "lambda0_r6_fold1",
+      "lambda0_r6_fold2",
+      "lambda0_r6_fold3",
+      "lambda0_r6_fold4"
+    ],
+    "head_init": {
+      "file": "runs/bakeoff_baseline_A/checkpoints/step_8000.pt",
+      "sha256": "5f278533c195c356296ddfbdb224fd1404293f4973a484fe83a8985a356772bf",
+      "init_head_l2_per_run": {
+        "arm1_lambda0_fold0": 28.475603,
+        "arm2_dann_fold0": 28.475603,
+        "dann_confirm_fold1": 28.475603,
+        "dann_confirm_fold2": 28.475603,
+        "dann_confirm_fold3": 28.475603,
+        "dann_confirm_fold4": 28.475603,
+        "lambda0_r6_fold1": 28.475603,
+        "lambda0_r6_fold2": 28.475603,
+        "lambda0_r6_fold3": 28.475603,
+        "lambda0_r6_fold4": 28.475603
+      },
+      "l2_identical_everywhere": true,
+      "note": "compared by the FILE's sha256 and by ||head||_2, not by the path string: arm 1 ran on Kaggle and these configs were emitted locally, so the paths differ while the file does not."
+    },
+    "exhaustive_sweep_vs_arm1": {
+      "1": {
+        "IDENTICAL": [
+          "abort4_sustain",
+          "abort_cond3_column_note",
+          "abort_cond3_margin",
+          "abort_cond3_margin_status",
+          "abort_cond3_median_window_k",
+          "abort_cond3_median_window_note",
+          "abort_mode",
+          "abort_mode_rule",
+          "allow_control_gaps",
+          "arm",
+          "arm_declared_steps",
+          "augmentation",
+          "backbone_lr",
+          "backbone_lr_effective",
+          "batch_size",
+          "ckpt_every",
+          "control_curve",
+          "da_hook_slot",
+          "dann_attachment",
+          "dann_attachment_note",
+          "dann_d_dropout",
+          "dann_d_dropout_layers",
+          "dann_d_dropout_note",
+          "dann_d_hidden",
+          "dann_d_holdout_frac",
+          "dann_d_holdout_n",
+          "dann_d_holdout_note",
+          "dann_d_lr",
+          "dann_d_norm",
+          "dann_d_norm_note",
+          "dann_d_output",
+          "dann_d_topology",
+          "dann_d_train_eval_semantics",
+          "dann_d_weight_decay",
+          "dann_domain_label_source",
+          "dann_domain_label_target",
+          "dann_lambda_at_max_steps",
+          "dann_lambda_at_step0",
+          "dann_lambda_horizon",
+          "dann_lambda_horizon_note",
+          "dann_lambda_schedule",
+          "dann_lambda_zero",
+          "dann_lambda_zero_note",
+          "dann_optimizer_groups",
+          "dann_optimizer_note",
+          "dann_single_forward_pass",
+          "dann_single_forward_pass_note",
+          "data_path",
+          "development_maximum",
+          "domain_adaptation",
+          "encoder_eval",
+          "encoder_eval_note",
+          "eval_precision",
+          "expect_head_l2",
+          "feature_scale_monitor",
+          "fp16",
+          "grad_checkpointing",
+          "grad_checkpointing_note",
+          "gradient_accumulation",
+          "gradient_accumulation_note",
+          "hard_gate",
+          "head_type",
+          "health_anchors",
+          "holdout_every",
+          "init_head_l2",
+          "init_head_provenance",
+          "log_every",
+          "lp_ft",
+          "lr",
+          "lr_decay",
+          "lr_protocol",
+          "method",
+          "monitors",
+          "morph_every",
+          "morph_proxy_abort_note",
+          "morph_proxy_instrument",
+          "morph_proxy_n_eval_per_class",
+          "morph_proxy_n_fit_per_class",
+          "morph_proxy_note",
+          "morph_proxy_pool_membership",
+          "morph_proxy_ridge_alpha",
+          "n_blocks",
+          "n_test_positives",
+          "no_batchnorm_check",
+          "num_workers",
+          "pos_fraction",
+          "precision",
+          "rank_monitor",
+          "reporting_note",
+          "round",
+          "round1_dann_fold0_reference",
+          "seed",
+          "selection_rule",
+          "single_gpu",
+          "spectrum_every",
+          "step0_auroc_tolerance",
+          "step0_gate_skippable",
+          "step0_tpr_tolerance",
+          "steps_per_epoch",
+          "true_batch",
+          "weight_decay"
+        ],
+        "FOLD_DEP": [
+          "abort_mode_source",
+          "dann_d_holdout_indices",
+          "expect_step0_auroc",
+          "expect_step0_tpr",
+          "fold",
+          "init_head_from",
+          "init_head_from_tail",
+          "logit_arm",
+          "morph_proxy_pool",
+          "out_dir",
+          "paths",
+          "run_dir"
+        ],
+        "BUDGET": [
+          "epochs_planned",
+          "is_preregistered_budget",
+          "max_steps",
+          "n_checkpoints_expected",
+          "on_declared_steps",
+          "sensitivity_step_is_on_the_grid"
+        ],
+        "DETECTOR_LAYER": [
+          "abort_advisory_note",
+          "abort_advisory_only_detectors",
+          "abort_cond3_column",
+          "abort_cond3_declaration_criterion",
+          "abort_cond3_interpretation_column",
+          "abort_cond3_interpretation_columns",
+          "abort_cond3_interpretation_note",
+          "abort_cond3b_sustain",
+          "abort_cond4_form",
+          "abort_cond4_src_margin",
+          "abort_cond4_tgt_margin",
+          "abort_conditions",
+          "abort_respecified_from_control",
+          "abort_watch"
+        ],
+        "PRE_VS_POST_RUN": [
+          "abort_reason",
+          "aborted",
+          "confirm_budget_file",
+          "confirm_budget_rule",
+          "confirm_budget_sha256",
+          "confirm_steps",
+          "continuation",
+          "cross_method_budgets",
+          "finished_utc",
+          "fp16_skipped_cumulative",
+          "gpu_name",
+          "gpu_total_gb",
+          "gpu_visible_devices",
+          "headline_declaration",
+          "metric_hygiene",
+          "morph_trajectory_summary",
+          "n_checkpoints_saved",
+          "peak_gpu_gb_allocated",
+          "peak_gpu_gb_early",
+          "peak_gpu_gb_reserved",
+          "purpose",
+          "resume_events",
+          "script_sha256_16",
+          "sensitivity_step",
+          "started_utc",
+          "step0_gate",
+          "steps_completed",
+          "torch_version",
+          "wall_minutes"
+        ],
+        "TEXT": [
+          "budget_status",
+          "device"
+        ],
+        "UNEXPECTED": [],
+        "counts": {
+          "IDENTICAL": 101,
+          "FOLD_DEP": 12,
+          "BUDGET": 6,
+          "DETECTOR_LAYER": 14,
+          "PRE_VS_POST_RUN": 29,
+          "TEXT": 2,
+          "UNEXPECTED": 0
+        }
+      },
+      "2": {
+        "IDENTICAL": [
+          "abort4_sustain",
+          "abort_cond3_column_note",
+          "abort_cond3_margin",
+          "abort_cond3_margin_status",
+          "abort_cond3_median_window_k",
+          "abort_cond3_median_window_note",
+          "abort_mode",
+          "abort_mode_rule",
+          "allow_control_gaps",
+          "arm",
+          "arm_declared_steps",
+          "augmentation",
+          "backbone_lr",
+          "backbone_lr_effective",
+          "batch_size",
+          "ckpt_every",
+          "control_curve",
+          "da_hook_slot",
+          "dann_attachment",
+          "dann_attachment_note",
+          "dann_d_dropout",
+          "dann_d_dropout_layers",
+          "dann_d_dropout_note",
+          "dann_d_hidden",
+          "dann_d_holdout_frac",
+          "dann_d_holdout_n",
+          "dann_d_holdout_note",
+          "dann_d_lr",
+          "dann_d_norm",
+          "dann_d_norm_note",
+          "dann_d_output",
+          "dann_d_topology",
+          "dann_d_train_eval_semantics",
+          "dann_d_weight_decay",
+          "dann_domain_label_source",
+          "dann_domain_label_target",
+          "dann_lambda_at_max_steps",
+          "dann_lambda_at_step0",
+          "dann_lambda_horizon",
+          "dann_lambda_horizon_note",
+          "dann_lambda_schedule",
+          "dann_lambda_zero",
+          "dann_lambda_zero_note",
+          "dann_optimizer_groups",
+          "dann_optimizer_note",
+          "dann_single_forward_pass",
+          "dann_single_forward_pass_note",
+          "data_path",
+          "development_maximum",
+          "domain_adaptation",
+          "encoder_eval",
+          "encoder_eval_note",
+          "eval_precision",
+          "expect_head_l2",
+          "expect_step0_tpr",
+          "feature_scale_monitor",
+          "fp16",
+          "grad_checkpointing",
+          "grad_checkpointing_note",
+          "gradient_accumulation",
+          "gradient_accumulation_note",
+          "hard_gate",
+          "head_type",
+          "health_anchors",
+          "holdout_every",
+          "init_head_l2",
+          "init_head_provenance",
+          "log_every",
+          "lp_ft",
+          "lr",
+          "lr_decay",
+          "lr_protocol",
+          "method",
+          "monitors",
+          "morph_every",
+          "morph_proxy_abort_note",
+          "morph_proxy_instrument",
+          "morph_proxy_n_eval_per_class",
+          "morph_proxy_n_fit_per_class",
+          "morph_proxy_note",
+          "morph_proxy_pool_membership",
+          "morph_proxy_ridge_alpha",
+          "n_blocks",
+          "n_test_positives",
+          "no_batchnorm_check",
+          "num_workers",
+          "pos_fraction",
+          "precision",
+          "rank_monitor",
+          "reporting_note",
+          "round",
+          "round1_dann_fold0_reference",
+          "seed",
+          "selection_rule",
+          "single_gpu",
+          "spectrum_every",
+          "step0_auroc_tolerance",
+          "step0_gate_skippable",
+          "step0_tpr_tolerance",
+          "steps_per_epoch",
+          "true_batch",
+          "weight_decay"
+        ],
+        "FOLD_DEP": [
+          "abort_mode_source",
+          "dann_d_holdout_indices",
+          "expect_step0_auroc",
+          "fold",
+          "init_head_from",
+          "init_head_from_tail",
+          "logit_arm",
+          "morph_proxy_pool",
+          "out_dir",
+          "paths",
+          "run_dir"
+        ],
+        "BUDGET": [
+          "epochs_planned",
+          "is_preregistered_budget",
+          "max_steps",
+          "n_checkpoints_expected",
+          "on_declared_steps",
+          "sensitivity_step_is_on_the_grid"
+        ],
+        "DETECTOR_LAYER": [
+          "abort_advisory_note",
+          "abort_advisory_only_detectors",
+          "abort_cond3_column",
+          "abort_cond3_declaration_criterion",
+          "abort_cond3_interpretation_column",
+          "abort_cond3_interpretation_columns",
+          "abort_cond3_interpretation_note",
+          "abort_cond3b_sustain",
+          "abort_cond4_form",
+          "abort_cond4_src_margin",
+          "abort_cond4_tgt_margin",
+          "abort_conditions",
+          "abort_respecified_from_control",
+          "abort_watch"
+        ],
+        "PRE_VS_POST_RUN": [
+          "abort_reason",
+          "aborted",
+          "confirm_budget_file",
+          "confirm_budget_rule",
+          "confirm_budget_sha256",
+          "confirm_steps",
+          "continuation",
+          "cross_method_budgets",
+          "finished_utc",
+          "fp16_skipped_cumulative",
+          "gpu_name",
+          "gpu_total_gb",
+          "gpu_visible_devices",
+          "headline_declaration",
+          "metric_hygiene",
+          "morph_trajectory_summary",
+          "n_checkpoints_saved",
+          "peak_gpu_gb_allocated",
+          "peak_gpu_gb_early",
+          "peak_gpu_gb_reserved",
+          "purpose",
+          "resume_events",
+          "script_sha256_16",
+          "sensitivity_step",
+          "started_utc",
+          "step0_gate",
+          "steps_completed",
+          "torch_version",
+          "wall_minutes"
+        ],
+        "TEXT": [
+          "budget_status",
+          "device"
+        ],
+        "UNEXPECTED": [],
+        "counts": {
+          "IDENTICAL": 102,
+          "FOLD_DEP": 11,
+          "BUDGET": 6,
+          "DETECTOR_LAYER": 14,
+          "PRE_VS_POST_RUN": 29,
+          "TEXT": 2,
+          "UNEXPECTED": 0
+        }
+      },
+      "3": {
+        "IDENTICAL": [
+          "abort4_sustain",
+          "abort_cond3_column_note",
+          "abort_cond3_margin",
+          "abort_cond3_margin_status",
+          "abort_cond3_median_window_k",
+          "abort_cond3_median_window_note",
+          "abort_mode",
+          "abort_mode_rule",
+          "allow_control_gaps",
+          "arm",
+          "arm_declared_steps",
+          "augmentation",
+          "backbone_lr",
+          "backbone_lr_effective",
+          "batch_size",
+          "ckpt_every",
+          "control_curve",
+          "da_hook_slot",
+          "dann_attachment",
+          "dann_attachment_note",
+          "dann_d_dropout",
+          "dann_d_dropout_layers",
+          "dann_d_dropout_note",
+          "dann_d_hidden",
+          "dann_d_holdout_frac",
+          "dann_d_holdout_n",
+          "dann_d_holdout_note",
+          "dann_d_lr",
+          "dann_d_norm",
+          "dann_d_norm_note",
+          "dann_d_output",
+          "dann_d_topology",
+          "dann_d_train_eval_semantics",
+          "dann_d_weight_decay",
+          "dann_domain_label_source",
+          "dann_domain_label_target",
+          "dann_lambda_at_max_steps",
+          "dann_lambda_at_step0",
+          "dann_lambda_horizon",
+          "dann_lambda_horizon_note",
+          "dann_lambda_schedule",
+          "dann_lambda_zero",
+          "dann_lambda_zero_note",
+          "dann_optimizer_groups",
+          "dann_optimizer_note",
+          "dann_single_forward_pass",
+          "dann_single_forward_pass_note",
+          "data_path",
+          "development_maximum",
+          "domain_adaptation",
+          "encoder_eval",
+          "encoder_eval_note",
+          "eval_precision",
+          "expect_head_l2",
+          "feature_scale_monitor",
+          "fp16",
+          "grad_checkpointing",
+          "grad_checkpointing_note",
+          "gradient_accumulation",
+          "gradient_accumulation_note",
+          "hard_gate",
+          "head_type",
+          "health_anchors",
+          "holdout_every",
+          "init_head_l2",
+          "init_head_provenance",
+          "log_every",
+          "lp_ft",
+          "lr",
+          "lr_decay",
+          "lr_protocol",
+          "method",
+          "monitors",
+          "morph_every",
+          "morph_proxy_abort_note",
+          "morph_proxy_instrument",
+          "morph_proxy_n_eval_per_class",
+          "morph_proxy_n_fit_per_class",
+          "morph_proxy_note",
+          "morph_proxy_pool_membership",
+          "morph_proxy_ridge_alpha",
+          "n_blocks",
+          "n_test_positives",
+          "no_batchnorm_check",
+          "num_workers",
+          "pos_fraction",
+          "precision",
+          "rank_monitor",
+          "reporting_note",
+          "round",
+          "round1_dann_fold0_reference",
+          "seed",
+          "selection_rule",
+          "single_gpu",
+          "spectrum_every",
+          "step0_auroc_tolerance",
+          "step0_gate_skippable",
+          "step0_tpr_tolerance",
+          "steps_per_epoch",
+          "true_batch",
+          "weight_decay"
+        ],
+        "FOLD_DEP": [
+          "abort_mode_source",
+          "dann_d_holdout_indices",
+          "expect_step0_auroc",
+          "expect_step0_tpr",
+          "fold",
+          "init_head_from",
+          "init_head_from_tail",
+          "logit_arm",
+          "morph_proxy_pool",
+          "out_dir",
+          "paths",
+          "run_dir"
+        ],
+        "BUDGET": [
+          "epochs_planned",
+          "is_preregistered_budget",
+          "max_steps",
+          "n_checkpoints_expected",
+          "on_declared_steps",
+          "sensitivity_step_is_on_the_grid"
+        ],
+        "DETECTOR_LAYER": [
+          "abort_advisory_note",
+          "abort_advisory_only_detectors",
+          "abort_cond3_column",
+          "abort_cond3_declaration_criterion",
+          "abort_cond3_interpretation_column",
+          "abort_cond3_interpretation_columns",
+          "abort_cond3_interpretation_note",
+          "abort_cond3b_sustain",
+          "abort_cond4_form",
+          "abort_cond4_src_margin",
+          "abort_cond4_tgt_margin",
+          "abort_conditions",
+          "abort_respecified_from_control",
+          "abort_watch"
+        ],
+        "PRE_VS_POST_RUN": [
+          "abort_reason",
+          "aborted",
+          "confirm_budget_file",
+          "confirm_budget_rule",
+          "confirm_budget_sha256",
+          "confirm_steps",
+          "continuation",
+          "cross_method_budgets",
+          "finished_utc",
+          "fp16_skipped_cumulative",
+          "gpu_name",
+          "gpu_total_gb",
+          "gpu_visible_devices",
+          "headline_declaration",
+          "metric_hygiene",
+          "morph_trajectory_summary",
+          "n_checkpoints_saved",
+          "peak_gpu_gb_allocated",
+          "peak_gpu_gb_early",
+          "peak_gpu_gb_reserved",
+          "purpose",
+          "resume_events",
+          "script_sha256_16",
+          "sensitivity_step",
+          "started_utc",
+          "step0_gate",
+          "steps_completed",
+          "torch_version",
+          "wall_minutes"
+        ],
+        "TEXT": [
+          "budget_status",
+          "device"
+        ],
+        "UNEXPECTED": [],
+        "counts": {
+          "IDENTICAL": 101,
+          "FOLD_DEP": 12,
+          "BUDGET": 6,
+          "DETECTOR_LAYER": 14,
+          "PRE_VS_POST_RUN": 29,
+          "TEXT": 2,
+          "UNEXPECTED": 0
+        }
+      },
+      "4": {
+        "IDENTICAL": [
+          "abort4_sustain",
+          "abort_cond3_column_note",
+          "abort_cond3_margin",
+          "abort_cond3_margin_status",
+          "abort_cond3_median_window_k",
+          "abort_cond3_median_window_note",
+          "abort_mode",
+          "abort_mode_rule",
+          "allow_control_gaps",
+          "arm",
+          "arm_declared_steps",
+          "augmentation",
+          "backbone_lr",
+          "backbone_lr_effective",
+          "batch_size",
+          "ckpt_every",
+          "control_curve",
+          "da_hook_slot",
+          "dann_attachment",
+          "dann_attachment_note",
+          "dann_d_dropout",
+          "dann_d_dropout_layers",
+          "dann_d_dropout_note",
+          "dann_d_hidden",
+          "dann_d_holdout_frac",
+          "dann_d_holdout_n",
+          "dann_d_holdout_note",
+          "dann_d_lr",
+          "dann_d_norm",
+          "dann_d_norm_note",
+          "dann_d_output",
+          "dann_d_topology",
+          "dann_d_train_eval_semantics",
+          "dann_d_weight_decay",
+          "dann_domain_label_source",
+          "dann_domain_label_target",
+          "dann_lambda_at_max_steps",
+          "dann_lambda_at_step0",
+          "dann_lambda_horizon",
+          "dann_lambda_horizon_note",
+          "dann_lambda_schedule",
+          "dann_lambda_zero",
+          "dann_lambda_zero_note",
+          "dann_optimizer_groups",
+          "dann_optimizer_note",
+          "dann_single_forward_pass",
+          "dann_single_forward_pass_note",
+          "data_path",
+          "development_maximum",
+          "domain_adaptation",
+          "encoder_eval",
+          "encoder_eval_note",
+          "eval_precision",
+          "expect_head_l2",
+          "feature_scale_monitor",
+          "fp16",
+          "grad_checkpointing",
+          "grad_checkpointing_note",
+          "gradient_accumulation",
+          "gradient_accumulation_note",
+          "hard_gate",
+          "head_type",
+          "health_anchors",
+          "holdout_every",
+          "init_head_l2",
+          "init_head_provenance",
+          "log_every",
+          "lp_ft",
+          "lr",
+          "lr_decay",
+          "lr_protocol",
+          "method",
+          "monitors",
+          "morph_every",
+          "morph_proxy_abort_note",
+          "morph_proxy_instrument",
+          "morph_proxy_n_eval_per_class",
+          "morph_proxy_n_fit_per_class",
+          "morph_proxy_note",
+          "morph_proxy_pool_membership",
+          "morph_proxy_ridge_alpha",
+          "n_blocks",
+          "no_batchnorm_check",
+          "num_workers",
+          "pos_fraction",
+          "precision",
+          "rank_monitor",
+          "reporting_note",
+          "round",
+          "round1_dann_fold0_reference",
+          "seed",
+          "selection_rule",
+          "single_gpu",
+          "spectrum_every",
+          "step0_auroc_tolerance",
+          "step0_gate_skippable",
+          "steps_per_epoch",
+          "true_batch",
+          "weight_decay"
+        ],
+        "FOLD_DEP": [
+          "abort_mode_source",
+          "dann_d_holdout_indices",
+          "expect_step0_auroc",
+          "expect_step0_tpr",
+          "fold",
+          "init_head_from",
+          "init_head_from_tail",
+          "logit_arm",
+          "morph_proxy_pool",
+          "n_test_positives",
+          "out_dir",
+          "paths",
+          "run_dir",
+          "step0_tpr_tolerance"
+        ],
+        "BUDGET": [
+          "epochs_planned",
+          "is_preregistered_budget",
+          "max_steps",
+          "n_checkpoints_expected",
+          "on_declared_steps",
+          "sensitivity_step_is_on_the_grid"
+        ],
+        "DETECTOR_LAYER": [
+          "abort_advisory_note",
+          "abort_advisory_only_detectors",
+          "abort_cond3_column",
+          "abort_cond3_declaration_criterion",
+          "abort_cond3_interpretation_column",
+          "abort_cond3_interpretation_columns",
+          "abort_cond3_interpretation_note",
+          "abort_cond3b_sustain",
+          "abort_cond4_form",
+          "abort_cond4_src_margin",
+          "abort_cond4_tgt_margin",
+          "abort_conditions",
+          "abort_respecified_from_control",
+          "abort_watch"
+        ],
+        "PRE_VS_POST_RUN": [
+          "abort_reason",
+          "aborted",
+          "confirm_budget_file",
+          "confirm_budget_rule",
+          "confirm_budget_sha256",
+          "confirm_steps",
+          "continuation",
+          "cross_method_budgets",
+          "finished_utc",
+          "fp16_skipped_cumulative",
+          "gpu_name",
+          "gpu_total_gb",
+          "gpu_visible_devices",
+          "headline_declaration",
+          "metric_hygiene",
+          "morph_trajectory_summary",
+          "n_checkpoints_saved",
+          "peak_gpu_gb_allocated",
+          "peak_gpu_gb_early",
+          "peak_gpu_gb_reserved",
+          "purpose",
+          "resume_events",
+          "script_sha256_16",
+          "sensitivity_step",
+          "started_utc",
+          "step0_gate",
+          "steps_completed",
+          "torch_version",
+          "wall_minutes"
+        ],
+        "TEXT": [
+          "budget_status",
+          "device"
+        ],
+        "UNEXPECTED": [],
+        "counts": {
+          "IDENTICAL": 99,
+          "FOLD_DEP": 14,
+          "BUDGET": 6,
+          "DETECTOR_LAYER": 14,
+          "PRE_VS_POST_RUN": 29,
+          "TEXT": 2,
+          "UNEXPECTED": 0
+        }
+      }
+    },
+    "per_fold_gate": {
+      "1": {
+        "tpr": 0.14285714285714285,
+        "auroc": 0.8922624620134809,
+        "tpr_tolerance": 0.01020408163265306,
+        "skippable": false
+      },
+      "2": {
+        "tpr": 0.19387755102040816,
+        "auroc": 0.9031282879453535,
+        "tpr_tolerance": 0.01020408163265306,
+        "skippable": false
+      },
+      "3": {
+        "tpr": 0.15306122448979592,
+        "auroc": 0.9016486400613506,
+        "tpr_tolerance": 0.01020408163265306,
+        "skippable": false
+      },
+      "4": {
+        "tpr": 0.1958762886597938,
+        "auroc": 0.8908307601467254,
+        "tpr_tolerance": 0.010309278350515464,
+        "skippable": false
+      }
+    },
+    "gate_tpr_all_distinct": true,
+    "gate_auroc_all_distinct": true,
+    "gate_non_skippable_everywhere": true,
+    "abort_mode": {
+      "per_fold": {
+        "1": "log_only",
+        "2": "log_only",
+        "3": "log_only",
+        "4": "log_only"
+      },
+      "all_log_only": true,
+      "dann_confirm_folds_for_contrast": {
+        "dann_confirm_fold1": "armed",
+        "dann_confirm_fold2": "armed",
+        "dann_confirm_fold3": "armed",
+        "dann_confirm_fold4": "armed"
+      },
+      "note": "run_dann_r5.default_abort_mode returns log_only for EVERY fold of the lambda_zero arm -- the control must finish. DANN's confirmatory folds ran 'armed', so the two sides of the contrast differ here. This cannot change a training step (an armed detector either aborts or does nothing, and DANN's folds did not abort), but it is a real asymmetry and is disclosed rather than smoothed over."
+    }
+  },
+  "part_c_schedule_audit": {
+    "components": {
+      "torch_lr_scheduler": {
+        "finding": "none exists in any audited module",
+        "OK": true,
+        "detail": {
+          "tokens_scanned": 12
+        }
+      },
+      "total_steps": {
+        "finding": "the coral-hook branch this arm takes contains 0 occurrences (9 statements scanned); train_step only FORWARDS it through 2 early-return guards into the AdaMatch/FreeMatch branches",
+        "OK": true,
+        "detail": {
+          "coral_branch": {
+            "found": true,
+            "n_forwarding_guards": 2,
+            "n_statements_in_coral_branch": 9,
+            "total_steps_in_coral_branch": 0
+          },
+          "functions_mentioning": {
+            "da_losses.py": [
+              "adamatch_mu_at_step",
+              "forward"
+            ],
+            "train_skeleton.py": [
+              "_adamatch_train_step",
+              "_freematch_train_step",
+              "fit",
+              "train_step"
+            ]
+          }
+        }
+      },
+      "gradient_clipping": {
+        "finding": "none -- 0 hits, matching 7.14's no-clip CORAL fix",
+        "OK": true
+      },
+      "lr_decay": {
+        "finding": "layer-wise, indexing DEPTH (backbone_lr * lr_decay**i over blocks)",
+        "OK": true
+      },
+      "gradscaler_growth_interval": {
+        "finding": "not set anywhere; torch's default 2000 applies, an ABSOLUTE step count whose state at step N depends only on steps 0..N",
+        "OK": true
+      },
+      "sampler_num_batches": {
+        "finding": "derived from len(src_ds) // batch_size, not from max_steps",
+        "OK": true
+      },
+      "param_groups_mutation": {
+        "finding": "no assignment targets param_groups -- lr/wd/betas set once at construction",
+        "OK": true
+      },
+      "ema_thresholds_mu": {
+        "finding": "none referenced by run_dann_r5.py",
+        "OK": true,
+        "detail": {
+          "scanned": "run_dann_r5.py"
+        }
+      },
+      "lambda_horizon": {
+        "finding": "dann_lambda_at_step reads lambda_horizon only, never total_steps -- and on THIS arm lambda is pinned to 0.0 at every step, so the schedule cannot matter here at all",
+        "OK": true,
+        "detail": {
+          "scanned": "da_losses.py"
+        }
+      },
+      "ckpt_log_cadence": {
+        "finding": "ckpt_every 250 / log_every 125 -> 16 checkpoints; steps (1500, 2000) are checkpoints [6, 8]",
+        "OK": true
+      },
+      "epochs_planned": {
+        "finding": "ceil(max_steps / steps_per_epoch), used only to cap the loop; data order comes from the sampler, so steps 0..N see identical batches at any max_steps",
+        "OK": true,
+        "detail": {
+          "scanned": "run_dann_r5.py"
+        }
+      }
+    },
+    "PASS": true,
+    "modules": [
+      "run_dann_r5.py",
+      "dann_round5.py",
+      "da_losses.py",
+      "train_skeleton.py"
+    ],
+    "runner": "run_dann_r5.py",
+    "n_components": 11,
+    "sensitivity_readouts_valid": true
+  },
+  "PASS": true
+}

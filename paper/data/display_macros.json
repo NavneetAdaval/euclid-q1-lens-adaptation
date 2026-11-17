@@ -1,0 +1,860 @@
+[
+ {
+  "name": "dFmBaseline",
+  "printed": "0.18",
+  "value": 0.1841994529770671,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dSdBaseline",
+  "printed": "0.03",
+  "value": 0.032725592612584536,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dFmLambda",
+  "printed": "0.18",
+  "value": 0.18417315379760152,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dSdLambda",
+  "printed": "0.03",
+  "value": 0.03456384606792303,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dFmBnm",
+  "printed": "0.40",
+  "value": 0.4040342941300231,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dSdBnm",
+  "printed": "0.04",
+  "value": 0.037815683950646425,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dFmFreeMatch",
+  "printed": "0.52",
+  "value": 0.5166999789606564,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dSdFreeMatch",
+  "printed": "0.07",
+  "value": 0.06969616004154498,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dFmDann",
+  "printed": "0.50",
+  "value": 0.49852724594992637,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dSdDann",
+  "printed": "0.17",
+  "value": 0.17057737816843985,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dFmDannSens",
+  "printed": "0.55",
+  "value": 0.5547022932884493,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dSdDannSens",
+  "printed": "0.11",
+  "value": 0.11254183954850262,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dFmCoral",
+  "printed": "0.52",
+  "value": 0.5216442247001893,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dSdCoral",
+  "printed": "0.08",
+  "value": 0.07505372982887135,
+  "source": "Table 2 (_common.fold_mean, D1)"
+ },
+ {
+  "name": "dHeadMin",
+  "printed": "0.40",
+  "value": 0.4040342941300231,
+  "source": "Table 2 (_common.fold_mean, D1): min over BNM, FreeMatch, DANN, CORAL headlines"
+ },
+ {
+  "name": "dHeadMax",
+  "printed": "0.52",
+  "value": 0.5216442247001893,
+  "source": "Table 2 (_common.fold_mean, D1): max over BNM, FreeMatch, DANN, CORAL headlines"
+ },
+ {
+  "name": "dCtLamBase",
+  "printed": "0.00",
+  "value": -2.6299179465595623e-05,
+  "source": "Table 3 (_common.contrast, D1) row 0"
+ },
+ {
+  "name": "dCtLamBaseLo",
+  "printed": "-0.09",
+  "value": -0.08897007761729114,
+  "source": "Table 3 (_common.contrast, D1) row 0"
+ },
+ {
+  "name": "dCtLamBaseHi",
+  "printed": "+0.09",
+  "value": 0.08891747925835997,
+  "source": "Table 3 (_common.contrast, D1) row 0"
+ },
+ {
+  "name": "dCtLamBaseAbs",
+  "printed": "0.00",
+  "value": 2.6299179465595623e-05,
+  "source": "Table 3 (_common.contrast, D1) row 0"
+ },
+ {
+  "name": "dCtLamBaseAbsLo",
+  "printed": "0.09",
+  "value": 0.08891747925835997,
+  "source": "Table 3 (_common.contrast, D1) row 0"
+ },
+ {
+  "name": "dCtLamBaseAbsHi",
+  "printed": "0.09",
+  "value": 0.08897007761729114,
+  "source": "Table 3 (_common.contrast, D1) row 0"
+ },
+ {
+  "name": "dCtDannLam",
+  "printed": "+0.31",
+  "value": 0.31435409215232485,
+  "source": "Table 3 (_common.contrast, D1) row 1"
+ },
+ {
+  "name": "dCtDannLamLo",
+  "printed": "+0.06",
+  "value": 0.056460503699512554,
+  "source": "Table 3 (_common.contrast, D1) row 1"
+ },
+ {
+  "name": "dCtDannLamHi",
+  "printed": "+0.57",
+  "value": 0.5722476806051371,
+  "source": "Table 3 (_common.contrast, D1) row 1"
+ },
+ {
+  "name": "dCtDannLamAbs",
+  "printed": "0.31",
+  "value": 0.31435409215232485,
+  "source": "Table 3 (_common.contrast, D1) row 1"
+ },
+ {
+  "name": "dCtDannLamAbsLo",
+  "printed": "0.06",
+  "value": 0.056460503699512554,
+  "source": "Table 3 (_common.contrast, D1) row 1"
+ },
+ {
+  "name": "dCtDannLamAbsHi",
+  "printed": "0.57",
+  "value": 0.5722476806051371,
+  "source": "Table 3 (_common.contrast, D1) row 1"
+ },
+ {
+  "name": "dCtCoralLamM",
+  "printed": "+0.31",
+  "value": 0.30675362928676625,
+  "source": "Table 3 (_common.contrast, D1) row 2"
+ },
+ {
+  "name": "dCtCoralLamMLo",
+  "printed": "+0.18",
+  "value": 0.18342501082563578,
+  "source": "Table 3 (_common.contrast, D1) row 2"
+ },
+ {
+  "name": "dCtCoralLamMHi",
+  "printed": "+0.43",
+  "value": 0.4300822477478967,
+  "source": "Table 3 (_common.contrast, D1) row 2"
+ },
+ {
+  "name": "dCtCoralLamMAbs",
+  "printed": "0.31",
+  "value": 0.30675362928676625,
+  "source": "Table 3 (_common.contrast, D1) row 2"
+ },
+ {
+  "name": "dCtCoralLamMAbsLo",
+  "printed": "0.18",
+  "value": 0.18342501082563578,
+  "source": "Table 3 (_common.contrast, D1) row 2"
+ },
+ {
+  "name": "dCtCoralLamMAbsHi",
+  "printed": "0.43",
+  "value": 0.4300822477478967,
+  "source": "Table 3 (_common.contrast, D1) row 2"
+ },
+ {
+  "name": "dCtFmLamM",
+  "printed": "+0.32",
+  "value": 0.32232274353040186,
+  "source": "Table 3 (_common.contrast, D1) row 3"
+ },
+ {
+  "name": "dCtFmLamMLo",
+  "printed": "+0.20",
+  "value": 0.1983658593769273,
+  "source": "Table 3 (_common.contrast, D1) row 3"
+ },
+ {
+  "name": "dCtFmLamMHi",
+  "printed": "+0.45",
+  "value": 0.4462796276838764,
+  "source": "Table 3 (_common.contrast, D1) row 3"
+ },
+ {
+  "name": "dCtFmLamMAbs",
+  "printed": "0.32",
+  "value": 0.32232274353040186,
+  "source": "Table 3 (_common.contrast, D1) row 3"
+ },
+ {
+  "name": "dCtFmLamMAbsLo",
+  "printed": "0.20",
+  "value": 0.1983658593769273,
+  "source": "Table 3 (_common.contrast, D1) row 3"
+ },
+ {
+  "name": "dCtFmLamMAbsHi",
+  "printed": "0.45",
+  "value": 0.4462796276838764,
+  "source": "Table 3 (_common.contrast, D1) row 3"
+ },
+ {
+  "name": "dCtBnmLam",
+  "printed": "+0.22",
+  "value": 0.2198611403324216,
+  "source": "Table 3 (_common.contrast, D1) row 4"
+ },
+ {
+  "name": "dCtBnmLamLo",
+  "printed": "+0.14",
+  "value": 0.1382838354877603,
+  "source": "Table 3 (_common.contrast, D1) row 4"
+ },
+ {
+  "name": "dCtBnmLamHi",
+  "printed": "+0.30",
+  "value": 0.3014384451770829,
+  "source": "Table 3 (_common.contrast, D1) row 4"
+ },
+ {
+  "name": "dCtBnmLamAbs",
+  "printed": "0.22",
+  "value": 0.2198611403324216,
+  "source": "Table 3 (_common.contrast, D1) row 4"
+ },
+ {
+  "name": "dCtBnmLamAbsLo",
+  "printed": "0.14",
+  "value": 0.1382838354877603,
+  "source": "Table 3 (_common.contrast, D1) row 4"
+ },
+ {
+  "name": "dCtBnmLamAbsHi",
+  "printed": "0.30",
+  "value": 0.3014384451770829,
+  "source": "Table 3 (_common.contrast, D1) row 4"
+ },
+ {
+  "name": "dCtCoralLamP",
+  "printed": "+0.34",
+  "value": 0.3374710709025879,
+  "source": "Table 3 (_common.contrast, D1) row 5"
+ },
+ {
+  "name": "dCtCoralLamPLo",
+  "printed": "+0.19",
+  "value": 0.18890030378307787,
+  "source": "Table 3 (_common.contrast, D1) row 5"
+ },
+ {
+  "name": "dCtCoralLamPHi",
+  "printed": "+0.49",
+  "value": 0.4860418380220979,
+  "source": "Table 3 (_common.contrast, D1) row 5"
+ },
+ {
+  "name": "dCtCoralLamPAbs",
+  "printed": "0.34",
+  "value": 0.3374710709025879,
+  "source": "Table 3 (_common.contrast, D1) row 5"
+ },
+ {
+  "name": "dCtCoralLamPAbsLo",
+  "printed": "0.19",
+  "value": 0.18890030378307787,
+  "source": "Table 3 (_common.contrast, D1) row 5"
+ },
+ {
+  "name": "dCtCoralLamPAbsHi",
+  "printed": "0.49",
+  "value": 0.4860418380220979,
+  "source": "Table 3 (_common.contrast, D1) row 5"
+ },
+ {
+  "name": "dCtFmLamP",
+  "printed": "+0.33",
+  "value": 0.3325268251630549,
+  "source": "Table 3 (_common.contrast, D1) row 6"
+ },
+ {
+  "name": "dCtFmLamPLo",
+  "printed": "+0.23",
+  "value": 0.22723924230345716,
+  "source": "Table 3 (_common.contrast, D1) row 6"
+ },
+ {
+  "name": "dCtFmLamPHi",
+  "printed": "+0.44",
+  "value": 0.4378144080226526,
+  "source": "Table 3 (_common.contrast, D1) row 6"
+ },
+ {
+  "name": "dCtFmLamPAbs",
+  "printed": "0.33",
+  "value": 0.3325268251630549,
+  "source": "Table 3 (_common.contrast, D1) row 6"
+ },
+ {
+  "name": "dCtFmLamPAbsLo",
+  "printed": "0.23",
+  "value": 0.22723924230345716,
+  "source": "Table 3 (_common.contrast, D1) row 6"
+ },
+ {
+  "name": "dCtFmLamPAbsHi",
+  "printed": "0.44",
+  "value": 0.4378144080226526,
+  "source": "Table 3 (_common.contrast, D1) row 6"
+ },
+ {
+  "name": "dCtBnmCoral",
+  "printed": "-0.12",
+  "value": -0.11755733221123503,
+  "source": "Table 3 (_common.contrast, D1) row 7"
+ },
+ {
+  "name": "dCtBnmCoralLo",
+  "printed": "-0.18",
+  "value": -0.17716255880211443,
+  "source": "Table 3 (_common.contrast, D1) row 7"
+ },
+ {
+  "name": "dCtBnmCoralHi",
+  "printed": "-0.06",
+  "value": -0.05795210562035564,
+  "source": "Table 3 (_common.contrast, D1) row 7"
+ },
+ {
+  "name": "dCtBnmCoralAbs",
+  "printed": "0.12",
+  "value": 0.11755733221123503,
+  "source": "Table 3 (_common.contrast, D1) row 7"
+ },
+ {
+  "name": "dCtBnmCoralAbsLo",
+  "printed": "0.06",
+  "value": 0.05795210562035564,
+  "source": "Table 3 (_common.contrast, D1) row 7"
+ },
+ {
+  "name": "dCtBnmCoralAbsHi",
+  "printed": "0.18",
+  "value": 0.17716255880211443,
+  "source": "Table 3 (_common.contrast, D1) row 7"
+ },
+ {
+  "name": "dCtBnmDann",
+  "printed": "-0.09",
+  "value": -0.09449295181990325,
+  "source": "Table 3 (_common.contrast, D1) row 8"
+ },
+ {
+  "name": "dCtBnmDannLo",
+  "printed": "-0.31",
+  "value": -0.31037308993307255,
+  "source": "Table 3 (_common.contrast, D1) row 8"
+ },
+ {
+  "name": "dCtBnmDannHi",
+  "printed": "+0.12",
+  "value": 0.12138718629326603,
+  "source": "Table 3 (_common.contrast, D1) row 8"
+ },
+ {
+  "name": "dCtBnmDannAbs",
+  "printed": "0.09",
+  "value": 0.09449295181990325,
+  "source": "Table 3 (_common.contrast, D1) row 8"
+ },
+ {
+  "name": "dCtBnmDannAbsLo",
+  "printed": "0.12",
+  "value": 0.12138718629326603,
+  "source": "Table 3 (_common.contrast, D1) row 8"
+ },
+ {
+  "name": "dCtBnmDannAbsHi",
+  "printed": "0.31",
+  "value": 0.31037308993307255,
+  "source": "Table 3 (_common.contrast, D1) row 8"
+ },
+ {
+  "name": "dCtBnmFm",
+  "printed": "-0.13",
+  "value": -0.1333894382495266,
+  "source": "Table 3 (_common.contrast, D1) row 9"
+ },
+ {
+  "name": "dCtBnmFmLo",
+  "printed": "-0.30",
+  "value": -0.29863529864062455,
+  "source": "Table 3 (_common.contrast, D1) row 9"
+ },
+ {
+  "name": "dCtBnmFmHi",
+  "printed": "+0.03",
+  "value": 0.03185642214157133,
+  "source": "Table 3 (_common.contrast, D1) row 9"
+ },
+ {
+  "name": "dCtBnmFmAbs",
+  "printed": "0.13",
+  "value": 0.1333894382495266,
+  "source": "Table 3 (_common.contrast, D1) row 9"
+ },
+ {
+  "name": "dCtBnmFmAbsLo",
+  "printed": "0.03",
+  "value": 0.03185642214157133,
+  "source": "Table 3 (_common.contrast, D1) row 9"
+ },
+ {
+  "name": "dCtBnmFmAbsHi",
+  "printed": "0.30",
+  "value": 0.29863529864062455,
+  "source": "Table 3 (_common.contrast, D1) row 9"
+ },
+ {
+  "name": "dCtDannCoral",
+  "printed": "-0.02",
+  "value": -0.023116978750262987,
+  "source": "Table 3 (_common.contrast, D1) row 10"
+ },
+ {
+  "name": "dCtDannCoralLo",
+  "printed": "-0.22",
+  "value": -0.22268795420365078,
+  "source": "Table 3 (_common.contrast, D1) row 10"
+ },
+ {
+  "name": "dCtDannCoralHi",
+  "printed": "+0.18",
+  "value": 0.17645399670312484,
+  "source": "Table 3 (_common.contrast, D1) row 10"
+ },
+ {
+  "name": "dCtDannCoralAbs",
+  "printed": "0.02",
+  "value": 0.023116978750262987,
+  "source": "Table 3 (_common.contrast, D1) row 10"
+ },
+ {
+  "name": "dCtDannCoralAbsLo",
+  "printed": "0.18",
+  "value": 0.17645399670312484,
+  "source": "Table 3 (_common.contrast, D1) row 10"
+ },
+ {
+  "name": "dCtDannCoralAbsHi",
+  "printed": "0.22",
+  "value": 0.22268795420365078,
+  "source": "Table 3 (_common.contrast, D1) row 10"
+ },
+ {
+  "name": "dCtDannFm",
+  "printed": "-0.02",
+  "value": -0.018172733010730024,
+  "source": "Table 3 (_common.contrast, D1) row 11"
+ },
+ {
+  "name": "dCtDannFmLo",
+  "printed": "-0.21",
+  "value": -0.20921263048848374,
+  "source": "Table 3 (_common.contrast, D1) row 11"
+ },
+ {
+  "name": "dCtDannFmHi",
+  "printed": "+0.17",
+  "value": 0.1728671644670237,
+  "source": "Table 3 (_common.contrast, D1) row 11"
+ },
+ {
+  "name": "dCtDannFmAbs",
+  "printed": "0.02",
+  "value": 0.018172733010730024,
+  "source": "Table 3 (_common.contrast, D1) row 11"
+ },
+ {
+  "name": "dCtDannFmAbsLo",
+  "printed": "0.17",
+  "value": 0.1728671644670237,
+  "source": "Table 3 (_common.contrast, D1) row 11"
+ },
+ {
+  "name": "dCtDannFmAbsHi",
+  "printed": "0.21",
+  "value": 0.20921263048848374,
+  "source": "Table 3 (_common.contrast, D1) row 11"
+ },
+ {
+  "name": "dCtDannCoralM",
+  "printed": "+0.03",
+  "value": 0.03305806858826002,
+  "source": "Table 3 (_common.contrast, D1) row 12"
+ },
+ {
+  "name": "dCtDannCoralMLo",
+  "printed": "-0.07",
+  "value": -0.07105675763041923,
+  "source": "Table 3 (_common.contrast, D1) row 12"
+ },
+ {
+  "name": "dCtDannCoralMHi",
+  "printed": "+0.14",
+  "value": 0.13717289480693928,
+  "source": "Table 3 (_common.contrast, D1) row 12"
+ },
+ {
+  "name": "dCtDannCoralMAbs",
+  "printed": "0.03",
+  "value": 0.03305806858826002,
+  "source": "Table 3 (_common.contrast, D1) row 12"
+ },
+ {
+  "name": "dCtDannCoralMAbsLo",
+  "printed": "0.07",
+  "value": 0.07105675763041923,
+  "source": "Table 3 (_common.contrast, D1) row 12"
+ },
+ {
+  "name": "dCtDannCoralMAbsHi",
+  "printed": "0.14",
+  "value": 0.13717289480693928,
+  "source": "Table 3 (_common.contrast, D1) row 12"
+ },
+ {
+  "name": "dGainMin",
+  "printed": "0.22",
+  "value": 0.2198611403324216,
+  "source": "Table 3 (_common.contrast, D1): min over rows 1, 4, 5, 6"
+ },
+ {
+  "name": "dGainMax",
+  "printed": "0.34",
+  "value": 0.3374710709025879,
+  "source": "Table 3 (_common.contrast, D1): max over rows 1, 4, 5, 6"
+ },
+ {
+  "name": "dLrCoral",
+  "printed": "99",
+  "value": 99.22154428781822,
+  "source": "lines_ratios_D1.json CORAL x nb3 2000 pct_of_lines"
+ },
+ {
+  "name": "dLrCoralLo",
+  "printed": "68",
+  "value": 67.91617392808253,
+  "source": "lines_ratios_D1.json CORAL x nb3 2000 pct_of_lines_ci95"
+ },
+ {
+  "name": "dLrCoralHi",
+  "printed": "131",
+  "value": 130.5269146475539,
+  "source": "lines_ratios_D1.json CORAL x nb3 2000 pct_of_lines_ci95"
+ },
+ {
+  "name": "dCompCoral",
+  "printed": "0.50",
+  "value": 0.4961077214390911,
+  "source": "lines_ratios_D1.json CORAL x nb3 2000 fold_mean completeness"
+ },
+ {
+  "name": "dLrFreeMatch",
+  "printed": "97",
+  "value": 96.70208289501367,
+  "source": "lines_ratios_D1.json FreeMatch x nb3 1500 pct_of_lines"
+ },
+ {
+  "name": "dLrFreeMatchLo",
+  "printed": "68",
+  "value": 67.7742389648869,
+  "source": "lines_ratios_D1.json FreeMatch x nb3 1500 pct_of_lines_ci95"
+ },
+ {
+  "name": "dLrFreeMatchHi",
+  "printed": "126",
+  "value": 125.62992682514044,
+  "source": "lines_ratios_D1.json FreeMatch x nb3 1500 pct_of_lines_ci95"
+ },
+ {
+  "name": "dCompFreeMatch",
+  "printed": "0.48",
+  "value": 0.4835104144750684,
+  "source": "lines_ratios_D1.json FreeMatch x nb3 1500 fold_mean completeness"
+ },
+ {
+  "name": "dLrBnm",
+  "printed": "71",
+  "value": 71.10246160319798,
+  "source": "lines_ratios_D1.json BNM x nb3 4000 pct_of_lines"
+ },
+ {
+  "name": "dLrBnmLo",
+  "printed": "54",
+  "value": 53.81403332724079,
+  "source": "lines_ratios_D1.json BNM x nb3 4000 pct_of_lines_ci95"
+ },
+ {
+  "name": "dLrBnmHi",
+  "printed": "88",
+  "value": 88.39088987915515,
+  "source": "lines_ratios_D1.json BNM x nb3 4000 pct_of_lines_ci95"
+ },
+ {
+  "name": "dCompBnm",
+  "printed": "0.36",
+  "value": 0.3555123080159899,
+  "source": "lines_ratios_D1.json BNM x nb3 4000 fold_mean completeness"
+ },
+ {
+  "name": "dLrDann",
+  "printed": "91",
+  "value": 91.00042078687144,
+  "source": "lines_ratios_D1.json DANN x nb3 4000 pct_of_lines"
+ },
+ {
+  "name": "dLrDannLo",
+  "printed": "27",
+  "value": 26.75337208507037,
+  "source": "lines_ratios_D1.json DANN x nb3 4000 pct_of_lines_ci95"
+ },
+ {
+  "name": "dLrDannHi",
+  "printed": "155",
+  "value": 155.24746948867252,
+  "source": "lines_ratios_D1.json DANN x nb3 4000 pct_of_lines_ci95"
+ },
+ {
+  "name": "dCompDann",
+  "printed": "0.46",
+  "value": 0.45500210393435725,
+  "source": "lines_ratios_D1.json DANN x nb3 4000 fold_mean completeness"
+ },
+ {
+  "name": "dLrDannSens",
+  "printed": "106",
+  "value": 105.822638333684,
+  "source": "lines_ratios_D1.json DANN x nb3 2000 pct_of_lines"
+ },
+ {
+  "name": "dLrDannSensLo",
+  "printed": "65",
+  "value": 65.03855555155818,
+  "source": "lines_ratios_D1.json DANN x nb3 2000 pct_of_lines_ci95"
+ },
+ {
+  "name": "dLrDannSensHi",
+  "printed": "147",
+  "value": 146.60672111580982,
+  "source": "lines_ratios_D1.json DANN x nb3 2000 pct_of_lines_ci95"
+ },
+ {
+  "name": "dCompDannSens",
+  "printed": "0.53",
+  "value": 0.52911319166842,
+  "source": "lines_ratios_D1.json DANN x nb3 2000 fold_mean completeness"
+ },
+ {
+  "name": "dLrBaseline",
+  "printed": "18",
+  "value": 18.41468546181359,
+  "source": "lines_ratios_D1.json Baseline A folds_1_4 pct_of_lines"
+ },
+ {
+  "name": "dLrBaselineLo",
+  "printed": "11",
+  "value": 11.397894775135473,
+  "source": "lines_ratios_D1.json Baseline A folds_1_4 ci95 / 0.50"
+ },
+ {
+  "name": "dLrBaselineHi",
+  "printed": "25",
+  "value": 25.431476148491704,
+  "source": "lines_ratios_D1.json Baseline A folds_1_4 ci95 / 0.50"
+ },
+ {
+  "name": "dLrDaMin",
+  "printed": "71",
+  "value": 71.10246160319798,
+  "source": "lines_ratios_D1.json: min over the four DA headlines"
+ },
+ {
+  "name": "dLrDaMax",
+  "printed": "99",
+  "value": 99.22154428781822,
+  "source": "lines_ratios_D1.json: max over the four DA headlines"
+ },
+ {
+  "name": "dPoolUpMin",
+  "printed": "0.01",
+  "value": 0.01278140122028193,
+  "source": "Appendix G (_common.fold_mean on pools orig, D1, D2): min D1 - orig over arms"
+ },
+ {
+  "name": "dPoolUpMax",
+  "printed": "0.10",
+  "value": 0.09977908689248899,
+  "source": "Appendix G (_common.fold_mean on pools orig, D1, D2): max D1 - orig over arms"
+ },
+ {
+  "name": "dPoolDTwoMax",
+  "printed": "0.01",
+  "value": 0.010000687139151726,
+  "source": "Appendix G (_common.fold_mean on pools orig, D1, D2): max |D2 - D1| over arms"
+ },
+ {
+  "name": "dFrozenBase",
+  "printed": "0.20",
+  "value": 0.19633915421838838,
+  "source": "Table 1 (_common.round1_summary, D1)"
+ },
+ {
+  "name": "dFrozenCoral",
+  "printed": "0.22",
+  "value": 0.21887229118451507,
+  "source": "Table 1 (_common.round1_summary, D1)"
+ },
+ {
+  "name": "dFrozenCoralDiff",
+  "printed": "+0.02",
+  "value": 0.022533136966126688,
+  "source": "Table 1 (_common.round1_summary, D1) paired"
+ },
+ {
+  "name": "dFrozenCoralLo",
+  "printed": "0.00",
+  "value": 8.363139070062187e-05,
+  "source": "Table 1 (_common.round1_summary, D1) paired"
+ },
+ {
+  "name": "dFrozenCoralHi",
+  "printed": "+0.05",
+  "value": 0.05320849989480331,
+  "source": "Table 1 (_common.round1_summary, D1) paired"
+ },
+ {
+  "name": "dFrozenAda",
+  "printed": "0.43",
+  "value": 0.42531033031769405,
+  "source": "Table 1 (_common.round1_summary, D1)"
+ },
+ {
+  "name": "dFrozenAdaDiff",
+  "printed": "+0.23",
+  "value": 0.22897117609930567,
+  "source": "Table 1 (_common.round1_summary, D1) paired"
+ },
+ {
+  "name": "dFrozenAdaLo",
+  "printed": "+0.17",
+  "value": 0.17384704397222808,
+  "source": "Table 1 (_common.round1_summary, D1) paired"
+ },
+ {
+  "name": "dFrozenAdaHi",
+  "printed": "+0.28",
+  "value": 0.27986797811908276,
+  "source": "Table 1 (_common.round1_summary, D1) paired"
+ },
+ {
+  "name": "dFrozenFm",
+  "printed": "0.43",
+  "value": 0.42537344834841145,
+  "source": "Table 1 (_common.round1_summary, D1)"
+ },
+ {
+  "name": "dFrozenFmDiff",
+  "printed": "+0.23",
+  "value": 0.22903429413002308,
+  "source": "Table 1 (_common.round1_summary, D1) paired"
+ },
+ {
+  "name": "dFrozenFmLo",
+  "printed": "+0.19",
+  "value": 0.18613349463496737,
+  "source": "Table 1 (_common.round1_summary, D1) paired"
+ },
+ {
+  "name": "dFrozenFmHi",
+  "printed": "+0.30",
+  "value": 0.2985709025878392,
+  "source": "Table 1 (_common.round1_summary, D1) paired"
+ },
+ {
+  "name": "dLpDiff",
+  "printed": "+0.10",
+  "value": 0.10488112770881547,
+  "source": "foldmean_bootstrap_D1.json"
+ },
+ {
+  "name": "dLpLo",
+  "printed": "+0.03",
+  "value": 0.025589101620029475,
+  "source": "foldmean_bootstrap_D1.json"
+ },
+ {
+  "name": "dLpHi",
+  "printed": "+0.17",
+  "value": 0.1686835945718494,
+  "source": "foldmean_bootstrap_D1.json"
+ },
+ {
+  "name": "dAuLambda",
+  "printed": "0.88",
+  "value": 0.8815494989884547,
+  "source": "Table A (AUROC)"
+ },
+ {
+  "name": "dFzLambdaLast",
+  "printed": "0.16",
+  "value": 0.16326530612244897,
+  "source": "fold0_curves_D1.json (lambda=0, last step)"
+ },
+ {
+  "name": "dFzInit",
+  "printed": "0.24",
+  "value": 0.24489795918367346,
+  "source": "fold0_curves_D1.json (frozen-probe start, Baseline A fold 0)"
+ }
+]

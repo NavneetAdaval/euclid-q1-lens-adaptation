@@ -1,0 +1,98 @@
+Baseline A (source-only)  cache=C:\Users\krris\ML\lens_paper\data\feature_cache  out=runs/curve_baseline_fold0
+[source] 48000 rows  (24000 pos / 24000 neg), 640-d frozen features
+[train] head=linear  epochs->[133]  188 steps/epoch  batch=256 (pos_frac~0.50)  seed=42
+    [step    500] curve  val_auroc=0.9925 val_tpr=0.5812 | fold0 tpr@1e-3=0.1224 auprc=0.1398 auroc=0.9278
+    [step   1000] curve  val_auroc=0.9940 val_tpr=0.6007 | fold0 tpr@1e-3=0.1429 auprc=0.1687 auroc=0.9352
+    [step   1500] curve  val_auroc=0.9942 val_tpr=0.6542 | fold0 tpr@1e-3=0.2143 auprc=0.1795 auroc=0.9333
+    [step   2000] curve  val_auroc=0.9947 val_tpr=0.6177 | fold0 tpr@1e-3=0.2143 auprc=0.1921 auroc=0.9410
+    [step   2500] curve  val_auroc=0.9947 val_tpr=0.6532 | fold0 tpr@1e-3=0.1735 auprc=0.1876 auroc=0.9417
+    [step   3000] curve  val_auroc=0.9950 val_tpr=0.6732 | fold0 tpr@1e-3=0.2143 auprc=0.2088 auroc=0.9484
+    [step   3500] curve  val_auroc=0.9951 val_tpr=0.6497 | fold0 tpr@1e-3=0.1939 auprc=0.1914 auroc=0.9434
+    [step   4000] curve  val_auroc=0.9952 val_tpr=0.7100 | fold0 tpr@1e-3=0.2041 auprc=0.2071 auroc=0.9457
+    [step   4500] curve  val_auroc=0.9950 val_tpr=0.7047 | fold0 tpr@1e-3=0.1837 auprc=0.1914 auroc=0.9423
+    [step   5000] curve  val_auroc=0.9950 val_tpr=0.7262 | fold0 tpr@1e-3=0.1837 auprc=0.1762 auroc=0.9407
+    [step   5500] curve  val_auroc=0.9952 val_tpr=0.7308 | fold0 tpr@1e-3=0.2041 auprc=0.1927 auroc=0.9430
+    [step   6000] curve  val_auroc=0.9952 val_tpr=0.7225 | fold0 tpr@1e-3=0.2347 auprc=0.2019 auroc=0.9421
+    [step   6500] curve  val_auroc=0.9955 val_tpr=0.7212 | fold0 tpr@1e-3=0.2143 auprc=0.1972 auroc=0.9455
+    [step   7000] curve  val_auroc=0.9952 val_tpr=0.7183 | fold0 tpr@1e-3=0.1837 auprc=0.1885 auroc=0.9416
+    [step   7500] curve  val_auroc=0.9953 val_tpr=0.7317 | fold0 tpr@1e-3=0.2041 auprc=0.1891 auroc=0.9414
+    [step   8000] curve  val_auroc=0.9954 val_tpr=0.7103 | fold0 tpr@1e-3=0.1939 auprc=0.1921 auroc=0.9427
+    [step   8500] curve  val_auroc=0.9953 val_tpr=0.7347 | fold0 tpr@1e-3=0.2041 auprc=0.2012 auroc=0.9444
+    [step   9000] curve  val_auroc=0.9952 val_tpr=0.7317 | fold0 tpr@1e-3=0.1939 auprc=0.1890 auroc=0.9399
+    [step   9500] curve  val_auroc=0.9953 val_tpr=0.7283 | fold0 tpr@1e-3=0.2347 auprc=0.2049 auroc=0.9415
+    [step  10000] curve  val_auroc=0.9953 val_tpr=0.7552 | fold0 tpr@1e-3=0.2347 auprc=0.2036 auroc=0.9426
+    [step  10500] curve  val_auroc=0.9950 val_tpr=0.7187 | fold0 tpr@1e-3=0.1939 auprc=0.1792 auroc=0.9363
+    [step  11000] curve  val_auroc=0.9952 val_tpr=0.7392 | fold0 tpr@1e-3=0.2143 auprc=0.1767 auroc=0.9351
+    [step  11500] curve  val_auroc=0.9953 val_tpr=0.7152 | fold0 tpr@1e-3=0.2041 auprc=0.1970 auroc=0.9424
+    [step  12000] curve  val_auroc=0.9954 val_tpr=0.7263 | fold0 tpr@1e-3=0.2041 auprc=0.2016 auroc=0.9429
+    [step  12500] curve  val_auroc=0.9953 val_tpr=0.7152 | fold0 tpr@1e-3=0.1837 auprc=0.1882 auroc=0.9363
+    [step  13000] curve  val_auroc=0.9952 val_tpr=0.7393 | fold0 tpr@1e-3=0.1633 auprc=0.1710 auroc=0.9350
+    [step  13500] curve  val_auroc=0.9949 val_tpr=0.7307 | fold0 tpr@1e-3=0.1429 auprc=0.1653 auroc=0.9258
+    [step  14000] curve  val_auroc=0.9953 val_tpr=0.7318 | fold0 tpr@1e-3=0.2347 auprc=0.1978 auroc=0.9395
+    [step  14500] curve  val_auroc=0.9956 val_tpr=0.7172 | fold0 tpr@1e-3=0.2245 auprc=0.2056 auroc=0.9445
+    [step  15000] curve  val_auroc=0.9952 val_tpr=0.7155 | fold0 tpr@1e-3=0.1735 auprc=0.1872 auroc=0.9333
+    [step  15500] curve  val_auroc=0.9955 val_tpr=0.7075 | fold0 tpr@1e-3=0.1735 auprc=0.1826 auroc=0.9369
+    [step  16000] curve  val_auroc=0.9953 val_tpr=0.6915 | fold0 tpr@1e-3=0.1837 auprc=0.1762 auroc=0.9328
+    [step  16500] curve  val_auroc=0.9953 val_tpr=0.7127 | fold0 tpr@1e-3=0.1735 auprc=0.1965 auroc=0.9387
+    [step  17000] curve  val_auroc=0.9954 val_tpr=0.7233 | fold0 tpr@1e-3=0.2041 auprc=0.1784 auroc=0.9338
+    [step  17500] curve  val_auroc=0.9953 val_tpr=0.7062 | fold0 tpr@1e-3=0.1735 auprc=0.1941 auroc=0.9338
+    [step  18000] curve  val_auroc=0.9950 val_tpr=0.7402 | fold0 tpr@1e-3=0.1837 auprc=0.1733 auroc=0.9248
+    [step  18500] curve  val_auroc=0.9953 val_tpr=0.6922 | fold0 tpr@1e-3=0.2041 auprc=0.1804 auroc=0.9330
+    [step  19000] curve  val_auroc=0.9953 val_tpr=0.7492 | fold0 tpr@1e-3=0.1837 auprc=0.1881 auroc=0.9328
+    [step  19500] curve  val_auroc=0.9950 val_tpr=0.7350 | fold0 tpr@1e-3=0.1633 auprc=0.1670 auroc=0.9243
+    [step  20000] curve  val_auroc=0.9953 val_tpr=0.6870 | fold0 tpr@1e-3=0.1837 auprc=0.1776 auroc=0.9351
+    [step  20500] curve  val_auroc=0.9950 val_tpr=0.7142 | fold0 tpr@1e-3=0.1939 auprc=0.1660 auroc=0.9270
+    [step  21000] curve  val_auroc=0.9953 val_tpr=0.7258 | fold0 tpr@1e-3=0.2041 auprc=0.1899 auroc=0.9328
+    [step  21500] curve  val_auroc=0.9952 val_tpr=0.7018 | fold0 tpr@1e-3=0.1735 auprc=0.1569 auroc=0.9277
+    [step  22000] curve  val_auroc=0.9951 val_tpr=0.7172 | fold0 tpr@1e-3=0.1735 auprc=0.1722 auroc=0.9293
+    [step  22500] curve  val_auroc=0.9951 val_tpr=0.7360 | fold0 tpr@1e-3=0.1633 auprc=0.1571 auroc=0.9251
+    [step  23000] curve  val_auroc=0.9951 val_tpr=0.7268 | fold0 tpr@1e-3=0.1939 auprc=0.1810 auroc=0.9296
+    [step  23500] curve  val_auroc=0.9951 val_tpr=0.7222 | fold0 tpr@1e-3=0.1633 auprc=0.1730 auroc=0.9286
+    [step  24000] curve  val_auroc=0.9955 val_tpr=0.7232 | fold0 tpr@1e-3=0.2041 auprc=0.1912 auroc=0.9363
+    [step  24500] curve  val_auroc=0.9953 val_tpr=0.7268 | fold0 tpr@1e-3=0.2041 auprc=0.1769 auroc=0.9346
+    [step  25000] curve  val_auroc=0.9952 val_tpr=0.7300 | fold0 tpr@1e-3=0.2041 auprc=0.1835 auroc=0.9308
+  [ep 133] loss=0.0235  saved baseline_linear_ep133.pt  val_auroc=0.9953 (diagnostic; evaluate.py does the real selection)
+
+[eval] handing 1 epoch-checkpoint(s) to evaluate.py (SOURCE-RISK selects among them on source-val; test folds touched only here)
+
+==============================================================================
+EVALUATION  (metric: TPR@FPR=0.001 + AUROC;  1 candidate checkpoint(s))
+==============================================================================
+
+[SOURCE-RISK  (headline, label-free selection)]  baseline_linear_ep133.pt   (val_auroc=0.9953)
+  per-fold:
+    fold |  n_pos |  TPR@fpr |   AUROC
+    ----------------------------------
+       0 |     98 |   0.1837 |  0.9320
+       1 |     98 |   0.1327 |  0.8776
+       2 |     98 |   0.1633 |  0.8935
+       3 |     98 |   0.1327 |  0.8990
+       4 |     97 |   0.1546 |  0.8846
+    across-fold mean   TPR = 0.1534 +- 0.0194    AUROC = 0.8973 +- 0.0188
+    POOLED (489 pos vs shared negs):
+      TPR@0.001 = 0.1534  [95% CI 0.1166, 0.2147]  (median 0.1616)
+      AUROC      = 0.8974  [95% CI 0.8799, 0.9126]  (median 0.8978)
+    ALERT-RATE GUARDRAIL: mean target alert rate = 0.0772  (prevalence ~0.002) -> FIRED
+
+------------------------------------------------------------------------------
+
+[ORACLE  (upper bound -- peeks at test labels; NOT a valid UDA result)]  baseline_linear_ep133.pt   (val_auroc=0.9953)
+  per-fold:
+    fold |  n_pos |  TPR@fpr |   AUROC
+    ----------------------------------
+       0 |     98 |   0.1837 |  0.9320
+       1 |     98 |   0.1327 |  0.8776
+       2 |     98 |   0.1633 |  0.8935
+       3 |     98 |   0.1327 |  0.8990
+       4 |     97 |   0.1546 |  0.8846
+    across-fold mean   TPR = 0.1534 +- 0.0194    AUROC = 0.8973 +- 0.0188
+    POOLED (489 pos vs shared negs):
+      TPR@0.001 = 0.1534  [95% CI 0.1166, 0.2147]  (median 0.1616)
+      AUROC      = 0.8974  [95% CI 0.8799, 0.9126]  (median 0.8978)
+    ALERT-RATE GUARDRAIL: mean target alert rate = 0.0772  (prevalence ~0.002) -> FIRED
+
+==============================================================================
+SELECTION GAP (oracle - source-risk):  TPR 0.0000   AUROC 0.0000   [same checkpoint selected]
+==============================================================================
+
+[out] results.json + raw per-fold scores -> runs/curve_baseline_fold0

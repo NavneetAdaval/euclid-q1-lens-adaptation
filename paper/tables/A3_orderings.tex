@@ -1,0 +1,35 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_a3_orderings.py)
+% A3 -- one row per failed ordering; sources in paper/scripts/make_a3_orderings.py.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Every ordering that did not survive its own error bar.} Each row states the ordering as it was first read and how it failed; the section column names where the main text discusses it, and --- marks those reported here only. Numbers are read from the artifact that measured them. All but one row are orderings that failed a test; the row marked as a measurement is the quantitative account of why they keep failing (Section~\ref{sec:resolution}).}
+\label{tab:orderings}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.3\textwidth}lp{0.52\textwidth}}
+\toprule
+Ordering as first read & Section & How it failed \\
+\midrule
+1. The budget at which the self-training arm's curve peaks & \S\ref{sec:negative} & None of 24 candidate budgets (500--3375 steps) is distinguishable from the best, at step 750. \\
+\addlinespace
+2. Decay sets in before the 8000-step cap & \S\ref{sec:negative} & Detectable only at the full cap of 8000; every shorter truncation (1500--6000) has an interval that crosses zero. \\
+\addlinespace
+3. Source--target agreement at initialisation predicts which feature directions the alignment objective shrinks & --- & Spearman $\rho = -0.76$ at the weight used, but $-0.90$ at weight zero, where the objective contributes no gradient; controlling for initial scale leaves $\rho = -0.002$. \\
+\addlinespace
+4. A Fisher-ratio separability measure rises with the alignment weight & --- & Monotone in the weight at whitening shrinkage 0.01 and 0.1; at 0.5 the weight-1 arm exceeds the weight-4 arm, so the ordering depends on the shrinkage. \\
+\addlinespace
+5. The ranking of the three unfrozen adaptation arms, under the choice of read-off step & \S\ref{sec:resolution-fix} & At a single checkpoint DANN is first of three at step 2000 ($0.555$) and last at 4000 ($0.499$). Under the declared 8-checkpoint score average under \texttt{mean\_logit} the order is FreeMatch $\geq$ DANN $\geq$ CORAL at both: it died to the single-point estimator, not to the data. \\
+\addlinespace
+6. DANN's across-fold spread exceeds the other arms' & \S\ref{sec:limitations} & Holds at declared budgets ($0.1706$ against FreeMatch's $0.0697$). Budget-matched it shrinks against CORAL at 2000 ($0.1125$ against $0.0751$) and reverses against FreeMatch at 1500 ($0.0255$ against $0.0697$): it tracks training length. \\
+\addlinespace
+7. Folds 3 and 4 are intrinsically hard at the ranking level & --- & The self-training arm's AUROC on folds 3 and 4 ($0.969$, $0.971$) is above its fold 1 ($0.950$), so the difficulty is not a property of those folds alone. \\
+\addlinespace
+8. The three unfrozen adaptation arms can be ranked at all \emph{(a measurement of why the others fail, not an ordering)} & \S\ref{sec:resolution-diagnosis} & On one fold, one run's checkpoint-to-checkpoint scatter is 2.3--4.9$\times$ the difference between DANN and CORAL; after the declared average it is 0.96--1.95$\times$, below $1\times$ on CORAL. \\
+\addlinespace
+9. Unfreezing without an adaptation term is the least stable arm & --- & Holds on steps 250--8000 (checkpoint sd/mean $0.259$ against DANN's $0.199$; $0.131$ against $0.070$ after averaging). On the grid-matched 250--4000 the values are $0.246$ against $0.225$, and $0.025$ against $0.085$ after averaging. \\
+\addlinespace
+10. The budget rule's crossing step is fixed by the trajectory & --- & The closest reading below the ceiling, at step 325, falls $0.025$ short; one sharper batch there would have set the budget at 650 steps instead of 1000, 35\% lower. \\
+\bottomrule
+\end{tabular}
+\end{table}

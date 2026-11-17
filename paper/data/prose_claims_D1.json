@@ -1,0 +1,552 @@
+[
+ {
+  "id": "A1a",
+  "claim": "round-1 CORAL - Baseline A lower bound > 0 and < one positive / 5",
+  "holds": true
+ },
+ {
+  "id": "A1b",
+  "claim": "round-1 CORAL - Baseline A upper bound < both self-training lower bounds",
+  "holds": true
+ },
+ {
+  "id": "A2",
+  "claim": "24% purity reachable on all 5 folds for all four round-1 arms",
+  "holds": true
+ },
+ {
+  "id": "B",
+  "claim": "licensed-pair lower bound > one positive",
+  "holds": true
+ },
+ {
+  "id": "C1",
+  "claim": "BNM - CORAL negative on all four folds",
+  "holds": true
+ },
+ {
+  "id": "C3a",
+  "claim": "BNM - CORAL nearer bound > 3 positives from zero",
+  "holds": true
+ },
+ {
+  "id": "C3b",
+  "claim": "the two tightest adaptation-vs-control intervals are CORAL's and FreeMatch's",
+  "holds": true
+ },
+ {
+  "id": "D1a",
+  "claim": "CORAL and FreeMatch ratio intervals wider than 50 points",
+  "holds": true
+ },
+ {
+  "id": "D1b",
+  "claim": "100% inside CORAL's and FreeMatch's intervals, outside BNM's",
+  "holds": true
+ },
+ {
+  "id": "D1c",
+  "claim": "lambda=0 is the only n/a arm, with exactly two unreachable folds",
+  "holds": true
+ },
+ {
+  "id": "D2a",
+  "claim": "DANN@4000's ratio interval is the widest among defined ratios",
+  "holds": true
+ },
+ {
+  "id": "D2b",
+  "claim": "DANN@2000 is the highest ratio point estimate",
+  "holds": true
+ },
+ {
+  "id": "D3a",
+  "claim": "unreachable folds: two for lambda=0, none for any other arm",
+  "holds": true
+ },
+ {
+  "id": "D3b",
+  "claim": "no declared-readout fold-mean completeness reaches 0.50",
+  "holds": true
+ },
+ {
+  "id": "D3c",
+  "claim": "0 < 0.50 - CORAL < two positives on one fold (2 x 0.0102 / 4)",
+  "holds": true
+ },
+ {
+  "id": "D3d",
+  "claim": "order CORAL > FreeMatch > DANN@4000 > BNM",
+  "holds": true
+ },
+ {
+  "id": "D3e",
+  "claim": "DANN@2000 fold-mean completeness > 0.50",
+  "holds": true
+ },
+ {
+  "id": "D4",
+  "claim": "CORAL, FreeMatch and DANN (either readout) each exceed 0.50 on >= 1 fold; BNM on none",
+  "holds": true
+ },
+ {
+  "id": "D6",
+  "claim": "Baseline A's ratio is defined",
+  "holds": true
+ },
+ {
+  "id": "E1a",
+  "claim": "mean_logit: FreeMatch >= DANN >= CORAL at both DANN read-offs",
+  "holds": true
+ },
+ {
+  "id": "E1b",
+  "claim": "mean_rank: FreeMatch >= CORAL >= DANN at both DANN read-offs",
+  "holds": true
+ },
+ {
+  "id": "E1c",
+  "claim": "mean_logit DANN - CORAL max gap < one positive",
+  "holds": true
+ },
+ {
+  "id": "F1",
+  "claim": "F1 ratios are CORAL, FreeMatch, DANN (the order of the first set)",
+  "holds": true
+ },
+ {
+  "id": "F2a",
+  "claim": "exactly one arm below 1x at k = 8, and it is CORAL",
+  "holds": true
+ },
+ {
+  "id": "F2b",
+  "claim": "CORAL's k = 8 shortfall < one positive on one fold (0.0102 / 4)",
+  "holds": true
+ },
+ {
+  "id": "F6a",
+  "claim": "DANN and BNM exceed sqrt(k); FreeMatch and lambda=0 do not",
+  "holds": true
+ },
+ {
+  "id": "F6b",
+  "claim": "DANN and BNM are the two highest achieved reductions",
+  "holds": true
+ },
+ {
+  "id": "F7a",
+  "claim": "largest T1 gap among CORAL/FreeMatch/DANN < the minimum k = 1 scatter",
+  "holds": true
+ },
+ {
+  "id": "F7b",
+  "claim": "exactly four arms' k = 8 scatter exceeds that gap",
+  "holds": true
+ },
+ {
+  "id": "G",
+  "claim": "|DANN - FreeMatch spread difference| > |point difference|",
+  "holds": true
+ },
+ {
+  "id": "Ha",
+  "claim": "Baseline A fold 0 - cell A = exactly one positive (1/98)",
+  "holds": true
+ },
+ {
+  "id": "Hb",
+  "claim": "cell A = Baseline A fold 0 on the pre-registered pool",
+  "holds": true
+ },
+ {
+  "id": "I",
+  "claim": "|lambda=0 - Baseline A| < 0.0001",
+  "holds": true
+ },
+ {
+  "id": "D8a",
+  "claim": "FreeMatch above CORAL on > 50% of Figure 6's purity grid",
+  "holds": true
+ },
+ {
+  "id": "D8b",
+  "claim": "CORAL above FreeMatch at 24% purity (tabulated fold-means and drawn curves)",
+  "holds": true
+ },
+ {
+  "id": "D8c",
+  "claim": "at least 3 crossings, at least two of them between purity 0.15 and 0.30",
+  "holds": true
+ },
+ {
+  "id": "F6c",
+  "claim": "DANN's and BNM's achieved reductions exceed sqrt(k) (ratio > 1)",
+  "holds": true
+ },
+ {
+  "id": "F6d",
+  "claim": "DANN's and BNM's scatter grids have the same size (the text names one size)",
+  "holds": true
+ },
+ {
+  "id": "F6e",
+  "claim": "F6 fold lines above the star = DANN f2, CORAL f2, FreeMatch f2 and f4",
+  "holds": true
+ },
+ {
+  "id": "DFa",
+  "claim": "deflector sample holds the 19,167 galaxies Section 3 names",
+  "holds": true
+ },
+ {
+  "id": "DFb",
+  "claim": "every deflector has log M* >= the printed floor, and the floor is the minimum to 0.1 dex",
+  "holds": true
+ },
+ {
+  "id": "DFc",
+  "claim": "every deflector's photometric redshift lies in the printed range",
+  "holds": true
+ },
+ {
+  "id": "DFd",
+  "claim": "the unphysical-value count is non-zero (the Section 9 clause is kept)",
+  "holds": true
+ },
+ {
+  "id": "DFe",
+  "claim": "17 unphysical-value deflectors were drawn, hosting 132 simulated lenses",
+  "holds": true
+ },
+ {
+  "id": "GXa",
+  "claim": "all 4,455 hard negatives are grade X in the version-0.0.1-matched file",
+  "holds": true
+ },
+ {
+  "id": "GXb",
+  "claim": "exactly 8 of them are graded C in version 0.0.3; none is graded A or B there",
+  "holds": true
+ },
+ {
+  "id": "SCa",
+  "claim": "flux macros print the query's constants (2.3 and 229 uJy)",
+  "holds": true
+ },
+ {
+  "id": "SCb",
+  "claim": "PSF magnitudes are 23.9 - 2.5 log10(f) of those constants (23.0, 18.0)",
+  "holds": true
+ },
+ {
+  "id": "SCc",
+  "claim": "the query's other conditions are exactly the seven Section 3 lists, in four sky boxes, capped at 250,000 rows",
+  "holds": true
+ },
+ {
+  "id": "SCd",
+  "claim": "the faint fraction is between 0 and 1 and the faint limit is fainter than 22.5",
+  "holds": true
+ },
+ {
+  "id": "PSF",
+  "claim": "simulator PSF is a Gaussian of FWHM 0.16 arcsec, as Section 3 states",
+  "holds": true
+ },
+ {
+  "id": "RW1",
+  "claim": "rows 1, 4, 5, 6 (each DA arm against lambda=0): all four intervals exclude zero",
+  "holds": true
+ },
+ {
+  "id": "RW2",
+  "claim": "abstract: rows 1, 2, 3, 4, 5, 6 exclude zero with all four folds agreeing in sign",
+  "holds": true
+ },
+ {
+  "id": "RW3",
+  "claim": "every three-arm gap's ratio_b (noise_b / |gap|) is > 1, declared readouts only",
+  "holds": true
+ },
+ {
+  "id": "RW4",
+  "claim": "every BNM gap's ratio_b is < 1, declared readouts only",
+  "holds": true
+ },
+ {
+  "id": "RW5",
+  "claim": "Appendix C: the largest three-arm gap is below the smallest three-arm noise_b",
+  "holds": true
+ },
+ {
+  "id": "RW6",
+  "claim": "Section 6.3 and Appendix C: BNM - CORAL is the one objective-vs-objective row whose interval excludes zero (rows 7-12)",
+  "holds": true
+ },
+ {
+  "id": "RW7",
+  "claim": "Section 6.4: lag-1 autocorrelations (folds 1-4 means) all within +-0.2 ('close to uncorrelated')",
+  "holds": true
+ },
+ {
+  "id": "RW8",
+  "claim": "grade A/B recall ratio is between 1.9 and 3.3 for every readout ('two to three times')",
+  "holds": true
+ },
+ {
+  "id": "RW9",
+  "claim": "Section 6.6: recall rises with expert score (three bins) in every readout",
+  "holds": true
+ },
+ {
+  "id": "RW10",
+  "claim": "Section 6.6: for all four DA headlines the smallest Einstein-radius bin has the lowest recall",
+  "holds": true
+ },
+ {
+  "id": "RW11",
+  "claim": "Section 6.6: the lenses every model misses are mostly grade B",
+  "holds": true
+ },
+ {
+  "id": "RW12",
+  "claim": "Section 6.6: every catalogue match among the top negatives is grade C",
+  "holds": true
+ },
+ {
+  "id": "RW13",
+  "claim": "Section 6.6: the above-threshold negatives are brighter than the pool",
+  "holds": true
+ },
+ {
+  "id": "RW14",
+  "claim": "the bright-only pool leaves all eight contrasts' zero-inclusion unchanged",
+  "holds": true
+ },
+ {
+  "id": "RW15",
+  "claim": "Appendix H: TPR falls on the bright pool for every readout, and BNM's benchmark ratio falls the most",
+  "holds": true
+ },
+ {
+  "id": "RW16",
+  "claim": "Section 5.5: zero-inclusion is the same on the original and cleaned pools for every contrast",
+  "holds": true
+ },
+ {
+  "id": "RW17",
+  "claim": "Section 5.5: the change of pool raises every arm's TPR, and the DA arms the most",
+  "holds": true
+ },
+ {
+  "id": "RW18",
+  "claim": "Section 5.5: of the 20 D2 lenses, 14 were training negatives and 6 validation negatives ('Fourteen' / 'six'); 19 random galaxies",
+  "holds": true
+ },
+ {
+  "id": "RW19",
+  "claim": "Section 5.5: on the original pool the DA arms place more of the 28 above threshold than Baseline A and lambda=0",
+  "holds": true
+ },
+ {
+  "id": "RW20",
+  "claim": "Baseline A and lambda=0 print the same two-decimal TPR (one value quoted for both)",
+  "holds": true
+ },
+ {
+  "id": "RW21",
+  "claim": "Section 6.3: DANN - lambda=0 has the widest interval of rows 1-6",
+  "holds": true
+ },
+ {
+  "id": "RW22",
+  "claim": "Section 6.3: lambda=0 - Baseline A admits zero",
+  "holds": true
+ },
+ {
+  "id": "RW23",
+  "claim": "Section 6.3 / Figure: lambda=0 ends the development fold below its start",
+  "holds": true
+ },
+ {
+  "id": "RW24",
+  "claim": "Section 6.1: frozen self-training arms reach about twice Baseline A (1.8-2.4x)",
+  "holds": true
+ },
+ {
+  "id": "RW25",
+  "claim": "Section 6.1: frozen CORAL's difference excludes zero only at the margin (0 < lower bound < one positive)",
+  "holds": true
+ },
+ {
+  "id": "RW26",
+  "claim": "Section 6.1: the frozen-to-unfrozen FreeMatch interval excludes zero",
+  "holds": true
+ },
+ {
+  "id": "RW28",
+  "claim": "Section 6.1: the DANN development run's last checkpoint equals Baseline A's fold-0 TPR on the original pool",
+  "holds": true
+ },
+ {
+  "id": "RW27",
+  "claim": "Section 6.5: DANN's sensitivity-readout ratio exceeds 100%, no declared DA headline does",
+  "holds": true
+ },
+ {
+  "id": "RW2-1",
+  "claim": "Section 3.1: 30 000 lenses generated; 24 000 training lenses",
+  "holds": true
+ },
+ {
+  "id": "RW2-2",
+  "claim": "Appendix B (budget rule): DANN read at 4000, twice its lambda horizon of 2000 (lambda = tanh(5s/2000))",
+  "holds": true
+ },
+ {
+  "id": "RW2-3",
+  "claim": "Appendix B (budget rule): the lambda=0 control is read at 4000",
+  "holds": true
+ },
+ {
+  "id": "RW2-4",
+  "claim": "Appendix B (budget rule): BNM's budget is 1000, twice its crossing step",
+  "holds": true
+ },
+ {
+  "id": "RW2-5",
+  "claim": "Appendix B (budget rule): CORAL declared 2000 on cost, declining the development maximum at 2500",
+  "holds": true
+ },
+ {
+  "id": "RW2-6",
+  "claim": "Appendix B (budget rule): Baseline A uses 8000",
+  "holds": true
+ },
+ {
+  "id": "RW2-7",
+  "claim": "Appendix B (budget rule and amendments): FreeMatch first declared 2000, amended to 1500 where the development curve peaks; every confirmatory fold ran at 1500",
+  "holds": true
+ },
+ {
+  "id": "RW2-8",
+  "claim": "Section 4.3: FreeMatch's local-threshold variant chosen by a fold-0 TPR screen (standard 0.357 against floor 0.174)",
+  "holds": true
+ },
+ {
+  "id": "RW3-1",
+  "claim": "Section 8: every reported result is a single run per fold with one seed (one config per fold 1-4 for each unfrozen arm; seed 42 everywhere)",
+  "holds": true
+ },
+ {
+  "id": "RW3-2",
+  "claim": "Section 4.3 / Table 10: BNM's weight from a fold-0 sweep over a grid set by step-0 gradient norms, read the nuclear norm and the predicted-positive fraction, never TPR",
+  "holds": true
+ },
+ {
+  "id": "RW3-3",
+  "claim": "Appendix J: GalSim unpinned in the WSL2 conda environment used for simulation",
+  "holds": true
+ },
+ {
+  "id": "RW3-4",
+  "claim": "Section 4.5 and Appendix B: Baseline A's 8000 fixed before any results; BNM's budget rule declared before its development curve",
+  "holds": true
+ },
+ {
+  "id": "RW3-5",
+  "claim": "Appendix D (tab:frozen): frozen-comparison means and paired differences use folds 0-4",
+  "holds": true
+ },
+ {
+  "id": "RW4-1",
+  "claim": "Section 4.3: DANN's folds ran with abort conditions armed, the control's only logged them; no arming condition fired on DANN; every DANN fold ran 4000 steps",
+  "holds": true
+ },
+ {
+  "id": "RW4-2",
+  "claim": "Appendix F rule 9: the builder checks only the random-galaxy draws (train, val, test, target) against simulation hosts",
+  "holds": true
+ },
+ {
+  "id": "RW4-3",
+  "claim": "Section 3.4: the test negatives are the whole hash partition reserved for them",
+  "holds": true
+ },
+ {
+  "id": "RW4-4",
+  "claim": "Section 6.1: the frozen continuation of Appendix E ran 2000 steps, at least the 1500 further steps of the unfrozen arm",
+  "holds": true
+ },
+ {
+  "id": "RW4-5",
+  "claim": "Section 4.2: two optimiser settings compared on the development fold with the source-only arm; the published defaults adopted, and they did not score higher",
+  "holds": true
+ },
+ {
+  "id": "RW5-1",
+  "claim": "Sections 4.4 and 8, abstract: every target batch of every adaptation arm is exactly half lenses and half galaxies (128/128)",
+  "holds": true
+ },
+ {
+  "id": "RW5-2",
+  "claim": "Section 8: FreeMatch's fairness term targets a uniform class marginal (no fairness_target set, so the module default 1/C per class applies)",
+  "holds": true
+ },
+ {
+  "id": "RW5-3",
+  "claim": "Section 6.3: FreeMatch and CORAL start from their frozen-comparison heads; DANN, BNM and the control start from the same (Baseline A) head",
+  "holds": true
+ },
+ {
+  "id": "RW5-4",
+  "claim": "Section 6.3: FreeMatch - lambda=0 splits into (start - lambda=0) gained frozen plus (unfrozen - start) gained after unfreezing, the licensed pair's difference",
+  "holds": true
+ },
+ {
+  "id": "RW5-5",
+  "claim": "Section 6.3: CORAL's frozen head starts a little above the control (above it, by less than five positives in 98)",
+  "holds": true
+ },
+ {
+  "id": "RW5-6",
+  "claim": "Section 6.3: BNM - CORAL (row 7) was not pre-registered; it is one of \\contrastCount intervals, the main contrast table's rows",
+  "holds": true
+ },
+ {
+  "id": "RW5-7",
+  "claim": "Contributions bullet 1: the other three objectives' declared contrasts against the control run from BNM's (min) to CORAL's at 2000/4000 (max)",
+  "holds": true
+ },
+ {
+  "id": "RW5-8",
+  "claim": "Section 6.4 and abstract: at each arm's declared read-off every paired interval among CORAL, DANN and FreeMatch includes zero",
+  "holds": true
+ },
+ {
+  "id": "RW5-9",
+  "claim": "Section 6.4, contributions bullet 2: at k=8 FreeMatch has the highest fold-mean under both pre-declared score combinations",
+  "holds": true
+ },
+ {
+  "id": "RW5-10",
+  "claim": "Section 6.4, abstract, conclusion: FreeMatch's k=8 lead over DANN (both read-offs) and CORAL excludes zero under mean rank, and under mean logit it does not",
+  "holds": true
+ },
+ {
+  "id": "RW5-11",
+  "claim": "Section 6.4: the window average is the pre-declared secondary analysis, with mean logit primary and mean rank secondary",
+  "holds": true
+ },
+ {
+  "id": "RW5-12",
+  "claim": "Section 6.4: for at least one pair among CORAL, DANN and FreeMatch the independent noise figure exceeds the standard error the paired interval implies",
+  "holds": true
+ },
+ {
+  "id": "RW5-13",
+  "claim": "Abstract: about 98 test lenses per confirmatory fold",
+  "holds": true
+ }
+]

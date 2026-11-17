@@ -1,0 +1,47 @@
+{
+ "NOT_FROM_THE_CORAL_SCRIPT": "analyze_coral_dev8000_budget.py section 4 emits a CORAL budget declaration (deep_coral, gamma=16, 2000 steps) that is hardcoded and unrelated to this arm. It is the Task-A DECAY DETECTOR that is used from that script, applied unmodified; its budget section is not.",
+ "arm": "bnm_nb3",
+ "budget_confound_removed_by_a_match": "A MATCH REMOVES THE BUDGET CONFOUND ONLY. Head initialisation and the gamma-tuning budget still travel with every contrast (7.18) and are not addressed by reading at a matched step.",
+ "cross_arm_comparable": false,
+ "crossing_resolution": {
+  "BUT_THE_TRAJECTORY_IS_BATCH_NOISY": "the nuclear norm is a per-batch reading and it is not monotone: over steps 25-500 it moves non-monotonically (closest sub-ceiling approach 10.8162 against a ceiling of 10.8413). So the finer cadence resolves WHERE WE LOOKED to +/-25, but the crossing step itself is only as well determined as that noise allows -- a single sharp batch could cross earlier. This is a limitation of the rule as written, recorded rather than corrected, because the rule is pre-registered and was applied as written.",
+  "cadence_below_500": 25,
+  "closest_approach_below_ceiling_before_crossing": 10.816211700439453,
+  "sampling_resolution_steps": "+/-25, so +/-50 on the budget"
+ },
+ "crossing_step": 500,
+ "development_run": {
+  "cadence": "every 25 steps to 500 (STATISTICS ONLY), then every 250 (full evaluation)",
+  "dir": "runs/bnm_r6_dev8000/bnm_r6_dev8000_fold0",
+  "fold": 0,
+  "gpu": "Tesla T4",
+  "step_range": [
+   25,
+   8000
+  ],
+  "steps": 8000,
+  "trajectory_points_read": 50,
+  "wall_minutes": 253.7
+ },
+ "fires": true,
+ "gamma": 0.00787,
+ "matched_arm_budgets": [
+  1500,
+  2000,
+  4000
+ ],
+ "method": "BNM, n_blocks=3, image-space",
+ "outcome": "no_matched_arm_budget",
+ "prereg_sha256": "d205f6784213b75d8bdbd37a989836b37029e2ace17c7166bb3647bfd35d4587",
+ "purpose": "the confirmatory budget for folds 1-4, derived by the rule pre-registered in runs/bnm_r6_prereg.json",
+ "read_off_rule": "train to the budget and read the FINAL checkpoint. R1 -- the last checkpoint -- as pre-registered throughout the project. No label-free selector, no argmax, no smoothing: THE BUDGET IS THE SELECTOR.",
+ "round": 6,
+ "rule": "budget = 2 x the first step at which normalised ||A||_* reaches 10.8413, the sharpening-only ceiling; NEVER exceeding the declared ceiling of 8000",
+ "rule_reads_a_metric": false,
+ "selected_budget_steps": 1000,
+ "sha256_of_body_without_this_field": "e5d15d6714b9d8bd8ae65c58ad7177d79c0c26d5e98da783db4394467f6d6f18",
+ "sharpening_ceiling": 10.841291427612305,
+ "stage2_preview_matched_the_development_run": true,
+ "stage2_preview_was": 1000,
+ "which_number_is_quoted": "the rule-derived budget is not one of the declared arm budgets {1500, 2000, 4000}, so it is quoted ONLY as BNM's own-objective reading -- 'BNM read where its own objective says it is done'. All cross-arm contrasts use MATCHED READOUTS, with 4000 mandatory as the lambda=0 known-null's budget"
+}

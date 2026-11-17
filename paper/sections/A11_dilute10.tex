@@ -1,0 +1,62 @@
+\section{The 1:10 diluted-target experiment}
+\label{app:dilute10}
+
+This appendix gives the values behind Section~\ref{sec:results-dilute} at four decimals, and the
+run facts the text cites. Every value comes from the experiment's analysis file or from the run
+records named in Appendix~\ref{app:repro}; the methods are in Section~\ref{sec:dilute-methods}
+and the pre-registration in Appendix~\ref{sec:prereg-dilute}.
+
+\paragraph{Per-fold values and the ten intervals.} Table~\ref{tab:dl-perfold} gives every arm's
+diluted values per fold for the four metrics of Appendix~\ref{app:perfold}, and
+Table~\ref{tab:dl-contrasts4} the \dlNtWord{} paired $t$-intervals: the \dlNtG{} forms of $G$ and
+the \dlNtD{} of $D$. The matched-step forms of $G$ give the same branches as the primary forms.
+
+\input{tables/AK_perfold}
+
+\input{tables/AK_contrasts4}
+
+\paragraph{The frozen stages.} Table~\ref{tab:dl-frozen} gives the frozen stages that the
+unfrozen CORAL and FreeMatch arms start from, on the diluted target and in the main design, with
+the \dlNbootWord{} bootstrap intervals, and splits FreeMatch's contrast against the control into
+the parts gained before and after unfreezing. Table~\ref{tab:dl-heads} gives the norms of those
+stages' final heads, read from the stored weights. CORAL's diluted frozen head has a
+layer-normalisation gain about \dlCoralGainRatioWord{} times that of its counterpart in the
+main design,
+and FreeMatch's has not changed in the same way; we did not establish why.
+
+\input{tables/AK_frozen}
+
+\input{tables/AK_head_norms}
+
+\paragraph{The predictions.} Table~\ref{tab:dl-predictions} scores every component of our
+\dlNPredWord{} predictions as written. Components that name a mechanism are not testable with
+any stored quantity and are marked so.
+
+\input{tables/AK_predictions}
+
+\paragraph{Other test pools.} Table~\ref{tab:dl-sensitivity} repeats the \dlNtWord{} contrasts on
+the original test pool and on the reduced pool. On the reduced pool every contrast keeps its
+zero-inclusion. On the original pool \dlOrigMatchWord{} of the \dlNtWord{} do; both forms of
+FreeMatch's $G$ exclude zero there, the primary at $\dlGFmOrig{}$
+$[\dlGFmOrigLo{}, \dlGFmOrigHi{}]$, which Section~\ref{sec:results-dilute} notes beside the
+near-boundary pair.
+
+\input{tables/AK_sensitivity}
+
+\paragraph{Run bookkeeping.} Table~\ref{tab:dl-bookkeeping} gives each half-precision run's
+skipped and applied optimiser updates, the realised lens fraction of every run's target batches
+against the pool's expected value, and the firings of CORAL's advisory feature-norm guard. The
+no-verdict rule of the third part of the pre-registration fires below half the budget's updates;
+the lowest applied fraction is \dlCoralAppliedPct{}\% for CORAL and \dlFmAppliedPct{}\% for
+FreeMatch. CORAL's skips are its first \dlCoralSkipMin{}--\dlCoralSkipMax{} steps on every fold,
+after which none is skipped; FreeMatch skips \dlFmSkipMin{}--\dlFmSkipMax{} per fold. The lens
+fractions of DANN and BNM sit below those of the other arms because their runs keep the
+half-lens holdout of the balanced design (Section~\ref{sec:labels}).
+
+\input{tables/AK_bookkeeping}
+
+\paragraph{The memorisation diagnostic.} Table~\ref{tab:dl-memorisation} gives the DANN
+$-$ $\lambda=0$ analysis of Section~\ref{sec:negative} per fold. It reads the stored
+checkpoints of the main design's runs, not the diluted ones.
+
+\input{tables/AK_memorisation}

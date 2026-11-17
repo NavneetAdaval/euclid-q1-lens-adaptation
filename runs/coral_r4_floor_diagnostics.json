@@ -1,0 +1,102 @@
+{
+  "g16_step2000": {
+    "D1_cross_source_vs_target": {
+      "max": 0.00015293491014745086,
+      "mean": 6.226837225161337e-05,
+      "min": 3.210371869499795e-05,
+      "n": 60,
+      "p05": 3.631255422078539e-05,
+      "p50": 5.596966730081476e-05,
+      "p95": 0.0001115950966777745,
+      "sd": 2.509383285084466e-05
+    },
+    "D1_floor_source_vs_source": {
+      "max": 0.00010983691026922315,
+      "mean": 5.2770324176284095e-05,
+      "min": 2.6600529963616282e-05,
+      "n": 60,
+      "p05": 3.0423441057791933e-05,
+      "p50": 4.8309981139027514e-05,
+      "p95": 8.841924245643894e-05,
+      "sd": 1.9025030337386678e-05
+    },
+    "D1_floor_target_vs_target": {
+      "max": 0.0003379114787094295,
+      "mean": 7.80905200978547e-05,
+      "min": 3.0787465220782906e-05,
+      "n": 60,
+      "p05": 3.388804925634759e-05,
+      "p50": 5.678751585946884e-05,
+      "p95": 0.00022190074596437623,
+      "sd": 6.011037102358908e-05
+    },
+    "D2_pooled_cov_term": 1.5903783605608623e-06,
+    "D2_pooled_cross": 1.597267691977322e-05,
+    "D2_pooled_floor_source": 4.2318344640079886e-05,
+    "D2_pooled_floor_target": 0.0003102297196164727,
+    "D2_pooled_mean_term": 1.4382298104465008e-05,
+    "D2_pooled_n_source": 782,
+    "D2_pooled_n_target": 782,
+    "batch": 256,
+    "checkpoint": "C:\\Users\\krris\\ML\\lens_paper\\kaggle\\coral_r4\\sweep_run\\runs\\coral_r4_sweep\\g16\\checkpoints\\step_2000.pt",
+    "cross_over_floor_target": 0.7973870858278995,
+    "n_pairs": 60,
+    "pooled_over_batch": 0.25651348095676885,
+    "pooled_over_pooled_floor": 0.05148661108136171,
+    "src_feat_l2_mean": 63.34385217030843,
+    "tgt_feat_l2_mean": 63.35095322926839
+  },
+  "lp_ft_init": {
+    "D1_cross_source_vs_target": {
+      "max": 0.07254912704229355,
+      "mean": 0.051409888391693435,
+      "min": 0.032912399619817734,
+      "n": 60,
+      "p05": 0.04097737930715084,
+      "p50": 0.05138106271624565,
+      "p95": 0.06360328719019889,
+      "sd": 0.007741530582992863
+    },
+    "D1_floor_source_vs_source": {
+      "max": 0.02417687326669693,
+      "mean": 0.010182885988615453,
+      "min": 0.006039462052285671,
+      "n": 60,
+      "p05": 0.006449424056336283,
+      "p50": 0.009724785573780537,
+      "p95": 0.016134883090853678,
+      "sd": 0.003627436886858911
+    },
+    "D1_floor_target_vs_target": {
+      "max": 0.03274216502904892,
+      "mean": 0.011766985842647652,
+      "min": 0.006443900987505913,
+      "n": 60,
+      "p05": 0.007455847458913922,
+      "p50": 0.010870122350752354,
+      "p95": 0.020039543975144625,
+      "sd": 0.004469049298669701
+    },
+    "D2_pooled_cov_term": 0.011356187984347343,
+    "D2_pooled_cross": 0.043518342077732086,
+    "D2_pooled_floor_source": 0.006924822926521301,
+    "D2_pooled_floor_target": 0.010238880291581154,
+    "D2_pooled_mean_term": 0.032162152230739594,
+    "D2_pooled_n_source": 782,
+    "D2_pooled_n_target": 782,
+    "batch": 256,
+    "checkpoint": "LP->FT init (round-1 CORAL fold-0 head)",
+    "cross_over_floor_target": 4.368993817037334,
+    "n_pairs": 60,
+    "pooled_over_batch": 0.8464975015344242,
+    "pooled_over_pooled_floor": 4.2503028493764825,
+    "src_feat_l2_mean": 66.12120971679687,
+    "tgt_feat_l2_mean": 69.59742240905761
+  },
+  "verdict": {
+    "D1": "cross-domain CORAL is AT the same-domain estimation floor (0.80x); alignment is complete to the estimator's resolution",
+    "D2": "pooled ~= batch-level -- alignment holds at the POPULATION level, not just the 256-sample estimate",
+    "batch_reduction_reference": 457.3860166881224,
+    "population_reduction": 2724.5490719128597
+  }
+}

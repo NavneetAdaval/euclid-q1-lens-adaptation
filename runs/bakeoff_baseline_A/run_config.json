@@ -1,0 +1,23 @@
+{
+  "budget_steps": 8000,
+  "epochs_trained": 43,
+  "steps_per_epoch": 188,
+  "curve_every": 250,
+  "batch_size": 256,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "pos_fraction": 0.5,
+  "seed": 42,
+  "head_type": "linear",
+  "selection_rule": "R1_last_checkpoint_step8000",
+  "curve_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "target_fpr": 0.001,
+  "method": "baseline_A_source_only",
+  "domain_adaptation": null
+}

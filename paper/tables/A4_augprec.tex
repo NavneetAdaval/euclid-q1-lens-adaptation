@@ -1,0 +1,34 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_a4_augprec.py)
+% A4 -- paper/data/lever1_aug_precision_D1.json (the same script on test pool D1);
+% parameter count from cell A's checkpoint.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Round-1 augmentation and precision, three cells of a $2\times2$.} Frozen encoder (Baseline A), development fold 0, 1{,}921 trainable parameters, 98 test positives. Cell D was never run, so the interaction between the two factors is not identified. Differences are paired class-conditional bootstrap estimates (2000 replicates, 95\% percentile interval); the one-positive resolution is $1/98$. The two legs sum to the total exactly because $A\to B\to C$ is a chain, which is arithmetic and not evidence that the effects add.}
+\label{tab:augprec}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllrr}
+\toprule
+Cell & Augmentation & Precision & TPR@$10^{-3}$ & AUROC \\
+\midrule
+A & none & fp32 & $0.2347$ & $0.9440$ \\
+B & weak & fp32 & $0.1735$ & $0.9226$ \\
+C & weak & fp16 & $0.1531$ & $0.9256$ \\
+D & none & fp16 & \emph{not run} & \emph{not run} \\
+\bottomrule
+\end{tabular}
+
+\vspace{6pt}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrlr}
+\toprule
+Leg & Path & $\Delta$TPR@$10^{-3}$ & 95\% interval & Excludes 0 \\
+\midrule
+Augmentation (held at fp32) & $B-A$ & $-0.0612$ & $[-0.1327, +0.0000]$ & no \\
+Precision (held at weak augmentation) & $C-B$ & $-0.0204$ & $[-0.0510, +0.0204]$ & no \\
+Total & $C-A$ & $-0.0816$ & $[-0.1429, -0.0102]$ & yes \\
+\bottomrule
+\end{tabular}
+\end{table}

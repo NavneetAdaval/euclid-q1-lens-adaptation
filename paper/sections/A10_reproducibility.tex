@@ -1,0 +1,110 @@
+\section{Reproducibility and software}
+\label{app:repro}
+
+\paragraph{Encoder.} We load the encoder through \texttt{timm} from the Hugging Face hub by the
+checkpoint string \texttt{hf\_hub:\allowbreak mwalmsley/\allowbreak zoobot-\allowbreak
+encoder-\allowbreak greyscale-\allowbreak convnext\_nano}. The Zoobot package itself is not
+installed and its version is not recorded; v2.0.1 is the release in which Zoobot's
+documentation lists the greyscale encoders as added. The greyscale checkpoint has a
+single-channel stem, so the model must be built with one input channel. Our unfrozen setting
+trains timm \texttt{stages[3]}, \texttt{stages[2]} and \texttt{stages[1]}, the encoder's own
+fine-tuning convention for $n_{\mathrm{blocks}} = 3$; the final layer normalisation is never
+trained; the benchmark states only that it fine-tunes the last three
+blocks~\citep{lines2025simstosky}.
+
+\paragraph{Library versions.} We did not record the \texttt{timm} version used in training or
+pin it in a requirements file. The notebook for the unfrozen FreeMatch arm installs
+\texttt{timm} 1.0.26, but its outputs do not record the installed version, and the notebooks
+for the other unfrozen arms install none, so they used the hosted environment's version; the
+arms may therefore have run under different \texttt{timm} versions. Comments in our code name
+1.0.26 and 1.0.28 as checked, and the per-stage parameter counts are a regression test, so a
+release that renumbered the stages would fail a test. We installed GalSim unpinned in the WSL2
+conda environment used for simulation and did not record its version, so the catalogue's default selection cannot be tied to
+a known release. Our input stretch reproduces the \texttt{fits\_to\_jpg\_like\_scaling}
+function of the \texttt{galaxy-datasets} package from its source code; we did not record the
+package version or commit.
+
+\paragraph{Compute venue and precision.} Every unfrozen arm trained in \venueTrainPrecision{}
+and was scored in \venueEvalPrecision{}. The \venueGpuArms{} runs record a \venueGpu{}; the
+FreeMatch runs record only a CUDA device, but their paths place them on Kaggle, and the
+notebook settings we ship (\texttt{KAGGLE\_FREEMATCH\_PERFOLD\_CELLS.md}) specify a T4. We
+measured the effect
+of the venue once, on the frozen baseline with weak augmentation at half precision: the same
+configuration scored \augprecCellC{} locally and \augprecCellCKaggle{} on Kaggle, a difference
+of \augprecVenueDiff{} with interval \augprecVenueCI{} (Appendix~\ref{sec:augprec}). A second
+check did not reproduce a venue effect: the same unfrozen CORAL weights scored in two separately
+stored scorings gave identical TPR@$10^{-3}$ at all \venueCoralCheckpoints{} shared checkpoints
+and AUROC agreeing to \venueCoralMaxAuroc{}.
+
+\paragraph{The 1:10 runs.} The diluted DANN, BNM and unfrozen CORAL runs record a \venueGpu{};
+the FreeMatch runs, frozen and unfrozen, record only a CUDA device; and the CORAL frozen stage
+ran in full precision on CPU. Before FreeMatch's unfrozen runs, the pre-run check that part 3 of
+the pre-registration requires reproduced the pattern of FreeMatch's early skipped updates in
+its original mode, but not their exact count; we judged the match sufficient and proceeded,
+since the rule does not say how closely the known-null must match. Before computing anything new,
+the analysis reproduced this paper's balanced per-fold TPRs and its \dlReproNWord{} contrasts
+against the control exactly, at four decimals.
+
+\paragraph{Skipped updates.} In half precision the gradient scaler skips any step whose
+gradients overflow. On folds 1--4 the balanced runs skipped \skipLamList{} steps (the control),
+\skipDannList{} (DANN) and \skipCoralList{} (CORAL), and FreeMatch \skipFmEach{} on every fold;
+the BNM runs did not record skips. Table~\ref{tab:dl-bookkeeping} gives the 1:10 runs'.
+
+\paragraph{Infrastructure failures.} Three failures cost us time. Continuing training from a
+weights-only checkpoint silently reset the training state; Appendix~\ref{sec:appendix-restart}
+gives the cost and the repair. A gradient-norm measurement taken on CPU in fp32 moved by
+$+\rvGradShiftPct{}$\% when re-measured on a T4 in fp16, enough to shift the weight grid derived
+from it, so we re-derived the grid on the training hardware. An audit that found no
+hard-coded write paths in our scripts was accurate when made, but a script written after it
+wrote to one; we found it later and gave it an output flag and an overwrite guard.
+
+\paragraph{Hash enrolment.} Two mechanisms implement our hash protection: discovery of every
+file whose digest our run logs record (in the release, the digests in
+\texttt{public\_inputs/\allowbreak record\_extract.json}), and a separate inventory that the
+analysis scripts verify at
+start and end. The checkpoint-window declaration of Appendix~\ref{sec:failed} is hashed but was
+never enrolled in that inventory, so it is neither re-checked automatically nor read-only.
+Its digest currently matches the file on disk, and Table~\ref{tab:hashes6} re-derives it at build
+time and marks it as the one uncovered row. We did not enrol it after the fact, because that
+would date its protection to the writing of this paper. The measuring run behind one hashed
+gradient-norm grid was never downloaded, and the per-checkpoint files of two unfrozen
+development runs on fold 0 were lost (Section~\ref{sec:negative}).
+
+\paragraph{Script provenance.} The loss module that our four $\lambda = 0$ confirmatory folds ran
+had since been overwritten in our working copy. We recovered it from the archived training
+bundle, and its digest matches the one those runs recorded. Through line 1440 it is identical to
+the version our DANN folds ran; the remainder is a BNM section that the $\lambda = 0$ training
+path does not import, as the pre-registration's own audit, recovered with its recorded digest,
+also documents. Four script versions used only by fold-0 development runs remain unrecovered;
+they affect development-fold values only. The version of the unfrozen FreeMatch runner that
+ran our balanced FreeMatch fold 1 is also unrecovered: its run record lacks \fmFoldOneMissingWord{} keys that
+today's runner always writes and records the exact step-zero tolerance that preceded our gate
+change (Appendix~\ref{sec:appendix-restart}), so the released runner is a later version.
+For \dlLostArmsWord{} of the 1:10 arms (DANN, BNM and the CORAL and FreeMatch frozen
+stages), the exact versions of \dlLostFilesWord{} helper scripts that ran
+(\texttt{dilute10\_common.py}, \texttt{dilute10\_batch\_log.py} and the arm's wrapper) are lost;
+the release has their later versions. Their recorded digests are in the run files. For
+Baseline A, FreeMatch and CORAL's balanced frozen stage, the runs recorded no per-module digests,
+and BNM's balanced runs recorded only the files its pre-registration hashes.
+
+\paragraph{Where things are.} The contrast set and its registration marks are
+\texttt{CONTRAST\_ROWS} and \texttt{CONTRAST\_PREREG} in \texttt{paper/scripts/\_common.py};
+the four registered contrasts are in \texttt{runs/lambda0\_r6\_prereg.json}; the test-pool
+exclusion rule is \texttt{audit/decontam/rule.json}; and the post hoc analyses of
+Sections~\ref{sec:resolution}, \ref{sec:findmiss} and Appendices~\ref{app:bright}
+and~\ref{app:breakdowns} are in \texttt{audit/review\_r1/}, \texttt{audit/review\_r1b/} and
+\texttt{audit/rewrite\_v5/}; the
+scripts that generate the tables, figures and number macros are in \texttt{paper/scripts/}.
+The 1:10 experiment's contrasts and their mark are \texttt{DILUTE10\_CONTRASTS} and
+\texttt{DILUTE10\_PREREG} in \texttt{paper/scripts/\_dilute10.py}; its three-part
+pre-registration is
+\texttt{runs/\allowbreak dilute10\_prereg\_\allowbreak part\{1,2,3\}.json}, its pool
+\texttt{data/\allowbreak splits/\allowbreak dilute10\_pool.json}, its analysis
+\texttt{runs/\allowbreak dilute10\_analysis/}, the frozen-stage head norms
+\texttt{runs/\allowbreak dilute10\_head\_norms/}, and the memorisation diagnostic
+\texttt{runs/\allowbreak dann\_lambda0\_holdout\_gap/}. The three files from the archived
+training bundle, the loss module of the $\lambda = 0$ confirmatory folds, the
+pre-registration's audit and the pre-registration itself, are
+\texttt{evidence/\allowbreak kaggle\_bundle\_v14/\allowbreak da\_losses.py},
+\texttt{evidence/\allowbreak kaggle\_bundle\_v14/\allowbreak lambda0\_r6\_audit.json} and
+\texttt{evidence/\allowbreak kaggle\_bundle\_v14/\allowbreak lambda0\_r6\_prereg.json}.

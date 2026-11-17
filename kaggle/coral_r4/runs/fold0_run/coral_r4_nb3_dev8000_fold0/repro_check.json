@@ -1,0 +1,263 @@
+{
+  "results": [
+    {
+      "step": 250,
+      "status": "REPRODUCED",
+      "bit_exact": true,
+      "failed_arbiters": [],
+      "amp_scale": {
+        "reference": 8192.0,
+        "this_run": 8192.0,
+        "match": true
+      },
+      "fp16_skipped_cumulative": {
+        "reference": 3.0,
+        "this_run": 3.0,
+        "match": true
+      },
+      "window": 25,
+      "n_window_reference": 25,
+      "table": [
+        {
+          "quantity": "src_perdim_std",
+          "ref_exact": 0.2023148089647293,
+          "this_exact": 0.2023148089647293,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 0.20386834144592286,
+          "this_win_mean": 0.32140140360593794,
+          "ref_win_sd": 0.004852779590425712,
+          "win_mean_z": 24.219740453883762,
+          "rel_tol": 0.15,
+          "z_tol": 6.0,
+          "arbiter": true,
+          "status": "PASS"
+        },
+        {
+          "quantity": "tgt_perdim_std",
+          "ref_exact": 0.2050655335187912,
+          "this_exact": 0.2050655335187912,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 0.2096417212486267,
+          "this_win_mean": 0.3271976057887077,
+          "ref_win_sd": 0.005539911805189293,
+          "win_mean_z": 21.219811555477328,
+          "rel_tol": 0.15,
+          "z_tol": 6.0,
+          "arbiter": true,
+          "status": "PASS"
+        },
+        {
+          "quantity": "coral_raw",
+          "ref_exact": 0.0005716278101317585,
+          "this_exact": 0.0005716278101317585,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 0.0007538997987285256,
+          "this_win_mean": 0.0036008061228785665,
+          "ref_win_sd": 0.00015207408224756272,
+          "win_mean_z": 18.72052280095656,
+          "rel_tol": 1.5,
+          "z_tol": 6.0,
+          "arbiter": true,
+          "status": "PASS"
+        },
+        {
+          "quantity": "src_feat_l2",
+          "ref_exact": 64.81561279296875,
+          "this_exact": 64.81561279296875,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 64.8247201538086,
+          "this_win_mean": 65.0163759765625,
+          "ref_win_sd": 0.03976099396468625,
+          "win_mean_z": 4.820196973046514,
+          "rel_tol": 0.02,
+          "z_tol": 6.0,
+          "arbiter": true,
+          "status": "PASS"
+        },
+        {
+          "quantity": "tgt_feat_l2",
+          "ref_exact": 64.87920379638672,
+          "this_exact": 64.87920379638672,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 64.88961822509765,
+          "this_win_mean": 65.27041836547852,
+          "ref_win_sd": 0.029261287729828972,
+          "win_mean_z": 13.013786129196305,
+          "rel_tol": 0.02,
+          "z_tol": 6.0,
+          "arbiter": true,
+          "status": "PASS"
+        },
+        {
+          "quantity": "sup_loss",
+          "ref_exact": 0.059520505368709564,
+          "this_exact": 0.059520505368709564,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 0.05753870740532875,
+          "this_win_mean": 0.10420441842079163,
+          "ref_win_sd": 0.013434683175295194,
+          "win_mean_z": 3.4735252336486537,
+          "rel_tol": 1.0,
+          "z_tol": 6.0,
+          "arbiter": false,
+          "status": "PASS"
+        }
+      ],
+      "tolerance_basis": "calibration: the smallest CONFIG change available in this design (gamma 16 -> 4, measured in the sweep's own arms) moves per-dimension std by +74% at step 250 and +58% at step 2000, and raw CORAL by 4.6x and 4.7x -- against tolerances of 15% and 2.5x, so it is caught at both steps with ~4x and ~2.5x of margin. NOTE that the feature NORM is nearly gamma-invariant (0.3% between those two arms at step 2000), so ||f|| is a scale sanity check, NOT a discriminator -- which is the round-4 variance-collapse finding restated: covariance moved 56x while the norm barely moved.",
+      "reference": "/kaggle/input/datasets/navneet78/lens-paper-coral-r4/reference/coral_r4_g16_2000/steps.csv"
+    },
+    {
+      "step": 2000,
+      "status": "REPRODUCED",
+      "bit_exact": true,
+      "failed_arbiters": [],
+      "amp_scale": {
+        "reference": 8192.0,
+        "this_run": 8192.0,
+        "match": true
+      },
+      "fp16_skipped_cumulative": {
+        "reference": 3.0,
+        "this_run": 3.0,
+        "match": true
+      },
+      "window": 25,
+      "n_window_reference": 25,
+      "table": [
+        {
+          "quantity": "src_perdim_std",
+          "ref_exact": 0.09765700250864029,
+          "this_exact": 0.09765700250864029,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 0.10771511435508728,
+          "this_win_mean": 0.10870790764689446,
+          "ref_win_sd": 0.008029794893719957,
+          "win_mean_z": 0.1236386862862011,
+          "rel_tol": 0.15,
+          "z_tol": 6.0,
+          "arbiter": true,
+          "status": "PASS"
+        },
+        {
+          "quantity": "tgt_perdim_std",
+          "ref_exact": 0.0940432921051979,
+          "this_exact": 0.0940432921051979,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 0.10806898623704911,
+          "this_win_mean": 0.11169100868701935,
+          "ref_win_sd": 0.007009496677330952,
+          "win_mean_z": 0.5167307464006707,
+          "rel_tol": 0.15,
+          "z_tol": 6.0,
+          "arbiter": true,
+          "status": "PASS"
+        },
+        {
+          "quantity": "coral_raw",
+          "ref_exact": 6.495403067674488e-05,
+          "this_exact": 6.495403067674488e-05,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 9.968261409085244e-05,
+          "this_win_mean": 0.00010807431647845078,
+          "ref_win_sd": 5.0131554534065265e-05,
+          "win_mean_z": 0.16739361995838437,
+          "rel_tol": 1.5,
+          "z_tol": 6.0,
+          "arbiter": true,
+          "status": "PASS"
+        },
+        {
+          "quantity": "src_feat_l2",
+          "ref_exact": 63.35601043701172,
+          "this_exact": 63.35601043701172,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 63.3685009765625,
+          "this_win_mean": 63.44174905395508,
+          "ref_win_sd": 0.020419078191023537,
+          "win_mean_z": 3.587237225271899,
+          "rel_tol": 0.02,
+          "z_tol": 6.0,
+          "arbiter": true,
+          "status": "PASS"
+        },
+        {
+          "quantity": "tgt_feat_l2",
+          "ref_exact": 63.345008850097656,
+          "this_exact": 63.345008850097656,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 63.377089996337894,
+          "this_win_mean": 63.44987689208985,
+          "ref_win_sd": 0.021313742216493094,
+          "win_mean_z": 3.4150218677051005,
+          "rel_tol": 0.02,
+          "z_tol": 6.0,
+          "arbiter": true,
+          "status": "PASS"
+        },
+        {
+          "quantity": "sup_loss",
+          "ref_exact": 0.006585575640201569,
+          "this_exact": 0.006585575640201569,
+          "abs_diff": 0.0,
+          "rel_diff": 0.0,
+          "ref_win_mean": 0.018970066756010054,
+          "this_win_mean": 0.017826683963648976,
+          "ref_win_sd": 0.01280295076442932,
+          "win_mean_z": 0.08930619303307483,
+          "rel_tol": 1.0,
+          "z_tol": 6.0,
+          "arbiter": false,
+          "status": "PASS"
+        }
+      ],
+      "tolerance_basis": "calibration: the smallest CONFIG change available in this design (gamma 16 -> 4, measured in the sweep's own arms) moves per-dimension std by +74% at step 250 and +58% at step 2000, and raw CORAL by 4.6x and 4.7x -- against tolerances of 15% and 2.5x, so it is caught at both steps with ~4x and ~2.5x of margin. NOTE that the feature NORM is nearly gamma-invariant (0.3% between those two arms at step 2000), so ||f|| is a scale sanity check, NOT a discriminator -- which is the round-4 variance-collapse finding restated: covariance moved 56x while the norm barely moved.",
+      "reference": "/kaggle/input/datasets/navneet78/lens-paper-coral-r4/reference/coral_r4_g16_2000/steps.csv"
+    }
+  ],
+  "reference_steps_csv": "/kaggle/input/datasets/navneet78/lens-paper-coral-r4/reference/coral_r4_g16_2000/steps.csv",
+  "window": 25,
+  "tolerances": {
+    "src_perdim_std": {
+      "rel": 0.15,
+      "z": 6.0,
+      "arbiter": true
+    },
+    "tgt_perdim_std": {
+      "rel": 0.15,
+      "z": 6.0,
+      "arbiter": true
+    },
+    "coral_raw": {
+      "rel": 1.5,
+      "z": 6.0,
+      "arbiter": true
+    },
+    "src_feat_l2": {
+      "rel": 0.02,
+      "z": 6.0,
+      "arbiter": true
+    },
+    "tgt_feat_l2": {
+      "rel": 0.02,
+      "z": 6.0,
+      "arbiter": true
+    },
+    "sup_loss": {
+      "rel": 1.0,
+      "z": 6.0,
+      "arbiter": false
+    }
+  },
+  "basis": "calibration: the smallest CONFIG change available in this design (gamma 16 -> 4, measured in the sweep's own arms) moves per-dimension std by +74% at step 250 and +58% at step 2000, and raw CORAL by 4.6x and 4.7x -- against tolerances of 15% and 2.5x, so it is caught at both steps with ~4x and ~2.5x of margin. NOTE that the feature NORM is nearly gamma-invariant (0.3% between those two arms at step 2000), so ||f|| is a scale sanity check, NOT a discriminator -- which is the round-4 variance-collapse finding restated: covariance moved 56x while the norm barely moved."
+}

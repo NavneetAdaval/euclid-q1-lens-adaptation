@@ -1,0 +1,21 @@
+{
+  "fold": 4,
+  "head": "/kaggle/working/runs/dilute10/freematch_frozen/fold4/checkpoints/step_8000.pt",
+  "head_sha256": "d3ef46d6e96c801defecd775f4257c0e9f01717711a4fc9a861036e0b71bfa05",
+  "head_l2": 28.19372,
+  "tpr": 0.31958762886597936,
+  "auroc": 0.9518534558673927,
+  "n_pos": 97,
+  "n_neg": 26399,
+  "pool": "original (all shared negatives) -- what the nb3 step-0 gate measures",
+  "cleaned_pool": {
+    "tpr": 0.35051546391752575,
+    "auroc": 0.9529179115723169,
+    "n_pos": 97,
+    "n_neg": 26134,
+    "rule_body_sha256": "b83fa019abba5238ccfca593a3130b54be574a47359b4e2818b274efd3fd0e4b",
+    "n_removed": 265
+  },
+  "from": "logits/step_8000.npz (persisted), cross-checked against the head re-scored on cached features (max |diff| 0.0e+00)",
+  "recorded_utc": "2026-10-18T18:29:08Z"
+}

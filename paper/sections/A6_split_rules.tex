@@ -1,0 +1,46 @@
+\section{The splits audit}
+\label{sec:splitrules}
+
+Our split-building script enforces nine rule groups before it writes the splits file, and any
+failure aborts the build. The grouping and numbering are the script's own;
+Section~\ref{sec:data} describes the independent check we ran afterwards and what it found.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{\textbf{The split audit.} Enforced on the real data when the splits file is built;
+all nine groups pass. ``Partition'' is the hash-partition index each unlabelled galaxy
+carries, used here to keep the four negative roles disjoint.}
+\label{tab:splitrules}
+\begin{tabular}{rp{0.82\textwidth}}
+\toprule
+& Rule group \\
+\midrule
+1 & The simulated train and validation rows are disjoint, and no deflector is shared
+between them; grouping by deflector identifier, not merely by image, prevents the
+reused-host leak. \\
+2 & Bare-deflector negatives are unique by object identifier, each drawn from the correct
+side of the train/validation split, and none appears on both sides. \\
+3 & Each source side is balanced 1:1, positives against negatives. \\
+4 & Random negatives come from the partition reserved for their role: train, validation
+and test each from their own. A foreign identifier maps to a sentinel rather than raising,
+so a leak is flagged rather than crashing the audit. \\
+5 & Every random-negative draw is mutually disjoint: train, validation, test and all five
+target folds. Target negatives are disjoint from test negatives, target folds are
+disjoint from one another (fresh per fold), and every
+target draw comes from the target partition. \\
+6 & For each fold, the test and target lens rows partition the 489 graded lenses
+with no overlap and no remainder, and across the five folds each lens is tested exactly
+once. \\
+7 & Every fold's test positives contain both grades, so no fold is graded A-only or
+B-only. \\
+8 & Grade-X hard negatives appear in training only, and never in a validation, test or
+target pool. \\
+9 & No simulation deflector appears, by stored identifier, among the random-galaxy negatives
+drawn for training, validation, test or any fold's target. The bare-deflector negatives are
+simulation hosts by design, and the grade-X hard negatives are not part of this check.
+Section~\ref{sec:data} gives the result of the same check by exact ID. \\
+\bottomrule
+\end{tabular}
+\end{table}

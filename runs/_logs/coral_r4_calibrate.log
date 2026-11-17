@@ -1,0 +1,29 @@
+[lockout] test-label lockout ACTIVE: 20 binding(s) sealed (TPR/AUROC/AUPRC/metric_suite/purity/curve_hook + test_* cache splits).
+
+============================================================================================
+GAMMA CALIBRATION -- coral_nb3  (500 steps at gamma=1.0, fold 0)
+============================================================================================
+  Sun & Saenko arXiv:1607.01719 §4: set lambda so the classification and CORAL
+  losses are of roughly the SAME MAGNITUDE at the end of training.
+  LOSS MAGNITUDES ONLY -- no TPR, no AUROC, no test split is reachable below.
+============================================================================================
+[load] building the Zoobot encoder (n_blocks=3, grad_checkpointing=True) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=3 -> trainable ['stages.3', 'stages.2', 'stages.1'] (14,835,520 params, 99.2% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from C:\Users\krris\ML\lens_paper\runs\bakeoff_coral\fold0\checkpoints\step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 66.268356
+[optim] n_blocks=3  head_lr=0.0001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.05
+[optim]   group 0: head       lr=1.000e-04  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   group 2: stages.2   lr=7.500e-05  params=6,907,520
+[optim]   group 3: stages.1   lr=5.625e-05  params=479,680
+[optim]   TOTAL trainable = 14,837,441 params
+    step    50/500  sup=0.10570  coral_raw=0.0160618  src|f|=67.002  tgt|f|=68.794  (117s)
+    step   100/500  sup=0.09021  coral_raw=0.0129861  src|f|=69.253  tgt|f|=70.673  (585s)
+    step   150/500  sup=0.05100  coral_raw=0.0293325  src|f|=71.734  tgt|f|=72.679  (1011s)
+    step   200/500  sup=0.05609  coral_raw=0.0141221  src|f|=73.847  tgt|f|=74.264  (1523s)
+    step   250/500  sup=0.10536  coral_raw=0.0168076  src|f|=75.716  tgt|f|=76.157  (2033s)
+    step   300/500  sup=0.07262  coral_raw=0.0841942  src|f|=77.773  tgt|f|=78.812  (2550s)
+    step   350/500  sup=0.06706  coral_raw=0.0327788  src|f|=81.354  tgt|f|=81.553  (3060s)
+    step   400/500  sup=0.02173  coral_raw=0.0751625  src|f|=82.328  tgt|f|=81.638  (3574s)

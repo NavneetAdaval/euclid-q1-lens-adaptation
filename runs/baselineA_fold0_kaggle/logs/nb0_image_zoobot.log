@@ -1,0 +1,108 @@
+================================================================================
+LEVER 1 SCREEN -- baselineA_fold0_nb0_image_zoobot  (fold 0, 8000 steps)
+================================================================================
+  run                 : nb0_image
+  run_dir             : baselineA_fold0_nb0_image
+  n_blocks            : 0
+  lp_ft               : False
+  init_head_from      : None
+  budget_steps        : 8000
+  is_preregistered_budget: True
+  curve_every         : 250
+  batch_size          : 256
+  true_batch          : True
+  gradient_accumulation: False
+  grad_checkpointing  : False
+  lr                  : 0.0001
+  backbone_lr         : None
+  backbone_lr_effective: 0.0001
+  lr_decay            : 0.75
+  weight_decay        : 0.05
+  pos_fraction        : 0.5
+  seed                : 42
+  head_type           : linear
+  fold                : 0
+  selection_rule      : R1_last_checkpoint_step8000
+  method              : baseline_A_source_only
+  domain_adaptation   : None
+  encoder_eval        : frozen_feature_cache
+  augmentation        : weak (+-3px translate, PROJECT.md 7.3)
+  fp16                : True
+  precision           : fp16
+  device              : cuda
+  control_reference   : /kaggle/input/datasets/navneet78/lens-paper/step_8000.pt
+  protocol_match      : zoobot_v2.0.1_defaults
+  protocol_match_rationale: Kumar et al.'s LP-FT protocol is an LR sweep plus ID-validation early stopping. We cannot do the early stopping -- source-val AUROC is saturated. Reconstructing half the protocol is worse than not running it, and any sweep would be tuned on fold-0 test data, contaminating the very number we report. We therefore adopt the benchmark's published hyperparameters without tuning.
+  protocol_match_source: Zoobot v2.0.1 FinetuneableZoobotAbstract.configure_optimizers
+  protocol_match_values: {'learning_rate_head': 0.0001, 'learning_rate_top_block': 0.0001, 'lr_decay': 0.75, 'weight_decay': 0.05, 'cosine_schedule': False}
+  protocol_match_tuned: False
+================================================================================
+
+====================================================================================
+§1 PRECONDITION CHECK -- only n_blocks may differ from the reference run
+  reference: /kaggle/working/ref_zoobot/run_config.json
+====================================================================================
+  key                    | reference                  | this run             | status
+  --------------------------------------------------------------------------------
+  augmentation           | weak (+-3px translate, PROJECT.md 7.3) | weak (+-3px translate, PROJECT.md 7.3) | ok
+  precision              | fp16                       | fp16                 | ok
+  seed                   | 42                         | 42                   | ok
+  batch_size             | 256                        | 256                  | ok
+  budget_steps           | 8000                       | 8000                 | ok
+  lr                     | 0.0001                     | 0.0001               | ok
+  backbone_lr            | None                       | None                 | ok
+  lr_decay               | 0.75                       | 0.75                 | ok
+  weight_decay           | 0.05                       | 0.05                 | ok
+  pos_fraction           | 0.5                        | 0.5                  | ok
+  head_type              | linear                     | linear               | ok
+  fold                   | 0                          | 0                    | ok
+  curve_every            | 250                        | 250                  | ok
+  true_batch             | True                       | True                 | ok
+  gradient_accumulation  | False                      | False                | ok
+  n_blocks               | 0                          | 0                    | EXEMPT
+  grad_checkpointing     | False                      | False                | EXEMPT
+  --------------------------------------------------------------------------------
+  ALL PINNED SETTINGS MATCH -- the screen is measuring n_blocks alone.
+
+[ref] round-1 checkpoint sha256 verified: 5f278533c195c356
+[data] source_train n=48000  188 steps/epoch  -> 43 epochs (8084 steps; R1 = step_8000)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[loader] num_workers=2
+[ref] scoring round-1 Baseline A on target_fold0 for the agreement column ...
+    [step   250/8000] loss=0.1810  val_auroc=0.9810 val_tpr=0.3165 | fold0 tpr@1e-3=0.0714 agr=0.7668 | 2.2 min
+    [step   500/8000] loss=0.1655  val_auroc=0.9856 val_tpr=0.3657 | fold0 tpr@1e-3=0.0510 agr=0.8255 | 4.2 min
+    [step   750/8000] loss=0.2251  val_auroc=0.9876 val_tpr=0.3838 | fold0 tpr@1e-3=0.0510 agr=0.8552 | 6.0 min
+    [step  1000/8000] loss=0.1326  val_auroc=0.9888 val_tpr=0.4445 | fold0 tpr@1e-3=0.0714 agr=0.8709 | 7.8 min
+    [step  1250/8000] loss=0.1570  val_auroc=0.9896 val_tpr=0.4838 | fold0 tpr@1e-3=0.0714 agr=0.8824 | 9.9 min
+    [step  1500/8000] loss=0.1293  val_auroc=0.9902 val_tpr=0.5068 | fold0 tpr@1e-3=0.0816 agr=0.8880 | 11.9 min
+    [step  1750/8000] loss=0.1719  val_auroc=0.9906 val_tpr=0.5185 | fold0 tpr@1e-3=0.0816 agr=0.8951 | 13.8 min
+    [step  2000/8000] loss=0.1071  val_auroc=0.9911 val_tpr=0.5217 | fold0 tpr@1e-3=0.0918 agr=0.8998 | 15.8 min
+    [step  2250/8000] loss=0.0903  val_auroc=0.9914 val_tpr=0.5480 | fold0 tpr@1e-3=0.0918 agr=0.9028 | 17.9 min
+    [step  2500/8000] loss=0.1545  val_auroc=0.9916 val_tpr=0.5413 | fold0 tpr@1e-3=0.0918 agr=0.9056 | 19.8 min
+    [step  2750/8000] loss=0.1550  val_auroc=0.9919 val_tpr=0.5287 | fold0 tpr@1e-3=0.0918 agr=0.9080 | 21.9 min
+    [step  3000/8000] loss=0.0886  val_auroc=0.9921 val_tpr=0.5263 | fold0 tpr@1e-3=0.1020 agr=0.9112 | 23.9 min
+    [step  3250/8000] loss=0.1486  val_auroc=0.9922 val_tpr=0.5112 | fold0 tpr@1e-3=0.1020 agr=0.9127 | 25.7 min
+    [step  3500/8000] loss=0.1497  val_auroc=0.9924 val_tpr=0.5188 | fold0 tpr@1e-3=0.1122 agr=0.9140 | 27.8 min
+    [step  3750/8000] loss=0.0982  val_auroc=0.9924 val_tpr=0.5347 | fold0 tpr@1e-3=0.1122 agr=0.9155 | 29.8 min
+    [step  4000/8000] loss=0.1457  val_auroc=0.9926 val_tpr=0.5308 | fold0 tpr@1e-3=0.1224 agr=0.9163 | 31.7 min
+    [step  4250/8000] loss=0.1141  val_auroc=0.9926 val_tpr=0.5523 | fold0 tpr@1e-3=0.1224 agr=0.9176 | 33.8 min
+    [step  4500/8000] loss=0.1037  val_auroc=0.9928 val_tpr=0.5357 | fold0 tpr@1e-3=0.1224 agr=0.9192 | 35.8 min
+    [step  4750/8000] loss=0.0824  val_auroc=0.9929 val_tpr=0.5345 | fold0 tpr@1e-3=0.1224 agr=0.9224 | 37.7 min
+    [step  5000/8000] loss=0.0665  val_auroc=0.9930 val_tpr=0.5377 | fold0 tpr@1e-3=0.1224 agr=0.9244 | 39.9 min
+    [step  5250/8000] loss=0.1099  val_auroc=0.9930 val_tpr=0.5447 | fold0 tpr@1e-3=0.1224 agr=0.9223 | 41.8 min
+    [step  5500/8000] loss=0.1649  val_auroc=0.9930 val_tpr=0.5558 | fold0 tpr@1e-3=0.1224 agr=0.9218 | 43.8 min
+    [step  5750/8000] loss=0.1235  val_auroc=0.9930 val_tpr=0.5657 | fold0 tpr@1e-3=0.1224 agr=0.9230 | 45.9 min
+    [step  6000/8000] loss=0.0721  val_auroc=0.9932 val_tpr=0.5628 | fold0 tpr@1e-3=0.1327 agr=0.9259 | 47.8 min
+    [step  6250/8000] loss=0.1204  val_auroc=0.9932 val_tpr=0.5513 | fold0 tpr@1e-3=0.1224 agr=0.9284 | 49.8 min
+    [step  6500/8000] loss=0.1195  val_auroc=0.9933 val_tpr=0.5645 | fold0 tpr@1e-3=0.1224 agr=0.9283 | 51.9 min
+    [step  6750/8000] loss=0.1377  val_auroc=0.9933 val_tpr=0.5570 | fold0 tpr@1e-3=0.1327 agr=0.9306 | 53.7 min
+    [step  7000/8000] loss=0.0914  val_auroc=0.9934 val_tpr=0.5460 | fold0 tpr@1e-3=0.1224 agr=0.9321 | 55.7 min
+    [step  7250/8000] loss=0.0913  val_auroc=0.9934 val_tpr=0.5465 | fold0 tpr@1e-3=0.1327 agr=0.9325 | 57.8 min
+    [step  7500/8000] loss=0.1031  val_auroc=0.9934 val_tpr=0.5658 | fold0 tpr@1e-3=0.1224 agr=0.9316 | 59.6 min
+    [step  7750/8000] loss=0.1124  val_auroc=0.9935 val_tpr=0.5617 | fold0 tpr@1e-3=0.1327 agr=0.9341 | 61.7 min
+    [step  8000/8000] loss=0.1136  val_auroc=0.9935 val_tpr=0.5667 | fold0 tpr@1e-3=0.1327 agr=0.9348 | 63.8 min
+[retention] checkpoints on disk: 32/32  (curve rows: 32)
+[train] done in 63.8 min (8000 steps)
+
+[R1] baselineA_fold0_nb0_image  fold0  TPR@0.001 = 0.1327   AUROC = 0.9205   AUPRC = 0.1416
+[out] run_config.json + results.json + curve.csv + scores/ -> /kaggle/working/runs/baselineA_fold0_nb0_image_zoobot

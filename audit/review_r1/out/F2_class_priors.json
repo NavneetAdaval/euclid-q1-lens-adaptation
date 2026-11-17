@@ -1,0 +1,195 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1/scripts/f_facts.py",
+ "test_pool": "n/a",
+ "folds": "n/a",
+ "metric": "scripts/metrics.py metric_suite / tpr_at_fpr (TPR at FPR=1e-3, full ROC with drop_intermediate=False, np.interp); thresholds from metrics.operating_threshold on the same curve",
+ "generated_utc": "2026-10-08T15:44:47+00:00",
+ "notes": [],
+ "inputs_sha256": {
+  "runs/bnm_r6_folds/bnm_r6_fold1/run_config.json": "06f4116e1e20c0d03d998f82be568ac402c3ce4ca1d30141e4709220c074f3e8",
+  "runs/bnm_r6_folds/bnm_r6_fold2/run_config.json": "57be2a7c40316dfaa0ccf6a4f665a8f18bac72bf99d7ffd0d2bc787f4b525eed",
+  "runs/bnm_r6_folds/bnm_r6_fold3/run_config.json": "67368ba4d4639ef12a7f61508a57a8bcf73eed187d3d1889a39a7aa60f82c3b7",
+  "runs/bnm_r6_folds/bnm_r6_fold4/run_config.json": "5fdc6c0e0e4f714a0d466809b46ecc07e2dc79e4571ba826b5df2367021c3054",
+  "runs/freematch_nb3_unfrozen_fold0/run_config.json": "9e5bf14c5e6a5fce3c8d9273ede52af3746328430d64cf3d2a45daa0935f24b3",
+  "runs/freematch_nb3_unfrozen_fold1/run_config.json": "3dff368c5f1efe90daeff6868b2e011424c44ece012e64c0fca9d9105e31188a",
+  "runs/freematch_nb3_unfrozen_fold2/run_config.json": "876ab1684cea841c32a8796d33a3a614acd84cae1dcc8ab4fbb41dfede8e34fd",
+  "runs/freematch_nb3_unfrozen_fold3/run_config.json": "e760782fab27ecdb1ccb88568c2d681a5ce271055712a460651a6f6a6b2ca2ec",
+  "runs/freematch_nb3_unfrozen_fold4/run_config.json": "f81eb502b08ee91b0c4308d4924e6be7a0c37b175a62e97077112444d6fc9499",
+  "scripts/da_losses.py": "2d861ffc8649f4987756f5773c9e72e8bb2fba5cf790c7b227e7436ce1f89a98",
+  "scripts/run_bnm_r6.py": "5cb8b3f8a0f22d2089f738f2cf5a0e4d0756c6fe4661328e55d3594e9f1f0220",
+  "scripts/run_unfreeze_freematch.py": "e8f745890dbf4b349f1254f4a898d72cb33909108ca0f495c078df17823981b8",
+  "scripts/train_skeleton.py": "06834cac81d1fdcd9a560d508a080a51902ca11b33e4cc648da9a4e76dbc3691"
+ },
+ "result": {
+  "freematch": {
+   "value_used": "uniform [0.5, 0.5] over [non-lens, lens] (fairness_target=None -> torch.full((num_classes,), 1/num_classes), num_classes=2)",
+   "config_key": "fairness_target",
+   "set_where": {
+    "runner_constant": [
+     {
+      "file": "scripts/run_unfreeze_freematch.py",
+      "line": 133,
+      "text": "FAIRNESS_TARGET = None"
+     }
+    ],
+    "runner_passes_it": [
+     {
+      "file": "scripts/run_unfreeze_freematch.py",
+      "line": 625,
+      "text": "fairness_target=FAIRNESS_TARGET, seed=SEED, device=device,"
+     }
+    ],
+    "train_config_default": [
+     {
+      "file": "scripts/train_skeleton.py",
+      "line": 284,
+      "text": "freematch_fairness_target: tuple | None = None  # None -> uniform [0.5,0.5] (balanced pool)"
+     }
+    ],
+    "train_skeleton_passes_it": [
+     {
+      "file": "scripts/train_skeleton.py",
+      "line": 375,
+      "text": "fairness_target=cfg.freematch_fairness_target).to(self.device)"
+     }
+    ]
+   },
+   "code_lines": [
+    {
+     "file": "scripts/da_losses.py",
+     "line": 874,
+     "text": "fairness_target : sequence[float] | None, default None"
+    },
+    {
+     "file": "scripts/da_losses.py",
+     "line": 875,
+     "text": "SAF target marginal. None -> uniform [1/C]*C (balanced, matches our 1:1 pool). An"
+    },
+    {
+     "file": "scripts/da_losses.py",
+     "line": 918,
+     "text": "init = 1.0 / self.num_classes"
+    },
+    {
+     "file": "scripts/da_losses.py",
+     "line": 922,
+     "text": "if fairness_target is None:"
+    },
+    {
+     "file": "scripts/da_losses.py",
+     "line": 923,
+     "text": "ft = torch.full((self.num_classes,), init)"
+    },
+    {
+     "file": "scripts/da_losses.py",
+     "line": 930,
+     "text": "self.register_buffer(\"fairness_target\", ft)"
+    },
+    {
+     "file": "scripts/da_losses.py",
+     "line": 1019,
+     "text": "saf = self_adaptive_fairness_penalty(mean_pred, self.fairness_target, self.eps)"
+    },
+    {
+     "file": "scripts/da_losses.py",
+     "line": 727,
+     "text": "#      uniform [0.5, 0.5] -- this is the anti-collapse mechanism AdaMatch lacked."
+    }
+   ],
+   "stored_run_configs": {
+    "runs/freematch_nb3_unfrozen_fold0/run_config.json": {
+     "fairness_target": null,
+     "saf_weight": 0.01,
+     "line": 37
+    },
+    "runs/freematch_nb3_unfrozen_fold1/run_config.json": {
+     "fairness_target": null,
+     "saf_weight": 0.01,
+     "line": 37
+    },
+    "runs/freematch_nb3_unfrozen_fold2/run_config.json": {
+     "fairness_target": null,
+     "saf_weight": 0.01,
+     "line": 37
+    },
+    "runs/freematch_nb3_unfrozen_fold3/run_config.json": {
+     "fairness_target": null,
+     "saf_weight": 0.01,
+     "line": 37
+    },
+    "runs/freematch_nb3_unfrozen_fold4/run_config.json": {
+     "fairness_target": null,
+     "saf_weight": 0.01,
+     "line": 37
+    }
+   },
+   "saf_weight_in_run_configs": [
+    0.01
+   ]
+  },
+  "bnm": {
+   "has_class_prior_parameter": false,
+   "constructor_signature": [
+    {
+     "file": "scripts/da_losses.py",
+     "line": 1578,
+     "text": "def __init__(self, gamma: float = 1.0):"
+    }
+   ],
+   "objective_lines": [
+    {
+     "file": "scripts/da_losses.py",
+     "line": 1453,
+     "text": "#       L_bnm = - nuclear_norm(A) / min(B, C)"
+    },
+    {
+     "file": "scripts/da_losses.py",
+     "line": 1598,
+     "text": "prob2 = binary_prob2(tgt_logits)"
+    },
+    {
+     "file": "scripts/da_losses.py",
+     "line": 1599,
+     "text": "nuc = bnm_nuclear_norm(prob2)"
+    },
+    {
+     "file": "scripts/da_losses.py",
+     "line": 1616,
+     "text": "return -nuc"
+    }
+   ],
+   "prior_or_marginal_words_inside_BNMLoss": [],
+   "BNMLoss_span": [
+    1555,
+    1619
+   ],
+   "run_config_keys_matching_prior_fair_marginal": {
+    "runs/bnm_r6_folds/bnm_r6_fold1/run_config.json": [],
+    "runs/bnm_r6_folds/bnm_r6_fold2/run_config.json": [],
+    "runs/bnm_r6_folds/bnm_r6_fold3/run_config.json": [],
+    "runs/bnm_r6_folds/bnm_r6_fold4/run_config.json": []
+   },
+   "related_but_not_in_the_objective": {
+    "what": "the BNM runner's TARGET batch sampler is class-balanced using the target lens/non-lens split (pos_fraction 0.5); this sets batch composition, not a term in the loss",
+    "lines": [
+     {
+      "file": "scripts/run_bnm_r6.py",
+      "line": 104,
+      "text": "POS_FRACTION = 0.5"
+     },
+     {
+      "file": "scripts/run_bnm_r6.py",
+      "line": 350,
+      "text": "tgt_sampler = ClassBalancedBatchSampler(holdout[\"train_pos\"], holdout[\"train_neg\"],"
+     },
+     {
+      "file": "scripts/run_bnm_r6.py",
+      "line": 352,
+      "text": "pos_fraction=POS_FRACTION,"
+     }
+    ]
+   }
+  }
+ }
+}

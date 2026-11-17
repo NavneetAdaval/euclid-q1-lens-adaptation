@@ -1,0 +1,66 @@
+[load] building the Zoobot encoder (n_blocks=3, grad_checkpointing=False) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=3 -> trainable ['stages.3', 'stages.2', 'stages.1'] (14,835,520 params, 99.2% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from C:\Users\krris\ML\lens_paper\runs\bakeoff_coral\fold0\checkpoints\step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 66.268356
+[optim] n_blocks=3  head_lr=0.0001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.05
+[optim]   group 0: head       lr=1.000e-04  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   group 2: stages.2   lr=7.500e-05  params=6,907,520
+[optim]   group 3: stages.1   lr=5.625e-05  params=479,680
+[optim]   TOTAL trainable = 14,837,441 params
+
+[A] true LP->FT init (before any CORAL step)
+    TPR 0.2143  AUROC 0.9477  std 0.73062
+    Fisher src B/W 0.09592   tgt B/W 0.04877
+
+[A] g0: 8 checkpoints
+    step   250  TPR 0.2041  AUROC 0.9372  std 0.53462
+    step   500  TPR 0.1327  AUROC 0.8877  std 0.51722
+    step   750  TPR 0.1122  AUROC 0.9021  std 0.51048
+    step  1000  TPR 0.1429  AUROC 0.9192  std 0.51653
+    step  1250  TPR 0.1633  AUROC 0.9116  std 0.49258
+    step  1500  TPR 0.1224  AUROC 0.8721  std 0.47891
+    step  1750  TPR 0.1531  AUROC 0.9262  std 0.47595
+    step  2000  TPR 0.1837  AUROC 0.8934  std 0.47524
+    [B] src B/W 0.36604  totvar 230.9   |  tgt B/W 0.13723
+    [D] same-domain halves B/W 0.33333 vs 0.35256  rel diff 5.607%
+
+[A] g1: 8 checkpoints
+    step   250  TPR 0.2347  AUROC 0.9607  std 0.45067
+    step   500  TPR 0.2041  AUROC 0.9546  std 0.35937
+    step   750  TPR 0.2143  AUROC 0.9529  std 0.29346
+    step  1000  TPR 0.1939  AUROC 0.9433  std 0.28395
+    step  1250  TPR 0.1735  AUROC 0.9312  std 0.24043
+    step  1500  TPR 0.2653  AUROC 0.9282  std 0.22651
+    step  1750  TPR 0.3061  AUROC 0.9300  std 0.24036
+    step  2000  TPR 0.3163  AUROC 0.9312  std 0.20867
+    [B] src B/W 0.31139  totvar 41.62   |  tgt B/W 0.15829
+    [D] same-domain halves B/W 0.28165 vs 0.31100  rel diff 9.904%
+
+[A] g4: 8 checkpoints
+    step   250  TPR 0.2653  AUROC 0.9703  std 0.35232
+    step   500  TPR 0.2551  AUROC 0.9646  std 0.23549
+    step   750  TPR 0.3061  AUROC 0.9595  std 0.20256
+    step  1000  TPR 0.4286  AUROC 0.9536  std 0.19379
+    step  1250  TPR 0.2449  AUROC 0.9022  std 0.15997
+    step  1500  TPR 0.1735  AUROC 0.8640  std 0.16307
+    step  1750  TPR 0.5000  AUROC 0.9413  std 0.17363
+    step  2000  TPR 0.4286  AUROC 0.9218  std 0.15425
+    [B] src B/W 0.62511  totvar 23.7   |  tgt B/W 0.27354
+    [D] same-domain halves B/W 0.57398 vs 0.62708  rel diff 8.842%
+
+[A] g16: 8 checkpoints
+    step   250  TPR 0.4082  AUROC 0.9781  std 0.20231
+    step   500  TPR 0.3980  AUROC 0.9676  std 0.13716
+    step   750  TPR 0.4184  AUROC 0.9532  std 0.13612
+    step  1000  TPR 0.4592  AUROC 0.9528  std 0.12257
+    step  1250  TPR 0.4286  AUROC 0.9449  std 0.11022
+    step  1500  TPR 0.3163  AUROC 0.8822  std 0.11237
+    step  1750  TPR 0.4286  AUROC 0.9345  std 0.11628
+    step  2000  TPR 0.4694  AUROC 0.9299  std 0.09766
+    [B] src B/W 1.29772  totvar 9.549   |  tgt B/W 0.57310
+    [D] same-domain halves B/W 1.19085 vs 1.29750  rel diff 8.572%
+
+[out] C:\Users\krris\ML\lens_paper\runs\coral_r4_outcome.json

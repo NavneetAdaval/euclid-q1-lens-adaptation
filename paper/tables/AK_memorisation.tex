@@ -1,0 +1,28 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_dilute10_tables.py)
+% Appendix K: DANN - lambda=0 memorisation diagnostic. runs/dann_lambda0_holdout_gap/results.json.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{The memorisation diagnostic for DANN and its control}, a retrospective analysis declared before it was computed. Each value is the gap in the normalised nuclear norm of the predictions between the target slice the arm trains on and the held-out slice, \mzHoldout{} images each, computed without augmentation on the stored checkpoints: at the read-off step (primary) and averaged over the \mzNckpt{} checkpoints (secondary). The maxima over checkpoints are descriptive only, because a maximum of noisy reads is positive even when no gap exists. These values are not comparable with BNM's logged gap, which used one augmented view per image.}
+\label{tab:dl-memorisation}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrrrl}
+\toprule
+Reading & Arm & fold 1 & fold 2 & fold 3 & fold 4 & mean & 95\% CI \\
+\midrule
+step 4000 & DANN & $+0.0237$ & $+0.0250$ & $+0.1580$ & $+0.2288$ & $+0.1089$ & \\
+ & $\lambda=0$ & $+0.2119$ & $-0.1226$ & $-0.0396$ & $-0.0089$ & $+0.0102$ & \\
+ & DANN $-$ $\lambda=0$ & $-0.1882$ & $+0.1476$ & $+0.1977$ & $+0.2377$ & $+0.0987$ & $[-0.2113, +0.4086]$ \\
+\midrule
+mean over steps & DANN & $+0.0803$ & $+0.0641$ & $+0.0874$ & $+0.1247$ & $+0.0891$ & \\
+ & $\lambda=0$ & $+0.1050$ & $-0.0671$ & $+0.0748$ & $-0.0676$ & $+0.0113$ & \\
+ & DANN $-$ $\lambda=0$ & $-0.0248$ & $+0.1313$ & $+0.0126$ & $+0.1924$ & $+0.0779$ & $[-0.0832, +0.2390]$ \\
+\midrule
+maximum & DANN & $+0.1932$ & $+0.1732$ & $+0.1841$ & $+0.2739$ & & \\
+ & \quad at step & 2500 & 3000 & 750 & 2250 & & \\
+ & $\lambda=0$ & $+0.2894$ & $+0.0698$ & $+0.1994$ & $+0.0943$ & & \\
+ & \quad at step & 3000 & 1000 & 500 & 2000 & & \\
+\bottomrule
+\end{tabular}
+\end{table}

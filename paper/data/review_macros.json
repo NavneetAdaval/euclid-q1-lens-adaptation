@@ -1,0 +1,302 @@
+[
+ {
+  "name": "rvSharedTargetMin",
+  "printed": "293",
+  "value": 293.0,
+  "source": "audit/review_r1/out/F4_fold_overlap.json -> shared_target_lenses (off-diagonal min)"
+ },
+ {
+  "name": "rvSharedTargetMax",
+  "printed": "294",
+  "value": 294.0,
+  "source": "audit/review_r1/out/F4_fold_overlap.json -> shared_target_lenses (off-diagonal max)"
+ },
+ {
+  "name": "rvTargetLensPool",
+  "printed": "391",
+  "value": 391.0,
+  "source": "audit/review_r1/out/F4_fold_overlap.json -> pool_sizes.target_lens_rows.1"
+ },
+ {
+  "name": "rvTargetOverlapPct",
+  "printed": "75",
+  "value": 75.0,
+  "source": "audit/review_r1/out/F4_fold_overlap.json -> shared_target_lenses fraction_of_row_fold_pool, off-diagonal mean, nearest 5%"
+ },
+ {
+  "name": "rvHostAurocMin",
+  "printed": "0.46",
+  "value": 0.4648475308391292,
+  "source": "audit/review_r1/out/F5_host_properties.json -> single_variable_auroc (min)"
+ },
+ {
+  "name": "rvHostAurocMax",
+  "printed": "0.58",
+  "value": 0.5838748674540202,
+  "source": "audit/review_r1/out/F5_host_properties.json -> single_variable_auroc (max)"
+ },
+ {
+  "name": "rvBareDeflN",
+  "printed": "2881",
+  "value": 2881.0,
+  "source": "audit/review_r1/out/F5_host_properties.json -> availability.b1_bare_deflectors"
+ },
+ {
+  "name": "rvSourceNegN",
+  "printed": "24\\,000",
+  "value": 24000.0,
+  "source": "audit/review_r1/out/F5_host_properties.json -> availability (b1 + b2 + b3)"
+ },
+ {
+  "name": "rvSourcePosN",
+  "printed": "24\\,000",
+  "value": 24000.0,
+  "source": "audit/review_r1/out/F5_host_properties.json -> availability.a_training_positive_hosts"
+ },
+ {
+  "name": "rvDTwoTrainNeg",
+  "printed": "14",
+  "value": 14.0,
+  "source": "audit/review_r1/out/F6_d2_lenses.json -> lenses[].roles (training negatives)"
+ },
+ {
+  "name": "rvDTwoValNeg",
+  "printed": "6",
+  "value": 6.0,
+  "source": "audit/review_r1/out/F6_d2_lenses.json -> lenses[].roles (validation negatives only)"
+ },
+ {
+  "name": "rvDTwoRandom",
+  "printed": "19",
+  "value": 19.0,
+  "source": "audit/review_r1/out/F6_d2_lenses.json -> lenses[].roles (random galaxy)"
+ },
+ {
+  "name": "rvOwnPosMin",
+  "printed": "4",
+  "value": 4.0,
+  "source": "audit/review_r1/out/F7_lenses_in_test_pool.json -> n28_that_are_also_this_folds_test_positives (min)"
+ },
+ {
+  "name": "rvOwnPosMax",
+  "printed": "8",
+  "value": 8.0,
+  "source": "audit/review_r1/out/F7_lenses_in_test_pool.json -> n28_that_are_also_this_folds_test_positives (max)"
+ },
+ {
+  "name": "rvFsevenDaMin",
+  "printed": "13",
+  "value": 13.0,
+  "source": "audit/review_r1/out/F7_lenses_in_test_pool.json -> n28_at_or_above_threshold, DA headlines (min)"
+ },
+ {
+  "name": "rvFsevenDaMax",
+  "printed": "18",
+  "value": 18.0,
+  "source": "audit/review_r1/out/F7_lenses_in_test_pool.json -> n28_at_or_above_threshold, DA headlines (max)"
+ },
+ {
+  "name": "rvFsevenRefMin",
+  "printed": "7",
+  "value": 7.0,
+  "source": "audit/review_r1/out/F7_lenses_in_test_pool.json -> n28_at_or_above_threshold, Baseline A and lambda=0 (min)"
+ },
+ {
+  "name": "rvFsevenRefMax",
+  "printed": "9",
+  "value": 9.0,
+  "source": "audit/review_r1/out/F7_lenses_in_test_pool.json -> n28_at_or_above_threshold, Baseline A and lambda=0 (max)"
+ },
+ {
+  "name": "rvAboveThrN",
+  "printed": "26",
+  "value": 26.0,
+  "source": "audit/review_r1/out/F7_lenses_in_test_pool.json -> n_negatives_at_or_above_threshold"
+ },
+ {
+  "name": "rvRuleSha",
+  "printed": "b83fa019",
+  "value": null,
+  "source": "audit/decontam/rule.json -> sha256_of_body_without_this_field (first 8 hex digits)"
+ },
+ {
+  "name": "rvNoiseMin",
+  "printed": "0.034",
+  "value": 0.03435142069318376,
+  "source": "audit/review_r1/out/A1_resolution.json -> gaps_and_ratios, three-arm declared rows: noise_b min"
+ },
+ {
+  "name": "rvNoiseMax",
+  "printed": "0.053",
+  "value": 0.05280894535105059,
+  "source": "audit/review_r1/out/A1_resolution.json -> gaps_and_ratios, three-arm declared rows: noise_b max"
+ },
+ {
+  "name": "rvScale",
+  "printed": "0.05",
+  "value": 0.05280894535105059,
+  "source": "audit/review_r1/out/A1_resolution.json -> gaps_and_ratios, three-arm declared rows: noise_b max"
+ },
+ {
+  "name": "rvGapThreeMin",
+  "printed": "0.005",
+  "value": 0.004944245739532893,
+  "source": "audit/review_r1/out/A1_resolution.json -> gaps_and_ratios, three-arm declared rows: |gap| min"
+ },
+ {
+  "name": "rvGapThreeMax",
+  "printed": "0.033",
+  "value": 0.03305806858825999,
+  "source": "audit/review_r1/out/A1_resolution.json -> gaps_and_ratios, three-arm declared rows: |gap| max"
+ },
+ {
+  "name": "rvGapBnmMin",
+  "printed": "0.09",
+  "value": 0.0944929518199033,
+  "source": "audit/review_r1/out/A1_resolution.json -> gaps_and_ratios, BNM declared rows: |gap| min"
+ },
+ {
+  "name": "rvGapBnmMax",
+  "printed": "0.13",
+  "value": 0.13338943824952665,
+  "source": "audit/review_r1/out/A1_resolution.json -> gaps_and_ratios, BNM declared rows: |gap| max"
+ },
+ {
+  "name": "rvSigmaMin",
+  "printed": "0.04",
+  "value": 0.038011280612609374,
+  "source": "audit/review_r1/out/A1_resolution.json -> sigma_by_arm folds1_4_mean_detrended_b (min)"
+ },
+ {
+  "name": "rvSigmaMax",
+  "printed": "0.09",
+  "value": 0.09025071223485137,
+  "source": "audit/review_r1/out/A1_resolution.json -> sigma_by_arm folds1_4_mean_detrended_b (max)"
+ },
+ {
+  "name": "rvLagMin",
+  "printed": "-0.09",
+  "value": -0.09491023128085167,
+  "source": "audit/review_r1/out/A1_resolution.json -> sigma_by_arm folds1_4_mean_lag1 (min)"
+ },
+ {
+  "name": "rvLagMax",
+  "printed": "+0.14",
+  "value": 0.1391845888216032,
+  "source": "audit/review_r1/out/A1_resolution.json -> sigma_by_arm folds1_4_mean_lag1 (max)"
+ },
+ {
+  "name": "rvTopNegN",
+  "printed": "191",
+  "value": 191.0,
+  "source": "audit/review_r1/out/A2_top_negatives.json -> n_unique_objects"
+ },
+ {
+  "name": "rvTopNegC",
+  "printed": "22",
+  "value": 22.0,
+  "source": "audit/review_r1/out/A2_crossmatch.json -> n_objects_matching_A_B_C_X"
+ },
+ {
+  "name": "rvGradeRatioMin",
+  "printed": "1.9",
+  "value": 1.944573283858998,
+  "source": "audit/review_r1/out/A3_recall_by_grade.json -> by_arm.*.{A,B}.summed recovered/total (min ratio)"
+ },
+ {
+  "name": "rvGradeRatioMax",
+  "printed": "3.2",
+  "value": 3.218787515006002,
+  "source": "audit/review_r1/out/A3_recall_by_grade.json -> by_arm.*.{A,B}.summed recovered/total (max ratio)"
+ },
+ {
+  "name": "rvAboveFaintPct",
+  "printed": "34",
+  "value": 33.92857142857143,
+  "source": "audit/review_r1/out/A2_magnitude_bias.json -> above_threshold_unique_objects.frac_fainter_22p5"
+ },
+ {
+  "name": "rvPoolFaintPct",
+  "printed": "43",
+  "value": 42.79482666258514,
+  "source": "audit/review_r1/out/A2_magnitude_bias.json -> D1_pool.frac_fainter_22p5"
+ },
+ {
+  "name": "rvThetaN",
+  "printed": "245",
+  "value": 245.0,
+  "source": "audit/review_r1/out/A3_recall_by_property.json -> einstein_radius...n_with_value"
+ },
+ {
+  "name": "rvConfTestN",
+  "printed": "391",
+  "value": 391.0,
+  "source": "audit/review_r1/out/A3_recall_by_property.json -> einstein_radius...n_test_lenses_folds1_4"
+ },
+ {
+  "name": "rvMissedAllN",
+  "printed": "136",
+  "value": 136.0,
+  "source": "audit/review_r1/out/A3_galleries.json -> galleries.b_missed_by_every_arm.n_in_set"
+ },
+ {
+  "name": "rvMissedAllB",
+  "printed": "99",
+  "value": 99.0,
+  "source": "audit/review_r1/out/A3_galleries.json -> galleries.b_missed_by_every_arm.grade_counts_in_set.B"
+ },
+ {
+  "name": "rvHoldoutN",
+  "printed": "78",
+  "value": 78.0,
+  "source": "runs/{dann_main,baseline_unfrozen,bnm_r6_folds}/*/run.json (dann_d_holdout_n / target_holdout_n), all 12 folds; audit/review_r1b/out/L1_target_labels.json"
+ },
+ {
+  "name": "rvBrightN",
+  "printed": "14\\,950",
+  "value": 14950.0,
+  "source": "audit/review_r1b/out/L2_bright_pool.json -> pool.n_bright"
+ },
+ {
+  "name": "rvBnmBrightRatio",
+  "printed": "0.55",
+  "value": 0.5477593099095308,
+  "source": "audit/review_r1b/out/L2_bright_pool.json -> readouts.bnm@4000.lines_ratio_bright"
+ },
+ {
+  "name": "rvBnmDOneRatio",
+  "printed": "0.71",
+  "value": 0.7110246160319798,
+  "source": "audit/review_r1b/out/L2_bright_pool.json -> readouts.bnm@4000.lines_ratio_D1"
+ },
+ {
+  "name": "rvGradShiftPct",
+  "printed": "27.6",
+  "value": 27.6,
+  "source": "runs/bnm_r6_prereg.json -> provenance.cpu_to_t4_ratio_move_pct"
+ },
+ {
+  "name": "rvEarlyNoDa",
+  "printed": "0.61",
+  "value": 0.61,
+  "source": "PROJECTv7.md:494 (no-DA head AUROC)"
+ },
+ {
+  "name": "rvEarlyDann",
+  "printed": "0.37",
+  "value": 0.37,
+  "source": "PROJECTv7.md:4143 (plain DANN head AUROC)"
+ },
+ {
+  "name": "rvEarlyIw",
+  "printed": "0.33",
+  "value": 0.33,
+  "source": "PROJECTv7.md:494 (IW-CDAN head AUROC)"
+ },
+ {
+  "name": "rvEarlyProbe",
+  "printed": "0.90",
+  "value": 0.9,
+  "source": "PROJECTv7.md:3178-3181 (frozen linear probe)"
+ }
+]

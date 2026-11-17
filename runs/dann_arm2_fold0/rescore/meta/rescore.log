@@ -1,0 +1,157 @@
+
+============================================================================================
+=== RE-SCORE dann_nb3_lambda0 -- fold 0
+=== arm 1 -- the lambda=0 control. Its curve is the UNFREEZING-ONLY reference and is not optional: without it, a TPR difference on arm 2 cannot be attributed to the adversary rather than to unfreezing.
+=== run dir   : /kaggle/working/runs/dann_arm1/extracted/dann_r5_nb3_lambda0_fold0
+=== checkpoints: 32 found  (250 .. 8000)
+=== the frozen feature cache is INVALID at n_blocks=3; this goes through live_encode (7.1a).
+============================================================================================
+
+[holdout] target pool 782 -> D trains on 704, 78 held out (10.0%), deterministic at seed 42
+[load] building the Zoobot encoder (n_blocks=3, grad_checkpointing=True) ...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=3 -> trainable ['stages.3', 'stages.2', 'stages.1'] (14,835,520 params, 99.2% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from /kaggle/input/datasets/navneet78/lens-paper-coral-r4/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 28.475603
+[optim] n_blocks=3  head_lr=0.0001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.05
+[optim]   group 0: head       lr=1.000e-04  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   group 2: stages.2   lr=7.500e-05  params=6,907,520
+[optim]   group 3: stages.1   lr=5.625e-05  params=479,680
+[optim]   TOTAL trainable = 14,837,441 params
+[dann] D installed: 1,711,105 params in ONE extra AdamW group (lr=0.0001, weight_decay=0.05, no lr_decay); lambda_horizon=2000 lambda_zero=True; dropout=0.2 x2, D.training=True
+[bn] 218 modules scanned, 0 BatchNorm (head + encoder + D)
+[morph] pool built: 128 ML-FP + 128 P1-reserve (of 4455 / 23160 available), fit 128 / eval 128, aug=none, seed 90252
+[abort3] no --control-curve given: condition 3 (morph vs the lambda=0 control) is INACTIVE. Conditions 1, 2, 3b and 4 still run. Expected for the control arm itself, which IS the reference.
+[abort] ADVISORY detectors with an UNSET margin (they will not evaluate, and they could not abort anything even if they did): ["condition 3's margin M", "condition 4's src margin", "condition 4's tgt margin"]
+[abort] cond4 DIFFERENTIAL vs control, margins src None / tgt None
+[abort] mode=log_only (default for arm=dann_nb3_lambda0 fold=0); conditions 1/2/3/3b/4 evaluated every step on column morph_proxy_auroc; cond3 margin UNSET -- 3a INACTIVE, 3b (sign flip) still live; median window k=1; cond4 sustain 500
+[live] building eval datasets once (fold 0, aug='none') ...
+[live]   val=12000  test_neg=26399  test_pos=98  target=782
+
+[gate] step 0 -- the fresh arm, before any checkpoint is loaded
+  [A] element-wise vs true_init.npz: 26497 logits, max|diff| pos 0.000e+00 / neg 0.000e+00  (atol 1e-04)  -> MATCH
+  [B] fold-0 gate: TPR 0.193878 (expect 0.193878, |diff| 0.000000, tol 0.010204)  AUROC 0.942701 (|diff| 8.89e-06, tol 1e-03)  -> PASS
+[gate] PASS in 125s -- the re-score path IS the run path. Proceeding to 32 checkpoints.
+
+  [ 1/32] step   250  121.1s   (2.0 min elapsed, ~63 min left)
+  [ 2/32] step   500  119.1s   (4.0 min elapsed, ~60 min left)
+  [ 3/32] step   750  119.1s   (6.0 min elapsed, ~58 min left)
+  [ 4/32] step  1000  119.3s   (8.0 min elapsed, ~56 min left)
+  [ 5/32] step  1250  119.4s   (10.0 min elapsed, ~54 min left)
+  [ 6/32] step  1500  119.3s   (12.0 min elapsed, ~52 min left)
+  [ 7/32] step  1750  119.3s   (13.9 min elapsed, ~50 min left)
+  [ 8/32] step  2000  119.5s   (15.9 min elapsed, ~48 min left)
+  [ 9/32] step  2250  119.7s   (17.9 min elapsed, ~46 min left)
+  [10/32] step  2500  119.5s   (19.9 min elapsed, ~44 min left)
+  [11/32] step  2750  119.3s   (21.9 min elapsed, ~42 min left)
+  [12/32] step  3000  119.6s   (23.9 min elapsed, ~40 min left)
+  [13/32] step  3250  120.4s   (25.9 min elapsed, ~38 min left)
+  [14/32] step  3500  118.9s   (27.9 min elapsed, ~36 min left)
+  [15/32] step  3750  119.2s   (29.9 min elapsed, ~34 min left)
+  [16/32] step  4000  119.0s   (31.9 min elapsed, ~32 min left)
+  [17/32] step  4250  118.8s   (33.9 min elapsed, ~30 min left)
+  [18/32] step  4500  119.6s   (35.9 min elapsed, ~28 min left)
+  [19/32] step  4750  120.1s   (37.9 min elapsed, ~26 min left)
+  [20/32] step  5000  120.6s   (39.9 min elapsed, ~24 min left)
+  [21/32] step  5250  120.8s   (41.9 min elapsed, ~22 min left)
+  [22/32] step  5500  120.0s   (43.9 min elapsed, ~20 min left)
+  [23/32] step  5750  119.6s   (45.9 min elapsed, ~18 min left)
+  [24/32] step  6000  119.4s   (47.9 min elapsed, ~16 min left)
+  [25/32] step  6250  120.0s   (49.9 min elapsed, ~14 min left)
+  [26/32] step  6500  120.0s   (51.9 min elapsed, ~12 min left)
+  [27/32] step  6750  119.7s   (53.9 min elapsed, ~10 min left)
+  [28/32] step  7000  119.4s   (55.9 min elapsed, ~8 min left)
+  [29/32] step  7250  119.1s   (57.8 min elapsed, ~6 min left)
+  [30/32] step  7500  118.9s   (59.8 min elapsed, ~4 min left)
+  [31/32] step  7750  119.3s   (61.8 min elapsed, ~2 min left)
+  [32/32] step  8000  119.3s   (63.8 min elapsed, ~0 min left)
+
+[curve] /kaggle/working/runs/dann_arm1/extracted/dann_r5_nb3_lambda0_fold0/curve.csv
+  32 steps, TPR@1e-3 0.061224 .. 0.204082 (max at step 250)
+  last checkpoint (step 8000): TPR 0.153061, AUROC 0.913433
+  phase A (logits, lockout ON) 63.8 min
+
+============================================================================================
+=== RE-SCORE dann_nb3 -- fold 0
+=== arm 2 -- the development run, lambda live.
+=== run dir   : /kaggle/working/runs/dann_arm2_fold0/extracted/dann_r5_nb3_fold0
+=== checkpoints: 32 found  (250 .. 8000)
+=== the frozen feature cache is INVALID at n_blocks=3; this goes through live_encode (7.1a).
+============================================================================================
+
+[holdout] target pool 782 -> D trains on 704, 78 held out (10.0%), deterministic at seed 42
+[load] building the Zoobot encoder (n_blocks=3, grad_checkpointing=True) ...
+[ZoobotEncoder] PARTIAL UNFREEZE n_blocks=3 -> trainable ['stages.3', 'stages.2', 'stages.1'] (14,835,520 params, 99.2% of the encoder)
+[ZoobotEncoder] NOTE: head.norm (final LayerNorm2d, 1,280 params) is OUTSIDE Zoobot's tuneable_blocks and stays frozen at every n_blocks -- this replicates the benchmark protocol, it is not an oversight.
+[LP->FT] head initialised from /kaggle/input/datasets/navneet78/lens-paper-coral-r4/runs/bakeoff_baseline_A/checkpoints/step_8000.pt
+[LP->FT]   head_type=linear  epoch=43  loaded||head||_2 = 28.475603
+[optim] n_blocks=3  head_lr=0.0001  backbone_lr=0.0001  lr_decay=0.75  weight_decay=0.05
+[optim]   group 0: head       lr=1.000e-04  params=1,921
+[optim]   group 1: stages.3   lr=1.000e-04  params=7,448,320
+[optim]   group 2: stages.2   lr=7.500e-05  params=6,907,520
+[optim]   group 3: stages.1   lr=5.625e-05  params=479,680
+[optim]   TOTAL trainable = 14,837,441 params
+[dann] D installed: 1,711,105 params in ONE extra AdamW group (lr=0.0001, weight_decay=0.05, no lr_decay); lambda_horizon=2000 lambda_zero=False; dropout=0.2 x2, D.training=True
+[bn] 218 modules scanned, 0 BatchNorm (head + encoder + D)
+[morph] pool built: 128 ML-FP + 128 P1-reserve (of 4455 / 23160 available), fit 128 / eval 128, aug=none, seed 90252
+[abort3] no --control-curve given: condition 3 (morph vs the lambda=0 control) is INACTIVE. Conditions 1, 2, 3b and 4 still run. Expected for the control arm itself, which IS the reference.
+[abort] ADVISORY detectors with an UNSET margin (they will not evaluate, and they could not abort anything even if they did): ["condition 3's margin M", "condition 4's src margin", "condition 4's tgt margin"]
+[abort] cond4 DIFFERENTIAL vs control, margins src None / tgt None
+[abort] mode=log_only (default for arm=dann_nb3 fold=0); conditions 1/2/3/3b/4 evaluated every step on column morph_proxy_auroc; cond3 margin UNSET -- 3a INACTIVE, 3b (sign flip) still live; median window k=1; cond4 sustain 500
+[live] building eval datasets once (fold 0, aug='none') ...
+[live]   val=12000  test_neg=26399  test_pos=98  target=782
+
+[gate] step 0 -- the fresh arm, before any checkpoint is loaded
+  [A] element-wise vs true_init.npz: 26497 logits, max|diff| pos 0.000e+00 / neg 0.000e+00  (atol 1e-04)  -> MATCH
+  [B] fold-0 gate: TPR 0.193878 (expect 0.193878, |diff| 0.000000, tol 0.010204)  AUROC 0.942701 (|diff| 8.89e-06, tol 1e-03)  -> PASS
+[gate] PASS in 120s -- the re-score path IS the run path. Proceeding to 32 checkpoints.
+
+  [ 1/32] step   250  119.4s   (2.0 min elapsed, ~62 min left)
+  [ 2/32] step   500  119.7s   (4.0 min elapsed, ~60 min left)
+  [ 3/32] step   750  119.2s   (6.0 min elapsed, ~58 min left)
+  [ 4/32] step  1000  118.8s   (8.0 min elapsed, ~56 min left)
+  [ 5/32] step  1250  119.4s   (9.9 min elapsed, ~54 min left)
+  [ 6/32] step  1500  119.5s   (11.9 min elapsed, ~52 min left)
+  [ 7/32] step  1750  119.3s   (13.9 min elapsed, ~50 min left)
+  [ 8/32] step  2000  118.9s   (15.9 min elapsed, ~48 min left)
+  [ 9/32] step  2250  118.5s   (17.9 min elapsed, ~46 min left)
+  [10/32] step  2500  117.8s   (19.9 min elapsed, ~44 min left)
+  [11/32] step  2750  117.8s   (21.8 min elapsed, ~42 min left)
+  [12/32] step  3000  117.9s   (23.8 min elapsed, ~40 min left)
+  [13/32] step  3250  117.8s   (25.7 min elapsed, ~38 min left)
+  [14/32] step  3500  119.2s   (27.7 min elapsed, ~36 min left)
+  [15/32] step  3750  119.1s   (29.7 min elapsed, ~34 min left)
+  [16/32] step  4000  118.8s   (31.7 min elapsed, ~32 min left)
+  [17/32] step  4250  118.9s   (33.7 min elapsed, ~30 min left)
+  [18/32] step  4500  118.6s   (35.7 min elapsed, ~28 min left)
+  [19/32] step  4750  118.9s   (37.6 min elapsed, ~26 min left)
+  [20/32] step  5000  118.7s   (39.6 min elapsed, ~24 min left)
+  [21/32] step  5250  118.8s   (41.6 min elapsed, ~22 min left)
+  [22/32] step  5500  119.3s   (43.6 min elapsed, ~20 min left)
+  [23/32] step  5750  119.6s   (45.6 min elapsed, ~18 min left)
+  [24/32] step  6000  119.1s   (47.6 min elapsed, ~16 min left)
+  [25/32] step  6250  119.0s   (49.6 min elapsed, ~14 min left)
+  [26/32] step  6500  118.6s   (51.5 min elapsed, ~12 min left)
+  [27/32] step  6750  118.8s   (53.5 min elapsed, ~10 min left)
+  [28/32] step  7000  119.0s   (55.5 min elapsed, ~8 min left)
+  [29/32] step  7250  118.4s   (57.5 min elapsed, ~6 min left)
+  [30/32] step  7500  118.8s   (59.5 min elapsed, ~4 min left)
+  [31/32] step  7750  118.4s   (61.4 min elapsed, ~2 min left)
+  [32/32] step  8000  118.6s   (63.4 min elapsed, ~0 min left)
+
+[curve] /kaggle/working/runs/dann_arm2_fold0/extracted/dann_r5_nb3_fold0/curve.csv
+  32 steps, TPR@1e-3 0.173469 .. 0.581633 (max at step 1750)
+  last checkpoint (step 8000): TPR 0.479592, AUROC 0.971969
+  phase A (logits, lockout ON) 63.4 min
+
+[out] /kaggle/working/runs/dann_r5_rescore.json
+
+============================================================================================
+=== BOTH CURVES BUILT
+=== dann_nb3_lambda0   last-step TPR 0.153061  AUROC 0.913433
+=== dann_nb3           last-step TPR 0.479592  AUROC 0.971969
+=== the comparison these were built for is arm 2 against arm 1 at MATCHED steps; a single last-step pair is not it.
+============================================================================================
+

@@ -1,0 +1,41 @@
+{
+  "round": 6,
+  "arm": "bnm_nb3",
+  "fold": 0,
+  "purpose": "Stage 2's gamma grid input: the BNM term's gradient-norm contribution relative to source cross-entropy AT STEP 0.",
+  "exited_before_any_optimiser_step": true,
+  "reads_a_metric": false,
+  "metric_blindness": "no metric is computed and the test pool is never scored on this path; the only `evaluate` symbol used is FeatureCache, reading source_train for the standardizer. test_bnm_round6.T11 asserts both, with known-nulls.",
+  "device": "cuda",
+  "fp16": true,
+  "gpu_name": "Tesla T4",
+  "batch_size": 256,
+  "stage0a_anchors": {
+    "balanced_confident": 11.31370735168457,
+    "collapsed_confident": 8.0,
+    "maximally_uncertain": 5.656854152679443,
+    "init": 9.77041212717692,
+    "sharpening_ceiling": 10.841291427612305,
+    "balanced_max": 11.31370735168457,
+    "confidence_share": 0.6938914106839292,
+    "diversity_share": 0.3061085893160708,
+    "init_pred_pos_frac": 0.22916666666666666,
+    "source": "runs/bnm_r6_stage0a.json"
+  },
+  "rule": "three gamma spanning {10%, 50%, 200%} of the source-CE gradient norm at step 0, measured over the same trainable parameter set",
+  "ce_grad_norm": 6.186554448940374,
+  "bnm_grad_norm_at_gamma_1": 78.60644698718517,
+  "ratio_bnm_over_ce_at_gamma_1": 12.706013926806833,
+  "fractions": [
+    0.1,
+    0.5,
+    2.0
+  ],
+  "gamma_grid": [
+    0.00787,
+    0.039351,
+    0.157406
+  ],
+  "n_params_in_norm": 124,
+  "note": "gamma_i = fraction_i * ||grad CE|| / ||grad BNM(gamma=1)||, so gamma_i makes the BNM term contribute that fraction of CE's gradient norm at step 0. CORAL's {1,4,16} is deliberately NOT imported."
+}

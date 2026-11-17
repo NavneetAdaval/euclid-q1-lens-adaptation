@@ -1,0 +1,392 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1/scripts/f_facts.py",
+ "test_pool": "source_train (training data, not a test pool)",
+ "folds": "n/a (shared)",
+ "metric": "scripts/metrics.py metric_suite / tpr_at_fpr (TPR at FPR=1e-3, full ROC with drop_intermediate=False, np.interp); thresholds from metrics.operating_threshold on the same curve",
+ "generated_utc": "2026-10-08T15:45:06+00:00",
+ "notes": [],
+ "inputs_sha256": {
+  "data/sim_arc_on_real/shard_000000.npz": "647a2a02b7f65f5223094ef43877c08ebcfe5eb812e670742e6c7a0ee8e1cf44",
+  "data/sim_arc_on_real/shard_000001.npz": "abe59cd77082760b69952563b3e452465e34ed8ab916e452e41a60ba6384fe1a",
+  "data/sim_arc_on_real/shard_000002.npz": "d4475f476c6398df4dd0c5f3875bf157df4142340cd44cf228f40d74e06169d7",
+  "data/sim_arc_on_real/shard_000003.npz": "5651ae2b98a1206d5b41e580cfa0b78f62e5b90b687cda80c1035ef4d35ac432",
+  "data/sim_arc_on_real/shard_000004.npz": "0426b6ebe903b7fee7dc14d7f8c049428a19a9a9246ca05a81a5caad792d2131",
+  "data/sim_arc_on_real/shard_000005.npz": "b4f5231d7475139ab9b6188659af989d8d34d1e8bfc92964708aae8d3deac689",
+  "data/sim_arc_on_real/shard_000006.npz": "fe5513f797bdcbb10ffd07289aa71163c88865f0dc50b669b2ceffb3e27946f4",
+  "data/sim_arc_on_real/shard_000007.npz": "176c4046825f9c543751a11afee48d532a61ec4526775466fa0725b267518ea3",
+  "data/sim_arc_on_real/shard_000008.npz": "396a19add03d5b3486e65df5a32be2c844211f70a59fab786c093c40ec24972e",
+  "data/sim_arc_on_real/shard_000009.npz": "0688714fae3494f0b5aceb7ed2cd9514595450684372545e7e3fbec6c4d9cce4",
+  "data/sim_arc_on_real/shard_000010.npz": "f858ffb7073f33ec64e500e2753175d05ba22a8ead76ef9cbc5b8a5c92d04cbd",
+  "data/sim_arc_on_real/shard_000011.npz": "802c9de5cdf20f63b24487a3bca2bf5fbe49956fe4c8dd0f368829c75ce435e8",
+  "data/sim_arc_on_real/shard_000012.npz": "67fdacdfa01d93bf35b1f80ddecb61749a67a5efa2dd3ca38ecbf63793b28310",
+  "data/sim_arc_on_real/shard_000013.npz": "6a34ee605750d5f973084c3e9c12b482914bd864ce91de21357f44c2a3e2dc7e",
+  "data/sim_arc_on_real/shard_000014.npz": "dce067b68c5d7634ef1239e07e4ed5cd61a7a352defb19fc229ad59ac636b2a8",
+  "data/sim_arc_on_real/shard_000015.npz": "95da11c1de92663b84f784a7de66a4c6e2e34196c17944b78c6ebfbacc45e409",
+  "data/sim_arc_on_real/shard_000016.npz": "165c9ecd199ba2ba4e609ae2935e88430efa78e4ff5c3fd685c4b6ac7ccc894d",
+  "data/sim_arc_on_real/shard_000017.npz": "a42b51c1fc54e39fd81602bb26cd5ff4a5d4cc9327fb2cfd0d3e462045b59200",
+  "data/sim_arc_on_real/shard_000018.npz": "b57ee94866d0985008dc570c614fb27fe77801abff39a04294a3b2b6643e15fd",
+  "data/sim_arc_on_real/shard_000019.npz": "d959315cbb5d7049b7f0c5493d0d7a6d3898a625b4e8a8d7b7a71b5bdc0778df",
+  "data/sim_arc_on_real/shard_000020.npz": "4d920232b64ee8f4dbaf953c0150d96c6ccc7cac6b2882434ad13e2af4acbf48",
+  "data/sim_arc_on_real/shard_000021.npz": "5a931b347ce733c05a77b54d3f08a3c275fcf9e6b8ebc5d53ce4a3ff51006e30",
+  "data/sim_arc_on_real/shard_000022.npz": "5a3804584dee2b70b457bc6461c37b67a98a2c376120015f99a66e23a6121fa7",
+  "data/sim_arc_on_real/shard_000023.npz": "e99e1920f6930771d314f8da4aec54319868626e52652120b312ebca6334be87",
+  "data/sim_arc_on_real/shard_000024.npz": "c0da4fa5d0cf04ddb3288ce332feb08584f2587bcb5a604d5905265dfbf1b28b",
+  "data/sim_arc_on_real/shard_000025.npz": "fa8610791874ddf4fb0bd6744d6de70b032681eef91b68e4ede3b178b456fa6c",
+  "data/sim_arc_on_real/shard_000026.npz": "fda1363af5ac7322e6a5e6e5a6719ddb22d3d89a38e94d2cd3da2b195bdb8a60",
+  "data/sim_arc_on_real/shard_000027.npz": "e94e147610b6aebe8ee48fbd3221ffb48a26ff30da9eb6b682c58a0f336796f3",
+  "data/sim_arc_on_real/shard_000028.npz": "d99cf4638936b0a11488e2f3bed4b9cd0729d23daae536c5fe11363dce23fefa",
+  "data/sim_arc_on_real/shard_000029.npz": "02f05ec61ae7e064adfda26cdbdc04a15623316b18d3f2397101fe12efa6545b",
+  "data/sim_arc_on_real/shard_100000.npz": "011ccf09b0276f3a95b2a81ee86b903cd00f72710ebbeb4ceb2b8baf44dc4650",
+  "data/sim_arc_on_real/shard_100001.npz": "de22524a30226741f4b995940518932b00b66f7ccd640c5c4c7b7a106f595a36",
+  "data/sim_arc_on_real/shard_100002.npz": "7c68af5b04cd9030854c30a0dbef534ef8f2af9f014499e66b5644691366dded",
+  "data/sim_arc_on_real/shard_100003.npz": "f5b139dd923f43d0f47ad082daa0473551135438866c20849a48c5aa50789714",
+  "data/sim_arc_on_real/shard_100004.npz": "e84c7eceeca6f74fb258f99cdf3bf517294938b9617f53a9892e7b88d268c7e4",
+  "data/sim_arc_on_real/shard_100005.npz": "0aa033d6ed06a08790fc9aeee96c6fd114100fb56aa43acc77725812f1f0641d",
+  "data/sim_arc_on_real/shard_100006.npz": "81ea95f567f426ac39fe1809287111185e6b785f3999da12b97e2932fbdab012",
+  "data/sim_arc_on_real/shard_100007.npz": "751226c0ff66c7921eced6dbbc9015b1aa5e68b6f8a9592b484a60565caba78e",
+  "data/sim_arc_on_real/shard_100008.npz": "9fd7e5c1b38e75f7308d0f0b26ec331e08bc6e100b7e0a925bda59111d1cf88c",
+  "data/sim_arc_on_real/shard_100009.npz": "8c9aaf31a7e5fde4663890bde537d0d228b1e80dfa16ce09b7541ac07438293a",
+  "data/sim_arc_on_real/shard_100010.npz": "45b16b73a66fd8c79c61bbbfafa744214dc73f63ae0a4b02a98ded38f2dc68c6",
+  "data/sim_arc_on_real/shard_100011.npz": "14c4c2011921d24b2e82c539f1e766429a7c2b01feacea8559762887d9fd8df7",
+  "data/sim_arc_on_real/shard_100012.npz": "59011761dc38338f83dd631108bb6a9224274c21c66427ddeda50c7809e5098d",
+  "data/sim_arc_on_real/shard_100013.npz": "aaacadb02c3d8a795659650b40313e8df434a8e2f1e652efc349f1fc69136b4a",
+  "data/sim_arc_on_real/shard_100014.npz": "076660d69c643e34906456e733f648422c811528a4924331f7245b2df61d704b",
+  "data/sim_arc_on_real/shard_100015.npz": "20b2c0371412b0d4fb41dba4454ce161f5934c16d8db5f2809fc2a88641155aa",
+  "data/sim_arc_on_real/shard_100016.npz": "4c6e121313a092c3fda7f33be6e4f97d5c84eb585ee581c135b045b11fac8860",
+  "data/sim_arc_on_real/shard_100017.npz": "861eae9045eb8be9a137705ed4bfde2b98e9465ce7eec606ed6f58522699ff45",
+  "data/sim_arc_on_real/shard_100018.npz": "120aec352d55aabec78657d1e66da85db4466eea50b96341e98b5f07990618d3",
+  "data/sim_arc_on_real/shard_100019.npz": "2e43cb368f630ab0d6e08fba243b876d1e240ebd99f7248180cb47d36fbc5d38",
+  "data/sim_arc_on_real/shard_100020.npz": "1c76e348c3ac9cb8f558c66e0008a092974310a57b1874355daf28403e5a9b31",
+  "data/sim_arc_on_real/shard_100021.npz": "235e3cc9a0428e5ab734a5f6a416b7b849ae552e197a4ae13faec77b51aecfa3",
+  "data/sim_arc_on_real/shard_100022.npz": "1bef5068c84adaa15f7d5d7cdbfdfe1649ae12b93bec5ab18ad7a54c22a3dfda",
+  "data/sim_arc_on_real/shard_100023.npz": "bcc82bf01deea39a39ce2412bb3bea5d39179d186b717b7855bf9137df59dc7b",
+  "data/sim_arc_on_real/shard_100024.npz": "a41f7ff13ee598d650a949101d10db3d51cb0546609bf3308246e16c3f6ba646",
+  "data/sim_arc_on_real/shard_100025.npz": "746ff7498e12923fef91266a3b1641c18c9c34b7080ae201d01e4519cd2d0fd8",
+  "data/sim_arc_on_real/shard_100026.npz": "66929a5fa94de6897ef1668f07b9444b2732804945772fe830c6f1e040eb4072",
+  "data/sim_arc_on_real/shard_100027.npz": "2f499de2e5ba5567cd248a40f68919f85c22721945cb4ad875ef587d3a672c90",
+  "data/sim_arc_on_real/shard_100028.npz": "34a6b4df841a4602fdf81e12a3ffcc674b750a6c0478a2f808a366c36513ccff",
+  "data/sim_arc_on_real/shard_100029.npz": "9f9369c1f29ea8429343c4e474f67378bb1a4dc305f393fa91a79787bffa8e64",
+  "data/splits/splits.json": "7eb7749a545a619878a2a75ce9ae905db36a5ee3655ff999842644908291ac05",
+  "data_old/q1_lenses/q1_discovery_engine_lens_catalog_old.csv": "f3fc6da4ce18e2bf2bee142c56fa431b12085a72d61f6f3337d9281c516d2c0e",
+  "data_old/q1_unlabeled/metadata/partitioned_catalog.csv": "24698072023f9e210a2c3ab094d51c014b8dfd26846f045ee49e9306308bd430",
+  "data_old/sim_deflectors/deflector_cutouts_clean.npz": "aaffa65f42628940d8f01e4adeaa65932f7eb11ee1e464a840d48b7735100c45"
+ },
+ "result": {
+  "populations": {
+   "a": "24000 source-train simulated positives (one host per positive; 2881 distinct deflectors)",
+   "b1": "2881 bare-deflector negatives",
+   "b2": "16664 random-galaxy negatives",
+   "b3": "4455 grade-X (ML false-positive) negatives"
+  },
+  "variable_sources": {
+   "stellarmass, phz_median, mvis_deflector_table": "data_old/sim_deflectors/deflector_cutouts_clean.npz (stored deflector query output; the query itself is not stored, so mvis's band/aperture definition is not documented on disk)",
+   "vis_psf_mag_MER": "data_old/q1_unlabeled/metadata/partitioned_catalog.csv flux_vis_psf, AB mag = 23.9 - 2.5 log10(uJy), the \u00a73 definition; joined on exact object_id (deflectors: ID rebuilt from RA/Dec)",
+   "vis_1fwhm_aper_mag_catalogue_v0.0.1": "data_old/q1_lenses/q1_discovery_engine_lens_catalog_old.csv flux_vis_1fwhm_aper with the same 23.9 - 2.5 log10 conversion (a 1-FWHM aperture flux, NOT the PSF flux; listed separately)"
+  },
+  "availability": {
+   "a_training_positive_hosts": {
+    "stellarmass": "24000/24000",
+    "phz_median": "24000/24000",
+    "mvis_deflector_table": "24000/24000",
+    "vis_psf_mag_MER": "15628/24000"
+   },
+   "b1_bare_deflectors": {
+    "stellarmass": "2881/2881",
+    "phz_median": "2881/2881",
+    "mvis_deflector_table": "2881/2881",
+    "vis_psf_mag_MER": "1935/2881"
+   },
+   "b2_random_galaxies": {
+    "vis_psf_mag_MER": "16664/16664"
+   },
+   "b3_grade_X_ml_fp": {
+    "vis_psf_mag_MER": "1120/4455",
+    "vis_1fwhm_aper_mag_catalogue_v0.0.1": "3987/4455"
+   }
+  },
+  "distributions": {
+   "a_training_positive_hosts": {
+    "stellarmass": {
+     "n": 24000,
+     "n_total": 24000,
+     "mean": 11.441954607407252,
+     "sd": 0.2265270244633931,
+     "min": 11.188676834106445,
+     "max": 17.37866973876953,
+     "p01": 11.235212326049805,
+     "p05": 11.266291761398316,
+     "p16": 11.300630569458008,
+     "p25": 11.325583457946777,
+     "p50": 11.404386520385742,
+     "p75": 11.50844955444336,
+     "p84": 11.569676399230957,
+     "p95": 11.718053817749023,
+     "p99": 11.92625904083252
+    },
+    "phz_median": {
+     "n": 24000,
+     "n_total": 24000,
+     "mean": 0.6293979159599791,
+     "sd": 0.11051957230114894,
+     "min": 0.10000000149011612,
+     "max": 0.7900000214576721,
+     "p01": 0.3100000023841858,
+     "p05": 0.4099999964237213,
+     "p16": 0.5199999809265137,
+     "p25": 0.5600000023841858,
+     "p50": 0.6499999761581421,
+     "p75": 0.7099999785423279,
+     "p84": 0.7300000190734863,
+     "p95": 0.7699999809265137,
+     "p99": 0.7900000214576721
+    },
+    "mvis_deflector_table": {
+     "n": 24000,
+     "n_total": 24000,
+     "mean": -23.82712794582049,
+     "sd": 0.6454316480485311,
+     "min": -39.72133255004883,
+     "max": -22.545066833496094,
+     "p01": -25.10274887084961,
+     "p05": -24.61244010925293,
+     "p16": -24.196277618408203,
+     "p25": -24.056835174560547,
+     "p50": -23.794090270996094,
+     "p75": -23.514238357543945,
+     "p84": -23.367370223999025,
+     "p95": -23.115659713745117,
+     "p99": -22.913915634155273
+    },
+    "vis_psf_mag_MER": {
+     "n": 15628,
+     "n_total": 24000,
+     "mean": 22.214892601610448,
+     "sd": 0.49342161645735844,
+     "min": 19.239141691424432,
+     "max": 22.99459061757566,
+     "p01": 20.75842817307253,
+     "p05": 21.305966711256453,
+     "p16": 21.75180107350267,
+     "p25": 21.936954100076875,
+     "p50": 22.2856366382053,
+     "p75": 22.57378767832292,
+     "p84": 22.696408816908118,
+     "p95": 22.8911574264812,
+     "p99": 22.98113539040689
+    }
+   },
+   "b1_bare_deflectors": {
+    "stellarmass": {
+     "n": 2881,
+     "n_total": 2881,
+     "mean": 11.421311683681267,
+     "sd": 0.2085460437211889,
+     "min": 11.188676834106445,
+     "max": 17.37866973876953,
+     "p01": 11.221831321716309,
+     "p05": 11.24930477142334,
+     "p16": 11.28792953491211,
+     "p25": 11.310216903686523,
+     "p50": 11.383392333984375,
+     "p75": 11.48695182800293,
+     "p84": 11.537751388549804,
+     "p95": 11.702840805053711,
+     "p99": 11.900877189636228
+    },
+    "phz_median": {
+     "n": 2881,
+     "n_total": 2881,
+     "mean": 0.5961298151035476,
+     "sd": 0.12239216948092461,
+     "min": 0.10000000149011612,
+     "max": 0.7900000214576721,
+     "p01": 0.28999999165534973,
+     "p05": 0.3799999952316284,
+     "p16": 0.4699999988079071,
+     "p25": 0.5199999809265137,
+     "p50": 0.6100000143051147,
+     "p75": 0.6899999976158142,
+     "p84": 0.7200000286102295,
+     "p95": 0.7599999904632568,
+     "p99": 0.7900000214576721
+    },
+    "mvis_deflector_table": {
+     "n": 2881,
+     "n_total": 2881,
+     "mean": -23.79478151439917,
+     "sd": 0.6031632735307652,
+     "min": -39.72133255004883,
+     "max": -22.545066833496094,
+     "p01": -25.07710952758789,
+     "p05": -24.54889488220215,
+     "p16": -24.165269470214845,
+     "p25": -24.015974044799805,
+     "p50": -23.760879516601562,
+     "p75": -23.492128372192383,
+     "p84": -23.351666259765626,
+     "p95": -23.096721649169922,
+     "p99": -22.898337173461915
+    },
+    "vis_psf_mag_MER": {
+     "n": 1935,
+     "n_total": 2881,
+     "mean": 22.083582632293815,
+     "sd": 0.5724953543930138,
+     "min": 19.239141691424432,
+     "max": 22.99459061757566,
+     "p01": 20.424697500191304,
+     "p05": 21.015283820905236,
+     "p16": 21.52661081866095,
+     "p25": 21.751726166208456,
+     "p50": 22.1693964169881,
+     "p75": 22.505662406526664,
+     "p84": 22.650484246939456,
+     "p95": 22.868257580173516,
+     "p99": 22.974831090255954
+    }
+   },
+   "b2_random_galaxies": {
+    "vis_psf_mag_MER": {
+     "n": 16664,
+     "n_total": 16664,
+     "mean": 22.19052952869831,
+     "sd": 0.7039061846659791,
+     "min": 18.000425980297656,
+     "max": 22.99565882352398,
+     "p01": 19.983215671250115,
+     "p05": 20.771200123575884,
+     "p16": 21.507875504263257,
+     "p25": 21.827207966170704,
+     "p50": 22.387447337497427,
+     "p75": 22.73593413937608,
+     "p84": 22.837092287255466,
+     "p95": 22.949275039993218,
+     "p99": 22.987021292355376
+    }
+   },
+   "b3_grade_X_ml_fp": {
+    "vis_psf_mag_MER": {
+     "n": 1120,
+     "n_total": 4455,
+     "mean": 22.018061194260277,
+     "sd": 0.6384603792045261,
+     "min": 18.28830533208163,
+     "max": 22.9946857415638,
+     "p01": 20.73585236923321,
+     "p05": 20.935914158478887,
+     "p16": 21.281565539477633,
+     "p25": 21.515164186289006,
+     "p50": 22.074417160961357,
+     "p75": 22.565914697060396,
+     "p84": 22.713340181188304,
+     "p95": 22.91511610021352,
+     "p99": 22.974554680903
+    },
+    "vis_1fwhm_aper_mag_catalogue_v0.0.1": {
+     "n": 3987,
+     "n_total": 4455,
+     "mean": 22.57351544218077,
+     "sd": 1.1242086735305556,
+     "min": 15.835623755999148,
+     "max": 29.320949420583315,
+     "p01": 19.713594364234556,
+     "p05": 20.82705864462194,
+     "p16": 21.38427062111536,
+     "p25": 21.78936121444064,
+     "p50": 22.697032318349457,
+     "p75": 23.38393701544874,
+     "p84": 23.602052916427663,
+     "p95": 24.076662368258294,
+     "p99": 24.859109235377854
+    }
+   }
+  },
+  "single_variable_auroc_positive_vs_negative": {
+   "stellarmass": {
+    "vs_each_negative_type": {
+     "b1_bare_deflectors": {
+      "auroc": 0.5438479622237649,
+      "auroc_direction_free": 0.5438479622237649,
+      "n_pos": 24000,
+      "n_neg": 2881
+     },
+     "b2_random_galaxies": "variable not available for this population",
+     "b3_grade_X_ml_fp": "variable not available for this population"
+    },
+    "vs_all_source_negatives_having_it": {
+     "auroc": 0.5438479622237649,
+     "auroc_direction_free": 0.5438479622237649,
+     "n_pos": 24000,
+     "n_neg": 2881
+    }
+   },
+   "phz_median": {
+    "vs_each_negative_type": {
+     "b1_bare_deflectors": {
+      "auroc": 0.5798176486752286,
+      "auroc_direction_free": 0.5798176486752286,
+      "n_pos": 24000,
+      "n_neg": 2881
+     },
+     "b2_random_galaxies": "variable not available for this population",
+     "b3_grade_X_ml_fp": "variable not available for this population"
+    },
+    "vs_all_source_negatives_having_it": {
+     "auroc": 0.5798176486752286,
+     "auroc_direction_free": 0.5798176486752286,
+     "n_pos": 24000,
+     "n_neg": 2881
+    }
+   },
+   "mvis_deflector_table": {
+    "vs_each_negative_type": {
+     "b1_bare_deflectors": {
+      "auroc": 0.4801353624320259,
+      "auroc_direction_free": 0.5198646375679741,
+      "n_pos": 24000,
+      "n_neg": 2881
+     },
+     "b2_random_galaxies": "variable not available for this population",
+     "b3_grade_X_ml_fp": "variable not available for this population"
+    },
+    "vs_all_source_negatives_having_it": {
+     "auroc": 0.4801353624320259,
+     "auroc_direction_free": 0.5198646375679741,
+     "n_pos": 24000,
+     "n_neg": 2881
+    }
+   },
+   "vis_psf_mag_MER": {
+    "vs_each_negative_type": {
+     "b1_bare_deflectors": {
+      "auroc": 0.5639940965959858,
+      "auroc_direction_free": 0.5639940965959858,
+      "n_pos": 15628,
+      "n_neg": 1935
+     },
+     "b2_random_galaxies": {
+      "auroc": 0.4648475308391292,
+      "auroc_direction_free": 0.5351524691608708,
+      "n_pos": 15628,
+      "n_neg": 16664
+     },
+     "b3_grade_X_ml_fp": {
+      "auroc": 0.5838748674540202,
+      "auroc_direction_free": 0.5838748674540202,
+      "n_pos": 15628,
+      "n_neg": 1120
+     }
+    },
+    "vs_all_source_negatives_having_it": {
+     "auroc": 0.4813371713760833,
+     "auroc_direction_free": 0.5186628286239168,
+     "n_pos": 15628,
+     "n_neg": 19719
+    }
+   }
+  },
+  "auroc_convention": "score = the variable itself, positives labelled 1; auroc_direction_free = max(AUROC, 1-AUROC)",
+  "catalogue_values_describe_the_HOST": "positives' values are their deflector's; the painted arc is not in any catalogue value"
+ }
+}

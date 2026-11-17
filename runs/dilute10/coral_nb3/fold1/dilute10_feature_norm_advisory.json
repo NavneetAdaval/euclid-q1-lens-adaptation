@@ -1,0 +1,10 @@
+{
+  "status": "advisory (log-only), runs/dilute10_prereg_part2.json stop_rules_nb3_coral_freematch",
+  "n_firings": 2000,
+  "first_step": 1,
+  "last_step": 2000,
+  "kinds": [
+    "ceiling"
+  ],
+  "csv": "dilute10_feature_norm_advisory.csv"
+}

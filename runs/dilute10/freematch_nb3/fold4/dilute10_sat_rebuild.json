@@ -1,0 +1,5 @@
+{
+  "n_batches": 680,
+  "pool_size": 4312,
+  "sampler": "UniformTargetBatchSampler"
+}

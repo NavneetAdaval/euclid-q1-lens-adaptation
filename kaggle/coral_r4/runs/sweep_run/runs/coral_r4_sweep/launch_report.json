@@ -1,0 +1,78 @@
+{
+  "out_root": "/kaggle/working/runs/coral_r4_sweep",
+  "log_root": "/kaggle/working/runs/coral_r4_sweep/logs",
+  "started_utc": "2026-08-18T12:58:10Z",
+  "max_steps": 2000,
+  "arms": [
+    {
+      "gamma": 1.0,
+      "device": 0,
+      "returncode": 0,
+      "minutes": 50.33504408995311,
+      "out_dir": "/kaggle/working/runs/coral_r4_sweep/g1",
+      "log": "/kaggle/working/runs/coral_r4_sweep/logs/g1.log",
+      "trace": {
+        "trace": "/kaggle/working/runs/coral_r4_sweep/g1/trace.csv",
+        "ok": true,
+        "n_rows": 16,
+        "last_row": {
+          "step": "2000",
+          "sup_loss_mean": "0.015664233142510055",
+          "coral_raw_mean": "0.0013405587086454034",
+          "src_feat_l2_mean": "63.093945892333984",
+          "tgt_feat_l2_mean": "63.15025942993164",
+          "src_perdim_std_mean": "0.2205641415119171",
+          "tgt_perdim_std_mean": "0.22244717741012573"
+        },
+        "steps_csv_rows": 2000
+      }
+    },
+    {
+      "gamma": 4.0,
+      "device": 1,
+      "returncode": 0,
+      "minutes": 52.83528099060059,
+      "out_dir": "/kaggle/working/runs/coral_r4_sweep/g4",
+      "log": "/kaggle/working/runs/coral_r4_sweep/logs/g4.log",
+      "trace": {
+        "trace": "/kaggle/working/runs/coral_r4_sweep/g4/trace.csv",
+        "ok": true,
+        "n_rows": 16,
+        "last_row": {
+          "step": "2000",
+          "sup_loss_mean": "0.015104570489376783",
+          "coral_raw_mean": "0.00028738931263796986",
+          "src_feat_l2_mean": "63.13830004882813",
+          "tgt_feat_l2_mean": "63.17589770507813",
+          "src_perdim_std_mean": "0.15971782958507538",
+          "tgt_perdim_std_mean": "0.17201367437839507"
+        },
+        "steps_csv_rows": 2000
+      }
+    },
+    {
+      "gamma": 16.0,
+      "device": 0,
+      "returncode": 0,
+      "minutes": 50.501440183321634,
+      "out_dir": "/kaggle/working/runs/coral_r4_sweep/g16",
+      "log": "/kaggle/working/runs/coral_r4_sweep/logs/g16.log",
+      "trace": {
+        "trace": "/kaggle/working/runs/coral_r4_sweep/g16/trace.csv",
+        "ok": true,
+        "n_rows": 16,
+        "last_row": {
+          "step": "2000",
+          "sup_loss_mean": "0.016546841042116286",
+          "coral_raw_mean": "0.00010111165975104086",
+          "src_feat_l2_mean": "63.42224020385742",
+          "tgt_feat_l2_mean": "63.431861938476565",
+          "src_perdim_std_mean": "0.11100490385293961",
+          "tgt_perdim_std_mean": "0.11400393974781037"
+        },
+        "steps_csv_rows": 2000
+      }
+    }
+  ],
+  "finished_utc": "2026-08-18T14:39:00Z"
+}

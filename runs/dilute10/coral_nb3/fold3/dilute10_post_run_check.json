@@ -1,0 +1,14 @@
+{
+ "arm": "coral_nb3",
+ "budget": 2000,
+ "steps_completed": 2000,
+ "r1_checkpoint_present": true,
+ "logit_grid": [
+  250,
+  2000,
+  250
+ ],
+ "n_expected_logits": 8,
+ "missing_logits": [],
+ "named_in_checkpoints_csv_but_missing": []
+}

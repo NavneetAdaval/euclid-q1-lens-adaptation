@@ -1,0 +1,29 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_dilute10_tables.py)
+% Appendix K: frozen-stage head norms. runs/dilute10_head_norms/head_norms.json.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{The frozen-stage heads} that initialise the unfrozen CORAL and FreeMatch arms, read from their stored step-8000 state dicts: the $L_2$ norm of the layer-normalisation gain and of its bias, and $\|\mathrm{head}\|_2$ over every head parameter. A gain of one in every dimension has norm $\sqrt{640}=\dlUnitGain{}$. Each $\|\mathrm{head}\|_2$ equals the value its run recorded when it was used.}
+\label{tab:dl-heads}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lllrrrr}
+\toprule
+Head & Target & Norm & fold 1 & fold 2 & fold 3 & fold 4 \\
+\midrule
+CORAL & main design (1:1) & gain & $22.4$ & $33.1$ & $24.0$ & $23.4$ \\
+ &  & bias & $63.6$ & $64.5$ & $63.7$ & $61.6$ \\
+ &  & $\|\mathrm{head}\|_2$ & $67.5$ & $72.6$ & $68.2$ & $66.0$ \\
+ & 1:10 & gain & $97.0$ & $103.7$ & $98.2$ & $102.2$ \\
+ &  & bias & $92.6$ & $92.6$ & $90.2$ & $91.3$ \\
+ &  & $\|\mathrm{head}\|_2$ & $134.2$ & $139.0$ & $133.4$ & $137.1$ \\
+\midrule
+FreeMatch & main design (1:1) & gain & $28.9$ & $28.9$ & $29.1$ & $28.8$ \\
+ &  & bias & $0.7$ & $0.7$ & $0.8$ & $0.7$ \\
+ &  & $\|\mathrm{head}\|_2$ & $29.3$ & $29.3$ & $29.5$ & $29.2$ \\
+ & 1:10 & gain & $27.9$ & $27.9$ & $28.1$ & $27.9$ \\
+ &  & bias & $0.9$ & $0.9$ & $0.8$ & $0.8$ \\
+ &  & $\|\mathrm{head}\|_2$ & $28.2$ & $28.3$ & $28.4$ & $28.2$ \\
+\bottomrule
+\end{tabular}
+\end{table}

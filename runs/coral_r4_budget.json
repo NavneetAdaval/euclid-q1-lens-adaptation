@@ -1,0 +1,355 @@
+{
+ "confirmatory_design": {
+  "comparison": "fold-mean vs fold-mean against round 1's folds 1-4 (PROJECT.md 2: pooled is invalid for per-fold models)",
+  "fold0": "DEVELOPMENT -- excluded from every headline number",
+  "folds": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "note": "this file must exist and be hashed BEFORE any confirmatory fold runs"
+ },
+ "cost_accounting": {
+  "gpu_hours_folds_1_4_at_2000": 5.0,
+  "gpu_hours_folds_1_4_at_8000": 19.9,
+  "measured_breakdown": "231 min training + 67 min scoring 32 checkpoints",
+  "measured_minutes_8000_steps_T4": 298.08,
+  "minutes_per_fold_at_2000": 74.5,
+  "minutes_per_fold_at_8000": 298.1
+ },
+ "derived_or_declared": "declared",
+ "development_run": "C:\\Users\\krris\\ML\\lens_paper\\kaggle\\coral_r4\\runs\\fold0_run\\coral_r4_nb3_dev8000_fold0",
+ "fold0_curve_TPR_at_1e-3": {
+  "1000": 0.45918367346938777,
+  "1250": 0.42857142857142855,
+  "1500": 0.3163265306122449,
+  "1750": 0.42857142857142855,
+  "2000": 0.46938775510204084,
+  "2250": 0.5102040816326531,
+  "250": 0.40816326530612246,
+  "2500": 0.5306122448979592,
+  "2750": 0.5102040816326531,
+  "3000": 0.46938775510204084,
+  "3250": 0.46938775510204084,
+  "3500": 0.4387755102040816,
+  "3750": 0.42857142857142855,
+  "4000": 0.3469387755102041,
+  "4250": 0.4938673469387755,
+  "4500": 0.3979591836734694,
+  "4750": 0.42857142857142855,
+  "500": 0.3979591836734694,
+  "5000": 0.5,
+  "5250": 0.5,
+  "5500": 0.41836734693877553,
+  "5750": 0.35714285714285715,
+  "6000": 0.45918367346938777,
+  "6250": 0.3877551020408163,
+  "6500": 0.42857142857142855,
+  "6750": 0.42857142857142855,
+  "7000": 0.4387755102040816,
+  "7250": 0.41836734693877553,
+  "750": 0.41836734693877553,
+  "7500": 0.4387755102040816,
+  "7750": 0.336734693877551,
+  "8000": 0.42857142857142855
+ },
+ "grounds": {
+  "summary": "DECLARED ON COST, NOT DERIVED FROM THE CURVE. The fold-0 development curve does not locate a budget, so no budget in 250-8000 is defensible over any other on evidence. The choice is therefore an explicit cost decision and is labelled as one.",
+  "what_would_falsify_this_choice": "a confirmatory fold whose own curve showed a decay this fold-0 curve does not. That cannot be checked without breaking the pre-registration, and it is the accepted residual risk of the 7.14 protocol -- stated in 7.14 itself: 'if every method's development curve is equally unlocatable, the procedure is principled machinery wrapped around a coin flip. It remains fair, but it is not precise, and the paper must say so.'",
+  "why_not_derived": [
+   "the Task-A decay detector, applied UNMODIFIED (same definition, same sha256, same bootstrap, same cap), returns Delta = +0.027806 with 95% CI [-0.014372, +0.070153] -- NOT DISTINGUISHABLE. There is no systematic 'late is worse' structure to shorten the budget against, which is what 7.14 predicted for a method with no pseudo-label loop.",
+   "pairwise across all 496 candidate-budget comparisons, 69 are distinguishable at an UNCORRECTED 95% against 24.8 expected under a global null, and 8 survive Benjamini-Hochberg at q=0.05. This does NOT repeat 7.13's 0-of-24.",
+   "but every surviving pair is a PEAK-vs-TROUGH pair of a wobbling curve, not evidence about when to stop: they include step 5000 vs step 5750, 750 steps apart in mid-run, and they cluster on the curve's extremes (the six most-involved steps are [[1500, 18], [7750, 14], [2500, 13], [2250, 11], [4000, 9], [5750, 8]], headed by the curve minimum 0.3163 at step 1500 and the maximum 0.5306 at step 2500). A curve whose neighbouring points differ by more than the resolution is noisy, not locatable.",
+   "the argmax (step 2500) is NOT distinguishable from step 2000 (diff +0.0612, CI [-0.0102, +0.1531]), and its edge over the endpoint (p=0.0152) does NOT survive the multiplicity correction.",
+   "the known-null half-width -- the same checkpoint against itself under independent resamples -- is 0.1633, against a total curve range of 0.2143. Unpaired, the entire curve barely clears the noise floor."
+  ],
+  "why_this_value": [
+   "COST. Measured 298.08 min for 8000 steps on a Kaggle T4 (231 min training + 67 min scoring 32 checkpoints). At 2000 steps a confirmatory fold is ~75 min, so folds 1-4 cost ~5 GPU-hours against ~20 at 8000. With nothing distinguishable, a 4x cost multiple buys nothing measurable.",
+   "NOT THE ARGMAX. Step 2500 is the maximum of a curve whose distinguishable pairs are peak-vs-trough, so selecting it is winner's curse. 7.11 set this precedent explicitly when it declined to pin FreeMatch's budget to its own argmax at 1250.",
+   "step 2000 is additionally the one point on this curve whose model is INDEPENDENTLY CHARACTERISED: the 2000-step gamma=16 sweep arm, which this run reproduced bit-exactly on all 11 logged columns across all 2000 steps. That is a provenance convenience, NOT evidence that 2000 is a better budget than any other."
+  ]
+ },
+ "method": "deep_coral, n_blocks=3, image-space, gamma=16, target EMA off",
+ "metric": "TPR@FPR=1e-3 as a RATE (PROJECT.md 2/9); never counts. One positive = 0.010204 on 98 fold positives against 26399 shared negatives.",
+ "purpose": "PRE-REGISTRATION for the CORAL confirmatory folds 1-4 (PROJECT.md 7.14). The budget and the read-off point are fixed HERE, before any confirmatory fold exists. Fold 0 is DEVELOPMENT and contributes no headline number.",
+ "read_off_rule": "train to step 2000 and read the FINAL checkpoint (step_2000.pt). This is R1 -- the last checkpoint -- as pre-registered throughout the project. No label-free selector, no argmax, no smoothing, no re-reading at another step: THE BUDGET IS THE SELECTOR.",
+ "recorded_utc": "2026-08-21T18:01:18Z",
+ "resolvability_evidence": {
+  "task1_decay_detector": {
+   "bootstrap_median": 0.02721088435374147,
+   "cap": 8000,
+   "ci": [
+    -0.014372045068027285,
+    0.07015306122448978
+   ],
+   "ci_half_width": 0.04226255314625853,
+   "cut": 6000.0,
+   "definition_modified": false,
+   "definition_sha256": "301826021baf9dac28009328615b10d31b6b9e50886fbfb248439388d8bdd4ed",
+   "definition_source": "runs/devmax_truncation.json",
+   "delta": 0.027805697278911523,
+   "detected": false,
+   "early_mean": 0.4410710034013605,
+   "early_steps": [
+    250,
+    500,
+    750,
+    1000,
+    1250,
+    1500,
+    1750,
+    2000,
+    2250,
+    2500,
+    2750,
+    3000,
+    3250,
+    3500,
+    3750,
+    4000,
+    4250,
+    4500,
+    4750,
+    5000,
+    5250,
+    5500,
+    5750,
+    6000
+   ],
+   "first_three_quarters_mean": 0.4410710034013605,
+   "frac_draws_le_0": 0.104,
+   "freematch_same_statistic_same_cap": {
+    "ci": [
+     0.04417156409438777,
+     0.14051870748299328
+    ],
+    "ci_half_width": 0.04817357169430275,
+    "delta": 0.09506845238095246,
+    "detected": true,
+    "n_early": 48,
+    "n_late": 16,
+    "source": "runs/devmax_truncation.json fold0_development.per_cap.8000.primary"
+   },
+   "last_quarter_mean": 0.413265306122449,
+   "late_frac": 0.25,
+   "late_is_better": false,
+   "late_mean": 0.413265306122449,
+   "late_steps": [
+    6250,
+    6500,
+    6750,
+    7000,
+    7250,
+    7500,
+    7750,
+    8000
+   ],
+   "n_early": 24,
+   "n_late": 8,
+   "quarter_means": [
+    0.41581632653061223,
+    0.4630102040816326,
+    0.44438647959183675,
+    0.413265306122449
+   ],
+   "verdict": "not distinguishable"
+  },
+  "task2_BH_surviving_pairs": [
+   {
+    "a": 5000,
+    "b": 5750,
+    "ci": [
+     0.06122448979591838,
+     0.2346938775510204
+    ],
+    "ci_half_width": 0.086734693877551,
+    "diff": 0.14285714285714285,
+    "distinguishable": true,
+    "p_two_sided": 0.0
+   },
+   {
+    "a": 2250,
+    "b": 4000,
+    "ci": [
+     0.07142857142857145,
+     0.2959183673469387
+    ],
+    "ci_half_width": 0.11224489795918363,
+    "diff": 0.163265306122449,
+    "distinguishable": true,
+    "p_two_sided": 0.0
+   },
+   {
+    "a": 2250,
+    "b": 7750,
+    "ci": [
+     0.09183673469387754,
+     0.2653061224489796
+    ],
+    "ci_half_width": 0.08673469387755103,
+    "diff": 0.17346938775510207,
+    "distinguishable": true,
+    "p_two_sided": 0.0
+   },
+   {
+    "a": 1500,
+    "b": 2500,
+    "ci": [
+     -0.3163265306122449,
+     -0.11224489795918369
+    ],
+    "ci_half_width": 0.10204081632653061,
+    "diff": -0.2142857142857143,
+    "distinguishable": true,
+    "p_two_sided": 0.0
+   },
+   {
+    "a": 1500,
+    "b": 2250,
+    "ci": [
+     -0.30612244897959184,
+     -0.10204081632653061
+    ],
+    "ci_half_width": 0.10204081632653061,
+    "diff": -0.19387755102040816,
+    "distinguishable": true,
+    "p_two_sided": 0.00039999999999995595
+   },
+   {
+    "a": 1500,
+    "b": 2750,
+    "ci": [
+     -0.28571428571428575,
+     -0.08163265306122452
+    ],
+    "ci_half_width": 0.10204081632653061,
+    "diff": -0.19387755102040816,
+    "distinguishable": true,
+    "p_two_sided": 0.00039999999999995595
+   },
+   {
+    "a": 1500,
+    "b": 5250,
+    "ci": [
+     -0.2857142857142857,
+     -0.08163265306122447
+    ],
+    "ci_half_width": 0.10204081632653061,
+    "diff": -0.18367346938775508,
+    "distinguishable": true,
+    "p_two_sided": 0.0007999999999999119
+   },
+   {
+    "a": 2500,
+    "b": 4000,
+    "ci": [
+     0.08163265306122447,
+     0.3061224489795918
+    ],
+    "ci_half_width": 0.11224489795918366,
+    "diff": 0.18367346938775514,
+    "distinguishable": true,
+    "p_two_sided": 0.0008
+   }
+  ],
+  "task2_pairwise": {
+   "BH_p_threshold": 0.0008,
+   "argmax_step": 2500,
+   "argmax_tpr": 0.5306122448979592,
+   "curve_min": 0.3163265306122449,
+   "curve_min_step": 1500,
+   "expected_false_positives_uncorrected": 24.8,
+   "freematch_precedent": "\u00a77.13: 0 of 24 candidate budgets in 500-3375 distinguishable from the best",
+   "half_width_max": 0.14285714285714288,
+   "half_width_mean": 0.10598565550338075,
+   "half_width_median": 0.10714285714285712,
+   "half_width_min": 0.07142857142857142,
+   "n_candidates": 32,
+   "n_comparisons_vs_argmax": 31,
+   "n_distinguishable_BH_q05": 8,
+   "n_distinguishable_uncorrected": 69,
+   "n_distinguishable_vs_argmax": 13,
+   "n_pairs": 496,
+   "named_comparisons": {
+    "argmax_vs_endpoint": {
+     "a": 2500,
+     "b": 8000,
+     "ci": [
+      0.030612244897959162,
+      0.2142857142857143
+     ],
+     "ci_half_width": 0.09183673469387757,
+     "diff": 0.10204081632653067,
+     "distinguishable": true,
+     "tpr_a": 0.5306122448979592,
+     "tpr_b": 0.42857142857142855
+    },
+    "argmax_vs_step2000": {
+     "a": 2500,
+     "b": 2000,
+     "ci": [
+      -0.010204081632653073,
+      0.15306122448979587
+     ],
+     "ci_half_width": 0.08163265306122447,
+     "diff": 0.06122448979591838,
+     "distinguishable": false,
+     "tpr_a": 0.5306122448979592,
+     "tpr_b": 0.46938775510204084
+    },
+    "step2000_vs_endpoint": {
+     "a": 2000,
+     "b": 8000,
+     "ci": [
+      -0.030612244897959218,
+      0.1428571428571429
+     ],
+     "ci_half_width": 0.08673469387755106,
+     "diff": 0.04081632653061229,
+     "distinguishable": false,
+     "tpr_a": 0.46938775510204084,
+     "tpr_b": 0.42857142857142855
+    }
+   },
+   "pair_endpoint_counts_top6": [
+    [
+     1500,
+     18
+    ],
+    [
+     7750,
+     14
+    ],
+    [
+     2500,
+     13
+    ],
+    [
+     2250,
+     11
+    ],
+    [
+     4000,
+     9
+    ],
+    [
+     5750,
+     8
+    ]
+   ]
+  },
+  "task3_known_null": {
+   "all_intervals_cover_zero": true,
+   "curve_range": 0.2142857142857143,
+   "half_width_max": 0.1938775510204081,
+   "half_width_mean": 0.16103316326530615,
+   "half_width_median": 0.16326530612244897,
+   "half_width_min": 0.13775510204081634,
+   "paired_max_abs_diff": 0.0,
+   "scheme": "same checkpoint, two INDEPENDENT resample streams (seeds 0 and 1); the paired scheme gives identically zero"
+  }
+ },
+ "selected_budget_steps": 2000,
+ "sha256_of_body_without_this_field": "65c20810485968d8a24662b352bb85cd73176e3b21c039dd97f592a9e0aeade3"
+}

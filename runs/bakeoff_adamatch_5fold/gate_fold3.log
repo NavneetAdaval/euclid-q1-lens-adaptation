@@ -1,0 +1,156 @@
+==============================================================================
+COLLAPSE-GATE VALIDATOR (Job 1) -- post-hoc only.  No training, no halting.
+==============================================================================
+  Agreement = Spearman(DA_ckpt scores, BaselineA_final scores) on the fold's
+  UNLABELED target pool.  FLOOR ALARM only -- never maximize agreement (that
+  returns the source model).  Firing thresholds are UNCALIBRATED [UNVERIFIED].
+
+==============================================================================
+G3 -- SELF-TEST on synthetic agreement curves (known answers)
+==============================================================================
+  Expectation is stated per case.  A gate that FALSE-FIRES on the healthy
+  cases is the worst outcome and must be caught here (spec 5).
+
+  [PASS] healthy decline (gradual 1.00->0.85, then flat)
+         expected: must NOT fire
+         observed: strict: no-fire(cliff=n,floor=n), loose: no-fire(cliff=n,floor=n)
+
+  [PASS] cliff collapse (0.90 -> 0.20 at step 4200)
+         expected: must FIRE at ~4200
+         observed: strict: FIRE@4500(cliff=y,floor=y), loose: FIRE@4500(cliff=y,floor=n)
+
+  [PASS] slow slide, no floor (1.00 -> 0.10, never levels)
+         expected: must FIRE
+         observed: strict: FIRE@5400(cliff=n,floor=y), loose: FIRE@8100(cliff=n,floor=y)
+
+  [PASS] early dip then recovery (dip to 0.72, back to 0.90)
+         expected: must NOT fire
+         observed: strict: no-fire(cliff=n,floor=n), loose: no-fire(cliff=n,floor=n)
+
+  ALL SELF-TESTS PASS -- the gate separates cliffs/slides from healthy decline and dips.
+
+==============================================================================
+G4 -- REAL-DATA VALIDATION (the ONE curve buildable from on-disk checkpoints)
+==============================================================================
+  FreeMatch fold-0 did NOT collapse (its TPR was still climbing at 5400), so a
+  HEALTHY curve / NO FIRE is the expected result.  This establishes the healthy
+  reference SHAPE.  It does NOT prove the gate catches a real collapse.
+
+==============================================================================
+G1 -- AGREEMENT CURVE   [fold3]
+==============================================================================
+  reference : runs\bakeoff_baseline_A\checkpoints\step_8000.pt  (Baseline A, R1/final)
+  pool      : target_fold3  (n=782 unlabeled target rows)
+  DA run    : runs\bakeoff_adamatch_5fold\fold3  (32 loadable checkpoints, 0 skipped)
+
+  agreement curve:
+      step |  agreement |     delta
+    -------+------------+----------
+       250 |     0.8973 |      --  
+       500 |     0.9114 |   +0.0142
+       750 |     0.9201 |   +0.0087
+      1000 |     0.9219 |   +0.0017
+      1250 |     0.9290 |   +0.0071
+      1500 |     0.9312 |   +0.0023
+      1750 |     0.9298 |   -0.0014
+      2000 |     0.9332 |   +0.0034
+      2250 |     0.9317 |   -0.0016
+      2500 |     0.9229 |   -0.0087
+      2750 |     0.9143 |   -0.0086
+      3000 |     0.9166 |   +0.0023
+      3250 |     0.9042 |   -0.0124
+      3500 |     0.9023 |   -0.0018
+      3750 |     0.8865 |   -0.0158
+      4000 |     0.8874 |   +0.0009
+      4250 |     0.8851 |   -0.0024
+      4500 |     0.8730 |   -0.0121
+      4750 |     0.8858 |   +0.0128
+      5000 |     0.8831 |   -0.0027
+      5250 |     0.8827 |   -0.0004
+      5500 |     0.8761 |   -0.0066
+      5750 |     0.8710 |   -0.0051
+      6000 |     0.8829 |   +0.0119
+      6250 |     0.8833 |   +0.0004
+      6500 |     0.8919 |   +0.0085
+      6750 |     0.8837 |   -0.0082
+      7000 |     0.8796 |   -0.0041
+      7250 |     0.8825 |   +0.0030
+      7500 |     0.8752 |   -0.0073
+      7750 |     0.8840 |   +0.0088
+      8000 |     0.8807 |   -0.0033
+
+==============================================================================
+G2 -- DROP DETECTOR   [fold3]
+==============================================================================
+
+  RAW curve statistics -- fold3 (no thresholds involved):
+    largest drop within W=1000 steps : +0.0301  (step 3000 -> 3750)
+    curve minimum                        : 0.8710  (at step 5750)
+
+  GATE (uncalibrated settings -- fire/no-fire is a CANDIDATE, not a verdict):
+    setting | W     | M     | F     | cliff        | floor        | FIRE at
+    -----------------------------------------------------------------------
+    strict  | 1000  | 0.15  | 0.50  | no           | no           | -- no fire --
+    loose   | 1000  | 0.30  | 0.20  | no           | no           | -- no fire --
+
+  OVERLAY -- agreement vs the known fold3 TPR@1e-3 curve:
+      step |  agreement | TPR@1e-3 |  agreement bar
+    -------+------------+----------+----------------------------------
+       250 |     0.8973 |   0.0408 | ###########################
+       500 |     0.9114 |   0.1122 | ###########################
+       750 |     0.9201 |   0.1020 | ############################
+      1000 |     0.9219 |   0.1327 | ############################
+      1250 |     0.9290 |   0.1633 | ############################
+      1500 |     0.9312 |   0.1735 | ############################
+      1750 |     0.9298 |   0.2143 | ############################
+      2000 |     0.9332 |   0.2041 | ############################
+      2250 |     0.9317 |   0.2143 | ############################
+      2500 |     0.9229 |   0.2755 | ############################
+      2750 |     0.9143 |   0.2857 | ###########################
+      3000 |     0.9166 |   0.2857 | ###########################
+      3250 |     0.9042 |   0.2857 | ###########################
+      3500 |     0.9023 |   0.2857 | ###########################
+      3750 |     0.8865 |   0.3061 | ###########################
+      4000 |     0.8874 |   0.3061 | ###########################
+      4250 |     0.8851 |   0.3061 | ###########################
+      4500 |     0.8730 |   0.3265 | ##########################
+      4750 |     0.8858 |   0.3469 | ###########################
+      5000 |     0.8831 |   0.3163 | ##########################
+      5250 |     0.8827 |   0.3061 | ##########################
+      5500 |     0.8761 |   0.3367 | ##########################
+      5750 |     0.8710 |   0.3163 | ##########################
+      6000 |     0.8829 |   0.3469 | ##########################
+      6250 |     0.8833 |   0.3061 | ##########################
+      6500 |     0.8919 |   0.2959 | ###########################
+      6750 |     0.8837 |   0.3061 | ###########################
+      7000 |     0.8796 |   0.3265 | ##########################
+      7250 |     0.8825 |   0.3163 | ##########################
+      7500 |     0.8752 |   0.3367 | ##########################
+      7750 |     0.8840 |   0.3163 | ###########################
+      8000 |     0.8807 |   0.3163 | ##########################
+
+  SHAPE: first=0.8973  last=0.8807  min=0.8710  max=0.9332  total range=0.0622   -> RISES to a peak 0.9332 at step 2000, then settles -- NOT the monotone 'starts near 1.0 and declines' shape predicted in spec 1
+  CAVEAT [important]: the healthy curve's DYNAMIC RANGE is only 0.0622.
+    Agreement barely moved while the run's real metric changed a lot, so
+    this run gives an upper anchor ('healthy lives near 0.90')
+    but NO evidence about how far a collapse would push it. The headroom
+    between healthy and collapse is [UNVERIFIED] -- see the scope note.
+  VERDICT: AS EXPECTED: gate does NOT fire on this healthy run.
+
+==============================================================================
+SCOPE STATEMENT (do not let the numbers above imply more than this)
+==============================================================================
+  SHOWN     : the gate does not false-fire on 2 synthetic healthy curves, and
+              fires on 2 synthetic broken ones with S at/just after the break;
+              it does not false-fire on the one REAL healthy curve on disk.
+  UNVERIFIED: that it catches a REAL collapse.  No collapsed run exists yet;
+              CORAL (the one method with a documented late-epoch covariance
+              blow-up, PROJECT.md 7.4) is the calibration case, pending the
+              bake-off.  Do NOT promote this to a live early-stopper (Job 2)
+              until that evidence exists.
+
+  BAKE-OFF HOOK REQUIREMENT (one line, for the run spec):
+    At every curve step, log one extra column per fold --
+      agreement = Spearman(DA_checkpoint scores, BaselineA_final scores)
+      on that fold's UNLABELED target pool (target_fold{k}) --
+    so this gate can read live-produced curves without re-loading checkpoints.

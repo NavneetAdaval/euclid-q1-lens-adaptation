@@ -1,0 +1,53 @@
+[report] C:\Users\krris\ML\lens_paper\runs\bakeoff_adamatch: folds [0] (98 positives)
+[report] shared-negative identity: OK (single-model regime; pooling valid).
+  [fold 0] done (98 pos vs 26399 neg)
+  [pooled] done (98 pos vs 26399 neg)
+
+====================================================================================================
+BAKE-OFF FULL METRIC SUITE
+(paired class-conditional bootstrap, B=1000, seed=0; purity corrected to 1:2200)
+====================================================================================================
+
+TPR@FPR=0.001   [HEADLINE]
+  fold        value                 95% CI
+  ----------------------------------------
+  0          0.3776   [0.2449, 0.4796]
+  mean+-sd   0.3776   +- 0.0000   (across 1 folds)
+  POOLED     0.3776   [0.2449, 0.4796]   <- 98 pos vs shared negs
+
+AUPRC
+  fold        value                 95% CI
+  ----------------------------------------
+  0          0.4023   [0.3097, 0.5203]
+  mean+-sd   0.4023   +- 0.0000   (across 1 folds)
+  POOLED     0.4023   [0.3097, 0.5203]   <- 98 pos vs shared negs
+
+purity@50%-comp (raw pool)
+  fold        value                 95% CI
+  ----------------------------------------
+  0          0.4188   [0.3018, 0.6126]
+  mean+-sd   0.4188   +- 0.0000   (across 1 folds)
+  POOLED     0.4188   [0.3018, 0.6126]   <- 98 pos vs shared negs
+
+purity@50%-comp (1:2200)   [Lines-comparable]
+  fold        value                 95% CI
+  ----------------------------------------
+  0          0.0811   [0.0503, 0.1622]
+  mean+-sd   0.0811   +- 0.0000   (across 1 folds)
+  POOLED     0.0811   [0.0503, 0.1622]   <- 98 pos vs shared negs
+
+completeness@0.24-purity
+  fold        value                 95% CI
+  ----------------------------------------
+  0          0.2653   [0.0204, 0.4286]
+  mean+-sd   0.2653   +- 0.0000   (across 1 folds)
+  POOLED     0.2653   [0.0204, 0.4286]   <- 98 pos vs shared negs
+
+AUROC   [SECONDARY / sanity]
+  fold        value                 95% CI
+  ----------------------------------------
+  0          0.9698   [0.9507, 0.9853]
+  mean+-sd   0.9698   +- 0.0000   (across 1 folds)
+  POOLED     0.9698   [0.9507, 0.9853]   <- 98 pos vs shared negs
+
+[out] full metric suite -> C:\Users\krris\ML\lens_paper\runs\bakeoff_adamatch\metric_suite.json

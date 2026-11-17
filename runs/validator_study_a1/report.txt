@@ -1,0 +1,167 @@
+================================================================================================
+INVENTORY  (curve truncated to the pre-registered budget, step <= 8000)
+================================================================================================
+run               curve  ckpts   spread  lenses  agree  validators 4-6   note
+------------------------------------------------------------------------------------------------
+nb1                  32      1   0.1429    14.0    yes  NO               unfrozen n_blocks=1
+nb3                  32      1   0.1939    19.0    yes  NO               unfrozen n_blocks=3
+nb0_kaggle           32      1   0.0714     7.0    yes  NO               frozen, Kaggle
+nb0_image            32     32   0.0612     6.0    yes  YES              frozen, local
+nb0_noaug_fp32       32     32   0.1224    12.0    yes  YES              frozen, local
+nb0_weak_fp32        32     32   0.0714     7.0    yes  YES              frozen, local
+r1_baseline          16     16   0.1122    11.0     no  YES              round-1 Baseline A
+r1_freematch         18     18   0.2959    29.0     no  YES              round-1 FreeMatch
+r1_dann              40     40   0.1224    12.0     no  YES              round-1 DANN
+------------------------------------------------------------------------------------------------
+NOTE: nb1, nb3, nb0_kaggle kept only the FINAL checkpoint, so validators 4-6 (IM/SND/ATC) cannot be computed there.
+      Validators 1-3 are still available for them from curve.csv.
+
+cache: n_val=12000  n_test_pos=98  n_test_neg=26399  n_target=782 (balanced 1:1, Trap-1 assertion PASSED)
+SND on backbone features is CONSTANT at 5.060328 (frozen encoder) -- a second known-null control.
+agreement reference: runs\baseline_A\checkpoints\baseline_linear_ep100.pt
+
+-- nb0_image: re-inferring 32 checkpoints (head) ...
+   [PASS] reconstruction: 32/32 checkpoints match curve.csv  (max |dTPR|=0.00e+00, max |dAUROC|=0.00e+00)
+
+-- nb0_noaug_fp32: re-inferring 32 checkpoints (head) ...
+   [PASS] reconstruction: 32/32 checkpoints match curve.csv  (max |dTPR|=0.00e+00, max |dAUROC|=0.00e+00)
+
+-- nb0_weak_fp32: re-inferring 32 checkpoints (head) ...
+   [PASS] reconstruction: 32/32 checkpoints match curve.csv  (max |dTPR|=0.00e+00, max |dAUROC|=0.00e+00)
+
+-- r1_baseline: re-inferring 16 checkpoints (head) ...
+   [PASS] reconstruction: 16/16 checkpoints match curve.csv  (max |dTPR|=0.00e+00, max |dAUROC|=0.00e+00)
+
+-- r1_freematch: re-inferring 18 checkpoints (head) ...
+   [PASS] reconstruction: 18/18 checkpoints match curve.csv  (max |dTPR|=0.00e+00, max |dAUROC|=1.60e-06)
+
+-- r1_dann: re-inferring 40 checkpoints (dann) ...
+   [PASS] reconstruction: 40/40 checkpoints match curve.csv  (max |dTPR|=0.00e+00, max |dAUROC|=0.00e+00)
+
+================================================================================================
+DELIVERABLE 2 -- CHECKPOINT-RECONSTRUCTION VERIFICATION (logged vs recomputed)
+================================================================================================
+Every checkpoint is re-scored from data/feature_cache + the checkpoint head and
+checked against curve.csv BEFORE any validator is computed from it.
+
+run                ckpts  pass   max|dTPR|   max|dAUROC|  verdict
+------------------------------------------------------------------------------------------------
+nb1                    0    --          --            --  no per-checkpoint artifacts
+nb3                    0    --          --            --  no per-checkpoint artifacts
+nb0_kaggle             0    --          --            --  no per-checkpoint artifacts
+nb0_image             32    32    0.00e+00      0.00e+00  EXACT
+nb0_noaug_fp32        32    32    0.00e+00      0.00e+00  EXACT
+nb0_weak_fp32         32    32    0.00e+00      0.00e+00  EXACT
+r1_baseline           16    16    0.00e+00      0.00e+00  EXACT
+r1_freematch          18    18    0.00e+00      1.60e-06  PASS
+r1_dann               40    40    0.00e+00      0.00e+00  EXACT
+------------------------------------------------------------------------------------------------
+VERDICT: all reconstructions reproduce curve.csv; validators are trustworthy.
+
+================================================================================================
+DELIVERABLE 3 -- REGRET TABLE     validator x run -> regret in LENSES (1 lens = 0.0102 TPR)
+================================================================================================
+Lower is better. R1 is the INCUMBENT: a validator is only useful if it is
+materially below the R1 row on the informative runs.
+
+selector                    nb1          nb3   nb0_kaggle    nb0_imagenb0_noaug_fp32nb0_weak_fp32  r1_baseline r1_freematch      r1_dann
+----------------------------------------------------------------------------------------------------------------------------------------
+R1 last                    13.0          4.0          2.0          3.0          3.0          2.0          4.0          0.0          1.0   <-- INCUMBENT
+R2 fixed-plateau            7.0         12.0          3.0          0.0          0.0          3.0          0.0          0.0          1.0
+R3 median                  12.0         12.0          2.0          1.0          3.0          2.0          3.0          n/a          2.0
+----------------------------------------------------------------------------------------------------------------------------------------
+source_val_tpr              2.0         15.0          0.0          0.0          1.0          0.0          3.0          2.0          1.0
+source_val_auroc            6.0         12.0          0.0          0.0          3.0          0.0          2.0          9.0          1.0   <-- KNOWN-NULL CONTROL
+agreement                   4.0          2.0          0.0          3.0          3.0          0.0          4.0          9.0          3.0
+im                          n/a          n/a          n/a          1.0          3.0          2.0          3.0          4.0          2.0
+snd                         n/a          n/a          n/a          0.0          0.0          4.0          2.0         29.0          2.0
+neg_snd                     n/a          n/a          n/a          0.0          0.0          4.0          2.0         29.0          2.0
+snd_features                n/a          n/a          n/a          6.0         12.0          7.0         11.0         29.0         12.0   <-- 2nd null (constant)
+atc                         n/a          n/a          n/a          1.0          3.0          2.0          2.0          3.0          4.0
+control_step               13.0          4.0          2.0          3.0          3.0          2.0          4.0          0.0          1.0   <-- CONTROL (no content)
+control_noise               9.0          4.0          2.0          3.0          7.0          3.0          2.0          6.0          3.0   <-- CONTROL (no content)
+----------------------------------------------------------------------------------------------------------------------------------------
+random pick (exp)           7.9          9.5          3.4          2.1          3.6          3.4          4.1          7.9          3.5   <-- zero-information reference
+ORACLE tpr               0.2245       0.2551       0.1633       0.1531       0.2245       0.1633       0.2347       0.3878       0.2143
+oracle step                3750         3750         6750         3750         4250         6750         6000         5400         6800
+curve spread (l)           14.0         19.0          7.0          6.0         12.0          7.0         11.0         29.0         12.0
+
+n/a = validator not computable for that run (no per-checkpoint artifacts), or
+      the rule has no eligible checkpoint (empty [6000, budget] window).
+
+================================================================================================
+DELIVERABLE 4 -- SPEARMAN(validator, real-test TPR@1e-3), per run and pooled
+================================================================================================
+validator                   nb1          nb3   nb0_kaggle    nb0_imagenb0_noaug_fp32nb0_weak_fp32  r1_baseline r1_freematch      r1_dann            POOLED (raw)  POOLED |step
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+source_val_tpr            0.146        0.018        0.459        0.537        0.479        0.453        0.358       -0.052        0.808+0.435 [+0.33,+0.53] k=9        +0.177
+source_val_auroc          0.307        0.137        0.664        0.610        0.476        0.657        0.355        0.251        0.806+0.541 [+0.45,+0.62] k=9        +0.298
+agreement                 0.308        0.284        0.695        0.591        0.449        0.690        0.267       -0.678        0.799+0.504 [+0.40,+0.59] k=9        +0.252
+im                          n/a          n/a          n/a        0.109        0.479        0.357        0.298        0.762        0.777+0.515 [+0.39,+0.62] k=6        +0.221
+snd                         n/a          n/a          n/a        0.229        0.514        0.220        0.489       -0.420        0.446+0.304 [+0.15,+0.44] k=6        +0.017
+neg_snd                     n/a          n/a          n/a       -0.229       -0.514       -0.220       -0.489        0.420       -0.446-0.304 [-0.44,-0.15] k=6        -0.017
+snd_features                n/a          n/a          n/a          n/a          n/a          n/a          n/a          n/a          n/a                     n/a           n/a
+atc                         n/a          n/a          n/a        0.239        0.111        0.422        0.105        0.893        0.097+0.317 [+0.17,+0.45] k=6        +0.060
+control_step             -0.354       -0.046        0.637        0.526        0.368        0.618        0.252        0.833        0.791+0.463 [+0.36,+0.56] k=9           n/a  <-- CONTROL
+control_noise             0.029        0.132       -0.004       -0.013       -0.033        0.218        0.115       -0.040       -0.132+0.024 [-0.10,+0.15] k=9        +0.008  <-- CONTROL
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+POOLED (raw)  = Fisher-z mean of per-run rhos, weighted by (n-3), 95% CI.
+POOLED |step  = same, but with the training-step trend PARTIALLED OUT.
+With 6-9 short curves these are NOISY -- read the CI, not the point estimate.
+
+================================================================================================
+THE KNOWN-NULL TRIPWIRE -- IT FIRED, AND THE PREMISE (NOT THE CODE) WAS WRONG
+================================================================================================
+  source-val AUROC   pooled rho = +0.541 [+0.45, +0.62]   <-- tripwire condition met
+  control_noise      pooled rho = -0.000  sd 0.063  95% band [-0.123, +0.122]  (2000 draws)
+  control_step       pooled rho = +0.463
+  source-val AUROC   partialled on step = +0.298
+------------------------------------------------------------------------------------------------
+  CODE IS CORRECT: pure noise pools to ~0 through this exact pipeline, so the
+  pipeline does not manufacture correlation.
+  THE PREMISE WAS WRONG: saturation bounds a metric's RANGE, not its RANK
+  ORDER. source-val AUROC is a near-monotone function of the training step
+  (per-run rho(step, AUROC) = 0.84-1.00), and real-test TPR also trends with
+  step, so their rank correlation is mostly that SHARED TREND -- which is why
+  the content-free control_step row reproduces it almost exactly.
+  => The null reference for a correlation is control_step, NOT zero.
+  => Regret is unaffected: it asks which checkpoint argmax PICKS, and there
+     source-val AUROC is bad exactly as PROJECT.md 7.6 recorded.
+================================================================================================
+
+================================================================================================
+DELIVERABLE 5 -- VERDICT: is any validator usable, i.e. regret materially
+                 BELOW R1's? (paired per-run differences, in lenses)
+================================================================================================
+selector           mean reg   vs R1  win  tie  los    nb1    nb3    unfrozen mean vs R1
+------------------------------------------------------------------------------------------------
+source_val_tpr          2.7    -0.9    6    1    2    2.0   15.0                   +0.0
+source_val_auroc        3.7    +0.1    5    2    2    6.0   12.0                   +0.5
+agreement               3.1    -0.4    4    3    2    4.0    2.0                   -5.5
+im                      2.5    +0.3    2    2    2    n/a    n/a                    n/a
+snd                     6.2    +4.0    3    0    3    n/a    n/a                    n/a
+neg_snd                 6.2    +4.0    3    0    3    n/a    n/a                    n/a
+snd_features           12.8   +10.7    0    0    6    n/a    n/a                    n/a
+atc                     2.5    +0.3    2    2    2    n/a    n/a                    n/a
+control_step            3.6    +0.0    0    9    0   13.0    4.0                   +0.0
+control_noise           4.3    +0.8    2    3    4    9.0    4.0                   -2.0
+R2 fixed-plateau        2.9    -0.7    4    2    3    7.0   12.0                   +1.0
+R3 median               4.6    +0.6    3    3    2   12.0   12.0                   +3.5
+random pick (exp)       5.1    +1.5    2    0    7    7.9    9.5                   +0.2
+------------------------------------------------------------------------------------------------
+'vs R1' = mean(validator regret - R1 regret) in lenses; NEGATIVE means better
+than the incumbent. win/tie/los counts runs beaten/tied/lost against R1.
+
+RANDOM-SELECTION BAND: a validator that picks a checkpoint UNIFORMLY AT RANDOM
+scores 'vs R1' = +1.5 lenses, 95% band [-0.7, +4.3] (2000 draws).
+ANY validator whose 'vs R1' falls inside that band is INDISTINGUISHABLE FROM
+CHANCE on this evidence -- it has not been shown to select anything.
+  inside the band: source_val_auroc, agreement, im, snd, neg_snd, atc
+R1's own mean regret is 3.6 lenses; picking a
+checkpoint UNIFORMLY AT RANDOM costs 5.1 lenses.
+
+NOTE on snd_features: it is CONSTANT (frozen encoder), so 'argmax' degenerates
+to 'take the first checkpoint'. Its regret row measures that, not a selection.
+
+wrote runs\validator_study_a1\validator_study.json
+cached raw score vectors to runs\validator_study_a1

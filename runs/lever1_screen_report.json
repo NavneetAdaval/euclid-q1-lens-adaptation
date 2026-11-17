@@ -1,0 +1,136 @@
+{
+  "target_fpr": 0.001,
+  "bootstrap": 2000,
+  "selection_rule": "R1_last_checkpoint_step8000",
+  "runs": {
+    "nb0_image_kaggle": {
+      "tpr": 0.14285714285714285,
+      "own_ci": [
+        0.07142857142857142,
+        0.22448979591836735
+      ],
+      "n_blocks": 0,
+      "window_drift": 0.05102040816326529,
+      "flatness_verdict": "FLAT (drift <= CI half-width) -> R1 defensible",
+      "flatten_step": 250,
+      "agreement": {
+        "first": 0.9034090697364278,
+        "last": 0.9681484607298417,
+        "min": 0.9034090697364278,
+        "max": 0.9699268389455192
+      },
+      "curve_points": 32
+    },
+    "nb1": {
+      "tpr": 0.09183673469387756,
+      "diff_vs_nb0_image": -0.05102040816326529,
+      "ci": [
+        -0.1326530612244898,
+        0.020408163265306117
+      ],
+      "significant": false,
+      "ci_half_width": 0.07653061224489796,
+      "n_blocks": 1,
+      "vs_best_frozen": {
+        "diff": -0.1020408163265306,
+        "ci": [
+          -0.19712232142857142,
+          -0.02040816326530613
+        ],
+        "significant": true
+      },
+      "window_drift": 0.07142857142857144,
+      "flatness_verdict": "FLAT (drift <= CI half-width) -> R1 defensible",
+      "flatten_step": 6000,
+      "agreement": {
+        "first": 0.9557776533389802,
+        "last": 0.7384753180889908,
+        "min": 0.7384753180889908,
+        "max": 0.9557776533389802
+      },
+      "curve_points": 32
+    },
+    "nb3": {
+      "tpr": 0.21428571428571427,
+      "diff_vs_nb0_image": 0.07142857142857142,
+      "ci": [
+        -0.04705076530612243,
+        0.163265306122449
+      ],
+      "significant": false,
+      "ci_half_width": 0.10515803571428571,
+      "n_blocks": 3,
+      "vs_best_frozen": {
+        "diff": 0.020408163265306117,
+        "ci": [
+          -0.11224489795918367,
+          0.12244897959183673
+        ],
+        "significant": false
+      },
+      "window_drift": 0.11224489795918366,
+      "flatness_verdict": "NOT FLAT (drift > CI half-width) -> R1 NOT defensible; R3 (median checkpoint) becomes live",
+      "flatten_step": 7750,
+      "agreement": {
+        "first": 0.9230238763272577,
+        "last": 0.7866120290260332,
+        "min": 0.7047627425272073,
+        "max": 0.9230238763272577
+      },
+      "curve_points": 32
+    }
+  },
+  "control": {
+    "nb0_image_noaug": {
+      "tpr": 0.19387755102040816,
+      "diff_vs_cached": 0.0,
+      "ci": [
+        -0.03061224489795919,
+        0.03061224489795919
+      ],
+      "passed": true,
+      "row_aligned": true
+    },
+    "nb0_image": {
+      "tpr": 0.12244897959183673,
+      "diff_vs_cached": -0.07142857142857142,
+      "ci": [
+        -0.1326530612244898,
+        0.0
+      ],
+      "passed": true,
+      "row_aligned": true
+    },
+    "tpr_nb0_cached": 0.19387755102040816,
+    "aug_fp16_effect": {
+      "diff": -0.07142857142857142,
+      "ci": [
+        -0.13265306122448978,
+        -0.010204081632653045
+      ],
+      "significant": true,
+      "attribution": "UNVERIFIED (aug and fp16 vary together)"
+    },
+    "passed": true
+  },
+  "venue_portability": {
+    "tpr_local": 0.12244897959183673,
+    "tpr_kaggle": 0.14285714285714285,
+    "diff": 0.020408163265306117,
+    "lenses": 1.9999999999999996,
+    "ci": [
+      -0.030612244897959176,
+      0.05102040816326531
+    ],
+    "exceeds_one_lens": true
+  },
+  "decision_rule": {
+    "rule": "Proceed to a full 5-fold commit only if the winning rung beats baselineA_fold0_nb0_image on fold-0 TPR@FPR=1e-3 by MORE than the fold-0 paired-bootstrap CI half-width. On a tie between nb1 and nb3, prefer nb3.",
+    "amended_from": "Original rule preferred nb1 on a tie, justified half on compute cost and half on 'partial unfreeze' being a cleaner claim.",
+    "amendment_rationale": "Compute is no longer the binding constraint (Kaggle/Colab available), so the cost leg of the original tie-break is gone. Protocol match then wins: n_blocks=3 is Lines et al.'s exact setting, and matching it is what makes our Baseline A comparable to their published simulation-only result -- which is the entire purpose of this lever.",
+    "prerequisite": "An nb3 commit requires gradient checkpointing implemented and tested (numerically exact; test 8 in test_encoder_unfreeze.py).",
+    "preregistered": true,
+    "recorded_before_any_screen_result_existed": true,
+    "frozen": "Do not modify this rule after seeing numbers."
+  }
+}

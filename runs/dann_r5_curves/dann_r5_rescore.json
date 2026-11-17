@@ -1,0 +1,648 @@
+{
+  "purpose": "rebuild the per-checkpoint TPR@1e-3 / AUROC curves the collection defect dropped from both arms' archives",
+  "generated_utc": "2026-09-01T21:55:58Z",
+  "total_minutes": 135.99,
+  "target_fpr": 0.001,
+  "encoder_eval": "live_encode",
+  "encoder_eval_note": "the frozen cache is INVALID at n_blocks>0 (7.1a): scoring a real nb3 checkpoint from the stale cache once gave TPR 0.194 against a logged 0.020 -- a different model, not a rounding difference.",
+  "arms": [
+    {
+      "arm": "dann_nb3_lambda0",
+      "run_dir": "/kaggle/working/runs/dann_arm1/extracted/dann_r5_nb3_lambda0_fold0",
+      "curve_csv": "/kaggle/working/runs/dann_arm1/extracted/dann_r5_nb3_lambda0_fold0/curve.csv",
+      "n_checkpoints": 32,
+      "step0_gate": {
+        "n_pos": 98,
+        "n_neg": 26399,
+        "max_abs_diff_pos": 0.0,
+        "max_abs_diff_neg": 0.0,
+        "n_logits_compared": 26497,
+        "atol": 0.0001,
+        "tpr": 0.19387755102040816,
+        "auroc": 0.9427007516518483,
+        "expected_tpr": 0.19387755102040816,
+        "expected_auroc": 0.9426918613954919,
+        "tpr_abs_diff": 0.0,
+        "auroc_abs_diff": 8.890256356419712e-06,
+        "tpr_tolerance": 0.01020408163265306,
+        "auroc_tolerance": 0.001,
+        "elementwise_pass": true,
+        "gate_pass": true,
+        "verdict": "PASS",
+        "seconds": 124.8
+      },
+      "phase_a_minutes": 63.81,
+      "rows": [
+        {
+          "step": 250,
+          "tpr_at_1e-3": 0.20408163,
+          "auroc": 0.93834607,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_250.npz",
+          "score_seconds": 121.1
+        },
+        {
+          "step": 500,
+          "tpr_at_1e-3": 0.17346939,
+          "auroc": 0.89616567,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_500.npz",
+          "score_seconds": 119.1
+        },
+        {
+          "step": 750,
+          "tpr_at_1e-3": 0.20408163,
+          "auroc": 0.92316267,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_750.npz",
+          "score_seconds": 119.1
+        },
+        {
+          "step": 1000,
+          "tpr_at_1e-3": 0.08163265,
+          "auroc": 0.9067816,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_1000.npz",
+          "score_seconds": 119.3
+        },
+        {
+          "step": 1250,
+          "tpr_at_1e-3": 0.17346939,
+          "auroc": 0.89461065,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_1250.npz",
+          "score_seconds": 119.4
+        },
+        {
+          "step": 1500,
+          "tpr_at_1e-3": 0.13265306,
+          "auroc": 0.87131373,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_1500.npz",
+          "score_seconds": 119.3
+        },
+        {
+          "step": 1750,
+          "tpr_at_1e-3": 0.19387755,
+          "auroc": 0.89780302,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_1750.npz",
+          "score_seconds": 119.3
+        },
+        {
+          "step": 2000,
+          "tpr_at_1e-3": 0.08163265,
+          "auroc": 0.86777483,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_2000.npz",
+          "score_seconds": 119.5
+        },
+        {
+          "step": 2250,
+          "tpr_at_1e-3": 0.20408163,
+          "auroc": 0.8885243,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_2250.npz",
+          "score_seconds": 119.7
+        },
+        {
+          "step": 2500,
+          "tpr_at_1e-3": 0.15306122,
+          "auroc": 0.90073352,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_2500.npz",
+          "score_seconds": 119.5
+        },
+        {
+          "step": 2750,
+          "tpr_at_1e-3": 0.16326531,
+          "auroc": 0.88373748,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_2750.npz",
+          "score_seconds": 119.3
+        },
+        {
+          "step": 3000,
+          "tpr_at_1e-3": 0.15306122,
+          "auroc": 0.89813544,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_3000.npz",
+          "score_seconds": 119.6
+        },
+        {
+          "step": 3250,
+          "tpr_at_1e-3": 0.12244898,
+          "auroc": 0.87417446,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_3250.npz",
+          "score_seconds": 120.4
+        },
+        {
+          "step": 3500,
+          "tpr_at_1e-3": 0.14285714,
+          "auroc": 0.81813125,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_3500.npz",
+          "score_seconds": 118.9
+        },
+        {
+          "step": 3750,
+          "tpr_at_1e-3": 0.20408163,
+          "auroc": 0.88239872,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_3750.npz",
+          "score_seconds": 119.2
+        },
+        {
+          "step": 4000,
+          "tpr_at_1e-3": 0.13265306,
+          "auroc": 0.8649027,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_4000.npz",
+          "score_seconds": 119.0
+        },
+        {
+          "step": 4250,
+          "tpr_at_1e-3": 0.16326531,
+          "auroc": 0.88765808,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_4250.npz",
+          "score_seconds": 118.8
+        },
+        {
+          "step": 4500,
+          "tpr_at_1e-3": 0.13265306,
+          "auroc": 0.82849671,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_4500.npz",
+          "score_seconds": 119.6
+        },
+        {
+          "step": 4750,
+          "tpr_at_1e-3": 0.13265306,
+          "auroc": 0.8758093,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_4750.npz",
+          "score_seconds": 120.1
+        },
+        {
+          "step": 5000,
+          "tpr_at_1e-3": 0.16326531,
+          "auroc": 0.87657657,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_5000.npz",
+          "score_seconds": 120.6
+        },
+        {
+          "step": 5250,
+          "tpr_at_1e-3": 0.08163265,
+          "auroc": 0.85567365,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_5250.npz",
+          "score_seconds": 120.8
+        },
+        {
+          "step": 5500,
+          "tpr_at_1e-3": 0.15306122,
+          "auroc": 0.88058646,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_5500.npz",
+          "score_seconds": 120.0
+        },
+        {
+          "step": 5750,
+          "tpr_at_1e-3": 0.06122449,
+          "auroc": 0.84738735,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_5750.npz",
+          "score_seconds": 119.6
+        },
+        {
+          "step": 6000,
+          "tpr_at_1e-3": 0.15306122,
+          "auroc": 0.89268958,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_6000.npz",
+          "score_seconds": 119.4
+        },
+        {
+          "step": 6250,
+          "tpr_at_1e-3": 0.1122449,
+          "auroc": 0.88616027,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_6250.npz",
+          "score_seconds": 120.0
+        },
+        {
+          "step": 6500,
+          "tpr_at_1e-3": 0.12244898,
+          "auroc": 0.87193721,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_6500.npz",
+          "score_seconds": 120.0
+        },
+        {
+          "step": 6750,
+          "tpr_at_1e-3": 0.14285714,
+          "auroc": 0.87376957,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_6750.npz",
+          "score_seconds": 119.7
+        },
+        {
+          "step": 7000,
+          "tpr_at_1e-3": 0.06122449,
+          "auroc": 0.88878734,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_7000.npz",
+          "score_seconds": 119.4
+        },
+        {
+          "step": 7250,
+          "tpr_at_1e-3": 0.18367347,
+          "auroc": 0.87443808,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_7250.npz",
+          "score_seconds": 119.1
+        },
+        {
+          "step": 7500,
+          "tpr_at_1e-3": 0.15306122,
+          "auroc": 0.88044422,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_7500.npz",
+          "score_seconds": 118.9
+        },
+        {
+          "step": 7750,
+          "tpr_at_1e-3": 0.16326531,
+          "auroc": 0.91166873,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_7750.npz",
+          "score_seconds": 119.3
+        },
+        {
+          "step": 8000,
+          "tpr_at_1e-3": 0.15306122,
+          "auroc": 0.91343325,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_lambda0_fold0/step_8000.npz",
+          "score_seconds": 119.3
+        }
+      ],
+      "lockout_boundary": "PHASE A produced every logit file with test_label_lockout() ACTIVE, so no scoring decision could consult a metric -- enforced, not asserted. PHASE B computed TPR/AUROC afterwards, outside the lockout, from the persisted files. The boundary is: logits inside, numbers outside. This restores the run's own discipline (run.json metric_hygiene): checkpoints are SCORED but never MEASURED while anything can still be chosen on the basis of the score.",
+      "reproduces_run_path": "the arm was built by calling run_dann_r5.build_arm -- the same function the run used -- and scored with the same Scorer, LiveEncoder, logit_arm and on-disk layout. Verified at step 0 element-wise against the run's own true_init.npz over 26497 logits, max|diff| 0.000e+00."
+    },
+    {
+      "arm": "dann_nb3",
+      "run_dir": "/kaggle/working/runs/dann_arm2_fold0/extracted/dann_r5_nb3_fold0",
+      "curve_csv": "/kaggle/working/runs/dann_arm2_fold0/extracted/dann_r5_nb3_fold0/curve.csv",
+      "n_checkpoints": 32,
+      "step0_gate": {
+        "n_pos": 98,
+        "n_neg": 26399,
+        "max_abs_diff_pos": 0.0,
+        "max_abs_diff_neg": 0.0,
+        "n_logits_compared": 26497,
+        "atol": 0.0001,
+        "tpr": 0.19387755102040816,
+        "auroc": 0.9427007516518483,
+        "expected_tpr": 0.19387755102040816,
+        "expected_auroc": 0.9426918613954919,
+        "tpr_abs_diff": 0.0,
+        "auroc_abs_diff": 8.890256356419712e-06,
+        "tpr_tolerance": 0.01020408163265306,
+        "auroc_tolerance": 0.001,
+        "elementwise_pass": true,
+        "gate_pass": true,
+        "verdict": "PASS",
+        "seconds": 120.4
+      },
+      "phase_a_minutes": 63.41,
+      "rows": [
+        {
+          "step": 250,
+          "tpr_at_1e-3": 0.34693878,
+          "auroc": 0.97274711,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_250.npz",
+          "score_seconds": 119.4
+        },
+        {
+          "step": 500,
+          "tpr_at_1e-3": 0.28571429,
+          "auroc": 0.96664299,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_500.npz",
+          "score_seconds": 119.7
+        },
+        {
+          "step": 750,
+          "tpr_at_1e-3": 0.43877551,
+          "auroc": 0.94102243,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_750.npz",
+          "score_seconds": 119.2
+        },
+        {
+          "step": 1000,
+          "tpr_at_1e-3": 0.28571429,
+          "auroc": 0.9567719,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_1000.npz",
+          "score_seconds": 118.8
+        },
+        {
+          "step": 1250,
+          "tpr_at_1e-3": 0.5,
+          "auroc": 0.95498303,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_1250.npz",
+          "score_seconds": 119.4
+        },
+        {
+          "step": 1500,
+          "tpr_at_1e-3": 0.17346939,
+          "auroc": 0.82809974,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_1500.npz",
+          "score_seconds": 119.5
+        },
+        {
+          "step": 1750,
+          "tpr_at_1e-3": 0.58163265,
+          "auroc": 0.97444882,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_1750.npz",
+          "score_seconds": 119.3
+        },
+        {
+          "step": 2000,
+          "tpr_at_1e-3": 0.40816327,
+          "auroc": 0.94050254,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_2000.npz",
+          "score_seconds": 118.9
+        },
+        {
+          "step": 2250,
+          "tpr_at_1e-3": 0.43877551,
+          "auroc": 0.94820517,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_2250.npz",
+          "score_seconds": 118.5
+        },
+        {
+          "step": 2500,
+          "tpr_at_1e-3": 0.53061224,
+          "auroc": 0.93930062,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_2500.npz",
+          "score_seconds": 117.8
+        },
+        {
+          "step": 2750,
+          "tpr_at_1e-3": 0.51020408,
+          "auroc": 0.9408193,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_2750.npz",
+          "score_seconds": 117.8
+        },
+        {
+          "step": 3000,
+          "tpr_at_1e-3": 0.5,
+          "auroc": 0.93825891,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_3000.npz",
+          "score_seconds": 117.9
+        },
+        {
+          "step": 3250,
+          "tpr_at_1e-3": 0.52040816,
+          "auroc": 0.92360873,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_3250.npz",
+          "score_seconds": 117.8
+        },
+        {
+          "step": 3500,
+          "tpr_at_1e-3": 0.53061224,
+          "auroc": 0.95594897,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_3500.npz",
+          "score_seconds": 119.2
+        },
+        {
+          "step": 3750,
+          "tpr_at_1e-3": 0.51020408,
+          "auroc": 0.91970881,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_3750.npz",
+          "score_seconds": 119.1
+        },
+        {
+          "step": 4000,
+          "tpr_at_1e-3": 0.4632551,
+          "auroc": 0.93955457,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_4000.npz",
+          "score_seconds": 118.8
+        },
+        {
+          "step": 4250,
+          "tpr_at_1e-3": 0.5,
+          "auroc": 0.94123386,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_4250.npz",
+          "score_seconds": 118.9
+        },
+        {
+          "step": 4500,
+          "tpr_at_1e-3": 0.42857143,
+          "auroc": 0.94924978,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_4500.npz",
+          "score_seconds": 118.6
+        },
+        {
+          "step": 4750,
+          "tpr_at_1e-3": 0.29591837,
+          "auroc": 0.90169812,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_4750.npz",
+          "score_seconds": 118.9
+        },
+        {
+          "step": 5000,
+          "tpr_at_1e-3": 0.46938776,
+          "auroc": 0.92794814,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_5000.npz",
+          "score_seconds": 118.7
+        },
+        {
+          "step": 5250,
+          "tpr_at_1e-3": 0.45305102,
+          "auroc": 0.96499925,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_5250.npz",
+          "score_seconds": 118.8
+        },
+        {
+          "step": 5500,
+          "tpr_at_1e-3": 0.52040816,
+          "auroc": 0.96476811,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_5500.npz",
+          "score_seconds": 119.3
+        },
+        {
+          "step": 5750,
+          "tpr_at_1e-3": 0.53061224,
+          "auroc": 0.92263834,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_5750.npz",
+          "score_seconds": 119.6
+        },
+        {
+          "step": 6000,
+          "tpr_at_1e-3": 0.56122449,
+          "auroc": 0.96023253,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_6000.npz",
+          "score_seconds": 119.1
+        },
+        {
+          "step": 6250,
+          "tpr_at_1e-3": 0.52040816,
+          "auroc": 0.95936786,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_6250.npz",
+          "score_seconds": 119.0
+        },
+        {
+          "step": 6500,
+          "tpr_at_1e-3": 0.43877551,
+          "auroc": 0.94506208,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_6500.npz",
+          "score_seconds": 118.6
+        },
+        {
+          "step": 6750,
+          "tpr_at_1e-3": 0.42857143,
+          "auroc": 0.95586374,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_6750.npz",
+          "score_seconds": 118.8
+        },
+        {
+          "step": 7000,
+          "tpr_at_1e-3": 0.41836735,
+          "auroc": 0.94643021,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_7000.npz",
+          "score_seconds": 119.0
+        },
+        {
+          "step": 7250,
+          "tpr_at_1e-3": 0.41836735,
+          "auroc": 0.97174445,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_7250.npz",
+          "score_seconds": 118.4
+        },
+        {
+          "step": 7500,
+          "tpr_at_1e-3": 0.54081633,
+          "auroc": 0.98825558,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_7500.npz",
+          "score_seconds": 118.8
+        },
+        {
+          "step": 7750,
+          "tpr_at_1e-3": 0.47959184,
+          "auroc": 0.97698177,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_7750.npz",
+          "score_seconds": 118.4
+        },
+        {
+          "step": 8000,
+          "tpr_at_1e-3": 0.47959184,
+          "auroc": 0.97196864,
+          "n_pos": 98,
+          "n_neg": 26399,
+          "logit_file": "logits/dann_nb3_fold0/step_8000.npz",
+          "score_seconds": 118.6
+        }
+      ],
+      "lockout_boundary": "PHASE A produced every logit file with test_label_lockout() ACTIVE, so no scoring decision could consult a metric -- enforced, not asserted. PHASE B computed TPR/AUROC afterwards, outside the lockout, from the persisted files. The boundary is: logits inside, numbers outside. This restores the run's own discipline (run.json metric_hygiene): checkpoints are SCORED but never MEASURED while anything can still be chosen on the basis of the score.",
+      "reproduces_run_path": "the arm was built by calling run_dann_r5.build_arm -- the same function the run used -- and scored with the same Scorer, LiveEncoder, logit_arm and on-disk layout. Verified at step 0 element-wise against the run's own true_init.npz over 26497 logits, max|diff| 0.000e+00."
+    }
+  ]
+}

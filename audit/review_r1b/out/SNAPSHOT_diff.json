@@ -1,0 +1,97 @@
+{
+ "status": "post_hoc_exploratory",
+ "producing_script": "audit/review_r1b/scripts/record_r1b.py",
+ "test_pool": "n/a",
+ "folds": "n/a",
+ "metric": "scripts/metrics.py metric_suite / tpr_at_fpr (TPR at FPR=1e-3, full ROC with drop_intermediate=False, np.interp); thresholds from metrics.operating_threshold on the same curve",
+ "generated_utc": "2026-10-08T17:48:55+00:00",
+ "notes": [
+  "snap_mid: after L1/L2; snap_final: after the finish sequence; snap_end: after the report and these record JSONs"
+ ],
+ "inputs_sha256": {},
+ "result": {
+  "snapshots": {
+   "snap_before": {
+    "file_outside_repo": "C:/Users/krris/AppData/Local/Temp/claude/C--Users-krris-ML-lens-paper/8650b63a-71b4-491b-b9eb-85e651251ab7/scratchpad/r1b/snap_before.json",
+    "sha256": "0c3827c244fa788895d0134af8a01a1eeb7875e61c5feba1a29fd42a7eae674f",
+    "n_files": 115132,
+    "total_bytes": 88568575571
+   },
+   "snap_mid": {
+    "file_outside_repo": "C:/Users/krris/AppData/Local/Temp/claude/C--Users-krris-ML-lens-paper/8650b63a-71b4-491b-b9eb-85e651251ab7/scratchpad/r1b/snap_mid.json",
+    "sha256": "f36e91c25c6b5d573aceafa2c03772ea24db0270ea6650677d60d53482ee6103",
+    "n_files": 115136,
+    "total_bytes": 88568648669
+   },
+   "snap_final": {
+    "file_outside_repo": "C:/Users/krris/AppData/Local/Temp/claude/C--Users-krris-ML-lens-paper/8650b63a-71b4-491b-b9eb-85e651251ab7/scratchpad/r1b/snap_final.json",
+    "sha256": "affdde122c872aba9071352ab84ea0423bdf4dcd49f1f94e8678c93fbe2e2aa3",
+    "n_files": 115139,
+    "total_bytes": 88568668169
+   },
+   "snap_end": {
+    "file_outside_repo": "C:/Users/krris/AppData/Local/Temp/claude/C--Users-krris-ML-lens-paper/8650b63a-71b4-491b-b9eb-85e651251ab7/scratchpad/r1b/snap_end.json",
+    "sha256": "e8893472c4a69a7a0e61386b1cc3a16a562297465e1bfed5415bfcdc1dec7d37",
+    "n_files": 115142,
+    "total_bytes": 88568681184
+   }
+  },
+  "diffs": {
+   "snap_mid_vs_before": {
+    "n_before": 115132,
+    "n_after": 115136,
+    "n_added": 4,
+    "added_inside_audit_review_r1b": [
+     "audit/review_r1b/out/L1_target_labels.json",
+     "audit/review_r1b/out/L2_bright_pool.json",
+     "audit/review_r1b/scripts/l1_target_labels.py",
+     "audit/review_r1b/scripts/l2_bright_pool.py"
+    ],
+    "added_outside_audit_review_r1b": [],
+    "removed": [],
+    "content_changed": [],
+    "mtime_only_same_sha256": []
+   },
+   "snap_final_vs_before": {
+    "n_before": 115132,
+    "n_after": 115139,
+    "n_added": 7,
+    "added_inside_audit_review_r1b": [
+     "audit/review_r1b/REPORT_review_r1b.md",
+     "audit/review_r1b/out/L1_target_labels.json",
+     "audit/review_r1b/out/L2_bright_pool.json",
+     "audit/review_r1b/scripts/ctrl_scan_r1b.py",
+     "audit/review_r1b/scripts/l1_target_labels.py",
+     "audit/review_r1b/scripts/l2_bright_pool.py",
+     "audit/review_r1b/scripts/record_r1b.py"
+    ],
+    "added_outside_audit_review_r1b": [],
+    "removed": [],
+    "content_changed": [],
+    "mtime_only_same_sha256": []
+   },
+   "snap_end_vs_before": {
+    "n_before": 115132,
+    "n_after": 115142,
+    "n_added": 10,
+    "added_inside_audit_review_r1b": [
+     "audit/review_r1b/REPORT_review_r1b.md",
+     "audit/review_r1b/out/CTRL_scan.json",
+     "audit/review_r1b/out/FINISH_tools.json",
+     "audit/review_r1b/out/L1_target_labels.json",
+     "audit/review_r1b/out/L2_bright_pool.json",
+     "audit/review_r1b/out/SNAPSHOT_diff.json",
+     "audit/review_r1b/scripts/ctrl_scan_r1b.py",
+     "audit/review_r1b/scripts/l1_target_labels.py",
+     "audit/review_r1b/scripts/l2_bright_pool.py",
+     "audit/review_r1b/scripts/record_r1b.py"
+    ],
+    "added_outside_audit_review_r1b": [],
+    "removed": [],
+    "content_changed": [],
+    "mtime_only_same_sha256": []
+   }
+  },
+  "prefix": "audit/review_r1b/"
+ }
+}

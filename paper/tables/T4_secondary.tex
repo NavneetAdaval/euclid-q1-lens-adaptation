@@ -1,0 +1,51 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_t4_secondary.py)
+% T4 -- secondary readouts, folds 1-4.
+% comp@24%-purity + X ratio: paper/data/lines_ratios_D1.json.
+% purity@50%-completeness (1:2200) and AUROC: metric_suite on the stored logits.
+\begin{table}[tbp]
+\centering
+\caption{\textbf{Secondary readouts, folds 1--4.} Completeness at 24\% purity is
+Lines et al.'s operating point; $X$ expresses it as a fraction of their
+label-free sim-only completeness of 0.50. \textbf{$X$ is a secondary and is never
+quoted without this interval.} \textbf{That reference point (24\% purity at 50\%
+completeness) is itself a mean over ten random initialisations with a reported
+spread of $\pm 0.10$ in purity; the intervals below come only from our own
+sampling variability at the fixed 0.50 denominator and do not propagate the
+reference point's own uncertainty, so they are if anything too narrow.} An arm
+with 24\% purity unreachable on \emph{any}
+fold is \emph{n/a} --- no fold-mean, no interval, and never an average over the
+reachable subset. Purity is prevalence-corrected to $N_N/N_P = 1{:}2200$, Euclid
+Q1's rarity, so it is comparable with the benchmark. AUROC is a saturating sanity
+metric and never an arbiter: the $\lambda=0$ row is the demonstration, a globally
+competent ranker that is nearly useless at the operating point.
+$^{\ddagger}$DANN's pre-declared sensitivity readout. It is in the table as
+the second defensible read-off point; the secondary is defined at both, and
+at 2000 it is above every other arm. Ratios and intervals are
+read from \texttt{paper/data/lines\_ratios\_D1.json}; purity and AUROC are computed
+from the same stored logits as the headline TPR.}
+\label{tab:secondary}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{>{\TRAG}p{3.3cm}lrlrr}
+\toprule
+Arm & Read at & comp@24\%-pur. & $X = {\cdot}/0.50$, 95\% CI & pur.@50\%-comp. & AUROC \\
+\midrule
+Baseline A (frozen) & 8000 & $0.0921$ & $18.4\%$, $[+11.4, +25.4]\%$ & $0.0132$ & $0.8984$ \\
+$\lambda=0$ unfrozen control & 4000 & \emph{n/a} & \emph{n/a}\,\footnotesize(2,3) & $0.0095$ & $0.8815$ \\
+BNM $\times$ nb3 & 4000 & $0.3555$ & $71.1\%$, $[+53.8, +88.4]\%$ & $0.0673$ & $0.9096$ \\
+FreeMatch $\times$ nb3 & 1500 & $0.4835$ & $96.7\%$, $[+67.8, +125.6]\%$ & $0.2594$ & $0.9666$ \\
+DANN $\times$ nb3 & 4000 & $0.4550$ & $91.0\%$, $[+26.8, +155.2]\%$ & $0.2794$ & $0.9076$ \\
+\quad DANN, sensitivity readout$^{\ddagger}$ & 2000 & $0.5291$ & $105.8\%$, $[+65.0, +146.6]\%$ & $0.3726$ & $0.9326$ \\
+CORAL $\times$ nb3 & 2000 & $0.4961$ & $99.2\%$, $[+67.9, +130.5]\%$ & $0.2381$ & $0.9097$ \\
+\midrule
+\quad Baseline A, 5-fold basis$^{\S}$ & 8000 & $0.0900$ & $18.0\%$, \emph{n/a} & $0.0143$ & $0.9075$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\footnotesize \emph{n/a} in the completeness columns is followed by the folds on
+which 24\% purity is unreachable. $^{\S}$Baseline A is a single source-only model,
+so a folds-0--4 mean is legitimate for it; \textbf{only its folds-1--4 values are
+admissible comparators} against the per-fold-model arms above.
+\end{table}

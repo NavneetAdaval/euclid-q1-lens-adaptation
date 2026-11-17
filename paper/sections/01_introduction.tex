@@ -1,0 +1,61 @@
+\section{Introduction}
+\label{sec:intro}
+
+Strong gravitational lenses are rare. In Euclid's Q1 release, the expert-graded catalogue
+holds a few hundred confident systems across 63 square degrees, about one for every 2200
+objects searched~\citep{lines2025simstosky}. The objects a search has to find are scarce,
+and so are the labelled examples a supervised classifier would need. The usual way around
+this is to simulate lenses, train on the simulations and apply the model to the sky. That
+turns a labelling problem into a distribution-shift problem: simulated arcs, noise and
+deflectors differ from real ones, and in a ground-based search for lensing by late-type
+galaxies a simulated test set overestimated the purity of the selected sample by at least a
+factor of two~\citep{unions2025}.
+
+We study that shift on Euclid Q1. We train lens finders on simulated arcs painted onto real
+Euclid galaxies and adapt them toward real images with unsupervised domain adaptation. No
+real-lens label is ever a training target. Labels do enter in other ways. We build each
+fold's unlabelled target pool from catalogued lenses and random galaxies, and we balance
+every target batch 1:1 using the catalogue labels (Section~\ref{sec:labels}). Because that
+balancing is the design's main weakness, we test it in a second pre-registered experiment, with
+a target diluted to one lens per ten galaxies whose batches are drawn without the labels
+(Section~\ref{sec:results-dilute}). The Euclid Q1
+sim-to-real benchmark~\citep{lines2025simstosky} reports a simulation-only lens finder and
+invites adaptation follow-up work on the same data; this paper is such a follow-up.
+
+We measure performance where a search operates: the true-positive rate at a false-positive
+rate of $10^{-3}$. We run four published adaptation objectives on identical folds against a
+control that fine-tunes the same encoder with its adaptation weight set to zero. The
+evaluation positives are the 489 graded real lenses, five folds of 98 (one of 97), and that
+sample size bounds every comparison we make.
+
+Our contributions are these.
+\begin{itemize}
+\item \textbf{A controlled measurement of what a target-domain training signal buys.} A
+      control that differs from the DANN arm only in its adaptation weight separates having
+      a target signal from having none: on the class-balanced target of our main design, DANN
+      raises TPR at FPR${}=10^{-3}$ by $\dCtDannLam{}$ over it, and the other three objectives,
+      for which it is not a matched control, by $\dCtBnmLamAbs{}$ to $\dCtCoralLamPAbs{}$ (Section~\ref{sec:results-ablation}).
+\item \textbf{A pre-registered test of the balanced target.} With the target diluted to one lens
+      per ten galaxies and its batches drawn without the labels, DANN and BNM keep a detectable
+      gain over the control; for CORAL and FreeMatch we cannot detect a gain.
+      Dilution also changes how many lenses each batch holds and how often each is seen, so
+      this does not isolate the class proportion (Section~\ref{sec:results-dilute}).
+\item \textbf{How far the methods can be ranked.} At each arm's declared read-off, every paired
+      interval among CORAL, DANN and FreeMatch includes zero. Averaged over \rwFiveKWord{}
+      checkpoints, FreeMatch leads under each of two pre-declared score combinations, and the
+      lead excludes zero under one of them; we treat it as suggestive. Settling the ranking
+      needs more graded lenses rather than another read-off convention
+      (Section~\ref{sec:resolution}).
+\item \textbf{What the models find and miss.} In every model, recall is about two to three
+      times higher for grade-A than for grade-B lenses. The highest-scoring negatives are mostly
+      bright galaxies with halos, rings or spiral arms, and $\rvTopNegC{}$ of the
+      $\rvTopNegN{}$ negatives that reach the top 30 of any of the seven readouts on any fold are grade-C
+      candidates in the catalogue (Section~\ref{sec:findmiss}). Catalogued lenses hidden among
+      the original test negatives cost the stronger models the most
+      (Section~\ref{sec:testpool} and Appendix~\ref{app:prereg_pool}).
+\end{itemize}
+
+Sections~\ref{sec:data}--\ref{sec:eval} describe the data, the methods and the evaluation;
+Section~\ref{sec:results} gives the results, with the test of the balanced target in
+Section~\ref{sec:results-dilute}, Section~\ref{sec:negative} what did not work,
+and Section~\ref{sec:limitations} the limitations, beginning with the target and its labels.

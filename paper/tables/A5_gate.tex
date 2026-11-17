@@ -1,0 +1,21 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python paper/scripts/make_a5_restart.py
+% A5 -- step0_gate from each FreeMatch x nb3 fold's run_config.json.
+\begin{table}[t]
+\centering
+\caption{\textbf{The per-fold step-0 gate, as each run recorded it} (FreeMatch $\times$ nb3). The gate re-scores the loaded head before any training and aborts the fold on a mismatch. Folds 0 and 1 ran under the original rule, exact reproduction of TPR@$10^{-3}$; fold 2 differed by exactly one positive, which that rule refuses, and folds 2--4 ran under the recalibrated rule. TPR differences are in positives; the AUROC half was added with the recalibration.}
+\label{tab:restartgate}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrr}
+\toprule
+Fold & Rule & $|\Delta\mathrm{TPR}|$ (positives) & $|\Delta\mathrm{AUROC}|$ \\
+\midrule
+0 (development) & TPR exact & 0 & --- \\
+1 (confirmatory) & TPR exact & 0 & --- \\
+2 (confirmatory) & TPR $\le$ 1 positive; AUROC $\le 10^{-3}$ & 1 & $3.7 \times 10^{-6}$ \\
+3 (confirmatory) & TPR $\le$ 1 positive; AUROC $\le 10^{-3}$ & 0 & $9.5 \times 10^{-6}$ \\
+4 (confirmatory) & TPR $\le$ 1 positive; AUROC $\le 10^{-3}$ & 0 & $1.4 \times 10^{-5}$ \\
+\bottomrule
+\end{tabular}
+\end{table}

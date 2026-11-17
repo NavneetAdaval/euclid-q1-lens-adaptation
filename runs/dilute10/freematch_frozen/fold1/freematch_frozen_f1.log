@@ -1,0 +1,77 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  [fold 1] head=linear  187 steps/epoch  batch=256  src=48000  tgt=4301  mu_max=1.0(mid=1.00)  saf_w=0.01  sat_m=0.999  mode=standard  warmup=805 steps  cb_patience=187  fp16=on
+    [ep  1]  181.8s bce=0.2056 cons=0.0976 saf=0.4445 mu=0.000 accept=0.994 acc_pos_frac=0.086 tau=0.571 loc[neg=0.571,pos=0.443] cb=ok
+      [step    250] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep  2]  175.2s bce=0.1121 cons=0.0718 saf=0.5334 mu=0.000 accept=0.984 acc_pos_frac=0.078 tau=0.634 loc[neg=0.634,pos=0.389] cb=ok
+      [step    500] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep  3]  174.8s bce=0.1145 cons=0.0974 saf=0.5625 mu=0.000 accept=0.976 acc_pos_frac=0.076 tau=0.688 loc[neg=0.688,pos=0.341] cb=ok
+    [ep  4]  174.4s bce=0.1129 cons=0.0668 saf=0.5766 mu=0.000 accept=0.969 acc_pos_frac=0.075 tau=0.732 loc[neg=0.732,pos=0.301] cb=ok
+      [step    750] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep  5]  174.9s bce=0.1262 cons=0.0503 saf=0.6013 mu=0.127 accept=0.962 acc_pos_frac=0.074 tau=0.770 loc[neg=0.770,pos=0.266] cb=ok
+      [step   1000] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep  6]  175.0s bce=0.1146 cons=0.0620 saf=0.6234 mu=0.180 accept=0.956 acc_pos_frac=0.076 tau=0.802 loc[neg=0.802,pos=0.238] cb=ok
+      [step   1250] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep  7]  174.9s bce=0.1067 cons=0.0601 saf=0.6342 mu=0.239 accept=0.952 acc_pos_frac=0.076 tau=0.828 loc[neg=0.828,pos=0.213] cb=ok
+    [ep  8]  174.7s bce=0.1137 cons=0.0463 saf=0.6412 mu=0.304 accept=0.948 acc_pos_frac=0.077 tau=0.851 loc[neg=0.851,pos=0.193] cb=ok
+      [step   1500] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep  9]  175.1s bce=0.0943 cons=0.0448 saf=0.6358 mu=0.373 accept=0.940 acc_pos_frac=0.078 tau=0.870 loc[neg=0.870,pos=0.176] cb=ok
+      [step   1750] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 10]  175.0s bce=0.0769 cons=0.0568 saf=0.6330 mu=0.445 accept=0.937 acc_pos_frac=0.080 tau=0.885 loc[neg=0.885,pos=0.162] cb=ok
+      [step   2000] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 11]  175.3s bce=0.0850 cons=0.0395 saf=0.6298 mu=0.518 accept=0.934 acc_pos_frac=0.081 tau=0.899 loc[neg=0.899,pos=0.150] cb=ok
+    [ep 12]  174.7s bce=0.1417 cons=0.0340 saf=0.6287 mu=0.590 accept=0.929 acc_pos_frac=0.082 tau=0.910 loc[neg=0.910,pos=0.141] cb=ok
+      [step   2250] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 13]  175.5s bce=0.1000 cons=0.0386 saf=0.6143 mu=0.661 accept=0.925 acc_pos_frac=0.086 tau=0.919 loc[neg=0.919,pos=0.133] cb=ok
+      [step   2500] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 14]  174.9s bce=0.0772 cons=0.0500 saf=0.6053 mu=0.728 accept=0.921 acc_pos_frac=0.087 tau=0.927 loc[neg=0.927,pos=0.127] cb=ok
+      [step   2750] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 15]  175.0s bce=0.0940 cons=0.0367 saf=0.6002 mu=0.791 accept=0.916 acc_pos_frac=0.089 tau=0.933 loc[neg=0.933,pos=0.122] cb=ok
+    [ep 16]  175.0s bce=0.0689 cons=0.0444 saf=0.5861 mu=0.847 accept=0.912 acc_pos_frac=0.092 tau=0.939 loc[neg=0.939,pos=0.119] cb=ok
+      [step   3000] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 17]  175.3s bce=0.1180 cons=0.0396 saf=0.5840 mu=0.896 accept=0.912 acc_pos_frac=0.093 tau=0.943 loc[neg=0.943,pos=0.116] cb=ok
+      [step   3250] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 18]  174.8s bce=0.1016 cons=0.0409 saf=0.5660 mu=0.936 accept=0.905 acc_pos_frac=0.096 tau=0.947 loc[neg=0.947,pos=0.114] cb=ok
+      [step   3500] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 19]  175.0s bce=0.0988 cons=0.0192 saf=0.5643 mu=0.967 accept=0.902 acc_pos_frac=0.097 tau=0.950 loc[neg=0.950,pos=0.112] cb=ok
+    [ep 20]  174.8s bce=0.0996 cons=0.0320 saf=0.5567 mu=0.988 accept=0.903 acc_pos_frac=0.098 tau=0.953 loc[neg=0.953,pos=0.111] cb=ok
+      [step   3750] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 21]  175.2s bce=0.0977 cons=0.0368 saf=0.5553 mu=0.999 accept=0.903 acc_pos_frac=0.099 tau=0.955 loc[neg=0.955,pos=0.110] cb=ok
+      [step   4000] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 22]  174.9s bce=0.1227 cons=0.0386 saf=0.5438 mu=1.000 accept=0.899 acc_pos_frac=0.101 tau=0.957 loc[neg=0.957,pos=0.110] cb=ok
+      [step   4250] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 23]  175.0s bce=0.1427 cons=0.0423 saf=0.5390 mu=1.000 accept=0.897 acc_pos_frac=0.104 tau=0.959 loc[neg=0.959,pos=0.110] cb=ok
+    [ep 24]  174.9s bce=0.0894 cons=0.0150 saf=0.5393 mu=1.000 accept=0.896 acc_pos_frac=0.103 tau=0.960 loc[neg=0.960,pos=0.109] cb=ok
+      [step   4500] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 25]  174.9s bce=0.0948 cons=0.0207 saf=0.5386 mu=1.000 accept=0.897 acc_pos_frac=0.103 tau=0.961 loc[neg=0.961,pos=0.109] cb=ok
+      [step   4750] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 26]  174.9s bce=0.0693 cons=0.0459 saf=0.5336 mu=1.000 accept=0.893 acc_pos_frac=0.105 tau=0.962 loc[neg=0.962,pos=0.109] cb=ok
+      [step   5000] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 27]  174.6s bce=0.0627 cons=0.0315 saf=0.5271 mu=1.000 accept=0.892 acc_pos_frac=0.107 tau=0.963 loc[neg=0.963,pos=0.109] cb=ok
+    [ep 28]  174.9s bce=0.1295 cons=0.0237 saf=0.5362 mu=1.000 accept=0.894 acc_pos_frac=0.104 tau=0.963 loc[neg=0.963,pos=0.109] cb=ok
+      [step   5250] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 29]  174.8s bce=0.0911 cons=0.0317 saf=0.5255 mu=1.000 accept=0.890 acc_pos_frac=0.107 tau=0.964 loc[neg=0.964,pos=0.110] cb=ok
+      [step   5500] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 30]  174.4s bce=0.0590 cons=0.0288 saf=0.5281 mu=1.000 accept=0.891 acc_pos_frac=0.105 tau=0.964 loc[neg=0.964,pos=0.110] cb=ok
+      [step   5750] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 31]  174.7s bce=0.0816 cons=0.0278 saf=0.5215 mu=1.000 accept=0.892 acc_pos_frac=0.108 tau=0.965 loc[neg=0.965,pos=0.110] cb=ok
+    [ep 32]  174.4s bce=0.0650 cons=0.0241 saf=0.5222 mu=1.000 accept=0.891 acc_pos_frac=0.106 tau=0.965 loc[neg=0.965,pos=0.110] cb=ok
+      [step   6000] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 33]  174.7s bce=0.0828 cons=0.0342 saf=0.5284 mu=1.000 accept=0.892 acc_pos_frac=0.107 tau=0.965 loc[neg=0.965,pos=0.110] cb=ok
+      [step   6250] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 34]  174.6s bce=0.0914 cons=0.0318 saf=0.5164 mu=1.000 accept=0.891 acc_pos_frac=0.109 tau=0.966 loc[neg=0.966,pos=0.111] cb=ok
+      [step   6500] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 35]  174.9s bce=0.1480 cons=0.0492 saf=0.5311 mu=1.000 accept=0.893 acc_pos_frac=0.106 tau=0.966 loc[neg=0.966,pos=0.110] cb=ok
+    [ep 36]  174.4s bce=0.0860 cons=0.0255 saf=0.5199 mu=1.000 accept=0.889 acc_pos_frac=0.108 tau=0.966 loc[neg=0.966,pos=0.111] cb=ok
+      [step   6750] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 37]  174.6s bce=0.0810 cons=0.0323 saf=0.5198 mu=1.000 accept=0.892 acc_pos_frac=0.107 tau=0.966 loc[neg=0.966,pos=0.111] cb=ok
+      [step   7000] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 38]  174.5s bce=0.1271 cons=0.0299 saf=0.5241 mu=1.000 accept=0.893 acc_pos_frac=0.106 tau=0.966 loc[neg=0.966,pos=0.111] cb=ok
+      [step   7250] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 39]  175.5s bce=0.1136 cons=0.0138 saf=0.5150 mu=1.000 accept=0.893 acc_pos_frac=0.110 tau=0.967 loc[neg=0.967,pos=0.111] cb=ok
+    [ep 40]  174.9s bce=0.0914 cons=0.0334 saf=0.5160 mu=1.000 accept=0.891 acc_pos_frac=0.109 tau=0.967 loc[neg=0.967,pos=0.111] cb=ok
+      [step   7500] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 41]  175.7s bce=0.1553 cons=0.0263 saf=0.5209 mu=1.000 accept=0.895 acc_pos_frac=0.107 tau=0.967 loc[neg=0.967,pos=0.111] cb=ok
+      [step   7750] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 42]  175.2s bce=0.1120 cons=0.0508 saf=0.5187 mu=1.000 accept=0.892 acc_pos_frac=0.107 tau=0.967 loc[neg=0.967,pos=0.111] cb=ok
+      [step   8000] curve  val_auroc=nan | tpr@1e-3 f0=nan  f1=nan  f2=nan  f3=nan  f4=nan
+    [ep 43]  174.7s bce=0.1062 cons=0.0355 saf=0.5248 mu=1.000 accept=0.894 acc_pos_frac=0.107 tau=0.967 loc[neg=0.967,pos=0.111] cb=ok  saved freematch_linear_fold1_ep43.pt

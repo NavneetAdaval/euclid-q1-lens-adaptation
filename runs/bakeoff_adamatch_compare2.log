@@ -1,0 +1,1811 @@
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+C:\Users\krris\ML\lens_paper\scripts\compare_methods.py:258: RuntimeWarning: Mean of empty slice
+  return {k: float(np.nanmean(acc[k])) for k in SUITE_KEYS}
+[warn] fold sets differ (A=[0, 1, 2, 3, 4], B=[0]); comparing the intersection [0]
+
+============================================================================================
+PAIRED COMPARISON   adamatch  vs  baseline_A   (diff = adamatch - baseline_A)
+HEADLINE: TPR@FPR=0.001 + purity  |  AUPRC (threshold-free)  |  AUROC SECONDARY/sanity
+purity corrected to N_N/N_P = 1:2200  (Lines et al. Q1 deployment rarity)   paired bootstrap B=1000, seed=0
+Lines source-only reference (CONTEXT, not a target): ~50% completeness @ ~24% purity on real Q1
+============================================================================================
+
+PER-FOLD  TPR@FPR=0.001   [HEADLINE]
+    fold |  n_pos |   baseline_A |     adamatch |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.1939 |       0.3776 |   +0.1837 |   [+0.0612, +0.2857] | yes
+
+PER-FOLD  purity@50%-comp (corr 1:2200)   [HEADLINE]
+    fold |  n_pos |   baseline_A |     adamatch |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.0169 |       0.0811 |   +0.0641 |   [+0.0371, +0.1412] | yes
+
+PER-FOLD  AUPRC   [HEADLINE (threshold-free)]
+    fold |  n_pos |   baseline_A |     adamatch |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.1921 |       0.4023 |   +0.2102 |   [+0.1437, +0.2841] | yes
+
+PER-FOLD  purity@50%-comp (raw pool)   [context]
+    fold |  n_pos |   baseline_A |     adamatch |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.1234 |       0.4188 |   +0.2954 |   [+0.1913, +0.4613] | yes
+
+PER-FOLD  completeness@purity=0.24 (corr 1:2200)   [context]
+    fold |  n_pos |   baseline_A |     adamatch |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |          nan |       0.2653 |       nan | (undefined -- no CI) |  no
+
+PER-FOLD  AUROC   [secondary/sanity]
+    fold |  n_pos |   baseline_A |     adamatch |     diff  | 95% CI of diff       | sig
+    --------------------------------------------------------------------------------
+       0 |     98 |       0.9427 |       0.9698 |   +0.0271 |   [+0.0089, +0.0472] | yes
+
+============================================================================================
+AGGREGATE (across-fold mean; paired bootstrap CI of the mean difference, B-A)
+============================================================================================
+    metric                             |  baseline_A |    adamatch |     diff  | 95% CI of diff       | excl. 0
+    --------------------------------------------------------------------------------------------
+    TPR@FPR=0.001                      |      0.1939 |      0.3776 |   +0.1837 |   [+0.0714, +0.2755] | YES  <<
+    purity@50%-comp (corr 1:2200)      |      0.0169 |      0.0811 |   +0.0641 |   [+0.0335, +0.1474] | YES  <<
+    AUPRC                              |      0.1921 |      0.4023 |   +0.2102 |   [+0.1365, +0.2835] | YES
+    purity@50%-comp (raw pool)         |      0.1234 |      0.4188 |   +0.2954 |   [+0.1748, +0.4714] | YES
+    completeness@purity=0.24 (corr 1:2200) |         nan |      0.2653 |       nan | (undefined -- no CI) |  no
+    AUROC                              |      0.9427 |      0.9698 |   +0.0271 |   [+0.0080, +0.0478] | YES
+
+============================================================================================
+VERDICT  (headline = TPR@1e-3 and purity; AUROC is secondary/sanity only)
+============================================================================================
+  TPR@FPR=0.001                     : diff +0.1837  ->  DISTINGUISHABLE improvement (CI excludes 0, +)
+  purity@50%-comp (corr 1:2200)     : diff +0.0641  ->  DISTINGUISHABLE improvement (CI excludes 0, +)
+  AUPRC                             : diff +0.2102  ->  DISTINGUISHABLE improvement (CI excludes 0, +)
+  AUROC (secondary/sanity)          : diff +0.0271  ->  DISTINGUISHABLE improvement (CI excludes 0, +)
+============================================================================================

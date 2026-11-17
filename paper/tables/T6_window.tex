@@ -1,0 +1,56 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_t6_window.py)
+% T6 (appendix) -- checkpoint-window averaging.
+% Source: paper/data/window_average_D1.json (Baseline A row: runs/round7/window_average.json), declared and hashed at a572b81e...
+% k=1 cross-checked against metric_suite on the same logits.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Checkpoint-window score averaging (appendix).} Fold-mean
+TPR@$10^{-3}$ under an average of the $k$ consecutive checkpoints' \emph{scores}
+ending at the arm's pre-registered read-off step --- scores, never weights, and
+the window is placed by the read-off rule, so \textbf{the rule reads no metric}.
+$k$, the grid, both combinations and the placement rule were declared and hashed
+(\texttt{a572b81e\ldots}) before any windowed number existed. \textbf{This is a
+declared secondary analysis and replaces no pre-registered read-off.} \textbf{$k=1$ is
+the existing single-point read-off, not a new estimator}: that column reproduces
+every arm's headline, checked here against the value recomputed independently
+from the same logits, which is what licenses reading the rest of each row.
+$k_{\mathrm{ach}}$ is the achieved window where fewer than $k$ trained
+checkpoints exist at or before the read-off; the window truncates rather than
+padding. The two combinations \textbf{do not agree in magnitude} --- declaring
+both in advance is what makes that visible rather than an analyst's choice ---
+and at $k=8$ they order CORAL and DANN differently at both of DANN's read-off points.}
+\label{tab:window}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+ & & & \multicolumn{4}{c}{\texttt{mean\_logit} (primary)} & \multicolumn{4}{c}{\texttt{mean\_rank} (secondary)} \\
+\cmidrule(lr){4-7}\cmidrule(lr){8-11}
+Arm & Read at & $k_{\mathrm{ach}}$ & $k{=}1$ & $k{=}2$ & $k{=}4$ & $k{=}8$ & $k{=}1$ & $k{=}2$ & $k{=}4$ & $k{=}8$ \\
+\midrule
+CORAL & 2000 & 8 & $0.5216$ & $0.5626$ & $0.5472$ & $0.5472$ & $0.5216$ & $0.5498$ & $0.5319$ & $0.5191$ \\
+FreeMatch & 1500 & 8 & $0.5167$ & $0.5269$ & $0.5780$ & $0.5933$ & $0.5167$ & $0.5247$ & $0.5681$ & $0.5779$ \\
+DANN & 4000 & 8 & $0.4985$ & $0.5446$ & $0.5573$ & $0.5573$ & $0.4985$ & $0.5166$ & $0.4986$ & $0.4755$ \\
+DANN\,\footnotesize(sens.) & 2000 & 8 & $0.5547$ & $0.5753$ & $0.5600$ & $0.5498$ & $0.5547$ & $0.5424$ & $0.4935$ & $0.4680$ \\
+$\lambda=0$ & 4000 & 8 & $0.1842$ & $0.2097$ & $0.2021$ & $0.2302$ & $0.1842$ & $0.2047$ & $0.2022$ & $0.2148$ \\
+$\lambda=0$\,\footnotesize(sens.) & 2000 & 8 & $0.2149$ & $0.2200$ & $0.2302$ & $0.2814$ & $0.2149$ & $0.2175$ & $0.2302$ & $0.2737$ \\
+$\lambda=0$\,\footnotesize(sens.) & 1500 & 6 & $0.1944$ & $0.2147$ & $0.2557$ & $0.2661$ & $0.1944$ & $0.2147$ & $0.2506$ & $0.2737$ \\
+BNM\,\footnotesize(own budget) & 1000 & 4 & $0.4196$ & $0.4298$ & $0.4297$ & $0.4297$ & $0.4196$ & $0.4067$ & $0.4067$ & $0.4067$ \\
+BNM\,\footnotesize(sens.) & 1500 & 6 & $0.3833$ & $0.4166$ & $0.4193$ & $0.4245$ & $0.3833$ & $0.3987$ & $0.4167$ & $0.4066$ \\
+BNM\,\footnotesize(sens.) & 2000 & 8 & $0.4041$ & $0.4424$ & $0.4295$ & $0.4398$ & $0.4041$ & $0.4092$ & $0.4040$ & $0.3989$ \\
+BNM & 4000 & 8 & $0.4040$ & $0.4322$ & $0.4475$ & $0.4705$ & $0.4040$ & $0.4117$ & $0.4143$ & $0.4193$ \\
+Baseline A$^{\dagger}$ & 8000 & 8 & $0.1759$ & $0.1718$ & $0.1657$ & $0.1637$ & $0.1759$ & $0.1739$ & $0.1698$ & $0.1657$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\footnotesize Baseline A's row is a folds-0--4 mean --- it is a single
+source-only model, so fold-0 inclusion is legitimate for it; every other row is
+folds 1--4. Its per-step score vectors are recomputed on CPU from the frozen
+640-d feature cache and the retained per-step head weights, which is exact
+because the encoder is frozen.
+$^{\dagger}$Computed on the pre-registered test pool
+(Appendix~\ref{app:prereg_pool}); every other row uses the test pool of
+Section~\ref{sec:data}.
+\end{table}

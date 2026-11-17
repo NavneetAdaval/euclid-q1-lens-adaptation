@@ -1,0 +1,25 @@
+% GENERATED FILE -- do not edit by hand.
+% Rebuild:  python make_all.py (generator: make_dilute10_tables.py)
+% Appendix K: frozen stages vs round 1 and the FreeMatch decomposition. runs/dilute10_analysis/results.json descriptive.
+\begin{table}[htbp]
+\centering
+\caption{\textbf{The frozen stages on the 1:10 target against the balanced target}, and where FreeMatch's contrast is gained. Top: TPR at FPR${}=10^{-3}$ of each frozen stage's step-8000 head per fold (1:1 is the main design), cleaned pool; the difference is diluted $-$ balanced under the class-conditional paired bootstrap ($B=1000$), as in the frozen comparison. Bottom: FreeMatch's contrast against the control ($\lambda=0$ at 4000) split into the part reached by its frozen head (start $-$ $\lambda=0$) and the part gained after unfreezing (unfrozen $-$ start). AUROC: the mean over the four folds of the same heads' AUROC on the same pool.}
+\label{tab:dl-frozen}
+\footnotesize
+\setlength{\tabcolsep}{1.5pt}
+\begin{tabular}{llrrrrrrrl}
+\toprule
+Stage & Target & fold 1 & fold 2 & fold 3 & fold 4 & mean & AUROC & 1:10 $-$ 1:1 & 95\% CI \\
+\midrule
+FreeMatch & 1:1 (main design) & $0.4184$ & $0.4184$ & $0.3776$ & $0.4330$ & $0.4118$ & $0.9586$ & & \\
+ & 1:10 & $0.2551$ & $0.3367$ & $0.2653$ & $0.3505$ & $0.3019$ & $0.9475$ & $-0.1099$ & $[-0.1634, -0.0689]$ \\
+CORAL & 1:1 (main design) & $0.1837$ & $0.2245$ & $0.1837$ & $0.2474$ & $0.2098$ & $0.9065$ & & \\
+ & 1:10 & $0.1939$ & $0.1939$ & $0.1735$ & $0.2165$ & $0.1944$ & $0.9001$ & $-0.0154$ & $[-0.0461, +0.0076]$ \\
+\midrule
+ & Target & start & frozen & unfrozen & total & & & & \\
+\midrule
+FreeMatch & 1:1 (main design) & $0.4118$ & $+0.2276$ & $+0.1049$ & $+0.3325$ & & & & \\
+FreeMatch & 1:10 & $0.3019$ & $+0.1177$ & $+0.1355$ & $+0.2533$ & & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
